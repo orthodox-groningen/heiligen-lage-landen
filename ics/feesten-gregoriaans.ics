@@ -1,0 +1,190 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//orthodox-groningen//heiligen-lage-landen//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Vaste feesten (Gregoriaans)
+X-WR-TIMEZONE:UTC
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010107
+DTEND;VALUE=DATE:20010108
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:ea0edb48-3bc1-58a1-8b38-51ae0f9320f7
+SUMMARY:Kerstfeest (Geboorte van Christus)
+DESCRIPTION:Geboorte van onze Heer Jezus Christus.\nGregoriaans: 7 januari\
+ nJuliaans: 25 december\nBron: OrthodoxWiki — Great Feasts (https://orthodo
+ xwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https:/
+ /www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010114
+DTEND;VALUE=DATE:20010115
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:30656fa1-b036-59b0-a7ce-9a47ffd03c8d
+SUMMARY:Besnijdenis des Heren
+DESCRIPTION:Het feest van de Besnijdenis des Heren volgens de vaste jaarcyc
+ lus.\nGregoriaans: 14 januari\nJuliaans: 1 januari\nBron: OrthodoxWiki — G
+ reat Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of 
+ the Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010119
+DTEND;VALUE=DATE:20010120
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:3d1ceee4-8b80-5e1e-99e1-60cf335d6280
+SUMMARY:Theofanie (Doop des Heren)
+DESCRIPTION:Openbaring van de Heilige Drie-eenheid bij de doop van Christus
+  in de Jordaan.\nGregoriaans: 19 januari\nJuliaans: 6 januari\nBron: Ortho
+ doxWiki — Great Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA 
+ — Lives of the Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010215
+DTEND;VALUE=DATE:20010216
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:dc2a1620-817a-548d-8c72-fbbdf3c37704
+SUMMARY:Ontmoeting in de Tempel
+DESCRIPTION:Christus wordt in de tempel gebracht\; Simeon en Anna begroeten
+  Hem.\nGregoriaans: 15 februari\nJuliaans: 2 februari\nBron: OrthodoxWiki 
+ — Great Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives 
+ of the Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010407
+DTEND;VALUE=DATE:20010408
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:7cb7d786-da90-5885-a604-22ee83a12175
+SUMMARY:Aankondiging aan de Moeder Gods
+DESCRIPTION:De aartsengel Gabriël kondigt de geboorte van Christus aan Mari
+ a aan.\nGregoriaans: 7 april\nJuliaans: 25 maart\nBron: OrthodoxWiki — Gre
+ at Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of th
+ e Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010707
+DTEND;VALUE=DATE:20010708
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:7b56eab6-0d25-5232-a8a5-3544c5e0d682
+SUMMARY:Geboorte van Johannes de Doper
+DESCRIPTION:Feestdag van de geboorte van de Voorloper.\nGregoriaans: 7 juli
+ \nJuliaans: 24 juni\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwi
+ ki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://ww
+ w.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010712
+DTEND;VALUE=DATE:20010713
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:6c9bae9d-1a83-5354-9691-355c1de0bc62
+SUMMARY:H.H. Apostelen Petrus en Paulus
+DESCRIPTION:Feestdag van de eerste apostelen Petrus en Paulus.\nGregoriaans
+ : 12 juli\nJuliaans: 29 juni\nBron: OrthodoxWiki — Great Feasts (https://o
+ rthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (h
+ ttps://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010819
+DTEND;VALUE=DATE:20010820
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:0775299f-bcf1-5006-91aa-c9f813a53507
+SUMMARY:Verheerlijking op de berg Thabor
+DESCRIPTION:Christus toont Zijn goddelijke heerlijkheid aan Petrus\, Jakobu
+ s en Johannes.\nGregoriaans: 19 augustus\nJuliaans: 6 augustus\nBron: Orth
+ odoxWiki — Great Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA
+  — Lives of the Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010828
+DTEND;VALUE=DATE:20010829
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:b38078bb-78bf-59f0-b6b7-755d871aa01e
+SUMMARY:Ontslapen van de Moeder Gods
+DESCRIPTION:Het ontslapen (dood en opname) van de Moeder Gods.\nGregoriaans
+ : 28 augustus\nJuliaans: 15 augustus\nBron: OrthodoxWiki — Great Feasts (h
+ ttps://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / F
+ easts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010911
+DTEND;VALUE=DATE:20010912
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:97b7114e-9167-5817-864e-98d9397cd628
+SUMMARY:Onthoofding van Johannes de Doper
+DESCRIPTION:Gedachtenis van de marteldood van de Voorloper.\nGregoriaans: 1
+ 1 september\nJuliaans: 29 augustus\nBron: OrthodoxWiki — Great Feasts (htt
+ ps://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Fea
+ sts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010914
+DTEND;VALUE=DATE:20010915
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:f308f281-6b0b-5e75-a26d-e6587527f008
+SUMMARY:Begin van het kerkelijk jaar
+DESCRIPTION:Indictie: begin van het kerkelijk jaar.\nGregoriaans: 14 septem
+ ber\nJuliaans: 1 september\nBron: OrthodoxWiki — Great Feasts (https://ort
+ hodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (htt
+ ps://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010921
+DTEND;VALUE=DATE:20010922
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:cd09170e-f99d-51ec-a92c-c22f35183c31
+SUMMARY:Geboorte van de Moeder Gods
+DESCRIPTION:Geboortefeest van de Allerheiligste Moeder Gods.\nGregoriaans: 
+ 21 september\nJuliaans: 8 september\nBron: OrthodoxWiki — Great Feasts (ht
+ tps://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Fe
+ asts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010927
+DTEND;VALUE=DATE:20010928
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:a226ef4d-5190-5d2e-aafd-2edd7a9fc415
+SUMMARY:Kruisverheffing
+DESCRIPTION:Verheffing van het Heilig Kruis.\nGregoriaans: 27 september\nJu
+ liaans: 14 september\nBron: OrthodoxWiki — Great Feasts (https://orthodoxw
+ iki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://w
+ ww.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011204
+DTEND;VALUE=DATE:20011205
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T203902Z
+UID:2f6ee20b-506b-5845-9411-6232b678753b
+SUMMARY:Tempelgang van de Moeder Gods
+DESCRIPTION:Maria wordt als kind in de tempel gebracht.\nGregoriaans: 4 dec
+ ember\nJuliaans: 21 november\nBron: OrthodoxWiki — Great Feasts (https://o
+ rthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (h
+ ttps://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
