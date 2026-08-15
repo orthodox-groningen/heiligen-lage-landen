@@ -1,0 +1,1010 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//orthodox-groningen//heiligen-lage-landen//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Heiligenkalender (alles) — oud
+X-WR-TIMEZONE:UTC
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010114
+DTEND;VALUE=DATE:20010115
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:334de34c-538d-5355-a856-401bef573749
+SUMMARY:Besnijdenis des Heren (1 januari Juliaans)
+DESCRIPTION:Het feest van de Besnijdenis des Heren volgens de vaste jaarcyc
+ lus.\nFeestdatum: 1 januari\nIn westerse (burgerlijke) agenda's: 14 januar
+ i (oude kalender +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feasts (
+ https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / 
+ Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010119
+DTEND;VALUE=DATE:20010120
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f74ff905-5ba8-5e34-8a09-7ca87dfd3d28
+SUMMARY:Theofanie (Doop des Heren) (6 januari Juliaans)
+DESCRIPTION:Openbaring van de Heilige Drie-eenheid bij de doop van Christus
+  in de Jordaan.\nFeestdatum: 6 januari\nIn westerse (burgerlijke) agenda's
+ : 19 januari (oude kalender +13 dagen tot 2100).\nBron: OrthodoxWiki — Gre
+ at Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of th
+ e Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010121
+DTEND;VALUE=DATE:20010122
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:109e45da-259b-5e9f-b644-f429b53e6b7c
+SUMMARY:Gudula van Brussel (8 januari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Gudula van Brussel. Virgin.\nFeestd
+ atum: 8 januari\nIn westerse (burgerlijke) agenda's: 21 januari (oude kale
+ nder +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010208
+DTEND;VALUE=DATE:20010209
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:3e7191b2-2d4a-5a1d-9902-646e982f6455
+SUMMARY:Adelgondis van Drongen (26 januari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlin
+ ge.\nFeestdatum: 26 januari\nIn westerse (burgerlijke) agenda's: 8 februar
+ i (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.hei
+ ligen.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010212
+DTEND;VALUE=DATE:20010213
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:0ad4ef04-bdb5-5bfe-83ca-9963ec2c632f
+SUMMARY:Adelgonda (30 januari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Adelgonda. Stichteres van Maubeuge.
+ \nFeestdatum: 30 januari\nIn westerse (burgerlijke) agenda's: 12 februari 
+ (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010215
+DTEND;VALUE=DATE:20010216
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:bf731ac4-530e-52df-9fef-485c39989f62
+SUMMARY:Ontmoeting in de Tempel (2 februari Juliaans)
+DESCRIPTION:Christus wordt in de tempel gebracht\; Simeon en Anna begroeten
+  Hem.\nFeestdatum: 2 februari\nIn westerse (burgerlijke) agenda's: 15 febr
+ uari (oude kalender +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feast
+ s (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints
+  / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010218
+DTEND;VALUE=DATE:20010219
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:e51454f6-686e-58bb-88e7-d7eabd8bc614
+SUMMARY:Agricolaus van Maastricht (5 februari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede b
+ isschop.\nFeestdatum: 5 februari\nIn westerse (burgerlijke) agenda's: 18 f
+ ebruari (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (https://w
+ ww.heiligen.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010219
+DTEND;VALUE=DATE:20010220
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:cb9bf201-9807-5bb6-b739-ffe3bd46e2fc
+SUMMARY:Amandus van Maastricht (6 februari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Amandus van Maastricht. Apostel van
+  Maastricht (17e Bisschop van Maastricht).\nFeestdatum: 6 februari\nIn wes
+ terse (burgerlijke) agenda's: 19 februari (oude kalender +13 dagen tot 210
+ 0).\nBron: heiligen.net (https://www.heiligen.net)\nBron: EIR3-app / synax
+ arion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010225
+DTEND;VALUE=DATE:20010226
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:0372795b-7c33-501c-ae2f-1afb94bf718b
+SUMMARY:Gertrudis (12 februari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Gertrudis. Icoon in parochie\, abdi
+ s van Nijvel.\nFeestdatum: 12 februari\nIn westerse (burgerlijke) agenda's
+ : 25 februari (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxa
+ rion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010310
+DTEND;VALUE=DATE:20010311
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2dca8a8b-12e5-5e79-9121-4b7e894b384f
+SUMMARY:Walburga (25 februari Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Walburga. Abdis van Heidenheim.\nFe
+ estdatum: 25 februari\nIn westerse (burgerlijke) agenda's: 10 maart (oude 
+ kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010314
+DTEND;VALUE=DATE:20010315
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:bdee293a-d9de-522f-8e60-829d2462edc6
+SUMMARY:Swidbert (1 maart Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Swidbert. Monastieke stichter aan d
+ e Rijn.\nFeestdatum: 1 maart\nIn westerse (burgerlijke) agenda's: 14 maart
+  (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010317
+DTEND;VALUE=DATE:20010318
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f0349ad5-c6c9-5256-9c0f-7fdbed86676d
+SUMMARY:Albericus van Utrecht (4 maart Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Albericus van Utrecht. Vierde bissc
+ hop.\nFeestdatum: 4 maart\nIn westerse (burgerlijke) agenda's: 17 maart (o
+ ude kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heilige
+ n.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010319
+DTEND;VALUE=DATE:20010320
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:df07ff2e-7e04-568f-a0f4-794c2a8da805
+SUMMARY:Fridolin (6 maart Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Fridolin. Abt\, verlichter van de B
+ oven-Rijn.\nFeestdatum: 6 maart\nIn westerse (burgerlijke) agenda's: 19 ma
+ art (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notit
+ ies
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010402
+DTEND;VALUE=DATE:20010403
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:391a8b17-0e5f-501f-8480-5894155e2b38
+SUMMARY:Wulfram (20 maart Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Wulfram. Missionaris.\nFeestdatum: 
+ 20 maart\nIn westerse (burgerlijke) agenda's: 2 april (oude kalender +13 d
+ agen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010407
+DTEND;VALUE=DATE:20010408
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:ac0b441e-7c91-5438-87a3-0d48a3a2dc07
+SUMMARY:Aankondiging aan de Moeder Gods (25 maart Juliaans)
+DESCRIPTION:De aartsengel Gabriël kondigt de geboorte van Christus aan Mari
+ a aan.\nFeestdatum: 25 maart\nIn westerse (burgerlijke) agenda's: 7 april 
+ (oude kalender +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feasts (ht
+ tps://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Fe
+ asts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010408
+DTEND;VALUE=DATE:20010409
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:e35a8aed-ff10-5d7c-bed7-783eeb3092a2
+SUMMARY:Ludger (26 maart Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Ludger. Bisschop van Münster.\nFees
+ tdatum: 26 maart\nIn westerse (burgerlijke) agenda's: 8 april (oude kalend
+ er +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010422
+DTEND;VALUE=DATE:20010423
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:b86859ef-e515-53b4-96c1-d677394a0cfc
+SUMMARY:Woutruide (9 april Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Woutruide. Stichteres van een kloos
+ ter.\nFeestdatum: 9 april\nIn westerse (burgerlijke) agenda's: 22 april (o
+ ude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010510
+DTEND;VALUE=DATE:20010511
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:70b831f6-257d-52da-a38c-564817612de5
+SUMMARY:Floribert (27 april Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Floribert. Bisschop van Luik.\nFees
+ tdatum: 27 april\nIn westerse (burgerlijke) agenda's: 10 mei (oude kalende
+ r +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010513
+DTEND;VALUE=DATE:20010514
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:53dbba8e-50d9-5ff8-9826-c894837480c3
+SUMMARY:Quirillus van Tongern (30 april Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van
+  Tongeren.\nFeestdatum: 30 april\nIn westerse (burgerlijke) agenda's: 13 m
+ ei (oude kalender +13 dagen tot 2100).\nBron: Ökumenisches Heiligenlexikon
+  (https://www.heiligenlexikon.de/)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010514
+DTEND;VALUE=DATE:20010515
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:5cfa5e0e-8527-5406-a613-86974214814b
+SUMMARY:Ultan (1 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Ultan. Stichter van Fosse.\nFeestda
+ tum: 1 mei\nIn westerse (burgerlijke) agenda's: 14 mei (oude kalender +13 
+ dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010516
+DTEND;VALUE=DATE:20010517
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f741c2bd-276a-5ea5-85fb-89b5fc60e114
+SUMMARY:Ansfried (van Utrecht) (3 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop va
+ n Utrecht.\nFeestdatum: 3 mei\nIn westerse (burgerlijke) agenda's: 16 mei 
+ (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heili
+ gen.net)\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010520
+DTEND;VALUE=DATE:20010521
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f1227b10-029d-5796-9304-59297688dd04
+SUMMARY:Domitianus (7 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht
+ .\nFeestdatum: 7 mei\nIn westerse (burgerlijke) agenda's: 20 mei (oude kal
+ ender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010521
+DTEND;VALUE=DATE:20010522
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:20c0b724-d32c-56c6-988e-db8fb3320a5f
+SUMMARY:Iduberga (8 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel\, m
+ oeder van H. Bavo\, Begga en Gertrudis.\nFeestdatum: 8 mei\nIn westerse (b
+ urgerlijke) agenda's: 21 mei (oude kalender +13 dagen tot 2100).\nBron: EI
+ R3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010524
+DTEND;VALUE=DATE:20010525
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:71657d81-dbbc-5164-9bf7-7947749518bf
+SUMMARY:Wiro (11 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Wiro. Ierse missionaris\, bisschop 
+ in Limburg\, Nederland.\nFeestdatum: 11 mei\nIn westerse (burgerlijke) age
+ nda's: 24 mei (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxa
+ rion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010528
+DTEND;VALUE=DATE:20010529
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:7923f933-3232-5c97-8a96-6e60f6e436aa
+SUMMARY:Dymphna (15 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Dymphna. Icoon in parochie\, martel
+ ares van Geel\, Vlaanderen.\nFeestdatum: 15 mei\nIn westerse (burgerlijke)
+  agenda's: 28 mei (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / sy
+ naxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010612
+DTEND;VALUE=DATE:20010613
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:d9d4890f-c440-5524-98e3-5871366b5d3e
+SUMMARY:Hubertus van Maastricht (30 mei Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Hubertus van Maastricht.\nFeestdatu
+ m: 30 mei\nIn westerse (burgerlijke) agenda's: 12 juni (oude kalender +13 
+ dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010618
+DTEND;VALUE=DATE:20010619
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:08a7a91b-ef1a-5272-a056-3c06d7fdcad9
+SUMMARY:Bonifatius (5 juni Juliaans)
+DESCRIPTION:Missionaris en martelaar\, verbonden met de kerstening van de L
+ age Landen en Germanië.\nFeestdatum: 5 juni\nIn westerse (burgerlijke) age
+ nda's: 18 juni (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (ht
+ tps://www.heiligen.net)\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010621
+DTEND;VALUE=DATE:20010622
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:0a73e5d5-e13e-538a-b3ed-a88071327df3
+SUMMARY:Medardus (8 juni Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Medardus. Bisschop van Noyon.\nFees
+ tdatum: 8 juni\nIn westerse (burgerlijke) agenda's: 21 juni (oude kalender
+  +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010625
+DTEND;VALUE=DATE:20010626
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2158fc61-a4f1-522e-87f1-cbda79b4b5bf
+SUMMARY:Cunera (12 juni Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Cunera. Icoon in parochie\, virgin 
+ martyr of Rhenen.\nFeestdatum: 12 juni\nIn westerse (burgerlijke) agenda's
+ : 25 juni (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion
+ -notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010630
+DTEND;VALUE=DATE:20010701
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:c96f50d6-2834-5aa9-aeee-ad54cbb3181c
+SUMMARY:Alena van Dilbeek (17 juni Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelar
+ es.\nFeestdatum: 17 juni\nIn westerse (burgerlijke) agenda's: 30 juni (oud
+ e kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heiligen.
+ net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010704
+DTEND;VALUE=DATE:20010705
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2c38d9f1-74bd-5806-bb00-95e7fe52e0b5
+SUMMARY:Engelmund (21 juni Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Engelmund. Abt\, geloofsverkondiger
+  in Holland.\nFeestdatum: 21 juni\nIn westerse (burgerlijke) agenda's: 4 j
+ uli (oude kalender +13 dagen tot 2100).\nBron: Legacy import (bron nog te 
+ verifiëren)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010705
+DTEND;VALUE=DATE:20010706
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:d7a89977-a902-5c09-8d80-ead8aa4dacef
+SUMMARY:Walfridus (Bedum) (22 juni Juliaans)
+DESCRIPTION:Plaatselijke heilige verbonden met Bedum.\nFeestdatum: 22 juni\
+ nIn westerse (burgerlijke) agenda's: 5 juli (oude kalender +13 dagen tot 2
+ 100).\nBron: Thabor-notities augustus 2024
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010707
+DTEND;VALUE=DATE:20010708
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2dcdece1-2b49-5bf7-89ca-3d22ad02ae13
+SUMMARY:Geboorte van Johannes de Doper (24 juni Juliaans)
+DESCRIPTION:Feestdag van de geboorte van de Voorloper.\nFeestdatum: 24 juni
+ \nIn westerse (burgerlijke) agenda's: 7 juli (oude kalender +13 dagen tot 
+ 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.org/Great_
+ Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oca.org/sai
+ nts/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010708
+DTEND;VALUE=DATE:20010709
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:3d6d24f8-7f95-56cf-91e4-e8bd0642955c
+SUMMARY:Adelbert (25 juni Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Adelbert. Aartsdiaken.\nFeestdatum:
+  25 juni\nIn westerse (burgerlijke) agenda's: 8 juli (oude kalender +13 da
+ gen tot 2100).\nBron: EIR3-app / synaxarion-notities\nBron: Wikipedia (NL)
+  — Lijst van christelijke heiligen (https://nl.wikipedia.org/wiki/Lijst_va
+ n_christelijke_heiligen)\nBron: heiligen.net (https://www.heiligen.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010712
+DTEND;VALUE=DATE:20010713
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:58896aec-2601-5db6-8dd0-af3c31b9f3e4
+SUMMARY:H.H. Apostelen Petrus en Paulus (29 juni Juliaans)
+DESCRIPTION:Feestdag van de eerste apostelen Petrus en Paulus.\nFeestdatum:
+  29 juni\nIn westerse (burgerlijke) agenda's: 12 juli (oude kalender +13 d
+ agen tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.o
+ rg/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oc
+ a.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010723
+DTEND;VALUE=DATE:20010724
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:83c331d3-fcd2-5501-a219-dbbcd89d6160
+SUMMARY:Amalberga van Temse (10 juli Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Amalberga van Temse. Monnik.\nFeest
+ datum: 10 juli\nIn westerse (burgerlijke) agenda's: 23 juli (oude kalender
+  +13 dagen tot 2100).\nBron: Wikipedia (NL) — Lijst van christelijke heili
+ gen (https://nl.wikipedia.org/wiki/Lijst_van_christelijke_heiligen)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010727
+DTEND;VALUE=DATE:20010728
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:ee1c0ab4-5949-54f1-97b2-157d10299cdd
+SUMMARY:Marcellinus van Utrecht (14 juli Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Marcellinus van Utrecht.\nFeestdatu
+ m: 14 juli\nIn westerse (burgerlijke) agenda's: 27 juli (oude kalender +13
+  dagen tot 2100).\nBron: EIR3-app / synaxarion-notities\nBron: Ökumenische
+ s Heiligenlexikon (https://www.heiligenlexikon.de/)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010728
+DTEND;VALUE=DATE:20010729
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:83a132bb-6dfd-59b9-9c3a-696d707fb086
+SUMMARY:Plechelm von Odilienberg (15 juli Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop\
+ , geloofsverkondiger aan de Nederrijn.\nFeestdatum: 15 juli\nIn westerse (
+ burgerlijke) agenda's: 28 juli (oude kalender +13 dagen tot 2100).\nBron: 
+ Ökumenisches Heiligenlexikon (https://www.heiligenlexikon.de/)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010731
+DTEND;VALUE=DATE:20010801
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:5528db4b-a6dc-55cd-b122-0983f5e72eaf
+SUMMARY:Frederich (18 juli Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.\nF
+ eestdatum: 18 juli\nIn westerse (burgerlijke) agenda's: 31 juli (oude kale
+ nder +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010806
+DTEND;VALUE=DATE:20010807
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:fcd4ffe0-be2f-5208-8793-6fb7a1309d95
+SUMMARY:Bernulphus (24 juli Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.\n
+ Feestdatum: 24 juli\nIn westerse (burgerlijke) agenda's: 6 augustus (oude 
+ kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010819
+DTEND;VALUE=DATE:20010820
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:658c19f0-a90f-5b2c-8fdd-62adaa74de44
+SUMMARY:Verheerlijking op de berg Thabor (6 augustus Juliaans)
+DESCRIPTION:Christus toont Zijn goddelijke heerlijkheid aan Petrus\, Jakobu
+ s en Johannes.\nFeestdatum: 6 augustus\nIn westerse (burgerlijke) agenda's
+ : 19 augustus (oude kalender +13 dagen tot 2100).\nBron: OrthodoxWiki — Gr
+ eat Feasts (https://orthodoxwiki.org/Great_Feasts)\nBron: OCA — Lives of t
+ he Saints / Feasts (https://www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010827
+DTEND;VALUE=DATE:20010828
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:6e9ac556-d9e2-54da-a9d5-98d0db5b3b2e
+SUMMARY:Werenfrid (14 augustus Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Werenfrid. Icoon in parochie\, monn
+ ik\, priester\, geloofsverkondiger in Friesland.\nFeestdatum: 14 augustus\
+ nIn westerse (burgerlijke) agenda's: 27 augustus (oude kalender +13 dagen 
+ tot 2100).\nBron: Ökumenisches Heiligenlexikon (https://www.heiligenlexiko
+ n.de/)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010828
+DTEND;VALUE=DATE:20010829
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:8ac9074b-980c-5303-9190-7a2506f7d039
+SUMMARY:Ontslapen van de Moeder Gods (15 augustus Juliaans)
+DESCRIPTION:Het ontslapen (dood en opname) van de Moeder Gods.\nFeestdatum:
+  15 augustus\nIn westerse (burgerlijke) agenda's: 28 augustus (oude kalend
+ er +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthod
+ oxwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https:
+ //www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010830
+DTEND;VALUE=DATE:20010831
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:590ecb23-b518-5b68-8fa3-91a107b2ff86
+SUMMARY:Jeroen van Noordwijk (17 augustus Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaa
+ r\, icoon in parochie.\nFeestdatum: 17 augustus\nIn westerse (burgerlijke)
+  agenda's: 30 augustus (oude kalender +13 dagen tot 2100).\nBron: EIR3-app
+  / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010907
+DTEND;VALUE=DATE:20010908
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:3a2a010c-b6b2-5b1f-9c56-463ed0e38b1d
+SUMMARY:Alubertus van Utrecht (25 augustus Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.
+ \nFeestdatum: 25 augustus\nIn westerse (burgerlijke) agenda's: 7 september
+  (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heil
+ igen.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010907
+DTEND;VALUE=DATE:20010908
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:533bb3a9-15fd-589d-95f0-15a6466e67a2
+SUMMARY:Gregorius van Utrecht (25 augustus Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Gregorius van Utrecht.\nFeestdatum:
+  25 augustus\nIn westerse (burgerlijke) agenda's: 7 september (oude kalend
+ er +13 dagen tot 2100).\nBron: thabor aug. 2024
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010911
+DTEND;VALUE=DATE:20010912
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:dcc2bb26-73b1-5859-8a87-49be70351f3d
+SUMMARY:Onthoofding van Johannes de Doper (29 augustus Juliaans)
+DESCRIPTION:Gedachtenis van de marteldood van de Voorloper.\nFeestdatum: 29
+  augustus\nIn westerse (burgerlijke) agenda's: 11 september (oude kalender
+  +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodox
+ wiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://
+ www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010914
+DTEND;VALUE=DATE:20010915
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:24a46317-d061-5369-8815-8ea4e0626eb1
+SUMMARY:Begin van het kerkelijk jaar (1 september Juliaans)
+DESCRIPTION:Indictie: begin van het kerkelijk jaar.\nFeestdatum: 1 septembe
+ r\nIn westerse (burgerlijke) agenda's: 14 september (oude kalender +13 dag
+ en tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.org
+ /Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oca.
+ org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010916
+DTEND;VALUE=DATE:20010917
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:346c9389-fa89-5d8e-88af-f57e5cbdc385
+SUMMARY:Remaclus (3 september Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.\
+ nFeestdatum: 3 september\nIn westerse (burgerlijke) agenda's: 16 september
+  (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010921
+DTEND;VALUE=DATE:20010922
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:52a14370-6537-5629-9c33-1ef70cfd0be5
+SUMMARY:Adela van Vlaanderen (8 september Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloo
+ sterlinge.\nFeestdatum: 8 september\nIn westerse (burgerlijke) agenda's: 2
+ 1 september (oude kalender +13 dagen tot 2100).\nBron: heiligen.net (https
+ ://www.heiligen.net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010921
+DTEND;VALUE=DATE:20010922
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:1329de72-d269-5da1-a29a-13148ccef3f9
+SUMMARY:Geboorte van de Moeder Gods (8 september Juliaans)
+DESCRIPTION:Geboortefeest van de Allerheiligste Moeder Gods.\nFeestdatum: 8
+  september\nIn westerse (burgerlijke) agenda's: 21 september (oude kalende
+ r +13 dagen tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodo
+ xwiki.org/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https:/
+ /www.oca.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010923
+DTEND;VALUE=DATE:20010924
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:8fac7515-6f4e-5aeb-8c6a-d3185a26486f
+SUMMARY:Theodaard van Maastricht (10 september Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.
+ \nFeestdatum: 10 september\nIn westerse (burgerlijke) agenda's: 23 septemb
+ er (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notiti
+ es
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010927
+DTEND;VALUE=DATE:20010928
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:4d807add-ba79-5c77-a894-176b7906a276
+SUMMARY:Kruisverheffing (14 september Juliaans)
+DESCRIPTION:Verheffing van het Heilig Kruis.\nFeestdatum: 14 september\nIn 
+ westerse (burgerlijke) agenda's: 27 september (oude kalender +13 dagen tot
+  2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.org/Great
+ _Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oca.org/sa
+ ints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010930
+DTEND;VALUE=DATE:20011001
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:20d3f129-b8cf-5ead-9b4b-706b372200a5
+SUMMARY:Lambertus (17 september Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Lambertus. Icoon in parochie.\nFees
+ tdatum: 17 september\nIn westerse (burgerlijke) agenda's: 30 september (ou
+ de kalender +13 dagen tot 2100).\nBron: orthodox synaxarion
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011014
+DTEND;VALUE=DATE:20011015
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:7163f4ae-1800-5599-812c-21a831c383ab
+SUMMARY:Bavo (1 oktober Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Bavo. Icoon in parochie.\nFeestdatu
+ m: 1 oktober\nIn westerse (burgerlijke) agenda's: 14 oktober (oude kalende
+ r +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011024
+DTEND;VALUE=DATE:20011025
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:57eb8d74-cf24-5d3d-89df-9ba98736c421
+SUMMARY:Gommar (11 oktober Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.\nF
+ eestdatum: 11 oktober\nIn westerse (burgerlijke) agenda's: 24 oktober (oud
+ e kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011105
+DTEND;VALUE=DATE:20011106
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:130ca6cc-5c17-597e-ad56-44436ff5dce0
+SUMMARY:Oda van Amay (23 oktober Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken
+ .\nFeestdatum: 23 oktober\nIn westerse (burgerlijke) agenda's: 5 november 
+ (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011111
+DTEND;VALUE=DATE:20011112
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:25c88109-21a3-581c-a53b-e21385045a13
+SUMMARY:Ermelindis (29 oktober Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Ermelindis. Heremiet.\nFeestdatum: 
+ 29 oktober\nIn westerse (burgerlijke) agenda's: 11 november (oude kalender
+  +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011113
+DTEND;VALUE=DATE:20011114
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:9f61b0dc-c3f7-52c0-aa48-69b90fe1272d
+SUMMARY:Foillan (31 oktober Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Foillan. Ierse monnik\, martelaar.\
+ nFeestdatum: 31 oktober\nIn westerse (burgerlijke) agenda's: 13 november (
+ oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011118
+DTEND;VALUE=DATE:20011119
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2aebcf31-40cb-512f-aef2-edd8046b5426
+SUMMARY:Odrada (5 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Odrada. Maagd van Balen.\nFeestdatu
+ m: 5 november\nIn westerse (burgerlijke) agenda's: 18 november (oude kalen
+ der +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011119
+DTEND;VALUE=DATE:20011120
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:391554a9-d07c-5050-8ddc-e5ed9cc989ce
+SUMMARY:Winnocus (6 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Winnocus. Abt.\nFeestdatum: 6 novem
+ ber\nIn westerse (burgerlijke) agenda's: 19 november (oude kalender +13 da
+ gen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011120
+DTEND;VALUE=DATE:20011121
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:54f90b79-96ce-5cb0-abe6-2d0b8cb64341
+SUMMARY:Willibrord (7 november Juliaans)
+DESCRIPTION:Apostel van de Friezen\; aartsbisschop van Utrecht.\nFeestdatum
+ : 7 november\nIn westerse (burgerlijke) agenda's: 20 november (oude kalend
+ er +13 dagen tot 2100).\nBron: heiligen.net (https://www.heiligen.net)\nBr
+ on: EIR3-app / synaxarion-notities\nBron: Ökumenisches Heiligenlexikon (ht
+ tps://www.heiligenlexikon.de/)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011125
+DTEND;VALUE=DATE:20011126
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:d0edd14d-ea5e-5e80-b84b-d66ff2bf4a21
+SUMMARY:Lebuinus (12 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Ned
+ erland.\nFeestdatum: 12 november\nIn westerse (burgerlijke) agenda's: 25 n
+ ovember (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-n
+ otities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011127
+DTEND;VALUE=DATE:20011128
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:6111e599-5aba-54b8-b321-f94a8ba48f1f
+SUMMARY:Alberik (14 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Alberik. Bisschop van Utrecht.\nFee
+ stdatum: 14 november\nIn westerse (burgerlijke) agenda's: 27 november (oud
+ e kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011129
+DTEND;VALUE=DATE:20011130
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2fa2d5e2-4d87-525e-a6e5-b1e416ae8d75
+SUMMARY:Lubuinus (16 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Lubuinus. Missionaris in Friesland.
+ \nFeestdatum: 16 november\nIn westerse (burgerlijke) agenda's: 29 november
+  (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011204
+DTEND;VALUE=DATE:20011205
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:4b13cd0a-c08d-5601-b451-b3acba6e2205
+SUMMARY:Amalberga van Susteren (21 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Amalberga van Susteren. Abdis.\nFee
+ stdatum: 21 november\nIn westerse (burgerlijke) agenda's: 4 december (oude
+  kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heiligen.n
+ et)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011204
+DTEND;VALUE=DATE:20011205
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f6c4f08f-bff7-5e85-86ad-0bb22c8b1ae0
+SUMMARY:Tempelgang van de Moeder Gods (21 november Juliaans)
+DESCRIPTION:Maria wordt als kind in de tempel gebracht.\nFeestdatum: 21 nov
+ ember\nIn westerse (burgerlijke) agenda's: 4 december (oude kalender +13 d
+ agen tot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.o
+ rg/Great_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oc
+ a.org/saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011206
+DTEND;VALUE=DATE:20011207
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:48e0e354-2c72-50f5-af1f-84e8184fa2cb
+SUMMARY:Trudo (23 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Trudo. Abt\, stichter abdij St. Tru
+ iden.\nFeestdatum: 23 november\nIn westerse (burgerlijke) agenda's: 6 dece
+ mber (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-noti
+ ties
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011210
+DTEND;VALUE=DATE:20011211
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:fe07c61c-9f86-5843-8767-50249aef8a85
+SUMMARY:Acharius van Doornik (27 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Acharius van Doornik. Bisschop.\nFe
+ estdatum: 27 november\nIn westerse (burgerlijke) agenda's: 10 december (ou
+ de kalender +13 dagen tot 2100).\nBron: heiligen.net (https://www.heiligen
+ .net)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011211
+DTEND;VALUE=DATE:20011212
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:bfa80849-326a-58e2-8cac-4207c022f366
+SUMMARY:Oda van de Peel (28 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Oda van de Peel. Icoon in parochie.
+ \nFeestdatum: 28 november\nIn westerse (burgerlijke) agenda's: 11 december
+  (oude kalender +13 dagen tot 2100).\nBron: gele app
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011212
+DTEND;VALUE=DATE:20011213
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:3f4eec97-17b2-5049-84c3-67201c7cc03b
+SUMMARY:Radboud (29 november Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Radboud. Icoon in parochie\, bissch
+ op van Utrecht.\nFeestdatum: 29 november\nIn westerse (burgerlijke) agenda
+ 's: 12 december (oude kalender +13 dagen tot 2100).\nBron: EIR3-app / syna
+ xarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011214
+DTEND;VALUE=DATE:20011215
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:aaa2dabc-f365-57ab-b812-b9872a17208a
+SUMMARY:Eligius (1 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Eligius. Bisschop van Noyon.\nFeest
+ datum: 1 december\nIn westerse (burgerlijke) agenda's: 14 december (oude k
+ alender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011227
+DTEND;VALUE=DATE:20011228
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:395c3cbd-1eb4-5bbb-8219-d5a15df38763
+SUMMARY:Folciunus (14 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.\nFe
+ estdatum: 14 december\nIn westerse (burgerlijke) agenda's: 27 december (ou
+ de kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011228
+DTEND;VALUE=DATE:20011229
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:ec668eb1-67a1-5f56-911f-b2d7914638a3
+SUMMARY:Aubertus van Kamerijk (15 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.\nF
+ eestdatum: 15 december\nIn westerse (burgerlijke) agenda's: 28 december (o
+ ude kalender +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities\nB
+ ron: Wikipedia (NL) — Lijst van christelijke heiligen (https://nl.wikipedi
+ a.org/wiki/Lijst_van_christelijke_heiligen)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20011231
+DTEND;VALUE=DATE:20020101
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:f8157086-5b47-54ee-9a2b-fa5e69426e8e
+SUMMARY:Winnibald (18 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Winnibald. Abt en missionaris van E
+ ngeland en Heidenheim (Duitsland).\nFeestdatum: 18 december\nIn westerse (
+ burgerlijke) agenda's: 31 december (oude kalender +13 dagen tot 2100).\nBr
+ on: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010104
+DTEND;VALUE=DATE:20010105
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:4f6bb15f-62cc-5d8d-85dc-1393b0ae2e78
+SUMMARY:Hunger van Utrecht (22 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Hunger van Utrecht.\nFeestdatum: 22
+  december\nIn westerse (burgerlijke) agenda's: 4 januari (oude kalender +1
+ 3 dagen tot 2100).\nBron: Wikipedia (NL) — Lijst van christelijke heiligen
+  (https://nl.wikipedia.org/wiki/Lijst_van_christelijke_heiligen)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010105
+DTEND;VALUE=DATE:20010106
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:2fd995d6-c5ee-5e2c-8c7a-b31af030ebdf
+SUMMARY:Egbert van Rathmelsigi (23 december Juliaans)
+DESCRIPTION:Heilige van de Lage Landen: Egbert van Rathmelsigi.\nFeestdatum
+ : 23 december\nIn westerse (burgerlijke) agenda's: 5 januari (oude kalende
+ r +13 dagen tot 2100).\nBron: EIR3-app / synaxarion-notities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20010107
+DTEND;VALUE=DATE:20010108
+RRULE:FREQ=YEARLY
+DTSTAMP:20260815T212203Z
+UID:c51b878e-9a29-5ac1-9a91-ce5926267507
+SUMMARY:Kerstfeest (Geboorte van Christus) (25 december Juliaans)
+DESCRIPTION:Geboorte van onze Heer Jezus Christus.\nFeestdatum: 25 december
+ \nIn westerse (burgerlijke) agenda's: 7 januari (oude kalender +13 dagen t
+ ot 2100).\nBron: OrthodoxWiki — Great Feasts (https://orthodoxwiki.org/Gre
+ at_Feasts)\nBron: OCA — Lives of the Saints / Feasts (https://www.oca.org/
+ saints/lives)
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
