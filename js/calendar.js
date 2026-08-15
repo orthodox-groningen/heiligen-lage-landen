@@ -90,26 +90,26 @@
   }
 
   function renderToday(entries, style) {
-    const cardDate = document.getElementById("today-date");
+    const heading = document.getElementById("today-heading");
     const cardNote = document.getElementById("today-note");
     const cardEntries = document.getElementById("today-entries");
-    const dayLink = document.getElementById("today-day-link");
-    if (!cardDate || !cardEntries) return;
+    if (!cardEntries) return;
 
     const today = todayMmdd(style);
     const civil = civilTodayMmdd();
     const matched = entries.filter((e) => e.feestdatum === today);
 
-    cardDate.textContent = `${label(today)} (${stylePhrase(style)})`;
+    if (heading) {
+      heading.textContent = `Vandaag · ${label(today)} (${stylePhrase(style)})`;
+    }
+
     if (cardNote) {
       if (style === "juliaans") {
         cardNote.textContent =
-          `In Nederland is de burgerlijke datum vandaag ${label(civil)} ` +
-          `(Gregoriaans · nieuwe kalender); dat is ${label(today)} in de oude/Juliaanse tijdrekening.`;
+          `Burgerlijk in Nederland is het ${label(civil)} (Gregoriaans · nieuwe kalender).`;
       } else {
         const julian = todayMmdd("juliaans");
         cardNote.textContent =
-          `Burgerlijke datum in Nederland: ${label(civil)}. ` +
           `In de oude/Juliaanse tijdrekening is het vandaag ${label(julian)}.`;
       }
     }
@@ -128,10 +128,6 @@
         })
         .join("");
       cardEntries.innerHTML = `<ul>${items}</ul>`;
-    }
-    if (dayLink) {
-      dayLink.href = `${base}datum/${today}/`;
-      dayLink.textContent = `Open datumpagina ${label(today)}`;
     }
   }
 
