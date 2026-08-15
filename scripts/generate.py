@@ -66,6 +66,7 @@ def write_text(path: Path, text: str) -> None:
 
 def entry_permalink(entry: dict[str, Any]) -> str:
     kind = "feesten" if entry["soort"] == "feest" else "heiligen"
+    # Leading slash: Hugo canonifyURLs zet baseURL-prefix voor Pages.
     return f"/{kind}/{entry['id']}/"
 
 

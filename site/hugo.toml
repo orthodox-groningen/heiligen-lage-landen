@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "nl"
 title = "Heiligen van de Lage Landen"
 enableRobotsTXT = true
+canonifyURLs = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
