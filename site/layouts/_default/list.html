@@ -3,11 +3,11 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <ul class="entry-list">
-    {{ range sort .Pages "Params.datum_gregoriaans" }}
+    {{ range sort .Pages "Params.feestdatum" }}
       <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ if .Params.datum_gregoriaans }}
-          <span class="meta">{{ .Params.datum_gregoriaans }} G · {{ .Params.datum_juliaans }} J</span>
+        {{ with .Params.feestdatum }}
+          <span class="meta">{{ . }}</span>
         {{ end }}
       </li>
     {{ end }}

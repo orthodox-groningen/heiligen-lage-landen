@@ -6,12 +6,18 @@ Elke entry is één YAML-bestand in `data/feesten/` of `data/heiligen/`.
 
 ```yaml
 datum:
-  waarde: "12-06"          # MM-DD
-  # stijl weglaten = gregoriaans (default)
-  stijl: gregoriaans       # of: juliaans
+  waarde: "08-15"          # MM-DD = feestdatum
+  # stijl weglaten = gregoriaans (default) — alleen documentatie van de invoer
+  stijl: juliaans          # of: gregoriaans
 ```
 
-De build normaliseert altijd naar beide stijlen (offset 13 dagen tot 2100).
+De **feestdatum** is de kalenderdag van het feest (bijv. Ontslapen = 15 augustus).
+Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
+`stijl` legt alleen vast hoe de beheerder de waarde bedoelde; er wordt géén
++13-dagenverschuiving op de feestdatum toegepast.
+
+De offset van 13 dagen (tot 2100) wordt wél gebruikt om **vandaag** om te
+rekenen: burgerlijk 15 augustus = Juliaans 2 augustus.
 
 ## Referenties
 

@@ -97,8 +97,7 @@ def render_refs_md(refs: list[dict[str, Any]]) -> str:
 def write_entry_page(entry: dict[str, Any]) -> None:
     kind = "feesten" if entry["soort"] == "feest" else "heiligen"
     title = entry["namen"]["primair"]
-    g = entry["datum_norm"]["gregoriaans"]
-    j = entry["datum_norm"]["juliaans"]
+    feestdatum = entry["datum_norm"]["feestdatum"]
     fm = [
         "---",
         f"title: {yaml_quote(title)}",
@@ -106,8 +105,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         f"type: {entry['soort']}",
         f"soort: {entry['soort']}",
         f"entry_id: {entry['id']}",
-        f"datum_gregoriaans: {g}",
-        f"datum_juliaans: {j}",
+        f"feestdatum: {feestdatum}",
         f"status: {entry.get('status', 'stub')}",
         f"lagenlanden: {'true' if entry.get('lagenlanden') else 'false'}",
         f"source_path: {yaml_quote(entry['source_path'])}",
@@ -126,8 +124,8 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         body.append("*" + " · ".join(entry["titels"]) + "*")
         body.append("")
     body.append(
-        f"**Feestdag:** {mmdd_label(g)} (Gregoriaans) · "
-        f"{mmdd_label(j)} (Juliaans)"
+        f"**Feestdag:** {mmdd_label(feestdatum)} "
+        f"(zelfde datum in de nieuwe/Gregoriaanse én de oude/Juliaanse kalender)"
     )
     body.append("")
     if entry.get("locaties"):
@@ -154,58 +152,51 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     body.append("")
     body.append(render_refs_md(entry.get("referenties") or []))
     body.append("")
-    body.append(
-        f"[Dagpagina Gregoriaans](/dag/g/{g}/) · "
-        f"[Dagpagina Juliaans](/dag/j/{j}/)"
-    )
+    body.append(f"[Datumpagina {mmdd_label(feestdatum)}](/datum/{feestdatum}/)")
     body.append("")
     write_text(CONTENT / kind / f"{entry['id']}.md", "\n".join(fm + ["", *body]))
 
 
-def write_day_pages(entries: list[dict[str, Any]]) -> None:
-    by_g: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    by_j: dict[str, list[dict[str, Any]]] = defaultdict(list)
+def write_date_pages(entries: list[dict[str, Any]]) -> None:
+    by_date: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for entry in entries:
-        by_g[entry["datum_norm"]["gregoriaans"]].append(entry)
-        by_j[entry["datum_norm"]["juliaans"]].append(entry)
+        by_date[entry["datum_norm"]["feestdatum"]].append(entry)
         for extra in entry.get("datum_extra_norm") or []:
-            by_g[extra["gregoriaans"]].append(entry)
-            by_j[extra["juliaans"]].append(entry)
+            by_date[extra["feestdatum"]].append(entry)
 
-    def write_bucket(prefix: str, mapping: dict[str, list[dict[str, Any]]], label: str) -> None:
-        for mmdd, items in sorted(mapping.items()):
-            # unieke id's behouden volgorde
-            seen: set[str] = set()
-            unique: list[dict[str, Any]] = []
-            for item in items:
-                if item["id"] in seen:
-                    continue
-                seen.add(item["id"])
-                unique.append(item)
-            title = f"{mmdd_label(mmdd)} ({label})"
-            lines = [
-                "---",
-                f"title: {yaml_quote(title)}",
-                f"datum: {mmdd}",
-                f"stijl: {prefix}",
-                "---",
-                "",
-                f"# {title}",
-                "",
-            ]
-            if not unique:
-                lines.append("_Geen feesten of heiligen op deze dag._")
-            for entry in unique:
-                link = entry_permalink(entry)
-                kind_label = "Feest" if entry["soort"] == "feest" else "Heilige"
-                lines.append(f"- **[{entry['namen']['primair']}]({link})** ({kind_label})")
-                if entry.get("samenvatting"):
-                    lines.append(f"  {entry['samenvatting'].strip().splitlines()[0]}")
-            lines.append("")
-            write_text(CONTENT / "dag" / prefix / f"{mmdd}.md", "\n".join(lines))
-
-    write_bucket("g", by_g, "Gregoriaans")
-    write_bucket("j", by_j, "Juliaans")
+    for mmdd, items in sorted(by_date.items()):
+        seen: set[str] = set()
+        unique: list[dict[str, Any]] = []
+        for item in items:
+            if item["id"] in seen:
+                continue
+            seen.add(item["id"])
+            unique.append(item)
+        title = f"{mmdd_label(mmdd)}"
+        lines = [
+            "---",
+            f"title: {yaml_quote(title)}",
+            f"feestdatum: {mmdd}",
+            "type: datum",
+            "---",
+            "",
+            f"# {title}",
+            "",
+            "Dit is een **datumpagina**: feesten en heiligen waarvan de feestdag "
+            f"**{mmdd_label(mmdd)}** is — in de nieuwe (Gregoriaanse) én de oude "
+            "(Juliaanse) kalender dezelfde dagnaam.",
+            "",
+        ]
+        if not unique:
+            lines.append("_Geen feesten of heiligen op deze datum._")
+        for entry in unique:
+            link = entry_permalink(entry)
+            kind_label = "Feest" if entry["soort"] == "feest" else "Heilige"
+            lines.append(f"- **[{entry['namen']['primair']}]({link})** ({kind_label})")
+            if entry.get("samenvatting"):
+                lines.append(f"  {entry['samenvatting'].strip().splitlines()[0]}")
+        lines.append("")
+        write_text(CONTENT / "datum" / f"{mmdd}.md", "\n".join(lines))
 
 
 def write_indexes() -> None:
@@ -237,12 +228,12 @@ Grote vaste feesten van de jaarcyclus (zonder paascyclus in deze MVP).
 """,
     )
     write_text(
-        CONTENT / "dag" / "_index.md",
+        CONTENT / "datum" / "_index.md",
         """---
-title: "Dagen"
+title: "Datums"
 ---
 
-Dagpagina's per kalenderstijl.
+Datumpagina's: alle feesten en heiligen op een kalenderdatum (MM-DD).
 """,
     )
     write_text(
@@ -278,8 +269,7 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
                 "titels": entry.get("titels") or [],
                 "samenvatting": (entry.get("samenvatting") or "").strip(),
                 "url": entry_permalink(entry),
-                "gregoriaans": entry["datum_norm"]["gregoriaans"],
-                "juliaans": entry["datum_norm"]["juliaans"],
+                "feestdatum": entry["datum_norm"]["feestdatum"],
                 "lagenlanden": bool(entry.get("lagenlanden")),
                 "status": entry.get("status") or "stub",
                 "icoon": (entry.get("icoon") or {}).get("bestand")
@@ -313,9 +303,7 @@ def _fold(line: str) -> str:
 def build_ics(
     entries: list[dict[str, Any]],
     *,
-    style_key: str,
     cal_name: str,
-    filter_lagenlanden: bool | None = None,
 ) -> str:
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
@@ -328,24 +316,20 @@ def build_ics(
         "X-WR-TIMEZONE:UTC",
     ]
     for entry in entries:
-        if filter_lagenlanden is True and not entry.get("lagenlanden"):
-            continue
-        if filter_lagenlanden is False and entry.get("lagenlanden") and entry["soort"] == "heilige":
-            # keep feesten always when filter is "feesten only" — handled by caller
-            pass
-        mmdd = entry["datum_norm"][style_key]
+        mmdd = entry["datum_norm"]["feestdatum"]
         month, day = (int(x) for x in mmdd.split("-"))
-        # Ankerjaar voor RRULE; Google gebruikt Gregoriaanse burgerkalender.
         anchor = date(2001, month, day)
         dt_start = anchor.strftime("%Y%m%d")
         dt_end_s = (anchor + timedelta(days=1)).strftime("%Y%m%d")
-        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{entry['id']}:{style_key}:{mmdd}"))
+        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{entry['id']}:feestdatum:{mmdd}"))
         summary = entry["namen"]["primair"]
         desc_parts = []
         if entry.get("samenvatting"):
             desc_parts.append(entry["samenvatting"].strip())
-        desc_parts.append(f"Gregoriaans: {mmdd_label(entry['datum_norm']['gregoriaans'])}")
-        desc_parts.append(f"Juliaans: {mmdd_label(entry['datum_norm']['juliaans'])}")
+        desc_parts.append(
+            f"Feestdag: {mmdd_label(mmdd)} "
+            "(zelfde dagnaam in nieuwe/Gregoriaanse en oude/Juliaanse kalender)"
+        )
         for ref in entry.get("referenties") or []:
             label = ref.get("label") or "Bron"
             url = ref.get("url")
@@ -371,58 +355,26 @@ def build_ics(
 def write_ics(entries: list[dict[str, Any]]) -> None:
     STATIC_ICS.mkdir(parents=True, exist_ok=True)
     feeds = [
+        ("alles.ics", "Heiligenkalender (alles)", entries),
         (
-            "alles-gregoriaans.ics",
-            "Heiligenkalender (Gregoriaans)",
-            "gregoriaans",
-            None,
+            "lagenlanden.ics",
+            "Heiligen Lage Landen",
+            [e for e in entries if e.get("lagenlanden")],
         ),
         (
-            "alles-juliaans.ics",
-            "Heiligenkalender (Juliaans)",
-            "juliaans",
-            None,
-        ),
-        (
-            "lagenlanden-gregoriaans.ics",
-            "Heiligen Lage Landen (Gregoriaans)",
-            "gregoriaans",
-            True,
-        ),
-        (
-            "lagenlanden-juliaans.ics",
-            "Heiligen Lage Landen (Juliaans)",
-            "juliaans",
-            True,
-        ),
-        (
-            "feesten-gregoriaans.ics",
-            "Vaste feesten (Gregoriaans)",
-            "gregoriaans",
-            None,
-        ),
-        (
-            "feesten-juliaans.ics",
-            "Vaste feesten (Juliaans)",
-            "juliaans",
-            None,
+            "feesten.ics",
+            "Vaste feesten",
+            [e for e in entries if e["soort"] == "feest"],
         ),
     ]
-    for filename, name, style, lagen in feeds:
-        subset = entries
-        if filename.startswith("feesten-"):
-            subset = [e for e in entries if e["soort"] == "feest"]
-        elif lagen is True:
-            subset = [e for e in entries if e.get("lagenlanden")]
-        write_text(
-            STATIC_ICS / filename,
-            build_ics(subset, style_key=style, cal_name=name, filter_lagenlanden=None),
-        )
+    for filename, name, subset in feeds:
+        write_text(STATIC_ICS / filename, build_ics(subset, cal_name=name))
 
 
 def clean_generated() -> None:
     for rel in (
         "content/dag",
+        "content/datum",
         "content/heiligen",
         "content/feesten",
         "static/data/entries.json",
@@ -444,7 +396,7 @@ def main() -> int:
     write_indexes()
     for entry in entries:
         write_entry_page(entry)
-    write_day_pages(entries)
+    write_date_pages(entries)
     write_entries_json(entries)
     write_ics(entries)
     print(f"Gegenereerd: {len(entries)} entries.")

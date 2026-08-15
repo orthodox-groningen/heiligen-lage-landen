@@ -13,7 +13,7 @@ MVP: nog géén paascyclus.
 | Data      | YAML onder `data/` (feesten, heiligen, bronnen) |
 | Build     | `scripts/validate.py`, `scripts/generate.py` → Hugo-content + ICS |
 | Site      | Hugo in `site/` |
-| Agenda    | ICS-feeds onder `/ics/` (Gregoriaans en Juliaans) |
+| Agenda    | ICS-feeds onder `/ics/` (feestdatum = kalenderdag) |
 
 Datums: default **Gregoriaans**; optioneel `datum.stijl: juliaans`. Zie [docs/datamodel.md](docs/datamodel.md).
 

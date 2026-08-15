@@ -2,7 +2,10 @@
 <section class="kalender-page">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <p class="hint">Toont datums in de gekozen stijl (Gregoriaans/Juliaans). Tik een dag voor details.</p>
+  <p class="hint">
+    Elke gemarkeerde dag is een <strong>datumpagina</strong> (feestdatum MM-DD).
+    De markering “vandaag” volgt de gekozen tijdrekening (Nieuw/Oud).
+  </p>
   <div id="year-grid" class="year-grid" data-kalender></div>
 </section>
 {{ end }}

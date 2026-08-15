@@ -3,17 +3,15 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p>
-    De feeds gebruiken jaarlijkse herhaling (<code>RRULE:FREQ=YEARLY</code>).
-    <strong>Gregoriaans</strong> zet gebeurtenissen op de nieuwe-stijl-datum;
-    <strong>Juliaans</strong> op de oude-stijl-datum (als burgerlijke MM-DD).
+    Gebeurtenissen vallen op de <strong>feestdatum</strong> (bijv. 15&nbsp;augustus =
+    Ontslapen). Die dagnaam is gelijk in de nieuwe en de oude kalender.
+    De feeds gebruiken jaarlijkse herhaling (<code>RRULE:FREQ=YEARLY</code>) op
+    die kalenderdatum in je burgerlijke agenda.
   </p>
   <ul class="ics-list">
-    <li><a href="{{ "ics/alles-gregoriaans.ics" | relURL }}">Alles — Gregoriaans</a></li>
-    <li><a href="{{ "ics/alles-juliaans.ics" | relURL }}">Alles — Juliaans</a></li>
-    <li><a href="{{ "ics/lagenlanden-gregoriaans.ics" | relURL }}">Alleen Lage Landen — Gregoriaans</a></li>
-    <li><a href="{{ "ics/lagenlanden-juliaans.ics" | relURL }}">Alleen Lage Landen — Juliaans</a></li>
-    <li><a href="{{ "ics/feesten-gregoriaans.ics" | relURL }}">Alleen vaste feesten — Gregoriaans</a></li>
-    <li><a href="{{ "ics/feesten-juliaans.ics" | relURL }}">Alleen vaste feesten — Juliaans</a></li>
+    <li><a href="{{ "ics/alles.ics" | relURL }}">Alles</a></li>
+    <li><a href="{{ "ics/lagenlanden.ics" | relURL }}">Alleen heiligen van de Lage Landen</a></li>
+    <li><a href="{{ "ics/feesten.ics" | relURL }}">Alleen vaste feesten</a></li>
   </ul>
   <h2>Google Calendar</h2>
   <ol>

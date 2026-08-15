@@ -119,4 +119,4 @@ def load_entries() -> list[dict[str, Any]]:
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
         raise ValueError(f"Dubbele id's: {sorted(dupes)}")
-    return sorted(entries, key=lambda e: (e["datum_norm"]["gregoriaans"], e["id"]))
+    return sorted(entries, key=lambda e: (e["datum_norm"]["feestdatum"], e["id"]))

@@ -1,5 +1,6 @@
 (() => {
   const STORAGE_KEY = "kalender-stijl";
+  const OFFSET_DAYS = 13; // tot 2100
   const MONTHS = [
     "",
     "januari",
@@ -51,17 +52,35 @@
     return `${m}-${day}`;
   }
 
+  function addDays(d, n) {
+    const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    x.setDate(x.getDate() + n);
+    return x;
+  }
+
   function label(mmdd) {
     const [m, d] = mmdd.split("-").map(Number);
     return `${d} ${MONTHS[m]}`;
   }
 
-  function styleKey(style) {
-    return style === "juliaans" ? "juliaans" : "gregoriaans";
+  function stylePhrase(style) {
+    return style === "juliaans"
+      ? "Juliaans · oude kalender"
+      : "Gregoriaans · nieuwe kalender";
   }
 
-  function dayPrefix(style) {
-    return style === "juliaans" ? "j" : "g";
+  /** Kalenderdatum van "vandaag" in de gekozen tijdrekening. */
+  function todayMmdd(style) {
+    const civil = new Date();
+    if (style === "juliaans") {
+      return mmddFromDate(addDays(civil, -OFFSET_DAYS));
+    }
+    return mmddFromDate(civil);
+  }
+
+  /** Burgerlijke (Gregoriaanse) datum van vandaag, ter toelichting. */
+  function civilTodayMmdd() {
+    return mmddFromDate(new Date());
   }
 
   async function loadEntries() {
@@ -72,63 +91,80 @@
 
   function renderToday(entries, style) {
     const cardDate = document.getElementById("today-date");
+    const cardNote = document.getElementById("today-note");
     const cardEntries = document.getElementById("today-entries");
     const dayLink = document.getElementById("today-day-link");
     if (!cardDate || !cardEntries) return;
 
-    const today = mmddFromDate(new Date());
-    const key = styleKey(style);
-    // "Vandaag" volgt de burgerlijke datum; filter op de gekozen stijl-sleutel.
-    // Gregoriaans: match vandaag op gregoriaans-veld.
-    // Juliaans: toon entries waarvan juliaanse MM-DD gelijk is aan vandaag (liturgische kijk).
-    const matched = entries.filter((e) => e[key] === today);
+    const today = todayMmdd(style);
+    const civil = civilTodayMmdd();
+    const matched = entries.filter((e) => e.feestdatum === today);
 
-    cardDate.textContent = `${label(today)} · ${style === "juliaans" ? "Juliaans" : "Gregoriaans"}`;
+    cardDate.textContent = `${label(today)} (${stylePhrase(style)})`;
+    if (cardNote) {
+      if (style === "juliaans") {
+        cardNote.textContent =
+          `In Nederland is de burgerlijke datum vandaag ${label(civil)} ` +
+          `(Gregoriaans · nieuwe kalender); dat is ${label(today)} in de oude/Juliaanse tijdrekening.`;
+      } else {
+        const julian = todayMmdd("juliaans");
+        cardNote.textContent =
+          `Burgerlijke datum in Nederland: ${label(civil)}. ` +
+          `In de oude/Juliaanse tijdrekening is het vandaag ${label(julian)}.`;
+      }
+    }
+
     if (matched.length === 0) {
-      cardEntries.innerHTML = "<p>Geen feest of heilige uit deze collectie op deze datum.</p>";
+      cardEntries.innerHTML =
+        "<p>Geen feest of heilige uit deze collectie op deze kalenderdatum.</p>";
     } else {
       const items = matched
         .map((e) => {
           const kind = e.soort === "feest" ? "Feest" : "Heilige";
-          const summary = e.samenvatting ? `<div class="muted">${e.samenvatting}</div>` : "";
+          const summary = e.samenvatting
+            ? `<div class="muted">${e.samenvatting}</div>`
+            : "";
           return `<li><a href="${base}${e.url.replace(/^\//, "")}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
         })
         .join("");
       cardEntries.innerHTML = `<ul>${items}</ul>`;
     }
     if (dayLink) {
-      dayLink.href = `${base}dag/${dayPrefix(style)}/${today}/`;
-      dayLink.textContent = "Open dagpagina";
+      dayLink.href = `${base}datum/${today}/`;
+      dayLink.textContent = `Open datumpagina ${label(today)}`;
     }
   }
 
   function renderYearGrid(entries, style) {
     const root = document.getElementById("year-grid");
     if (!root) return;
-    const key = styleKey(style);
     const byDay = new Map();
     for (const e of entries) {
-      const mmdd = e[key];
+      const mmdd = e.feestdatum;
       if (!byDay.has(mmdd)) byDay.set(mmdd, []);
       byDay.get(mmdd).push(e);
     }
 
     const year = new Date().getFullYear();
+    const today = todayMmdd(style);
     const dow = ["ma", "di", "wo", "do", "vr", "za", "zo"];
     let html = "";
     for (let month = 1; month <= 12; month++) {
       html += `<section class="month-card"><h2>${MONTHS[month]}</h2><div class="month-days">`;
       for (const d of dow) html += `<div class="dow">${d}</div>`;
       const first = new Date(year, month - 1, 1);
-      // JS: 0=zo … convert to Monday-first
       let start = (first.getDay() + 6) % 7;
       for (let i = 0; i < start; i++) html += `<div></div>`;
       const daysInMonth = new Date(year, month, 0).getDate();
       for (let day = 1; day <= daysInMonth; day++) {
         const mmdd = `${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
         const has = byDay.has(mmdd);
-        const href = `${base}dag/${dayPrefix(style)}/${mmdd}/`;
-        html += `<a class="day${has ? " has-entry" : ""}" href="${href}">${day}</a>`;
+        const isToday = mmdd === today;
+        const href = `${base}datum/${mmdd}/`;
+        const cls = ["day", has ? "has-entry" : "", isToday ? "is-today" : ""]
+          .filter(Boolean)
+          .join(" ");
+        html += `<a class="${cls}" href="${href}" title="${label(mmdd)}">${day}</a>`;
       }
       html += `</div></section>`;
     }
