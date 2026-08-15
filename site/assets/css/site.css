@@ -172,6 +172,11 @@ h2 {
   border-radius: 0.35rem;
 }
 
+.today-note {
+  margin: 0 0 0.85rem;
+  max-width: 40rem;
+}
+
 .today-date {
   font-family: var(--serif);
   font-size: 1.35rem;
