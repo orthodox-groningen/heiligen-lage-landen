@@ -16,8 +16,9 @@ Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
 `stijl` legt alleen vast hoe de beheerder de waarde bedoelde; er wordt géén
 +13-dagenverschuiving op de feestdatum toegepast.
 
-De offset van 13 dagen (tot 2100) wordt wél gebruikt om **vandaag** om te
-rekenen: burgerlijk 15 augustus = Juliaans 2 augustus.
+De offset van 13 dagen (tot 2100) wordt gebruikt om **vandaag** om te
+rekenen, en voor **ICS-feeds “oud”**: de afspraak valt op de burgerlijke
+vierdatum (feestdatum+13), met de Juliaanse feestdatum in de titel.
 
 ## Referenties
 

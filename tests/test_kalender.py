@@ -12,7 +12,6 @@ from kalender import (
 
 
 def test_feestdatum_same_in_both_styles():
-    """Ontslapen is 15 augustus in beide kalenders — geen +13 op de feestdatum."""
     d = normalize_dates("08-15", "juliaans")
     assert d["feestdatum"] == "08-15"
     assert d["stijl"] == "juliaans"
@@ -27,3 +26,8 @@ def test_gregorian_default_feestdatum():
 def test_today_conversion_aug15_civil_is_aug2_julian():
     assert civil_to_julian_mmdd("08-15") == "08-02"
     assert julian_to_civil_mmdd("08-02") == "08-15"
+
+
+def test_transfiguratie_oud_ics_civil_date():
+    """6 augustus Juliaans → 19 augustus burgerlijk in westerse agenda."""
+    assert julian_to_civil_mmdd("08-06") == "08-19"

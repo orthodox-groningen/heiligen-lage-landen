@@ -308,9 +308,28 @@ h2 {
 }
 
 .day.has-entry {
-  background: rgba(201, 162, 39, 0.18);
   color: var(--ink);
   font-weight: 600;
+}
+
+.day-feest {
+  background: rgba(201, 162, 39, 0.35);
+}
+
+.day-heilige {
+  background: rgba(110, 160, 200, 0.35);
+}
+
+.day-beide {
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.4),
+    rgba(110, 160, 200, 0.4)
+  );
+}
+
+.day-vasten {
+  background: rgba(160, 90, 90, 0.35);
 }
 
 .day.is-today {
@@ -320,6 +339,122 @@ h2 {
 
 .day:hover {
   outline: 1px solid var(--gold);
+}
+
+.year-label {
+  color: var(--gold-soft);
+  font-weight: 500;
+}
+
+.year-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.filter-bar,
+.browse-mode,
+.letter-nav,
+.month-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.chip:has(input:checked) {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.chip input {
+  accent-color: var(--gold);
+}
+
+.letter-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  min-width: 2rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 0.25rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.letter-btn[aria-pressed="true"] {
+  background: var(--gold);
+  color: #1a1612;
+  font-weight: 600;
+}
+
+.letter-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.legend.compact {
+  font-size: 0.9rem;
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.15rem;
+  margin-right: 0.35rem;
+  vertical-align: -0.1rem;
+}
+
+.swatch.day-feest {
+  background: rgba(201, 162, 39, 0.55);
+}
+
+.swatch.day-heilige {
+  background: rgba(110, 160, 200, 0.55);
+}
+
+.swatch.day-beide {
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.55),
+    rgba(110, 160, 200, 0.55)
+  );
+}
+
+.swatch.day-vasten {
+  background: rgba(160, 90, 90, 0.55);
+}
+
+.button.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.uitleg-page {
+  max-width: 42rem;
 }
 
 .site-footer {

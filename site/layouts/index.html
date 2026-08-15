@@ -3,9 +3,8 @@
   <p class="eyebrow">Orthodoxe jaarcyclus — Lage Landen</p>
   <h1 id="today-heading">Vandaag</h1>
   <p class="lede">
-    De knop <strong>Nieuw</strong>/<strong>Oud</strong> bepaalt hoe we <em>vandaag</em>
-    rekenen. Feestdagen zelf hebben in beide kalenders dezelfde dagnaam
-    (bijv. Ontslapen = 15&nbsp;augustus).
+    Wat er vandaag op de kalender staat.
+    <a href="{{ "uitleg/" | relURL }}">Uitleg over datums en Nieuw/Oud</a>.
   </p>
 
   <div class="today-card" id="today-card" aria-live="polite">
@@ -15,7 +14,8 @@
 
   <div class="home-actions">
     <a class="button" href="{{ "kalender/" | relURL }}">Jaarkalender</a>
-    <a class="button button-secondary" href="{{ "agenda/" | relURL }}">Agenda abonneren</a>
+    <a class="button button-secondary" href="{{ "overzicht/" | relURL }}">Overzicht</a>
+    <a class="button button-secondary" href="{{ "agenda/" | relURL }}">Agenda</a>
   </div>
 
   {{ .Content }}

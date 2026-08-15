@@ -1,22 +1,37 @@
 {{ define "main" }}
-<section class="agenda-page">
+<section class="agenda-page" data-agenda>
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+
   <p>
-    Gebeurtenissen vallen op de <strong>feestdatum</strong> (bijv. 15&nbsp;augustus =
-    Ontslapen). Die dagnaam is gelijk in de nieuwe en de oude kalender.
-    De feeds gebruiken jaarlijkse herhaling (<code>RRULE:FREQ=YEARLY</code>) op
-    die kalenderdatum in je burgerlijke agenda.
+    Kies wat er in de feed moet en of die voor de <strong>nieuwe</strong> of
+    <strong>oude</strong> kalender is.
+    <a href="{{ "uitleg/" | relURL }}#agenda">Meer uitleg</a>.
   </p>
-  <ul class="ics-list">
-    <li><a href="{{ "ics/alles.ics" | relURL }}">Alles</a></li>
-    <li><a href="{{ "ics/lagenlanden.ics" | relURL }}">Alleen heiligen van de Lage Landen</a></li>
-    <li><a href="{{ "ics/feesten.ics" | relURL }}">Alleen vaste feesten</a></li>
-  </ul>
+
+  <div class="filter-bar" role="group" aria-label="Inhoud">
+    <label class="chip"><input type="checkbox" name="ics-show" value="heilige" checked> Heiligen</label>
+    <label class="chip"><input type="checkbox" name="ics-show" value="feest" checked> Feesten</label>
+    <label class="chip"><input type="checkbox" name="ics-show" value="vasten" disabled> Vasten <span class="meta">(binnenkort)</span></label>
+  </div>
+
+  <div class="filter-bar" role="group" aria-label="Kalenderstijl voor ICS">
+    <label class="chip"><input type="radio" name="ics-stijl" value="nieuw" checked> Nieuw (burgerlijke feestdatum)</label>
+    <label class="chip"><input type="radio" name="ics-stijl" value="oud"> Oud (vierdatum in westerse agenda, +13)</label>
+  </div>
+
+  <p class="hint" id="ics-hint"></p>
+  <p>
+    <a class="button" id="ics-download" href="#">Download / abonneer ICS</a>
+  </p>
+
   <h2>Google Calendar</h2>
   <ol>
     <li>Open Google Calendar → Instellingen → Agenda toevoegen → Via URL.</li>
-    <li>Plak de volledige <code>https://…/ics/….ics</code>-URL van een feed hierboven.</li>
+    <li>Plak de URL van de knop hierboven (of rechtsklik → linkadres kopiëren).</li>
   </ol>
+
+  <h2>Alle vaste feeds</h2>
+  <ul class="ics-list" id="ics-all-links"></ul>
 </section>
 {{ end }}

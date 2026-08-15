@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
+from kalender import format_mmdd, julian_to_civil_mmdd, parse_mmdd  # noqa: E402
 
 SITE = ROOT / "site"
 CONTENT = SITE / "content"
@@ -304,7 +305,14 @@ def build_ics(
     entries: list[dict[str, Any]],
     *,
     cal_name: str,
+    stijl: str = "nieuw",
 ) -> str:
+    """Bouw ICS.
+
+    ``stijl=nieuw``: DTSTART op de feestdatum (burgerlijk gelijk aan feestdag-naam).
+    ``stijl=oud``: DTSTART op feestdatum+13 (vierdatum in westerse agenda's);
+    SUMMARY bevat de Juliaanse feestdatum.
+    """
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
         "BEGIN:VCALENDAR",
@@ -316,20 +324,29 @@ def build_ics(
         "X-WR-TIMEZONE:UTC",
     ]
     for entry in entries:
-        mmdd = entry["datum_norm"]["feestdatum"]
-        month, day = (int(x) for x in mmdd.split("-"))
+        feestdatum = entry["datum_norm"]["feestdatum"]
+        if stijl == "oud":
+            civil = julian_to_civil_mmdd(feestdatum)
+            month, day = parse_mmdd(civil)
+            summary = f"{entry['namen']['primair']} ({mmdd_label(feestdatum)} Juliaans)"
+            uid_key = f"{entry['id']}:oud:{feestdatum}"
+        else:
+            month, day = parse_mmdd(feestdatum)
+            summary = entry["namen"]["primair"]
+            uid_key = f"{entry['id']}:nieuw:{feestdatum}"
         anchor = date(2001, month, day)
         dt_start = anchor.strftime("%Y%m%d")
         dt_end_s = (anchor + timedelta(days=1)).strftime("%Y%m%d")
-        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{entry['id']}:feestdatum:{mmdd}"))
-        summary = entry["namen"]["primair"]
+        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, uid_key))
         desc_parts = []
         if entry.get("samenvatting"):
             desc_parts.append(entry["samenvatting"].strip())
-        desc_parts.append(
-            f"Feestdag: {mmdd_label(mmdd)} "
-            "(zelfde dagnaam in nieuwe/Gregoriaanse en oude/Juliaanse kalender)"
-        )
+        desc_parts.append(f"Feestdatum: {mmdd_label(feestdatum)}")
+        if stijl == "oud":
+            desc_parts.append(
+                f"In westerse (burgerlijke) agenda's: {mmdd_label(format_mmdd(month, day))} "
+                "(oude kalender +13 dagen tot 2100)."
+            )
         for ref in entry.get("referenties") or []:
             label = ref.get("label") or "Bron"
             url = ref.get("url")
@@ -354,21 +371,24 @@ def build_ics(
 
 def write_ics(entries: list[dict[str, Any]]) -> None:
     STATIC_ICS.mkdir(parents=True, exist_ok=True)
-    feeds = [
-        ("alles.ics", "Heiligenkalender (alles)", entries),
-        (
-            "lagenlanden.ics",
-            "Heiligen Lage Landen",
-            [e for e in entries if e.get("lagenlanden")],
-        ),
-        (
-            "feesten.ics",
-            "Vaste feesten",
-            [e for e in entries if e["soort"] == "feest"],
-        ),
-    ]
-    for filename, name, subset in feeds:
-        write_text(STATIC_ICS / filename, build_ics(subset, cal_name=name))
+    subsets = {
+        "alles": entries,
+        "heiligen": [e for e in entries if e["soort"] == "heilige"],
+        "feesten": [e for e in entries if e["soort"] == "feest"],
+    }
+    labels = {
+        "alles": "Heiligenkalender (alles)",
+        "heiligen": "Heiligen",
+        "feesten": "Vaste feesten",
+    }
+    for key, subset in subsets.items():
+        for stijl, suffix in (("nieuw", "nieuw"), ("oud", "oud")):
+            name = f"{labels[key]} — {suffix}"
+            filename = f"{key}-{suffix}.ics"
+            write_text(
+                STATIC_ICS / filename,
+                build_ics(subset, cal_name=name, stijl=stijl),
+            )
 
 
 def clean_generated() -> None:

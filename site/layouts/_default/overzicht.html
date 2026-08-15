@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="overzicht-page" data-overzicht>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class="filter-bar" role="group" aria-label="Toon">
+    <label class="chip"><input type="checkbox" name="show" value="heilige" checked> Heiligen</label>
+    <label class="chip"><input type="checkbox" name="show" value="feest" checked> Feesten</label>
+    <label class="chip"><input type="checkbox" name="show" value="vasten" disabled> Vasten <span class="meta">(binnenkort)</span></label>
+  </div>
+
+  <div class="browse-mode" role="group" aria-label="Bladeren">
+    <button type="button" class="style-btn" data-browse="letter" aria-pressed="true">Alfabet</button>
+    <button type="button" class="style-btn" data-browse="maand" aria-pressed="false">Maanden</button>
+  </div>
+
+  <nav class="letter-nav" id="letter-nav" aria-label="Letters"></nav>
+  <nav class="month-nav" id="month-nav" hidden aria-label="Maanden"></nav>
+
+  <p class="hint" id="overzicht-hint"></p>
+  <ul class="entry-list" id="overzicht-list"></ul>
+</section>
+{{ end }}
