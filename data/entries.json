@@ -1,13 +1,24 @@
 [
   {
-    "id": "kerst",
+    "id": "besnijdenis-des-heren",
     "soort": "feest",
-    "naam": "Kerstfeest (Geboorte van Christus)",
+    "naam": "Besnijdenis des Heren",
     "titels": [],
-    "samenvatting": "Geboorte van onze Heer Jezus Christus.",
-    "url": "/feesten/kerst/",
-    "gregoriaans": "01-07",
-    "juliaans": "12-25",
+    "samenvatting": "Het feest van de Besnijdenis des Heren volgens de vaste jaarcyclus.",
+    "url": "/feesten/besnijdenis-des-heren/",
+    "feestdatum": "01-01",
+    "lagenlanden": false,
+    "status": "curated",
+    "icoon": null
+  },
+  {
+    "id": "theofanie",
+    "soort": "feest",
+    "naam": "Theofanie (Doop des Heren)",
+    "titels": [],
+    "samenvatting": "Openbaring van de Heilige Drie-eenheid bij de doop van Christus in de Jordaan.",
+    "url": "/feesten/theofanie/",
+    "feestdatum": "01-06",
     "lagenlanden": false,
     "status": "curated",
     "icoon": null
@@ -21,36 +32,9 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Gudula van Brussel. Virgin.",
     "url": "/heiligen/gudula-van-brussel/",
-    "gregoriaans": "01-08",
-    "juliaans": "12-26",
+    "feestdatum": "01-08",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "besnijdenis-des-heren",
-    "soort": "feest",
-    "naam": "Besnijdenis des Heren",
-    "titels": [],
-    "samenvatting": "Het feest van de Besnijdenis des Heren volgens de vaste jaarcyclus.",
-    "url": "/feesten/besnijdenis-des-heren/",
-    "gregoriaans": "01-14",
-    "juliaans": "01-01",
-    "lagenlanden": false,
-    "status": "curated",
-    "icoon": null
-  },
-  {
-    "id": "theofanie",
-    "soort": "feest",
-    "naam": "Theofanie (Doop des Heren)",
-    "titels": [],
-    "samenvatting": "Openbaring van de Heilige Drie-eenheid bij de doop van Christus in de Jordaan.",
-    "url": "/feesten/theofanie/",
-    "gregoriaans": "01-19",
-    "juliaans": "01-06",
-    "lagenlanden": false,
-    "status": "curated",
     "icoon": null
   },
   {
@@ -62,8 +46,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.",
     "url": "/heiligen/adelgondis-van-drongen/",
-    "gregoriaans": "01-26",
-    "juliaans": "01-13",
+    "feestdatum": "01-26",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -77,10 +60,21 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelgonda. Stichteres van Maubeuge.",
     "url": "/heiligen/adelgonda/",
-    "gregoriaans": "01-30",
-    "juliaans": "01-17",
+    "feestdatum": "01-30",
     "lagenlanden": true,
     "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "ontmoeting-in-de-tempel",
+    "soort": "feest",
+    "naam": "Ontmoeting in de Tempel",
+    "titels": [],
+    "samenvatting": "Christus wordt in de tempel gebracht; Simeon en Anna begroeten Hem.",
+    "url": "/feesten/ontmoeting-in-de-tempel/",
+    "feestdatum": "02-02",
+    "lagenlanden": false,
+    "status": "curated",
     "icoon": null
   },
   {
@@ -92,8 +86,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.",
     "url": "/heiligen/agricolaus-van-maastricht/",
-    "gregoriaans": "02-05",
-    "juliaans": "01-23",
+    "feestdatum": "02-05",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -107,8 +100,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht (17e Bisschop van Maastricht).",
     "url": "/heiligen/amandus-van-maastricht/",
-    "gregoriaans": "02-06",
-    "juliaans": "01-24",
+    "feestdatum": "02-06",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -122,23 +114,9 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Gertrudis. Icoon in parochie, abdis van Nijvel.",
     "url": "/heiligen/gertrudis/",
-    "gregoriaans": "02-12",
-    "juliaans": "01-30",
+    "feestdatum": "02-12",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "ontmoeting-in-de-tempel",
-    "soort": "feest",
-    "naam": "Ontmoeting in de Tempel",
-    "titels": [],
-    "samenvatting": "Christus wordt in de tempel gebracht; Simeon en Anna begroeten Hem.",
-    "url": "/feesten/ontmoeting-in-de-tempel/",
-    "gregoriaans": "02-15",
-    "juliaans": "02-02",
-    "lagenlanden": false,
-    "status": "curated",
     "icoon": null
   },
   {
@@ -150,8 +128,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Walburga. Abdis van Heidenheim.",
     "url": "/heiligen/walburga/",
-    "gregoriaans": "02-25",
-    "juliaans": "02-12",
+    "feestdatum": "02-25",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -165,8 +142,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Swidbert. Monastieke stichter aan de Rijn.",
     "url": "/heiligen/swidbert/",
-    "gregoriaans": "03-01",
-    "juliaans": "02-16",
+    "feestdatum": "03-01",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -180,8 +156,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.",
     "url": "/heiligen/albericus-van-utrecht/",
-    "gregoriaans": "03-04",
-    "juliaans": "02-19",
+    "feestdatum": "03-04",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -195,8 +170,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Fridolin. Abt, verlichter van de Boven-Rijn.",
     "url": "/heiligen/fridolin/",
-    "gregoriaans": "03-06",
-    "juliaans": "02-21",
+    "feestdatum": "03-06",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -210,23 +184,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Wulfram. Missionaris.",
     "url": "/heiligen/wulfram/",
-    "gregoriaans": "03-20",
-    "juliaans": "03-07",
-    "lagenlanden": true,
-    "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "ludger",
-    "soort": "heilige",
-    "naam": "Ludger",
-    "titels": [
-      "Bisschop van Münster"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Ludger. Bisschop van Münster.",
-    "url": "/heiligen/ludger/",
-    "gregoriaans": "03-26",
-    "juliaans": "03-13",
+    "feestdatum": "03-20",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -238,10 +196,23 @@
     "titels": [],
     "samenvatting": "De aartsengel Gabriël kondigt de geboorte van Christus aan Maria aan.",
     "url": "/feesten/aankondiging/",
-    "gregoriaans": "04-07",
-    "juliaans": "03-25",
+    "feestdatum": "03-25",
     "lagenlanden": false,
     "status": "curated",
+    "icoon": null
+  },
+  {
+    "id": "ludger",
+    "soort": "heilige",
+    "naam": "Ludger",
+    "titels": [
+      "Bisschop van Münster"
+    ],
+    "samenvatting": "Heilige van de Lage Landen: Ludger. Bisschop van Münster.",
+    "url": "/heiligen/ludger/",
+    "feestdatum": "03-26",
+    "lagenlanden": true,
+    "status": "stub",
     "icoon": null
   },
   {
@@ -253,8 +224,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Woutruide. Stichteres van een klooster.",
     "url": "/heiligen/woutruide/",
-    "gregoriaans": "04-09",
-    "juliaans": "03-27",
+    "feestdatum": "04-09",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -268,8 +238,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Floribert. Bisschop van Luik.",
     "url": "/heiligen/floribert/",
-    "gregoriaans": "04-27",
-    "juliaans": "04-14",
+    "feestdatum": "04-27",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -283,8 +252,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van Tongeren.",
     "url": "/heiligen/quirillus-van-tongern/",
-    "gregoriaans": "04-30",
-    "juliaans": "04-17",
+    "feestdatum": "04-30",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -298,8 +266,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Ultan. Stichter van Fosse.",
     "url": "/heiligen/ultan/",
-    "gregoriaans": "05-01",
-    "juliaans": "04-18",
+    "feestdatum": "05-01",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -313,8 +280,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.",
     "url": "/heiligen/ansfried-van-utrecht/",
-    "gregoriaans": "05-03",
-    "juliaans": "04-20",
+    "feestdatum": "05-03",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -328,8 +294,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht.",
     "url": "/heiligen/domitianus/",
-    "gregoriaans": "05-07",
-    "juliaans": "04-24",
+    "feestdatum": "05-07",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -343,8 +308,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis.",
     "url": "/heiligen/iduberga/",
-    "gregoriaans": "05-08",
-    "juliaans": "04-25",
+    "feestdatum": "05-08",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -358,8 +322,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Wiro. Ierse missionaris, bisschop in Limburg, Nederland.",
     "url": "/heiligen/wiro/",
-    "gregoriaans": "05-11",
-    "juliaans": "04-28",
+    "feestdatum": "05-11",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -373,8 +336,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Dymphna. Icoon in parochie, martelares van Geel, Vlaanderen.",
     "url": "/heiligen/dymphna/",
-    "gregoriaans": "05-15",
-    "juliaans": "05-02",
+    "feestdatum": "05-15",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -386,8 +348,7 @@
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Hubertus van Maastricht.",
     "url": "/heiligen/hubertus-van-maastricht/",
-    "gregoriaans": "05-30",
-    "juliaans": "05-17",
+    "feestdatum": "05-30",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -401,8 +362,7 @@
     ],
     "samenvatting": "Missionaris en martelaar, verbonden met de kerstening van de Lage Landen en Germanië.",
     "url": "/heiligen/bonifatius/",
-    "gregoriaans": "06-05",
-    "juliaans": "05-23",
+    "feestdatum": "06-05",
     "lagenlanden": true,
     "status": "curated",
     "icoon": null
@@ -416,8 +376,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Medardus. Bisschop van Noyon.",
     "url": "/heiligen/medardus/",
-    "gregoriaans": "06-08",
-    "juliaans": "05-26",
+    "feestdatum": "06-08",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -431,8 +390,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Cunera. Icoon in parochie, virgin martyr of Rhenen.",
     "url": "/heiligen/cunera/",
-    "gregoriaans": "06-12",
-    "juliaans": "05-30",
+    "feestdatum": "06-12",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -446,8 +404,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelares.",
     "url": "/heiligen/alena-van-dilbeek/",
-    "gregoriaans": "06-17",
-    "juliaans": "06-04",
+    "feestdatum": "06-17",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -461,8 +418,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.",
     "url": "/heiligen/engelmund/",
-    "gregoriaans": "06-21",
-    "juliaans": "06-08",
+    "feestdatum": "06-21",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -474,9 +430,20 @@
     "titels": [],
     "samenvatting": "Plaatselijke heilige verbonden met Bedum.",
     "url": "/heiligen/walfridus-bedum/",
-    "gregoriaans": "06-22",
-    "juliaans": "06-09",
+    "feestdatum": "06-22",
     "lagenlanden": true,
+    "status": "curated",
+    "icoon": null
+  },
+  {
+    "id": "geboorte-johannes-doper",
+    "soort": "feest",
+    "naam": "Geboorte van Johannes de Doper",
+    "titels": [],
+    "samenvatting": "Feestdag van de geboorte van de Voorloper.",
+    "url": "/feesten/geboorte-johannes-doper/",
+    "feestdatum": "06-24",
+    "lagenlanden": false,
     "status": "curated",
     "icoon": null
   },
@@ -489,21 +456,19 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelbert. Aartsdiaken.",
     "url": "/heiligen/adelbert/",
-    "gregoriaans": "06-25",
-    "juliaans": "06-12",
+    "feestdatum": "06-25",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
   },
   {
-    "id": "geboorte-johannes-doper",
+    "id": "petrus-en-paulus",
     "soort": "feest",
-    "naam": "Geboorte van Johannes de Doper",
+    "naam": "H.H. Apostelen Petrus en Paulus",
     "titels": [],
-    "samenvatting": "Feestdag van de geboorte van de Voorloper.",
-    "url": "/feesten/geboorte-johannes-doper/",
-    "gregoriaans": "07-07",
-    "juliaans": "06-24",
+    "samenvatting": "Feestdag van de eerste apostelen Petrus en Paulus.",
+    "url": "/feesten/petrus-en-paulus/",
+    "feestdatum": "06-29",
     "lagenlanden": false,
     "status": "curated",
     "icoon": null
@@ -517,23 +482,9 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Temse. Monnik.",
     "url": "/heiligen/amalberga-van-temse/",
-    "gregoriaans": "07-10",
-    "juliaans": "06-27",
+    "feestdatum": "07-10",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "petrus-en-paulus",
-    "soort": "feest",
-    "naam": "H.H. Apostelen Petrus en Paulus",
-    "titels": [],
-    "samenvatting": "Feestdag van de eerste apostelen Petrus en Paulus.",
-    "url": "/feesten/petrus-en-paulus/",
-    "gregoriaans": "07-12",
-    "juliaans": "06-29",
-    "lagenlanden": false,
-    "status": "curated",
     "icoon": null
   },
   {
@@ -543,8 +494,7 @@
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Marcellinus van Utrecht.",
     "url": "/heiligen/marcellinus-van-utrecht/",
-    "gregoriaans": "07-14",
-    "juliaans": "07-01",
+    "feestdatum": "07-14",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -558,8 +508,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop, geloofsverkondiger aan de Nederrijn.",
     "url": "/heiligen/plechelm-von-odilienberg/",
-    "gregoriaans": "07-15",
-    "juliaans": "07-02",
+    "feestdatum": "07-15",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -573,8 +522,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.",
     "url": "/heiligen/frederich/",
-    "gregoriaans": "07-18",
-    "juliaans": "07-05",
+    "feestdatum": "07-18",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -588,38 +536,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.",
     "url": "/heiligen/bernulphus/",
-    "gregoriaans": "07-24",
-    "juliaans": "07-11",
-    "lagenlanden": true,
-    "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "werenfrid",
-    "soort": "heilige",
-    "naam": "Werenfrid",
-    "titels": [
-      "Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Werenfrid. Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland.",
-    "url": "/heiligen/werenfrid/",
-    "gregoriaans": "08-14",
-    "juliaans": "08-01",
-    "lagenlanden": true,
-    "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "jeroen-van-noordwijk",
-    "soort": "heilige",
-    "naam": "Jeroen van Noordwijk",
-    "titels": [
-      "Hieromartelaar, icoon in parochie"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar, icoon in parochie.",
-    "url": "/heiligen/jeroen-van-noordwijk/",
-    "gregoriaans": "08-17",
-    "juliaans": "08-04",
+    "feestdatum": "07-24",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -631,36 +548,21 @@
     "titels": [],
     "samenvatting": "Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.",
     "url": "/feesten/verheerlijking/",
-    "gregoriaans": "08-19",
-    "juliaans": "08-06",
+    "feestdatum": "08-06",
     "lagenlanden": false,
     "status": "curated",
     "icoon": null
   },
   {
-    "id": "alubertus-van-utrecht",
+    "id": "werenfrid",
     "soort": "heilige",
-    "naam": "Alubertus van Utrecht",
+    "naam": "Werenfrid",
     "titels": [
-      "Wijbisschop"
+      "Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.",
-    "url": "/heiligen/alubertus-van-utrecht/",
-    "gregoriaans": "08-25",
-    "juliaans": "08-12",
-    "lagenlanden": true,
-    "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "gregorius-van-utrecht",
-    "soort": "heilige",
-    "naam": "Gregorius van Utrecht",
-    "titels": [],
-    "samenvatting": "Heilige van de Lage Landen: Gregorius van Utrecht.",
-    "url": "/heiligen/gregorius-van-utrecht/",
-    "gregoriaans": "08-25",
-    "juliaans": "08-12",
+    "samenvatting": "Heilige van de Lage Landen: Werenfrid. Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland.",
+    "url": "/heiligen/werenfrid/",
+    "feestdatum": "08-14",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -672,8 +574,71 @@
     "titels": [],
     "samenvatting": "Het ontslapen (dood en opname) van de Moeder Gods.",
     "url": "/feesten/ontslapen-moeder-gods/",
-    "gregoriaans": "08-28",
-    "juliaans": "08-15",
+    "feestdatum": "08-15",
+    "lagenlanden": false,
+    "status": "curated",
+    "icoon": null
+  },
+  {
+    "id": "jeroen-van-noordwijk",
+    "soort": "heilige",
+    "naam": "Jeroen van Noordwijk",
+    "titels": [
+      "Hieromartelaar, icoon in parochie"
+    ],
+    "samenvatting": "Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar, icoon in parochie.",
+    "url": "/heiligen/jeroen-van-noordwijk/",
+    "feestdatum": "08-17",
+    "lagenlanden": true,
+    "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "alubertus-van-utrecht",
+    "soort": "heilige",
+    "naam": "Alubertus van Utrecht",
+    "titels": [
+      "Wijbisschop"
+    ],
+    "samenvatting": "Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.",
+    "url": "/heiligen/alubertus-van-utrecht/",
+    "feestdatum": "08-25",
+    "lagenlanden": true,
+    "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "gregorius-van-utrecht",
+    "soort": "heilige",
+    "naam": "Gregorius van Utrecht",
+    "titels": [],
+    "samenvatting": "Heilige van de Lage Landen: Gregorius van Utrecht.",
+    "url": "/heiligen/gregorius-van-utrecht/",
+    "feestdatum": "08-25",
+    "lagenlanden": true,
+    "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "onthoofding-johannes-doper",
+    "soort": "feest",
+    "naam": "Onthoofding van Johannes de Doper",
+    "titels": [],
+    "samenvatting": "Gedachtenis van de marteldood van de Voorloper.",
+    "url": "/feesten/onthoofding-johannes-doper/",
+    "feestdatum": "08-29",
+    "lagenlanden": false,
+    "status": "curated",
+    "icoon": null
+  },
+  {
+    "id": "begin-kerkelijk-jaar",
+    "soort": "feest",
+    "naam": "Begin van het kerkelijk jaar",
+    "titels": [],
+    "samenvatting": "Indictie: begin van het kerkelijk jaar.",
+    "url": "/feesten/begin-kerkelijk-jaar/",
+    "feestdatum": "09-01",
     "lagenlanden": false,
     "status": "curated",
     "icoon": null
@@ -687,8 +652,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.",
     "url": "/heiligen/remaclus/",
-    "gregoriaans": "09-03",
-    "juliaans": "08-21",
+    "feestdatum": "09-03",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -702,10 +666,21 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.",
     "url": "/heiligen/adela-van-vlaanderen/",
-    "gregoriaans": "09-08",
-    "juliaans": "08-26",
+    "feestdatum": "09-08",
     "lagenlanden": true,
     "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "geboorte-moeder-gods",
+    "soort": "feest",
+    "naam": "Geboorte van de Moeder Gods",
+    "titels": [],
+    "samenvatting": "Geboortefeest van de Allerheiligste Moeder Gods.",
+    "url": "/feesten/geboorte-moeder-gods/",
+    "feestdatum": "09-08",
+    "lagenlanden": false,
+    "status": "curated",
     "icoon": null
   },
   {
@@ -717,34 +692,19 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.",
     "url": "/heiligen/theodaard-van-maastricht/",
-    "gregoriaans": "09-10",
-    "juliaans": "08-28",
+    "feestdatum": "09-10",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
   },
   {
-    "id": "onthoofding-johannes-doper",
+    "id": "kruisverheffing",
     "soort": "feest",
-    "naam": "Onthoofding van Johannes de Doper",
+    "naam": "Kruisverheffing",
     "titels": [],
-    "samenvatting": "Gedachtenis van de marteldood van de Voorloper.",
-    "url": "/feesten/onthoofding-johannes-doper/",
-    "gregoriaans": "09-11",
-    "juliaans": "08-29",
-    "lagenlanden": false,
-    "status": "curated",
-    "icoon": null
-  },
-  {
-    "id": "begin-kerkelijk-jaar",
-    "soort": "feest",
-    "naam": "Begin van het kerkelijk jaar",
-    "titels": [],
-    "samenvatting": "Indictie: begin van het kerkelijk jaar.",
-    "url": "/feesten/begin-kerkelijk-jaar/",
-    "gregoriaans": "09-14",
-    "juliaans": "09-01",
+    "samenvatting": "Verheffing van het Heilig Kruis.",
+    "url": "/feesten/kruisverheffing/",
+    "feestdatum": "09-14",
     "lagenlanden": false,
     "status": "curated",
     "icoon": null
@@ -758,36 +718,9 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Lambertus. Icoon in parochie.",
     "url": "/heiligen/lambertus/",
-    "gregoriaans": "09-17",
-    "juliaans": "09-04",
+    "feestdatum": "09-17",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "geboorte-moeder-gods",
-    "soort": "feest",
-    "naam": "Geboorte van de Moeder Gods",
-    "titels": [],
-    "samenvatting": "Geboortefeest van de Allerheiligste Moeder Gods.",
-    "url": "/feesten/geboorte-moeder-gods/",
-    "gregoriaans": "09-21",
-    "juliaans": "09-08",
-    "lagenlanden": false,
-    "status": "curated",
-    "icoon": null
-  },
-  {
-    "id": "kruisverheffing",
-    "soort": "feest",
-    "naam": "Kruisverheffing",
-    "titels": [],
-    "samenvatting": "Verheffing van het Heilig Kruis.",
-    "url": "/feesten/kruisverheffing/",
-    "gregoriaans": "09-27",
-    "juliaans": "09-14",
-    "lagenlanden": false,
-    "status": "curated",
     "icoon": null
   },
   {
@@ -799,8 +732,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Bavo. Icoon in parochie.",
     "url": "/heiligen/bavo/",
-    "gregoriaans": "10-01",
-    "juliaans": "09-18",
+    "feestdatum": "10-01",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -814,8 +746,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.",
     "url": "/heiligen/gommar/",
-    "gregoriaans": "10-11",
-    "juliaans": "09-28",
+    "feestdatum": "10-11",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -829,8 +760,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken.",
     "url": "/heiligen/oda-van-amay/",
-    "gregoriaans": "10-23",
-    "juliaans": "10-10",
+    "feestdatum": "10-23",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -844,8 +774,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Ermelindis. Heremiet.",
     "url": "/heiligen/ermelindis/",
-    "gregoriaans": "10-29",
-    "juliaans": "10-16",
+    "feestdatum": "10-29",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -859,8 +788,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Foillan. Ierse monnik, martelaar.",
     "url": "/heiligen/foillan/",
-    "gregoriaans": "10-31",
-    "juliaans": "10-18",
+    "feestdatum": "10-31",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -874,8 +802,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Odrada. Maagd van Balen.",
     "url": "/heiligen/odrada/",
-    "gregoriaans": "11-05",
-    "juliaans": "10-23",
+    "feestdatum": "11-05",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -889,8 +816,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Winnocus. Abt.",
     "url": "/heiligen/winnocus/",
-    "gregoriaans": "11-06",
-    "juliaans": "10-24",
+    "feestdatum": "11-06",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -905,8 +831,7 @@
     ],
     "samenvatting": "Apostel van de Friezen; aartsbisschop van Utrecht.",
     "url": "/heiligen/willibrord/",
-    "gregoriaans": "11-07",
-    "juliaans": "10-25",
+    "feestdatum": "11-07",
     "lagenlanden": true,
     "status": "curated",
     "icoon": null
@@ -920,8 +845,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Nederland.",
     "url": "/heiligen/lebuinus/",
-    "gregoriaans": "11-12",
-    "juliaans": "10-30",
+    "feestdatum": "11-12",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -935,8 +859,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Alberik. Bisschop van Utrecht.",
     "url": "/heiligen/alberik/",
-    "gregoriaans": "11-14",
-    "juliaans": "11-01",
+    "feestdatum": "11-14",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -950,8 +873,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Lubuinus. Missionaris in Friesland.",
     "url": "/heiligen/lubuinus/",
-    "gregoriaans": "11-16",
-    "juliaans": "11-03",
+    "feestdatum": "11-16",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -965,10 +887,21 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Susteren. Abdis.",
     "url": "/heiligen/amalberga-van-susteren/",
-    "gregoriaans": "11-21",
-    "juliaans": "11-08",
+    "feestdatum": "11-21",
     "lagenlanden": true,
     "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "tempelgang-moeder-gods",
+    "soort": "feest",
+    "naam": "Tempelgang van de Moeder Gods",
+    "titels": [],
+    "samenvatting": "Maria wordt als kind in de tempel gebracht.",
+    "url": "/feesten/tempelgang-moeder-gods/",
+    "feestdatum": "11-21",
+    "lagenlanden": false,
+    "status": "curated",
     "icoon": null
   },
   {
@@ -980,8 +913,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Trudo. Abt, stichter abdij St. Truiden.",
     "url": "/heiligen/trudo/",
-    "gregoriaans": "11-23",
-    "juliaans": "11-10",
+    "feestdatum": "11-23",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -995,8 +927,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Acharius van Doornik. Bisschop.",
     "url": "/heiligen/acharius-van-doornik/",
-    "gregoriaans": "11-27",
-    "juliaans": "11-14",
+    "feestdatum": "11-27",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1010,8 +941,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Oda van de Peel. Icoon in parochie.",
     "url": "/heiligen/oda-van-de-peel/",
-    "gregoriaans": "11-28",
-    "juliaans": "11-15",
+    "feestdatum": "11-28",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1025,8 +955,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Radboud. Icoon in parochie, bisschop van Utrecht.",
     "url": "/heiligen/radboud/",
-    "gregoriaans": "11-29",
-    "juliaans": "11-16",
+    "feestdatum": "11-29",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1040,23 +969,9 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Eligius. Bisschop van Noyon.",
     "url": "/heiligen/eligius/",
-    "gregoriaans": "12-01",
-    "juliaans": "11-18",
+    "feestdatum": "12-01",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
-  },
-  {
-    "id": "tempelgang-moeder-gods",
-    "soort": "feest",
-    "naam": "Tempelgang van de Moeder Gods",
-    "titels": [],
-    "samenvatting": "Maria wordt als kind in de tempel gebracht.",
-    "url": "/feesten/tempelgang-moeder-gods/",
-    "gregoriaans": "12-04",
-    "juliaans": "11-21",
-    "lagenlanden": false,
-    "status": "curated",
     "icoon": null
   },
   {
@@ -1068,8 +983,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.",
     "url": "/heiligen/folciunus/",
-    "gregoriaans": "12-14",
-    "juliaans": "12-01",
+    "feestdatum": "12-14",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1083,8 +997,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.",
     "url": "/heiligen/aubertus-van-kamerijk/",
-    "gregoriaans": "12-15",
-    "juliaans": "12-02",
+    "feestdatum": "12-15",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1098,8 +1011,7 @@
     ],
     "samenvatting": "Heilige van de Lage Landen: Winnibald. Abt en missionaris van Engeland en Heidenheim (Duitsland).",
     "url": "/heiligen/winnibald/",
-    "gregoriaans": "12-18",
-    "juliaans": "12-05",
+    "feestdatum": "12-18",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1111,8 +1023,7 @@
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Hunger van Utrecht.",
     "url": "/heiligen/hunger-van-utrecht/",
-    "gregoriaans": "12-22",
-    "juliaans": "12-09",
+    "feestdatum": "12-22",
     "lagenlanden": true,
     "status": "stub",
     "icoon": null
@@ -1124,10 +1035,21 @@
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Egbert van Rathmelsigi.",
     "url": "/heiligen/egbert-van-rathmelsigi/",
-    "gregoriaans": "12-23",
-    "juliaans": "12-10",
+    "feestdatum": "12-23",
     "lagenlanden": true,
     "status": "stub",
+    "icoon": null
+  },
+  {
+    "id": "kerst",
+    "soort": "feest",
+    "naam": "Kerstfeest (Geboorte van Christus)",
+    "titels": [],
+    "samenvatting": "Geboorte van onze Heer Jezus Christus.",
+    "url": "/feesten/kerst/",
+    "feestdatum": "12-25",
+    "lagenlanden": false,
+    "status": "curated",
     "icoon": null
   }
 ]
