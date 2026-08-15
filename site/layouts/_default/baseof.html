@@ -30,6 +30,23 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <dialog id="nieuw-oud-dialog" class="info-dialog">
+    <form method="dialog" class="info-dialog-inner">
+      <h2>Nieuw / Oud</h2>
+      <p>
+        <strong>Nieuw</strong> = Gregoriaanse (burgerlijke) kalender.
+        <strong>Oud</strong> = Juliaanse tijdrekening (nu 13&nbsp;dagen eerder).
+      </p>
+      <p>
+        De knop verandert alleen hoe we <em>vandaag</em> rekenen — niet de
+        feestdatum van een feest (Ontslapen blijft 15&nbsp;augustus).
+      </p>
+      <div class="info-dialog-actions">
+        <a class="button button-secondary" href="{{ "uitleg/" | relURL }}#nieuw-oud">Uitgebreide uitleg</a>
+        <button type="submit" class="button" value="close">Sluiten</button>
+      </div>
+    </form>
+  </dialog>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>

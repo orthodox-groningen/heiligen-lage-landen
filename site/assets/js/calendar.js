@@ -88,7 +88,27 @@
 
   function styleLink(style) {
     const word = shortStyle(style);
-    return `<a href="${uitlegUrl("nieuw-oud")}">${word}</a>`;
+    return `<button type="button" class="text-link" data-open-nieuw-oud>${word}</button>`;
+  }
+
+  function openNieuwOudDialog() {
+    const dlg = document.getElementById("nieuw-oud-dialog");
+    if (dlg && typeof dlg.showModal === "function") {
+      dlg.showModal();
+    } else {
+      window.location.href = uitlegUrl("nieuw-oud");
+    }
+  }
+
+  function wireNieuwOudTriggers(root) {
+    (root || document).querySelectorAll("[data-open-nieuw-oud]").forEach((el) => {
+      if (el.dataset.bound === "1") return;
+      el.dataset.bound = "1";
+      el.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        openNieuwOudDialog();
+      });
+    });
   }
 
   function todayMmdd(style) {
@@ -118,6 +138,7 @@
     if (!heading) return;
     const today = todayMmdd(style);
     heading.innerHTML = `Vandaag · ${label(today)} (${styleLink(style)})`;
+    wireNieuwOudTriggers(heading);
   }
 
   function updateNote(style) {
@@ -126,12 +147,13 @@
     if (style === "juliaans") {
       cardNote.innerHTML =
         `Burgerlijk: ${label(civilTodayMmdd())}. ` +
-        `<a href="${uitlegUrl("nieuw-oud")}">Uitleg</a>`;
+        `<button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
     } else {
       cardNote.innerHTML =
         `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}. ` +
-        `<a href="${uitlegUrl("nieuw-oud")}">Uitleg</a>`;
+        `<button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
     }
+    wireNieuwOudTriggers(cardNote);
   }
 
   function renderToday(entries, style) {
@@ -373,8 +395,9 @@
         "nieuw";
       hint.innerHTML =
         stijl === "oud"
-          ? `Oude kalender: afspraken op burgerlijke vierdatum (+13). Titel bevat de Juliaanse feestdatum. <a href="${uitlegUrl("agenda")}">Uitleg</a>`
-          : `Nieuwe kalender: afspraken op de feestdatum zelf. <a href="${uitlegUrl("agenda")}">Uitleg</a>`;
+          ? `Oude kalender: afspraken op burgerlijke vierdatum (+13). Titel bevat de Juliaanse feestdatum. <button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`
+          : `Nieuwe kalender: afspraken op de feestdatum zelf. <button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
+      wireNieuwOudTriggers(hint);
     }
     if (all) {
       const files = [
@@ -433,8 +456,12 @@
   });
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", refresh);
+    document.addEventListener("DOMContentLoaded", () => {
+      wireNieuwOudTriggers(document);
+      refresh();
+    });
   } else {
+    wireNieuwOudTriggers(document);
     refresh();
   }
 })();

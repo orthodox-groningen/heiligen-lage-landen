@@ -120,7 +120,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
     fm.append("---")
 
-    body: list[str] = [f"# {title}", ""]
+    body: list[str] = []
     if entry.get("titels"):
         body.append("*" + " · ".join(entry["titels"]) + "*")
         body.append("")
@@ -180,8 +180,6 @@ def write_date_pages(entries: list[dict[str, Any]]) -> None:
             f"feestdatum: {mmdd}",
             "type: datum",
             "---",
-            "",
-            f"# {title}",
             "",
             "Dit is een **datumpagina**: feesten en heiligen waarvan de feestdag "
             f"**{mmdd_label(mmdd)}** is — in de nieuwe (Gregoriaanse) én de oude "

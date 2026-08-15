@@ -362,6 +362,11 @@ h2 {
   margin: 0.75rem 0;
 }
 
+.letter-nav[hidden],
+.month-nav[hidden] {
+  display: none !important;
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -453,8 +458,50 @@ h2 {
   pointer-events: none;
 }
 
-.uitleg-page {
-  max-width: 42rem;
+.info-dialog {
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  padding: 0;
+  max-width: min(28rem, calc(100vw - 2rem));
+  background: var(--bg-elev);
+  color: var(--ink);
+}
+
+.info-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.info-dialog-inner {
+  margin: 0;
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.info-dialog-inner h2 {
+  margin-top: 0;
+}
+
+.info-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.text-link {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--gold-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.text-link:hover {
+  color: var(--gold);
 }
 
 .site-footer {
