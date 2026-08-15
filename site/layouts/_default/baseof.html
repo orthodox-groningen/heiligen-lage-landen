@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  {{ $css := resources.Get "css/site.css" | resources.Minify }}
+  {{ $css := resources.Get "css/site.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
-<body>
+<body data-base="{{ "" | absURL }}">
   <a class="skip-link" href="#main">Naar inhoud</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -30,6 +30,7 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <script src="{{ "js/calendar.js" | relURL }}" defer></script>
+  {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>
