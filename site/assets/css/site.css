@@ -322,11 +322,6 @@ h2 {
   outline: 1px solid var(--gold);
 }
 
-.today-note {
-  margin: 0 0 0.85rem;
-  max-width: 40rem;
-}
-
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.25rem 0 2rem;
