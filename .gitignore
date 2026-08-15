@@ -1,0 +1,39 @@
+# Generated build output
+generated/
+site/public/
+site/resources/
+site/data/build.yaml
+site/content/dag/
+site/content/heiligen/
+site/content/feesten/
+site/static/data/entries.json
+site/static/ics/*.ics
+!site/static/ics/.gitkeep
+
+# Hugo
+.hugo_build.lock
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Cursor: lokale state negeren; gedeelde regels wél committen
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+dist/
+build/
+*.egg-info/
+pip-log.txt

@@ -1,0 +1,19 @@
+id: geboorte-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Geboorte van de Moeder Gods"
+datum:
+  waarde: "09-08"
+  stijl: juliaans
+samenvatting: |
+  Geboortefeest van de Allerheiligste Moeder Gods.
+verhaal: |
+  De geboorte van Maria uit Joachim en Anna wordt gevierd als begin van het heilseconomie-verhaal in de jaarcyclus.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

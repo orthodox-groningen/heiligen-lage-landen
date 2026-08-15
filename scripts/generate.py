@@ -1,0 +1,454 @@
+"""Genereer Hugo-content, entries.json en ICS-feeds."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+import sys
+import uuid
+from collections import defaultdict
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from load_entries import load_entries  # noqa: E402
+
+SITE = ROOT / "site"
+CONTENT = SITE / "content"
+STATIC_DATA = SITE / "static" / "data"
+STATIC_ICS = SITE / "static" / "ics"
+
+MONTH_NAMES_NL = [
+    "",
+    "januari",
+    "februari",
+    "maart",
+    "april",
+    "mei",
+    "juni",
+    "juli",
+    "augustus",
+    "september",
+    "oktober",
+    "november",
+    "december",
+]
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Genereer site-content en ICS.")
+    parser.add_argument(
+        "--clean",
+        action="store_true",
+        help="Wis gegenereerde dag-/entry-mappen vóór genereren.",
+    )
+    return parser.parse_args()
+
+
+def mmdd_label(mmdd: str) -> str:
+    month, day = (int(x) for x in mmdd.split("-"))
+    return f"{day} {MONTH_NAMES_NL[month]}"
+
+
+def yaml_quote(value: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
+def entry_permalink(entry: dict[str, Any]) -> str:
+    kind = "feesten" if entry["soort"] == "feest" else "heiligen"
+    return f"/{kind}/{entry['id']}/"
+
+
+def render_refs_md(refs: list[dict[str, Any]]) -> str:
+    if not refs:
+        return "_Nog geen referenties._\n"
+    lines = []
+    for ref in refs:
+        label = ref.get("label") or "Bron"
+        url = ref.get("url")
+        geraadpleegd = ref.get("geraadpleegd")
+        opmerking = ref.get("opmerking")
+        if url:
+            line = f"- [{label}]({url})"
+        else:
+            line = f"- {label}"
+        extras = []
+        if geraadpleegd:
+            extras.append(f"geraadpleegd {geraadpleegd}")
+        if opmerking:
+            extras.append(opmerking)
+        if extras:
+            line += f" — {'; '.join(extras)}"
+        lines.append(line)
+    return "\n".join(lines) + "\n"
+
+
+def write_entry_page(entry: dict[str, Any]) -> None:
+    kind = "feesten" if entry["soort"] == "feest" else "heiligen"
+    title = entry["namen"]["primair"]
+    g = entry["datum_norm"]["gregoriaans"]
+    j = entry["datum_norm"]["juliaans"]
+    fm = [
+        "---",
+        f"title: {yaml_quote(title)}",
+        f"slug: {entry['id']}",
+        f"type: {entry['soort']}",
+        f"soort: {entry['soort']}",
+        f"entry_id: {entry['id']}",
+        f"datum_gregoriaans: {g}",
+        f"datum_juliaans: {j}",
+        f"status: {entry.get('status', 'stub')}",
+        f"lagenlanden: {'true' if entry.get('lagenlanden') else 'false'}",
+        f"source_path: {yaml_quote(entry['source_path'])}",
+    ]
+    if entry.get("titels"):
+        fm.append("titels:")
+        for t in entry["titels"]:
+            fm.append(f"  - {yaml_quote(t)}")
+    icoon = entry.get("icoon") or {}
+    if icoon.get("bestand") and icoon.get("rechten") == "ok":
+        fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
+    fm.append("---")
+
+    body: list[str] = [f"# {title}", ""]
+    if entry.get("titels"):
+        body.append("*" + " · ".join(entry["titels"]) + "*")
+        body.append("")
+    body.append(
+        f"**Feestdag:** {mmdd_label(g)} (Gregoriaans) · "
+        f"{mmdd_label(j)} (Juliaans)"
+    )
+    body.append("")
+    if entry.get("locaties"):
+        body.append("**Plaatsen:** " + "; ".join(entry["locaties"]))
+        body.append("")
+    if entry.get("periode"):
+        body.append(f"**Periode:** {entry['periode']}")
+        body.append("")
+    if entry.get("samenvatting"):
+        body.append(entry["samenvatting"].strip())
+        body.append("")
+    if entry.get("verhaal"):
+        body.append("## Verhaal")
+        body.append("")
+        body.append(entry["verhaal"].strip())
+        body.append("")
+    elif entry.get("status") == "stub":
+        body.append(
+            "> Deze pagina is nog een stub: alleen basisgegevens. "
+            "Een onderbouwd verhaal volgt."
+        )
+        body.append("")
+    body.append("## Referenties")
+    body.append("")
+    body.append(render_refs_md(entry.get("referenties") or []))
+    body.append("")
+    body.append(
+        f"[Dagpagina Gregoriaans](/dag/g/{g}/) · "
+        f"[Dagpagina Juliaans](/dag/j/{j}/)"
+    )
+    body.append("")
+    write_text(CONTENT / kind / f"{entry['id']}.md", "\n".join(fm + ["", *body]))
+
+
+def write_day_pages(entries: list[dict[str, Any]]) -> None:
+    by_g: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_j: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for entry in entries:
+        by_g[entry["datum_norm"]["gregoriaans"]].append(entry)
+        by_j[entry["datum_norm"]["juliaans"]].append(entry)
+        for extra in entry.get("datum_extra_norm") or []:
+            by_g[extra["gregoriaans"]].append(entry)
+            by_j[extra["juliaans"]].append(entry)
+
+    def write_bucket(prefix: str, mapping: dict[str, list[dict[str, Any]]], label: str) -> None:
+        for mmdd, items in sorted(mapping.items()):
+            # unieke id's behouden volgorde
+            seen: set[str] = set()
+            unique: list[dict[str, Any]] = []
+            for item in items:
+                if item["id"] in seen:
+                    continue
+                seen.add(item["id"])
+                unique.append(item)
+            title = f"{mmdd_label(mmdd)} ({label})"
+            lines = [
+                "---",
+                f"title: {yaml_quote(title)}",
+                f"datum: {mmdd}",
+                f"stijl: {prefix}",
+                "---",
+                "",
+                f"# {title}",
+                "",
+            ]
+            if not unique:
+                lines.append("_Geen feesten of heiligen op deze dag._")
+            for entry in unique:
+                link = entry_permalink(entry)
+                kind_label = "Feest" if entry["soort"] == "feest" else "Heilige"
+                lines.append(f"- **[{entry['namen']['primair']}]({link})** ({kind_label})")
+                if entry.get("samenvatting"):
+                    lines.append(f"  {entry['samenvatting'].strip().splitlines()[0]}")
+            lines.append("")
+            write_text(CONTENT / "dag" / prefix / f"{mmdd}.md", "\n".join(lines))
+
+    write_bucket("g", by_g, "Gregoriaans")
+    write_bucket("j", by_j, "Juliaans")
+
+
+def write_indexes() -> None:
+    write_text(
+        CONTENT / "_index.md",
+        """---
+title: "Heiligen van de Lage Landen"
+---
+
+Welkom bij de orthodoxe heiligen- en feestkalender voor de Lage Landen (MVP).
+""",
+    )
+    write_text(
+        CONTENT / "heiligen" / "_index.md",
+        """---
+title: "Heiligen"
+---
+
+Overzicht van heiligen van de Lage Landen in deze kalender.
+""",
+    )
+    write_text(
+        CONTENT / "feesten" / "_index.md",
+        """---
+title: "Vaste feesten"
+---
+
+Grote vaste feesten van de jaarcyclus (zonder paascyclus in deze MVP).
+""",
+    )
+    write_text(
+        CONTENT / "dag" / "_index.md",
+        """---
+title: "Dagen"
+---
+
+Dagpagina's per kalenderstijl.
+""",
+    )
+    write_text(
+        CONTENT / "agenda" / "_index.md",
+        """---
+title: "Agenda (ICS)"
+layout: agenda
+---
+
+Abonneer de kalender in Google Calendar, Outlook of Apple Agenda via de feeds hieronder.
+""",
+    )
+    write_text(
+        CONTENT / "kalender" / "_index.md",
+        """---
+title: "Jaarkalender"
+layout: kalender
+---
+
+Blader door de vaste feestdagen per maand.
+""",
+    )
+
+
+def write_entries_json(entries: list[dict[str, Any]]) -> None:
+    payload = []
+    for entry in entries:
+        payload.append(
+            {
+                "id": entry["id"],
+                "soort": entry["soort"],
+                "naam": entry["namen"]["primair"],
+                "titels": entry.get("titels") or [],
+                "samenvatting": (entry.get("samenvatting") or "").strip(),
+                "url": entry_permalink(entry),
+                "gregoriaans": entry["datum_norm"]["gregoriaans"],
+                "juliaans": entry["datum_norm"]["juliaans"],
+                "lagenlanden": bool(entry.get("lagenlanden")),
+                "status": entry.get("status") or "stub",
+                "icoon": (entry.get("icoon") or {}).get("bestand")
+                if (entry.get("icoon") or {}).get("rechten") == "ok"
+                else None,
+            }
+        )
+    write_text(STATIC_DATA / "entries.json", json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+
+
+def _ics_escape(text: str) -> str:
+    return (
+        text.replace("\\", "\\\\")
+        .replace(";", "\\;")
+        .replace(",", "\\,")
+        .replace("\n", "\\n")
+    )
+
+
+def _fold(line: str) -> str:
+    if len(line) <= 75:
+        return line
+    parts = [line[:75]]
+    rest = line[75:]
+    while rest:
+        parts.append(" " + rest[:74])
+        rest = rest[74:]
+    return "\r\n".join(parts)
+
+
+def build_ics(
+    entries: list[dict[str, Any]],
+    *,
+    style_key: str,
+    cal_name: str,
+    filter_lagenlanden: bool | None = None,
+) -> str:
+    now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//orthodox-groningen//heiligen-lage-landen//NL",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        f"X-WR-CALNAME:{_ics_escape(cal_name)}",
+        "X-WR-TIMEZONE:UTC",
+    ]
+    for entry in entries:
+        if filter_lagenlanden is True and not entry.get("lagenlanden"):
+            continue
+        if filter_lagenlanden is False and entry.get("lagenlanden") and entry["soort"] == "heilige":
+            # keep feesten always when filter is "feesten only" — handled by caller
+            pass
+        mmdd = entry["datum_norm"][style_key]
+        month, day = (int(x) for x in mmdd.split("-"))
+        # Ankerjaar voor RRULE; Google gebruikt Gregoriaanse burgerkalender.
+        anchor = date(2001, month, day)
+        dt_start = anchor.strftime("%Y%m%d")
+        dt_end_s = (anchor + timedelta(days=1)).strftime("%Y%m%d")
+        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{entry['id']}:{style_key}:{mmdd}"))
+        summary = entry["namen"]["primair"]
+        desc_parts = []
+        if entry.get("samenvatting"):
+            desc_parts.append(entry["samenvatting"].strip())
+        desc_parts.append(f"Gregoriaans: {mmdd_label(entry['datum_norm']['gregoriaans'])}")
+        desc_parts.append(f"Juliaans: {mmdd_label(entry['datum_norm']['juliaans'])}")
+        for ref in entry.get("referenties") or []:
+            label = ref.get("label") or "Bron"
+            url = ref.get("url")
+            desc_parts.append(f"Bron: {label}" + (f" ({url})" if url else ""))
+        description = _ics_escape("\n".join(desc_parts))
+        event = [
+            "BEGIN:VEVENT",
+            f"DTSTART;VALUE=DATE:{dt_start}",
+            f"DTEND;VALUE=DATE:{dt_end_s}",
+            "RRULE:FREQ=YEARLY",
+            f"DTSTAMP:{now}",
+            f"UID:{uid}",
+            f"SUMMARY:{_ics_escape(summary)}",
+            f"DESCRIPTION:{description}",
+            "TRANSP:TRANSPARENT",
+            "END:VEVENT",
+        ]
+        lines.extend(event)
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(_fold(line) for line in lines) + "\r\n"
+
+
+def write_ics(entries: list[dict[str, Any]]) -> None:
+    STATIC_ICS.mkdir(parents=True, exist_ok=True)
+    feeds = [
+        (
+            "alles-gregoriaans.ics",
+            "Heiligenkalender (Gregoriaans)",
+            "gregoriaans",
+            None,
+        ),
+        (
+            "alles-juliaans.ics",
+            "Heiligenkalender (Juliaans)",
+            "juliaans",
+            None,
+        ),
+        (
+            "lagenlanden-gregoriaans.ics",
+            "Heiligen Lage Landen (Gregoriaans)",
+            "gregoriaans",
+            True,
+        ),
+        (
+            "lagenlanden-juliaans.ics",
+            "Heiligen Lage Landen (Juliaans)",
+            "juliaans",
+            True,
+        ),
+        (
+            "feesten-gregoriaans.ics",
+            "Vaste feesten (Gregoriaans)",
+            "gregoriaans",
+            None,
+        ),
+        (
+            "feesten-juliaans.ics",
+            "Vaste feesten (Juliaans)",
+            "juliaans",
+            None,
+        ),
+    ]
+    for filename, name, style, lagen in feeds:
+        subset = entries
+        if filename.startswith("feesten-"):
+            subset = [e for e in entries if e["soort"] == "feest"]
+        elif lagen is True:
+            subset = [e for e in entries if e.get("lagenlanden")]
+        write_text(
+            STATIC_ICS / filename,
+            build_ics(subset, style_key=style, cal_name=name, filter_lagenlanden=None),
+        )
+
+
+def clean_generated() -> None:
+    for rel in (
+        "content/dag",
+        "content/heiligen",
+        "content/feesten",
+        "static/data/entries.json",
+    ):
+        path = SITE / rel
+        if path.is_dir():
+            shutil.rmtree(path)
+        elif path.is_file():
+            path.unlink()
+    for ics in (SITE / "static" / "ics").glob("*.ics"):
+        ics.unlink()
+
+
+def main() -> int:
+    args = parse_args()
+    if args.clean:
+        clean_generated()
+    entries = load_entries()
+    write_indexes()
+    for entry in entries:
+        write_entry_page(entry)
+    write_day_pages(entries)
+    write_entries_json(entries)
+    write_ics(entries)
+    print(f"Gegenereerd: {len(entries)} entries.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

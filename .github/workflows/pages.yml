@@ -1,0 +1,115 @@
+# Deploy heiligen-lage-landen to GitHub Pages.
+# - push main  → productie (gh-pages root)
+# - andere branch → preview (gh-pages:/preview/)
+# URL prod:    https://orthodox-groningen.github.io/heiligen-lage-landen/
+# URL preview: https://orthodox-groningen.github.io/heiligen-lage-landen/preview/
+# Pages setting: Deploy from a branch → gh-pages → /.
+
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+
+    outputs:
+      destination_dir: ${{ steps.target.outputs.destination_dir }}
+      url_prefix: ${{ steps.target.outputs.url_prefix }}
+      pages_url: ${{ steps.target.outputs.pages_url }}
+      label: ${{ steps.target.outputs.label }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine deploy target
+        id: target
+        shell: bash
+        run: |
+          branch="${GITHUB_REF#refs/heads/}"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "base_url=https://orthodox-groningen.github.io/heiligen-lage-landen/" >> "$GITHUB_OUTPUT"
+            echo "destination_dir=" >> "$GITHUB_OUTPUT"
+            echo "url_prefix=/heiligen-lage-landen/" >> "$GITHUB_OUTPUT"
+            echo "pages_url=https://orthodox-groningen.github.io/heiligen-lage-landen/" >> "$GITHUB_OUTPUT"
+            echo "label=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_url=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/" >> "$GITHUB_OUTPUT"
+            echo "destination_dir=preview" >> "$GITHUB_OUTPUT"
+            echo "url_prefix=/heiligen-lage-landen/preview/" >> "$GITHUB_OUTPUT"
+            echo "pages_url=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/" >> "$GITHUB_OUTPUT"
+            echo "label=preview" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Show deploy target
+        run: |
+          echo "Target: ${{ steps.target.outputs.label }}"
+          echo "base_url: ${{ steps.target.outputs.base_url }}"
+          echo "destination_dir: '${{ steps.target.outputs.destination_dir }}'"
+          echo "url_prefix: ${{ steps.target.outputs.url_prefix }}"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Validate data
+        run: python scripts/validate.py
+
+      - name: Generate content and ICS
+        run: python scripts/generate.py --clean
+
+      - name: Inject git dates and build stamp
+        run: |
+          python scripts/inject_git_dates.py
+          python scripts/write_build_stamp.py
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.160.1"
+          extended: true
+
+      - name: Build Hugo site
+        run: |
+          hugo \
+            --source site \
+            --destination ../generated/site \
+            --minify \
+            --baseURL "${{ steps.target.outputs.base_url }}"
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-site
+          path: generated/site
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    uses: orthodox-groningen/VSA-tooling/.github/workflows/pages-deploy-reusable.yml@main
+    with:
+      artifact_name: pages-site
+      publish_dir: site
+      destination_dir: ${{ needs.build.outputs.destination_dir }}
+      url_prefix: ${{ needs.build.outputs.url_prefix }}
+      pages_url: ${{ needs.build.outputs.pages_url }}
+      keep_files: false
+    permissions:
+      contents: write

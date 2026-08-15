@@ -1,0 +1,19 @@
+id: ludger
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Ludger
+  alternatief:
+  - Liudger
+datum:
+  waarde: 03-26
+  stijl: gregoriaans
+titels:
+- Bisschop van Münster
+periode: '809'
+samenvatting: 'Heilige van de Lage Landen: Ludger. Bisschop van Münster.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

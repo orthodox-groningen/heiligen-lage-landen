@@ -1,0 +1,20 @@
+baseURL = "/"
+languageCode = "nl"
+title = "Heiligen van de Lage Landen"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Orthodoxe vaste feesten en heiligen van de Lage Landen — kalender, verhalen en ICS-abonnement."
+  github = "https://github.com/orthodox-groningen/heiligen-lage-landen"
+  orgDocs = "https://orthodox-groningen.github.io/bron/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]

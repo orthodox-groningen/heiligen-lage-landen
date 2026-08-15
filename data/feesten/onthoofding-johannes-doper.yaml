@@ -1,0 +1,19 @@
+id: onthoofding-johannes-doper
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Onthoofding van Johannes de Doper"
+datum:
+  waarde: "08-29"
+  stijl: juliaans
+samenvatting: |
+  Gedachtenis van de marteldood van de Voorloper.
+verhaal: |
+  Johannes wordt onthoofd op bevel van Herodes; de Kerk bewaart deze dag als vastendag in veel tradities.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

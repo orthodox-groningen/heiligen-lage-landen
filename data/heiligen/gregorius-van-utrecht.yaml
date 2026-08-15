@@ -1,0 +1,16 @@
+id: gregorius-van-utrecht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Gregorius van Utrecht
+datum:
+  waarde: 08-25
+  stijl: gregoriaans
+periode: '775'
+samenvatting: 'Heilige van de Lage Landen: Gregorius van Utrecht.'
+referenties:
+- label: thabor aug. 2024
+  geraadpleegd: '2026-08-15'
+  opmerking: Nog te normaliseren naar bronnen.yaml

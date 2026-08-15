@@ -1,0 +1,24 @@
+id: agricolaus-van-maastricht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Agricolaus van Maastricht
+datum:
+  waarde: 02-05
+  stijl: gregoriaans
+  extra:
+  - waarde: 05-15
+    toelichting: 15 mei (met alle heilige bisschoppen van Maastricht)
+  - waarde: 07-18
+    toelichting: 18 juli (sterfdag volgens de legende)
+titels:
+- Tweede bisschop
+locaties:
+- Maastricht, Nederland
+periode: 401(?)
+samenvatting: 'Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'

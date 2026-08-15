@@ -1,0 +1,19 @@
+id: petrus-en-paulus
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "H.H. Apostelen Petrus en Paulus"
+datum:
+  waarde: "06-29"
+  stijl: juliaans
+samenvatting: |
+  Feestdag van de eerste apostelen Petrus en Paulus.
+verhaal: |
+  De kerk eert Petrus en Paulus als zuilen van de apostolische verkondiging.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

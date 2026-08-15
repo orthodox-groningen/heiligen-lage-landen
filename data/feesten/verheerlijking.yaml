@@ -1,0 +1,19 @@
+id: verheerlijking
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Verheerlijking op de berg Thabor"
+datum:
+  waarde: "08-06"
+  stijl: juliaans
+samenvatting: |
+  Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.
+verhaal: |
+  Op de berg Thabor wordt de heerlijkheid van Christus geopenbaard; Mozes en Elia verschijnen met Hem.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

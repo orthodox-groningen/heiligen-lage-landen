@@ -1,0 +1,28 @@
+bronnen:
+  - id: eir3app
+    naam: "EIR3-app / synaxarion-notities"
+    opmerking: "Interne notities; nader te specificeren in curated entries."
+  - id: wiki-heiligen
+    naam: "Wikipedia (NL) — Lijst van christelijke heiligen"
+    url: "https://nl.wikipedia.org/wiki/Lijst_van_christelijke_heiligen"
+  - id: hnet
+    naam: "heiligen.net"
+    url: "https://www.heiligen.net"
+  - id: hlex
+    naam: "Ökumenisches Heiligenlexikon"
+    url: "https://www.heiligenlexikon.de/"
+  - id: hlex-plaatsen
+    naam: "Heiligenlexikon — Orte Niederlande"
+    url: "https://www.heiligenlexikon.de/Orte/GLand.html?Niederlande.kml"
+  - id: orthodoxwiki-nativity
+    naam: "OrthodoxWiki — Nativity"
+    url: "https://orthodoxwiki.org/Nativity"
+  - id: orthodoxwiki-theophany
+    naam: "OrthodoxWiki — Theophany"
+    url: "https://orthodoxwiki.org/Theophany"
+  - id: orthodoxwiki-pascha-note
+    naam: "OrthodoxWiki — Great Feasts"
+    url: "https://orthodoxwiki.org/Great_Feasts"
+  - id: oca-calendar
+    naam: "OCA — Lives of the Saints / Feasts"
+    url: "https://www.oca.org/saints/lives"

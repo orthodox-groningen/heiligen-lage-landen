@@ -1,0 +1,18 @@
+id: lambertus
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Lambertus
+datum:
+  waarde: 09-17
+  stijl: gregoriaans
+titels:
+- Icoon in parochie
+periode: '704'
+samenvatting: 'Heilige van de Lage Landen: Lambertus. Icoon in parochie.'
+referenties:
+- label: orthodox synaxarion
+  geraadpleegd: '2026-08-15'
+  opmerking: Nog te normaliseren naar bronnen.yaml

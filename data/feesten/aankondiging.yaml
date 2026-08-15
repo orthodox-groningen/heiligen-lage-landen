@@ -1,0 +1,19 @@
+id: aankondiging
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Aankondiging aan de Moeder Gods"
+datum:
+  waarde: "03-25"
+  stijl: juliaans
+samenvatting: |
+  De aartsengel Gabriël kondigt de geboorte van Christus aan Maria aan.
+verhaal: |
+  Op dit feest wordt herdacht dat Maria ja zegt op Gods uitnodiging; het Woord wordt vlees.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

@@ -1,0 +1,17 @@
+id: foillan
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Foillan
+datum:
+  waarde: 10-31
+  stijl: gregoriaans
+titels:
+- Ierse monnik, martelaar
+periode: '655'
+samenvatting: 'Heilige van de Lage Landen: Foillan. Ierse monnik, martelaar.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

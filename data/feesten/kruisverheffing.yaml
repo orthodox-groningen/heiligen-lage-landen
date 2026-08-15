@@ -1,0 +1,19 @@
+id: kruisverheffing
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Kruisverheffing"
+datum:
+  waarde: "09-14"
+  stijl: juliaans
+samenvatting: |
+  Verheffing van het Heilig Kruis.
+verhaal: |
+  Het Kruis van Christus wordt verhoogd en vereerd als teken van overwinning over de dood.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

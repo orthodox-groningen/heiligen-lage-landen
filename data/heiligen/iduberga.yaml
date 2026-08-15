@@ -1,0 +1,23 @@
+id: iduberga
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Iduberga
+  alternatief:
+  - Ida
+  - Itta
+datum:
+  waarde: 05-08
+  stijl: gregoriaans
+titels:
+- Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis
+locaties:
+- Nijvel
+periode: '652'
+samenvatting: 'Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder
+  van H. Bavo, Begga en Gertrudis.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

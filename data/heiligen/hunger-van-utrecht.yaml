@@ -1,0 +1,15 @@
+id: hunger-van-utrecht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Hunger van Utrecht
+datum:
+  waarde: 12-22
+  stijl: gregoriaans
+periode: '866'
+samenvatting: 'Heilige van de Lage Landen: Hunger van Utrecht.'
+referenties:
+- bron_id: wiki-heiligen
+  geraadpleegd: '2026-08-15'

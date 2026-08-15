@@ -1,0 +1,20 @@
+id: engelmund
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Engelmund
+datum:
+  waarde: 06-21
+  stijl: gregoriaans
+titels:
+- Abt, geloofsverkondiger in Holland
+locaties:
+- Velsen, Nederland
+periode: ~680
+samenvatting: 'Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.'
+referenties:
+- label: Legacy import (bron nog te verifiëren)
+  geraadpleegd: '2026-08-15'
+  opmerking: Geïmporteerd uit heiligen_lage_landen_vsn_0.yaml

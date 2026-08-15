@@ -1,0 +1,17 @@
+id: medardus
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Medardus
+datum:
+  waarde: 06-08
+  stijl: gregoriaans
+titels:
+- Bisschop van Noyon
+periode: '560'
+samenvatting: 'Heilige van de Lage Landen: Medardus. Bisschop van Noyon.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

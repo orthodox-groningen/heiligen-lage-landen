@@ -1,0 +1,18 @@
+id: hubertus-van-maastricht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Hubertus van Maastricht
+datum:
+  waarde: 05-30
+  stijl: gregoriaans
+  extra:
+  - waarde: 11-03
+    toelichting: 3 november
+periode: '727'
+samenvatting: 'Heilige van de Lage Landen: Hubertus van Maastricht.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

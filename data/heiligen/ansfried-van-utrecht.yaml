@@ -1,0 +1,28 @@
+id: ansfried-van-utrecht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Ansfried (van Utrecht)
+  alternatief:
+  - Ansfried van Leuven
+datum:
+  waarde: 05-03
+  stijl: gregoriaans
+  extra:
+  - waarde: 05-11
+    toelichting: 11 mei
+  - waarde: 11-08
+    toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
+titels:
+- Bisschop van Utrecht
+locaties:
+- Utrecht, Nederland
+periode: '1010'
+samenvatting: 'Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

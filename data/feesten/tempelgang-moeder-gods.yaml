@@ -1,0 +1,19 @@
+id: tempelgang-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Tempelgang van de Moeder Gods"
+datum:
+  waarde: "11-21"
+  stijl: juliaans
+samenvatting: |
+  Maria wordt als kind in de tempel gebracht.
+verhaal: |
+  De traditie viert dat Maria als kind aan God wordt toegewijd in de tempel te Jeruzalem.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

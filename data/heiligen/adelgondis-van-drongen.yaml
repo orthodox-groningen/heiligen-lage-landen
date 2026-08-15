@@ -1,0 +1,24 @@
+id: adelgondis-van-drongen
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Adelgondis van Drongen
+  alternatief:
+  - Aldegundis
+datum:
+  waarde: 01-26
+  stijl: gregoriaans
+  extra:
+  - waarde: 06-20
+    toelichting: 20 juni
+titels:
+- Kloosterlinge
+locaties:
+- Drongen, Vlaanderen, België
+periode: ~650
+samenvatting: 'Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'

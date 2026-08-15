@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="agenda-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p>
+    De feeds gebruiken jaarlijkse herhaling (<code>RRULE:FREQ=YEARLY</code>).
+    <strong>Gregoriaans</strong> zet gebeurtenissen op de nieuwe-stijl-datum;
+    <strong>Juliaans</strong> op de oude-stijl-datum (als burgerlijke MM-DD).
+  </p>
+  <ul class="ics-list">
+    <li><a href="{{ "/ics/alles-gregoriaans.ics" | relURL }}">Alles — Gregoriaans</a></li>
+    <li><a href="{{ "/ics/alles-juliaans.ics" | relURL }}">Alles — Juliaans</a></li>
+    <li><a href="{{ "/ics/lagenlanden-gregoriaans.ics" | relURL }}">Alleen Lage Landen — Gregoriaans</a></li>
+    <li><a href="{{ "/ics/lagenlanden-juliaans.ics" | relURL }}">Alleen Lage Landen — Juliaans</a></li>
+    <li><a href="{{ "/ics/feesten-gregoriaans.ics" | relURL }}">Alleen vaste feesten — Gregoriaans</a></li>
+    <li><a href="{{ "/ics/feesten-juliaans.ics" | relURL }}">Alleen vaste feesten — Juliaans</a></li>
+  </ul>
+  <h2>Google Calendar</h2>
+  <ol>
+    <li>Open Google Calendar → Instellingen → Agenda toevoegen → Via URL.</li>
+    <li>Plak de volledige <code>https://…/ics/….ics</code>-URL van een feed hierboven.</li>
+  </ol>
+</section>
+{{ end }}

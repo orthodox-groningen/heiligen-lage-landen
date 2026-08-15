@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="home" data-home>
+  <p class="eyebrow">Orthodoxe jaarcyclus — Lage Landen</p>
+  <h1>Vandaag</h1>
+  <p class="lede">
+    Vaste feesten en heiligen van de Lage Landen. Kies Gregoriaans (nieuw) of Juliaans (oud);
+    abonneer de agenda via ICS.
+  </p>
+
+  <div class="today-card" id="today-card" aria-live="polite">
+    <p class="today-date" id="today-date">Laden…</p>
+    <div id="today-entries"></div>
+    <p class="today-links">
+      <a id="today-day-link" href="#">Dagpagina</a>
+    </p>
+  </div>
+
+  <div class="home-actions">
+    <a class="button" href="{{ "/kalender/" | relURL }}">Jaarkalender</a>
+    <a class="button button-secondary" href="{{ "/agenda/" | relURL }}">Agenda abonneren</a>
+  </div>
+
+  {{ .Content }}
+</section>
+{{ end }}

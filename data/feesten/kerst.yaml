@@ -1,0 +1,19 @@
+id: kerst
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Kerstfeest (Geboorte van Christus)"
+datum:
+  waarde: "12-25"
+  stijl: juliaans
+samenvatting: |
+  Geboorte van onze Heer Jezus Christus.
+verhaal: |
+  Christus wordt geboren in Bethlehem. Op de oude (Juliaanse) kalender valt de burgerlijke viering thans op 7 januari Gregoriaans.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

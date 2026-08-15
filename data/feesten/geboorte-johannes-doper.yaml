@@ -1,0 +1,19 @@
+id: geboorte-johannes-doper
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Geboorte van Johannes de Doper"
+datum:
+  waarde: "06-24"
+  stijl: juliaans
+samenvatting: |
+  Feestdag van de geboorte van de Voorloper.
+verhaal: |
+  Johannes de Doper, de Voorloper van Christus, wordt gevierd op zijn geboortefeest in de vaste jaarcyclus.
+referenties:
+  - bron_id: orthodoxwiki-pascha-note
+    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    geraadpleegd: "2026-08-15"

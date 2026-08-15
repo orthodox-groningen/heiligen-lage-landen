@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orthodox-groningen.github.io/heiligen-lage-landen/schemas/entry.schema.json",
+  "title": "Heiligenkalender entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "soort", "namen", "datum"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "soort": {
+      "type": "string",
+      "enum": ["heilige", "feest"]
+    },
+    "namen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primair"],
+      "properties": {
+        "primair": { "type": "string", "minLength": 1 },
+        "alternatief": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["waarde"],
+      "properties": {
+        "waarde": {
+          "type": "string",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "stijl": {
+          "type": "string",
+          "enum": ["gregoriaans", "juliaans"],
+          "default": "gregoriaans"
+        },
+        "extra": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["waarde"],
+            "properties": {
+              "waarde": {
+                "type": "string",
+                "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+              },
+              "stijl": {
+                "type": "string",
+                "enum": ["gregoriaans", "juliaans"]
+              },
+              "toelichting": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "titels": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "locaties": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "periode": { "type": "string" },
+    "lagenlanden": { "type": "boolean" },
+    "cyclus": {
+      "type": "string",
+      "enum": ["jaar"]
+    },
+    "samenvatting": { "type": "string" },
+    "verhaal": { "type": "string" },
+    "referenties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "minLength": 1 },
+          "bron_id": { "type": "string", "minLength": 1 },
+          "geraadpleegd": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "opmerking": { "type": "string" }
+        },
+        "anyOf": [
+          { "required": ["label"] },
+          { "required": ["bron_id"] }
+        ]
+      }
+    },
+    "icoon": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bestand": { "type": "string" },
+        "bron": { "type": "string" },
+        "licentie": { "type": "string" },
+        "rechten": { "type": "string", "enum": ["ok", "onbekend", "nee"] }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["stub", "curated"],
+      "default": "stub"
+    }
+  }
+}

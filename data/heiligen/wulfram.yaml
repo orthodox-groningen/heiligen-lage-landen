@@ -1,0 +1,17 @@
+id: wulfram
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Wulfram
+datum:
+  waarde: 03-20
+  stijl: gregoriaans
+titels:
+- Missionaris
+periode: '703'
+samenvatting: 'Heilige van de Lage Landen: Wulfram. Missionaris.'
+referenties:
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

@@ -1,0 +1,18 @@
+id: oda-van-de-peel
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Oda van de Peel
+datum:
+  waarde: 11-28
+  stijl: gregoriaans
+titels:
+- Icoon in parochie
+periode: '726'
+samenvatting: 'Heilige van de Lage Landen: Oda van de Peel. Icoon in parochie.'
+referenties:
+- label: gele app
+  geraadpleegd: '2026-08-15'
+  opmerking: Nog te normaliseren naar bronnen.yaml

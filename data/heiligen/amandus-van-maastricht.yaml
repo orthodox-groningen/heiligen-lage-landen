@@ -1,0 +1,27 @@
+id: amandus-van-maastricht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Amandus van Maastricht
+datum:
+  waarde: 02-06
+  stijl: gregoriaans
+  extra:
+  - waarde: 02-13
+    toelichting: 13 februari
+  - waarde: 05-15
+    toelichting: 15 mei
+titels:
+- Apostel van Maastricht (17e Bisschop van Maastricht)
+locaties:
+- Maastricht, Elno bij Doornik (thans Saint-Amand-les-Eaux), Vlaanderen, België
+periode: ~675 (of 684?)
+samenvatting: 'Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht
+  (17e Bisschop van Maastricht).'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'
+- bron_id: eir3app
+  geraadpleegd: '2026-08-15'

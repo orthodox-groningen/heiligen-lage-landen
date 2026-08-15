@@ -1,0 +1,23 @@
+id: adela-van-vlaanderen
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Adela van Vlaanderen
+  alternatief:
+  - Adela van Ieper
+  - Adela van Mesen
+  - Adela van Messines
+datum:
+  waarde: 09-08
+  stijl: gregoriaans
+titels:
+- Weduwe & kloosterlinge
+locaties:
+- Mesen, België
+periode: '1079'
+samenvatting: 'Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'

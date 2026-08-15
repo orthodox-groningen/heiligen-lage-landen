@@ -1,0 +1,30 @@
+id: albericus-van-utrecht
+soort: heilige
+status: stub
+cyclus: jaar
+lagenlanden: true
+namen:
+  primair: Albericus van Utrecht
+  alternatief:
+  - Albricus
+datum:
+  waarde: 03-04
+  stijl: gregoriaans
+  extra:
+  - waarde: 08-21
+    toelichting: 21 augustus
+  - waarde: 11-08
+    toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
+  - waarde: 11-14
+    toelichting: 14 november
+  - waarde: 11-27
+    toelichting: 27 november
+titels:
+- Vierde bisschop
+locaties:
+- Utrecht, Nederland
+periode: '784'
+samenvatting: 'Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.'
+referenties:
+- bron_id: hnet
+  geraadpleegd: '2026-08-15'
