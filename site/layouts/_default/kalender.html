@@ -1,12 +1,17 @@
 {{ define "main" }}
 <section class="kalender-page">
-  <h1>{{ .Title }} <span class="year-label" id="kalender-jaar"></span></h1>
+  <h1 class="kalender-heading">
+    <span class="kalender-title">{{ .Title }} <span class="year-label" id="kalender-jaar"></span></span>
+    <span class="style-toggle kalender-style-toggle" role="group" aria-label="Kalenderstijl Nieuw/Oud">
+      <button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>
+      <button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>
+      <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
+    </span>
+  </h1>
   {{ .Content }}
   <p class="hint">
     Gemarkeerde dagen openen de datumpagina. Kleuren:
     {{ partial "achtergrond-link.html" (dict "id" "kleuren" "text" "legenda") }}.
-    “Vandaag” volgt
-    <button type="button" class="text-link" data-open-nieuw-oud>Nieuw/Oud</button>.
   </p>
   <div class="year-controls">
     <button type="button" class="style-btn" id="year-prev" aria-label="Vorig jaar">←</button>

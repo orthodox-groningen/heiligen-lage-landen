@@ -426,6 +426,19 @@ h2 {
   font-weight: 500;
 }
 
+.kalender-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+}
+
+.kalender-style-toggle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
 .year-controls {
   display: flex;
   gap: 0.5rem;
