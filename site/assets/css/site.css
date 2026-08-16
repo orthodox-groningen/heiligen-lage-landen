@@ -691,6 +691,150 @@ a.text-link {
   margin: 0.55rem 0;
 }
 
+.uitleg-vasten {
+  max-width: 48rem;
+}
+
+.uitleg-vasten h2 {
+  margin-top: 2.4rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.uitleg-vasten h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.uitleg-vasten h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 0 0 0.65rem;
+}
+
+.vasten-niveaus {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.75rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.vasten-niveaus li {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  padding: 0.9rem 1.1rem 0.85rem;
+}
+
+.vasten-niveaus p {
+  margin: 0.55rem 0 0;
+  color: color-mix(in srgb, var(--muted) 55%, var(--ink));
+}
+
+.vasten-regel {
+  margin: 1.35rem 0 1.7rem;
+  padding: 1.05rem 1.2rem 1.15rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 0.35rem;
+}
+
+.vasten-tabel {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.vasten-tabel th,
+.vasten-tabel td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 1rem 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vasten-tabel th {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.vasten-tabel td:nth-child(1),
+.vasten-tabel th:nth-child(1) {
+  width: 32%;
+  padding-right: 1.25rem;
+}
+
+.vasten-tabel td:nth-child(2),
+.vasten-tabel th:nth-child(2) {
+  width: 22%;
+  padding-right: 1.25rem;
+}
+
+.vasten-badge {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.vasten-badge-streng {
+  background: color-mix(in srgb, #8b3a2a 42%, var(--bg-elev));
+  color: #f4cfc7;
+}
+
+.vasten-badge-wijn_olie {
+  background: color-mix(in srgb, var(--gold) 28%, var(--bg-elev));
+  color: var(--gold-soft);
+}
+
+.vasten-badge-vis {
+  background: color-mix(in srgb, #3d7a8c 40%, var(--bg-elev));
+  color: #c5e4ec;
+}
+
+.vasten-badge-lichter {
+  background: color-mix(in srgb, #a67c52 32%, var(--bg-elev));
+  color: #ead7c0;
+}
+
+.vasten-badge-vrij {
+  background: color-mix(in srgb, #4a7a4a 38%, var(--bg-elev));
+  color: #cfe8cf;
+}
+
+.vasten-badge-geen {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.vasten-bron {
+  margin: 0 0 1.15rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+}
+
+.vasten-bron a {
+  font-weight: 600;
+}
+
+.vasten-bron-note {
+  margin: 0.4rem 0 0;
+  color: color-mix(in srgb, var(--muted) 60%, var(--ink));
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.25rem 0 2rem;

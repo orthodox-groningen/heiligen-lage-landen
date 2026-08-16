@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
+from html import escape
 from pathlib import Path
 from typing import Any
 
@@ -365,27 +366,154 @@ def indicatie_op_datum(
     )
 
 
-def render_vasten_uitleg(regels: dict[str, Any] | None = None) -> str:
-    """Markdown-body voor ``site/content/uitleg/vasten.md``."""
+MONTH_NAMES_NL = [
+    "",
+    "januari",
+    "februari",
+    "maart",
+    "april",
+    "mei",
+    "juni",
+    "juli",
+    "augustus",
+    "september",
+    "oktober",
+    "november",
+    "december",
+]
+WEEKDAY_NAMES_NL = [
+    "",
+    "maandag",
+    "dinsdag",
+    "woensdag",
+    "donderdag",
+    "vrijdag",
+    "zaterdag",
+    "zondag",
+]
+
+
+def nl_datum(iso: str) -> str:
+    year, month, day = (int(p) for p in iso.split("-"))
+    weekday = date(year, month, day).isoweekday()
+    return f"{WEEKDAY_NAMES_NL[weekday]} {day} {MONTH_NAMES_NL[month]} {year}"
+
+
+def _badge(niveau: str | None) -> str:
+    if niveau is None:
+        return '<span class="vasten-badge vasten-badge-geen">geen vasten</span>'
+    label = NIVEAU_LABELS.get(niveau, niveau)
+    return f'<span class="vasten-badge vasten-badge-{niveau}">{label}</span>'
+
+
+def _clerus_voorbeelden(voorbeelden: list[dict[str, Any]]) -> list[str]:
+    rows = [v for v in voorbeelden if v.get("datum")]
+    if not rows:
+        return []
+    lines = [
+        "",
+        '<table class="vasten-tabel">',
+        "<thead><tr><th>Wanneer</th><th>Op de kalender</th><th>Toelichting</th></tr></thead>",
+        "<tbody>",
+    ]
+    for v in rows:
+        toel = escape(v.get("toelichting") or "")
+        lines.append(
+            "<tr>"
+            f"<td>{escape(nl_datum(v['datum']))}</td>"
+            f"<td>{_badge(v.get('verwachte_niveau'))}</td>"
+            f"<td>{toel}</td>"
+            "</tr>"
+        )
+    lines.extend(["</tbody>", "</table>", ""])
+    return lines
+
+
+def render_vasten_clerus(regels: dict[str, Any] | None = None) -> str:
+    """Markdown-body voor de cleruspagina ``site/content/uitleg/vasten.md``."""
     data = regels if regels is not None else load_vastenregels()
     lines: list[str] = []
     lines.append(data["inleiding"].strip())
     lines.append("")
-    lines.append("## Bronkeuze")
+    lines.append("## Waar de regels vandaan komen")
     lines.append("")
     lines.append(data["bronkeuze"].strip())
     lines.append("")
-    lines.append("## Niveaus op deze site")
+    lines.append("## Wat de kalender kan tonen")
     lines.append("")
-    lines.append("| Id | Weergave | Betekenis |")
-    lines.append("|---|---|---|")
+    lines.append('<ul class="vasten-niveaus">')
     for n in data["niveaus"]:
-        lines.append(f"| `{n['id']}` | {n['label']} | {n['betekenis'].strip()} |")
+        lines.append(
+            "<li>"
+            f"{_badge(n['id'])}"
+            f"<p>{escape(n['betekenis'].strip())}</p>"
+            "</li>"
+        )
+    lines.append("</ul>")
     lines.append("")
-    lines.append("## Regels die de kalender volgt")
+    lines.append("## De regels")
+    lines.append("")
+    for regel in data["regels"]:
+        lines.append(f'<section class="vasten-regel" id="regel-{regel["id"]}">')
+        lines.append("")
+        lines.append(f"### {regel['titel']}")
+        lines.append("")
+        lines.append(regel["tekst"].strip())
+        lines.extend(_clerus_voorbeelden(regel.get("voorbeelden") or []))
+        lines.append("</section>")
+        lines.append("")
+    vereenv = data.get("vereenvoudigingen") or []
+    if vereenv:
+        lines.append("## Wat we vereenvoudigen")
+        lines.append("")
+        for item in vereenv:
+            lines.append(f"- {item.strip()}")
+        lines.append("")
+    nog = data.get("nog_niet") or []
+    if nog:
+        lines.append("## Wat nog niet in de kalender staat")
+        lines.append("")
+        lines.append(
+            "Dit volgt het typikon nog niet. Na overleg kunnen we een punt "
+            "hieronder tot regel maken; dan past de kalender mee."
+        )
+        lines.append("")
+        for item in nog:
+            lines.append(f"- {item.strip()}")
+        lines.append("")
+    lines.append("## Bronnen")
+    lines.append("")
+    for ref in data.get("referenties") or []:
+        label = escape(ref["label"])
+        url = ref.get("url")
+        note = (ref.get("opmerking") or "").strip()
+        href = f'<a href="{escape(url, quote=True)}">{label}</a>' if url else label
+        note_html = f'<p class="vasten-bron-note">{escape(note)}</p>' if note else ""
+        lines.append(
+            f'<div class="vasten-bron">{href}{note_html}</div>'
+        )
+        lines.append("")
+    lines.append("## Voor wie de site bijhoudt")
     lines.append("")
     lines.append(
-        "Elke regel heeft een stabiel id (`R-…`). Wijzig je de verwachting "
+        "De koppeling tussen deze tekst, de voorbeelden en de programmacode "
+        "staat op de [technische pagina bij deze uitleg]({{% ref \"/uitleg/vasten-technisch\" %}})."
+    )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_vasten_technisch(regels: dict[str, Any] | None = None) -> str:
+    """Markdown-body voor ``site/content/uitleg/vasten-technisch.md``."""
+    data = regels if regels is not None else load_vastenregels()
+    tech = data.get("technisch") or {}
+    lines: list[str] = []
+    lines.append(tech.get("inleiding", "").strip())
+    lines.append("")
+    lines.append("## Regel-ids")
+    lines.append("")
+    lines.append(
+        "Elke regel heeft een stabiel id (`R-…`). Wijzig je `verwachte_niveau` "
         "in `data/regels/vasten.yaml`, dan falen de tests tot `scripts/vasten.py` "
         "en `site/assets/js/calendar.js` meegaan."
     )
@@ -393,51 +521,37 @@ def render_vasten_uitleg(regels: dict[str, Any] | None = None) -> str:
     for regel in data["regels"]:
         lines.append(f"### R-{regel['id']} — {regel['titel']}")
         lines.append("")
-        lines.append(regel["tekst"].strip())
-        lines.append("")
         voorbeelden = regel.get("voorbeelden") or []
-        if voorbeelden:
-            lines.append("Voorbeelden (burgerlijke datum, nieuwe kalender):")
-            lines.append("")
+        dated = [v for v in voorbeelden if v.get("datum")]
+        synthetic = [v for v in voorbeelden if not v.get("datum")]
+        if dated:
             lines.append("| Datum | Verwacht | Toelichting |")
             lines.append("|---|---|---|")
-            for v in voorbeelden:
-                if not v.get("datum"):
-                    continue
+            for v in dated:
                 toel = (v.get("toelichting") or "").replace("|", "\\|")
                 raw = v.get("verwachte_niveau")
-                niveau_s = "—" if raw is None else f"`{raw}`"
+                niveau_s = "geen vasten" if raw is None else f"`{raw}`"
                 lines.append(f"| {v['datum']} | {niveau_s} | {toel} |")
             lines.append("")
-    vereenv = data.get("vereenvoudigingen") or []
-    if vereenv:
-        lines.append("## Bewuste vereenvoudigingen")
-        lines.append("")
-        for item in vereenv:
-            lines.append(f"- {item.strip()}")
-        lines.append("")
-    nog = data.get("nog_niet") or []
-    if nog:
-        lines.append("## Nog niet in de code")
-        lines.append("")
-        lines.append(
-            "Dit zijn typikon-punten voor overleg. Zet er een regel + voorbeeld "
-            "van in `regels.yaml` als de clerus ze wil; dan moet de code volgen."
-        )
-        lines.append("")
-        for item in nog:
-            lines.append(f"- {item.strip()}")
-        lines.append("")
-    lines.append("## Referenties")
+        if synthetic:
+            lines.append("Synthetische toets (geen burgerlijke datum):")
+            lines.append("")
+            for v in synthetic:
+                raw = v.get("verwachte_niveau")
+                lines.append(
+                    f"- weekdag {v.get('weekday')}, `{v.get('mmdd')}` → "
+                    f"`{raw}` — {v.get('toelichting') or ''}"
+                )
+            lines.append("")
+    lines.append("## Niveaus in de data")
     lines.append("")
-    for ref in data.get("referenties") or []:
-        rol = ref.get("rol") or ""
-        label = ref["label"]
-        url = ref.get("url")
-        note = (ref.get("opmerking") or "").strip()
-        bit = f"[{label}]({url})" if url else label
-        extra = f" — {note}" if note else ""
-        rolbit = f" *({rol})*" if rol else ""
-        lines.append(f"- {bit}{rolbit}{extra}")
+    lines.append("| Id | Label |")
+    lines.append("|---|---|")
+    for n in data["niveaus"]:
+        lines.append(f"| `{n['id']}` | {n['label']} |")
     lines.append("")
     return "\n".join(lines)
+
+
+# Alias: oudere imports.
+render_vasten_uitleg = render_vasten_clerus

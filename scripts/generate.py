@@ -17,7 +17,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
-from vasten import load_vastenregels, render_vasten_uitleg  # noqa: E402
+from vasten import (  # noqa: E402
+    load_vastenregels,
+    render_vasten_clerus,
+    render_vasten_technisch,
+)
 from kalender import (  # noqa: E402
     format_mmdd,
     gregorian_to_julian_calendar,
@@ -532,7 +536,7 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "vasten",
         "title": "Vasten",
-        "description": "Welk vastenniveau de kalender op een dag toont, en waarom",
+        "description": "Waar onze vastenregels vandaan komen, en wat de kalender toont",
     },
     {
         "id": "agenda",
@@ -576,16 +580,33 @@ def ensure_achtergrond_topics() -> None:
 
 
 def write_vasten_uitleg() -> None:
-    """Genereer site/content/uitleg/vasten.md uit data/regels/vasten.yaml."""
+    """Genereer clerus- en technische vastenpagina uit data/regels/vasten.yaml."""
     regels = load_vastenregels()
-    meta = {
-        "title": regels["titel"],
-        "description": regels["beschrijving"],
-        "generator": "data/regels/vasten.yaml",
-    }
     write_text(
         CONTENT / "uitleg" / "vasten.md",
-        _dump_hugo_markdown(meta, render_vasten_uitleg(regels)),
+        _dump_hugo_markdown(
+            {
+                "title": regels["titel"],
+                "description": regels["beschrijving"],
+                "generator": "data/regels/vasten.yaml",
+                "uitleg_stijl": "vasten",
+            },
+            render_vasten_clerus(regels),
+        ),
+    )
+    tech = regels.get("technisch") or {}
+    write_text(
+        CONTENT / "uitleg" / "vasten-technisch.md",
+        _dump_hugo_markdown(
+            {
+                "title": tech.get("titel") or "Vasten (technisch)",
+                "description": tech.get("beschrijving") or "",
+                "generator": "data/regels/vasten.yaml",
+                "uitleg_stijl": "vasten-technisch",
+                "build": {"list": "never", "render": "always"},
+            },
+            render_vasten_technisch(regels),
+        ),
     )
 
 

@@ -21,7 +21,8 @@ from vasten import (  # noqa: E402
     indicatie_op_datum,
     load_vastenregels,
     mix_vastenniveau,
-    render_vasten_uitleg,
+    render_vasten_clerus,
+    render_vasten_technisch,
 )
 
 
@@ -80,18 +81,47 @@ def test_regels_voorbeelden_tegen_de_code() -> None:
 
 def test_uitleg_vasten_is_gegenereerd_uit_yaml() -> None:
     regels = load_vastenregels()
-    meta = {
-        "title": regels["titel"],
-        "description": regels["beschrijving"],
-        "generator": "data/regels/vasten.yaml",
-    }
-    expected = _dump_hugo_markdown(meta, render_vasten_uitleg(regels))
-    actual = (CONTENT / "uitleg" / "vasten.md").read_text(encoding="utf-8")
-    assert actual == expected
+    tech = regels["technisch"]
+    clerus = _dump_hugo_markdown(
+        {
+            "title": regels["titel"],
+            "description": regels["beschrijving"],
+            "generator": "data/regels/vasten.yaml",
+            "uitleg_stijl": "vasten",
+        },
+        render_vasten_clerus(regels),
+    )
+    technisch = _dump_hugo_markdown(
+        {
+            "title": tech["titel"],
+            "description": tech["beschrijving"],
+            "generator": "data/regels/vasten.yaml",
+            "uitleg_stijl": "vasten-technisch",
+            "build": {"list": "never", "render": "always"},
+        },
+        render_vasten_technisch(regels),
+    )
+    assert (CONTENT / "uitleg" / "vasten.md").read_text(encoding="utf-8") == clerus
+    assert (
+        CONTENT / "uitleg" / "vasten-technisch.md"
+    ).read_text(encoding="utf-8") == technisch
 
 
-def test_uitleg_noemt_elk_regel_id() -> None:
-    body = render_vasten_uitleg()
+def test_cleruspagina_heeft_geen_technische_sporen() -> None:
+    body = render_vasten_clerus()
+    assert "data/regels/vasten.yaml" not in body
+    assert "scripts/vasten.py" not in body
+    assert "calendar.js" not in body
+    assert "R-periode-boven-wekelijks" not in body
+    assert "→" not in body
+    assert "wo/vr" not in body
+    for regel in load_vastenregels()["regels"]:
+        assert regel["titel"] in body
+
+
+def test_technisch_noemt_elk_regel_id() -> None:
+    body = render_vasten_technisch()
+    assert "data/regels/vasten.yaml" in body
     for regel in load_vastenregels()["regels"]:
         assert f"R-{regel['id']}" in body
 
