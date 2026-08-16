@@ -17,6 +17,8 @@ from datetime import date, timedelta
 
 # Referentiejaar voor MM-DD-normalisatie zonder jaartal (niet-schrikkel).
 REF_YEAR = 2001
+# Schrikkeljaar alleen om 02-29 als geldige dagnaam te valideren.
+REF_YEAR_LEAP = 2000
 
 
 def julian_gregorian_offset_days(year: int) -> int:
@@ -34,7 +36,9 @@ def parse_mmdd(value: str) -> tuple[int, int]:
         raise ValueError(f"Datum moet MM-DD zijn, kreeg: {value!r}")
     month_s, day_s = parts
     month, day = int(month_s), int(day_s)
-    date(REF_YEAR, month, day)  # valideert
+    # 02-29 mag als dagnaam; of die dag in een concreet jaar bestaat, is apart.
+    ref = REF_YEAR_LEAP if month == 2 and day == 29 else REF_YEAR
+    date(ref, month, day)  # valideert
     return month, day
 
 

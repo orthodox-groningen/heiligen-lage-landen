@@ -2,7 +2,9 @@
 
 - [x] Jaarrooster: **meerdere kleuren** op één dag wanneer `observances` zowel
   `feest` als `vasten` (of heilige) bevat.
-- [ ] Lezingen van de dag koppelen aan vaste- en paascyclus-entries.
+- [x] Lezingen: rang/samenval (R5) — zie `docs/specs/lezingen.md`.
+- [x] Lezingen: Lucaanse sprong met отступка/преступка; Aankondiging × paascyclus;
+      extra polyeleos-menaion.
 - [x] Apostolisch vasten en overige vastenperiodes als periodes in data + UI.
 - [x] Vastenvrije weken (Bright Week, na Pinksteren, …) als uitzonderingen op
   woensdag/vrijdag.

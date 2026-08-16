@@ -17,6 +17,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
+from lezingen import (  # noqa: E402
+    SPEC_PATH,
+    build_lezingen_dagen_payload,
+    spec_body_for_uitleg,
+)
 from vasten import (  # noqa: E402
     load_vastenregels,
     render_vasten_clerus,
@@ -548,6 +553,14 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
         "title": "Agenda",
         "description": "De kerkelijke kalender op uw telefoon of computer: kiezen, downloaden of abonneren",
     },
+    {
+        "id": "lezingen",
+        "title": "Lezingen van de dag",
+        "description": (
+            "Apostel en Evangelie volgens Moskou (ROCOR bij twijfel) — "
+            "uitleg voor de clerus"
+        ),
+    },
 ]
 
 
@@ -555,12 +568,26 @@ def ensure_achtergrond_topics() -> None:
     """Zorg dat bekende uitleg-onderwerpen bestaan met niet-lege title.
 
     Body en overige front matter blijven onaangeroerd. Ontbrekende bestanden
-    krijgen een korte stub.
+    krijgen een korte stub. Uitzondering: bij ``lezingen`` wordt alleen de
+    *technische* spiegel bijgewerkt; de clerus-pagina blijft handmatig.
     """
     uitleg_dir = CONTENT / "uitleg"
     uitleg_dir.mkdir(parents=True, exist_ok=True)
     for topic in ACHTERGROND_TOPICS:
         path = uitleg_dir / f"{topic['id']}.md"
+        if topic["id"] == "lezingen":
+            sync_lezingen_uitleg()
+            # Valideer clerus-front matter (sync schrijft die niet).
+            try:
+                meta, _body = _split_hugo_markdown(path.read_text(encoding="utf-8"))
+            except ValueError as exc:
+                raise SystemExit(f"{_rel(path)}: {exc}") from exc
+            title = meta.get("title")
+            if not isinstance(title, str) or not title.strip():
+                raise SystemExit(
+                    f"{_rel(path)}: front matter 'title' ontbreekt of is leeg"
+                )
+            continue
         if not path.exists():
             meta = {
                 "title": topic["title"],
@@ -612,6 +639,65 @@ def write_vasten_uitleg() -> None:
             },
             render_vasten_technisch(regels),
         ),
+    )
+
+
+def sync_lezingen_uitleg() -> None:
+    """Schrijf technische uitleg; raak de clerus-pagina niet over.
+
+    - ``uitleg/lezingen.md`` — handmatig (clerus); staat in de inhoudsopgave.
+    - ``uitleg/lezingen-technisch.md`` — spiegel van ``docs/specs/lezingen.md``;
+      verborgen in de Uitleg-index (``build.list: never``), wel bereikbaar
+      via link vanaf de clerus-pagina.
+    """
+    if not SPEC_PATH.is_file():
+        raise SystemExit(f"Ontbreekt: {SPEC_PATH.relative_to(ROOT)}")
+
+    clerus = CONTENT / "uitleg" / "lezingen.md"
+    if not clerus.is_file():
+        stub_meta = {
+            "title": "Lezingen van de dag",
+            "description": (
+                "Apostel en Evangelie volgens Moskou (ROCOR bij twijfel) — "
+                "uitleg voor de clerus"
+            ),
+        }
+        stub_body = (
+            "Uitleg voor de clerus (handmatige tekst).\n\n"
+            "Technische specificatie: "
+            "[Lezingen technisch]({{% ref \"/uitleg/lezingen-technisch\" %}}).\n"
+        )
+        write_text(clerus, _dump_hugo_markdown(stub_meta, stub_body))
+        print(f"Aangemaakt: {_rel(clerus)}")
+
+    tech_path = CONTENT / "uitleg" / "lezingen-technisch.md"
+    meta = {
+        "title": "Lezingen van de dag (technisch)",
+        "description": (
+            "Normatieve specificatie: regels, bestanden en implementatiestatus"
+        ),
+        "build": {"list": "never", "render": "always"},
+        "uitleg_stijl": "lezingen-technisch",
+    }
+    intro = (
+        "Deze pagina is de **technische spiegel** van "
+        "`docs/specs/lezingen.md`. Wijzig die specificatie (regels + voorbeelden); "
+        "daarna moet `scripts/lezingen.py` meekomen — pytest bewaakt dat.\n\n"
+        "Voor overleg met de clerus: "
+        "[Lezingen van de dag]({{% ref \"/uitleg/lezingen\" %}}).\n\n"
+        "---\n\n"
+    )
+    body = intro + spec_body_for_uitleg()
+    write_text(tech_path, _dump_hugo_markdown(meta, body))
+
+
+def write_lezingen_json() -> None:
+    """Precompute feestoverride-lezingen voor ICS-jaarvenster (nieuw + oud)."""
+    years = list(occurrence_years())
+    payload = build_lezingen_dagen_payload(years)
+    write_text(
+        STATIC_DATA / "lezingen-dagen.json",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
     )
 
 
@@ -957,6 +1043,7 @@ def clean_generated() -> None:
         "content/feesten",
         "content/vasten",
         "static/data/entries.json",
+        "static/data/lezingen-dagen.json",
     ):
         path = SITE / rel
         if path.is_dir():
@@ -989,6 +1076,7 @@ def main() -> int:
     for entry in entries:
         write_entry_page(entry)
     write_entries_json(entries)
+    write_lezingen_json()
     write_ics(entries)
     print(f"Gegenereerd: {len(entries)} entries.")
     return 0

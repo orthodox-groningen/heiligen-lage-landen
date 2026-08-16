@@ -1,0 +1,6 @@
+# Actieve lezingenconfiguratie.
+# Zet `parochie` op een id onder data/lezingen/parochies/<id>.yaml om
+# parochiespecifieke feestlezingen te laden (bovenop feest-overrides.yaml).
+# Leeg of weggelaten = alleen de gedeelde Moskou/ROCOR-lijst.
+
+parochie: den-haag

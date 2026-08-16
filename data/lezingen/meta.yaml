@@ -1,0 +1,12 @@
+# Meta lezingenrooster
+
+traditie: moskou
+fallback: rocor
+geraadpleegd: "2026-08-16"
+bronnen:
+  - label: "MP-kalender (calendar.rop.ru)"
+    url: "http://calendar.rop.ru"
+  - label: "Azbyka — ukazatel’ čtenij"
+    url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  - label: "Holy Trinity Orthodox Calendar (ROCOR)"
+    url: "https://www.holytrinityorthodox.com/calendar/"

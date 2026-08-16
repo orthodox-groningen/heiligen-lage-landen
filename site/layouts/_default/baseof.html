@@ -16,27 +16,21 @@
       <nav class="nav" aria-label="Hoofdnavigatie">
         <a href="{{ "" | relURL }}">Vandaag</a>
         <a href="{{ "kalender/" | relURL }}">Kalender</a>
+        <a href="{{ "lezingenrooster/" | relURL }}">Lezingen</a>
         <a href="{{ "meneon/" | relURL }}">Meneon</a>
         <a href="{{ "agenda/" | relURL }}">Agenda</a>
         <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
       </nav>
-      <div class="style-toggle" role="group" aria-label="Kalender voor vandaag">
-        <button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>
-        <button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>
-        <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
-      </div>
     </div>
   </header>
-  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") }} main-wide{{ end }}">
+  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") }} main-wide{{ end }}">
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <div id="nieuw-oud-dialog" class="info-popover" hidden role="tooltip" aria-labelledby="nieuw-oud-title">
-    <h2 id="nieuw-oud-title">Over deze datum</h2>
-    <div id="nieuw-oud-body"></div>
-    <p class="info-popover-meer">
-      {{ partial "achtergrond-link.html" (dict "id" "nieuw-oud" "text" "Meer over Nieuw/Oud") }}
-    </p>
+  <div id="info-popover" class="info-popover" hidden role="tooltip" aria-labelledby="info-popover-title">
+    <h2 id="info-popover-title">Info</h2>
+    <div id="info-popover-body"></div>
+    <p class="info-popover-meer" id="info-popover-meer" hidden></p>
   </div>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>

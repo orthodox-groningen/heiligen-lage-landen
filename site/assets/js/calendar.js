@@ -16,6 +16,17 @@
     "november",
     "december",
   ];
+  /** ISO-weekdag 1=ma … 7=zo */
+  const WEEKDAYS = [
+    "",
+    "Maandag",
+    "Dinsdag",
+    "Woensdag",
+    "Donderdag",
+    "Vrijdag",
+    "Zaterdag",
+    "Zondag",
+  ];
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   function siteBase() {
@@ -572,19 +583,43 @@
     );
   }
 
+  function daySurfaceHref(year, mmdd, style) {
+    const isToday =
+      year === new Date().getFullYear() && mmdd === todayMmdd(style);
+    const stijl = style === "juliaans" ? { stijl: style } : {};
+    if (isToday) return pageUrl("", stijl);
+    return pageUrl("datum/", { jaar: year, dag: mmdd, ...stijl });
+  }
+
+  /** Home = vandaag; andere dagen = /datum/. */
+  function redirectDaySurfaceIfNeeded(style) {
+    const onHome = Boolean(document.querySelector("[data-home]"));
+    const onDatum = Boolean(document.querySelector("[data-datum]"));
+    if (!onHome && !onDatum) return false;
+    const view = getViewDate(style);
+    const isToday = isViewToday(style);
+    if (onHome && !isToday) {
+      window.location.replace(daySurfaceHref(view.year, view.mmdd, style));
+      return true;
+    }
+    if (onDatum && isToday) {
+      window.location.replace(daySurfaceHref(view.year, view.mmdd, style));
+      return true;
+    }
+    return false;
+  }
+
   function setViewDate(year, mmdd) {
-    const url = new URL(window.location.href);
     const style = getStyle();
     year = clampYear(year);
-    const onHome = Boolean(document.querySelector("[data-home]"));
-    if (onHome && year === new Date().getFullYear() && mmdd === todayMmdd(style)) {
-      url.searchParams.delete("dag");
-      url.searchParams.delete("jaar");
-    } else {
-      url.searchParams.set("dag", mmdd);
-      url.searchParams.set("jaar", String(year));
+    const target = daySurfaceHref(year, mmdd, style);
+    const here = new URL(window.location.href);
+    const next = new URL(target);
+    if (here.pathname !== next.pathname) {
+      window.location.assign(target);
+      return;
     }
-    window.history.pushState({}, "", url);
+    window.history.pushState({}, "", target);
     refresh();
   }
 
@@ -613,13 +648,74 @@
     await refresh();
   }
 
+  function styleToggleHtml(ariaLabel) {
+    return (
+      `<span class="style-toggle" role="group" aria-label="${ariaLabel || "Kalenderstijl Nieuw/Oud"}">` +
+      `<button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>` +
+      `<button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>` +
+      `<button type="button" class="style-btn style-help" data-info-tip="nieuw-oud" title="Uitleg Nieuw/Oud">?</button>` +
+      `</span>`
+    );
+  }
+
+  function fillPageTitleRow(navEl, titleNavInnerHtml, opts) {
+    const row = navEl.closest(".page-title-row");
+    if (!row) return null;
+    const includeStyle = !opts || opts.includeStyleToggle !== false;
+    const id = navEl.id || "";
+    const dataTitle = navEl.dataset.title || "";
+    row.innerHTML =
+      `<span class="title-nav"` +
+      (id ? ` id="${id}"` : "") +
+      (dataTitle ? ` data-title="${dataTitle.replace(/"/g, "&quot;")}"` : "") +
+      `>${titleNavInnerHtml}</span>` +
+      (includeStyle ? styleToggleHtml("Kalenderstijl Nieuw/Oud") : "");
+    setStyle(getStyle());
+    wireInfoTips(row);
+    return row;
+  }
+
+  function dayTitleText(view, style) {
+    const weekday = WEEKDAYS[isoWeekdayFromMmdd(view.mmdd, view.year)] || "";
+    const paren = isViewToday(style)
+      ? `(${weekday}, vandaag)`
+      : `(${weekday})`;
+    return `${label(view.mmdd)} ${view.year} ${paren}`;
+  }
+
   function titleNavHtml(opts) {
     const prevDis = opts.prevDisabled ? " disabled" : "";
     const nextDis = opts.nextDisabled ? " disabled" : "";
+    const unit = opts.unit || "dag"; // dag | maand | jaar
+    const prevTitle =
+      unit === "jaar" ? "Vorig jaar" : unit === "maand" ? "Vorige maand" : "Vorige dag";
+    const nextTitle =
+      unit === "jaar"
+        ? "Volgend jaar"
+        : unit === "maand"
+          ? "Volgende maand"
+          : "Volgende dag";
+    const prevBody =
+      unit === "jaar"
+        ? "Ga naar het vorige jaar in deze kalender."
+        : unit === "maand"
+          ? "Ga naar de vorige maand in het lezingenrooster."
+          : "Ga naar de vorige dag.";
+    const nextBody =
+      unit === "jaar"
+        ? "Ga naar het volgende jaar in deze kalender."
+        : unit === "maand"
+          ? "Ga naar de volgende maand in het lezingenrooster."
+          : "Ga naar de volgende dag.";
     return (
-      `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" aria-label="${opts.prevLabel}"${prevDis}>‹</button>` +
-      `<span class="title-nav-label">${opts.titleHtml}</span>` +
-      `<button type="button" class="title-step" data-${opts.deltaAttr}="1" aria-label="${opts.nextLabel}"${nextDis}>›</button>`
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" ` +
+      `aria-label="${opts.prevLabel}"${prevDis} ` +
+      `data-info-tip="nav" data-info-title="${prevTitle}" data-info-body="${prevBody}">‹</button>` +
+      `<span class="title-nav-label" tabindex="0" data-info-tip="titel" ` +
+      `data-info-unit="${unit}">${opts.titleHtml}</span>` +
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="1" ` +
+      `aria-label="${opts.nextLabel}"${nextDis} ` +
+      `data-info-tip="nav" data-info-title="${nextTitle}" data-info-body="${nextBody}">›</button>`
     );
   }
 
@@ -627,29 +723,27 @@
     const heading = document.getElementById("today-heading");
     if (!heading) return;
     const view = getViewDate(style);
-    const isToday = isViewToday(style);
-    const onHome = Boolean(document.querySelector("[data-home]"));
-    const titleText =
-      onHome && isToday
-        ? `Vandaag: ${label(view.mmdd)} ${view.year}`
-        : `${label(view.mmdd)} ${view.year}`;
-    let titleInner = titleText;
-    if (style === "juliaans") {
-      const jul = civilToLiturgical(view.year, view.mmdd);
-      titleInner +=
-        ` <span class="today-civil-hint">Juliaans: ${label(mmddFromDate(jul))} ${jul.getFullYear()}</span>`;
-    }
-    heading.classList.add("title-nav");
-    heading.innerHTML = titleNavHtml({
-      titleHtml: `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>`,
+    const navHtml = titleNavHtml({
+      titleHtml: dayTitleText(view, style),
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
       deltaAttr: "day-delta",
+      unit: "dag",
       prevDisabled: false,
       nextDisabled: false,
     });
-    wireNieuwOudTriggers(heading);
-    wireDaySteps(heading);
+    const row = heading.closest(".page-title-row");
+    if (row) {
+      // Nieuw/Oud staat in de inhoudsbox, niet in de (wereldlijke) titel.
+      fillPageTitleRow(heading, navHtml, { includeStyleToggle: false });
+      const fresh = document.getElementById("today-heading");
+      if (fresh) wireDaySteps(fresh);
+    } else {
+      heading.classList.add("title-nav");
+      heading.innerHTML = navHtml;
+      wireInfoTips(heading);
+      wireDaySteps(heading);
+    }
   }
 
   function wireDaySteps(root) {
@@ -670,81 +764,126 @@
     });
   }
 
-  function updateNote(style) {
-    const cardNote = document.getElementById("today-note");
-    if (!cardNote) return;
-    if (!isViewToday(style)) {
-      cardNote.textContent = "";
-      cardNote.hidden = true;
-      return;
-    }
-    if (style === "juliaans") {
-      cardNote.textContent = "";
-      cardNote.hidden = true;
-      return;
-    }
-    const now = new Date();
-    const julianToday = mmddFromDate(
-      civilToLiturgical(now.getFullYear(), civilTodayMmdd())
-    );
-    cardNote.textContent = `Oud/Juliaans vandaag: ${label(julianToday)}.`;
-    cardNote.hidden = false;
+  let infoCloseTimer = null;
+  let infoAnchor = null;
+
+  function nieuwOudTitle(style) {
+    return style === "juliaans"
+      ? "Oude kalender (Juliaans)"
+      : "Nieuwe/Gregoriaanse kalender";
   }
 
-  let nieuwOudCloseTimer = null;
-  let nieuwOudAnchor = null;
+  function fillNieuwOudMeer(meer) {
+    if (!meer) return;
+    meer.hidden = false;
+    meer.innerHTML = achtergrondLink("nieuw-oud", "Meer over Nieuw/Oud");
+  }
 
-  function fillNieuwOudDialog(style) {
-    const body = document.getElementById("nieuw-oud-body");
-    const title = document.getElementById("nieuw-oud-title");
-    if (!body) return;
-    const civilToday = civilTodayMmdd();
-    const now = new Date();
-    const julianToday = mmddFromDate(
-      civilToLiturgical(now.getFullYear(), civilToday)
-    );
-    if (style === "juliaans") {
-      if (title) title.textContent = "Oude kalender (Juliaans)";
+  /** Titel-popover: tekst past bij dag-, maand- of jaarnavigatie. */
+  function fillTitelPopover(trigger, title, body, meer) {
+    const style = getStyle();
+    const unit = (trigger && trigger.dataset.infoUnit) || "dag";
+    title.textContent = nieuwOudTitle(style);
+
+    if (unit === "jaar") {
       body.innerHTML =
-        `<p>Wereldlijk is het ${label(civilToday)}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
-        `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
-        `Pascha blijft op dezelfde wereldlijke dag.</p>` +
-        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
-        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
-        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
-        `</div>`;
+        style === "juliaans"
+          ? `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
+            `Daarop staan vaste feesten op hun wereldlijke vierdatum ` +
+            `(Besnijdenis op 14 januari). ` +
+            `Pascha blijft op dezelfde wereldlijke dag.</p>`
+          : `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
+            `Daarop vallen vaste feesten op hun feestdatum ` +
+            `(Besnijdenis op 1 januari). ` +
+            `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+      fillNieuwOudMeer(meer);
+      return;
+    }
+
+    if (unit === "maand") {
+      const monthName = MONTHS[parseInt(roosterMonth, 10)] || "";
+      body.innerHTML =
+        style === "juliaans"
+          ? `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
+            `Het rooster volgt de oude kalender: vaste dagen op hun ` +
+            `wereldlijke vierdatum. Pascha blijft ongewijzigd.</p>`
+          : `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
+            `Het rooster volgt de nieuwe kalender: vaste dagen op hun ` +
+            `feestdatum. Pascha blijft ongewijzigd.</p>`;
+      fillNieuwOudMeer(meer);
+      return;
+    }
+
+    // dag (home / datumpagina)
+    const view = getViewDate(style);
+    const julianOnView = mmddFromDate(
+      civilToLiturgical(view.year, view.mmdd)
+    );
+    const dayPhrase = isViewToday(style)
+      ? `Vandaag is het wereldlijk ${label(view.mmdd)}`
+      : `Deze dag is wereldlijk ${label(view.mmdd)} ${view.year}`;
+    if (style === "juliaans") {
+      body.innerHTML =
+        `<p>${dayPhrase}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
+        `Vaste feesten staan op hun wereldlijke vierdatum ` +
+        `(Besnijdenis op 14 januari). ` +
+        `Pascha blijft op dezelfde wereldlijke dag.</p>`;
     } else {
-      if (title) title.textContent = "Nieuwe/Gregoriaanse kalender";
       body.innerHTML =
-        `<p>Wereldlijk is het ${label(civilToday)}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+        `<p>${dayPhrase}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
         `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
-        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>` +
-        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
-        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
-        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
-        `</div>`;
+        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
     }
-    body.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
-      btn.addEventListener("click", async (ev) => {
-        ev.preventDefault();
-        ev.stopPropagation();
-        cancelNieuwOudClose();
-        await applyStyle(btn.dataset.style);
-        nieuwOudAnchor =
-          document.querySelector("#today-heading [data-open-nieuw-oud]") ||
-          nieuwOudAnchor;
-        fillNieuwOudDialog(btn.dataset.style);
-        if (nieuwOudAnchor) positionNieuwOudPopover(nieuwOudAnchor);
-        const dlg = document.getElementById("nieuw-oud-dialog");
-        if (dlg) dlg.hidden = false;
-      });
-    });
+    fillNieuwOudMeer(meer);
   }
 
-  function positionNieuwOudPopover(trigger) {
-    const dlg = document.getElementById("nieuw-oud-dialog");
+  function fillInfoPopover(trigger) {
+    const body = document.getElementById("info-popover-body");
+    const title = document.getElementById("info-popover-title");
+    const meer = document.getElementById("info-popover-meer");
+    if (!body || !title) return;
+    const kind = (trigger && trigger.dataset.infoTip) || "nav";
+    if (kind === "titel") {
+      fillTitelPopover(trigger, title, body, meer);
+      return;
+    }
+    if (kind === "nieuw-oud") {
+      // Knop «?» naast Nieuw/Oud: algemene uitleg, geankerd op vandaag.
+      const style = getStyle();
+      const civilToday = civilTodayMmdd();
+      const now = new Date();
+      const julianToday = mmddFromDate(
+        civilToLiturgical(now.getFullYear(), civilToday)
+      );
+      title.textContent = nieuwOudTitle(style);
+      if (style === "juliaans") {
+        body.innerHTML =
+          `<p>Wereldlijk is het ${label(civilToday)}. ` +
+          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+          `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
+          `Pascha blijft op dezelfde wereldlijke dag.</p>`;
+      } else {
+        body.innerHTML =
+          `<p>Wereldlijk is het ${label(civilToday)}. ` +
+          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+          `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
+          `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+      }
+      fillNieuwOudMeer(meer);
+      return;
+    }
+    title.textContent = (trigger && trigger.dataset.infoTitle) || "Navigatie";
+    body.innerHTML = `<p>${(trigger && trigger.dataset.infoBody) || ""}</p>`;
+    if (meer) {
+      meer.hidden = true;
+      meer.innerHTML = "";
+    }
+  }
+
+  function positionInfoPopover(trigger) {
+    const dlg = document.getElementById("info-popover");
     if (!dlg || !trigger) return;
     dlg.style.left = "0px";
     dlg.style.top = "0px";
@@ -763,59 +902,61 @@
     dlg.style.top = `${top}px`;
   }
 
-  function closeNieuwOudDialog() {
-    const dlg = document.getElementById("nieuw-oud-dialog");
+  function closeInfoPopover() {
+    const dlg = document.getElementById("info-popover");
     if (!dlg) return;
     dlg.hidden = true;
-    nieuwOudAnchor = null;
+    infoAnchor = null;
   }
 
-  function cancelNieuwOudClose() {
-    if (nieuwOudCloseTimer) {
-      clearTimeout(nieuwOudCloseTimer);
-      nieuwOudCloseTimer = null;
+  function cancelInfoClose() {
+    if (infoCloseTimer) {
+      clearTimeout(infoCloseTimer);
+      infoCloseTimer = null;
     }
   }
 
-  function scheduleNieuwOudClose() {
-    cancelNieuwOudClose();
-    nieuwOudCloseTimer = setTimeout(closeNieuwOudDialog, 180);
+  function scheduleInfoClose() {
+    cancelInfoClose();
+    infoCloseTimer = setTimeout(closeInfoPopover, 180);
   }
 
-  function openNieuwOudDialog(trigger) {
-    const dlg = document.getElementById("nieuw-oud-dialog");
-    if (!dlg) return;
-    cancelNieuwOudClose();
-    nieuwOudAnchor = trigger || document.querySelector("[data-open-nieuw-oud]");
-    fillNieuwOudDialog(getStyle());
+  function openInfoPopover(trigger) {
+    const dlg = document.getElementById("info-popover");
+    if (!dlg || !trigger) return;
+    cancelInfoClose();
+    infoAnchor = trigger;
+    fillInfoPopover(trigger);
     dlg.hidden = false;
-    positionNieuwOudPopover(nieuwOudAnchor);
+    positionInfoPopover(trigger);
   }
 
-  function wireNieuwOudTriggers(root) {
-    (root || document).querySelectorAll("[data-open-nieuw-oud]").forEach((el) => {
-      if (el.dataset.bound === "1") return;
-      el.dataset.bound = "1";
-      el.addEventListener("mouseenter", () => openNieuwOudDialog(el));
-      el.addEventListener("mouseleave", scheduleNieuwOudClose);
-      el.addEventListener("focus", () => openNieuwOudDialog(el));
-      el.addEventListener("blur", scheduleNieuwOudClose);
+  function wireInfoTips(root) {
+    (root || document).querySelectorAll("[data-info-tip]").forEach((el) => {
+      if (el.dataset.boundInfo === "1") return;
+      el.dataset.boundInfo = "1";
+      el.addEventListener("mouseenter", () => openInfoPopover(el));
+      el.addEventListener("mouseleave", scheduleInfoClose);
+      el.addEventListener("focus", () => openInfoPopover(el));
+      el.addEventListener("blur", scheduleInfoClose);
       el.addEventListener("click", (ev) => {
+        // Navigatieknoppen (‹ ›) moeten gewoon klikken; tip alleen op hover/focus.
+        if (el.classList.contains("title-step")) return;
         ev.preventDefault();
         ev.stopPropagation();
-        const dlg = document.getElementById("nieuw-oud-dialog");
-        if (dlg && !dlg.hidden) {
-          closeNieuwOudDialog();
+        const dlg = document.getElementById("info-popover");
+        if (dlg && !dlg.hidden && infoAnchor === el) {
+          closeInfoPopover();
         } else {
-          openNieuwOudDialog(el);
+          openInfoPopover(el);
         }
       });
     });
-    const dlg = document.getElementById("nieuw-oud-dialog");
+    const dlg = document.getElementById("info-popover");
     if (dlg && dlg.dataset.boundHover !== "1") {
       dlg.dataset.boundHover = "1";
-      dlg.addEventListener("mouseenter", cancelNieuwOudClose);
-      dlg.addEventListener("mouseleave", scheduleNieuwOudClose);
+      dlg.addEventListener("mouseenter", cancelInfoClose);
+      dlg.addEventListener("mouseleave", scheduleInfoClose);
     }
   }
 
@@ -831,48 +972,282 @@
     return res.json();
   }
 
+  let lezingenIndex = null;
+
+  async function loadLezingenIndex() {
+    if (lezingenIndex) return lezingenIndex;
+    const url = assetUrl("data/lezingen-dagen.json");
+    const res = await fetch(url);
+    if (!res.ok) {
+      lezingenIndex = { nieuw: {}, oud: {} };
+      return lezingenIndex;
+    }
+    lezingenIndex = await res.json();
+    return lezingenIndex;
+  }
+
+  function lezingenForDay(year, civilMmdd, style) {
+    const stil = style === "juliaans" ? "oud" : "nieuw";
+    let keyMmdd = civilMmdd;
+    let keyYear = year;
+    if (style === "juliaans") {
+      const lit = civilToLiturgical(year, civilMmdd);
+      keyMmdd = mmddFromDate(lit);
+      keyYear = lit.getFullYear();
+    }
+    const root = lezingenIndex || {};
+    return ((root[stil] || {})[String(keyYear)] || {})[keyMmdd] || null;
+  }
+
+  function renderLezingenHtml(lez) {
+    if (!lez || (lez.status !== "gevonden" && lez.status !== "geen_liturgie")) {
+      const label = lez && lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "";
+      return (
+        `<div class="day-lezingen" id="day-lezingen">` +
+        `<h2 class="day-lezingen-title">Lezingen</h2>` +
+        label +
+        `<p class="muted">Geen rijádovoe of feestoverride voor deze dag. ` +
+        `${achtergrondLink("lezingen", "Uitleg lezingen")}</p></div>`
+      );
+    }
+    if (lez.status === "geen_liturgie") {
+      return (
+        `<div class="day-lezingen" id="day-lezingen">` +
+        `<h2 class="day-lezingen-title">Lezingen</h2>` +
+        (lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "") +
+        `<p class="muted">Geen liturgie met Apostel/Evangelie van de dag. ` +
+        `${achtergrondLink("lezingen", "Uitleg")}</p></div>`
+      );
+    }
+    const apostel = (lez.apostel || [])
+      .map((a) => a.ref)
+      .filter(Boolean)
+      .join("; ");
+    const evangelie = (lez.evangelie || [])
+      .map((e) => e.ref)
+      .filter(Boolean)
+      .join("; ");
+    const regels = (lez.regels || []).join(", ");
+    const regelsHtml = regels
+      ? ` <span class="meta">(${regels} · ${achtergrondLink("lezingen", "uitleg")})</span>`
+      : ` ${achtergrondLink("lezingen", "Uitleg")}`;
+    const labelHtml = lez.daglabel
+      ? `<p class="day-lezingen-label">${lez.daglabel}</p>`
+      : "";
+    let samenvalHtml = "";
+    if (lez.modus === "toevoegen") {
+      samenvalHtml =
+        `<p class="muted day-lezingen-samenval">Samenval: rijádovoe én feestlezing.</p>`;
+    } else if (lez.modus === "vervangen" && lez.rijadovoe) {
+      samenvalHtml =
+        `<p class="muted day-lezingen-samenval">Feestlezing vervangt de rijádovoe van de dag.</p>`;
+    }
+    return (
+      `<div class="day-lezingen" id="day-lezingen">` +
+      `<h2 class="day-lezingen-title">Lezingen${regelsHtml}</h2>` +
+      labelHtml +
+      samenvalHtml +
+      `<ul>` +
+      (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
+      (evangelie ? `<li><strong>Evangelie:</strong> ${evangelie}</li>` : "") +
+      `</ul></div>`
+    );
+  }
+
   function renderToday(entries, style) {
     const cardEntries = document.getElementById("today-entries");
     if (!cardEntries) return;
     updateHeading(style);
-    updateNote(style);
     const view = getViewDate(style);
+    const toolbar =
+      `<div class="today-card-bar">` +
+      styleToggleHtml("Kalenderstijl Nieuw/Oud") +
+      `</div>`;
+    let bodyHtml;
     if (!mmddExistsInYear(view.mmdd, view.year)) {
-      cardEntries.innerHTML =
-        `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
-      return;
-    }
-    const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
-    const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
-    const vasten = mixVastenniveau(matched, weekday, view.mmdd);
-    const vastenHtml = vasten
-      ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
-      : "";
-    if (!matched.length) {
-      cardEntries.innerHTML =
-        vastenHtml +
-        "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
+      bodyHtml = `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
     } else {
-      cardEntries.innerHTML =
-        vastenHtml +
-        "<ul>" +
-        matched
-          .map((e) => {
-            const kind = kindLabel(e);
-            const summary = e.samenvatting
-              ? `<div class="muted">${e.samenvatting}</div>`
-              : "";
-            return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
-          })
-          .join("") +
-        "</ul>";
+      const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
+      const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
+      const vasten = mixVastenniveau(matched, weekday, view.mmdd);
+      const vastenHtml = vasten
+        ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
+        : "";
+      const lezHtml = renderLezingenHtml(
+        lezingenForDay(view.year, view.mmdd, style)
+      );
+      if (!matched.length) {
+        bodyHtml =
+          vastenHtml +
+          lezHtml +
+          "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
+      } else {
+        bodyHtml =
+          vastenHtml +
+          lezHtml +
+          "<ul>" +
+          matched
+            .map((e) => {
+              const kind = kindLabel(e);
+              const summary = e.samenvatting
+                ? `<div class="muted">${e.samenvatting}</div>`
+                : "";
+              return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
+            })
+            .join("") +
+          "</ul>";
+      }
     }
-    if (document.querySelector("[data-datum]")) {
+    cardEntries.innerHTML = toolbar + bodyHtml;
+    setStyle(style);
+    wireInfoTips(cardEntries);
+    if (
+      document.querySelector("[data-datum]") ||
+      document.querySelector("[data-home]")
+    ) {
       const site = document.title.includes(" · ")
         ? document.title.slice(document.title.lastIndexOf(" · ") + 3)
         : document.title;
-      document.title = `${label(view.mmdd)} ${view.year} · ${site}`;
+      document.title = `${dayTitleText(view, style)} · ${site}`;
     }
+  }
+
+  function refsText(arr) {
+    return (arr || [])
+      .map((x) => x.ref)
+      .filter(Boolean)
+      .join("; ");
+  }
+
+  function renderRooster(style) {
+    const root = document.getElementById("rooster-tables");
+    const nav = document.getElementById("rooster-title-nav");
+    if (!root || !nav) return;
+
+    const stil = style === "juliaans" ? "oud" : "nieuw";
+    const monthNum = parseInt(roosterMonth, 10);
+    const monthName = MONTHS[monthNum];
+    const titleBase = nav.dataset.title || "Lezingenrooster";
+
+    fillPageTitleRow(
+      nav,
+      titleNavHtml({
+        titleHtml: `${titleBase}: ${monthName} ${viewYear}`,
+        prevLabel: "Vorige maand",
+        nextLabel: "Volgende maand",
+        deltaAttr: "month-delta",
+        unit: "maand",
+        prevDisabled: false,
+        nextDisabled: false,
+      })
+    );
+    const freshNav = document.getElementById("rooster-title-nav");
+    if (freshNav) wireRoosterMonthSteps(freshNav);
+
+    const daysInMonth = new Date(viewYear, monthNum, 0).getDate();
+    let html =
+      `<div class="table-wrap"><table class="rooster-table">` +
+      `<thead><tr>` +
+      `<th scope="col">Datum</th>` +
+      `<th scope="col">Liturgische dag</th>` +
+      `<th scope="col">Apostel</th>` +
+      `<th scope="col">Evangelie</th>` +
+      `</tr></thead><tbody>`;
+    let rows = 0;
+    for (let day = 1; day <= daysInMonth; day++) {
+      const civilMmdd =
+        String(monthNum).padStart(2, "0") + "-" + String(day).padStart(2, "0");
+      // Index-sleutel: Nieuw = burgerlijke MM-DD; Oud = Juliaanse dagnaam
+      // die op die burgerlijke dag valt.
+      let keyMmdd = civilMmdd;
+      let keyYear = viewYear;
+      if (style === "juliaans") {
+        const lit = civilToLiturgical(viewYear, civilMmdd);
+        keyMmdd = mmddFromDate(lit);
+        keyYear = lit.getFullYear();
+      }
+      const yearBucket =
+        ((lezingenIndex || {})[stil] || {})[String(keyYear)] || {};
+      const lez = yearBucket[keyMmdd] || null;
+      const dagUrl = daySurfaceHref(viewYear, civilMmdd, style);
+      let apostel = refsText(lez && lez.apostel);
+      let evangelie = refsText(lez && lez.evangelie);
+      const status = (lez && lez.status) || "onbekend";
+      if (status === "geen_liturgie") {
+        apostel = apostel || "—";
+        evangelie = evangelie || "(geen liturgie)";
+      } else if (status === "onbekend") {
+        apostel = apostel || "—";
+        evangelie = evangelie || "—";
+      }
+      html +=
+        `<tr>` +
+        `<td><a href="${dagUrl}">${label(civilMmdd)}</a></td>` +
+        `<td>${(lez && lez.daglabel) || ""}</td>` +
+        `<td>${apostel}</td>` +
+        `<td>${evangelie}</td>` +
+        `</tr>`;
+      rows += 1;
+    }
+    html += `</tbody></table></div>`;
+    root.innerHTML =
+      rows > 0
+        ? html
+        : `<p class="muted">Geen lezingengegevens voor ${monthName} ${viewYear}.</p>`;
+  }
+
+  function wireRoosterMonthSteps(root) {
+    (root || document).querySelectorAll("[data-month-delta]").forEach((btn) => {
+      if (btn.dataset.boundMonth === "1") return;
+      btn.dataset.boundMonth = "1";
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (btn.disabled) return;
+        const delta = Number(btn.dataset.monthDelta);
+        if (!delta) return;
+        let m = parseInt(roosterMonth, 10) + delta;
+        let y = viewYear;
+        if (m < 1) {
+          m = 12;
+          y = clampYear(y - 1);
+        } else if (m > 12) {
+          m = 1;
+          y = clampYear(y + 1);
+        }
+        viewYear = y;
+        roosterMonth = String(m).padStart(2, "0");
+        try {
+          localStorage.setItem(YEAR_KEY, String(viewYear));
+        } catch (_) {}
+        const url = new URL(window.location.href);
+        url.searchParams.set("maand", roosterMonth);
+        if (url.searchParams.has("jaar")) {
+          url.searchParams.set("jaar", String(viewYear));
+        }
+        window.history.replaceState({}, "", url);
+        renderRooster(getStyle());
+      });
+    });
+  }
+
+  function initRooster(style) {
+    if (!document.querySelector("[data-lezingenrooster]")) return;
+    const params = new URLSearchParams(window.location.search);
+    const m = params.get("maand");
+    const y = params.get("jaar");
+    if (y && /^\d{4}$/.test(y)) {
+      viewYear = clampYear(parseInt(y, 10));
+    }
+    if (m && /^\d{2}$/.test(m) && Number(m) >= 1 && Number(m) <= 12) {
+      roosterMonth = m;
+    } else {
+      const now = new Date();
+      if (viewYear === now.getFullYear()) {
+        roosterMonth = String(now.getMonth() + 1).padStart(2, "0");
+      }
+    }
+    renderRooster(style);
   }
 
   function dayClass(kinds) {
@@ -890,6 +1265,7 @@
   }
 
   let viewYear = new Date().getFullYear();
+  let roosterMonth = String(new Date().getMonth() + 1).padStart(2, "0");
   try {
     const stored = localStorage.getItem(YEAR_KEY);
     if (stored) viewYear = parseInt(stored, 10) || viewYear;
@@ -905,15 +1281,20 @@
     const nav = document.getElementById("kalender-title-nav");
     if (!nav) return;
     const title = nav.dataset.title || "Jaarkalender";
-    nav.innerHTML = titleNavHtml({
-      titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
-      prevLabel: "Vorig jaar",
-      nextLabel: "Volgend jaar",
-      deltaAttr: "year-delta",
-      prevDisabled: viewYear <= yearBounds.min,
-      nextDisabled: viewYear >= yearBounds.max,
-    });
-    wireYearSteps(nav, entries, style);
+    fillPageTitleRow(
+      nav,
+      titleNavHtml({
+        titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
+        prevLabel: "Vorig jaar",
+        nextLabel: "Volgend jaar",
+        deltaAttr: "year-delta",
+        unit: "jaar",
+        prevDisabled: viewYear <= yearBounds.min,
+        nextDisabled: viewYear >= yearBounds.max,
+      })
+    );
+    const fresh = document.getElementById("kalender-title-nav");
+    if (fresh) wireYearSteps(fresh, entries, style);
   }
 
   function wireYearSteps(root, entries, style) {
@@ -1010,7 +1391,7 @@
         const cls = ["day", has ? "has-entry" : "", color, isToday ? "is-today" : ""]
           .filter(Boolean)
           .join(" ");
-        html += `<a class="${cls}" href="${pageUrl("datum/", { jaar: viewYear, dag: mmdd })}" title="${label(mmdd)} ${viewYear}">${day}</a>`;
+        html += `<a class="${cls}" href="${daySurfaceHref(viewYear, mmdd, style)}" title="${label(mmdd)} ${viewYear}">${day}</a>`;
       }
       html += `</div></section>`;
     }
@@ -1105,7 +1486,7 @@
     const prev = shiftMmdd(mmdd, -1);
     const next = shiftMmdd(mmdd, 1);
     const thisYear = clampYear(new Date().getFullYear());
-    const datumHref = pageUrl("datum/", { jaar: thisYear, dag: mmdd });
+    const datumHref = daySurfaceHref(thisYear, mmdd, getStyle());
     if (nav) {
       nav.innerHTML =
         `<a href="${pageUrl("meneon/", {})}">← Meneon</a> · ` +
@@ -1501,8 +1882,8 @@
   async function refresh() {
     const style = getStyle();
     setStyle(style);
+    if (redirectDaySurfaceIfNeeded(style)) return;
     updateHeading(style);
-    updateNote(style);
     try {
       const entries = await loadEntries();
       yearBounds = yearBoundsFromEntries(entries);
@@ -1511,6 +1892,21 @@
       renderYearGrid(entries, style);
       initMeneon(entries);
       initAgenda();
+      try {
+        await loadLezingenIndex();
+        initRooster(style);
+        // Herteken vandaag/datum als lezingen nu beschikbaar zijn.
+        if (document.getElementById("today-entries")) {
+          renderToday(entries, style);
+        }
+      } catch (lezErr) {
+        console.error(lezErr);
+        const roost = document.getElementById("rooster-tables");
+        if (roost) {
+          roost.innerHTML =
+            "<p class=\"muted\">Lezingengegevens konden niet worden geladen.</p>";
+        }
+      }
     } catch (err) {
       const cardEntries = document.getElementById("today-entries");
       if (cardEntries) {
@@ -1521,14 +1917,15 @@
     }
   }
 
-  document.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      applyStyle(btn.dataset.style);
-    });
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest && e.target.closest(".style-btn[data-style]");
+    if (!btn) return;
+    e.preventDefault();
+    applyStyle(btn.dataset.style);
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeNieuwOudDialog();
+    if (e.key === "Escape") closeInfoPopover();
   });
 
   window.addEventListener("popstate", () => {
@@ -1537,11 +1934,11 @@
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
-      wireNieuwOudTriggers(document);
+      wireInfoTips(document);
       refresh();
     });
   } else {
-    wireNieuwOudTriggers(document);
+    wireInfoTips(document);
     refresh();
   }
 })();

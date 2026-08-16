@@ -127,12 +127,22 @@ def test_ensure_achtergrond_topics_creates_stub(
     content = tmp_path / "content"
     (content / "uitleg").mkdir(parents=True)
     monkeypatch.setattr("generate.CONTENT", content)
+    monkeypatch.setattr(
+        "generate.SPEC_PATH",
+        Path(__file__).resolve().parents[1] / "docs" / "specs" / "lezingen.md",
+    )
     ensure_achtergrond_topics()
     path = content / "uitleg" / "nieuw-oud.md"
     assert path.is_file()
     meta, body = _split_hugo_markdown(path.read_text(encoding="utf-8"))
     assert "Nieuw" in meta["title"]
     assert "toe te voegen" in body
+    clerus = content / "uitleg" / "lezingen.md"
+    tech = content / "uitleg" / "lezingen-technisch.md"
+    assert clerus.is_file()
+    assert tech.is_file()
+    tech_meta, _ = _split_hugo_markdown(tech.read_text(encoding="utf-8"))
+    assert tech_meta.get("build", {}).get("list") == "never"
 
 
 def test_repo_hand_owned_indexes_ok() -> None:
