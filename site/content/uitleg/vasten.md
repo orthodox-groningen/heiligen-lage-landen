@@ -5,10 +5,13 @@ generator: data/regels/vasten.yaml
 uitleg_stijl: vasten
 ---
 
-Op *Vandaag* en op een [datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat
-**één** vastenregel per dag. Er worden geen twee vasten tegelijk getoond: als
-een dag in de Grote Vasten valt, is dat het vasten van die dag, niet nog eens
-het wekelijkse vrijdagvasten.
+Orthodox vasten is een manier van eten en bidden die de Kerk het jaar door
+voorschrijft: geen vlees, vaak ook geen zuivel, vis, wijn of olie. Wat
+precies mag, hangt van de dag af. Op *Vandaag* en op een
+[datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat **één** vastenregel
+per dag. Er worden geen twee vasten tegelijk getoond: als een dag in de
+Grote Vasten valt, is dat het vasten van die dag, niet nog eens het
+wekelijkse vrijdagvasten.
 
 Deze pagina is bedoeld om samen met de clerus te lezen. Zij beschrijft waar
 de regels vandaan komen en hoe de kalender ze toepast. Het is geen biechtregel.
@@ -258,4 +261,4 @@ Dit volgt het typikon nog niet. Na overleg kunnen we een punt hieronder tot rege
 
 ## Voor wie de site bijhoudt
 
-De koppeling tussen deze tekst, de voorbeelden en de programmacode staat op de [technische pagina bij deze uitleg]({{% ref "/uitleg/vasten-technisch" %}}).
+De koppeling tussen deze tekst, de voorbeelden en de programmacode staat op de [technische pagina bij deze uitleg]({{% ref "/uitleg/vasten-technisch" %}}). Stap-voor-stap: [vastenregels wijzigen]({{% ref "/beheer/how-to-vasten" %}}).

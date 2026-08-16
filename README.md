@@ -17,8 +17,9 @@ MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus
 | Agenda    | ICS-feeds `/ics/*-{nieuw,oud}.ics` (oud = burgerlijk +13) |
 
 Datums: default **Gregoriaans** invoer; optioneel `datum.stijl`. Feestdatum =
-dagnaam (gelijk in nieuw/oud). Zie [docs/datamodel.md](docs/datamodel.md) en
-de pagina **Uitleg** op de site.
+dagnaam (gelijk in nieuw/oud). Zie [docs/datamodel.md](docs/datamodel.md),
+de pagina **Uitleg** (voor wie de kalender gebruikt) en **Voor beheerders**
+(`/beheer/`: wat u mag wijzigen, wat generate overschrijft, how-to’s).
 
 ## Lokaal bouwen
 

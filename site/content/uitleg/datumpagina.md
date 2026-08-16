@@ -1,16 +1,36 @@
 ---
 title: "Datumpagina’s"
-description: "Wat er op een kalenderdag in een bepaald jaar valt"
+description: "Wat er op één burgerlijke dag in een bepaald jaar valt"
+uitleg_stijl: datumpagina
 ---
 
-Via de [jaarkalender]({{% ref "/kalender" %}}) open je een dag **in dat jaar**:
-feesten, heiligen, paascyclus en vasten die op die **wereldlijke** datum vallen.
-De URL is `/datum/?jaar=2026&dag=08-15`. Met **Oud** staan vaste feesten op hun
-wereldlijke vierdatum (Besnijdenis op 14 januari); Pascha verschuift niet.
+Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf
+*Vandaag* met de pijltjes. U krijgt dan **die dag in dat jaar** te zien:
+feesten, heiligen, dagen van de paascyclus en vasten die op die
+**burgerlijke** datum vallen — de datum zoals Nederland die noemt.
 
-Als er vasten geldt, staat bovenaan één regel met het **effectieve** niveau
-(niet twee vasten tegelijk). De precieze regels — Moskou, bij twijfel ROCOR —
-staan op de [uitlegpagina Vasten]({{% ref "/uitleg/vasten" %}}).
+Dat is iets anders dan het [Meneon]({{% ref "/uitleg/meneon" %}}). Het Meneon
+zegt: wat hoort *altijd* bij 15 augustus? Een datumpagina zegt: wat valt er
+op 15 augustus **in 2026** (of welk jaar u ook kiest)?
 
-Wat er *altijd* op 15 augustus hoort, staat in het
-[Meneon]({{% ref "/meneon" %}}) (`/meneon/?dag=08-15`).
+## Nieuw of oud
+
+Met **Oud** staan vaste feesten op hun burgerlijke vierdatum. De Besnijdenis
+des Heren (feestdatum 1 januari) staat dan op 14 januari. **Pascha** en de
+rest van de paascyclus schuiven niet mee. Zie
+[Nieuwe en Oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
+
+## Eén vastenregel
+
+Als er vasten geldt, staat bovenaan **één** regel: het vasten van die dag.
+Er worden geen twee vasten tegelijk getoond. Valt de dag in de Grote Vasten,
+dan is dat het vasten; het wekelijkse vrijdagvasten wordt niet nog eens
+apart genoemd.
+
+De regels — waar ze vandaan komen, en wat de kalender vereenvoudigt — staan
+op de pagina [Vasten]({{% ref "/uitleg/vasten" %}}).
+
+## Voor wie de site bijhoudt
+
+Adressen, jaarparameters en wat de pagina uit de data haalt, staan op de
+[technische pagina bij deze uitleg]({{% ref "/uitleg/datumpagina-technisch" %}}).

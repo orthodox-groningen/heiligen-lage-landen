@@ -3,10 +3,14 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p class="hint uitleg-nav">
-    {{ if eq .Params.uitleg_stijl "vasten-technisch" }}
-      <a href="{{ "uitleg/vasten/" | relURL }}">Terug naar de vastenuitleg</a>
+    {{ $stijl := .Params.uitleg_stijl | default "" }}
+    {{ if strings.HasSuffix $stijl "-technisch" }}
+      {{ $ouder := strings.TrimSuffix "-technisch" $stijl }}
+      <a href="{{ printf "uitleg/%s/" $ouder | relURL }}">Terug naar de uitleg</a>
       ·
       <a href="{{ "uitleg/" | relURL }}">Alle uitleg</a>
+      ·
+      <a href="{{ "beheer/" | relURL }}">Voor beheerders</a>
     {{ else }}
       <a href="{{ "uitleg/" | relURL }}">Alle uitleg</a>
     {{ end }}

@@ -1,10 +1,35 @@
 ---
 title: "Meneon"
-description: "Vaste heiligen- en feestdagen per kalenderdag"
+description: "De vaste jaarcyclus: wat er altijd op een kalenderdag hoort"
+uitleg_stijl: meneon
 ---
 
-Het [Meneon]({{% ref "/meneon" %}}) is de vaste jaarcyclus: wat er **altijd**
-op een kalenderdag hoort (heiligen, vaste feesten, vaste vastenperiodes).
-Zoeken kan op naam, ook op alternatieve namen. Paascyclus en wekelijks vasten
-staan hier niet; die horen bij een [datumpagina]({{% ref "/uitleg/datumpagina" %}})
-van een bepaald jaar.
+Het [Meneon]({{% ref "/meneon" %}}) is het overzicht van de **vaste
+jaarcyclus**: wat er *altijd* op een kalenderdag hoort. Heiligen, vaste
+feesten en vaste vastenperiodes (zoals het Ontslapen-vasten in augustus)
+vindt u hier.
+
+Het woord komt uit het Grieks: het is het maandboek van de Kerk, met de
+heiligen en feesten per dag van het jaar. Op deze site is het een zoek- en
+bladerpagina bij diezelfde cyclus.
+
+## Wat er wél en niet in staat
+
+**Wel:** alles met een vaste plaats in het jaar. Willibrord op 7 november.
+Kerst op 25 december. Het Ontslapen-vasten van 1 tot 14 augustus.
+
+**Niet:** wat van Pascha afhangt (Palmzondag, de Grote Vasten, Pinksteren)
+en het wekelijkse woensdag- en vrijdagvasten. Die horen bij een *bepaald
+jaar*. Daarvoor opent u een [datumpagina]({{% ref "/uitleg/datumpagina" %}}).
+
+U kunt zoeken op naam, ook op andere namen die dezelfde heilige of hetzelfde
+feest heeft. Bladeren kan per maand of op alfabet.
+
+De feestdatum in het Meneon is de liturgische dagnaam. Of uw parochie die dag
+op de nieuwe of de oude kalender viert, kiest u elders op de site. Zie
+[Nieuwe en Oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
+
+## Voor wie de site bijhoudt
+
+Zoekadressen en welke cycli het Meneon toont, staan op de
+[technische pagina bij deze uitleg]({{% ref "/uitleg/meneon-technisch" %}}).
