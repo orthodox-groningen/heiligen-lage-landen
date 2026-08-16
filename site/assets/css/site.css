@@ -762,6 +762,98 @@ a.text-link {
   margin: 0.55rem 0;
 }
 
+.uitleg-page {
+  max-width: min(42rem, 100%);
+}
+
+.uitleg-page h2 {
+  margin-top: 2.75rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+  color: var(--gold-soft);
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.uitleg-page h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.uitleg-page h3 {
+  margin-top: 2rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.uitleg-page p,
+.uitleg-page li {
+  line-height: 1.7;
+}
+
+.uitleg-page p + p {
+  margin-top: 1.05rem;
+}
+
+.uitleg-page table {
+  margin: 1.35rem 0 1.75rem;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.98rem;
+}
+
+.uitleg-page th,
+.uitleg-page td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+.uitleg-page th {
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.uitleg-callout {
+  margin: 1.75rem 0 2rem;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(201, 162, 39, 0.08);
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.uitleg-callout p {
+  margin: 0;
+}
+
+.uitleg-cards {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+@media (min-width: 720px) {
+  .uitleg-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.uitleg-card {
+  padding: 1rem 1.1rem;
+  background: rgba(243, 235, 224, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+}
+
+.uitleg-card p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.25rem 0 2rem;

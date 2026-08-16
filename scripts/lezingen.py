@@ -277,10 +277,16 @@ def gospel_week_na_pinksteren(
     Vóór de Lucaanse maandag: Matteüs-reeks (weken 1–17). Als de doorlopende
     week al ≥ 18 is (vroege Pascha), herhaal binnen 1–17 (отступка) — anders
     zou je per ongeluk Lucasse tabelrijen vóór de sprong lezen.
-    Vanaf de Lucaanse maandag: altijd Luc. vanaf week 18.
+    Vanaf de Lucaanse maandag: Luc. vanaf week 18. Vanaf tabelweek 30 (winter):
+    weer dezelfde week als de Apostel (Marcus-eindreeks), ook als de Lucaanse
+    maandag van *dit* burgerlijke jaar nog in de toekomst ligt.
     """
     regels = ["R3"]
     aanpassing = lucaanse_aanpassing(civil.year)
+
+    # Winterreeks (weken 30–33): Marcus e.d. — niet Matteüs-wrap of Luc.+N.
+    if apostol_week >= 30:
+        return apostol_week, regels
 
     if civil >= luke_mon:
         gospel_week = 18 + (civil - luke_mon).days // 7
@@ -298,6 +304,75 @@ def gospel_week_na_pinksteren(
         return gospel_week, regels
 
     return apostol_week, regels
+
+
+# Tabelweken die herhaald worden bij Theofanie-/winter-отступка (Bogaiskov /
+# MP-kalender): N ontbrekende weken vóór Tollenaar-zondag.
+THEOFANIE_OTSTUPKA_WEEKEN: dict[int, list[int]] = {
+    1: [33],
+    2: [32, 33],
+    3: [31, 32, 33],
+    4: [30, 31, 32, 33],
+    5: [30, 31, 17, 32, 33],
+}
+
+
+def theofanie_otstupka_context(
+    civil: date,
+) -> tuple[date, date, int] | None:
+    """Winter-/Theofanie-отступка-venster.
+
+    Retourneert ``(maandag_week_34, tollenaar_zondag, N)`` met ``N`` in 1..5,
+    of ``None`` als er geen отступка is of de dag vóór week 34 valt.
+    """
+    pascha_up = orthodox_pascha(civil.year)
+    if civil >= pascha_up:
+        return None
+    publican = pascha_up + timedelta(days=-70)
+    if civil >= publican:
+        return None
+
+    pascha_prev = orthodox_pascha(pascha_up.year - 1)
+    pentecost = pascha_prev + timedelta(days=49)
+    fri33 = pentecost + timedelta(days=(33 - 1) * 7 + 5)
+    mon34 = fri33 + timedelta(days=3)
+    if civil < mon34:
+        return None
+
+    n = 0
+    d = mon34
+    while d < publican:
+        n += 1
+        d += timedelta(days=7)
+    n = min(5, n)
+    if n <= 0:
+        return None
+    return mon34, publican, n
+
+
+def apply_theofanie_otstupka(
+    civil: date,
+    apostol_week: int,
+    weekday: int,
+) -> tuple[int, int, list[str]] | None:
+    """Herschaal tabelweken na week 33 tot Tollenaar-zondag (Theofanie-отступка).
+
+    Weekdagen én zondagen met doorlopende week &gt; 33 gebruiken de vaste
+    herhalingsreeks van lengte N (1..5). Eerdere weken blijven onaangeroerd.
+    """
+    del weekday  # zelfde mapping voor alle weekdagen in deze weken
+    ctx = theofanie_otstupka_context(civil)
+    if ctx is None:
+        return None
+    _mon34, _publican, n = ctx
+    if apostol_week <= 33:
+        return None
+    k = apostol_week - 34
+    seq = THEOFANIE_OTSTUPKA_WEEKEN[n]
+    if k < 0 or k >= len(seq):
+        return None
+    mapped = seq[k]
+    return mapped, mapped, ["R3", "R3-theofanie-otstupka"]
 
 
 def _week_index_pascha(offset: int) -> tuple[int, int] | None:
@@ -351,6 +426,21 @@ def _week_index_triodion(offset: int) -> tuple[str, int, int] | None:
     return None
 
 
+def _pascha_anker_voor_civil(civil: date) -> date:
+    """Pascha dat de lezingencyclus voor ``civil`` verankert.
+
+    Vóór Tollenaar-zondag (Pascha − 70) hoort de dag nog bij de Pinksterreeks
+    van het *vorige* Pascha; vanaf Tollenaar bij het komende Pascha.
+    """
+    pascha = orthodox_pascha(civil.year)
+    publican = pascha + timedelta(days=-70)
+    if civil < publican:
+        return orthodox_pascha(civil.year - 1)
+    if civil > pascha + timedelta(days=320):
+        return orthodox_pascha(civil.year + 1)
+    return pascha
+
+
 def _ordinal_nl(n: int) -> str:
     return f"{n}e"
 
@@ -367,12 +457,7 @@ def liturgische_daglabel(
         return OVERRIDE_NAMEN[override_id]
 
     civil = _civil_date(jaar, mmdd, stijl)
-    pascha = orthodox_pascha(jaar)
-    # Pascha can fall in previous civil year for early Julian dates — use year of civil
-    if civil < pascha - timedelta(days=80):
-        pascha = orthodox_pascha(jaar - 1)
-    elif civil > pascha + timedelta(days=320):
-        pascha = orthodox_pascha(jaar + 1)
+    pascha = _pascha_anker_voor_civil(civil)
 
     offset = (civil - pascha).days
     weekday = _iso_weekday(civil)
@@ -456,11 +541,7 @@ def _resolve_weekreeks(
     stijl: str,
 ) -> LezingenResultaat | None:
     civil = _civil_date(jaar, mmdd, stijl)
-    pascha = orthodox_pascha(jaar)
-    if civil < pascha - timedelta(days=80):
-        pascha = orthodox_pascha(jaar - 1)
-    elif civil > pascha + timedelta(days=320):
-        pascha = orthodox_pascha(jaar + 1)
+    pascha = _pascha_anker_voor_civil(civil)
 
     offset = (civil - pascha).days
     pentecost = pascha + timedelta(days=49)
@@ -492,10 +573,17 @@ def _resolve_weekreeks(
             return None
         apostol_week, weekday = idx
 
-        luke_mon = lucaanse_sprong_maandag(civil.year)
-        gospel_week, regels = gospel_week_na_pinksteren(
-            apostol_week, civil, luke_mon
-        )
+        # Winter: Theofanie-отступка herschaalt tabelweken na week 33.
+        theo = apply_theofanie_otstupka(civil, apostol_week, weekday)
+        table_week_for_label = apostol_week
+        if theo is not None:
+            apostol_week, gospel_week, regels = theo
+            table_week_for_label = apostol_week
+        else:
+            luke_mon = lucaanse_sprong_maandag(civil.year)
+            gospel_week, regels = gospel_week_na_pinksteren(
+                apostol_week, civil, luke_mon
+            )
 
         a_row = _lookup_weekreeks("na_pinksteren", apostol_week, weekday)
         g_row = _lookup_weekreeks("na_pinksteren", gospel_week, weekday)
@@ -508,11 +596,19 @@ def _resolve_weekreeks(
         if (a_row or {}).get("status") == "geen_liturgie" and not apostel and not evangelie:
             status = "geen_liturgie"
 
+        daglabel = liturgische_daglabel(jaar, mmdd, stijl)
+        if theo is not None:
+            wd_name = WEEKDAG_NL[weekday]
+            daglabel = (
+                f"{wd_name} van de {_ordinal_nl(table_week_for_label)} "
+                "week na Pinksteren (Theofanie-otstupka)"
+            )
+
         return LezingenResultaat(
             apostel=apostel,
             evangelie=evangelie,
             regels=regels,
-            daglabel=liturgische_daglabel(jaar, mmdd, stijl),
+            daglabel=daglabel,
             toelichting="+".join(regels),
             status=status if (apostel or evangelie or status == "geen_liturgie") else "onbekend",
         )

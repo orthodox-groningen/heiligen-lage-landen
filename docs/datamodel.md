@@ -118,7 +118,7 @@ Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
 ## Lezingen (Apostel / Evangelie)
 
 Normatieve regels: **`docs/specs/lezingen.md`** (traditie Moskou, ROCOR bij
-twijfel). Publieke spiegel: `/uitleg/lezingen/` (gegenereerd bij `generate.py`).
+twijfel). Clerus: `/uitleg/lezingen/`; technisch: `/uitleg/lezingen-technisch/`.
 
 Data: `data/lezingen/` (`feest-overrides.yaml`, `weekreeks.yaml`, `rang.yaml`,
 `meta.yaml`). Engine: `scripts/lezingen.py`. Machine-leesbare voorbeelden in de

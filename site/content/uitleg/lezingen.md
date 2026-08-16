@@ -1,124 +1,144 @@
 ---
-title: Lezingen van de dag
-description: 'Apostel en Evangelie: regels Moskou (ROCOR bij twijfel), met verantwoording'
+title: "Lezingen van de dag"
+description: "Apostel en Evangelie: welke lezing wanneer, volgens Moskou (ROCOR bij twijfel)"
 ---
 
-Deze pagina is de **publieke spiegel** van de normatieve specificatie
-`docs/specs/lezingen.md`. Wijzig die specificatie (regels + voorbeelden);
-daarna moet `scripts/lezingen.py` meekomen — pytest bewaakt dat.
+Op *Vandaag*, de datumpagina en het [lezingenrooster]({{% ref "/lezingenrooster" %}})
+toont deze site de **Apostel** en het **Evangelie** van de dag. Deze pagina legt
+uit **waar die keuze vandaan komt** en welke regels we volgen — bedoeld voor
+overleg met de clerus. U hoeft niets van programmacode of bestandsformaten te
+kennen.
 
----
+Dit is een hulpmiddel bij de liturgische planning, geen vervanging van het
+typikon of de zegen van de bisschop. Bij twijfel geldt de lokale praktijk.
 
-Normatieve specificatie voor [heiligen-lage-landen](https://github.com/orthodox-groningen/heiligen-lage-landen).
-Wijzigingen hier zijn bindend voor `scripts/lezingen.py` en worden gespiegeld naar
-`/uitleg/lezingen/`. De machine-leesbare voorbeelden (onderaan dit bestand) sturen
-pytest; die blokken staan niet op de publieke uitlegpagina.
+<div class="uitleg-callout">
 
-## Traditiebeleid
+**Technische details** (bestanden, tests, implementatiestatus) staan op een
+[aparte pagina]({{% ref "/uitleg/lezingen-technisch" %}}). Die hoort niet in
+het overzicht hierboven; deze clerus-uitleg is het startpunt.
 
-1. **Primair:** praktijk van de Russische Orthodoxe Kerk (Moskou) —
-   *Богослужебные указания* en de kerkkalender van het Издательство Московской
-   Патриархии.
-2. **Bij twijfel of lacune:** ROCOR (toetsen o.a. aan Holy Trinity Orthodox
-   Calendar / Jordanville).
-3. Geen Grieks/Antiocheens als default.
+</div>
 
-De site toont **verwijzingen** (boek + verzen; optioneel зачало-nummer), geen
-volledige Bijbeltekst.
+## Waar komen onze regels vandaan?
 
-## Begrippen
+We volgen in eerste instantie de praktijk van de **Russische Orthodoxe Kerk
+(Moskou)**: de *Богослужебные указания* en de kerkkalender van de Uitgeverij van
+het Moskouse Patriarchaat
+([calendar.rop.ru](http://calendar.rop.ru)), aangevuld met de dagelijkse
+aanwijzingen op
+[patriarchia.ru](https://patriarchia.ru/bu/tomorrow).
 
-- **Rijádovoe / doorlopende lezing:** Apostel en Evangelie van de weekreeks
-  (na Pascha of na Pinksteren), niet van een heilige.
-- **Feestlezing:** lezing die bij een feest of (hoog) heiligenfeest hoort.
-- **Зачало:** liturgische perikoop-nummering in Apostel/Evangelie-boeken.
-- **«От полу»:** begin midden in een genummerd зачало (zie Azbyka).
+Voor overzichten van Apostel- en Evangelielezingen raadplegen we ook
+[Azbyka — ukazatel’](https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda)
+en het
+[schema van de jaarcyclus](https://azbyka.ru/shemy/tserkovnye_chtenyja.shtml),
+inclusief de uitleg over
+[отступка en преступка](https://azbyka.ru/otstupka-i-prestupka).
 
-## Regels (fase 0+)
+**Bij twijfel of een lacune** toetsen we aan **ROCOR**, onder meer via de
+[Holy Trinity Orthodox Calendar](https://www.holytrinityorthodox.com/calendar/)
+en de
+[Jordanville daily calendar](https://jordanville.org/daily-orthodox-calendar/).
 
-### R1 — Kalendercontext
+We tonen **verwijzingen** (boek en verzen), geen volledige Bijbeltekst. De
+parochie viert vaste feesten op de **feestdatum** (nieuw of oud via de knop op
+de site); de regels hier gaan over *welke* lezing bij die liturgische dag hoort.
 
-Beweeglijke dagen (paascyclus) worden berekend t.o.v. **Orthodox Pascha**
-(Alexandrijnse/Juliaanse computus → burgerlijke datum). Vaste feesten gebruiken
-de **feestdatum** (MM-DD-dagnaam), consistent met de rest van deze site
-(nieuw/oud); zie uitleg Nieuw/Oud.
+## Begrippen in het kort
 
-### R2 — Bekende feestoverride
+<div class="uitleg-cards">
 
-Als voor de dag een feestoverride bestaat in `data/lezingen/feest-overrides.yaml`
-(match op paascyclus-offset of vaste MM-DD), dan gelden die Apostel- en
-Evangelielezingen. Ze **vervangen** de doorlopende lezing tenzij R5 een andere
-`modus` voorschrijft (`toevoegen` / `negeren`).
+<div class="uitleg-card">
 
-### R3 — Doorlopende weekreeks
+**Doorlopende lezing (rijádovoe)**  
+Apostel en Evangelie van de weekreeks na Pascha of na Pinksteren — niet van
+een heilige.
 
-Buiten feestoverrides: Apostel/Evangelie volgens de week na Pascha of na
-Pinksteren en de weekdag (ma–zo), uit `data/lezingen/weekreeks.yaml`
-(Messia/Brussel-tabellen; Moskou voor de Lucaanse sprong).
+</div>
 
-**Lucaanse sprong (Moskou):** vanaf de **maandag na de zondag na
-Kruisverheffing** (14 sept.) volgt het Evangelie de Lucasse reeks vanaf
-tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
+<div class="uitleg-card">
 
-**Отступка / преступка** (Azbyka, o.b.v. *Juliaanse* Pascha-datum):
+**Feestlezing**  
+De lezing die bij een groot feest of (hoog) heiligenfeest hoort.
 
-| Juliaanse Pascha | Effect |
-|------------------|--------|
-| ≤ 30 maart | **отступка** — vóór de sprong blijven Matteüs-weken 1–17 (herhalen als de telling al ≥ 18 is); sprong naar Luc. 18 blijft |
-| 31 maart – 6 april | normaal |
-| ≥ 7 april | **преступка** — sprong naar Luc. 18 terwijl de Apostel-telling nog &lt; 17 kan zijn |
+</div>
 
-Tags in het resultaat: `R3-lucaans`, eventueel `R3-otstupka` / `R3-prestupka`.
+<div class="uitleg-card">
 
-### R4 — Vasten / geen liturgie
+**Зачало**  
+Liturgische perikoop-nummering in de Apostel- en Evangelieboeken.
 
-Op sommige vastendagen is er geen liturgie met Apostel/Evangelie van het type
-“van de dag” (bijv. weekdagen in de Grote Vasten: OT-lezingen op uren). De
-engine markeert dat als `status: geen_liturgie` wanneer de weekreeks dat
-aangeeft.
+</div>
 
-### R5 — Rang en samenval
+</div>
 
-Bij samenval van feest/heilige en rijádovoe (of meerdere overrides) volgt
-Moskou-rang. Configuratie: `data/lezingen/rang.yaml`.
+## De regels
 
-| Rang | Standaard-modus |
-|------|-----------------|
-| `groot` | `vervangen` — alleen feestlezing |
-| `vigil` / `polyeleos` / `doxologie` | `auto`: **zondag** → `toevoegen` (rijádovoe + feest); **weekdag** → `vervangen` |
-| `zesstichiria` / `gewoon` | `negeren` — alleen rijádovoe |
+### 1. Kalendercontext
 
-Overrides mogen `rang` en/of expliciete `modus` zetten. Bij meerdere matches
-wint de hoogste `prioriteit`. Wanneer een feest de rijádovoe **vervangt**
-(andere perikopen), vermeldt het resultaat `R5` en optioneel het onderdrukte
-`rijadovoe`-blok. Bij twijfel: ROCOR-kalender en voorbeeld hier vastleggen.
+Beweeglijke dagen (paascyclus) rekenen we vanaf **Orthodox Pascha**. Vaste
+feesten gebruiken de feestdatum, consistent met de rest van deze site (nieuw
+of oud). Zie ook de uitleg over
+[nieuwe en oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
 
-### R6 — Bronvermelding
+### 2. Bekende feestlezingen
 
-Elke override en elk goedgekeurd voorbeeld noemt de geraadpleegde bron (URL of
-drukwerk) en `geraadpleegd`-datum.
+Staat er voor die dag een bekende feestlezing (Pascha, Theofanie, Kerst, Palmzondag,
+en zo verder), dan geldt die. Zij **vervangt** de doorlopende lezing, tenzij
+regel 5 iets anders voorschrijft (bijvoorbeeld: op zondag beide lezen).
 
-## Verantwoording / bronnen
+### 3. Doorlopende weekreeks
 
-| Bron | URL | Rol |
-|------|-----|-----|
-| MP-kalender | http://calendar.rop.ru | Officiële lezingen / BU |
-| Патриархия — BU | https://patriarchia.ru/bu/tomorrow | Dagelijkse aanwijzingen |
-| Azbyka — ukazatel’ | https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda | Index per periode |
-| Azbyka — schema | https://azbyka.ru/shemy/tserkovnye_chtenyja.shtml | Jaarorde / Lucaanse sprong |
-| Azbyka — зачало | https://azbyka.ru/zachala | Terminologie |
-| Holy Trinity calendar | https://www.holytrinityorthodox.com/calendar/ | ROCOR-controle |
-| Jordanville | https://jordanville.org/daily-orthodox-calendar/ | ROCOR-controle |
+Buiten feestlezingen volgen Apostel en Evangelie de week na Pascha of na
+Pinksteren en de weekdag (maandag tot zondag).
 
-Drukwerk (jaarlijks): *Богослужебные указания* (Издательство Московской Патриархии).
+**Lucaanse sprong (Moskou).** Vanaf de maandag na de zondag na Kruisverheffing
+(14 september) volgt het Evangelie de Lucasse reeks vanaf tabelweek 18. De
+Apostel blijft de doorlopende telling na Pinksteren.
 
-## Implementatiestatus
+**Отступка en преступка in het najaar.** Afhankelijk van de *Juliaanse*
+Pascha-datum kan het nodig zijn Matteüs-weken te herhalen vóór die sprong
+(отступка), of juist eerder naar Lucas te springen terwijl de Apostel-telling
+nog achterloopt (преступка). Zie Azbyka voor de drempels (rond eind maart /
+begin april Juliaans).
 
-| Regel | Status in code |
-|-------|----------------|
-| R1 | deels (kalenderhulp via `kalender.py`) |
-| R2 | ja (feestoverrides + UI vandaag/datum) |
-| R3 | ja (weekreeks + Lucaanse sprong; zie rooster) |
-| R4 | deels (`geen_liturgie` via weekreeks) |
-| R5 | ja (`rang.yaml` + modus vervangen/toevoegen/negeren) |
-| R6 | documentair (data + voorbeelden) |
+**Theofanie-отступка in de winter.** Als er tussen het einde van de gewone
+eindreeks (na week 33 na Pinksteren) en de zondag van de tollenaar en de
+farizeeër te weinig weken zijn, worden één tot vijf weken herhaald uit die
+eindreeks (bij vijf weken komt ook week 17 terug). Zo blijft de overgang naar
+het Triodion kloppen.
+
+### 4. Vasten zonder die liturgie
+
+Op sommige vastendagen is er geen liturgie met Apostel en Evangelie “van de
+dag” (bijvoorbeeld weekdagen in de Grote Vasten, met Oudtestamentische lezingen
+op de uren). De site markeert dat dan als: geen liturgie van dit type.
+
+### 5. Rang en samenval
+
+Valt een feest of heilige samen met de doorlopende lezing, dan volgt de rang
+uit de Moskouse praktijk:
+
+| Rang | Wat er gebeurt |
+| --- | --- |
+| Groot feest | Alleen de feestlezing |
+| Vigil, polyeleos of doxologie | Op **zondag**: doorlopende lezing én feest; op een **weekdag**: alleen het feest |
+| Zes stichiria of gewoon | Alleen de doorlopende lezing |
+
+Bij twijfel leggen we een concreet voorbeeld vast en toetsen we aan ROCOR.
+
+### 6. Bronvermelding
+
+Elke bewuste keuze noemt de geraadpleegde bron (website of drukwerk) en wanneer
+die is geraadpleegd. Zo blijft overleg met de clerus navolgbaar.
+
+## Wat u op de site ziet
+
+- Op **Vandaag** en de **datumpagina**: Apostel en Evangelie van die dag, met
+  een korte aanduiding van de liturgische dag waar mogelijk.
+- Op het **lezingenrooster**: een overzicht over een langere periode.
+
+Klopt iets niet met uw lokale typikon of BU, dan is dat precies het gesprek
+dat we met deze uitleg willen voeren — het liefst met een concrete datum en
+bron erbij.

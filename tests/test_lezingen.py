@@ -30,7 +30,6 @@ def test_parse_voorbeelden_nonempty() -> None:
     assert len(voorbeelden) >= 3
     statuses = {v["status"] for v in voorbeelden}
     assert "implemented" in statuses
-    assert "pending" in statuses
 
 
 def test_pascha_2025_mmdd_matches_computus() -> None:
@@ -53,10 +52,29 @@ def test_implemented_voorbeelden(voorbeeld: dict) -> None:
     assert not errors, f"{voorbeeld['id']}: " + "; ".join(errors)
 
 
+def test_theofanie_otstupka_2024() -> None:
+    """Na week 33: herhalingsreeks N=5 begint 22 jan 2024 met tabelweek 30."""
+    r = resolve_lezingen(2024, "01-22", "nieuw")
+    assert "R3-theofanie-otstupka" in r.regels
+    assert [a.ref for a in r.apostel] == ["Heb. 8:7-13"]
+    assert [e.ref for e in r.evangelie] == ["Mark. 8:11-21"]
+    # Week 17 in het midden van N=5
+    r2 = resolve_lezingen(2024, "02-05", "nieuw")
+    assert "R3-theofanie-otstupka" in r2.regels
+    assert [a.ref for a in r2.apostel] == ["Ef. 1:22-2:3"]
+
+
+def test_theofanie_otstupka_afwezig_2025() -> None:
+    """2025: Tollenaar valt vóór maandag van week 34 — geen winter-отступка."""
+    r = resolve_lezingen(2025, "01-13", "nieuw")
+    assert "R3-theofanie-otstupka" not in r.regels
+    assert [a.ref for a in r.apostel] == ["Heb. 8:7-13"]
+
+
 def test_pending_voorbeelden_are_skipped_by_filter() -> None:
     pending = [v for v in parse_spec_voorbeelden() if v["status"] == "pending"]
-    assert pending
-    # Ze mogen nog "onbekend" zijn — geen harde assert op inhoud.
+    # Mag leeg zijn als alle voorbeelden geïmplementeerd zijn.
+    assert isinstance(pending, list)
 
 
 def test_weekreeks_fills_ordinary_weekday() -> None:
