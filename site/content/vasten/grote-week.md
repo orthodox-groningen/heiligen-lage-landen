@@ -52,6 +52,8 @@ alternatief:
 
 **Vastenniveau (indicatief):** streng.
 
+**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
 Grote Maandag tot en met Grote Zaterdag: de strengste dagen vóór Pascha.
 
 ## Verhaal

@@ -1,0 +1,265 @@
+titel: Vasten
+beschrijving: Welk vastenniveau de kalender op een dag toont, en waarom
+inleiding: |
+  De [datumpagina]({{% ref "/uitleg/datumpagina" %}}) en *Vandaag* tonen **één**
+  vastenregel per dag (niet twee vasten tegelijk). Deze pagina is de
+  **normatieve uitleg** van die regel: wat Moskou (en bij twijfel ROCOR) voorschrijft,
+  hoe wij dat tot vijf niveaus vereenvoudigen, en welke voorbeelden de tests
+  afdwingen.
+
+  Wijzigingen horen in `data/regels/vasten.yaml`. Daarna `python3 scripts/generate.py`
+  (deze pagina wordt opnieuw gegenereerd) en de code in `scripts/vasten.py` plus
+  `site/assets/js/calendar.js`. Een commit waarin de uitleg iets anders belooft
+  dan de kalender, laat de tests zakken.
+
+  Dit is een hulpmiddel voor overleg met de clerus, geen biechtregel. Economia
+  en persoonlijke zegen gaan altijd vóór een website.
+bronkeuze: |
+  We volgen in eerste instantie   het **Slavische typikon** zoals de
+  **Russisch-Orthodoxe Kerk (Moskou)** het publiceert: Typikon hoofdstuk 32–33
+  (en h. 49 voor Lazarus-zaterdag), het *Православный церковный календарь* van
+  de Uitgeverij van het Moskouse Patriarchaat
+  ([calendar.rop.ru](http://calendar.rop.ru)), en de gangbare dagkalender
+  [days.pravoslavie.ru](https://days.pravoslavie.ru/).
+
+  Bij twijfel of een lacune in die publieke kalenders kijken we naar **ROCOR**,
+  die hetzelfde Sabbas-typikon hanteert (o.a. de Engelse weergave van h. 33 bij
+  Fr. Seraphim Rose / orthodoxinfo, en de OCA-samenvatting die uit dezelfde
+  Slavische traditie komt).
+
+  De parochie viert vaste feesten op de **feestdatum** (nieuw of oud via de
+  knop); de *regels* hier gaan over liturgische dagen (Aankondiging, Grote Week,
+  …), niet over of 25 maart burgerlijk of Juliaans is.
+niveaus:
+  - id: streng
+    label: streng
+    betekenis: >
+      Geen vlees, zuivel, vis, wijn of olie. Droog eten en gekookt zonder olie
+      slaan we tot dit ene niveau samen.
+  - id: wijn_olie
+    label: wijn en olie
+    betekenis: >
+      Wijn en plantaardige olie toegestaan; geen vis. Lazarus-kaviaar valt
+      hieronder (we hebben geen apart niveau «kaviaar»).
+  - id: vis
+    label: vis
+    betekenis: Vis, wijn en olie toegestaan; geen vlees of zuivel.
+  - id: lichter
+    label: lichter
+    betekenis: >
+      Alleen als seizoenslabel (Boterweek: geen vlees, wel zuivel). Voor
+      Apostelen- en Geboortevasten rekenen we het weekschema van typikon h. 33
+      om naar streng / wijn_olie / vis per weekdag.
+  - id: vrij
+    label: vastenvrij
+    betekenis: Geen vasten (lichte weken, Kerst, Theofanie).
+regels:
+  - id: periode-boven-wekelijks
+    titel: Een vastenperiode vervangt woensdag- en vrijdagvasten
+    tekst: |
+      Wekelijks wo/vr is de restcategorie. Valt de dag in een vastenperiode of
+      een vastenvrije periode, dan is *die* periode het vasten van de dag;
+      woensdag- of vrijdagvasten wordt niet apart getoond (kalender, datumpagina, ICS).
+    voorbeelden:
+      - datum: "2026-03-20"
+        verwachte_niveau: streng
+        toelichting: Vrijdag in de Grote Vasten; geen aparte Vrijdagvasten.
+      - datum: "2026-08-07"
+        verwachte_niveau: streng
+        toelichting: Vrijdag in het Ontslapen-vasten.
+  - id: streng-weekend-olie
+    titel: Zaterdag en zondag in een strenge periode — wijn en olie
+    tekst: |
+      In de Grote Vasten en het Ontslapen-vasten is de weekdag streng; zaterdag
+      en zondag wijn en olie (geen vis), **behalve** in de Grote Week.
+    voorbeelden:
+      - datum: "2026-03-21"
+        verwachte_niveau: wijn_olie
+        toelichting: Zaterdag in de Grote Vasten.
+      - datum: "2026-04-11"
+        verwachte_niveau: streng
+        toelichting: Grote Zaterdag — geen weekendversoepeling.
+      - datum: "2026-04-10"
+        verwachte_niveau: streng
+        toelichting: Grote Vrijdag.
+  - id: lichter-weekschema
+    titel: Apostelen- en Geboortevasten — weekschema van typikon h. 33
+    tekst: |
+      In een vastenperiode met seizoenslabel `lichter` (Apostolisch vasten,
+      Geboortevasten): maandag/woensdag/vrijdag **streng**; dinsdag/donderdag
+      **wijn en olie**; zaterdag/zondag **vis**. (Boterweek is geen
+      vastenperiode van dit type: die blijft `lichter` op elke dag.)
+    voorbeelden:
+      - datum: "2026-11-20"
+        verwachte_niveau: streng
+        toelichting: Vrijdag in het Geboortevasten.
+      - datum: "2026-11-17"
+        verwachte_niveau: wijn_olie
+        toelichting: Dinsdag in het Geboortevasten.
+      - datum: "2026-02-20"
+        verwachte_niveau: lichter
+        toelichting: Vrijdag in de Boterweek (zuivel, geen vlees).
+  - id: geboortevasten-20-24
+    titel: Geboortevasten 20–24 december — geen vis
+    tekst: |
+      Van 20 tot en met 24 december (feestdatum) geen vis, ook niet op
+      zaterdag of zondag (typikon h. 33). Wij capen dan op wijn en olie.
+    voorbeelden:
+      - datum: "2026-12-20"
+        verwachte_niveau: wijn_olie
+        toelichting: Zondag 20 december, nog Geboortevasten, geen vis.
+  - id: feest-versoepelt
+    titel: Een feest versoepelt een periode, het maakt hem niet strenger
+    tekst: |
+      Heeft een feestdag `vastenniveau`, dan geldt het soepelste van periode-dag
+      en feest. Voorbeelden uit het typikon: vis op Aankondiging (tot Palmzondag),
+      Palmzondag, Transfiguratie, Tempelgang; vis op wo/vr voor Geboorte van de
+      Moeder Gods, Petrus en Paulus, Geboorte van Johannes.
+    voorbeelden:
+      - datum: "2026-03-25"
+        verwachte_niveau: vis
+        toelichting: Aankondiging op woensdag in de Grote Vasten.
+      - datum: "2026-08-06"
+        verwachte_niveau: vis
+        toelichting: Transfiguratie in het Ontslapen-vasten.
+      - datum: "2026-11-21"
+        verwachte_niveau: vis
+        toelichting: Tempelgang (zaterdag in het Geboortevasten; vis al via het weekschema).
+      - datum: "2026-04-05"
+        verwachte_niveau: vis
+        toelichting: Palmzondag (tussen Grote Vasten en Grote Week).
+  - id: lazarus-geen-vis
+    titel: Lazarus-zaterdag — kaviaar, geen vis
+    tekst: |
+      Typikon h. 49: op Lazarus-zaterdag gekookt met olie, wijn, en kaviaar
+      als die er is; **geen vis**. Vis is voor Palmzondag. Wij hebben geen
+      niveau «kaviaar» en tonen daarom **wijn en olie** (zelfde als andere
+      zaterdagen in de Grote Vasten).
+    voorbeelden:
+      - datum: "2026-04-04"
+        verwachte_niveau: wijn_olie
+        toelichting: Lazarus-zaterdag 2026.
+  - id: grote-week-cap
+    titel: In de Grote Week geen vis, ook niet op de Aankondiging
+    tekst: |
+      Valt de Aankondiging in de Grote Week, dan vis → hoogstens wijn en olie
+      (typikon h. 33: tot Grote Donderdag olie en wijn; Grote Vrijdag alleen
+      wijn). Op deze site capen we de hele Grote Week op `wijn_olie` als een
+      feest verder zou gaan. (Op de nieuwe kalender valt 25 maart zelden in de
+      Grote Week; op de oude kalender kan het wel, zoals in 2026.)
+    voorbeelden:
+      - weekday: 2
+        mmdd: "03-25"
+        verwachte_niveau: wijn_olie
+        toelichting: Synthetisch — Aankondiging op Grote Dinsdag.
+        entries:
+          - id: grote-week
+            soort: vasten
+            vorm: periode
+            vastenniveau: streng
+            naam: Grote Week
+          - id: aankondiging
+            soort: feest
+            vorm: dag
+            vastenniveau: vis
+            naam: Aankondiging aan de Moeder Gods
+            observances: [feest]
+  - id: vastenfeest-buiten-periode
+    titel: Sommige feesten zijn zelf een vastendag
+    tekst: |
+      Buiten een periode: een feest mét `observances` die `vasten` bevatten,
+      **legt** het niveau op (Kruisverheffing, Onthoofding van Johannes: streng,
+      ook op zaterdag/zondag). Een feest zonder die observantie versoepelt
+      alleen wo/vr (vis) of zet wo/vr uit (`vrij` op Kerst en Theofanie).
+    voorbeelden:
+      - datum: "2026-09-14"
+        verwachte_niveau: streng
+        toelichting: Kruisverheffing op maandag.
+      - datum: "2026-08-29"
+        verwachte_niveau: streng
+        toelichting: Onthoofding van Johannes op zaterdag.
+      - datum: "2026-12-25"
+        verwachte_niveau: vrij
+        toelichting: Kerst op vrijdag — geen Vrijdagvasten.
+      - datum: "2026-09-08"
+        verwachte_niveau: null
+        toelichting: Geboorte van de Moeder Gods op dinsdag — geen vasten om te versoepelen.
+  - id: vastenvrije-weken
+    titel: Vastenvrije weken
+    tekst: |
+      Lichte Week, week van de Tollenaar en de Farizeeër, week na Pinksteren:
+      `vrij`, en wo/vr geldt niet.
+    voorbeelden:
+      - datum: "2026-04-13"
+        verwachte_niveau: vrij
+        toelichting: Maandag van de Lichte Week.
+vereenvoudigingen:
+  - >
+    Droog eten (xerophagy) en gekookt zonder olie vallen beide onder `streng`.
+    We tellen geen aantal maaltijden per dag.
+  - >
+    Kaviaar op Lazarus-zaterdag heeft geen eigen niveau; we tonen wijn en olie.
+  - >
+    Wijn-alleen op Grote Vrijdag (als de Aankondiging daarop valt) wordt niet
+    van wijn-én-olie onderscheiden.
+  - >
+    Schelpdieren (geen ruggengraat) worden niet apart gemodelleerd; wie ze eet
+    op een strenge dag volgt lokale zegen, niet deze site.
+nog_niet:
+  - >
+    Olie/wijn op middelfeesten in de Grote Vasten (veertig martelaren van
+    Sebaste, Voorfeest van de Aankondiging, …) — heiligen hebben nog geen
+    `vastenniveau`.
+  - >
+    Vis op een heilige met doxologie of wakker in Apostelen-/Geboortevasten
+    (typikon h. 33, rang van de dienst).
+  - >
+    Grote Donderdag: typikon staat wijn en olie toe; wij laten de Grote Week
+    streng (behalve een eventuele Aankondiging-cap).
+  - >
+    Vooravond van Theofanie (5/6 januari) als aparte strenge dag.
+  - >
+    Tempelpatroon: vis of olie op de parochiële kermisdag.
+referenties:
+  - label: "Typikon, hoofdstuk 33 (Azbuka.ru)"
+    url: "https://www.azbyka.ru/otechnik/Pravoslavnoe_Bogosluzhenie/tipikon/33"
+    rol: typikon
+    opmerking: >
+      O разрешении всего лета — Aankondiging tot Palmzondag vis; in de Grote
+      Week olie/wijn; Apostelen- en Geboortevasten weekschema; Ontslapen-vasten
+      vis alleen op Transfiguratie; Kruisverheffing en Onthoofding zonder vis.
+  - label: "Typikon h. 49, Lazarus-zaterdag (citaat via SPŽ)"
+    url: "https://spzh.eu/ru/socseti/79300-lazareva-subbota-pogovorim-ob-ikre-i-ne-tolyko"
+    rol: typikon
+    opmerking: "«Аще же и икру имамы…» — kaviaar, olie en wijn; geen vis."
+  - label: "Azbuka very — Пост по Типикону"
+    url: "https://azbyka.ru/post-po-tipikonu"
+    rol: moskou
+    opmerking: Hedendaagse Russische uitleg van hetzelfde typikon.
+  - label: "Uitgeverij Moskous Patriarchaat — kerkelijk kalender"
+    url: "http://calendar.rop.ru"
+    rol: moskou
+    opmerking: Officiële dagkalender; trapeza-notities per dag.
+  - label: "Календарь постов и трапез 2026 (Izd. MP, aankondiging)"
+    url: "http://www.rop.ru/novosti/article_post/otkryta-dlya-svobodnogo-skachivaniya-publikaciya-obschedostupnoy-versii-kalendarya-postov-i-trapez-na-2026-god"
+    rol: moskou
+  - label: "Pravoslavie.ru — Церковный календарь 2026"
+    url: "https://days.pravoslavie.ru/docs/2026_1.html"
+    rol: moskou
+    opmerking: Sretenski-klooster (Moskou); veelgebruikte publieke kalender.
+  - label: "OCA — Fasting and Fast-Free Seasons"
+    url: "https://www.oca.org/liturgics/outlines/fasting-fast-free-seasons-of-the-church"
+    rol: slavisch
+    opmerking: >
+      Engelse samenvatting van typikon h. 32–33 plus Triodion (Ware); zelfde
+      Slavische lijn als Moskou/ROCOR.
+  - label: "The Rule of Fasting (Fr. Seraphim Rose / orthodoxinfo)"
+    url: "http://orthodoxinfo.com/praxis/father-seraphim-rose-fasting-rules.aspx"
+    rol: rocor
+    opmerking: ROCOR-weergave van typikon h. 33, inclusief 20–24 december zonder vis.
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    rol: toelichting
+  - label: "OrthodoxWiki — Great Lent"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    rol: toelichting

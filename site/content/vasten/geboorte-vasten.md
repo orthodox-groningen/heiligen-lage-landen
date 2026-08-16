@@ -20,6 +20,8 @@ alternatief:
 
 **Vastenniveau (indicatief):** lichter.
 
+**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
 Vasten van 15 november tot Kerstavond (24 december), ter voorbereiding op Kerstfeest.
 
 ## Verhaal

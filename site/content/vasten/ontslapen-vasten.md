@@ -21,6 +21,8 @@ alternatief:
 
 **Vastenniveau (indicatief):** streng.
 
+**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
 Vasten van 1 tot en met 14 augustus, ter voorbereiding op het Ontslapen.
 
 ## Verhaal

@@ -53,6 +53,8 @@ alternatief:
 
 **Vastenniveau (indicatief):** lichter.
 
+**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
 Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).
 
 ## Verhaal

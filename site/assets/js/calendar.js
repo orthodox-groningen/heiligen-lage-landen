@@ -179,7 +179,9 @@
     );
   }
 
-  /** Spiegel van scripts/vasten.py (mix_vastenniveau). */
+  /** Spiegel van scripts/vasten.py (period_daily_base / mix_vastenniveau).
+   *  Norm: data/regels/vasten.yaml
+   */
   const VASTEN_COMPARE_RANK = {
     streng: 0,
     wijn_olie: 1,
@@ -242,7 +244,43 @@
     return line;
   }
 
-  function mixVastenniveau(dayEntries, weekday) {
+  function periodDailyBase(entry, weekday, inGroteWeek, mmdd) {
+    const tag = entry.vastenniveau || "streng";
+    if (tag === "vrij") return { niveau: "vrij", weekend: false };
+    if (tag === "lichter" && entry.soort === "vasten") {
+      let base;
+      let weekend = false;
+      if (weekday === 6 || weekday === 7) {
+        base = "vis";
+        weekend = true;
+      } else if (weekday === 2 || weekday === 4) {
+        base = "wijn_olie";
+      } else {
+        base = "streng";
+      }
+      if (
+        entry.id === "geboorte-vasten" &&
+        mmdd &&
+        mmdd >= "12-20" &&
+        mmdd <= "12-24" &&
+        VASTEN_COMPARE_RANK[base] > VASTEN_COMPARE_RANK.wijn_olie
+      ) {
+        base = "wijn_olie";
+      }
+      return { niveau: base, weekend };
+    }
+    if (tag === "lichter") return { niveau: "lichter", weekend: false };
+    if (
+      (weekday === 6 || weekday === 7) &&
+      VASTEN_COMPARE_RANK[tag] === VASTEN_COMPARE_RANK.streng &&
+      !inGroteWeek
+    ) {
+      return { niveau: "wijn_olie", weekend: true };
+    }
+    return { niveau: tag, weekend: false };
+  }
+
+  function mixVastenniveau(dayEntries, weekday, mmdd) {
     const periods = (dayEntries || []).filter(
       (e) =>
         isPeriodEntry(e) &&
@@ -270,16 +308,9 @@
         const best = VASTEN_COMPARE_RANK[baseEntry.vastenniveau || "streng"];
         if (rank < best) baseEntry = e;
       }
-      let base = baseEntry.vastenniveau || "streng";
-      let weekend = false;
-      if (
-        (weekday === 6 || weekday === 7) &&
-        VASTEN_COMPARE_RANK[base] === VASTEN_COMPARE_RANK.streng &&
-        !inGroteWeek
-      ) {
-        base = "wijn_olie";
-        weekend = true;
-      }
+      const daily = periodDailyBase(baseEntry, weekday, inGroteWeek, mmdd);
+      let base = daily.niveau;
+      let weekend = daily.weekend;
       const relaxers = dayFeasts.filter(
         (e) => VASTEN_COMPARE_RANK[e.vastenniveau] > VASTEN_COMPARE_RANK[base]
       );
@@ -753,9 +784,9 @@
     const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
     const civil = civilMmddForView(view.mmdd, style, view.year);
     const weekday = isoWeekdayFromMmdd(civil, view.year);
-    const vasten = mixVastenniveau(matched, weekday);
+    const vasten = mixVastenniveau(matched, weekday, view.mmdd);
     const vastenHtml = vasten
-      ? `<p class="vasten-indicatie">${vasten.tekst}</p>`
+      ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
       : "";
     if (!matched.length) {
       cardEntries.innerHTML =
