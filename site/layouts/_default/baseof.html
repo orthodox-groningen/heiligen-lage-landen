@@ -16,7 +16,7 @@
       <nav class="nav" aria-label="Hoofdnavigatie">
         <a href="{{ "" | relURL }}">Vandaag</a>
         <a href="{{ "kalender/" | relURL }}">Kalender</a>
-        <a href="{{ "overzicht/" | relURL }}">Overzicht</a>
+        <a href="{{ "meneon/" | relURL }}">Meneon</a>
         <a href="{{ "agenda/" | relURL }}">Agenda</a>
         <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
       </nav>
@@ -27,7 +27,7 @@
       </div>
     </div>
   </header>
-  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "agenda") (eq .Layout "overzicht") (eq .Section "uitleg") }} main-wide{{ end }}">
+  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") }} main-wide{{ end }}">
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

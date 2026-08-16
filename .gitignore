@@ -4,7 +4,8 @@ site/public/
 site/resources/
 site/data/build.yaml
 site/content/dag/
-site/content/datum/
+site/content/datum/*
+!site/content/datum/_index.md
 site/content/heiligen/
 site/content/feesten/
 site/static/data/entries.json
