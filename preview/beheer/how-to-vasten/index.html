@@ -1,0 +1,51 @@
+<!doctype html><html lang=nl><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Vastenregels wijzigen · Heiligen van de Lage Landen</title><meta name=description content="Periodes in data/vasten, mengregel in data/regels/vasten.yaml, code moet mee"><link rel=stylesheet href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/css/site.min.cdb4f07b1287bd6f71f64ecc6554546ddfd19a30337f5d50747f657e3ec93afd.css></head><body data-base=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/>Heiligen van de Lage Landen</a><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/>Vandaag</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/kalender/>Kalender</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/lezingenrooster/>Lezingen</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/meneon/>Meneon</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/agenda/>Agenda</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/>Uitleg</a></nav></div></header><main id=main class="wrap main main-wide"><article class="page beheer-page"><h1>Vastenregels wijzigen</h1><p>Er zijn <strong>twee lagen</strong>. Ze door elkaar halen is de meest voorkomende fout.</p><ol><li><strong>Wat bestaat</strong> — periodes en wekelijks vasten als entries:
+<code>data/vasten/*.yaml</code>, plus <code>vastenniveau</code> op feesten.</li><li><strong>Wat de kalender op een dag toont</strong> — één effectief niveau, met
+voorrang en versoepeling: <code>data/regels/vasten.yaml</code>, uitgevoerd in
+<code>scripts/vasten.py</code> en <code>site/assets/js/calendar.js</code>.</li></ol><p>De clerus leest <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/vasten/>Uitleg: Vasten</a>. De koppeling
+naar ids en tests: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/vasten-technisch/>Vasten (technisch)</a>.
+Na een wijziging: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/how-to-publiceren/>publiceren</a>.</p><p><strong>Niet redigeren:</strong> <code>site/content/uitleg/vasten.md</code>,
+<code>site/content/uitleg/vasten-technisch.md</code>, en
+<code>site/content/vasten/*.md</code>. Die drie komen uit generate.</p><h2 id=1-een-periode-of-wekelijkse-dag>1. Een periode of wekelijkse dag</h2><p>Voorbeelden: <code>data/vasten/grote-vasten.yaml</code> (paascyclus-periode),
+<code>data/vasten/ontslapen-vasten.yaml</code> (vaste MM-DD … MM-DD),
+<code>data/vasten/woensdag-vasten.yaml</code> (<code>cyclus: wekelijks</code>).</p><p>Typische velden:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>soort</span>: <span style=color:#ae81ff>vasten</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar                </span> <span style=color:#75715e># of paascyclus, of wekelijks</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>streng        </span> <span style=color:#75715e># seizoensniveau van de periode</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>observances</span>: [<span style=color:#ae81ff>vasten]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>van</span>: <span style=color:#e6db74>&#34;08-01&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>tot</span>: <span style=color:#e6db74>&#34;08-14&#34;</span>
+</span></span></code></pre></div><p>Wekelijks: <code>datum.weekdagen: [3]</code> (ISO: 1 = maandag … 7 = zondag).</p><p><code>vastenniveau: vrij</code> (Lichte Week, week na Pinksteren, …) onderdrukt het
+wekelijkse wo/vr-vasten op die dagen. Een named periode <em>is</em> het vasten
+van de dag; vrijdagvasten wordt niet nog eens getoond.</p><p>Dit wijzigt <strong>wanneer</strong> iets loopt en welk seizoensniveau de periode heeft.
+Het wijzigt niet de weekendversoepeling, het weekschema in het Apostelen-
+en Geboortevasten, of «een feest versoepelt alleen». Dat is laag 2.</p><p>Ook namen van periodes: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/how-to-namen/>namen.yaml</a>.</p><h2 id=2-de-mengregel-wat-er-op-de-dag-staat>2. De mengregel (wat er op de dag staat)</h2><p>Bestand: <code>data/regels/vasten.yaml</code>.</p><ul><li><code>inleiding</code>, <code>bronkeuze</code>, <code>niveaus</code>, <code>regels[].tekst</code> — tekst op de
+<strong>cleruspagina</strong>. Na <code>generate.py</code> is Uitleg → Vasten bijgewerkt.</li><li><code>regels[].id</code> — stabiel (<code>periode-boven-wekelijks</code>, …). Wordt <code>R-…</code> op
+de technische pagina.</li><li><code>regels[].voorbeelden</code> — burgerlijke <code>datum</code> + <code>verwachte_niveau</code>, of
+een synthetisch voorbeeld (<code>weekday</code>, <code>entries</code>, <code>mmdd</code>).</li><li><code>technisch.inleiding</code> — tekst van de technische bijlage.</li></ul><p><strong>pytest</strong> (<code>tests/test_vasten.py</code>) toetst elk voorbeeld tegen
+<code>mix_vastenniveau</code> / <code>indicatie_op_datum</code>. Wijzigt u <code>verwachte_niveau</code>
+omdat de clerus een andere uitkomst wil, dan moet de <strong>code</strong> dezelfde
+uitkomst geven:</p><ul><li><code>scripts/vasten.py</code> — serverkant, tests, generate</li><li><code>site/assets/js/calendar.js</code> — wat de bezoeker op Vandaag / datumpagina
+ziet</li></ul><p>Die twee moeten hetzelfde doen. Alleen YAML aanpassen zonder code laat de
+tests rood.</p><p>Synthetische voorbeelden (geen burgerlijke datum) zijn voor gevallen als
+«Aankondiging in de Grote Week»: zeldzaam op de nieuwe kalender, wél
+toetsbaar.</p><h2 id=3-een-feest-dat-vasten-versoepelt-of-oplegt>3. Een feest dat vasten versoepelt of oplegt</h2><p>Op het feest zelf, niet in <code>vasten.yaml</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>vis</span>
+</span></span></code></pre></div><p>In een periode mag dat het getoonde niveau alleen <strong>lichter</strong> maken, nooit
+strenger. Buiten een periode legt een feest met <code>observances</code> die <code>vasten</code>
+bevatten het vasten op (Kruisverheffing: <code>streng</code>). Details en uitzonderingen
+(Grote Week, Lazarus-zaterdag) staan in de clerustekst en in de code.</p><p>Nieuwe uitzondering: eerst met de clerus eens worden, dan een regel +
+voorbeelden in <code>data/regels/vasten.yaml</code>, dan de code, dan generate.</p><h2 id=controleren>Controleren</h2><ol><li>Clerustekst en voorbeelden in <code>data/regels/vasten.yaml</code> (en zo nodig
+periode-YAML).</li><li>Code in <code>vasten.py</code> en <code>calendar.js</code> tot de voorbeelden kloppen.</li><li><code>python -m pytest tests/test_vasten.py -q</code></li><li><code>python scripts/generate.py</code> — lees Uitleg → Vasten na; die pagina is
+nu de nieuwe clerustekst.</li><li>Steekproef op de datumpagina voor de voorbeelddata (jaar 2026 in de
+huidige voorbeelden).</li></ol><p>«Wat nog niet in de kalender staat» op de cleruspagina is de lijst
+<code>nog_niet</code> in dezelfde YAML: bewust geen regel tot er overleg is.</p><p class="hint uitleg-nav"><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/>Voor beheerders</a>
+·
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/>Uitleg voor gebruikers</a></p></article></main><footer class=site-footer><div class="wrap footer-inner"><p><a href=https://github.com/orthodox-groningen/heiligen-lage-landen>GitHub</a>
+·
+<a href=https://github.com/orthodox-groningen>orthodox-groningen</a>
+·
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-16</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/js/calendar.min.1ba1aaadb7dedb853afb536eb2619c47dea9167cd1fc5c4605c005b5914061ec.js defer></script></body></html>

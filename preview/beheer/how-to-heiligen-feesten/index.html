@@ -1,0 +1,58 @@
+<!doctype html><html lang=nl><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Heilige of feest toevoegen of wijzigen · Heiligen van de Lage Landen</title><meta name=description content="YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"><link rel=stylesheet href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/css/site.min.cdb4f07b1287bd6f71f64ecc6554546ddfd19a30337f5d50747f657e3ec93afd.css></head><body data-base=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/>Heiligen van de Lage Landen</a><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/>Vandaag</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/kalender/>Kalender</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/lezingenrooster/>Lezingen</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/meneon/>Meneon</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/agenda/>Agenda</a>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/>Uitleg</a></nav></div></header><main id=main class="wrap main main-wide"><article class="page beheer-page"><h1>Heilige of feest toevoegen of wijzigen</h1><p>Heiligen en feesten bestaan als <strong>bron</strong> in YAML. De pagina’s die u op de
+site ziet, zijn een afdruk. Wijzig de YAML; laat <code>site/content/heiligen/</code>
+en <code>site/content/feesten/</code> met rust.</p><p>Datamodel: <a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md>docs/datamodel.md</a>.
+Schema: <code>schemas/entry.schema.json</code>. Publiceren:
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/how-to-publiceren/>site bouwen</a>.</p><h2 id=nieuw-id>Nieuw id</h2><ol><li>Kies een id: alleen <code>a-z</code>, <code>0-9</code>, <code>_</code> en <code>-</code>, beginnend met een letter
+of cijfer. Voorbeeld: <code>willibrord</code>, <code>ontslapen-moeder-gods</code>.</li><li>Dat id is de <strong>bestandsnaam</strong> zonder <code>.yaml</code> en blijft stabiel. Wijzig
+later liever de getoonde naam dan het id.</li><li>Zet de canonieke naam in <code>data/namen.yaml</code> onder <code>entries.&lt;id></code> (primair,
+optioneel <code>alternatief</code>). Zie <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>. Voor een verhaal of samenvatting is
+minstens één <strong>referentie</strong> verplicht, met een locator: <code>url</code>, of <code>isbn</code>,
+of <code>locator</code>.</p><h3 id=vaste-dag>Vaste dag</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>willibrord</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>soort</span>: <span style=color:#ae81ff>heilige</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>status</span>: <span style=color:#ae81ff>curated         </span> <span style=color:#75715e># of stub</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>lagenlanden</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>waarde</span>: <span style=color:#e6db74>&#34;11-07&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>stijl</span>: <span style=color:#ae81ff>gregoriaans    </span> <span style=color:#75715e># documentatie van de invoer; default gregoriaans</span>
+</span></span></code></pre></div><p><code>stijl</code> schakelt de site niet tussen Nieuw en Oud. Zie
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/feestdatum-technisch/>Feestdatum (technisch)</a>.</p><h3 id=paascyclus>Paascyclus</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>paascyclus</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>paascyclus</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>anker</span>: <span style=color:#ae81ff>pascha</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>offset_dagen</span>: <span style=color:#ae81ff>0</span>      <span style=color:#75715e># 0 = Pascha; negatief = dagen vóór</span>
+</span></span></code></pre></div><p>Periodes (vasten of een week) gebruiken <code>van_offset_dagen</code> /
+<code>tot_offset_dagen</code>, of hybride <code>van_offset_dagen</code> plus <code>datum.tot</code> (MM-DD),
+zoals het Apostelvasten.</p><h2 id=namen-in-het-entry-bestand>Namen in het entry-bestand</h2><p>U <em>mag</em> <code>namen.primair</code> in de YAML zetten. Bij laden <strong>wint</strong>
+<code>data/namen.yaml</code>. Zet nieuwe namen dus daar, anders lijkt de YAML-naam te
+werken tot iemand <code>namen.yaml</code> aanvult.</p><h2 id=vasten-op-een-feest>Vasten op een feest</h2><p>Optioneel:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>vis       </span> <span style=color:#75715e># streng | wijn_olie | vis | lichter | vrij</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>observances</span>: [<span style=color:#ae81ff>feest, vasten]</span>
+</span></span></code></pre></div><p><code>vastenniveau</code> op een feest <strong>versoepelt</strong> in een periode, of legt vasten
+op buiten een periode als <code>observances</code> vasten bevat (Kruisverheffing,
+Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/how-to-vasten/>vastenregels</a>.</p><h2 id=referenties>Referenties</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>referenties</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>bron_id</span>: <span style=color:#ae81ff>oca-calendar</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>url</span>: <span style=color:#e6db74>&#34;https://www.oca.org/saints/lives&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>geraadpleegd</span>: <span style=color:#e6db74>&#34;2026-08-16&#34;</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>label</span>: <span style=color:#e6db74>&#34;Handboek X&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>isbn</span>: <span style=color:#e6db74>&#34;978-…&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>pagina</span>: <span style=color:#e6db74>&#34;120–124&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>geraadpleegd</span>: <span style=color:#e6db74>&#34;2026-08-16&#34;</span>
+</span></span></code></pre></div><p><code>bron_id</code> wijst naar <code>data/bronnen/bronnen.yaml</code>. De locator hoort <strong>ook</strong>
+op de referentie in de entry, niet alleen in de catalogus.</p><p><code>status: stub</code> — basisgegevens, kort of geen verhaal.
+<code>status: curated</code> — nagekeken tekst met traceerbare bronnen.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
+</span></span><span style=display:flex><span>python scripts/generate.py
+</span></span><span style=display:flex><span>python -m pytest -q
+</span></span></code></pre></div><p>Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
+eventueel ICS. Klopt de naam niet, dan eerst <code>namen.yaml</code>.</p><p class="hint uitleg-nav"><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/>Voor beheerders</a>
+·
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/uitleg/>Uitleg voor gebruikers</a></p></article></main><footer class=site-footer><div class="wrap footer-inner"><p><a href=https://github.com/orthodox-groningen/heiligen-lage-landen>GitHub</a>
+·
+<a href=https://github.com/orthodox-groningen>orthodox-groningen</a>
+·
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-16</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/preview/js/calendar.min.1ba1aaadb7dedb853afb536eb2619c47dea9167cd1fc5c4605c005b5914061ec.js defer></script></body></html>
