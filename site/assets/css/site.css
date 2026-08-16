@@ -459,21 +459,35 @@ h2 {
 }
 
 .info-dialog {
-  border: 1px solid var(--line);
-  border-radius: 0.4rem;
-  padding: 0;
-  max-width: min(28rem, calc(100vw - 2rem));
-  background: var(--bg-elev);
-  color: var(--ink);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
 }
 
-.info-dialog::backdrop {
+.info-dialog[hidden] {
+  display: none !important;
+}
+
+.info-dialog-backdrop {
+  position: absolute;
+  inset: 0;
   background: rgba(0, 0, 0, 0.55);
 }
 
 .info-dialog-inner {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding: 1.25rem 1.35rem 1.35rem;
+  max-width: min(28rem, calc(100vw - 2rem));
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--bg-elev);
+  color: var(--ink);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
 .info-dialog-inner h2 {
@@ -485,6 +499,15 @@ h2 {
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 1rem;
+}
+
+body.dialog-open {
+  overflow: hidden;
+}
+
+.style-help {
+  min-width: 2rem;
+  font-weight: 700;
 }
 
 .text-link {
@@ -502,6 +525,10 @@ h2 {
 
 .text-link:hover {
   color: var(--gold);
+}
+
+a.text-link {
+  color: var(--gold-soft);
 }
 
 .site-footer {

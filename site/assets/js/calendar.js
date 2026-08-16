@@ -88,16 +88,50 @@
 
   function styleLink(style) {
     const word = shortStyle(style);
-    return `<button type="button" class="text-link" data-open-nieuw-oud>${word}</button>`;
+    // Popup-knop + aparte link naar de uitlegpagina (blijft bereikbaar).
+    return (
+      `<button type="button" class="text-link" data-open-nieuw-oud>${word}</button>` +
+      ` · <a class="text-link" href="${uitlegUrl("nieuw-oud")}">meer</a>`
+    );
+  }
+
+  function fillNieuwOudDialog(style) {
+    const body = document.getElementById("nieuw-oud-body");
+    const title = document.getElementById("nieuw-oud-title");
+    if (!body) return;
+    const today = todayMmdd(style);
+    if (style === "juliaans") {
+      if (title) title.textContent = "Oude kalender (Juliaans)";
+      body.innerHTML =
+        `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
+        `<strong>oude / Juliaanse</strong> tijdrekening.</p>` +
+        `<p>Met de knoppen <strong>Nieuw</strong> / <strong>Oud</strong> rechtsboven ` +
+        `wissel je hoe we <em>vandaag</em> rekenen.</p>`;
+    } else {
+      if (title) title.textContent = "Nieuwe kalender (Gregoriaans)";
+      body.innerHTML =
+        `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
+        `<strong>nieuwe / Gregoriaanse</strong> (burgerlijke) kalender.</p>` +
+        `<p>Met de knoppen <strong>Nieuw</strong> / <strong>Oud</strong> rechtsboven ` +
+        `wissel je hoe we <em>vandaag</em> rekenen.</p>`;
+    }
+  }
+
+  function closeNieuwOudDialog() {
+    const dlg = document.getElementById("nieuw-oud-dialog");
+    if (!dlg) return;
+    dlg.hidden = true;
+    document.body.classList.remove("dialog-open");
   }
 
   function openNieuwOudDialog() {
     const dlg = document.getElementById("nieuw-oud-dialog");
-    if (dlg && typeof dlg.showModal === "function") {
-      dlg.showModal();
-    } else {
-      window.location.href = uitlegUrl("nieuw-oud");
-    }
+    if (!dlg) return;
+    fillNieuwOudDialog(getStyle());
+    dlg.hidden = false;
+    document.body.classList.add("dialog-open");
+    const closeBtn = dlg.querySelector("[data-close-nieuw-oud].button, .info-dialog-actions [data-close-nieuw-oud]");
+    if (closeBtn) closeBtn.focus();
   }
 
   function wireNieuwOudTriggers(root) {
@@ -106,7 +140,16 @@
       el.dataset.bound = "1";
       el.addEventListener("click", (ev) => {
         ev.preventDefault();
+        ev.stopPropagation();
         openNieuwOudDialog();
+      });
+    });
+    (root || document).querySelectorAll("[data-close-nieuw-oud]").forEach((el) => {
+      if (el.dataset.boundClose === "1") return;
+      el.dataset.boundClose = "1";
+      el.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        closeNieuwOudDialog();
       });
     });
   }
@@ -453,6 +496,10 @@
       setStyle(style);
       refresh();
     });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNieuwOudDialog();
   });
 
   if (document.readyState === "loading") {

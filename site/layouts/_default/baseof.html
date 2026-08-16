@@ -23,6 +23,7 @@
       <div class="style-toggle" role="group" aria-label="Kalender voor vandaag">
         <button type="button" data-style="gregoriaans" class="style-btn" title="Nieuwe kalender">Nieuw</button>
         <button type="button" data-style="juliaans" class="style-btn" title="Oude kalender">Oud</button>
+        <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
       </div>
     </div>
   </header>
@@ -30,23 +31,17 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <dialog id="nieuw-oud-dialog" class="info-dialog">
-    <form method="dialog" class="info-dialog-inner">
-      <h2>Nieuw / Oud</h2>
-      <p>
-        <strong>Nieuw</strong> = Gregoriaanse (burgerlijke) kalender.
-        <strong>Oud</strong> = Juliaanse tijdrekening (nu 13&nbsp;dagen eerder).
-      </p>
-      <p>
-        De knop verandert alleen hoe we <em>vandaag</em> rekenen — niet de
-        feestdatum van een feest (Ontslapen blijft 15&nbsp;augustus).
-      </p>
+  <div id="nieuw-oud-dialog" class="info-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="nieuw-oud-title">
+    <div class="info-dialog-backdrop" data-close-nieuw-oud></div>
+    <div class="info-dialog-inner">
+      <h2 id="nieuw-oud-title">Over deze datum</h2>
+      <div id="nieuw-oud-body"></div>
       <div class="info-dialog-actions">
-        <a class="button button-secondary" href="{{ "uitleg/" | relURL }}#nieuw-oud">Uitgebreide uitleg</a>
-        <button type="submit" class="button" value="close">Sluiten</button>
+        <a class="button button-secondary" id="nieuw-oud-meer" href="{{ "uitleg/" | relURL }}#nieuw-oud">Korte uitlegpagina</a>
+        <button type="button" class="button" data-close-nieuw-oud>Sluiten</button>
       </div>
-    </form>
-  </dialog>
+    </div>
+  </div>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
