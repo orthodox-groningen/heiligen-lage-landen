@@ -1,7 +1,11 @@
 ---
 title: "Datumpagina’s"
-description: "Bladeren via de jaarkalender naar een willekeurige dag"
+description: "Wat er op een kalenderdag in een bepaald jaar valt"
 ---
 
-Via de [jaarkalender]({{% ref "/kalender" %}}) open je een willekeurige
-kalenderdatum (niet alleen vandaag). Dat is handig om vooruit of terug te bladeren.
+Via de [jaarkalender]({{% ref "/kalender" %}}) open je een dag **in dat jaar**:
+feesten, heiligen, paascyclus en vasten die op die datum vallen.
+De URL is `/datum/?jaar=2026&dag=08-15`.
+
+Wat er *altijd* op 15 augustus hoort, staat in het
+[Meneon]({{% ref "/meneon" %}}) (`/meneon/?dag=08-15`).

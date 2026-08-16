@@ -44,7 +44,8 @@ def test_ensure_hand_owned_indexes_keeps_body(
 ) -> None:
     content = tmp_path / "content"
     (content / "kalender").mkdir(parents=True)
-    (content / "overzicht").mkdir(parents=True)
+    (content / "meneon").mkdir(parents=True)
+    (content / "datum").mkdir(parents=True)
     (content / "agenda").mkdir(parents=True)
     (content / "uitleg").mkdir(parents=True)
 
@@ -57,8 +58,12 @@ def test_ensure_hand_owned_indexes_keeps_body(
         '---\ntitle: "Home"\n---\n\n<!-- welcome -->\n',
         encoding="utf-8",
     )
-    (content / "overzicht" / "_index.md").write_text(
-        '---\ntitle: "Overzicht"\nlayout: overzicht\n---\n\n',
+    (content / "meneon" / "_index.md").write_text(
+        '---\ntitle: "Meneon"\nlayout: meneon\n---\n\n',
+        encoding="utf-8",
+    )
+    (content / "datum" / "_index.md").write_text(
+        '---\ntitle: "Datum"\nlayout: datum\n---\n\n',
         encoding="utf-8",
     )
     (content / "agenda" / "_index.md").write_text(
@@ -94,9 +99,13 @@ def test_ensure_rejects_empty_title(
     (content / "kalender" / "_index.md").write_text(
         '---\ntitle: "K"\nlayout: kalender\n---\n\n', encoding="utf-8"
     )
-    (content / "overzicht").mkdir()
-    (content / "overzicht" / "_index.md").write_text(
-        '---\ntitle: "O"\nlayout: overzicht\n---\n\n', encoding="utf-8"
+    (content / "meneon").mkdir()
+    (content / "meneon" / "_index.md").write_text(
+        '---\ntitle: "M"\nlayout: meneon\n---\n\n', encoding="utf-8"
+    )
+    (content / "datum").mkdir()
+    (content / "datum" / "_index.md").write_text(
+        '---\ntitle: "D"\nlayout: datum\n---\n\n', encoding="utf-8"
     )
     (content / "agenda").mkdir()
     (content / "agenda" / "_index.md").write_text(
@@ -131,4 +140,6 @@ def test_repo_hand_owned_indexes_ok() -> None:
     ensure_hand_owned_indexes()
     ensure_achtergrond_topics()
     assert (CONTENT / "kalender" / "_index.md").is_file()
+    assert (CONTENT / "meneon" / "_index.md").is_file()
+    assert (CONTENT / "datum" / "_index.md").is_file()
     assert (CONTENT / "uitleg" / "nieuw-oud.md").is_file()

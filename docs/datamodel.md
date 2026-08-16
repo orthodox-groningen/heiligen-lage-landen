@@ -72,8 +72,12 @@ datum:
 # of hybride: van_offset_dagen + datum.tot (MM-DD), bv. Apostolisch vasten
 ```
 
-Pagina’s onder `/vasten/{id}/`; zichtbaar in overzicht/agenda/kalender met
+Pagina’s onder `/vasten/{id}/`; zichtbaar in meneon/agenda/kalender met
 aan/uit-filters. ICS: `vasten-*.ics` en combinaties met heiligen/feesten.
+
+Het **Meneon** (`/meneon/`, optioneel `?dag=MM-DD`) toont alleen de vaste
+jaarcyclus. Een **datumpagina** (`/datum/?jaar=2026&dag=08-15`) toont wat er
+op die dag in dat jaar valt, inclusief paascyclus en wekelijks vasten.
 
 Optioneel op entries:
 
