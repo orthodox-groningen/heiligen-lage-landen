@@ -1,0 +1,116 @@
+"""Tests voor handmatig beheerde Hugo-_index.md-bestanden."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from generate import (  # noqa: E402
+    CONTENT,
+    _dump_hugo_markdown,
+    _split_hugo_markdown,
+    ensure_hand_owned_indexes,
+)
+
+
+def test_split_and_dump_preserves_body_and_extra_front_matter(tmp_path: Path) -> None:
+    text = (
+        '---\n'
+        'title: "Agenda (ICS)"\n'
+        "layout: agenda\n"
+        "draft: false\n"
+        "---\n\n"
+        "Mijn eigen intro.\n"
+    )
+    meta, body = _split_hugo_markdown(text)
+    assert meta["title"] == "Agenda (ICS)"
+    assert meta["layout"] == "agenda"
+    assert meta["draft"] is False
+    assert body.strip() == "Mijn eigen intro."
+    roundtrip = _dump_hugo_markdown(meta, body)
+    meta2, body2 = _split_hugo_markdown(roundtrip)
+    assert meta2 == meta
+    assert body2.strip() == "Mijn eigen intro."
+
+
+def test_ensure_hand_owned_indexes_keeps_body(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    content = tmp_path / "content"
+    (content / "kalender").mkdir(parents=True)
+    (content / "overzicht").mkdir(parents=True)
+    (content / "agenda").mkdir(parents=True)
+    (content / "uitleg").mkdir(parents=True)
+
+    kalender = content / "kalender" / "_index.md"
+    kalender.write_text(
+        '---\ntitle: "Mijn kalender"\nlayout: verkeerd\n---\n\nBlijf staan.\n',
+        encoding="utf-8",
+    )
+    (content / "_index.md").write_text(
+        '---\ntitle: "Home"\n---\n\n<!-- welcome -->\n',
+        encoding="utf-8",
+    )
+    (content / "overzicht" / "_index.md").write_text(
+        '---\ntitle: "Overzicht"\nlayout: overzicht\n---\n\n',
+        encoding="utf-8",
+    )
+    (content / "agenda" / "_index.md").write_text(
+        '---\ntitle: "Agenda (ICS)"\nlayout: agenda\n---\n\nx\n',
+        encoding="utf-8",
+    )
+    (content / "uitleg" / "_index.md").write_text(
+        '---\ntitle: "Uitleg"\nlayout: uitleg\n---\n\ny\n',
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr("generate.CONTENT", content)
+    ensure_hand_owned_indexes()
+
+    meta, body = _split_hugo_markdown(kalender.read_text(encoding="utf-8"))
+    assert meta["title"] == "Mijn kalender"
+    assert meta["layout"] == "kalender"
+    assert "Blijf staan." in body
+
+
+def test_ensure_rejects_empty_title(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    content = tmp_path / "content"
+    content.mkdir()
+    (content / "_index.md").write_text("---\ntitle: \"\"\n---\n\n", encoding="utf-8")
+    for name in ("kalender", "overzicht", "agenda", "uitleg"):
+        d = content / name
+        d.mkdir()
+        (d / "_index.md").write_text(
+            f'---\ntitle: "{name}"\nlayout: {name if name != "agenda" else "agenda"}\n---\n\n',
+            encoding="utf-8",
+        )
+    # Fix agenda layout name
+    (content / "agenda" / "_index.md").write_text(
+        '---\ntitle: "Agenda"\nlayout: agenda\n---\n\n',
+        encoding="utf-8",
+    )
+    (content / "kalender" / "_index.md").write_text(
+        '---\ntitle: "K"\nlayout: kalender\n---\n\n',
+        encoding="utf-8",
+    )
+    (content / "overzicht" / "_index.md").write_text(
+        '---\ntitle: "O"\nlayout: overzicht\n---\n\n',
+        encoding="utf-8",
+    )
+    (content / "uitleg" / "_index.md").write_text(
+        '---\ntitle: "U"\nlayout: uitleg\n---\n\n',
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr("generate.CONTENT", content)
+    with pytest.raises(SystemExit):
+        ensure_hand_owned_indexes()
+
+
+def test_repo_hand_owned_indexes_ok() -> None:
+    """Live content/ moet de checks doorstaan."""
+    ensure_hand_owned_indexes()
+    assert (CONTENT / "kalender" / "_index.md").is_file()

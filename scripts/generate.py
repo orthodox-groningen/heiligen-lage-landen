@@ -12,6 +12,8 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -198,16 +200,8 @@ def write_date_pages(entries: list[dict[str, Any]]) -> None:
         write_text(CONTENT / "datum" / f"{mmdd}.md", "\n".join(lines))
 
 
-def write_indexes() -> None:
-    write_text(
-        CONTENT / "_index.md",
-        """---
-title: "Heiligen van de Lage Landen"
----
-
-Welkom bij de orthodoxe heiligen- en feestkalender voor de Lage Landen (MVP).
-""",
-    )
+def write_generated_indexes() -> None:
+    """Sectie-indexes die bij --clean opnieuw worden aangemaakt."""
     write_text(
         CONTENT / "heiligen" / "_index.md",
         """---
@@ -235,26 +229,111 @@ title: "Datums"
 Datumpagina's: alle feesten en heiligen op een kalenderdatum (MM-DD).
 """,
     )
-    write_text(
-        CONTENT / "agenda" / "_index.md",
-        """---
-title: "Agenda (ICS)"
-layout: agenda
----
 
-Abonneer de kalender in Google Calendar, Outlook of Apple Agenda via de feeds hieronder.
-""",
-    )
-    write_text(
-        CONTENT / "kalender" / "_index.md",
-        """---
-title: "Jaarkalender"
-layout: kalender
----
 
-Blader door de vaste feestdagen per maand.
-""",
-    )
+def _split_hugo_markdown(text: str) -> tuple[dict[str, Any], str]:
+    if not text.startswith("---\n") and text != "---":
+        return {}, text
+    end = text.find("\n---", 3)
+    if end < 0:
+        raise ValueError("front matter zonder afsluitende ---")
+    fm_raw = text[4:end]
+    body = text[end + 4 :]
+    if body.startswith("\n"):
+        body = body[1:]
+    meta = yaml.safe_load(fm_raw) or {}
+    if not isinstance(meta, dict):
+        raise ValueError("front matter moet een mapping zijn")
+    return meta, body
+
+
+def _dump_hugo_markdown(meta: dict[str, Any], body: str) -> str:
+    # Stabiele, leesbare YAML (title eerst, dan layout, dan rest).
+    ordered: dict[str, Any] = {}
+    if "title" in meta:
+        ordered["title"] = meta["title"]
+    if "layout" in meta:
+        ordered["layout"] = meta["layout"]
+    for key, value in meta.items():
+        if key in ordered:
+            continue
+        ordered[key] = value
+    dumped = yaml.safe_dump(
+        ordered,
+        allow_unicode=True,
+        default_flow_style=False,
+        sort_keys=False,
+    ).strip()
+    body = body if body.endswith("\n") or body == "" else body + "\n"
+    body = body.lstrip("\n")
+    return f"---\n{dumped}\n---\n\n{body}"
+
+
+def _rel(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
+def ensure_hand_owned_indexes() -> None:
+    """Handmatige sectiepagina's: bestaan, niet-lege title, juiste layout.
+
+    Overschrijft geen body en raakt andere front matter niet aan, behalve
+    het corrigeren van `layout` als die ontbreekt of afwijkt.
+    """
+    specs = [
+        {
+            "path": CONTENT / "_index.md",
+            "title": "Heiligen van de Lage Landen",
+            "layout": None,
+        },
+        {
+            "path": CONTENT / "kalender" / "_index.md",
+            "title": "Jaarkalender",
+            "layout": "kalender",
+        },
+        {
+            "path": CONTENT / "overzicht" / "_index.md",
+            "title": "Overzicht",
+            "layout": "overzicht",
+        },
+        {
+            "path": CONTENT / "agenda" / "_index.md",
+            "title": "Agenda (ICS)",
+            "layout": "agenda",
+        },
+        {
+            "path": CONTENT / "uitleg" / "_index.md",
+            "title": "Uitleg: datums en kalenders",
+            "layout": "uitleg",
+        },
+    ]
+
+    for spec in specs:
+        path: Path = spec["path"]
+        default_title: str = spec["title"]
+        expected_layout = spec["layout"]
+        if not path.exists():
+            meta: dict[str, Any] = {"title": default_title}
+            if expected_layout:
+                meta["layout"] = expected_layout
+            write_text(path, _dump_hugo_markdown(meta, ""))
+            print(f"Aangemaakt: {_rel(path)}")
+            continue
+        try:
+            meta, body = _split_hugo_markdown(path.read_text(encoding="utf-8"))
+        except ValueError as exc:
+            raise SystemExit(f"{_rel(path)}: {exc}") from exc
+        title = meta.get("title")
+        if not isinstance(title, str) or not title.strip():
+            raise SystemExit(
+                f"{_rel(path)}: front matter 'title' ontbreekt of is leeg"
+            )
+        if expected_layout is not None and meta.get("layout") != expected_layout:
+            meta["layout"] = expected_layout
+            write_text(path, _dump_hugo_markdown(meta, body))
+            print(f"Layout hersteld naar {expected_layout!r}: {_rel(path)}")
 
 
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
@@ -411,7 +490,8 @@ def main() -> int:
     if args.clean:
         clean_generated()
     entries = load_entries()
-    write_indexes()
+    ensure_hand_owned_indexes()
+    write_generated_indexes()
     for entry in entries:
         write_entry_page(entry)
     write_date_pages(entries)

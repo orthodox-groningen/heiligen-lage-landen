@@ -176,6 +176,24 @@ h2 {
   outline: none;
 }
 
+.today-civil-hint {
+  margin-left: 0.35rem;
+  font-family: var(--sans, inherit);
+  font-size: 0.55em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--muted) 82%, var(--ink));
+  vertical-align: middle;
+}
+
+.today-note[hidden] {
+  display: none !important;
+}
+
+.info-popover .popover-style {
+  margin-top: 0.85rem;
+}
+
 .today-card {
   margin: 1.5rem 0;
   padding: 1.25rem 1.35rem;

@@ -78,14 +78,27 @@
     return `${d} ${MONTHS[m]}`;
   }
 
+  async function applyStyle(style) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("stijl", style);
+    window.history.replaceState({}, "", url);
+    setStyle(style);
+    await refresh();
+  }
+
   function updateHeading(style) {
     const heading = document.getElementById("today-heading");
     if (!heading) return;
     const today = todayMmdd(style);
-    heading.innerHTML =
+    let inner =
       `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">` +
-      `Vandaag · ${label(today)}` +
-      `</span>`;
+      `Vandaag: ${label(today)}`;
+    if (style === "juliaans") {
+      inner +=
+        ` <span class="today-civil-hint">Wereldlijk: ${label(civilTodayMmdd())}</span>`;
+    }
+    inner += `</span>`;
+    heading.innerHTML = inner;
     wireNieuwOudTriggers(heading);
   }
 
@@ -93,14 +106,16 @@
     const cardNote = document.getElementById("today-note");
     if (!cardNote) return;
     if (style === "juliaans") {
-      cardNote.textContent = `Burgerlijk: ${label(civilTodayMmdd())}.`;
-    } else {
-      cardNote.textContent = `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}.`;
+      cardNote.textContent = "";
+      cardNote.hidden = true;
+      return;
     }
+    cardNote.textContent = `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}.`;
+    cardNote.hidden = false;
   }
 
-
   let nieuwOudCloseTimer = null;
+  let nieuwOudAnchor = null;
 
   function fillNieuwOudDialog(style) {
     const body = document.getElementById("nieuw-oud-body");
@@ -111,17 +126,37 @@
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
         `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
-        `<strong>oude / Juliaanse</strong> tijdrekening.</p>` +
-        `<p>Met de knoppen <strong>Nieuw</strong> / <strong>Oud</strong> rechtsboven ` +
-        `wissel je hoe we <em>vandaag</em> rekenen.</p>`;
+        `<strong>oude / Juliaanse</strong> tijdrekening ` +
+        `(wereldlijk: ${label(civilTodayMmdd())}).</p>` +
+        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
+        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
+        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
+        `</div>`;
     } else {
       if (title) title.textContent = "Nieuwe kalender (Gregoriaans)";
       body.innerHTML =
         `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
-        `<strong>nieuwe / Gregoriaanse</strong> (burgerlijke) kalender.</p>` +
-        `<p>Met de knoppen <strong>Nieuw</strong> / <strong>Oud</strong> rechtsboven ` +
-        `wissel je hoe we <em>vandaag</em> rekenen.</p>`;
+        `<strong>nieuwe / Gregoriaanse</strong> (wereldlijke) kalender.</p>` +
+        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
+        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
+        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
+        `</div>`;
     }
+    body.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
+      btn.addEventListener("click", async (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        cancelNieuwOudClose();
+        await applyStyle(btn.dataset.style);
+        nieuwOudAnchor =
+          document.querySelector("#today-heading [data-open-nieuw-oud]") ||
+          nieuwOudAnchor;
+        fillNieuwOudDialog(btn.dataset.style);
+        if (nieuwOudAnchor) positionNieuwOudPopover(nieuwOudAnchor);
+        const dlg = document.getElementById("nieuw-oud-dialog");
+        if (dlg) dlg.hidden = false;
+      });
+    });
   }
 
   function positionNieuwOudPopover(trigger) {
@@ -148,6 +183,7 @@
     const dlg = document.getElementById("nieuw-oud-dialog");
     if (!dlg) return;
     dlg.hidden = true;
+    nieuwOudAnchor = null;
   }
 
   function cancelNieuwOudClose() {
@@ -166,9 +202,10 @@
     const dlg = document.getElementById("nieuw-oud-dialog");
     if (!dlg) return;
     cancelNieuwOudClose();
+    nieuwOudAnchor = trigger || document.querySelector("[data-open-nieuw-oud]");
     fillNieuwOudDialog(getStyle());
     dlg.hidden = false;
-    positionNieuwOudPopover(trigger || document.querySelector("[data-open-nieuw-oud]"));
+    positionNieuwOudPopover(nieuwOudAnchor);
   }
 
   function wireNieuwOudTriggers(root) {
@@ -180,7 +217,6 @@
       el.addEventListener("focus", () => openNieuwOudDialog(el));
       el.addEventListener("blur", scheduleNieuwOudClose);
       el.addEventListener("click", (ev) => {
-        // Touch / toetsenbord: toggle; voorkom dat knop “doet niets”.
         ev.preventDefault();
         ev.stopPropagation();
         const dlg = document.getElementById("nieuw-oud-dialog");
@@ -511,12 +547,7 @@
 
   document.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const style = btn.dataset.style;
-      const url = new URL(window.location.href);
-      url.searchParams.set("stijl", style);
-      window.history.replaceState({}, "", url);
-      setStyle(style);
-      refresh();
+      applyStyle(btn.dataset.style);
     });
   });
 
