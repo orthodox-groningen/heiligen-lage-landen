@@ -60,6 +60,16 @@ Pinksteren en de weekdag (ma–zo), uit `data/lezingen/weekreeks.yaml`
 Kruisverheffing** (14 sept.) volgt het Evangelie de Lucasse reeks vanaf
 tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
 
+**Отступка / преступка** (Azbyka, o.b.v. *Juliaanse* Pascha-datum):
+
+| Juliaanse Pascha | Effect |
+|------------------|--------|
+| ≤ 30 maart | **отступка** — vóór de sprong blijven Matteüs-weken 1–17 (herhalen als de telling al ≥ 18 is); sprong naar Luc. 18 blijft |
+| 31 maart – 6 april | normaal |
+| ≥ 7 april | **преступка** — sprong naar Luc. 18 terwijl de Apostel-telling nog &lt; 17 kan zijn |
+
+Tags in het resultaat: `R3-lucaans`, eventueel `R3-otstupka` / `R3-prestupka`.
+
 ### R4 — Vasten / geen liturgie
 
 Op sommige vastendagen is er geen liturgie met Apostel/Evangelie van het type

@@ -51,6 +51,16 @@ Pinksteren en de weekdag (ma–zo), uit `data/lezingen/weekreeks.yaml`
 Kruisverheffing** (14 sept.) volgt het Evangelie de Lucasse reeks vanaf
 tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
 
+**Отступка / преступка** (Azbyka, o.b.v. *Juliaanse* Pascha-datum):
+
+| Juliaanse Pascha | Effect |
+|------------------|--------|
+| ≤ 30 maart | **отступка** — vóór de sprong blijven Matteüs-weken 1–17 (herhalen als de telling al ≥ 18 is); sprong naar Luc. 18 blijft |
+| 31 maart – 6 april | normaal |
+| ≥ 7 april | **преступка** — sprong naar Luc. 18 terwijl de Apostel-telling nog &lt; 17 kan zijn |
+
+Tags in het resultaat: `R3-lucaans`, eventueel `R3-otstupka` / `R3-prestupka`.
+
 ### R4 — Vasten / geen liturgie
 
 Op sommige vastendagen is er geen liturgie met Apostel/Evangelie van het type
@@ -270,17 +280,61 @@ bron:
 ```
 
 ```lezingen-voorbeeld
-id: aankondiging-in-grote-week-schets
-status: pending
-jaar: 2027
+id: aankondiging-op-pascha-1991-oud
+status: implemented
+jaar: 1991
 mmdd: "03-25"
+stijl: oud
+verwacht:
+  apostel:
+    - ref: "Hand. 1:1-8"
+    - ref: "Heb. 2:11-18"
+  evangelie:
+    - ref: "Joh. 1:1-17"
+    - ref: "Luc. 1:24-38"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Typikon — Kyriopascha 1991 (Juliaanse 25 maart = Pascha)"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-16"
+```
+
+```lezingen-voorbeeld
+id: aankondiging-op-grote-zaterdag-2018-oud
+status: implemented
+jaar: 2018
+mmdd: "03-25"
+stijl: oud
+verwacht:
+  apostel:
+    - ref: "Rom. 6:3-11"
+    - ref: "Heb. 2:11-18"
+  evangelie:
+    - ref: "Matt. 28:1-20"
+    - ref: "Luc. 1:24-38"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Typikon — Aankondiging op grote zaterdag 2018"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-16"
+```
+
+```lezingen-voorbeeld
+id: theofanie-otstupka-schets
+status: pending
+jaar: 2025
+mmdd: "01-13"
 stijl: nieuw
 verwacht:
   apostel:
-    - ref: "(Typikon-tabel Aankondiging × Grote Week — in te vullen)"
+    - ref: "(Bogoyavlenskaya otstupka — in te vullen)"
   evangelie:
     - ref: "(idem)"
   regels:
-    - R5
-notitie: "Speciale samenval Aankondiging met Grote Week/Pascha: aparte Typikon-tabellen; later als voorbeeld vastleggen."
+    - R3
+notitie: "Optioneel later: Theofanie-отступка in de winterreeks (aparte Azbyka-regel)."
 ```

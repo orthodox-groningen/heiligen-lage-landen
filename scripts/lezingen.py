@@ -81,6 +81,17 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "tempelgang-moeder-gods": "Tempelgang van de Moeder Gods",
     "kerst": "Kerst",
     "elia-profeet": "Profeet Elia",
+    "aankondiging-op-pascha": "Aankondiging op Pascha (Kyriopascha)",
+    "aankondiging-op-palmzondag": "Aankondiging op Palmzondag",
+    "aankondiging-op-grote-zaterdag": "Aankondiging op grote zaterdag",
+    "aankondiging-in-grote-week": "Aankondiging in de Grote Week",
+    "nicolaas-wonderdoener": "Nicolaas de Wonderdoener",
+    "george-grootmartelaar": "George de Grootmartelaar",
+    "demetrius-grootmartelaar": "Demetrius de Grootmartelaar",
+    "synaxis-aartsengel-michael": "Synaxis van de aartsengel Michaël",
+    "drie-hiërarchen": "Drie Hiërarchen",
+    "serafim-van-sarov": "Serafim van Sarov",
+    "vladimir-gelijkaan-apostelen": "Vladimir, gelijkaan de apostelen",
 }
 
 
@@ -237,6 +248,56 @@ def lucaanse_sprong_maandag(jaar: int) -> date:
         # eerstvolgende zondag strikt na 14 sept.
         nedelya = exaltation + timedelta(days=(7 - exaltation.isoweekday()))
     return nedelya + timedelta(days=1)
+
+
+def lucaanse_aanpassing(jaar: int) -> str:
+    """Moskou: отступка / преступка / normaal o.b.v. Juliaanse Pascha-datum.
+
+    Azbyka: Pascha ≤ 30 maart (Juliaans) → отступка; ≥ 7 april → преступка;
+    31 maart–6 april → geen van beide. De sprong naar Luc. week 18 op de
+    Lucaanse maandag blijft in alle gevallen gelden.
+    """
+    from kalender import orthodox_pascha_julian
+
+    jm, jd = orthodox_pascha_julian(jaar)
+    if jm < 4 or (jm == 3 and jd <= 30):
+        return "otstupka"
+    if jm == 4 and jd >= 7:
+        return "prestupka"
+    return "normaal"
+
+
+def gospel_week_na_pinksteren(
+    apostol_week: int,
+    civil: date,
+    luke_mon: date,
+) -> tuple[int, list[str]]:
+    """Bepaal Evangelie-tabelweek + R3-tags (Lucaanse sprong / отступка).
+
+    Vóór de Lucaanse maandag: Matteüs-reeks (weken 1–17). Als de doorlopende
+    week al ≥ 18 is (vroege Pascha), herhaal binnen 1–17 (отступка) — anders
+    zou je per ongeluk Lucasse tabelrijen vóór de sprong lezen.
+    Vanaf de Lucaanse maandag: altijd Luc. vanaf week 18.
+    """
+    regels = ["R3"]
+    aanpassing = lucaanse_aanpassing(civil.year)
+
+    if civil >= luke_mon:
+        gospel_week = 18 + (civil - luke_mon).days // 7
+        regels.append("R3-lucaans")
+        if aanpassing == "prestupka":
+            regels.append("R3-prestupka")
+        elif aanpassing == "otstupka":
+            regels.append("R3-otstupka")
+        return gospel_week, regels
+
+    if apostol_week >= 18:
+        # Отступка vóór de sprong: blijf in Matteüs 1–17.
+        gospel_week = ((apostol_week - 1) % 17) + 1
+        regels.append("R3-otstupka")
+        return gospel_week, regels
+
+    return apostol_week, regels
 
 
 def _week_index_pascha(offset: int) -> tuple[int, int] | None:
@@ -431,13 +492,10 @@ def _resolve_weekreeks(
             return None
         apostol_week, weekday = idx
 
-        # Lucaanse sprong: Evangelie vanaf maandag na zondag-na-Kruisverheffing
-        # gebruikt week 18, 19, … uit de tabel (Moskou).
         luke_mon = lucaanse_sprong_maandag(civil.year)
-        gospel_week = apostol_week
-        if civil >= luke_mon:
-            gospel_week = 18 + (civil - luke_mon).days // 7
-            regels = ["R3", "R3-lucaans"]
+        gospel_week, regels = gospel_week_na_pinksteren(
+            apostol_week, civil, luke_mon
+        )
 
         a_row = _lookup_weekreeks("na_pinksteren", apostol_week, weekday)
         g_row = _lookup_weekreeks("na_pinksteren", gospel_week, weekday)
@@ -494,10 +552,25 @@ def _override_matches(
     stijl: str,
 ) -> bool:
     match = ov.get("match") or {}
-    if "paascyclus_offset" in match:
+    has_mmdd = "mmdd" in match
+    has_off = "paascyclus_offset" in match
+    has_off_in = "paascyclus_offset_in" in match
+
+    if has_mmdd and has_off_in:
+        offsets = [int(x) for x in (match.get("paascyclus_offset_in") or [])]
+        for off in offsets:
+            want = _mmdd_for_offset(jaar, off, stijl)
+            if mmdd == str(match["mmdd"]) and mmdd == want:
+                return True
+        return False
+    if has_mmdd and has_off:
+        # Feestdatum valt op deze beweeglijke dag (bijv. Aankondiging × Pascha).
+        want_off = _mmdd_for_offset(jaar, int(match["paascyclus_offset"]), stijl)
+        return mmdd == str(match["mmdd"]) and mmdd == want_off
+    if has_off:
         want = _mmdd_for_offset(jaar, int(match["paascyclus_offset"]), stijl)
         return want == mmdd
-    if "mmdd" in match:
+    if has_mmdd:
         return match["mmdd"] == mmdd
     return False
 
@@ -511,10 +584,13 @@ def _pick_override(
     hits = [ov for ov in overrides if _override_matches(ov, jaar, mmdd, stijl)]
     if not hits:
         return None
-    hits.sort(
-        key=lambda ov: rang_prioriteit(str(ov.get("rang") or "groot")),
-        reverse=True,
-    )
+
+    def sort_key(ov: dict[str, Any]) -> int:
+        if ov.get("prioriteit") is not None:
+            return int(ov["prioriteit"])
+        return rang_prioriteit(str(ov.get("rang") or "groot"))
+
+    hits.sort(key=sort_key, reverse=True)
     return hits[0]
 
 

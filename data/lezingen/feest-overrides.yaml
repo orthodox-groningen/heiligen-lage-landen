@@ -278,11 +278,80 @@ overrides:
 
   - id: aankondiging
     match: { mmdd: "03-25" }
+    rang: groot
     apostel: [{ ref: "Heb. 2:11-18" }]
     evangelie: [{ ref: "Luc. 1:24-38" }]
     regels: [R2]
     bron:
       label: "Azbyka — ukazatel’ (Aankondiging)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  # Aankondiging × paascyclus (Juliaanse feestdatum 25 maart = vaak ~7 april burgerlijk).
+  # Match vereist dat feestdatum-dagnaam én beweeglijke dag samenvallen (typisch stijl=oud).
+  - id: aankondiging-op-pascha
+    prioriteit: 200
+    match: { mmdd: "03-25", paascyclus_offset: 0 }
+    rang: groot
+    modus: vervangen
+    apostel:
+      - { ref: "Hand. 1:1-8" }
+      - { ref: "Heb. 2:11-18" }
+    evangelie:
+      - { ref: "Joh. 1:1-17" }
+      - { ref: "Luc. 1:24-38" }
+    regels: [R2, R5]
+    bron:
+      label: "Typikon — Kyriopascha (Aankondiging op Pascha)"
+      url: "https://azbyka.ru/otstupka-i-prestupka"
+      geraadpleegd: "2026-08-16"
+
+  - id: aankondiging-op-palmzondag
+    prioriteit: 200
+    match: { mmdd: "03-25", paascyclus_offset: -7 }
+    rang: groot
+    modus: vervangen
+    apostel:
+      - { ref: "Fil. 4:4-9" }
+      - { ref: "Heb. 2:11-18" }
+    evangelie:
+      - { ref: "Joh. 12:1-18" }
+      - { ref: "Luc. 1:24-38" }
+    regels: [R2, R5]
+    bron:
+      label: "Typikon — Aankondiging op Palmzondag"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: aankondiging-op-grote-zaterdag
+    prioriteit: 200
+    match: { mmdd: "03-25", paascyclus_offset: -1 }
+    rang: groot
+    modus: vervangen
+    apostel:
+      - { ref: "Rom. 6:3-11" }
+      - { ref: "Heb. 2:11-18" }
+    evangelie:
+      - { ref: "Matt. 28:1-20" }
+      - { ref: "Luc. 1:24-38" }
+    regels: [R2, R5]
+    bron:
+      label: "Typikon — Aankondiging op grote zaterdag"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: aankondiging-in-grote-week
+    prioriteit: 190
+    match:
+      mmdd: "03-25"
+      paascyclus_offset_in: [-6, -5, -4, -3, -2]
+    rang: groot
+    modus: vervangen
+    apostel: [{ ref: "Heb. 2:11-18" }]
+    evangelie: [{ ref: "Luc. 1:24-38" }]
+    regels: [R2, R5]
+    bron:
+      label: "Typikon — Aankondiging op weekdag van de Grote Week (feestlezing)"
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
@@ -384,10 +453,89 @@ overrides:
 
   - id: kerst
     match: { mmdd: "12-25" }
+    rang: groot
     apostel: [{ ref: "Gal. 4:4-7" }]
     evangelie: [{ ref: "Matt. 2:1-12" }]
     regels: [R2]
     bron:
       label: "Azbyka — ukazatel’ (Kerst)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  # --- Polyeleos / vigil (menaion); zondag → auto toevoegen via rang.yaml ---
+  - id: nicolaas-wonderdoener
+    match: { mmdd: "12-06" }
+    rang: polyeleos
+    apostel: [{ ref: "Heb. 13:17-21" }]
+    evangelie: [{ ref: "Luc. 6:17-23" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Nicolaas (6 dec.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: george-grootmartelaar
+    match: { mmdd: "04-23" }
+    rang: polyeleos
+    apostel: [{ ref: "Hand. 12:1-11" }]
+    evangelie: [{ ref: "Joh. 15:17-16:2" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — George (23 apr.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: demetrius-grootmartelaar
+    match: { mmdd: "10-26" }
+    rang: polyeleos
+    apostel: [{ ref: "2 Tim. 2:1-10" }]
+    evangelie: [{ ref: "Joh. 15:17-16:2" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Demetrius (26 okt.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: synaxis-aartsengel-michael
+    match: { mmdd: "11-08" }
+    rang: polyeleos
+    apostel: [{ ref: "Heb. 2:2-10" }]
+    evangelie: [{ ref: "Luc. 10:16-21" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Synaxis Michaël (8 nov.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: drie-hiërarchen
+    match: { mmdd: "01-30" }
+    rang: polyeleos
+    apostel: [{ ref: "Heb. 13:7-16" }]
+    evangelie: [{ ref: "Matt. 5:14-19" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Drie Hiërarchen (30 jan.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: serafim-van-sarov
+    match: { mmdd: "01-02" }
+    rang: polyeleos
+    apostel: [{ ref: "Gal. 5:22-6:2" }]
+    evangelie: [{ ref: "Luc. 6:17-23" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Serafim van Sarov (2 jan.)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: vladimir-gelijkaan-apostelen
+    match: { mmdd: "07-15" }
+    rang: polyeleos
+    apostel: [{ ref: "Gal. 1:11-19" }]
+    evangelie: [{ ref: "Joh. 10:1-9" }]
+    regels: [R2]
+    bron:
+      label: "Menaion — Vladimir (15 jul.)"
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"

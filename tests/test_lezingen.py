@@ -91,6 +91,54 @@ def test_r5_elia_zondag_toevoegen() -> None:
     assert [a.ref for a in r.apostel] == ["Rom. 12:6-14", "Jak. 5:10-20"]
 
 
+def test_lucaanse_aanpassing_classificatie() -> None:
+    from lezingen import lucaanse_aanpassing
+
+    assert lucaanse_aanpassing(2010) == "otstupka"  # Julian 22 maart
+    assert lucaanse_aanpassing(2025) == "prestupka"  # Julian 7 april
+    assert lucaanse_aanpassing(2026) == "otstupka"  # Julian 30 maart
+
+
+def test_otstupka_voor_sprong_blijft_matteus() -> None:
+    """2010: vroege Pascha — dag vóór Lucaanse maandag nog Matteüs, geen Luc.-tag."""
+    from lezingen import lucaanse_sprong_maandag
+    from datetime import timedelta
+
+    luke = lucaanse_sprong_maandag(2010)
+    before = luke - timedelta(days=1)
+    mmdd = f"{before.month:02d}-{before.day:02d}"
+    r = resolve_lezingen(2010, mmdd, "nieuw")
+    assert r.status == "gevonden"
+    assert "R3-lucaans" not in r.regels
+    assert r.evangelie and not r.evangelie[0].ref.startswith("Luc.")
+    # Op de sprongdag zelf: Luc. + otstupka-tag
+    r2 = resolve_lezingen(2010, f"{luke.month:02d}-{luke.day:02d}", "nieuw")
+    assert "R3-lucaans" in r2.regels
+    assert "R3-otstupka" in r2.regels
+    assert r2.evangelie[0].ref.startswith("Luc.")
+
+
+def test_prestupka_tag_na_sprong() -> None:
+    r = resolve_lezingen(2025, "09-22", "nieuw")
+    assert "R3-lucaans" in r.regels
+    assert "R3-prestupka" in r.regels
+    assert r.evangelie and r.evangelie[0].ref.startswith("Luc.")
+
+
+def test_aankondiging_op_pascha_oud_1991() -> None:
+    r = resolve_lezingen(1991, "03-25", "oud")
+    assert r.override_id == "aankondiging-op-pascha"
+    assert [a.ref for a in r.apostel] == ["Hand. 1:1-8", "Heb. 2:11-18"]
+
+
+def test_nicolaas_polyeleos_weekdag_vervangt() -> None:
+    # 6 dec 2025 is zaterdag → polyeleos auto → vervangen
+    r = resolve_lezingen(2025, "12-06", "nieuw")
+    assert r.override_id == "nicolaas-wonderdoener"
+    assert r.modus == "vervangen"
+    assert [a.ref for a in r.apostel] == ["Heb. 13:17-21"]
+
+
 def test_spec_body_for_uitleg_strips_examples() -> None:
     body = spec_body_for_uitleg()
     assert "```lezingen-voorbeeld" not in body
