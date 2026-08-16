@@ -98,19 +98,20 @@ vóór de Grote Week).
 **Effectief niveau (home/datumpagina):** het getoonde niveau is één regel,
 niet de som van overlappende vasten.
 
-1. Basis = de dekkende periode (`streng`, `lichter`, …). Zonder periode: wo/vr.
-2. Zaterdag/zondag in een `streng`-periode, behalve de Grote Week: basis wordt
-   `wijn_olie`.
-3. Een feest met `vastenniveau` **versoepelt alleen** (nooit strenger dan de
-   periode). Voorbeeld: Aankondiging `vis` in de Grote Vasten.
-4. In de Grote Week gaat een feestversoepeling niet verder dan `wijn_olie`.
+1. Basis = de dekkende periode. Zonder periode: wo/vr.
+2. In een `streng`-periode (Grote Vasten, Ontslapen, Grote Week): weekdag
+   `streng`; za/zo `wijn_olie`, **behalve** de Grote Week.
+3. In Apostelen- en Geboortevasten (`lichter` als seizoen): ma/wo/vr `streng`,
+   di/do `wijn_olie`, za/zo `vis`; 20–24 december geen vis.
+4. Een feest met `vastenniveau` **versoepelt alleen**. In de Grote Week niet
+   verder dan `wijn_olie`. Lazarus-zaterdag is kaviaar in het typikon; wij
+   tonen `wijn_olie`.
 5. Buiten een periode: een feest mét `observances: […, vasten]` **legt** het
-   vasten op (Kruisverheffing, Onthoofding van Johannes); een feest zonder
-   die observantie versoepelt alleen wo/vr (vis op Geboorte van de Moeder Gods)
-   of zet wo/vr uit (`vrij` op Kerst en Theofanie).
+   vasten op; anders versoepelt het alleen wo/vr of zet het uit (`vrij`).
 
 Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
-Logica: `scripts/vasten.py` (tests) en `site/assets/js/calendar.js`.
+**Normatief voor de dagregel:** `data/regels/vasten.yaml` (uitleg
+`/uitleg/vasten/`). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
 
 ## Observances (kleuren)
 

@@ -53,6 +53,8 @@ alternatief:
 
 **Vastenniveau (indicatief):** streng.
 
+**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
 Van Schone Maandag tot en met Lazarus-zaterdag (veertigdagen); daarna volgt de Grote Week.
 
 ## Verhaal

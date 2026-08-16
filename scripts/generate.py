@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
+from vasten import load_vastenregels, render_vasten_uitleg  # noqa: E402
 from kalender import (  # noqa: E402
     format_mmdd,
     gregorian_to_julian_calendar,
@@ -529,6 +530,11 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
         "description": "Legenda van de kleuren op de jaarkalender",
     },
     {
+        "id": "vasten",
+        "title": "Vasten",
+        "description": "Welk vastenniveau de kalender op een dag toont, en waarom",
+    },
+    {
         "id": "agenda",
         "title": "Agenda (ICS)",
         "description": "Abonneren op heiligen- en feestfeeds in nieuw of oud",
@@ -567,6 +573,20 @@ def ensure_achtergrond_topics() -> None:
             raise SystemExit(
                 f"{_rel(path)}: front matter 'title' ontbreekt of is leeg"
             )
+
+
+def write_vasten_uitleg() -> None:
+    """Genereer site/content/uitleg/vasten.md uit data/regels/vasten.yaml."""
+    regels = load_vastenregels()
+    meta = {
+        "title": regels["titel"],
+        "description": regels["beschrijving"],
+        "generator": "data/regels/vasten.yaml",
+    }
+    write_text(
+        CONTENT / "uitleg" / "vasten.md",
+        _dump_hugo_markdown(meta, render_vasten_uitleg(regels)),
+    )
 
 
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
@@ -938,6 +958,7 @@ def main() -> int:
     entries = load_entries()
     ensure_hand_owned_indexes()
     ensure_achtergrond_topics()
+    write_vasten_uitleg()
     write_generated_indexes()
     for entry in entries:
         write_entry_page(entry)
