@@ -83,8 +83,18 @@ Optioneel op entries:
 
 ```yaml
 vastenniveau: streng   # streng | wijn_olie | vis | lichter | vrij
-onderdrukt_wekelijks_vasten: true   # wo/vr gelden niet (ook impliciet bij niveau: vrij)
+onderdrukt_wekelijks_vasten: true   # wo/vr niet apart tonen (impliciet bij niveau: vrij)
 ```
+
+**Voorrang (weergave, kalenderkleur, ICS):** wekelijks wo/vr-vasten is de
+restcategorie. Het verdwijnt als die dag al in een **vastenperiode** valt
+(Ontslapen, Geboorte, Apostolisch, Grote Vasten, Grote Week) of in een
+vastenvrije periode (`vastenniveau: vrij`). Een named periode *is* het vasten
+van die dag; vrijdagvasten niet nog eens apart.
+
+Twee geneste periodes overlappen in de huidige data niet (Grote Vasten eindigt
+vóór de Grote Week). Feestdagen die binnen een periode versoepelen (vis, olie)
+zijn typikon en nog niet gemodelleerd.
 
 ## Observances (kleuren)
 

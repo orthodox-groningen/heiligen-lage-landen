@@ -701,7 +701,11 @@ def build_ics(
 
     def weekly_suppressed(day: date) -> bool:
         for e in context:
-            if not e.get("onderdrukt_wekelijks_vasten"):
+            if e.get("soort") == "vasten":
+                vorm = (e.get("datum_norm") or {}).get("vorm") or "dag"
+                if vorm == "weekdagen":
+                    continue
+            elif not e.get("onderdrukt_wekelijks_vasten"):
                 continue
             bounds = period_bounds_for_year(e, day.year)
             if not bounds:

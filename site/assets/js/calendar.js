@@ -155,8 +155,11 @@
 
   function isWeeklyFastSuppressed(entries, mmdd, year, style) {
     return (entries || []).some((e) => {
-      if (!e || !e.onderdrukt_wekelijks_vasten) return false;
-      if (e.vorm === "weekdagen") return false;
+      if (!e || e.vorm === "weekdagen") return false;
+      const suppresses =
+        e.onderdrukt_wekelijks_vasten ||
+        (e.soort === "vasten" && e.vorm !== "weekdagen");
+      if (!suppresses) return false;
       if (e.van && e.tot && e.vorm === "periode") {
         return mmddInRange(mmdd, e.van, e.tot);
       }
@@ -529,7 +532,6 @@
     if (!mmddExistsInYear(view.mmdd, view.year)) {
       cardEntries.innerHTML =
         `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
-      fillDatumMeneonLink(view);
       return;
     }
     const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
@@ -550,21 +552,12 @@
           .join("") +
         "</ul>";
     }
-    fillDatumMeneonLink(view);
     if (document.querySelector("[data-datum]")) {
       const site = document.title.includes(" · ")
         ? document.title.slice(document.title.lastIndexOf(" · ") + 3)
         : document.title;
       document.title = `${label(view.mmdd)} ${view.year} · ${site}`;
     }
-  }
-
-  function fillDatumMeneonLink(view) {
-    const el = document.getElementById("datum-meneon-link");
-    if (!el) return;
-    const meneon = pageUrl("meneon/", { dag: view.mmdd });
-    el.innerHTML =
-      `Vaste dag in het <a href="${meneon}">Meneon</a> (${label(view.mmdd)}).`;
   }
 
   function dayClass(kinds) {
