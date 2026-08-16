@@ -41,11 +41,15 @@ Als voor de dag een feestoverride bestaat in `data/lezingen/feest-overrides.yaml
 Evangelielezingen. Ze **vervangen** de doorlopende lezing tenzij de override
 expliciet `modus: toevoegen` heeft (fase 3).
 
-### R3 — Doorlopende weekreeks (nog niet geïmplementeerd)
+### R3 — Doorlopende weekreeks
 
 Buiten feestoverrides: Apostel/Evangelie volgens de week na Pascha of na
-Pinksteren en de weekdag (ma–zo), inclusief de Lucaanse sprong volgens Moskou.
-→ Zie fase 2.
+Pinksteren en de weekdag (ma–zo), uit `data/lezingen/weekreeks.yaml`
+(Messia/Brussel-tabellen; Moskou voor de Lucaanse sprong).
+
+**Lucaanse sprong (Moskou):** vanaf de **maandag na de zondag na
+Kruisverheffing** (14 sept.) volgt het Evangelie de Lucasse reeks vanaf
+tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
 
 ### R4 — Vasten / geen liturgie (documentair)
 
@@ -84,9 +88,9 @@ Drukwerk (jaarlijks): *Богослужебные указания* (Издат�
 | Regel | Status in code |
 |-------|----------------|
 | R1 | deels (kalenderhulp via `kalender.py`) |
-| R2 | ja (feestoverrides + `lezingen-dagen.json` + UI vandaag/datum) |
-| R3 | pending |
-| R4 | pending |
+| R2 | ja (feestoverrides + UI vandaag/datum) |
+| R3 | ja (weekreeks + Lucaanse sprong; zie rooster) |
+| R4 | deels (vasten-weekdagen zonder liturgie gemarkeerd) |
 | R5 | pending |
 | R6 | documentair (data + voorbeelden) |
 
@@ -192,18 +196,21 @@ bron:
 
 ```lezingen-voorbeeld
 id: weekdag-na-pinksteren-voorbeeld
-status: pending
+status: implemented
 jaar: 2025
 mmdd: "06-16"
 stijl: nieuw
 verwacht:
   apostel:
-    - ref: "(rijádovoe — in te vullen)"
+    - ref: "Rom. 2:28-3:18"
   evangelie:
-    - ref: "(rijádovoe — in te vullen)"
+    - ref: "Matt. 6:31-34; 7:9-11"
   regels:
     - R3
-notitie: "Fase 2: doorlopende weekreeks + Lucaanse sprong."
+bron:
+  label: "Messia — ukazatel’ (2e week na Pinksteren, maandag)"
+  url: "https://messia.ru/spravki/kalendar/lkcioprc.htm"
+  geraadpleegd: "2026-08-16"
 ```
 
 ```lezingen-voorbeeld

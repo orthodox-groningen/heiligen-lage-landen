@@ -1,0 +1,2374 @@
+bron:
+  label: Messia — ukazatel’ apostolskih i evangel’skih čtenij
+  url: https://messia.ru/spravki/kalendar/lkcioprc.htm
+  geraadpleegd: '2026-08-16'
+  notitie: Tabellen uit Brussel/Жизнь с Богом; Lucaanse sprong volgens Moskou (maandag na zondag na Kruisverheffing)
+    in scripts/lezingen.py.
+dagen:
+- periode: na_pinksteren
+  week: 1
+  weekdag: 1
+  apostel:
+  - ref: Ef. 5:9-19
+  evangelie:
+  - ref: Matt. 18:10-20
+- periode: na_pinksteren
+  week: 1
+  weekdag: 2
+  apostel:
+  - ref: Rom. 1:1-7, 13-17
+  evangelie:
+  - ref: Matt. 4:25; 5:1-13
+- periode: na_pinksteren
+  week: 1
+  weekdag: 3
+  apostel:
+  - ref: Rom. 1:18-27
+  evangelie:
+  - ref: Matt. 5:20-26
+- periode: na_pinksteren
+  week: 1
+  weekdag: 4
+  apostel:
+  - ref: Rom. 1:28-2:9
+  evangelie:
+  - ref: Matt. 5:27-32
+- periode: na_pinksteren
+  week: 1
+  weekdag: 5
+  apostel:
+  - ref: Rom. 2:14-29
+  evangelie:
+  - ref: Matt. 5:33-41
+- periode: na_pinksteren
+  week: 1
+  weekdag: 6
+  apostel:
+  - ref: Rom. 1:7-12
+  evangelie:
+  - ref: Matt. 5:42-48
+- periode: na_pinksteren
+  week: 1
+  weekdag: 7
+  apostel:
+  - ref: Heb. 11:24-26, 32-12:2
+  evangelie:
+  - ref: Joh. 1:43-51
+- periode: na_pinksteren
+  week: 2
+  weekdag: 1
+  apostel:
+  - ref: Rom. 2:28-3:18
+  evangelie:
+  - ref: Matt. 6:31-34; 7:9-11
+- periode: na_pinksteren
+  week: 2
+  weekdag: 2
+  apostel:
+  - ref: Rom. 4:4-12
+  evangelie:
+  - ref: Matt. 7:15-21
+- periode: na_pinksteren
+  week: 2
+  weekdag: 3
+  apostel:
+  - ref: Rom. 4:13-25
+  evangelie:
+  - ref: Matt. 7:21-23
+- periode: na_pinksteren
+  week: 2
+  weekdag: 4
+  apostel:
+  - ref: Rom. 5:10-16
+  evangelie:
+  - ref: Matt. 8:23-27
+- periode: na_pinksteren
+  week: 2
+  weekdag: 5
+  apostel:
+  - ref: Rom. 5:17-6:2
+  evangelie:
+  - ref: Matt. 9:14-17
+- periode: na_pinksteren
+  week: 2
+  weekdag: 6
+  apostel:
+  - ref: Rom. 3:19-26
+  evangelie:
+  - ref: Matt. 7:1-8
+- periode: na_pinksteren
+  week: 2
+  weekdag: 7
+  apostel:
+  - ref: Heb. 1:10-2:3
+  evangelie:
+  - ref: Mark. 2:1-12
+- periode: na_pinksteren
+  week: 3
+  weekdag: 1
+  apostel:
+  - ref: Rom. 7:1-13
+  evangelie:
+  - ref: Matt. 9:36-10:8
+- periode: na_pinksteren
+  week: 3
+  weekdag: 2
+  apostel:
+  - ref: Rom. 7:14-8:2
+  evangelie:
+  - ref: Matt. 10:9-15
+- periode: na_pinksteren
+  week: 3
+  weekdag: 3
+  apostel:
+  - ref: Rom. 8:2-13
+  evangelie:
+  - ref: Matt. 10:16-22
+- periode: na_pinksteren
+  week: 3
+  weekdag: 4
+  apostel:
+  - ref: Rom. 8:22-27
+  evangelie:
+  - ref: Matt. 10:23-31
+- periode: na_pinksteren
+  week: 3
+  weekdag: 5
+  apostel:
+  - ref: Rom. 9:6-19
+  evangelie:
+  - ref: Matt. 10:32-36; 11:1
+- periode: na_pinksteren
+  week: 3
+  weekdag: 6
+  apostel:
+  - ref: Rom. 3:28-4:3
+  evangelie:
+  - ref: Matt. 7:24-8:4
+- periode: na_pinksteren
+  week: 3
+  weekdag: 7
+  apostel:
+  - ref: Heb. 4:14-5:6
+  evangelie:
+  - ref: Mark. 8:34-9:1
+- periode: na_pinksteren
+  week: 4
+  weekdag: 1
+  apostel:
+  - ref: Rom. 9:18-33
+  evangelie:
+  - ref: Matt. 11:2-15
+- periode: na_pinksteren
+  week: 4
+  weekdag: 2
+  apostel:
+  - ref: Rom. 10:11-11:2
+  evangelie:
+  - ref: Matt. 11:16-20
+- periode: na_pinksteren
+  week: 4
+  weekdag: 3
+  apostel:
+  - ref: Rom. 11:2-12
+  evangelie:
+  - ref: Matt. 11:20-26
+- periode: na_pinksteren
+  week: 4
+  weekdag: 4
+  apostel:
+  - ref: Rom. 11:13-24
+  evangelie:
+  - ref: Matt. 11:27-30
+- periode: na_pinksteren
+  week: 4
+  weekdag: 5
+  apostel:
+  - ref: Rom. 11:25-36
+  evangelie:
+  - ref: Matt. 12:1-8
+- periode: na_pinksteren
+  week: 4
+  weekdag: 6
+  apostel:
+  - ref: Rom. 6:11-17
+  evangelie:
+  - ref: Matt. 8:14-23
+- periode: na_pinksteren
+  week: 4
+  weekdag: 7
+  apostel:
+  - ref: Heb. 6:13-20
+  evangelie:
+  - ref: Mark. 9:17-31
+- periode: na_pinksteren
+  week: 5
+  weekdag: 1
+  apostel:
+  - ref: Rom. 12:4-5, 15-21
+  evangelie:
+  - ref: Matt. 12:9-13
+- periode: na_pinksteren
+  week: 5
+  weekdag: 2
+  apostel:
+  - ref: Rom. 14:9-18
+  evangelie:
+  - ref: Matt. 12:14-16, 22-30
+- periode: na_pinksteren
+  week: 5
+  weekdag: 3
+  apostel:
+  - ref: Rom. 15:7-16
+  evangelie:
+  - ref: Matt. 12:38-45
+- periode: na_pinksteren
+  week: 5
+  weekdag: 4
+  apostel:
+  - ref: Rom. 15:17-29
+  evangelie:
+  - ref: Matt. 12:46-13:3
+- periode: na_pinksteren
+  week: 5
+  weekdag: 5
+  apostel:
+  - ref: Rom. 16:1-16
+  evangelie:
+  - ref: Matt. 13:4-9
+- periode: na_pinksteren
+  week: 5
+  weekdag: 6
+  apostel:
+  - ref: Rom. 8:14-21
+  evangelie:
+  - ref: Matt. 9:9-13
+- periode: na_pinksteren
+  week: 5
+  weekdag: 7
+  apostel:
+  - ref: Heb. 9:11-14
+  evangelie:
+  - ref: Mark. 10:32-45
+- periode: na_pinksteren
+  week: 6
+  weekdag: 1
+  apostel:
+  - ref: Rom. 16:17-24
+  evangelie:
+  - ref: Matt. 13:10-23
+- periode: na_pinksteren
+  week: 6
+  weekdag: 2
+  apostel:
+  - ref: 1 Kor. 1:1-9
+  evangelie:
+  - ref: Matt. 13:24-30
+- periode: na_pinksteren
+  week: 6
+  weekdag: 3
+  apostel:
+  - ref: 1 Kor. 2:9-3:8
+  evangelie:
+  - ref: Matt. 13:31-36
+- periode: na_pinksteren
+  week: 6
+  weekdag: 4
+  apostel:
+  - ref: 1 Kor. 3:18-23
+  evangelie:
+  - ref: Matt. 13:36-43
+- periode: na_pinksteren
+  week: 6
+  weekdag: 5
+  apostel:
+  - ref: 1 Kor. 4:5-8
+  evangelie:
+  - ref: Matt. 13:44-54
+- periode: na_pinksteren
+  week: 6
+  weekdag: 6
+  apostel:
+  - ref: Rom. 9:1-5
+  evangelie:
+  - ref: Matt. 9:18-26
+- periode: na_pinksteren
+  week: 6
+  weekdag: 7
+  apostel:
+  - ref: Rom. 12:6-14
+  evangelie:
+  - ref: Matt. 9:1-8
+- periode: na_pinksteren
+  week: 7
+  weekdag: 1
+  apostel:
+  - ref: 1 Kor. 5:9-6:11
+  evangelie:
+  - ref: Matt. 13:54-58
+- periode: na_pinksteren
+  week: 7
+  weekdag: 2
+  apostel:
+  - ref: 1 Kor. 6:20-7:12
+  evangelie:
+  - ref: Matt. 14:1-13
+- periode: na_pinksteren
+  week: 7
+  weekdag: 3
+  apostel:
+  - ref: 1 Kor. 7:12-24
+  evangelie:
+  - ref: Matt. 14:35-15:11
+- periode: na_pinksteren
+  week: 7
+  weekdag: 4
+  apostel:
+  - ref: 1 Kor. 7:24-35
+  evangelie:
+  - ref: Matt. 15:12-21
+- periode: na_pinksteren
+  week: 7
+  weekdag: 5
+  apostel:
+  - ref: 1 Kor. 7:35-8:7
+  evangelie:
+  - ref: Matt. 15:29-31
+- periode: na_pinksteren
+  week: 7
+  weekdag: 6
+  apostel:
+  - ref: Rom. 12:1-3
+  evangelie:
+  - ref: Matt. 10:37-11:1
+- periode: na_pinksteren
+  week: 7
+  weekdag: 7
+  apostel:
+  - ref: Rom. 15:1-7
+  evangelie:
+  - ref: Matt. 9:27-35
+- periode: na_pinksteren
+  week: 8
+  weekdag: 1
+  apostel:
+  - ref: 1 Kor. 9:13-18
+  evangelie:
+  - ref: Matt. 16:1-6
+- periode: na_pinksteren
+  week: 8
+  weekdag: 2
+  apostel:
+  - ref: 1 Kor. 10:5-12
+  evangelie:
+  - ref: Matt. 16:6-12
+- periode: na_pinksteren
+  week: 8
+  weekdag: 3
+  apostel:
+  - ref: 1 Kor. 10:12-22
+  evangelie:
+  - ref: Matt. 16:20-24
+- periode: na_pinksteren
+  week: 8
+  weekdag: 4
+  apostel:
+  - ref: 1 Kor. 10:28-11:7
+  evangelie:
+  - ref: Matt. 16:24-28
+- periode: na_pinksteren
+  week: 8
+  weekdag: 5
+  apostel:
+  - ref: 1 Kor. 11:8-22
+  evangelie:
+  - ref: Matt. 17:10-18
+- periode: na_pinksteren
+  week: 8
+  weekdag: 6
+  apostel:
+  - ref: Rom. 13:1-10
+  evangelie:
+  - ref: Matt. 12:30-37
+- periode: na_pinksteren
+  week: 8
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 1:10-18
+  evangelie:
+  - ref: Matt. 14:14-22
+- periode: na_pinksteren
+  week: 9
+  weekdag: 1
+  apostel:
+  - ref: 1 Kor. 11:31-12:6
+  evangelie:
+  - ref: Matt. 18:1-11
+- periode: na_pinksteren
+  week: 9
+  weekdag: 2
+  apostel:
+  - ref: 1 Kor. 12:12-26
+  evangelie:
+  - ref: Matt. 18:18-22; 19:1-2, 13-15
+- periode: na_pinksteren
+  week: 9
+  weekdag: 3
+  apostel:
+  - ref: 1 Kor. 13:4-14:5
+  evangelie:
+  - ref: Matt. 20:1-16
+- periode: na_pinksteren
+  week: 9
+  weekdag: 4
+  apostel:
+  - ref: 1 Kor. 14:6-19
+  evangelie:
+  - ref: Matt. 20:17-28
+- periode: na_pinksteren
+  week: 9
+  weekdag: 5
+  apostel:
+  - ref: 1 Kor. 14:26-40
+  evangelie:
+  - ref: Matt. 21:12-14, 17-20
+- periode: na_pinksteren
+  week: 9
+  weekdag: 6
+  apostel:
+  - ref: Rom. 14:6-9
+  evangelie:
+  - ref: Matt. 15:32-39
+- periode: na_pinksteren
+  week: 9
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 3:9-17
+  evangelie:
+  - ref: Matt. 14:22-34
+- periode: na_pinksteren
+  week: 10
+  weekdag: 1
+  apostel:
+  - ref: 1 Kor. 15:12-19
+  evangelie:
+  - ref: Matt. 21:18-22
+- periode: na_pinksteren
+  week: 10
+  weekdag: 2
+  apostel:
+  - ref: 1 Kor. 15:29-38
+  evangelie:
+  - ref: Matt. 21:23-27
+- periode: na_pinksteren
+  week: 10
+  weekdag: 3
+  apostel:
+  - ref: 1 Kor. 16:4-12
+  evangelie:
+  - ref: Matt. 21:28-32
+- periode: na_pinksteren
+  week: 10
+  weekdag: 4
+  apostel:
+  - ref: 2 Kor. 1:1-7
+  evangelie:
+  - ref: Matt. 21:43-46
+- periode: na_pinksteren
+  week: 10
+  weekdag: 5
+  apostel:
+  - ref: 2 Kor. 1:12-20
+  evangelie:
+  - ref: Matt. 22:23-33
+- periode: na_pinksteren
+  week: 10
+  weekdag: 6
+  apostel:
+  - ref: Rom. 15:30-33
+  evangelie:
+  - ref: Matt. 17:24-18:4
+- periode: na_pinksteren
+  week: 10
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 4:9-16
+  evangelie:
+  - ref: Matt. 17:14-23
+- periode: na_pinksteren
+  week: 11
+  weekdag: 1
+  apostel:
+  - ref: 2 Kor. 2:4-15
+  evangelie:
+  - ref: Matt. 23:13-22
+- periode: na_pinksteren
+  week: 11
+  weekdag: 2
+  apostel:
+  - ref: 2 Kor. 2:14-3:3
+  evangelie:
+  - ref: Matt. 23:23-28
+- periode: na_pinksteren
+  week: 11
+  weekdag: 3
+  apostel:
+  - ref: 2 Kor. 3:4-11
+  evangelie:
+  - ref: Matt. 23:29-39
+- periode: na_pinksteren
+  week: 11
+  weekdag: 4
+  apostel:
+  - ref: 2 Kor. 4:1-6
+  evangelie:
+  - ref: Matt. 24:13-28
+- periode: na_pinksteren
+  week: 11
+  weekdag: 5
+  apostel:
+  - ref: 2 Kor. 4:13-18
+  evangelie:
+  - ref: Matt. 24:27-33, 42-51
+- periode: na_pinksteren
+  week: 11
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 1:3-9
+  evangelie:
+  - ref: Matt. 19:3-12
+- periode: na_pinksteren
+  week: 11
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 9:2-12
+  evangelie:
+  - ref: Matt. 18:23-35
+- periode: na_pinksteren
+  week: 12
+  weekdag: 1
+  apostel:
+  - ref: 2 Kor. 5:10-15
+  evangelie:
+  - ref: Mark. 1:9-15
+- periode: na_pinksteren
+  week: 12
+  weekdag: 2
+  apostel:
+  - ref: 2 Kor. 5:15-21
+  evangelie:
+  - ref: Mark. 1:16-22
+- periode: na_pinksteren
+  week: 12
+  weekdag: 3
+  apostel:
+  - ref: 2 Kor. 6:11-16
+  evangelie:
+  - ref: Mark. 1:23-28
+- periode: na_pinksteren
+  week: 12
+  weekdag: 4
+  apostel:
+  - ref: 2 Kor. 7:1-10
+  evangelie:
+  - ref: Mark. 1:29-35
+- periode: na_pinksteren
+  week: 12
+  weekdag: 5
+  apostel:
+  - ref: 2 Kor. 7:10-16
+  evangelie:
+  - ref: Mark. 2:18-22
+- periode: na_pinksteren
+  week: 12
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 1:26-29
+  evangelie:
+  - ref: Matt. 20:29-34
+- periode: na_pinksteren
+  week: 12
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 15:1-11
+  evangelie:
+  - ref: Matt. 19:16-26
+- periode: na_pinksteren
+  week: 13
+  weekdag: 1
+  apostel:
+  - ref: 2 Kor. 8:7-15
+  evangelie:
+  - ref: Mark. 3:6-12
+- periode: na_pinksteren
+  week: 13
+  weekdag: 2
+  apostel:
+  - ref: 2 Kor. 8:16-9:5
+  evangelie:
+  - ref: Mark. 3:13-19
+- periode: na_pinksteren
+  week: 13
+  weekdag: 3
+  apostel:
+  - ref: 2 Kor. 9:12-10:7
+  evangelie:
+  - ref: Mark. 3:20-27
+- periode: na_pinksteren
+  week: 13
+  weekdag: 4
+  apostel:
+  - ref: 2 Kor. 10:7-18
+  evangelie:
+  - ref: Mark. 3:28-35
+- periode: na_pinksteren
+  week: 13
+  weekdag: 5
+  apostel:
+  - ref: 2 Kor. 11:5-21
+  evangelie:
+  - ref: Mark. 4:1-9
+- periode: na_pinksteren
+  week: 13
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 2:6-9
+  evangelie:
+  - ref: Matt. 22:15-22
+- periode: na_pinksteren
+  week: 13
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 16:13-24
+  evangelie:
+  - ref: Matt. 21:33-42
+- periode: na_pinksteren
+  week: 14
+  weekdag: 1
+  apostel:
+  - ref: 2 Kor. 12:10-19
+  evangelie:
+  - ref: Mark. 4:10-23
+- periode: na_pinksteren
+  week: 14
+  weekdag: 2
+  apostel:
+  - ref: 2 Kor. 12:20-13:2
+  evangelie:
+  - ref: Mark. 4:24-34
+- periode: na_pinksteren
+  week: 14
+  weekdag: 3
+  apostel:
+  - ref: 2 Kor. 13:3-13
+  evangelie:
+  - ref: Mark. 4:35-41
+- periode: na_pinksteren
+  week: 14
+  weekdag: 4
+  apostel:
+  - ref: Gal. 1:1-10, 20-2:5
+  evangelie:
+  - ref: Mark. 5:1-20
+- periode: na_pinksteren
+  week: 14
+  weekdag: 5
+  apostel:
+  - ref: Gal. 2:6-10
+  evangelie:
+  - ref: Mark. 5:22-24, 35-6:1
+- periode: na_pinksteren
+  week: 14
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 4:1-5
+  evangelie:
+  - ref: Matt. 23:1-12
+- periode: na_pinksteren
+  week: 14
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 1:21-2:4
+  evangelie:
+  - ref: Matt. 22:1-14
+- periode: na_pinksteren
+  week: 15
+  weekdag: 1
+  apostel:
+  - ref: Gal. 2:11-16
+  evangelie:
+  - ref: Mark. 5:24-34
+- periode: na_pinksteren
+  week: 15
+  weekdag: 2
+  apostel:
+  - ref: Gal. 2:21-3:7
+  evangelie:
+  - ref: Mark. 6:1-7
+- periode: na_pinksteren
+  week: 15
+  weekdag: 3
+  apostel:
+  - ref: Gal. 3:15-22
+  evangelie:
+  - ref: Mark. 6:7-13
+- periode: na_pinksteren
+  week: 15
+  weekdag: 4
+  apostel:
+  - ref: Gal. 3:23-4:5
+  evangelie:
+  - ref: Mark. 6:30-45
+- periode: na_pinksteren
+  week: 15
+  weekdag: 5
+  apostel:
+  - ref: Gal. 4:8-21
+  evangelie:
+  - ref: Mark. 6:45-53
+- periode: na_pinksteren
+  week: 15
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 4:17-5:5
+  evangelie:
+  - ref: Matt. 24:1-13
+- periode: na_pinksteren
+  week: 15
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 4:6-15
+  evangelie:
+  - ref: Matt. 22:35-46
+- periode: na_pinksteren
+  week: 16
+  weekdag: 1
+  apostel:
+  - ref: Gal. 4:28-5:10
+  evangelie:
+  - ref: Mark. 6:54-7:8
+- periode: na_pinksteren
+  week: 16
+  weekdag: 2
+  apostel:
+  - ref: Gal. 5:11-21
+  evangelie:
+  - ref: Mark. 7:5-16
+- periode: na_pinksteren
+  week: 16
+  weekdag: 3
+  apostel:
+  - ref: Gal. 6:2-10
+  evangelie:
+  - ref: Mark. 7:14-24
+- periode: na_pinksteren
+  week: 16
+  weekdag: 4
+  apostel:
+  - ref: Ef. 1:1-9
+  evangelie:
+  - ref: Mark. 7:24-30
+- periode: na_pinksteren
+  week: 16
+  weekdag: 5
+  apostel:
+  - ref: Ef. 1:7-17
+  evangelie:
+  - ref: Mark. 8:1-10
+- periode: na_pinksteren
+  week: 16
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 10:23-28
+  evangelie:
+  - ref: Matt. 24:34-44
+- periode: na_pinksteren
+  week: 16
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 6:1-10
+  evangelie:
+  - ref: Matt. 25:14-30
+- periode: na_pinksteren
+  week: 17
+  weekdag: 1
+  apostel:
+  - ref: Ef. 1:22-2:3
+  evangelie:
+  - ref: Mark. 10:46-52
+- periode: na_pinksteren
+  week: 17
+  weekdag: 2
+  apostel:
+  - ref: Ef. 2:19-3:7
+  evangelie:
+  - ref: Mark. 11:11-23
+- periode: na_pinksteren
+  week: 17
+  weekdag: 3
+  apostel:
+  - ref: Ef. 3:8-21
+  evangelie:
+  - ref: Mark. 11:23-26
+- periode: na_pinksteren
+  week: 17
+  weekdag: 4
+  apostel:
+  - ref: Ef. 4:14-19
+  evangelie:
+  - ref: Mark. 11:27-33
+- periode: na_pinksteren
+  week: 17
+  weekdag: 5
+  apostel:
+  - ref: Ef. 4:17-25
+  evangelie:
+  - ref: Mark. 12:1-12/ =>
+- periode: na_pinksteren
+  week: 17
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 14:20-25
+  evangelie:
+  - ref: Matt. 25:1-13
+- periode: na_pinksteren
+  week: 17
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 6:16-7:1
+  evangelie:
+  - ref: Matt. 15:21-28
+- periode: na_pinksteren
+  week: 18
+  weekdag: 1
+  apostel:
+  - ref: Ef. 4:25-32
+  evangelie:
+  - ref: Luc. 3:19-22
+- periode: na_pinksteren
+  week: 18
+  weekdag: 2
+  apostel:
+  - ref: Ef. 5:20-26
+  evangelie:
+  - ref: Luc. 3:23-4:1
+- periode: na_pinksteren
+  week: 18
+  weekdag: 3
+  apostel:
+  - ref: Ef. 5:25-33
+  evangelie:
+  - ref: Luc. 4:1-15
+- periode: na_pinksteren
+  week: 18
+  weekdag: 4
+  apostel:
+  - ref: Ef. 5:33-6:9
+  evangelie:
+  - ref: Luc. 4:16-22
+- periode: na_pinksteren
+  week: 18
+  weekdag: 5
+  apostel:
+  - ref: Ef. 6:18-24
+  evangelie:
+  - ref: Luc. 4:22-30
+- periode: na_pinksteren
+  week: 18
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 15:39-45
+  evangelie:
+  - ref: Luc. 4:31-36
+- periode: na_pinksteren
+  week: 18
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 9:6-11
+  evangelie:
+  - ref: Luc. 5:1-11
+- periode: na_pinksteren
+  week: 19
+  weekdag: 1
+  apostel:
+  - ref: Fil. 1:1-7
+  evangelie:
+  - ref: Luc. 4:37-44
+- periode: na_pinksteren
+  week: 19
+  weekdag: 2
+  apostel:
+  - ref: Fil. 1:8-14
+  evangelie:
+  - ref: Luc. 5:12-16
+- periode: na_pinksteren
+  week: 19
+  weekdag: 3
+  apostel:
+  - ref: Fil. 1:12-20
+  evangelie:
+  - ref: Luc. 5:33-39
+- periode: na_pinksteren
+  week: 19
+  weekdag: 4
+  apostel:
+  - ref: Fil. 1:20-27
+  evangelie:
+  - ref: Luc. 6:12-19
+- periode: na_pinksteren
+  week: 19
+  weekdag: 5
+  apostel:
+  - ref: Fil. 1:27-2:4
+  evangelie:
+  - ref: Luc. 6:17-23
+- periode: na_pinksteren
+  week: 19
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 15:58-16:3
+  evangelie:
+  - ref: Luc. 5:17-26
+- periode: na_pinksteren
+  week: 19
+  weekdag: 7
+  apostel:
+  - ref: 2 Kor. 11:31-12:9
+  evangelie:
+  - ref: Luc. 6:31-36
+- periode: na_pinksteren
+  week: 20
+  weekdag: 1
+  apostel:
+  - ref: Fil. 2:12-16
+  evangelie:
+  - ref: Luc. 6:24-30
+- periode: na_pinksteren
+  week: 20
+  weekdag: 2
+  apostel:
+  - ref: Fil. 2:17-23
+  evangelie:
+  - ref: Luc. 6:37-45
+- periode: na_pinksteren
+  week: 20
+  weekdag: 3
+  apostel:
+  - ref: Fil. 2:24-30
+  evangelie:
+  - ref: Luc. 6:46-7:1
+- periode: na_pinksteren
+  week: 20
+  weekdag: 4
+  apostel:
+  - ref: Fil. 3:1-8
+  evangelie:
+  - ref: Luc. 7:17-30
+- periode: na_pinksteren
+  week: 20
+  weekdag: 5
+  apostel:
+  - ref: Fil. 3:8-19
+  evangelie:
+  - ref: Luc. 7:31-35
+- periode: na_pinksteren
+  week: 20
+  weekdag: 6
+  apostel:
+  - ref: 2 Kor. 1:8-11
+  evangelie:
+  - ref: Luc. 5:27-32
+- periode: na_pinksteren
+  week: 20
+  weekdag: 7
+  apostel:
+  - ref: Gal. 1:11-19
+  evangelie:
+  - ref: Luc. 7:11-16
+- periode: na_pinksteren
+  week: 21
+  weekdag: 1
+  apostel:
+  - ref: Fil. 4:10-23
+  evangelie:
+  - ref: Luc. 7:36-50
+- periode: na_pinksteren
+  week: 21
+  weekdag: 2
+  apostel:
+  - ref: Kol. 1:1-2:7-11
+  evangelie:
+  - ref: Luc. 8:1-3
+- periode: na_pinksteren
+  week: 21
+  weekdag: 3
+  apostel:
+  - ref: Kol. 1:18-23
+  evangelie:
+  - ref: Luc. 8:22-25
+- periode: na_pinksteren
+  week: 21
+  weekdag: 4
+  apostel:
+  - ref: Kol. 1:24-29
+  evangelie:
+  - ref: Luc. 9:7-11
+- periode: na_pinksteren
+  week: 21
+  weekdag: 5
+  apostel:
+  - ref: Kol. 2:1-7
+  evangelie:
+  - ref: Luc. 9:12-18
+- periode: na_pinksteren
+  week: 21
+  weekdag: 6
+  apostel:
+  - ref: 2 Kor. 3:12-18
+  evangelie:
+  - ref: Luc. 6:1-10
+- periode: na_pinksteren
+  week: 21
+  weekdag: 7
+  apostel:
+  - ref: Gal. 2:16-20
+  evangelie:
+  - ref: Luc. 8:5-15
+- periode: na_pinksteren
+  week: 22
+  weekdag: 1
+  apostel:
+  - ref: Kol. 2:13-20
+  evangelie:
+  - ref: Luc. 9:18-22
+- periode: na_pinksteren
+  week: 22
+  weekdag: 2
+  apostel:
+  - ref: Kol. 2:20-3:3
+  evangelie:
+  - ref: Luc. 9:23-27
+- periode: na_pinksteren
+  week: 22
+  weekdag: 3
+  apostel:
+  - ref: Kol. 3:17-4:1
+  evangelie:
+  - ref: Luc. 9:44-50
+- periode: na_pinksteren
+  week: 22
+  weekdag: 4
+  apostel:
+  - ref: Kol. 4:2-9
+  evangelie:
+  - ref: Luc. 9:49-56
+- periode: na_pinksteren
+  week: 22
+  weekdag: 5
+  apostel:
+  - ref: Kol. 4:10-18
+  evangelie:
+  - ref: Luc. 10:1-15
+- periode: na_pinksteren
+  week: 22
+  weekdag: 6
+  apostel:
+  - ref: 2 Kor. 5:1-10
+  evangelie:
+  - ref: Luc. 7:2-10
+- periode: na_pinksteren
+  week: 22
+  weekdag: 7
+  apostel:
+  - ref: Gal. 6:11-18
+  evangelie:
+  - ref: Luc. 16:19-31
+- periode: na_pinksteren
+  week: 23
+  weekdag: 1
+  apostel:
+  - ref: 1 Tess. 1:1-5
+  evangelie:
+  - ref: Luc. 10:22-24
+- periode: na_pinksteren
+  week: 23
+  weekdag: 2
+  apostel:
+  - ref: 1 Tess. 1:6-10
+  evangelie:
+  - ref: Luc. 11:1-10
+- periode: na_pinksteren
+  week: 23
+  weekdag: 3
+  apostel:
+  - ref: 1 Tess. 2:1-8
+  evangelie:
+  - ref: Luc. 11:9-13
+- periode: na_pinksteren
+  week: 23
+  weekdag: 4
+  apostel:
+  - ref: 1 Tess. 2:9-14
+  evangelie:
+  - ref: Luc. 11:14-23
+- periode: na_pinksteren
+  week: 23
+  weekdag: 5
+  apostel:
+  - ref: 1 Tess. 2:14-19
+  evangelie:
+  - ref: Luc. 11:23-26
+- periode: na_pinksteren
+  week: 23
+  weekdag: 6
+  apostel:
+  - ref: 2 Kor. 8:1-5 185
+  evangelie:
+  - ref: Luc. 8:16-21
+- periode: na_pinksteren
+  week: 23
+  weekdag: 7
+  apostel:
+  - ref: Ef. 2:4-10
+  evangelie:
+  - ref: Luc. 8:26-39
+- periode: na_pinksteren
+  week: 24
+  weekdag: 1
+  apostel:
+  - ref: 1 Tess. 2:20-3:8
+  evangelie:
+  - ref: Luc. 11:29-33
+- periode: na_pinksteren
+  week: 24
+  weekdag: 2
+  apostel:
+  - ref: 1 Tess. 3:9-13
+  evangelie:
+  - ref: Luc. 11:34-41
+- periode: na_pinksteren
+  week: 24
+  weekdag: 3
+  apostel:
+  - ref: 1 Tess. 4:1-12
+  evangelie:
+  - ref: Luc. 11:42-46
+- periode: na_pinksteren
+  week: 24
+  weekdag: 4
+  apostel:
+  - ref: 1 Tess. 5:1-8
+  evangelie:
+  - ref: Luc. 11:47-12:1
+- periode: na_pinksteren
+  week: 24
+  weekdag: 5
+  apostel:
+  - ref: 1 Tess. 5:9-13, 24-28
+  evangelie:
+  - ref: Luc. 12:2-12
+- periode: na_pinksteren
+  week: 24
+  weekdag: 6
+  apostel:
+  - ref: 2 Kor. 11:1-6
+  evangelie:
+  - ref: Luc. 9:1-6
+- periode: na_pinksteren
+  week: 24
+  weekdag: 7
+  apostel:
+  - ref: Ef. 2:14-22
+  evangelie:
+  - ref: Luc. 8:41-56
+- periode: na_pinksteren
+  week: 25
+  weekdag: 1
+  apostel:
+  - ref: 2 Tess. 1:1-10
+  evangelie:
+  - ref: Luc. 12:13-15, 22-31
+- periode: na_pinksteren
+  week: 25
+  weekdag: 2
+  apostel:
+  - ref: 2 Tess. 1:10-2:2
+  evangelie:
+  - ref: Luc. 12:42-48
+- periode: na_pinksteren
+  week: 25
+  weekdag: 3
+  apostel:
+  - ref: 2 Tess. 2:1-12
+  evangelie:
+  - ref: Luc. 12:48-59
+- periode: na_pinksteren
+  week: 25
+  weekdag: 4
+  apostel:
+  - ref: 2 Tess. 2:13-3:5
+  evangelie:
+  - ref: Luc. 13:1-9
+- periode: na_pinksteren
+  week: 25
+  weekdag: 5
+  apostel:
+  - ref: 2 Tess. 3:6-18
+  evangelie:
+  - ref: Luc. 13:31-35
+- periode: na_pinksteren
+  week: 25
+  weekdag: 6
+  apostel:
+  - ref: Gal. 1:3-10
+  evangelie:
+  - ref: Luc. 9:37-43
+- periode: na_pinksteren
+  week: 25
+  weekdag: 7
+  apostel:
+  - ref: Ef. 4:1-6
+  evangelie:
+  - ref: Luc. 10:25-37
+- periode: na_pinksteren
+  week: 26
+  weekdag: 1
+  apostel:
+  - ref: 1 Tim. 1:1-7
+  evangelie:
+  - ref: Luc. 14:12-15
+- periode: na_pinksteren
+  week: 26
+  weekdag: 2
+  apostel:
+  - ref: 1 Tim. 1:8-14
+  evangelie:
+  - ref: Luc. 14:25-35
+- periode: na_pinksteren
+  week: 26
+  weekdag: 3
+  apostel:
+  - ref: 1 Tim. 1:18-20; 2:8-15
+  evangelie:
+  - ref: Luc. 15:1-10
+- periode: na_pinksteren
+  week: 26
+  weekdag: 4
+  apostel:
+  - ref: 1 Tim. 3:1-13
+  evangelie:
+  - ref: Luc. 16:1-9
+- periode: na_pinksteren
+  week: 26
+  weekdag: 5
+  apostel:
+  - ref: 1 Tim. 4:4-8:16
+  evangelie:
+  - ref: Luc. 16:15-18; 17:1-4
+- periode: na_pinksteren
+  week: 26
+  weekdag: 6
+  apostel:
+  - ref: Gal. 3:8-12/ {3:11 = Rom.1:17*}Совп. с сб. перед Рожд.вместе с Авраамом, поверившим Богу, получат
+      благословение все, кто верит; кто полагается на дела Закона-под проклятием
+  evangelie:
+  - ref: Luc. 9:57-62
+- periode: na_pinksteren
+  week: 26
+  weekdag: 7
+  apostel:
+  - ref: Ef. 5:9-19
+  evangelie:
+  - ref: Luc. 12:16-21
+- periode: na_pinksteren
+  week: 27
+  weekdag: 1
+  apostel:
+  - ref: 1 Tim. 5:1-10
+  evangelie:
+  - ref: Luc. 17:20-25
+- periode: na_pinksteren
+  week: 27
+  weekdag: 2
+  apostel:
+  - ref: 1 Tim. 5:11-21
+  evangelie:
+  - ref: Luc. 17:26-37
+- periode: na_pinksteren
+  week: 27
+  weekdag: 3
+  apostel:
+  - ref: 1 Tim. 5:22-6:11
+  evangelie:
+  - ref: Luc. 18:15-17, 26-30
+- periode: na_pinksteren
+  week: 27
+  weekdag: 4
+  apostel:
+  - ref: 1 Tim. 6:17-21
+  evangelie:
+  - ref: Luc. 18:31-34
+- periode: na_pinksteren
+  week: 27
+  weekdag: 5
+  apostel:
+  - ref: 2 Tim. 1:1-2, 8-18
+  evangelie:
+  - ref: Luc. 19:12-28
+- periode: na_pinksteren
+  week: 27
+  weekdag: 6
+  apostel:
+  - ref: Gal. 5:22-6:2
+  evangelie:
+  - ref: Luc. 10:19-21
+- periode: na_pinksteren
+  week: 27
+  weekdag: 7
+  apostel:
+  - ref: Ef. 6:10-17/то же в сб. по Богоявл."Облекитесь во всеоружие Божие"
+  evangelie:
+  - ref: Luc. 13:10-17
+- periode: na_pinksteren
+  week: 28
+  weekdag: 1
+  apostel:
+  - ref: 2 Tim. 2:20-26
+  evangelie:
+  - ref: Luc. 19:37-44
+- periode: na_pinksteren
+  week: 28
+  weekdag: 2
+  apostel:
+  - ref: 2 Tim. 3:16-4:4
+  evangelie:
+  - ref: Luc. 19:45-48
+- periode: na_pinksteren
+  week: 28
+  weekdag: 3
+  apostel:
+  - ref: 2 Tim. 4:9-22
+  evangelie:
+  - ref: Luc. 20:1-8
+- periode: na_pinksteren
+  week: 28
+  weekdag: 4
+  apostel:
+  - ref: Tit. 1:5-2:1
+  evangelie:
+  - ref: Luc. 20:9-18
+- periode: na_pinksteren
+  week: 28
+  weekdag: 5
+  apostel:
+  - ref: Tit. 1:15-2:10
+  evangelie:
+  - ref: Luc. 20:19-26
+- periode: na_pinksteren
+  week: 28
+  weekdag: 6
+  apostel:
+  - ref: Ef. 1:16-23
+  evangelie:
+  - ref: Luc. 12:32-40
+- periode: na_pinksteren
+  week: 28
+  weekdag: 7
+  apostel:
+  - ref: Kol. 1:12-18
+  evangelie:
+  - ref: Luc. 14:16-24/X
+- periode: na_pinksteren
+  week: 29
+  weekdag: 1
+  apostel:
+  - ref: Heb. 3:5-11, 17-19
+  evangelie:
+  - ref: Luc. 20:27-44
+- periode: na_pinksteren
+  week: 29
+  weekdag: 2
+  apostel:
+  - ref: Heb. 4:1-13
+  evangelie:
+  - ref: Luc. 21:12-19
+- periode: na_pinksteren
+  week: 29
+  weekdag: 3
+  apostel:
+  - ref: Heb. 5:11-6:8
+  evangelie:
+  - ref: Luc. 21, 5-7, 10-11, 20-24
+- periode: na_pinksteren
+  week: 29
+  weekdag: 4
+  apostel:
+  - ref: Heb. 7:1-6
+  evangelie:
+  - ref: Luc. 21:28-33
+- periode: na_pinksteren
+  week: 29
+  weekdag: 5
+  apostel:
+  - ref: Heb. 7:18-25
+  evangelie:
+  - ref: Luc. 21:37-22:8
+- periode: na_pinksteren
+  week: 29
+  weekdag: 6
+  apostel:
+  - ref: Ef. 2:11-13
+  evangelie:
+  - ref: Luc. 13:18-29
+- periode: na_pinksteren
+  week: 29
+  weekdag: 7
+  apostel:
+  - ref: Kol. 3:4-11/X
+  evangelie:
+  - ref: Luc. 17:12-19
+- periode: na_pinksteren
+  week: 30
+  weekdag: 1
+  apostel:
+  - ref: Heb. 8:7-13
+  evangelie:
+  - ref: Mark. 8:11-21
+- periode: na_pinksteren
+  week: 30
+  weekdag: 2
+  apostel:
+  - ref: Heb. 9:8-10, 15-23
+  evangelie:
+  - ref: Mark. 8:22-26
+- periode: na_pinksteren
+  week: 30
+  weekdag: 3
+  apostel:
+  - ref: Heb. 10:1-18
+  evangelie:
+  - ref: Mark. 8:30-34
+- periode: na_pinksteren
+  week: 30
+  weekdag: 4
+  apostel:
+  - ref: Heb. 10:35-11:7
+  evangelie:
+  - ref: Mark. 9:10-16
+- periode: na_pinksteren
+  week: 30
+  weekdag: 5
+  apostel:
+  - ref: Heb. 11:8, 11-16
+  evangelie:
+  - ref: Mark. 9:33-41
+- periode: na_pinksteren
+  week: 30
+  weekdag: 6
+  apostel:
+  - ref: Ef. 5:1-8/ подраж-е Богу, жертва Христа, грех, дети света
+  evangelie:
+  - ref: Luc. 14:1-11/ исц. в сб, возвышающийся будет унижен...
+- periode: na_pinksteren
+  week: 30
+  weekdag: 7
+  apostel:
+  - ref: Kol. 3:12-16
+  evangelie:
+  - ref: Luc. 18:18-27
+- periode: na_pinksteren
+  week: 31
+  weekdag: 1
+  apostel:
+  - ref: Heb. 11:17-23, 27-31
+  evangelie:
+  - ref: Mark. 9:42-10:1
+- periode: na_pinksteren
+  week: 31
+  weekdag: 2
+  apostel:
+  - ref: Heb. 12:25-26; 13:22-25
+  evangelie:
+  - ref: Mark. 10:2-12
+- periode: na_pinksteren
+  week: 31
+  weekdag: 3
+  apostel:
+  - ref: Jak.1:1-18
+  evangelie:
+  - ref: Mark. 10:11-16
+- periode: na_pinksteren
+  week: 31
+  weekdag: 4
+  apostel:
+  - ref: Jak.1:19-27
+  evangelie:
+  - ref: Mark. 10:17-27
+- periode: na_pinksteren
+  week: 31
+  weekdag: 5
+  apostel:
+  - ref: Jak.2:1-13
+  evangelie:
+  - ref: Mark. 10:23-32
+- periode: na_pinksteren
+  week: 31
+  weekdag: 6
+  apostel:
+  - ref: Kol. 1:3-6
+  evangelie:
+  - ref: Luc. 16:10-15
+- periode: na_pinksteren
+  week: 31
+  weekdag: 7
+  apostel:
+  - ref: 1 Tim. 1:15-17/*
+  evangelie:
+  - ref: Luc. 18:35-43
+- periode: na_pinksteren
+  week: 32
+  weekdag: 1
+  apostel:
+  - ref: Jak.2:14-26
+  evangelie:
+  - ref: Mark. 10:46-52
+- periode: na_pinksteren
+  week: 32
+  weekdag: 2
+  apostel:
+  - ref: Jak.3:1-10
+  evangelie:
+  - ref: Mark. 11:11-23
+- periode: na_pinksteren
+  week: 32
+  weekdag: 3
+  apostel:
+  - ref: Jak.3:11-4:6
+  evangelie:
+  - ref: Mark. 11:23-26
+- periode: na_pinksteren
+  week: 32
+  weekdag: 4
+  apostel:
+  - ref: Jak.4:7-5:9
+  evangelie:
+  - ref: Mark. 11:27-33
+- periode: na_pinksteren
+  week: 32
+  weekdag: 5
+  apostel:
+  - ref: 1 Petr.1:1-2, 10-12; 2:6-10
+  evangelie:
+  - ref: Mark. 12:1-12
+- periode: na_pinksteren
+  week: 32
+  weekdag: 6
+  apostel:
+  - ref: 1 Tess. 5:14-23
+  evangelie:
+  - ref: Luc. 17:3-10
+- periode: na_pinksteren
+  week: 32
+  weekdag: 7
+  apostel:
+  - ref: 1 Tim. 4:9-15
+  evangelie:
+  - ref: Luc. 19:1-10
+- periode: na_pinksteren
+  week: 33
+  weekdag: 1
+  apostel:
+  - ref: 1 Petr.2:21-3:9
+  evangelie:
+  - ref: Mark. 12:13-17
+- periode: na_pinksteren
+  week: 33
+  weekdag: 2
+  apostel:
+  - ref: 1 Petr.3:10-22
+  evangelie:
+  - ref: Mark. 12:18-27
+- periode: na_pinksteren
+  week: 33
+  weekdag: 3
+  apostel:
+  - ref: 1 Petr.4:1-11
+  evangelie:
+  - ref: Mark. 12:28-37
+- periode: na_pinksteren
+  week: 33
+  weekdag: 4
+  apostel:
+  - ref: 1 Petr. 4:12-5:5
+  evangelie:
+  - ref: Mark. 12:38-44
+- periode: na_pinksteren
+  week: 33
+  weekdag: 5
+  apostel:
+  - ref: 2 Petr. 1:1-10
+  evangelie:
+  - ref: Mark. 13:1-8
+- periode: na_pinksteren
+  week: 33
+  weekdag: 6
+  apostel:
+  - ref: 2 Tim. 2:11-19
+  evangelie:
+  - ref: Luc. 18:2-8
+- periode: na_pinksteren
+  week: 33
+  weekdag: 7
+  apostel:
+  - ref: 2 Tim. 3:10-15
+  evangelie:
+  - ref: Luc. 18:10-14
+- periode: na_pinksteren
+  week: 34
+  weekdag: 1
+  apostel:
+  - ref: 2 Petr. 1:20-2:9
+  evangelie:
+  - ref: Mark. 13:9-13
+- periode: na_pinksteren
+  week: 34
+  weekdag: 2
+  apostel:
+  - ref: 2 Petr. 2:9-22
+  evangelie:
+  - ref: Mark. 13:14-23
+- periode: na_pinksteren
+  week: 34
+  weekdag: 3
+  apostel:
+  - ref: 2 Petr. 3:1-18
+  evangelie:
+  - ref: Mark. 13:24-31
+- periode: na_pinksteren
+  week: 34
+  weekdag: 4
+  apostel:
+  - ref: 1 Joh. 1:8-2:6
+  evangelie:
+  - ref: Mark. 13:31-14:2
+- periode: na_pinksteren
+  week: 34
+  weekdag: 5
+  apostel:
+  - ref: 1 Joh. 2:7-17
+  evangelie:
+  - ref: Mark. 14:3-9
+- periode: na_pinksteren
+  week: 34
+  weekdag: 6
+  apostel:
+  - ref: 2 Tim. 3:1-9
+  evangelie:
+  - ref: Luc. 20:45-21:4
+- periode: na_pinksteren
+  week: 34
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 6:12-20
+  evangelie:
+  - ref: Luc. 15:11-32
+- periode: na_pinksteren
+  week: 35
+  weekdag: 1
+  apostel:
+  - ref: 1 Joh. 2:18-3:10
+  evangelie:
+  - ref: Mark. 11:1-11
+- periode: na_pinksteren
+  week: 35
+  weekdag: 2
+  apostel:
+  - ref: 1 Joh. 3:11-20
+  evangelie:
+  - ref: Mark. 14:10-42
+- periode: na_pinksteren
+  week: 35
+  weekdag: 3
+  apostel:
+  - ref: 1 Joh. 3:21-4:6
+  evangelie:
+  - ref: Mark. 14:43-15:1
+- periode: na_pinksteren
+  week: 35
+  weekdag: 4
+  apostel:
+  - ref: 1 Joh. 4:20-5:21
+  evangelie:
+  - ref: Mark. 15:1-15
+- periode: na_pinksteren
+  week: 35
+  weekdag: 5
+  apostel:
+  - ref: 2 Joh. 1:1-13
+  evangelie:
+  - ref: Mark. 15:22-25, 33-41
+- periode: na_pinksteren
+  week: 35
+  weekdag: 6
+  apostel:
+  - ref: 1 Kor. 10:23-28
+  evangelie:
+  - ref: Luc. 21:8-9, 25-27, 33-36
+- periode: na_pinksteren
+  week: 35
+  weekdag: 7
+  apostel:
+  - ref: 1 Kor. 8:8-9:2
+  evangelie:
+  - ref: Matt. 25:31-46
+- periode: na_pinksteren
+  week: 36
+  weekdag: 1
+  apostel:
+  - ref: 3 Joh. 1:1-15
+  evangelie:
+  - ref: Luc. 19:29-40; 22:7-39
+- periode: na_pinksteren
+  week: 36
+  weekdag: 2
+  apostel:
+  - ref: Jud. 1:1-10
+  evangelie:
+  - ref: Luc. 22:39-42, 45-23:1
+- periode: na_pinksteren
+  week: 36
+  weekdag: 4
+  apostel:
+  - ref: Jud. 1:11-25
+  evangelie:
+  - ref: Luc. 23:1-34, 44-56
+- periode: na_pinksteren
+  week: 36
+  weekdag: 6
+  apostel:
+  - ref: Rom. 14:19-26
+  evangelie:
+  - ref: Matt. 6:1-13
+- periode: na_pinksteren
+  week: 36
+  weekdag: 7
+  apostel:
+  - ref: Rom. 13:11-14:4
+  evangelie:
+  - ref: Matt. 6:14-21
+- periode: pascha
+  week: 1
+  weekdag: 1
+  apostel:
+  - ref: Hand. 1:12-17, 21-26
+  evangelie:
+  - ref: Joh. 1:18-28
+- periode: pascha
+  week: 1
+  weekdag: 2
+  apostel:
+  - ref: Hand. 2:14-21
+  evangelie:
+  - ref: Luc. 24:12-35
+- periode: pascha
+  week: 1
+  weekdag: 3
+  apostel:
+  - ref: Hand. 2:22-36
+  evangelie:
+  - ref: Joh. 1:35-51
+- periode: pascha
+  week: 1
+  weekdag: 4
+  apostel:
+  - ref: Hand. 2:38-43
+  evangelie:
+  - ref: Joh. 3:1-15
+- periode: pascha
+  week: 1
+  weekdag: 5
+  apostel:
+  - ref: Hand. 3:1-8
+  evangelie:
+  - ref: Joh. 2:12-22
+- periode: pascha
+  week: 1
+  weekdag: 6
+  apostel:
+  - ref: Hand. 3:11-16
+  evangelie:
+  - ref: Joh. 3:22-33
+- periode: pascha
+  week: 1
+  weekdag: 7
+  apostel:
+  - ref: Hand. 1:1-8
+  evangelie:
+  - ref: Joh. 1:1-17
+- periode: pascha
+  week: 2
+  weekdag: 1
+  apostel:
+  - ref: Hand. 3:19-26
+  evangelie:
+  - ref: Joh. 2:1-11
+- periode: pascha
+  week: 2
+  weekdag: 2
+  apostel:
+  - ref: Hand. 4:1-10
+  evangelie:
+  - ref: Joh. 3:16-21
+- periode: pascha
+  week: 2
+  weekdag: 3
+  apostel:
+  - ref: Hand. 4:13-22
+  evangelie:
+  - ref: Joh. 5:17-24
+- periode: pascha
+  week: 2
+  weekdag: 4
+  apostel:
+  - ref: Hand. 4:23-31
+  evangelie:
+  - ref: Joh. 5:24-30
+- periode: pascha
+  week: 2
+  weekdag: 5
+  apostel:
+  - ref: Hand. 5:1-11
+  evangelie:
+  - ref: Joh. 5:30-6:2
+- periode: pascha
+  week: 2
+  weekdag: 6
+  apostel:
+  - ref: Hand. 5:21-33
+  evangelie:
+  - ref: Joh. 6:14-27
+- periode: pascha
+  week: 2
+  weekdag: 7
+  apostel:
+  - ref: Hand. 5:12-20
+  evangelie:
+  - ref: Joh. 20:19-31
+- periode: pascha
+  week: 3
+  weekdag: 1
+  apostel:
+  - ref: Hand. 6:8-7:5, 47-60
+  evangelie:
+  - ref: Joh. 4:46-54
+- periode: pascha
+  week: 3
+  weekdag: 2
+  apostel:
+  - ref: Hand. 8:5-17
+  evangelie:
+  - ref: Joh. 6:27-33
+- periode: pascha
+  week: 3
+  weekdag: 3
+  apostel:
+  - ref: Hand. 8:18-25
+  evangelie:
+  - ref: Joh. 6:35-39
+- periode: pascha
+  week: 3
+  weekdag: 4
+  apostel:
+  - ref: Hand. 8:26-39
+  evangelie:
+  - ref: Joh. 6:40-44
+- periode: pascha
+  week: 3
+  weekdag: 5
+  apostel:
+  - ref: Hand. 8:40-9:19
+  evangelie:
+  - ref: Joh. 6:48-54
+- periode: pascha
+  week: 3
+  weekdag: 6
+  apostel:
+  - ref: Hand. 9:20-31
+  evangelie:
+  - ref: Joh. 15:17-16:2
+- periode: pascha
+  week: 3
+  weekdag: 7
+  apostel:
+  - ref: Hand. 6:1-7
+  evangelie:
+  - ref: Mark. 15:43-16:8
+- periode: pascha
+  week: 4
+  weekdag: 1
+  apostel:
+  - ref: Hand. 10:1-16
+  evangelie:
+  - ref: Joh. 6:56-69
+- periode: pascha
+  week: 4
+  weekdag: 2
+  apostel:
+  - ref: Hand. 10:21-33
+  evangelie:
+  - ref: Joh. 7:1-13
+- periode: pascha
+  week: 4
+  weekdag: 3
+  apostel:
+  - ref: Hand. 14:6-18
+  evangelie:
+  - ref: Joh. 7:14-30
+- periode: pascha
+  week: 4
+  weekdag: 4
+  apostel:
+  - ref: Hand. 10:34-43
+  evangelie:
+  - ref: Joh. 8:12-20
+- periode: pascha
+  week: 4
+  weekdag: 5
+  apostel:
+  - ref: Hand. 10:44-11:10
+  evangelie:
+  - ref: Joh. 8:21-30
+- periode: pascha
+  week: 4
+  weekdag: 6
+  apostel:
+  - ref: Hand. 12:1-11
+  evangelie:
+  - ref: Joh. 8:31-42
+- periode: pascha
+  week: 4
+  weekdag: 7
+  apostel:
+  - ref: Hand. 9:32-42
+  evangelie:
+  - ref: Joh. 5:1-15
+- periode: pascha
+  week: 5
+  weekdag: 1
+  apostel:
+  - ref: Hand. 12:12-17
+  evangelie:
+  - ref: Joh. 8:42-51
+- periode: pascha
+  week: 5
+  weekdag: 2
+  apostel:
+  - ref: Hand. 12:25-13:12
+  evangelie:
+  - ref: Joh. 8:51-59
+- periode: pascha
+  week: 5
+  weekdag: 3
+  apostel:
+  - ref: Hand. 13:13-24
+  evangelie:
+  - ref: Joh. 6:5-14
+- periode: pascha
+  week: 5
+  weekdag: 4
+  apostel:
+  - ref: Hand. 14:20-27
+  evangelie:
+  - ref: Joh. 9:39-10:9
+- periode: pascha
+  week: 5
+  weekdag: 5
+  apostel:
+  - ref: Hand. 15:5-34
+  evangelie:
+  - ref: Joh. 10:17-28
+- periode: pascha
+  week: 5
+  weekdag: 6
+  apostel:
+  - ref: Hand. 15:35-41
+  evangelie:
+  - ref: Joh. 10:27-38
+- periode: pascha
+  week: 5
+  weekdag: 7
+  apostel:
+  - ref: Hand. 11:19-26, 29-30
+  evangelie:
+  - ref: Joh. 4:5-42
+- periode: pascha
+  week: 6
+  weekdag: 1
+  apostel:
+  - ref: Hand. 17:1-15
+  evangelie:
+  - ref: Joh. 11:47-57
+- periode: pascha
+  week: 6
+  weekdag: 2
+  apostel:
+  - ref: Hand. 17:19-28
+  evangelie:
+  - ref: Joh. 12:19-36
+- periode: pascha
+  week: 6
+  weekdag: 3
+  apostel:
+  - ref: Hand. 18:22-28
+  evangelie:
+  - ref: Joh. 12:36-47
+- periode: pascha
+  week: 6
+  weekdag: 4
+  apostel:
+  - ref: Hand. 1:1-12
+  evangelie:
+  - ref: Luc. 24:36-53
+- periode: pascha
+  week: 6
+  weekdag: 5
+  apostel:
+  - ref: Hand. 19:1-8
+  evangelie:
+  - ref: Joh. 14:1-11
+- periode: pascha
+  week: 6
+  weekdag: 6
+  apostel:
+  - ref: Hand. 20:7-12
+  evangelie:
+  - ref: Joh. 14:10-21
+- periode: pascha
+  week: 6
+  weekdag: 7
+  apostel:
+  - ref: Hand. 16:16-34
+  evangelie:
+  - ref: Joh. 9:1-38
+- periode: pascha
+  week: 7
+  weekdag: 1
+  apostel:
+  - ref: Hand. 21:8-14
+  evangelie:
+  - ref: Joh. 14:27-15:7
+- periode: pascha
+  week: 7
+  weekdag: 2
+  apostel:
+  - ref: Hand. 21:26-32
+  evangelie:
+  - ref: Joh. 16:2-13
+- periode: pascha
+  week: 7
+  weekdag: 3
+  apostel:
+  - ref: Hand. 23:1-11
+  evangelie:
+  - ref: Joh. 16:15-23
+- periode: pascha
+  week: 7
+  weekdag: 4
+  apostel:
+  - ref: Hand. 25:13-19
+  evangelie:
+  - ref: Joh. 16:23-33
+- periode: pascha
+  week: 7
+  weekdag: 5
+  apostel:
+  - ref: Hand. 27:1-44
+  evangelie:
+  - ref: Joh. 17:18-26
+- periode: pascha
+  week: 7
+  weekdag: 6
+  apostel:
+  - ref: Hand. 28:1-31
+  evangelie:
+  - ref: Joh. 21:15-25
+- periode: pascha
+  week: 7
+  weekdag: 7
+  apostel:
+  - ref: Hand. 20:16-18, 28-36
+  evangelie:
+  - ref: Joh. 17:1-13
+- periode: pascha
+  week: 8
+  weekdag: 7
+  apostel:
+  - ref: Hand. 2:1-11
+  evangelie:
+  - ref: Joh. 7:37-52; 8:12
+- periode: vasten
+  week: 1
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 1
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 1
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 1
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 1
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 1
+  weekdag: 6
+  apostel:
+  - ref: Heb. 1:1-12
+  evangelie:
+  - ref: Mark. 2:23-3:5
+- periode: vasten
+  week: 2
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 2
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 2
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 2
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 2
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 2
+  weekdag: 6
+  apostel:
+  - ref: Heb. 3:12-16
+  evangelie:
+  - ref: Mark. 1:35-44
+- periode: vasten
+  week: 3
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 3
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 3
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 3
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 3
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 3
+  weekdag: 6
+  apostel:
+  - ref: Heb. 10:32-38
+  evangelie:
+  - ref: Mark. 2:14-17
+- periode: vasten
+  week: 4
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 4
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 4
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 4
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 4
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 4
+  weekdag: 6
+  apostel:
+  - ref: Heb. 6:9-12
+  evangelie:
+  - ref: Mark. 7:31-37
+- periode: vasten
+  week: 5
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 5
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 5
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 5
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 5
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 5
+  weekdag: 6
+  apostel:
+  - ref: Heb. 9:24-28
+  evangelie:
+  - ref: Mark. 8:27-31
+- periode: vasten
+  week: 6
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 6
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 6
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 6
+  weekdag: 4
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 6
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 6
+  weekdag: 6
+  apostel:
+  - ref: Heb. 12:28-13:8
+  evangelie:
+  - ref: Joh. 11:1-45
+- periode: vasten
+  week: 6
+  weekdag: 7
+  apostel:
+  - ref: Fil. 4:4-9
+  evangelie:
+  - ref: Joh. 12:1-18
+- periode: vasten
+  week: 7
+  weekdag: 1
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 7
+  weekdag: 2
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 7
+  weekdag: 3
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 7
+  weekdag: 4
+  apostel:
+  - ref: 1 Kor. 11:23-32
+  evangelie: []
+- periode: vasten
+  week: 7
+  weekdag: 5
+  apostel: []
+  evangelie: []
+  status: geen_liturgie
+- periode: vasten
+  week: 7
+  weekdag: 6
+  apostel:
+  - ref: Rom. 6:3-11
+  evangelie:
+  - ref: Matt. 28:1-20

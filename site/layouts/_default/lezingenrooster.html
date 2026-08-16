@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="lezingenrooster-page" data-lezingenrooster>
+  <h1 class="kalender-heading">
+    <span class="kalender-title">{{ .Title }} <span class="year-label" id="rooster-jaar"></span></span>
+    <span class="style-toggle kalender-style-toggle" role="group" aria-label="Kalenderstijl Nieuw/Oud">
+      <button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>
+      <button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>
+      <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
+    </span>
+  </h1>
+  {{ .Content }}
+  <div class="year-controls">
+    <button type="button" class="style-btn" id="rooster-prev" aria-label="Vorig jaar">←</button>
+    <button type="button" class="style-btn" id="rooster-next" aria-label="Volgend jaar">→</button>
+  </div>
+  <div id="rooster-tables" class="rooster-tables"></div>
+</section>
+{{ end }}

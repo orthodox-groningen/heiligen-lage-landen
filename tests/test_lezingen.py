@@ -59,11 +59,21 @@ def test_pending_voorbeelden_are_skipped_by_filter() -> None:
     # Ze mogen nog "onbekend" zijn — geen harde assert op inhoud.
 
 
-def test_unknown_day_is_onbekend() -> None:
-    # Willekeurige weekdag zonder override in 2025.
+def test_weekreeks_fills_ordinary_weekday() -> None:
     r = resolve_lezingen(2025, "07-02", "nieuw")
-    assert r.status == "onbekend"
-    assert not r.apostel
+    assert r.status == "gevonden"
+    assert "R3" in r.regels
+    assert r.apostel and r.evangelie
+
+
+def test_lucaanse_sprong_switches_gospel() -> None:
+    from lezingen import lucaanse_sprong_maandag
+
+    assert lucaanse_sprong_maandag(2025).isoformat() == "2025-09-22"
+    r = resolve_lezingen(2025, "09-22", "nieuw")
+    assert r.status == "gevonden"
+    assert "R3-lucaans" in r.regels
+    assert r.evangelie and r.evangelie[0].ref.startswith("Luc.")
 
 
 def test_spec_body_for_uitleg_strips_examples() -> None:

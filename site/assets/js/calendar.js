@@ -791,13 +791,23 @@
   }
 
   function renderLezingenHtml(lez) {
-    if (!lez || lez.status !== "gevonden") {
+    if (!lez || (lez.status !== "gevonden" && lez.status !== "geen_liturgie")) {
+      const label = lez && lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "";
       return (
         `<div class="day-lezingen" id="day-lezingen">` +
         `<h2 class="day-lezingen-title">Lezingen</h2>` +
-        `<p class="muted">Nog geen feestoverride voor deze dag ` +
-        `(doorlopende weekreeks volgt). ` +
+        label +
+        `<p class="muted">Geen rijádovoe of feestoverride voor deze dag. ` +
         `${achtergrondLink("lezingen", "Uitleg lezingen")}</p></div>`
+      );
+    }
+    if (lez.status === "geen_liturgie") {
+      return (
+        `<div class="day-lezingen" id="day-lezingen">` +
+        `<h2 class="day-lezingen-title">Lezingen</h2>` +
+        (lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "") +
+        `<p class="muted">Geen liturgie met Apostel/Evangelie van de dag. ` +
+        `${achtergrondLink("lezingen", "Uitleg")}</p></div>`
       );
     }
     const apostel = (lez.apostel || [])
@@ -812,9 +822,13 @@
     const regelsHtml = regels
       ? ` <span class="meta">(${regels} · ${achtergrondLink("lezingen", "uitleg")})</span>`
       : ` ${achtergrondLink("lezingen", "Uitleg")}`;
+    const labelHtml = lez.daglabel
+      ? `<p class="day-lezingen-label">${lez.daglabel}</p>`
+      : "";
     return (
       `<div class="day-lezingen" id="day-lezingen">` +
       `<h2 class="day-lezingen-title">Lezingen${regelsHtml}</h2>` +
+      labelHtml +
       `<ul>` +
       (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
       (evangelie ? `<li><strong>Evangelie:</strong> ${evangelie}</li>` : "") +
@@ -870,6 +884,93 @@
         : document.title;
       document.title = `${label(view.mmdd)} ${view.year} · ${site}`;
     }
+  }
+
+  function refsText(arr) {
+    return (arr || [])
+      .map((x) => x.ref)
+      .filter(Boolean)
+      .join("; ");
+  }
+
+  function renderRooster(style) {
+    const root = document.getElementById("rooster-tables");
+    if (!root) return;
+    const yearEl = document.getElementById("rooster-jaar");
+    if (yearEl) yearEl.textContent = String(viewYear);
+    const stil = style === "juliaans" ? "oud" : "nieuw";
+    const byDay = ((lezingenIndex || {})[stil] || {})[String(viewYear)] || {};
+    let html = "";
+    for (let month = 1; month <= 12; month++) {
+      const prefix = String(month).padStart(2, "0") + "-";
+      const days = Object.keys(byDay)
+        .filter((k) => k.startsWith(prefix))
+        .sort();
+      if (!days.length) continue;
+      html += `<section class="rooster-month" id="rooster-m${month}">`;
+      html += `<h2>${MONTHS[month]} ${viewYear}</h2>`;
+      html +=
+        `<div class="table-wrap"><table class="rooster-table">` +
+        `<thead><tr>` +
+        `<th scope="col">Datum</th>` +
+        `<th scope="col">Liturgische dag</th>` +
+        `<th scope="col">Apostel</th>` +
+        `<th scope="col">Evangelie</th>` +
+        `</tr></thead><tbody>`;
+      for (const mmdd of days) {
+        const lez = byDay[mmdd] || {};
+        const dagUrl = assetUrl(
+          `datum/?jaar=${viewYear}&dag=${encodeURIComponent(mmdd)}`
+        );
+        let apostel = refsText(lez.apostel);
+        let evangelie = refsText(lez.evangelie);
+        if (lez.status === "geen_liturgie") {
+          apostel = apostel || "—";
+          evangelie = evangelie || "(geen liturgie)";
+        } else if (lez.status === "onbekend") {
+          apostel = apostel || "—";
+          evangelie = evangelie || "—";
+        }
+        html +=
+          `<tr>` +
+          `<td><a href="${dagUrl}">${label(mmdd)}</a></td>` +
+          `<td>${lez.daglabel || ""}</td>` +
+          `<td>${apostel}</td>` +
+          `<td>${evangelie}</td>` +
+          `</tr>`;
+      }
+      html += `</tbody></table></div></section>`;
+    }
+    root.innerHTML =
+      html ||
+      `<p class="muted">Geen lezingengegevens voor ${viewYear}. Genereer de site opnieuw.</p>`;
+  }
+
+  function initRooster(style) {
+    if (!document.querySelector("[data-lezingenrooster]")) return;
+    const prev = document.getElementById("rooster-prev");
+    const next = document.getElementById("rooster-next");
+    if (prev && prev.dataset.bound !== "1") {
+      prev.dataset.bound = "1";
+      prev.addEventListener("click", () => {
+        viewYear = clampYear(viewYear - 1);
+        try {
+          localStorage.setItem(YEAR_KEY, String(viewYear));
+        } catch (_) {}
+        renderRooster(getStyle());
+      });
+    }
+    if (next && next.dataset.bound !== "1") {
+      next.dataset.bound = "1";
+      next.addEventListener("click", () => {
+        viewYear = clampYear(viewYear + 1);
+        try {
+          localStorage.setItem(YEAR_KEY, String(viewYear));
+        } catch (_) {}
+        renderRooster(getStyle());
+      });
+    }
+    renderRooster(style);
   }
 
   function dayClass(kinds) {
@@ -1431,6 +1532,7 @@
       renderToday(entries, style);
       renderYearGrid(entries, style);
       initYearControls(entries, style);
+      initRooster(style);
       initMeneon(entries);
       initAgenda();
     } catch (err) {

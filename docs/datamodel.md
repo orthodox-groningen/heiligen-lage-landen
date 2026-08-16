@@ -120,10 +120,10 @@ Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
 Normatieve regels: **`docs/specs/lezingen.md`** (traditie Moskou, ROCOR bij
 twijfel). Publieke spiegel: `/uitleg/lezingen/` (gegenereerd bij `generate.py`).
 
-Data: `data/lezingen/` (`feest-overrides.yaml`, `meta.yaml`). Engine:
-`scripts/lezingen.py`. Machine-leesbare voorbeelden in de spec sturen pytest.
-Build schrijft `site/static/data/lezingen-dagen.json` (override-hits per
-stijl/jaar/mmdd); de kalender-UI toont Apostel/Evangelie op vandaag en `/datum/`.
+Data: `data/lezingen/` (`feest-overrides.yaml`, `weekreeks.yaml`, `meta.yaml`).
+Engine: `scripts/lezingen.py`. Machine-leesbare voorbeelden in de spec sturen pytest.
+Build schrijft `site/static/data/lezingen-dagen.json` (per stijl/jaar/mmdd, met
+`daglabel`); UI op vandaag/`/datum/` en overzichtspagina `/lezingenrooster/`.
 
 ## Observances (kleuren)
 
