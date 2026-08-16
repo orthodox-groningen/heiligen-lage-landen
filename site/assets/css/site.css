@@ -243,6 +243,11 @@ h2 {
   margin: 0 0 0.75rem;
 }
 
+.vasten-indicatie {
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+}
+
 .today-entries ul {
   margin: 0;
   padding-left: 1.1rem;

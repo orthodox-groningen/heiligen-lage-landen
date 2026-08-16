@@ -3,6 +3,7 @@ soort: feest
 status: curated
 cyclus: paascyclus
 lagenlanden: false
+vastenniveau: vis
 namen:
   primair: "Palmzondag (Intocht in Jeruzalem)"
   alternatief:
@@ -11,6 +12,7 @@ namen:
   - Vaienzondag
 observances:
   - feest
+  - vasten
 datum:
   stijl: gregoriaans
   paascyclus:

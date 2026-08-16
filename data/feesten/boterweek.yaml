@@ -3,6 +3,8 @@ soort: feest
 status: curated
 cyclus: paascyclus
 lagenlanden: false
+vastenniveau: lichter
+onderdrukt_wekelijks_vasten: true
 observances:
   - feest
 datum:

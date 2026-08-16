@@ -275,6 +275,9 @@ def normalize_entry(
         entry["vastenniveau"] = niveau
         if niveau == "vrij":
             entry["onderdrukt_wekelijks_vasten"] = True
+    # Vastenperiode vervangt wo/vr als aparte observantie.
+    if entry["soort"] == "vasten" and (entry.get("cyclus") or "jaar") != "wekelijks":
+        entry["onderdrukt_wekelijks_vasten"] = True
     entry["source_path"] = str(path.relative_to(REPO_ROOT)).replace("\\", "/")
 
     file_namen = dict(entry.get("namen") or {})

@@ -155,8 +155,11 @@
 
   function isWeeklyFastSuppressed(entries, mmdd, year, style) {
     return (entries || []).some((e) => {
-      if (!e || !e.onderdrukt_wekelijks_vasten) return false;
-      if (e.vorm === "weekdagen") return false;
+      if (!e || e.vorm === "weekdagen") return false;
+      const suppresses =
+        e.onderdrukt_wekelijks_vasten ||
+        (e.soort === "vasten" && e.vorm !== "weekdagen");
+      if (!suppresses) return false;
       if (e.van && e.tot && e.vorm === "periode") {
         return mmddInRange(mmdd, e.van, e.tot);
       }
@@ -174,6 +177,222 @@
     return (entries || []).filter((e) =>
       entryMatchesMmdd(e, mmdd, year, style, entries)
     );
+  }
+
+  /** Spiegel van scripts/vasten.py (mix_vastenniveau). */
+  const VASTEN_COMPARE_RANK = {
+    streng: 0,
+    wijn_olie: 1,
+    lichter: 1,
+    vis: 2,
+    vrij: 3,
+  };
+  const VASTEN_LABELS = {
+    streng: "streng",
+    wijn_olie: "wijn en olie",
+    vis: "vis",
+    lichter: "lichter",
+    vrij: "vastenvrij",
+  };
+
+  function entryNaam(entry) {
+    return (entry && (entry.naam || (entry.namen && entry.namen.primair))) || "";
+  }
+
+  function isWeeklyEntry(entry) {
+    return entry && entry.vorm === "weekdagen";
+  }
+
+  function isPeriodEntry(entry) {
+    if (!entry || isWeeklyEntry(entry)) return false;
+    if (entry.vorm === "periode" || entry.vorm === "periode_hybride") return true;
+    if (entry.van && entry.tot) return true;
+    if (entry.period_occurrences) return true;
+    return false;
+  }
+
+  function entryObservances(entry) {
+    if (entry.observances && entry.observances.length) return entry.observances;
+    if (entry.soort === "heilige") return ["heilige"];
+    if (entry.soort === "vasten") return ["vasten"];
+    return ["feest"];
+  }
+
+  function moreLenientNiveau(a, b) {
+    return VASTEN_COMPARE_RANK[a] >= VASTEN_COMPARE_RANK[b] ? a : b;
+  }
+
+  function stricterNiveau(a, b) {
+    return VASTEN_COMPARE_RANK[a] <= VASTEN_COMPARE_RANK[b] ? a : b;
+  }
+
+  function vastenTekst(opts) {
+    const niveau = opts.niveau;
+    const bron = opts.bron;
+    if (niveau === "vrij") return `Vastenvrij — ${bron}`;
+    const label = VASTEN_LABELS[niveau] || niveau;
+    let line = `Vasten: ${label} — ${bron}`;
+    if (opts.versoepeldDoor) {
+      line += `, versoepeld (${opts.versoepeldDoor})`;
+    } else if (opts.weekend && opts.weekday === 6) {
+      line += " (zaterdag)";
+    } else if (opts.weekend && opts.weekday === 7) {
+      line += " (zondag)";
+    }
+    return line;
+  }
+
+  function mixVastenniveau(dayEntries, weekday) {
+    const periods = (dayEntries || []).filter(
+      (e) =>
+        isPeriodEntry(e) &&
+        (e.soort === "vasten" || e.vastenniveau)
+    );
+    const weekly = (dayEntries || []).filter(isWeeklyEntry);
+    const dayFeasts = (dayEntries || []).filter(
+      (e) => e.vastenniveau && !isPeriodEntry(e) && !isWeeklyEntry(e)
+    );
+
+    const vrijPeriods = periods.filter((e) => e.vastenniveau === "vrij");
+    if (vrijPeriods.length) {
+      return {
+        niveau: "vrij",
+        tekst: vastenTekst({ niveau: "vrij", bron: entryNaam(vrijPeriods[0]) }),
+      };
+    }
+
+    const inGroteWeek = periods.some((e) => e.id === "grote-week");
+
+    if (periods.length) {
+      let baseEntry = periods[0];
+      for (const e of periods) {
+        const rank = VASTEN_COMPARE_RANK[e.vastenniveau || "streng"];
+        const best = VASTEN_COMPARE_RANK[baseEntry.vastenniveau || "streng"];
+        if (rank < best) baseEntry = e;
+      }
+      let base = baseEntry.vastenniveau || "streng";
+      let weekend = false;
+      if (
+        (weekday === 6 || weekday === 7) &&
+        VASTEN_COMPARE_RANK[base] === VASTEN_COMPARE_RANK.streng &&
+        !inGroteWeek
+      ) {
+        base = "wijn_olie";
+        weekend = true;
+      }
+      const relaxers = dayFeasts.filter(
+        (e) => VASTEN_COMPARE_RANK[e.vastenniveau] > VASTEN_COMPARE_RANK[base]
+      );
+      let versoepeld = null;
+      let effective = base;
+      if (relaxers.length) {
+        versoepeld = relaxers[0];
+        for (const e of relaxers) {
+          if (
+            VASTEN_COMPARE_RANK[e.vastenniveau] >
+            VASTEN_COMPARE_RANK[versoepeld.vastenniveau]
+          ) {
+            versoepeld = e;
+          }
+        }
+        effective = versoepeld.vastenniveau;
+      }
+      if (inGroteWeek && VASTEN_COMPARE_RANK[effective] > VASTEN_COMPARE_RANK.wijn_olie) {
+        effective = "wijn_olie";
+      }
+      return {
+        niveau: effective,
+        tekst: vastenTekst({
+          niveau: effective,
+          bron: entryNaam(baseEntry),
+          versoepeldDoor: versoepeld ? entryNaam(versoepeld) : null,
+          weekend: weekend && !versoepeld,
+          weekday,
+        }),
+      };
+    }
+
+    const tightening = dayFeasts.filter((e) =>
+      entryObservances(e).includes("vasten")
+    );
+    const relaxing = dayFeasts.filter(
+      (e) => !entryObservances(e).includes("vasten")
+    );
+
+    if (tightening.length) {
+      let chosen = tightening[0];
+      for (const e of tightening) {
+        if (
+          VASTEN_COMPARE_RANK[e.vastenniveau] <
+          VASTEN_COMPARE_RANK[chosen.vastenniveau]
+        ) {
+          chosen = e;
+        }
+      }
+      let niveau = chosen.vastenniveau;
+      if (weekly.length) {
+        niveau = stricterNiveau(
+          niveau,
+          weekly[0].vastenniveau || "wijn_olie"
+        );
+      }
+      return {
+        niveau,
+        tekst: vastenTekst({ niveau, bron: entryNaam(chosen) }),
+      };
+    }
+
+    if (weekly.length) {
+      const weeklyLevel = weekly[0].vastenniveau || "wijn_olie";
+      if (relaxing.length) {
+        let chosen = relaxing[0];
+        for (const e of relaxing) {
+          if (
+            VASTEN_COMPARE_RANK[e.vastenniveau] >
+            VASTEN_COMPARE_RANK[chosen.vastenniveau]
+          ) {
+            chosen = e;
+          }
+        }
+        const feastLevel = chosen.vastenniveau;
+        const effective = moreLenientNiveau(weeklyLevel, feastLevel);
+        if (effective === "vrij") {
+          return {
+            niveau: "vrij",
+            tekst: vastenTekst({ niveau: "vrij", bron: entryNaam(chosen) }),
+          };
+        }
+        if (VASTEN_COMPARE_RANK[feastLevel] > VASTEN_COMPARE_RANK[weeklyLevel]) {
+          return {
+            niveau: effective,
+            tekst: vastenTekst({
+              niveau: effective,
+              bron: entryNaam(weekly[0]),
+              versoepeldDoor: entryNaam(chosen),
+            }),
+          };
+        }
+      }
+      return {
+        niveau: weeklyLevel,
+        tekst: vastenTekst({
+          niveau: weeklyLevel,
+          bron: entryNaam(weekly[0]),
+        }),
+      };
+    }
+
+    const vrijFeasts = relaxing.filter((e) => e.vastenniveau === "vrij");
+    if (vrijFeasts.length) {
+      return {
+        niveau: "vrij",
+        tekst: vastenTekst({
+          niveau: "vrij",
+          bron: entryNaam(vrijFeasts[0]),
+        }),
+      };
+    }
+    return null;
   }
 
   function kindLabel(entry) {
@@ -529,15 +748,22 @@
     if (!mmddExistsInYear(view.mmdd, view.year)) {
       cardEntries.innerHTML =
         `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
-      fillDatumMeneonLink(view);
       return;
     }
     const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
+    const civil = civilMmddForView(view.mmdd, style, view.year);
+    const weekday = isoWeekdayFromMmdd(civil, view.year);
+    const vasten = mixVastenniveau(matched, weekday);
+    const vastenHtml = vasten
+      ? `<p class="vasten-indicatie">${vasten.tekst}</p>`
+      : "";
     if (!matched.length) {
       cardEntries.innerHTML =
+        vastenHtml +
         "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
     } else {
       cardEntries.innerHTML =
+        vastenHtml +
         "<ul>" +
         matched
           .map((e) => {
@@ -550,21 +776,12 @@
           .join("") +
         "</ul>";
     }
-    fillDatumMeneonLink(view);
     if (document.querySelector("[data-datum]")) {
       const site = document.title.includes(" · ")
         ? document.title.slice(document.title.lastIndexOf(" · ") + 3)
         : document.title;
       document.title = `${label(view.mmdd)} ${view.year} · ${site}`;
     }
-  }
-
-  function fillDatumMeneonLink(view) {
-    const el = document.getElementById("datum-meneon-link");
-    if (!el) return;
-    const meneon = pageUrl("meneon/", { dag: view.mmdd });
-    el.innerHTML =
-      `Vaste dag in het <a href="${meneon}">Meneon</a> (${label(view.mmdd)}).`;
   }
 
   function dayClass(kinds) {
