@@ -93,8 +93,24 @@ vastenvrije periode (`vastenniveau: vrij`). Een named periode *is* het vasten
 van die dag; vrijdagvasten niet nog eens apart.
 
 Twee geneste periodes overlappen in de huidige data niet (Grote Vasten eindigt
-vóór de Grote Week). Feestdagen die binnen een periode versoepelen (vis, olie)
-zijn typikon en nog niet gemodelleerd.
+vóór de Grote Week).
+
+**Effectief niveau (home/datumpagina):** het getoonde niveau is één regel,
+niet de som van overlappende vasten.
+
+1. Basis = de dekkende periode (`streng`, `lichter`, …). Zonder periode: wo/vr.
+2. Zaterdag/zondag in een `streng`-periode, behalve de Grote Week: basis wordt
+   `wijn_olie`.
+3. Een feest met `vastenniveau` **versoepelt alleen** (nooit strenger dan de
+   periode). Voorbeeld: Aankondiging `vis` in de Grote Vasten.
+4. In de Grote Week gaat een feestversoepeling niet verder dan `wijn_olie`.
+5. Buiten een periode: een feest mét `observances: […, vasten]` **legt** het
+   vasten op (Kruisverheffing, Onthoofding van Johannes); een feest zonder
+   die observantie versoepelt alleen wo/vr (vis op Geboorte van de Moeder Gods)
+   of zet wo/vr uit (`vrij` op Kerst en Theofanie).
+
+Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
+Logica: `scripts/vasten.py` (tests) en `site/assets/js/calendar.js`.
 
 ## Observances (kleuren)
 

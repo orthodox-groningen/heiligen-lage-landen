@@ -3,6 +3,10 @@ soort: feest
 status: curated
 cyclus: jaar
 lagenlanden: false
+vastenniveau: streng
+observances:
+  - feest
+  - vasten
 namen:
   primair: Kruisverheffing
   alternatief:
