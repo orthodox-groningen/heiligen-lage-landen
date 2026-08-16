@@ -23,4 +23,6 @@ Preview lokaal: `scripts\serve.cmd`.
 - Brondata: `data/` (YAML)
 - Validatie/generatie: `scripts/`
 - Site: `site/` (Hugo)
+- Uitleg: `site/content/uitleg/` (gebruikers) + `*-technisch.md` (niet in het overzicht)
+- Beheerders: `site/content/beheer/`
 - CI: `.github/workflows/pages.yml` (main → prod, andere branch → `/preview/`)

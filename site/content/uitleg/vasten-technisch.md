@@ -16,6 +16,7 @@ maakt tot de code meegaat.
 Bronbestand: `data/regels/vasten.yaml`. Daarna `python3 scripts/generate.py`
 (beide uitlegpagina’s worden opnieuw geschreven). De mengregel staat in
 `scripts/vasten.py` en, gespiegeld, in `site/assets/js/calendar.js`.
+How-to: [vastenregels wijzigen]({{% ref "/beheer/how-to-vasten" %}}).
 
 ## Regel-ids
 

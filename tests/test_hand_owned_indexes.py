@@ -143,3 +143,4 @@ def test_repo_hand_owned_indexes_ok() -> None:
     assert (CONTENT / "meneon" / "_index.md").is_file()
     assert (CONTENT / "datum" / "_index.md").is_file()
     assert (CONTENT / "uitleg" / "nieuw-oud.md").is_file()
+    assert (CONTENT / "beheer" / "_index.md").is_file()
