@@ -476,6 +476,11 @@ def ensure_hand_owned_indexes() -> None:
             "title": "Uitleg",
             "layout": None,
         },
+        {
+            "path": CONTENT / "beheer" / "_index.md",
+            "title": "Voor beheerders",
+            "layout": None,
+        },
     ]
 
     for spec in specs:
@@ -516,27 +521,27 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "nieuw-oud",
         "title": "Nieuwe en Oude kalender",
-        "description": "Wereldlijke datums; vaste feesten verschuiven bij Oud, Pascha niet",
+        "description": "Welke kalender uw parochie volgt, en wat de knop Nieuw/Oud doet",
     },
     {
         "id": "feestdatum",
         "title": "Feestdatum",
-        "description": "Wat een vaste feestdatum wel en niet betekent",
+        "description": "De naam van een feestdag in het kerkelijk jaar, in nieuw en oud dezelfde",
     },
     {
         "id": "datumpagina",
         "title": "Datumpagina’s",
-        "description": "Wat er op een kalenderdag in een bepaald jaar valt",
+        "description": "Wat er op één burgerlijke dag in een bepaald jaar valt",
     },
     {
         "id": "meneon",
         "title": "Meneon",
-        "description": "Vaste heiligen- en feestdagen per kalenderdag",
+        "description": "De vaste jaarcyclus: wat er altijd op een kalenderdag hoort",
     },
     {
         "id": "kleuren",
         "title": "Kleuren in de jaarkalender",
-        "description": "Legenda van de kleuren op de jaarkalender",
+        "description": "Wat de kleuren op de jaarkalender betekenen",
     },
     {
         "id": "vasten",
@@ -545,8 +550,8 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     },
     {
         "id": "agenda",
-        "title": "Agenda (ICS)",
-        "description": "Abonneren op heiligen- en feestfeeds in nieuw of oud",
+        "title": "Agenda",
+        "description": "Heiligen, feesten en vasten in Google Calendar, Apple Agenda of Outlook",
     },
     {
         "id": "lezingen",

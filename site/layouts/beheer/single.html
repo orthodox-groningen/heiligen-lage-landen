@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="page beheer-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p class="hint uitleg-nav">
+    <a href="{{ "beheer/" | relURL }}">Voor beheerders</a>
+    ·
+    <a href="{{ "uitleg/" | relURL }}">Uitleg voor gebruikers</a>
+  </p>
+</article>
+{{ end }}

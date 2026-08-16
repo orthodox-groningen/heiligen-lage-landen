@@ -807,8 +807,9 @@ a.text-link {
   margin: 0.55rem 0;
 }
 
-.uitleg-page {
-  max-width: min(42rem, 100%);
+.uitleg-page,
+.beheer-page {
+  max-width: min(48rem, 100%);
 }
 
 .uitleg-page h2 {
@@ -861,6 +862,10 @@ a.text-link {
   font-weight: 600;
 }
 
+.kleuren-legenda {
+  margin: 1.25rem 0 1.75rem;
+}
+
 .uitleg-callout {
   margin: 1.75rem 0 2rem;
   padding: 1rem 1.2rem;
@@ -897,6 +902,49 @@ a.text-link {
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 0.98rem;
+}
+
+.beheer-tabel {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.beheer-tabel th,
+.beheer-tabel td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 1rem 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.beheer-tabel th {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.beheer-tabel td:first-child,
+.beheer-tabel th:first-child {
+  width: 38%;
+  padding-right: 1.25rem;
+}
+
+.beheer-tabel code {
+  font-size: 0.88em;
+}
+
+.beheer-tabel-aanraken {
+  border-left: 3px solid color-mix(in srgb, #4a7a4a 70%, var(--gold));
+  padding-left: 0.85rem;
+}
+
+.beheer-tabel-afblijven {
+  border-left: 3px solid color-mix(in srgb, #8b3a2a 70%, var(--gold));
+  padding-left: 0.85rem;
 }
 
 .uitleg-vasten {

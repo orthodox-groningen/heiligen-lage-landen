@@ -1,5 +1,9 @@
 # Datamodel
 
+Beheerders: wat u mag wijzigen, wat generate.py overschrijft, en how-to’s
+staan op de site onder **Voor beheerders** (`site/content/beheer/`). Dit
+bestand blijft de veldsemantiek van entries.
+
 Elke entry is één YAML-bestand in `data/feesten/`, `data/heiligen/` of
 `data/vasten/`.
 
@@ -115,7 +119,8 @@ niet de som van overlappende vasten.
 Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
 **Normatief voor de dagregel:** `data/regels/vasten.yaml`. Cleruspagina:
 `/uitleg/vasten/`; technische bijlage: `/uitleg/vasten-technisch/` (niet in het
-uitleg-overzicht). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
+uitleg-overzicht). How-to: `/beheer/how-to-vasten/`. Code: `scripts/vasten.py`
+en `site/assets/js/calendar.js`.
 
 ## Lezingen (Apostel / Evangelie)
 

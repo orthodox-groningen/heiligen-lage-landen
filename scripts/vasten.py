@@ -497,7 +497,8 @@ def render_vasten_clerus(regels: dict[str, Any] | None = None) -> str:
     lines.append("")
     lines.append(
         "De koppeling tussen deze tekst, de voorbeelden en de programmacode "
-        "staat op de [technische pagina bij deze uitleg]({{% ref \"/uitleg/vasten-technisch\" %}})."
+        "staat op de [technische pagina bij deze uitleg]({{% ref \"/uitleg/vasten-technisch\" %}}). "
+        "Stap-voor-stap: [vastenregels wijzigen]({{% ref \"/beheer/how-to-vasten\" %}})."
     )
     lines.append("")
     return "\n".join(lines)
