@@ -91,9 +91,31 @@
     return `${d} ${MONTHS[m]}`;
   }
 
+  function shiftMmdd(mmdd, deltaDays) {
+    const [m, d] = mmdd.split("-").map(Number);
+    // Schrikkeljaar: 29 februari blijft bereikbaar in de jaarcyclus.
+    return mmddFromDate(addDays(new Date(2024, m - 1, d), deltaDays));
+  }
+
+  function getViewMmdd(style) {
+    const dag = new URLSearchParams(window.location.search).get("dag");
+    if (dag && /^\d{2}-\d{2}$/.test(dag)) return dag;
+    return todayMmdd(style);
+  }
+
+  function setViewMmdd(mmdd) {
+    const url = new URL(window.location.href);
+    const style = getStyle();
+    if (mmdd === todayMmdd(style)) url.searchParams.delete("dag");
+    else url.searchParams.set("dag", mmdd);
+    window.history.pushState({}, "", url);
+    refresh();
+  }
+
   async function applyStyle(style) {
     const url = new URL(window.location.href);
     url.searchParams.set("stijl", style);
+    // Feestdatum in de URL blijft; “vandaag” hangt van de stijl af.
     window.history.replaceState({}, "", url);
     setStyle(style);
     await refresh();
@@ -102,22 +124,51 @@
   function updateHeading(style) {
     const heading = document.getElementById("today-heading");
     if (!heading) return;
-    const today = todayMmdd(style);
-    let inner =
-      `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">` +
-      `Vandaag: ${label(today)}`;
-    if (style === "juliaans") {
-      inner +=
+    const view = getViewMmdd(style);
+    const isToday = view === todayMmdd(style);
+    const titleText = isToday ? `Vandaag: ${label(view)}` : label(view);
+    let titleInner = titleText;
+    if (style === "juliaans" && isToday) {
+      titleInner +=
         ` <span class="today-civil-hint">Wereldlijk: ${label(civilTodayMmdd())}</span>`;
+    } else if (style === "juliaans" && !isToday) {
+      titleInner +=
+        ` <span class="today-civil-hint">Wereldlijk: ${label(shiftMmdd(view, OFFSET_DAYS))}</span>`;
     }
-    inner += `</span>`;
-    heading.innerHTML = inner;
+    heading.innerHTML =
+      `<button type="button" class="day-step" data-day-delta="-1" aria-label="Vorige dag">&lt;</button>` +
+      `<span class="day-step-gap" aria-hidden="true"></span>` +
+      `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>` +
+      `<span class="day-step-gap" aria-hidden="true"></span>` +
+      `<button type="button" class="day-step" data-day-delta="1" aria-label="Volgende dag">&gt;</button>`;
     wireNieuwOudTriggers(heading);
+    wireDaySteps(heading);
+  }
+
+  function wireDaySteps(root) {
+    (root || document).querySelectorAll("[data-day-delta]").forEach((btn) => {
+      if (btn.dataset.boundDay === "1") return;
+      btn.dataset.boundDay = "1";
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        const delta = Number(btn.dataset.dayDelta);
+        if (!delta) return;
+        const style = getStyle();
+        setViewMmdd(shiftMmdd(getViewMmdd(style), delta));
+      });
+    });
   }
 
   function updateNote(style) {
     const cardNote = document.getElementById("today-note");
     if (!cardNote) return;
+    const view = getViewMmdd(style);
+    if (view !== todayMmdd(style)) {
+      cardNote.textContent = "";
+      cardNote.hidden = true;
+      return;
+    }
     if (style === "juliaans") {
       cardNote.textContent = "";
       cardNote.hidden = true;
@@ -138,15 +189,17 @@
     if (style === "juliaans") {
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
-        `<p>In de nieuwe/Gregoriaanse (wereldlijke) kalender is het vandaag ${label(civilTodayMmdd())}.</p>` +
+        `<p>Dat is ${label(civilTodayMmdd())} (nieuw/Gregoriaans)..` +
+        `De Gregoriaanse kalender is de wereldlijke kalender.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
         `</div>`;
     } else {
-      if (title) title.textContent = "Nieuwe kalender (Gregoriaans, wereldlijk)";
+      if (title) title.textContent = "Nieuwe/Gregoriaanse kalender";
       body.innerHTML =
-        `<p>In de oude/Juliaanse kalender is het vandaag ${label(todayMmdd("juliaans"))}.</p>` +
+        `<p>Dat is ${label(todayMmdd("juliaans"))} (oud/Juliaans).` +
+        `De Gregoriaanse kalender is de wereldlijke kalender.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
@@ -272,8 +325,8 @@
     if (!cardEntries) return;
     updateHeading(style);
     updateNote(style);
-    const today = todayMmdd(style);
-    const matched = entries.filter((e) => e && e.feestdatum === today);
+    const view = getViewMmdd(style);
+    const matched = entries.filter((e) => e && e.feestdatum === view);
     if (!matched.length) {
       cardEntries.innerHTML =
         "<p>Geen feest of heilige uit deze collectie op deze kalenderdatum.</p>";
@@ -562,6 +615,10 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeNieuwOudDialog();
+  });
+
+  window.addEventListener("popstate", () => {
+    refresh();
   });
 
   if (document.readyState === "loading") {

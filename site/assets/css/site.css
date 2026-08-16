@@ -176,6 +176,31 @@ h2 {
   outline: none;
 }
 
+.day-step {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--gold-soft);
+  cursor: pointer;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.day-step:hover,
+.day-step:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.day-step-gap {
+  display: inline-block;
+  width: 0.65rem;
+}
+
 .today-civil-hint {
   margin-left: 0.35rem;
   font-family: var(--sans, inherit);
