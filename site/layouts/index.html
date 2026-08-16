@@ -6,14 +6,7 @@
   </h1>
 
   <div class="today-card" id="today-card" aria-live="polite">
-    <p class="today-note muted" id="today-note" hidden></p>
     <div id="today-entries">Laden…</div>
-  </div>
-
-  <div class="home-actions">
-    <a class="button" href="{{ "kalender/" | relURL }}">Jaarkalender</a>
-    <a class="button button-secondary" href="{{ "meneon/" | relURL }}">Meneon</a>
-    <a class="button button-secondary" href="{{ "agenda/" | relURL }}">Agenda</a>
   </div>
 
   {{ .Content }}

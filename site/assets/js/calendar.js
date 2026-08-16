@@ -618,7 +618,7 @@
       `<span class="style-toggle" role="group" aria-label="${ariaLabel || "Kalenderstijl Nieuw/Oud"}">` +
       `<button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>` +
       `<button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>` +
-      `<button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>` +
+      `<button type="button" class="style-btn style-help" data-info-tip="nieuw-oud" title="Uitleg Nieuw/Oud">?</button>` +
       `</span>`
     );
   }
@@ -635,17 +635,42 @@
       `>${titleNavInnerHtml}</span>` +
       styleToggleHtml("Kalenderstijl Nieuw/Oud");
     setStyle(getStyle());
-    wireNieuwOudTriggers(row);
+    wireInfoTips(row);
     return row;
   }
 
   function titleNavHtml(opts) {
     const prevDis = opts.prevDisabled ? " disabled" : "";
     const nextDis = opts.nextDisabled ? " disabled" : "";
+    const unit = opts.unit || "dag"; // dag | maand | jaar
+    const prevTitle =
+      unit === "jaar" ? "Vorig jaar" : unit === "maand" ? "Vorige maand" : "Vorige dag";
+    const nextTitle =
+      unit === "jaar"
+        ? "Volgend jaar"
+        : unit === "maand"
+          ? "Volgende maand"
+          : "Volgende dag";
+    const prevBody =
+      unit === "jaar"
+        ? "Ga naar het vorige jaar in deze kalender."
+        : unit === "maand"
+          ? "Ga naar de vorige maand in het lezingenrooster."
+          : "Ga naar de vorige dag.";
+    const nextBody =
+      unit === "jaar"
+        ? "Ga naar het volgende jaar in deze kalender."
+        : unit === "maand"
+          ? "Ga naar de volgende maand in het lezingenrooster."
+          : "Ga naar de volgende dag.";
     return (
-      `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" aria-label="${opts.prevLabel}"${prevDis}>‹</button>` +
-      `<span class="title-nav-label">${opts.titleHtml}</span>` +
-      `<button type="button" class="title-step" data-${opts.deltaAttr}="1" aria-label="${opts.nextLabel}"${nextDis}>›</button>`
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" ` +
+      `aria-label="${opts.prevLabel}"${prevDis} ` +
+      `data-info-tip="nav" data-info-title="${prevTitle}" data-info-body="${prevBody}">‹</button>` +
+      `<span class="title-nav-label" tabindex="0" data-info-tip="nieuw-oud">${opts.titleHtml}</span>` +
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="1" ` +
+      `aria-label="${opts.nextLabel}"${nextDis} ` +
+      `data-info-tip="nav" data-info-title="${nextTitle}" data-info-body="${nextBody}">›</button>`
     );
   }
 
@@ -659,17 +684,12 @@
       onHome && isToday
         ? `Vandaag: ${label(view.mmdd)} ${view.year}`
         : `${label(view.mmdd)} ${view.year}`;
-    let titleInner = titleText;
-    if (style === "juliaans") {
-      const jul = civilToLiturgical(view.year, view.mmdd);
-      titleInner +=
-        ` <span class="today-civil-hint">Juliaans: ${label(mmddFromDate(jul))} ${jul.getFullYear()}</span>`;
-    }
     const navHtml = titleNavHtml({
-      titleHtml: `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>`,
+      titleHtml: titleText,
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
       deltaAttr: "day-delta",
+      unit: "dag",
       prevDisabled: false,
       nextDisabled: false,
     });
@@ -681,7 +701,7 @@
     } else {
       heading.classList.add("title-nav");
       heading.innerHTML = navHtml;
-      wireNieuwOudTriggers(heading);
+      wireInfoTips(heading);
       wireDaySteps(heading);
     }
   }
@@ -704,81 +724,53 @@
     });
   }
 
-  function updateNote(style) {
-    const cardNote = document.getElementById("today-note");
-    if (!cardNote) return;
-    if (!isViewToday(style)) {
-      cardNote.textContent = "";
-      cardNote.hidden = true;
+  let infoCloseTimer = null;
+  let infoAnchor = null;
+
+  function fillInfoPopover(trigger) {
+    const body = document.getElementById("info-popover-body");
+    const title = document.getElementById("info-popover-title");
+    const meer = document.getElementById("info-popover-meer");
+    if (!body || !title) return;
+    const kind = (trigger && trigger.dataset.infoTip) || "nav";
+    if (kind === "nieuw-oud") {
+      const style = getStyle();
+      const civilToday = civilTodayMmdd();
+      const now = new Date();
+      const julianToday = mmddFromDate(
+        civilToLiturgical(now.getFullYear(), civilToday)
+      );
+      if (style === "juliaans") {
+        title.textContent = "Oude kalender (Juliaans)";
+        body.innerHTML =
+          `<p>Wereldlijk is het ${label(civilToday)}. ` +
+          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+          `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
+          `Pascha blijft op dezelfde wereldlijke dag.</p>`;
+      } else {
+        title.textContent = "Nieuwe/Gregoriaanse kalender";
+        body.innerHTML =
+          `<p>Wereldlijk is het ${label(civilToday)}. ` +
+          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+          `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
+          `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+      }
+      if (meer) {
+        meer.hidden = false;
+        meer.innerHTML = achtergrondLink("nieuw-oud", "Meer over Nieuw/Oud");
+      }
       return;
     }
-    if (style === "juliaans") {
-      cardNote.textContent = "";
-      cardNote.hidden = true;
-      return;
+    title.textContent = (trigger && trigger.dataset.infoTitle) || "Navigatie";
+    body.innerHTML = `<p>${(trigger && trigger.dataset.infoBody) || ""}</p>`;
+    if (meer) {
+      meer.hidden = true;
+      meer.innerHTML = "";
     }
-    const now = new Date();
-    const julianToday = mmddFromDate(
-      civilToLiturgical(now.getFullYear(), civilTodayMmdd())
-    );
-    cardNote.textContent = `Oud/Juliaans vandaag: ${label(julianToday)}.`;
-    cardNote.hidden = false;
   }
 
-  let nieuwOudCloseTimer = null;
-  let nieuwOudAnchor = null;
-
-  function fillNieuwOudDialog(style) {
-    const body = document.getElementById("nieuw-oud-body");
-    const title = document.getElementById("nieuw-oud-title");
-    if (!body) return;
-    const civilToday = civilTodayMmdd();
-    const now = new Date();
-    const julianToday = mmddFromDate(
-      civilToLiturgical(now.getFullYear(), civilToday)
-    );
-    if (style === "juliaans") {
-      if (title) title.textContent = "Oude kalender (Juliaans)";
-      body.innerHTML =
-        `<p>Wereldlijk is het ${label(civilToday)}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
-        `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
-        `Pascha blijft op dezelfde wereldlijke dag.</p>` +
-        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
-        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
-        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
-        `</div>`;
-    } else {
-      if (title) title.textContent = "Nieuwe/Gregoriaanse kalender";
-      body.innerHTML =
-        `<p>Wereldlijk is het ${label(civilToday)}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
-        `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
-        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>` +
-        `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
-        `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
-        `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
-        `</div>`;
-    }
-    body.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
-      btn.addEventListener("click", async (ev) => {
-        ev.preventDefault();
-        ev.stopPropagation();
-        cancelNieuwOudClose();
-        await applyStyle(btn.dataset.style);
-        nieuwOudAnchor =
-          document.querySelector("#today-heading [data-open-nieuw-oud]") ||
-          nieuwOudAnchor;
-        fillNieuwOudDialog(btn.dataset.style);
-        if (nieuwOudAnchor) positionNieuwOudPopover(nieuwOudAnchor);
-        const dlg = document.getElementById("nieuw-oud-dialog");
-        if (dlg) dlg.hidden = false;
-      });
-    });
-  }
-
-  function positionNieuwOudPopover(trigger) {
-    const dlg = document.getElementById("nieuw-oud-dialog");
+  function positionInfoPopover(trigger) {
+    const dlg = document.getElementById("info-popover");
     if (!dlg || !trigger) return;
     dlg.style.left = "0px";
     dlg.style.top = "0px";
@@ -797,59 +789,61 @@
     dlg.style.top = `${top}px`;
   }
 
-  function closeNieuwOudDialog() {
-    const dlg = document.getElementById("nieuw-oud-dialog");
+  function closeInfoPopover() {
+    const dlg = document.getElementById("info-popover");
     if (!dlg) return;
     dlg.hidden = true;
-    nieuwOudAnchor = null;
+    infoAnchor = null;
   }
 
-  function cancelNieuwOudClose() {
-    if (nieuwOudCloseTimer) {
-      clearTimeout(nieuwOudCloseTimer);
-      nieuwOudCloseTimer = null;
+  function cancelInfoClose() {
+    if (infoCloseTimer) {
+      clearTimeout(infoCloseTimer);
+      infoCloseTimer = null;
     }
   }
 
-  function scheduleNieuwOudClose() {
-    cancelNieuwOudClose();
-    nieuwOudCloseTimer = setTimeout(closeNieuwOudDialog, 180);
+  function scheduleInfoClose() {
+    cancelInfoClose();
+    infoCloseTimer = setTimeout(closeInfoPopover, 180);
   }
 
-  function openNieuwOudDialog(trigger) {
-    const dlg = document.getElementById("nieuw-oud-dialog");
-    if (!dlg) return;
-    cancelNieuwOudClose();
-    nieuwOudAnchor = trigger || document.querySelector("[data-open-nieuw-oud]");
-    fillNieuwOudDialog(getStyle());
+  function openInfoPopover(trigger) {
+    const dlg = document.getElementById("info-popover");
+    if (!dlg || !trigger) return;
+    cancelInfoClose();
+    infoAnchor = trigger;
+    fillInfoPopover(trigger);
     dlg.hidden = false;
-    positionNieuwOudPopover(nieuwOudAnchor);
+    positionInfoPopover(trigger);
   }
 
-  function wireNieuwOudTriggers(root) {
-    (root || document).querySelectorAll("[data-open-nieuw-oud]").forEach((el) => {
-      if (el.dataset.bound === "1") return;
-      el.dataset.bound = "1";
-      el.addEventListener("mouseenter", () => openNieuwOudDialog(el));
-      el.addEventListener("mouseleave", scheduleNieuwOudClose);
-      el.addEventListener("focus", () => openNieuwOudDialog(el));
-      el.addEventListener("blur", scheduleNieuwOudClose);
+  function wireInfoTips(root) {
+    (root || document).querySelectorAll("[data-info-tip]").forEach((el) => {
+      if (el.dataset.boundInfo === "1") return;
+      el.dataset.boundInfo = "1";
+      el.addEventListener("mouseenter", () => openInfoPopover(el));
+      el.addEventListener("mouseleave", scheduleInfoClose);
+      el.addEventListener("focus", () => openInfoPopover(el));
+      el.addEventListener("blur", scheduleInfoClose);
       el.addEventListener("click", (ev) => {
+        // Navigatieknoppen (‹ ›) moeten gewoon klikken; tip alleen op hover/focus.
+        if (el.classList.contains("title-step")) return;
         ev.preventDefault();
         ev.stopPropagation();
-        const dlg = document.getElementById("nieuw-oud-dialog");
-        if (dlg && !dlg.hidden) {
-          closeNieuwOudDialog();
+        const dlg = document.getElementById("info-popover");
+        if (dlg && !dlg.hidden && infoAnchor === el) {
+          closeInfoPopover();
         } else {
-          openNieuwOudDialog(el);
+          openInfoPopover(el);
         }
       });
     });
-    const dlg = document.getElementById("nieuw-oud-dialog");
+    const dlg = document.getElementById("info-popover");
     if (dlg && dlg.dataset.boundHover !== "1") {
       dlg.dataset.boundHover = "1";
-      dlg.addEventListener("mouseenter", cancelNieuwOudClose);
-      dlg.addEventListener("mouseleave", scheduleNieuwOudClose);
+      dlg.addEventListener("mouseenter", cancelInfoClose);
+      dlg.addEventListener("mouseleave", scheduleInfoClose);
     }
   }
 
@@ -951,7 +945,6 @@
     const cardEntries = document.getElementById("today-entries");
     if (!cardEntries) return;
     updateHeading(style);
-    updateNote(style);
     const view = getViewDate(style);
     if (!mmddExistsInYear(view.mmdd, view.year)) {
       cardEntries.innerHTML =
@@ -1020,6 +1013,7 @@
         prevLabel: "Vorige maand",
         nextLabel: "Volgende maand",
         deltaAttr: "month-delta",
+        unit: "maand",
         prevDisabled: false,
         nextDisabled: false,
       })
@@ -1173,6 +1167,7 @@
         prevLabel: "Vorig jaar",
         nextLabel: "Volgend jaar",
         deltaAttr: "year-delta",
+        unit: "jaar",
         prevDisabled: viewYear <= yearBounds.min,
         nextDisabled: viewYear >= yearBounds.max,
       })
@@ -1661,7 +1656,6 @@
     const style = getStyle();
     setStyle(style);
     updateHeading(style);
-    updateNote(style);
     try {
       const entries = await loadEntries();
       yearBounds = yearBoundsFromEntries(entries);
@@ -1703,7 +1697,7 @@
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeNieuwOudDialog();
+    if (e.key === "Escape") closeInfoPopover();
   });
 
   window.addEventListener("popstate", () => {
@@ -1712,11 +1706,11 @@
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
-      wireNieuwOudTriggers(document);
+      wireInfoTips(document);
       refresh();
     });
   } else {
-    wireNieuwOudTriggers(document);
+    wireInfoTips(document);
     refresh();
   }
 })();

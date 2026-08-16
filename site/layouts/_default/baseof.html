@@ -27,12 +27,10 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <div id="nieuw-oud-dialog" class="info-popover" hidden role="tooltip" aria-labelledby="nieuw-oud-title">
-    <h2 id="nieuw-oud-title">Over deze datum</h2>
-    <div id="nieuw-oud-body"></div>
-    <p class="info-popover-meer">
-      {{ partial "achtergrond-link.html" (dict "id" "nieuw-oud" "text" "Meer over Nieuw/Oud") }}
-    </p>
+  <div id="info-popover" class="info-popover" hidden role="tooltip" aria-labelledby="info-popover-title">
+    <h2 id="info-popover-title">Info</h2>
+    <div id="info-popover-body"></div>
+    <p class="info-popover-meer" id="info-popover-meer" hidden></p>
   </div>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>

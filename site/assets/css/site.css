@@ -233,6 +233,21 @@ h2 {
 
 .title-nav-label {
   min-width: 0;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--gold-soft) 55%, transparent);
+}
+
+.title-nav-label:hover,
+.title-nav-label:focus-visible {
+  text-decoration-color: var(--gold-soft);
+  outline: none;
+}
+
+.title-step[data-info-tip] {
+  cursor: help;
 }
 
 .today-civil-hint {
