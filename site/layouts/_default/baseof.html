@@ -27,7 +27,7 @@
       </div>
     </div>
   </header>
-  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "agenda") (eq .Layout "overzicht") (eq .Layout "uitleg") }} main-wide{{ end }}">
+  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "agenda") (eq .Layout "overzicht") (eq .Section "uitleg") }} main-wide{{ end }}">
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
@@ -35,7 +35,7 @@
     <h2 id="nieuw-oud-title">Over deze datum</h2>
     <div id="nieuw-oud-body"></div>
     <p class="info-popover-meer">
-      <a id="nieuw-oud-meer" href="{{ "uitleg/" | relURL }}#nieuw-oud">Korte uitlegpagina</a>
+      {{ partial "achtergrond-link.html" (dict "id" "nieuw-oud" "text" "Meer over Nieuw/Oud") }}
     </p>
   </div>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}

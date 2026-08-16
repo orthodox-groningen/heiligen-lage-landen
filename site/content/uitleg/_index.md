@@ -1,6 +1,5 @@
 ---
-title: "Uitleg: datums en kalenders"
-layout: uitleg
+title: "Uitleg"
 ---
 
-Korte uitleg over feestdagen, de knop Nieuw/Oud, en agenda-abonnementen.
+Korte achtergrond bij datums, kalenders en agenda. Kies een onderwerp:

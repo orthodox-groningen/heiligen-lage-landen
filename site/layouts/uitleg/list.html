@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="page uitleg-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ with .Pages }}
+    <ul class="achtergrond-index">
+      {{ range .ByTitle }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</article>
+{{ end }}

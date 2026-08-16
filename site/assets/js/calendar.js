@@ -34,6 +34,19 @@
     return new URL(rel.replace(/^\//, ""), siteBase()).href;
   }
 
+  /** Stabiele URL naar een uitleg-onderwerp: site/content/uitleg/<id>.md */
+  function achtergrondUrl(id) {
+    return assetUrl(`uitleg/${id}/`);
+  }
+
+  function achtergrondLink(id, text, className) {
+    const cls = className || "text-link";
+    return (
+      `<a class="${cls}" href="${achtergrondUrl(id)}" data-achtergrond="${id}">` +
+      `${text}</a>`
+    );
+  }
+
   function getStyle() {
     const params = new URLSearchParams(window.location.search);
     const fromQuery = params.get("stijl");
@@ -125,17 +138,17 @@
     if (style === "juliaans") {
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
-        `<p>Deze datum is volgens de <strong>oude / Juliaanse</strong> kalender` +
-        `(in de wereld is het vandaag ${label(civilTodayMmdd())}).</p>` +
+        `<p>Volgens de nieuwe/Gregoriaanse (wereldlijke) kalender is het vandaag ` +
+        `${label(civilTodayMmdd())}.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
         `</div>`;
     } else {
-      if (title) title.textContent = "Nieuwe kalender (Gregoriaans)";
+      if (title) title.textContent = "Nieuwe kalender (Gregoriaans, wereldlijk)";
       body.innerHTML =
-        `<p>Deze datum is volgens de <strong>nieuwe / Gregoriaanse</strong> (wereldlijke) kalender.` +
-        `(volgens de oude kalender is het vandaag ${label(civilTodayMmdd())}).</p>` +
+        `<p>Volgens de oude/Juliaanse kalender is het vandaag ` +
+        `${label(todayMmdd("juliaans"))}.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
@@ -495,9 +508,8 @@
         "nieuw";
       hint.innerHTML =
         stijl === "oud"
-          ? `Oude kalender: afspraken op burgerlijke vierdatum (+13). Titel bevat de Juliaanse feestdatum. <button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`
-          : `Nieuwe kalender: afspraken op de feestdatum zelf. <button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
-      wireNieuwOudTriggers(hint);
+          ? `Oude kalender: afspraken op burgerlijke vierdatum (+13). Titel bevat de Juliaanse feestdatum. ${achtergrondLink("nieuw-oud", "Meer uitleg")}`
+          : `Nieuwe kalender: afspraken op de feestdatum zelf. ${achtergrondLink("nieuw-oud", "Meer uitleg")}`;
     }
     if (all) {
       const files = [

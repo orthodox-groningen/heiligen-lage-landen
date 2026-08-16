@@ -1,0 +1,7 @@
+{{/* Link naar een achtergrond/uitleg-onderwerp: id + tekst.
+     Gebruik: {{ partial "achtergrond-link.html" (dict "id" "nieuw-oud" "text" "Meer over Nieuw/Oud") }}
+*/}}
+{{- $id := .id -}}
+{{- $text := .text -}}
+{{- $class := .class | default "text-link" -}}
+<a class="{{ $class }}" href="{{ printf "uitleg/%s/" $id | relURL }}" data-achtergrond="{{ $id }}">{{ $text }}</a>

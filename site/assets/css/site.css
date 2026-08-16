@@ -551,6 +551,16 @@ a.text-link {
   color: var(--gold-soft);
 }
 
+.achtergrond-index {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.achtergrond-index li {
+  margin: 0.55rem 0;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.25rem 0 2rem;

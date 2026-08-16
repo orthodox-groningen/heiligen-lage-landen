@@ -305,8 +305,8 @@ def ensure_hand_owned_indexes() -> None:
         },
         {
             "path": CONTENT / "uitleg" / "_index.md",
-            "title": "Uitleg: datums en kalenders",
-            "layout": "uitleg",
+            "title": "Uitleg",
+            "layout": None,
         },
     ]
 
@@ -330,10 +330,80 @@ def ensure_hand_owned_indexes() -> None:
             raise SystemExit(
                 f"{_rel(path)}: front matter 'title' ontbreekt of is leeg"
             )
+        changed = False
         if expected_layout is not None and meta.get("layout") != expected_layout:
             meta["layout"] = expected_layout
+            changed = True
+        if expected_layout is None and meta.get("layout") == "uitleg":
+            # Legacy: oude monolithische uitleg-layout verwijderen.
+            del meta["layout"]
+            changed = True
+        if changed:
             write_text(path, _dump_hugo_markdown(meta, body))
-            print(f"Layout hersteld naar {expected_layout!r}: {_rel(path)}")
+            print(f"Front matter bijgewerkt: {_rel(path)}")
+
+
+# Onderwerpen onder site/content/uitleg/<id>.md — handmatig, stabiele ids.
+ACHTERGROND_TOPICS: list[dict[str, str]] = [
+    {
+        "id": "nieuw-oud",
+        "title": "Nieuw / Oud — wat doet de knop?",
+        "description": "Hoe we vandaag rekenen op de nieuwe of oude kalender",
+    },
+    {
+        "id": "feestdatum",
+        "title": "Feestdatum",
+        "description": "Wat een vaste feestdatum wel en niet betekent",
+    },
+    {
+        "id": "datumpagina",
+        "title": "Datumpagina’s",
+        "description": "Bladeren via de jaarkalender naar een willekeurige dag",
+    },
+    {
+        "id": "kleuren",
+        "title": "Kleuren in de jaarkalender",
+        "description": "Legenda van de kleuren op de jaarkalender",
+    },
+    {
+        "id": "agenda",
+        "title": "Agenda (ICS)",
+        "description": "Abonneren op heiligen- en feestfeeds in nieuw of oud",
+    },
+]
+
+
+def ensure_achtergrond_topics() -> None:
+    """Zorg dat bekende uitleg-onderwerpen bestaan met niet-lege title.
+
+    Body en overige front matter blijven onaangeroerd. Ontbrekende bestanden
+    krijgen een korte stub.
+    """
+    uitleg_dir = CONTENT / "uitleg"
+    uitleg_dir.mkdir(parents=True, exist_ok=True)
+    for topic in ACHTERGROND_TOPICS:
+        path = uitleg_dir / f"{topic['id']}.md"
+        if not path.exists():
+            meta = {
+                "title": topic["title"],
+                "description": topic["description"],
+            }
+            body = (
+                f"_{topic['description']}_\n\n"
+                "(Tekst nog toe te voegen.)\n"
+            )
+            write_text(path, _dump_hugo_markdown(meta, body))
+            print(f"Aangemaakt: {_rel(path)}")
+            continue
+        try:
+            meta, _body = _split_hugo_markdown(path.read_text(encoding="utf-8"))
+        except ValueError as exc:
+            raise SystemExit(f"{_rel(path)}: {exc}") from exc
+        title = meta.get("title")
+        if not isinstance(title, str) or not title.strip():
+            raise SystemExit(
+                f"{_rel(path)}: front matter 'title' ontbreekt of is leeg"
+            )
 
 
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
@@ -491,6 +561,7 @@ def main() -> int:
         clean_generated()
     entries = load_entries()
     ensure_hand_owned_indexes()
+    ensure_achtergrond_topics()
     write_generated_indexes()
     for entry in entries:
         write_entry_page(entry)

@@ -14,11 +14,12 @@ from generate import (  # noqa: E402
     CONTENT,
     _dump_hugo_markdown,
     _split_hugo_markdown,
+    ensure_achtergrond_topics,
     ensure_hand_owned_indexes,
 )
 
 
-def test_split_and_dump_preserves_body_and_extra_front_matter(tmp_path: Path) -> None:
+def test_split_and_dump_preserves_body_and_extra_front_matter() -> None:
     text = (
         '---\n'
         'title: "Agenda (ICS)"\n'
@@ -38,7 +39,9 @@ def test_split_and_dump_preserves_body_and_extra_front_matter(tmp_path: Path) ->
     assert body2.strip() == "Mijn eigen intro."
 
 
-def test_ensure_hand_owned_indexes_keeps_body(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_ensure_hand_owned_indexes_keeps_body(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     content = tmp_path / "content"
     (content / "kalender").mkdir(parents=True)
     (content / "overzicht").mkdir(parents=True)
@@ -62,7 +65,8 @@ def test_ensure_hand_owned_indexes_keeps_body(tmp_path: Path, monkeypatch: pytes
         '---\ntitle: "Agenda (ICS)"\nlayout: agenda\n---\n\nx\n',
         encoding="utf-8",
     )
-    (content / "uitleg" / "_index.md").write_text(
+    uitleg = content / "uitleg" / "_index.md"
+    uitleg.write_text(
         '---\ntitle: "Uitleg"\nlayout: uitleg\n---\n\ny\n',
         encoding="utf-8",
     )
@@ -75,34 +79,32 @@ def test_ensure_hand_owned_indexes_keeps_body(tmp_path: Path, monkeypatch: pytes
     assert meta["layout"] == "kalender"
     assert "Blijf staan." in body
 
+    umeta, ubody = _split_hugo_markdown(uitleg.read_text(encoding="utf-8"))
+    assert "layout" not in umeta
+    assert ubody.strip() == "y"
 
-def test_ensure_rejects_empty_title(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+
+def test_ensure_rejects_empty_title(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     content = tmp_path / "content"
     content.mkdir()
-    (content / "_index.md").write_text("---\ntitle: \"\"\n---\n\n", encoding="utf-8")
-    for name in ("kalender", "overzicht", "agenda", "uitleg"):
-        d = content / name
-        d.mkdir()
-        (d / "_index.md").write_text(
-            f'---\ntitle: "{name}"\nlayout: {name if name != "agenda" else "agenda"}\n---\n\n',
-            encoding="utf-8",
-        )
-    # Fix agenda layout name
-    (content / "agenda" / "_index.md").write_text(
-        '---\ntitle: "Agenda"\nlayout: agenda\n---\n\n',
-        encoding="utf-8",
-    )
+    (content / "_index.md").write_text('---\ntitle: ""\n---\n\n', encoding="utf-8")
+    (content / "kalender").mkdir()
     (content / "kalender" / "_index.md").write_text(
-        '---\ntitle: "K"\nlayout: kalender\n---\n\n',
-        encoding="utf-8",
+        '---\ntitle: "K"\nlayout: kalender\n---\n\n', encoding="utf-8"
     )
+    (content / "overzicht").mkdir()
     (content / "overzicht" / "_index.md").write_text(
-        '---\ntitle: "O"\nlayout: overzicht\n---\n\n',
-        encoding="utf-8",
+        '---\ntitle: "O"\nlayout: overzicht\n---\n\n', encoding="utf-8"
     )
+    (content / "agenda").mkdir()
+    (content / "agenda" / "_index.md").write_text(
+        '---\ntitle: "Agenda"\nlayout: agenda\n---\n\n', encoding="utf-8"
+    )
+    (content / "uitleg").mkdir()
     (content / "uitleg" / "_index.md").write_text(
-        '---\ntitle: "U"\nlayout: uitleg\n---\n\n',
-        encoding="utf-8",
+        '---\ntitle: "U"\n---\n\n', encoding="utf-8"
     )
 
     monkeypatch.setattr("generate.CONTENT", content)
@@ -110,7 +112,23 @@ def test_ensure_rejects_empty_title(tmp_path: Path, monkeypatch: pytest.MonkeyPa
         ensure_hand_owned_indexes()
 
 
+def test_ensure_achtergrond_topics_creates_stub(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    (content / "uitleg").mkdir(parents=True)
+    monkeypatch.setattr("generate.CONTENT", content)
+    ensure_achtergrond_topics()
+    path = content / "uitleg" / "nieuw-oud.md"
+    assert path.is_file()
+    meta, body = _split_hugo_markdown(path.read_text(encoding="utf-8"))
+    assert "Nieuw" in meta["title"]
+    assert "toe te voegen" in body
+
+
 def test_repo_hand_owned_indexes_ok() -> None:
     """Live content/ moet de checks doorstaan."""
     ensure_hand_owned_indexes()
+    ensure_achtergrond_topics()
     assert (CONTENT / "kalender" / "_index.md").is_file()
+    assert (CONTENT / "uitleg" / "nieuw-oud.md").is_file()

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="page uitleg-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p class="hint">
+    <a href="{{ "uitleg/" | relURL }}">← Alle uitleg</a>
+  </p>
+</article>
+{{ end }}

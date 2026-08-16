@@ -4,7 +4,7 @@
   {{ .Content }}
   <p class="hint">
     Gemarkeerde dagen openen de datumpagina. Kleuren:
-    <a href="{{ "uitleg/" | relURL }}#kleuren">legenda</a>.
+    {{ partial "achtergrond-link.html" (dict "id" "kleuren" "text" "legenda") }}.
     “Vandaag” volgt
     <button type="button" class="text-link" data-open-nieuw-oud>Nieuw/Oud</button>.
   </p>
