@@ -1,48 +1,377 @@
-# Feestoverrides voor liturgische Apostel/Evangelie-lezingen.
-# Match: paascyclus_offset (t.o.v. Orthodox Pascha) of mmdd (feestdatum-dagnaam).
-# modus: vervangen (default) | toevoegen (fase 3)
+# Feestoverrides voor liturgische Apostel/Evangelie-lezingen (Moskou / Slavisch).
+# Match: paascyclus_offset of mmdd (feestdatum-dagnaam).
+# Bronbasis: Azbyka ukazatel’ + MP-kalender; ROCOR bij twijfel.
 
 overrides:
+  # --- Paascyclus: Pascha tot Allerheiligen ---
   - id: pascha
-    match:
-      paascyclus_offset: 0
-    modus: vervangen
-    apostel:
-      - ref: "Hand. 1:1-8"
-        zacalo: 1
-    evangelie:
-      - ref: "Joh. 1:1-17"
-        zacalo: 1
+    match: { paascyclus_offset: 0 }
+    apostel: [{ ref: "Hand. 1:1-8", zacalo: 1 }]
+    evangelie: [{ ref: "Joh. 1:1-17", zacalo: 1 }]
     regels: [R2]
     bron:
       label: "Azbyka — ukazatel’ (Pascha)"
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
+  - id: lichte-maandag
+    match: { paascyclus_offset: 1 }
+    apostel: [{ ref: "Hand. 1:12-17, 21-26" }]
+    evangelie: [{ ref: "Joh. 1:18-28" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Bright Monday)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: thomaszondag
+    match: { paascyclus_offset: 7 }
+    apostel: [{ ref: "Hand. 5:12-20" }]
+    evangelie: [{ ref: "Joh. 20:19-31" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Thomaszondag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-mirredraagsters
+    match: { paascyclus_offset: 14 }
+    apostel: [{ ref: "Hand. 6:1-7" }]
+    evangelie: [{ ref: "Mark. 15:43-16:8" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Mirredraagsters)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-verlamde
+    match: { paascyclus_offset: 21 }
+    apostel: [{ ref: "Hand. 9:32-42" }]
+    evangelie: [{ ref: "Joh. 5:1-15" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Verlamde)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: midden-pinksterfeest
+    match: { paascyclus_offset: 24 }
+    apostel: [{ ref: "Hand. 14:6-18" }]
+    evangelie: [{ ref: "Joh. 7:14-30" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Mid-Pentecost)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-samaritaanse
+    match: { paascyclus_offset: 28 }
+    apostel: [{ ref: "Hand. 11:19-26, 29-30" }]
+    evangelie: [{ ref: "Joh. 4:5-42" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Samaritaanse)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-blinde
+    match: { paascyclus_offset: 35 }
+    apostel: [{ ref: "Hand. 16:16-34" }]
+    evangelie: [{ ref: "Joh. 9:1-38" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Blinde)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: hemelvaart
+    match: { paascyclus_offset: 39 }
+    apostel: [{ ref: "Hand. 1:1-12" }]
+    evangelie: [{ ref: "Luc. 24:36-53" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Hemelvaart)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-vaderen-eerste-concilie
+    match: { paascyclus_offset: 42 }
+    apostel: [{ ref: "Hand. 20:16-18, 28-36" }]
+    evangelie: [{ ref: "Joh. 17:1-13" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Vaderen)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: pinksteren
+    match: { paascyclus_offset: 49 }
+    apostel: [{ ref: "Hand. 2:1-11" }]
+    evangelie: [{ ref: "Joh. 7:37-52; 8:12" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Pinksteren)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: geestesmaandag
+    match: { paascyclus_offset: 50 }
+    apostel: [{ ref: "Ef. 5:9-19" }]
+    evangelie: [{ ref: "Matt. 18:10-20" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Maandag van de Geest)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: allerheiligen-zondag
+    match: { paascyclus_offset: 56 }
+    apostel: [{ ref: "Heb. 11:33-12:2" }]
+    evangelie: [{ ref: "Matt. 10:32-33, 37-38; 19:27-30" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Allerheiligen)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  # --- Voorvasten / Grote Vasten / Grote Week ---
+  - id: zondag-laatste-oordeel
+    match: { paascyclus_offset: -56 }
+    apostel: [{ ref: "1 Kor. 8:8-9:2" }]
+    evangelie: [{ ref: "Matt. 25:31-46" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Vleesvaarwel)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: vergevingszondag
+    match: { paascyclus_offset: -49 }
+    apostel: [{ ref: "Rom. 13:11-14:4" }]
+    evangelie: [{ ref: "Matt. 6:14-21" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Vergevingszondag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-orthodoxie
+    match: { paascyclus_offset: -42 }
+    apostel: [{ ref: "Heb. 11:24-26, 32-12:2" }]
+    evangelie: [{ ref: "Joh. 1:43-51" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Orthodoxiezondag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-gregorius-palamas
+    match: { paascyclus_offset: -35 }
+    apostel: [{ ref: "Heb. 1:10-2:3" }]
+    evangelie: [{ ref: "Mark. 2:1-12" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Gregorius Palamas)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-kruisverering
+    match: { paascyclus_offset: -28 }
+    apostel: [{ ref: "Heb. 4:14-5:6" }]
+    evangelie: [{ ref: "Mark. 8:34-9:1" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Kruisverering)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-johannes-klimacus
+    match: { paascyclus_offset: -21 }
+    apostel: [{ ref: "Heb. 6:13-20" }]
+    evangelie: [{ ref: "Mark. 9:17-31" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Klimacus)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: zondag-maria-van-egypte
+    match: { paascyclus_offset: -14 }
+    apostel: [{ ref: "Heb. 9:11-14" }]
+    evangelie: [{ ref: "Mark. 10:32-45" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Maria van Egypte)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: lazarus-zaterdag
+    match: { paascyclus_offset: -8 }
+    apostel: [{ ref: "Heb. 12:28-13:8" }]
+    evangelie: [{ ref: "Joh. 11:1-45" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Lazarus)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
   - id: palmzondag
-    match:
-      paascyclus_offset: -7
-    modus: vervangen
-    apostel:
-      - ref: "Fil. 4:4-9"
-    evangelie:
-      - ref: "Joh. 12:1-18"
+    match: { paascyclus_offset: -7 }
+    apostel: [{ ref: "Fil. 4:4-9" }]
+    evangelie: [{ ref: "Joh. 12:1-18" }]
     regels: [R2]
     bron:
       label: "Azbyka — ukazatel’ (Palmzondag)"
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
+  - id: grote-donderdag
+    match: { paascyclus_offset: -3 }
+    apostel: [{ ref: "1 Kor. 11:23-32" }]
+    evangelie: [{ ref: "Matt. 26:2-20; Joh. 13:3-17; Matt. 26:21-39; Luc. 22:43-45; Matt. 26:40-27:2" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Grote Donderdag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: grote-zaterdag
+    match: { paascyclus_offset: -1 }
+    apostel: [{ ref: "Rom. 6:3-11" }]
+    evangelie: [{ ref: "Matt. 28:1-20" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Grote Zaterdag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  # --- Vaste grote feesten ---
+  - id: besnijdenis-des-heren
+    match: { mmdd: "01-01" }
+    apostel: [{ ref: "Kol. 2:8-12" }]
+    evangelie: [{ ref: "Luc. 2:20-21, 40-52" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Besnijdenis)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
   - id: theofanie
-    match:
-      mmdd: "01-06"
-    modus: vervangen
-    apostel:
-      - ref: "Tit. 2:11-14; 3:4-7"
-    evangelie:
-      - ref: "Matt. 3:13-17"
+    match: { mmdd: "01-06" }
+    apostel: [{ ref: "Tit. 2:11-14; 3:4-7" }]
+    evangelie: [{ ref: "Matt. 3:13-17" }]
     regels: [R2]
     bron:
       label: "Azbyka / MP — Theofanie"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: ontmoeting-in-de-tempel
+    match: { mmdd: "02-02" }
+    apostel: [{ ref: "Heb. 7:7-17" }]
+    evangelie: [{ ref: "Luc. 2:22-40" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Ontmoeting)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: aankondiging
+    match: { mmdd: "03-25" }
+    apostel: [{ ref: "Heb. 2:11-18" }]
+    evangelie: [{ ref: "Luc. 1:24-38" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Aankondiging)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: geboorte-johannes-doper
+    match: { mmdd: "06-24" }
+    apostel: [{ ref: "Rom. 13:11-14:4" }]
+    evangelie: [{ ref: "Luc. 1:5-25, 57-68, 76, 80" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Geboorte Johannes)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: petrus-en-paulus
+    match: { mmdd: "06-29" }
+    apostel: [{ ref: "2 Kor. 11:21-12:9" }]
+    evangelie: [{ ref: "Matt. 16:13-19" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Petrus en Paulus)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: transfiguratie
+    match: { mmdd: "08-06" }
+    apostel: [{ ref: "2 Petr. 1:10-19" }]
+    evangelie: [{ ref: "Matt. 17:1-9" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Transfiguratie)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: ontslapen-moeder-gods
+    match: { mmdd: "08-15" }
+    apostel: [{ ref: "Fil. 2:5-11" }]
+    evangelie: [{ ref: "Luc. 10:38-42; 11:27-28" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Ontslapen)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: onthoofding-johannes-doper
+    match: { mmdd: "08-29" }
+    apostel: [{ ref: "Hand. 13:25-32" }]
+    evangelie: [{ ref: "Mark. 6:14-30" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Onthoofding)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: geboorte-moeder-gods
+    match: { mmdd: "09-08" }
+    apostel: [{ ref: "Fil. 2:5-11" }]
+    evangelie: [{ ref: "Luc. 10:38-42; 11:27-28" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Geboorte Moeder Gods)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: kruisverheffing
+    match: { mmdd: "09-14" }
+    apostel: [{ ref: "1 Kor. 1:18-24" }]
+    evangelie: [{ ref: "Joh. 19:6-11, 13-20, 25-28, 30-35" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Kruisverheffing)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: tempelgang-moeder-gods
+    match: { mmdd: "11-21" }
+    apostel: [{ ref: "Heb. 9:1-7" }]
+    evangelie: [{ ref: "Luc. 10:38-42; 11:27-28" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Tempelgang)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: kerst
+    match: { mmdd: "12-25" }
+    apostel: [{ ref: "Gal. 4:4-7" }]
+    evangelie: [{ ref: "Matt. 2:1-12" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Kerst)"
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"

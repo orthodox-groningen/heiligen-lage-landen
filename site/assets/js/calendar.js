@@ -770,6 +770,58 @@
     return res.json();
   }
 
+  let lezingenIndex = null;
+
+  async function loadLezingenIndex() {
+    if (lezingenIndex) return lezingenIndex;
+    const url = assetUrl("data/lezingen-dagen.json");
+    const res = await fetch(url);
+    if (!res.ok) {
+      lezingenIndex = { nieuw: {}, oud: {} };
+      return lezingenIndex;
+    }
+    lezingenIndex = await res.json();
+    return lezingenIndex;
+  }
+
+  function lezingenForDay(year, mmdd, style) {
+    const stil = style === "juliaans" ? "oud" : "nieuw";
+    const root = lezingenIndex || {};
+    return ((root[stil] || {})[String(year)] || {})[mmdd] || null;
+  }
+
+  function renderLezingenHtml(lez) {
+    if (!lez || lez.status !== "gevonden") {
+      return (
+        `<div class="day-lezingen" id="day-lezingen">` +
+        `<h2 class="day-lezingen-title">Lezingen</h2>` +
+        `<p class="muted">Nog geen feestoverride voor deze dag ` +
+        `(doorlopende weekreeks volgt). ` +
+        `${achtergrondLink("lezingen", "Uitleg lezingen")}</p></div>`
+      );
+    }
+    const apostel = (lez.apostel || [])
+      .map((a) => a.ref)
+      .filter(Boolean)
+      .join("; ");
+    const evangelie = (lez.evangelie || [])
+      .map((e) => e.ref)
+      .filter(Boolean)
+      .join("; ");
+    const regels = (lez.regels || []).join(", ");
+    const regelsHtml = regels
+      ? ` <span class="meta">(${regels} · ${achtergrondLink("lezingen", "uitleg")})</span>`
+      : ` ${achtergrondLink("lezingen", "Uitleg")}`;
+    return (
+      `<div class="day-lezingen" id="day-lezingen">` +
+      `<h2 class="day-lezingen-title">Lezingen${regelsHtml}</h2>` +
+      `<ul>` +
+      (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
+      (evangelie ? `<li><strong>Evangelie:</strong> ${evangelie}</li>` : "") +
+      `</ul></div>`
+    );
+  }
+
   function renderToday(entries, style) {
     const cardEntries = document.getElementById("today-entries");
     if (!cardEntries) return;
@@ -788,13 +840,18 @@
     const vastenHtml = vasten
       ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
       : "";
+    const lezHtml = renderLezingenHtml(
+      lezingenForDay(view.year, view.mmdd, style)
+    );
     if (!matched.length) {
       cardEntries.innerHTML =
         vastenHtml +
+        lezHtml +
         "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
     } else {
       cardEntries.innerHTML =
         vastenHtml +
+        lezHtml +
         "<ul>" +
         matched
           .map((e) => {
@@ -1365,7 +1422,10 @@
     updateHeading(style);
     updateNote(style);
     try {
-      const entries = await loadEntries();
+      const [entries] = await Promise.all([
+        loadEntries(),
+        loadLezingenIndex(),
+      ]);
       yearBounds = yearBoundsFromEntries(entries);
       viewYear = clampYear(viewYear);
       renderToday(entries, style);

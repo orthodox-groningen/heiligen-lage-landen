@@ -248,6 +248,26 @@ h2 {
   font-size: 0.98rem;
 }
 
+.day-lezingen {
+  margin: 0 0 1rem;
+}
+
+.day-lezingen-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+.day-lezingen ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.day-lezingen li + li {
+  margin-top: 0.25rem;
+}
+
 .today-entries ul {
   margin: 0;
   padding-left: 1.1rem;

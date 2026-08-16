@@ -122,6 +122,8 @@ twijfel). Publieke spiegel: `/uitleg/lezingen/` (gegenereerd bij `generate.py`).
 
 Data: `data/lezingen/` (`feest-overrides.yaml`, `meta.yaml`). Engine:
 `scripts/lezingen.py`. Machine-leesbare voorbeelden in de spec sturen pytest.
+Build schrijft `site/static/data/lezingen-dagen.json` (override-hits per
+stijl/jaar/mmdd); de kalender-UI toont Apostel/Evangelie op vandaag en `/datum/`.
 
 ## Observances (kleuren)
 

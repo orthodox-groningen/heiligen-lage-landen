@@ -84,7 +84,7 @@ Drukwerk (jaarlijks): *Богослужебные указания* (Издат�
 | Regel | Status in code |
 |-------|----------------|
 | R1 | deels (kalenderhulp via `kalender.py`) |
-| R2 | ja (`scripts/lezingen.py` + `data/lezingen/`) |
+| R2 | ja (feestoverrides + `lezingen-dagen.json` + UI vandaag/datum) |
 | R3 | pending |
 | R4 | pending |
 | R5 | pending |
@@ -148,6 +148,44 @@ verwacht:
     - R2
 bron:
   label: "Azbyka — ukazatel’ (Palmzondag)"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-16"
+```
+
+```lezingen-voorbeeld
+id: pinksteren-2025
+status: implemented
+jaar: 2025
+mmdd: "06-08"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Hand. 2:1-11"
+  evangelie:
+    - ref: "Joh. 7:37-52; 8:12"
+  regels:
+    - R2
+bron:
+  label: "Azbyka — ukazatel’ (Pinksteren)"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-16"
+```
+
+```lezingen-voorbeeld
+id: kerst-nieuw
+status: implemented
+jaar: 2026
+mmdd: "12-25"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Gal. 4:4-7"
+  evangelie:
+    - ref: "Matt. 2:1-12"
+  regels:
+    - R2
+bron:
+  label: "Azbyka — ukazatel’ (Kerst)"
   url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
   geraadpleegd: "2026-08-16"
 ```

@@ -190,3 +190,37 @@ def resultaat_matches_verwacht(
     if exp_r and list(result.regels) != exp_r:
         errors.append(f"regels: got {result.regels!r}, expected {exp_r!r}")
     return errors
+
+
+def build_lezingen_dagen_payload(
+    years: range | list[int],
+    *,
+    overrides: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Precompute override-hits voor UI: stijl → jaar → mmdd → resultaat."""
+    ovs = overrides if overrides is not None else load_overrides()
+    out: dict[str, Any] = {"nieuw": {}, "oud": {}}
+    for stijl in ("nieuw", "oud"):
+        by_year: dict[str, dict[str, Any]] = {}
+        for year in years:
+            by_mmdd: dict[str, Any] = {}
+            for ov in ovs:
+                match = ov.get("match") or {}
+                if "paascyclus_offset" in match:
+                    mmdd = _mmdd_for_offset(
+                        year, int(match["paascyclus_offset"]), stijl
+                    )
+                elif "mmdd" in match:
+                    mmdd = str(match["mmdd"])
+                else:
+                    continue
+                result = resolve_lezingen(year, mmdd, stijl, overrides=ovs)
+                if result.status != "gevonden":
+                    continue
+                payload = result.as_dict()
+                payload["override_id"] = result.override_id
+                by_mmdd[mmdd] = payload
+            if by_mmdd:
+                by_year[str(year)] = by_mmdd
+        out[stijl] = by_year
+    return out

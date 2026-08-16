@@ -17,7 +17,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
-from lezingen import SPEC_PATH, spec_body_for_uitleg  # noqa: E402
+from lezingen import (  # noqa: E402
+    SPEC_PATH,
+    build_lezingen_dagen_payload,
+    spec_body_for_uitleg,
+)
 from vasten import load_vastenregels, render_vasten_uitleg  # noqa: E402
 from kalender import (  # noqa: E402
     format_mmdd,
@@ -621,6 +625,16 @@ def sync_lezingen_uitleg() -> None:
     write_text(path, _dump_hugo_markdown(meta, body))
 
 
+def write_lezingen_json() -> None:
+    """Precompute feestoverride-lezingen voor ICS-jaarvenster (nieuw + oud)."""
+    years = list(occurrence_years())
+    payload = build_lezingen_dagen_payload(years)
+    write_text(
+        STATIC_DATA / "lezingen-dagen.json",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+    )
+
+
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
     years = list(occurrence_years())
     payload = []
@@ -963,6 +977,7 @@ def clean_generated() -> None:
         "content/feesten",
         "content/vasten",
         "static/data/entries.json",
+        "static/data/lezingen-dagen.json",
     ):
         path = SITE / rel
         if path.is_dir():
@@ -995,6 +1010,7 @@ def main() -> int:
     for entry in entries:
         write_entry_page(entry)
     write_entries_json(entries)
+    write_lezingen_json()
     write_ics(entries)
     print(f"Gegenereerd: {len(entries)} entries.")
     return 0

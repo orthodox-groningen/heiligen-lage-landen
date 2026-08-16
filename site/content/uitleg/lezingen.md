@@ -93,7 +93,7 @@ Drukwerk (jaarlijks): *Богослужебные указания* (Издат�
 | Regel | Status in code |
 |-------|----------------|
 | R1 | deels (kalenderhulp via `kalender.py`) |
-| R2 | ja (`scripts/lezingen.py` + `data/lezingen/`) |
+| R2 | ja (feestoverrides + `lezingen-dagen.json` + UI vandaag/datum) |
 | R3 | pending |
 | R4 | pending |
 | R5 | pending |
