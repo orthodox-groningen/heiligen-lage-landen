@@ -3,35 +3,112 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  <p>
-    Kies wat er in de feed moet en of die voor de <strong>nieuwe</strong> of
-    <strong>oude</strong> kalender is.
-    {{ partial "achtergrond-link.html" (dict "id" "agenda" "text" "Meer uitleg") }}.
-  </p>
-
-  <div class="filter-bar" role="group" aria-label="Inhoud">
-    <label class="chip"><input type="checkbox" name="ics-show" value="heilige" checked> Heiligen</label>
-    <label class="chip"><input type="checkbox" name="ics-show" value="feest" checked> Feesten</label>
-    <label class="chip"><input type="checkbox" name="ics-show" value="vasten" checked> Vasten</label>
-  </div>
-
-  <div class="filter-bar" role="group" aria-label="Kalenderstijl voor ICS">
-    <label class="chip"><input type="radio" name="ics-stijl" value="nieuw" checked> Nieuw (burgerlijke feestdatum)</label>
-    <label class="chip"><input type="radio" name="ics-stijl" value="oud"> Oud (vierdatum in westerse agenda, +13)</label>
-  </div>
-
-  <p class="hint" id="ics-hint"></p>
-  <p>
-    <a class="button" id="ics-download" href="#">Download / abonneer ICS</a>
-  </p>
-
-  <h2>Google Calendar</h2>
-  <ol>
-    <li>Open Google Calendar → Instellingen → Agenda toevoegen → Via URL.</li>
-    <li>Plak de URL van de knop hierboven (of rechtsklik → linkadres kopiëren).</li>
+  <ol class="agenda-stappen">
+    <li>
+      <h2>Wat wilt u in uw agenda?</h2>
+      <p>U mag één, twee of alle drie aanvinken.</p>
+      <div class="filter-bar" role="group" aria-label="Soort dagen">
+        <label class="chip"><input type="checkbox" name="ics-show" value="heilige" checked> Heiligen</label>
+        <label class="chip"><input type="checkbox" name="ics-show" value="feest" checked> Feesten</label>
+        <label class="chip"><input type="checkbox" name="ics-show" value="vasten" checked> Vasten</label>
+      </div>
+    </li>
+    <li>
+      <h2>Nieuwe of oude kalender?</h2>
+      <p>
+        Kies de stand van uw parochie.
+        {{ partial "achtergrond-link.html" (dict "id" "nieuw-oud" "text" "Uitleg Nieuw/Oud") }}.
+      </p>
+      <div class="filter-bar" role="group" aria-label="Kalenderstand">
+        <label class="chip"><input type="radio" name="ics-stijl" value="nieuw" checked> Nieuw — Kerst op 25 december</label>
+        <label class="chip"><input type="radio" name="ics-stijl" value="oud"> Oud — Kerst op 7 januari</label>
+      </div>
+    </li>
+    <li>
+      <h2>Downloaden of abonneren?</h2>
+      <div class="filter-bar" role="group" aria-label="Downloaden of abonneren">
+        <label class="chip"><input type="radio" name="ics-modus" value="abonneren" checked> Abonneren (blijft bijgewerkt)</label>
+        <label class="chip"><input type="radio" name="ics-modus" value="downloaden"> Downloaden (eenmalig bestand)</label>
+      </div>
+    </li>
   </ol>
 
-  <h2>Alle vaste feeds</h2>
-  <ul class="ics-list" id="ics-all-links"></ul>
+  <div class="agenda-actie">
+    <p class="agenda-samenvatting" id="ics-samenvatting"></p>
+    <p>
+      <a class="button" id="ics-download" hidden href="#">Download de kalender</a>
+      <button type="button" class="button" id="ics-copy" hidden>Kopieer de agenda-link</button>
+    </p>
+    <p class="hint" id="ics-status" aria-live="polite"></p>
+    <p class="ics-url-row" id="ics-url-row" hidden>
+      <label for="ics-url">Agenda-link</label>
+      <input id="ics-url" type="text" readonly spellcheck="false">
+    </p>
+  </div>
+
+  <section class="agenda-howto" id="ics-howto-abonneren">
+    <h2>Abonneren: wat u met de knop doet</h2>
+    <p>
+      Druk op <strong>Kopieer de agenda-link</strong>. Daarna plakt u die link
+      in de agenda-app. Kies hieronder uw app.
+    </p>
+
+    <h3>Google Calendar (computer)</h3>
+    <ol>
+      <li>Druk op de knop hierboven (de link staat nu op het klembord).</li>
+      <li>Open <a href="https://calendar.google.com">Google Calendar</a> in de browser.</li>
+      <li>Klik op het tandwiel → <strong>Instellingen</strong>.</li>
+      <li>Kies <strong>Agenda toevoegen</strong> → <strong>Via URL</strong>.</li>
+      <li>Plak de link en bevestig.</li>
+    </ol>
+
+    <h3>iPhone, iPad of Mac (Apple Agenda)</h3>
+    <ol>
+      <li>Druk op de knop hierboven.</li>
+      <li>
+        Op de iPhone of iPad: <strong>Instellingen</strong> →
+        <strong>Agenda</strong> → <strong>Agenda-accounts</strong> →
+        <strong>Account toevoegen</strong> → <strong>Andere</strong> →
+        <strong>Voeg een agenda-abonnement toe</strong>. Plak de link.
+      </li>
+      <li>
+        Op de Mac: open Agenda → <strong>Archief</strong> →
+        <strong>Nieuw agenda-abonnement</strong>. Plak de link.
+      </li>
+    </ol>
+
+    <h3>Outlook (computer)</h3>
+    <ol>
+      <li>Druk op de knop hierboven.</li>
+      <li>Open Outlook op het web of in de app.</li>
+      <li>Ga naar het toevoegen van een agenda <strong>via internet</strong> of <strong>via URL</strong>.</li>
+      <li>Plak de link. (De exacte namen van de menu’s verschillen per versie.)</li>
+    </ol>
+
+    <h3>Android</h3>
+    <ol>
+      <li>De Google-agenda-app op de telefoon kan een URL-abonnement vaak niet zelf starten.</li>
+      <li>Voer de stappen voor <strong>Google Calendar (computer)</strong> uit. Op de telefoon verschijnt dezelfde agenda als u daar hetzelfde Google-account gebruikt.</li>
+    </ol>
+  </section>
+
+  <section class="agenda-howto" id="ics-howto-downloaden" hidden>
+    <h2>Downloaden: wat u met de knop doet</h2>
+    <p>
+      Druk op <strong>Download de kalender</strong>. U krijgt een bestand
+      (herkenbaar aan de uitgang <code>.ics</code>) in uw map Downloads.
+    </p>
+    <ol>
+      <li>Kies hierboven wat u wilt zien, en of dat nieuw of oud is.</li>
+      <li>Druk op de knop. Het bestand wordt opgeslagen, niet geopend als webpagina.</li>
+      <li>Open het bestand. Windows, macOS of uw telefoon vraagt in welke agenda-app de dagen moeten.</li>
+      <li>Bevestig. U ziet de dagen daarna in die app.</li>
+    </ol>
+    <p>
+      Dit is een momentopname. Als deze site later een heilige of een feest
+      toevoegt, komt dat <strong>niet</strong> vanzelf in uw agenda. Wilt u
+      dat wel, kies dan <strong>Abonneren</strong>.
+    </p>
+  </section>
 </section>
 {{ end }}

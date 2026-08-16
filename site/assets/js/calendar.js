@@ -1335,60 +1335,166 @@
     return key ? `${key}-${stijl}.ics` : null;
   }
 
+  function icsModus() {
+    return (
+      (document.querySelector('input[name="ics-modus"]:checked') || {}).value ||
+      "abonneren"
+    );
+  }
+
+  function nlOpsomming(items) {
+    if (!items.length) return "";
+    if (items.length === 1) return items[0];
+    if (items.length === 2) return `${items[0]} en ${items[1]}`;
+    return `${items.slice(0, -1).join(", ")} en ${items[items.length - 1]}`;
+  }
+
+  function agendaSamenvatting(shows, stijl, modus, heeftBestand) {
+    if (!shows.length || !heeftBestand) {
+      return "Kies minstens één soort dag. Daarna krijgt de knop hieronder een betekenis.";
+    }
+    const labels = { heilige: "heiligen", feest: "feesten", vasten: "vasten" };
+    const wat = nlOpsomming(shows.map((s) => labels[s] || s));
+    const kal =
+      stijl === "oud" ? "de oude kalender" : "de nieuwe kalender";
+    if (modus === "downloaden") {
+      return `De knop downloadt ${wat} volgens ${kal} als bestand.`;
+    }
+    return `De knop kopieert de link voor ${wat} volgens ${kal}. Plak die in uw agenda-app; de stappen staan hieronder.`;
+  }
+
+  function setHidden(el, hidden) {
+    if (!el) return;
+    el.hidden = hidden;
+  }
+
+  async function copyAgendaUrl(url) {
+    const input = document.getElementById("ics-url");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(url);
+        return true;
+      } catch {
+        /* val terug op het zichtbare veld */
+      }
+    }
+    if (!input) return false;
+    input.focus();
+    input.select();
+    try {
+      return document.execCommand("copy");
+    } catch {
+      return false;
+    }
+  }
+
   function updateAgendaUi() {
     if (!document.querySelector("[data-agenda]")) return;
     const file = icsFilename();
-    const link = document.getElementById("ics-download");
-    const hint = document.getElementById("ics-hint");
-    const all = document.getElementById("ics-all-links");
-    if (link) {
-      if (file) {
-        link.href = assetUrl("ics/" + file);
-        link.classList.remove("is-disabled");
-        link.textContent = "ICS: " + file;
+    const shows = checkedShows("ics-show");
+    const stijl =
+      (document.querySelector('input[name="ics-stijl"]:checked') || {}).value ||
+      "nieuw";
+    const modus = icsModus();
+    const url = file ? assetUrl("ics/" + file) : "";
+    const download = document.getElementById("ics-download");
+    const copyBtn = document.getElementById("ics-copy");
+    const samenvatting = document.getElementById("ics-samenvatting");
+    const status = document.getElementById("ics-status");
+    const urlRow = document.getElementById("ics-url-row");
+    const urlInput = document.getElementById("ics-url");
+    const howtoAbo = document.getElementById("ics-howto-abonneren");
+    const howtoDl = document.getElementById("ics-howto-downloaden");
+    const klaar = Boolean(file);
+
+    if (samenvatting) {
+      samenvatting.textContent = agendaSamenvatting(
+        shows,
+        stijl,
+        modus,
+        klaar
+      );
+    }
+    if (status && status.dataset.sticky !== "1") {
+      status.textContent = "";
+    }
+
+    if (urlInput) urlInput.value = url;
+    setHidden(urlRow, !(klaar && modus === "abonneren"));
+    setHidden(howtoAbo, modus !== "abonneren");
+    setHidden(howtoDl, modus !== "downloaden");
+
+    if (download) {
+      const toonDownload = klaar && modus === "downloaden";
+      setHidden(download, !toonDownload);
+      if (toonDownload) {
+        download.href = url;
+        download.setAttribute("download", file);
+        download.classList.remove("is-disabled");
+        download.textContent = "Download de kalender";
       } else {
-        link.removeAttribute("href");
-        link.classList.add("is-disabled");
-        link.textContent = "Kies minstens één categorie";
+        download.removeAttribute("href");
+        download.removeAttribute("download");
       }
     }
-    if (hint) {
-      const stijl =
-        (document.querySelector('input[name="ics-stijl"]:checked') || {}).value ||
-        "nieuw";
-      hint.innerHTML =
-        stijl === "oud"
-          ? `Oude kalender: afspraken op burgerlijke vierdatum (+13). Titel bevat de Juliaanse feestdatum. ${achtergrondLink("nieuw-oud", "Meer uitleg")}`
-          : `Nieuwe kalender: afspraken op de feestdatum zelf. ${achtergrondLink("nieuw-oud", "Meer uitleg")}`;
+    if (copyBtn) {
+      const toonCopy = klaar && modus === "abonneren";
+      setHidden(copyBtn, !toonCopy);
+      copyBtn.disabled = !toonCopy;
+      copyBtn.classList.toggle("is-disabled", !toonCopy);
+      if (toonCopy && copyBtn.dataset.copied !== "1") {
+        copyBtn.textContent = "Kopieer de agenda-link";
+      }
     }
-    if (all) {
-      const files = [
-        "alles-nieuw",
-        "alles-oud",
-        "heiligen-nieuw",
-        "heiligen-oud",
-        "feesten-nieuw",
-        "feesten-oud",
-        "vasten-nieuw",
-        "vasten-oud",
-        "heiligen-feesten-nieuw",
-        "heiligen-feesten-oud",
-        "heiligen-vasten-nieuw",
-        "heiligen-vasten-oud",
-        "feesten-vasten-nieuw",
-        "feesten-vasten-oud",
-      ];
-      all.innerHTML = files
-        .map((f) => `<li><a href="${assetUrl("ics/" + f + ".ics")}">${f}.ics</a></li>`)
-        .join("");
+    if (!klaar) {
+      if (download) {
+        setHidden(download, true);
+      }
+      if (copyBtn) {
+        setHidden(copyBtn, true);
+      }
     }
   }
 
   function initAgenda() {
-    if (!document.querySelector("[data-agenda]")) return;
-    document
-      .querySelectorAll('input[name="ics-show"], input[name="ics-stijl"]')
-      .forEach((el) => el.addEventListener("change", updateAgendaUi));
+    const root = document.querySelector("[data-agenda]");
+    if (!root) return;
+    if (root.dataset.boundAgenda !== "1") {
+      root.dataset.boundAgenda = "1";
+      root
+        .querySelectorAll(
+          'input[name="ics-show"], input[name="ics-stijl"], input[name="ics-modus"]'
+        )
+        .forEach((el) => el.addEventListener("change", updateAgendaUi));
+      const copyBtn = document.getElementById("ics-copy");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          const file = icsFilename();
+          if (!file) return;
+          const url = assetUrl("ics/" + file);
+          const ok = await copyAgendaUrl(url);
+          const status = document.getElementById("ics-status");
+          copyBtn.dataset.copied = "1";
+          copyBtn.textContent = ok
+            ? "Link gekopieerd"
+            : "Kopieer de link hieronder";
+          if (status) {
+            status.dataset.sticky = "1";
+            status.textContent = ok
+              ? "De agenda-link staat op het klembord. Plak die in de stappen hieronder."
+              : "Selecteer de agenda-link hieronder en kopieer die zelf (Ctrl+C of Cmd+C).";
+          }
+          window.setTimeout(() => {
+            copyBtn.dataset.copied = "0";
+            copyBtn.textContent = "Kopieer de agenda-link";
+            if (status) {
+              status.dataset.sticky = "0";
+              status.textContent = "";
+            }
+          }, 4000);
+        });
+      }
+    }
     updateAgendaUi();
   }
 

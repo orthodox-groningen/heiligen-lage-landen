@@ -27,9 +27,14 @@ met de hand redigeren.
 | `heiligen-vasten` | zonder feesten |
 | `feesten-vasten` | zonder heiligen |
 
-`stijl` is `nieuw` of `oud`. De agendapagina (`layout: agenda`) plakt de
-URL van de gekozen combinatie; de UI staat in
+`stijl` is `nieuw` of `oud`. De agendapagina bouwt **één** knop uit de
+keuzes van de bezoeker (categorieën + stijl + downloaden/abonneren). Er is
+geen lijst van alle feeds op de pagina. UI:
 `site/layouts/_default/agenda.html` en `calendar.js`.
+
+- **Abonneren:** de knop kopieert de HTTPS-URL van het gekozen `.ics`-bestand
+  naar het klembord; how-to’s op de pagina zeggen waar die URL geplakt wordt.
+- **Downloaden:** dezelfde URL met `download`-attribuut.
 
 ## Gedrag
 

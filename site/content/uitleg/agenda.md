@@ -1,30 +1,40 @@
 ---
 title: "Agenda"
-description: "Heiligen, feesten en vasten in Google Calendar, Apple Agenda of Outlook"
+description: "De kerkelijke kalender op uw telefoon of computer: kiezen, downloaden of abonneren"
 uitleg_stijl: agenda
 ---
 
-Op de [agendapagina]({{% ref "/agenda" %}}) kunt u de kalender **abonneren**
-in de agenda-app die u al gebruikt: Google Calendar, Apple Agenda, Outlook.
-Nieuwe dagen komen dan vanzelf mee; u hoeft de site niet elke week te
-openen.
+De pagina [Agenda]({{% ref "/agenda" %}}) is bedoeld om de kerkelijke
+kalender **op uw telefoon of computer** te zetten: in Google Calendar,
+Apple Agenda, Outlook of een andere agenda-app. U hoeft deze website dan
+niet elke week te openen.
 
-U kiest zelf **wat** erin komt (heiligen, feesten, vasten) en of de feed bij
-de **nieuwe** of de **oude** kalender hoort. Kies de stand die uw parochie
-volgt. Zie [Nieuwe en Oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
+## Eerst kiezen, dan de knop
 
-## Wat u kunt verwachten
+Op die pagina doet u drie keuzes:
 
-- Bij **nieuw** vallen de afspraken op de feestdatum zoals Nederland die dag
-  noemt (Kerst op 25 december).
+1. **Wat** u wilt zien: heiligen, feesten, vasten — één, twee of alle drie.
+2. **Nieuwe of oude kalender**, zoals uw parochie viert. Zie
+   [Nieuwe en Oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
+3. **Abonneren** of **downloaden**.
+
+De knop daaronder verandert mee. Abonneren kopieert een link die u in de
+agenda-app plakt; de app blijft dan vanzelf bijgewerkt. Downloaden slaat een
+bestand op voor dit moment. De stappen op de agendapagina zeggen per app
+(Google, Apple, Outlook, Android) wat u na de knop doet.
+
+## Wat u in de agenda ziet
+
+- Bij **nieuw** vallen de afspraken op de dag zoals Nederland die noemt
+  (Kerst op 25 december).
 - Bij **oud** vallen ze op de burgerlijke dag waarop de oude kalender viert
   (Kerst op 7 januari). In de titel van de afspraak staat dan ook de oude
-  feestdatum, zodat u beide ziet.
+  feestdatum.
 - Woensdag- en vrijdagvasten volgen de gewone week: het is de woensdag of
   vrijdag van de burgerlijke week, in beide standen.
 
-Het abonnement is een hulpmiddel. De lokale praktijk en de zegen van de
-priester gaan altijd voor.
+Het is een hulpmiddel. De lokale praktijk en de zegen van de priester gaan
+altijd voor.
 
 ## Voor wie de site bijhoudt
 
