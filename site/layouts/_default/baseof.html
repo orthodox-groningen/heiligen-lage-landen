@@ -21,11 +21,6 @@
         <a href="{{ "agenda/" | relURL }}">Agenda</a>
         <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
       </nav>
-      <div class="style-toggle" role="group" aria-label="Kalender voor vandaag">
-        <button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>
-        <button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>
-        <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
-      </div>
     </div>
   </header>
   <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") }} main-wide{{ end }}">

@@ -1,12 +1,7 @@
 {{ define "main" }}
 <section class="kalender-page">
-  <h1 class="kalender-heading">
+  <h1 class="page-title-row" id="kalender-heading">
     <span class="title-nav" id="kalender-title-nav" data-title="{{ .Title }}">{{ .Title }}</span>
-    <span class="style-toggle kalender-style-toggle" role="group" aria-label="Kalenderstijl Nieuw/Oud">
-      <button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>
-      <button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>
-      <button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>
-    </span>
   </h1>
   {{ .Content }}
   <ul class="legend compact">

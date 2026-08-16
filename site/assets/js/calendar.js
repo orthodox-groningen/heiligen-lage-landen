@@ -613,6 +613,32 @@
     await refresh();
   }
 
+  function styleToggleHtml(ariaLabel) {
+    return (
+      `<span class="style-toggle" role="group" aria-label="${ariaLabel || "Kalenderstijl Nieuw/Oud"}">` +
+      `<button type="button" data-style="gregoriaans" class="style-btn" title="Schakel naar Nieuwe/Gregoriaanse kalender">Nieuw</button>` +
+      `<button type="button" data-style="juliaans" class="style-btn" title="Schakel naar Oude/Juliaanse kalender">Oud</button>` +
+      `<button type="button" class="style-btn style-help" data-open-nieuw-oud title="Uitleg Nieuw/Oud">?</button>` +
+      `</span>`
+    );
+  }
+
+  function fillPageTitleRow(navEl, titleNavInnerHtml) {
+    const row = navEl.closest(".page-title-row");
+    if (!row) return null;
+    const id = navEl.id || "";
+    const dataTitle = navEl.dataset.title || "";
+    row.innerHTML =
+      `<span class="title-nav"` +
+      (id ? ` id="${id}"` : "") +
+      (dataTitle ? ` data-title="${dataTitle.replace(/"/g, "&quot;")}"` : "") +
+      `>${titleNavInnerHtml}</span>` +
+      styleToggleHtml("Kalenderstijl Nieuw/Oud");
+    setStyle(getStyle());
+    wireNieuwOudTriggers(row);
+    return row;
+  }
+
   function titleNavHtml(opts) {
     const prevDis = opts.prevDisabled ? " disabled" : "";
     const nextDis = opts.nextDisabled ? " disabled" : "";
@@ -639,8 +665,7 @@
       titleInner +=
         ` <span class="today-civil-hint">Juliaans: ${label(mmddFromDate(jul))} ${jul.getFullYear()}</span>`;
     }
-    heading.classList.add("title-nav");
-    heading.innerHTML = titleNavHtml({
+    const navHtml = titleNavHtml({
       titleHtml: `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>`,
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
@@ -648,8 +673,17 @@
       prevDisabled: false,
       nextDisabled: false,
     });
-    wireNieuwOudTriggers(heading);
-    wireDaySteps(heading);
+    const row = heading.closest(".page-title-row");
+    if (row) {
+      fillPageTitleRow(heading, navHtml);
+      const fresh = document.getElementById("today-heading");
+      if (fresh) wireDaySteps(fresh);
+    } else {
+      heading.classList.add("title-nav");
+      heading.innerHTML = navHtml;
+      wireNieuwOudTriggers(heading);
+      wireDaySteps(heading);
+    }
   }
 
   function wireDaySteps(root) {
@@ -845,10 +879,17 @@
     return lezingenIndex;
   }
 
-  function lezingenForDay(year, mmdd, style) {
+  function lezingenForDay(year, civilMmdd, style) {
     const stil = style === "juliaans" ? "oud" : "nieuw";
+    let keyMmdd = civilMmdd;
+    let keyYear = year;
+    if (style === "juliaans") {
+      const lit = civilToLiturgical(year, civilMmdd);
+      keyMmdd = mmddFromDate(lit);
+      keyYear = lit.getFullYear();
+    }
     const root = lezingenIndex || {};
-    return ((root[stil] || {})[String(year)] || {})[mmdd] || null;
+    return ((root[stil] || {})[String(keyYear)] || {})[keyMmdd] || null;
   }
 
   function renderLezingenHtml(lez) {
@@ -964,62 +1005,30 @@
 
   function renderRooster(style) {
     const root = document.getElementById("rooster-tables");
-    if (!root) return;
-    const yearEl = document.getElementById("rooster-jaar");
-    if (yearEl) yearEl.textContent = String(viewYear);
+    const nav = document.getElementById("rooster-title-nav");
+    if (!root || !nav) return;
+
     const stil = style === "juliaans" ? "oud" : "nieuw";
-    const byDay = ((lezingenIndex || {})[stil] || {})[String(viewYear)] || {};
-    const monthNav = document.getElementById("rooster-month-nav");
-    const hint = document.getElementById("rooster-hint");
     const monthNum = parseInt(roosterMonth, 10);
+    const monthName = MONTHS[monthNum];
+    const titleBase = nav.dataset.title || "Lezingenrooster";
 
-    if (monthNav) {
-      monthNav.innerHTML = MONTHS.slice(1)
-        .map((name, i) => {
-          const mm = String(i + 1).padStart(2, "0");
-          const prefix = mm + "-";
-          const count = Object.keys(byDay).filter((k) => k.startsWith(prefix))
-            .length;
-          const pressed = mm === roosterMonth ? "true" : "false";
-          return (
-            `<button type="button" class="letter-btn" data-month="${mm}" ` +
-            `aria-pressed="${pressed}" ${count ? "" : "disabled"}>` +
-            `${name.slice(0, 3)}</button>`
-          );
-        })
-        .join("");
-      monthNav.querySelectorAll(".letter-btn").forEach((btn) => {
-        btn.onclick = () => {
-          roosterMonth = btn.dataset.month;
-          const url = new URL(window.location.href);
-          url.searchParams.set("maand", roosterMonth);
-          window.history.replaceState({}, "", url);
-          renderRooster(getStyle());
-        };
-      });
-    }
+    fillPageTitleRow(
+      nav,
+      titleNavHtml({
+        titleHtml: `${titleBase}: ${monthName} ${viewYear}`,
+        prevLabel: "Vorige maand",
+        nextLabel: "Volgende maand",
+        deltaAttr: "month-delta",
+        prevDisabled: false,
+        nextDisabled: false,
+      })
+    );
+    const freshNav = document.getElementById("rooster-title-nav");
+    if (freshNav) wireRoosterMonthSteps(freshNav);
 
-    const prefix = roosterMonth + "-";
-    const days = Object.keys(byDay)
-      .filter((k) => k.startsWith(prefix))
-      .sort();
-
-    if (hint) {
-      hint.textContent = days.length
-        ? `${MONTHS[monthNum]} ${viewYear}: ${days.length} dag(en).`
-        : `${MONTHS[monthNum]} ${viewYear}: geen lezingengegevens.`;
-    }
-
-    if (!days.length) {
-      root.innerHTML =
-        `<p class="muted">Geen lezingengegevens voor ${MONTHS[monthNum]} ${viewYear}. ` +
-        `Genereer de site opnieuw of kies een andere maand.</p>`;
-      return;
-    }
-
-    let html = `<section class="rooster-month" id="rooster-m${monthNum}">`;
-    html += `<h2>${MONTHS[monthNum]} ${viewYear}</h2>`;
-    html +=
+    const daysInMonth = new Date(viewYear, monthNum, 0).getDate();
+    let html =
       `<div class="table-wrap"><table class="rooster-table">` +
       `<thead><tr>` +
       `<th scope="col">Datum</th>` +
@@ -1027,36 +1036,94 @@
       `<th scope="col">Apostel</th>` +
       `<th scope="col">Evangelie</th>` +
       `</tr></thead><tbody>`;
-    for (const mmdd of days) {
-      const lez = byDay[mmdd] || {};
+    let rows = 0;
+    for (let day = 1; day <= daysInMonth; day++) {
+      const civilMmdd =
+        String(monthNum).padStart(2, "0") + "-" + String(day).padStart(2, "0");
+      // Index-sleutel: Nieuw = burgerlijke MM-DD; Oud = Juliaanse dagnaam
+      // die op die burgerlijke dag valt.
+      let keyMmdd = civilMmdd;
+      let keyYear = viewYear;
+      if (style === "juliaans") {
+        const lit = civilToLiturgical(viewYear, civilMmdd);
+        keyMmdd = mmddFromDate(lit);
+        keyYear = lit.getFullYear();
+      }
+      const yearBucket =
+        ((lezingenIndex || {})[stil] || {})[String(keyYear)] || {};
+      const lez = yearBucket[keyMmdd] || null;
       const dagUrl = assetUrl(
-        `datum/?jaar=${viewYear}&dag=${encodeURIComponent(mmdd)}`
+        `datum/?jaar=${viewYear}&dag=${encodeURIComponent(civilMmdd)}`
       );
-      let apostel = refsText(lez.apostel);
-      let evangelie = refsText(lez.evangelie);
-      if (lez.status === "geen_liturgie") {
+      let apostel = refsText(lez && lez.apostel);
+      let evangelie = refsText(lez && lez.evangelie);
+      const status = (lez && lez.status) || "onbekend";
+      if (status === "geen_liturgie") {
         apostel = apostel || "—";
         evangelie = evangelie || "(geen liturgie)";
-      } else if (lez.status === "onbekend") {
+      } else if (status === "onbekend") {
         apostel = apostel || "—";
         evangelie = evangelie || "—";
       }
       html +=
         `<tr>` +
-        `<td><a href="${dagUrl}">${label(mmdd)}</a></td>` +
-        `<td>${lez.daglabel || ""}</td>` +
+        `<td><a href="${dagUrl}">${label(civilMmdd)}</a></td>` +
+        `<td>${(lez && lez.daglabel) || ""}</td>` +
         `<td>${apostel}</td>` +
         `<td>${evangelie}</td>` +
         `</tr>`;
+      rows += 1;
     }
-    html += `</tbody></table></div></section>`;
-    root.innerHTML = html;
+    html += `</tbody></table></div>`;
+    root.innerHTML =
+      rows > 0
+        ? html
+        : `<p class="muted">Geen lezingengegevens voor ${monthName} ${viewYear}.</p>`;
+  }
+
+  function wireRoosterMonthSteps(root) {
+    (root || document).querySelectorAll("[data-month-delta]").forEach((btn) => {
+      if (btn.dataset.boundMonth === "1") return;
+      btn.dataset.boundMonth = "1";
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (btn.disabled) return;
+        const delta = Number(btn.dataset.monthDelta);
+        if (!delta) return;
+        let m = parseInt(roosterMonth, 10) + delta;
+        let y = viewYear;
+        if (m < 1) {
+          m = 12;
+          y = clampYear(y - 1);
+        } else if (m > 12) {
+          m = 1;
+          y = clampYear(y + 1);
+        }
+        viewYear = y;
+        roosterMonth = String(m).padStart(2, "0");
+        try {
+          localStorage.setItem(YEAR_KEY, String(viewYear));
+        } catch (_) {}
+        const url = new URL(window.location.href);
+        url.searchParams.set("maand", roosterMonth);
+        if (url.searchParams.has("jaar")) {
+          url.searchParams.set("jaar", String(viewYear));
+        }
+        window.history.replaceState({}, "", url);
+        renderRooster(getStyle());
+      });
+    });
   }
 
   function initRooster(style) {
     if (!document.querySelector("[data-lezingenrooster]")) return;
     const params = new URLSearchParams(window.location.search);
     const m = params.get("maand");
+    const y = params.get("jaar");
+    if (y && /^\d{4}$/.test(y)) {
+      viewYear = clampYear(parseInt(y, 10));
+    }
     if (m && /^\d{2}$/.test(m) && Number(m) >= 1 && Number(m) <= 12) {
       roosterMonth = m;
     } else {
@@ -1064,28 +1131,6 @@
       if (viewYear === now.getFullYear()) {
         roosterMonth = String(now.getMonth() + 1).padStart(2, "0");
       }
-    }
-    const prev = document.getElementById("rooster-prev");
-    const next = document.getElementById("rooster-next");
-    if (prev && prev.dataset.bound !== "1") {
-      prev.dataset.bound = "1";
-      prev.addEventListener("click", () => {
-        viewYear = clampYear(viewYear - 1);
-        try {
-          localStorage.setItem(YEAR_KEY, String(viewYear));
-        } catch (_) {}
-        renderRooster(getStyle());
-      });
-    }
-    if (next && next.dataset.bound !== "1") {
-      next.dataset.bound = "1";
-      next.addEventListener("click", () => {
-        viewYear = clampYear(viewYear + 1);
-        try {
-          localStorage.setItem(YEAR_KEY, String(viewYear));
-        } catch (_) {}
-        renderRooster(getStyle());
-      });
     }
     renderRooster(style);
   }
@@ -1121,15 +1166,19 @@
     const nav = document.getElementById("kalender-title-nav");
     if (!nav) return;
     const title = nav.dataset.title || "Jaarkalender";
-    nav.innerHTML = titleNavHtml({
-      titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
-      prevLabel: "Vorig jaar",
-      nextLabel: "Volgend jaar",
-      deltaAttr: "year-delta",
-      prevDisabled: viewYear <= yearBounds.min,
-      nextDisabled: viewYear >= yearBounds.max,
-    });
-    wireYearSteps(nav, entries, style);
+    fillPageTitleRow(
+      nav,
+      titleNavHtml({
+        titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
+        prevLabel: "Vorig jaar",
+        nextLabel: "Volgend jaar",
+        deltaAttr: "year-delta",
+        prevDisabled: viewYear <= yearBounds.min,
+        nextDisabled: viewYear >= yearBounds.max,
+      })
+    );
+    const fresh = document.getElementById("kalender-title-nav");
+    if (fresh) wireYearSteps(fresh, entries, style);
   }
 
   function wireYearSteps(root, entries, style) {
@@ -1614,18 +1663,28 @@
     updateHeading(style);
     updateNote(style);
     try {
-      const [entries] = await Promise.all([
-        loadEntries(),
-        loadLezingenIndex(),
-      ]);
+      const entries = await loadEntries();
       yearBounds = yearBoundsFromEntries(entries);
       viewYear = clampYear(viewYear);
       renderToday(entries, style);
       renderYearGrid(entries, style);
-      initYearControls(entries, style);
-      initRooster(style);
       initMeneon(entries);
       initAgenda();
+      try {
+        await loadLezingenIndex();
+        initRooster(style);
+        // Herteken vandaag/datum als lezingen nu beschikbaar zijn.
+        if (document.getElementById("today-entries")) {
+          renderToday(entries, style);
+        }
+      } catch (lezErr) {
+        console.error(lezErr);
+        const roost = document.getElementById("rooster-tables");
+        if (roost) {
+          roost.innerHTML =
+            "<p class=\"muted\">Lezingengegevens konden niet worden geladen.</p>";
+        }
+      }
     } catch (err) {
       const cardEntries = document.getElementById("today-entries");
       if (cardEntries) {
@@ -1636,10 +1695,11 @@
     }
   }
 
-  document.querySelectorAll(".style-btn[data-style]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      applyStyle(btn.dataset.style);
-    });
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest && e.target.closest(".style-btn[data-style]");
+    if (!btn) return;
+    e.preventDefault();
+    applyStyle(btn.dataset.style);
   });
 
   document.addEventListener("keydown", (e) => {

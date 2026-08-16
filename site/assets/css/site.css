@@ -188,6 +188,24 @@ h2 {
   gap: 0.9rem;
 }
 
+.page-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 1.1rem;
+  margin: 0 0 0.75rem;
+}
+
+.page-title-row .style-toggle {
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.page-title-row .title-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .title-step {
   appearance: none;
   border: 0;
@@ -529,7 +547,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 0.65rem 1rem;
 }
 
