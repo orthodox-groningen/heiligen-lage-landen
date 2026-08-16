@@ -138,8 +138,7 @@
     if (style === "juliaans") {
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
-        `<p>Volgens de nieuwe/Gregoriaanse (wereldlijke) kalender is het vandaag ` +
-        `${label(civilTodayMmdd())}.</p>` +
+        `<p>In de nieuwe/Gregoriaanse (wereldlijke) kalender is het vandaag ${label(civilTodayMmdd())}.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
@@ -147,8 +146,7 @@
     } else {
       if (title) title.textContent = "Nieuwe kalender (Gregoriaans, wereldlijk)";
       body.innerHTML =
-        `<p>Volgens de oude/Juliaanse kalender is het vandaag ` +
-        `${label(todayMmdd("juliaans"))}.</p>` +
+        `<p>In de oude/Juliaanse kalender is het vandaag ${label(todayMmdd("juliaans"))}.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
