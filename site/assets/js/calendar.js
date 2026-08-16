@@ -667,7 +667,8 @@
       `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" ` +
       `aria-label="${opts.prevLabel}"${prevDis} ` +
       `data-info-tip="nav" data-info-title="${prevTitle}" data-info-body="${prevBody}">‹</button>` +
-      `<span class="title-nav-label" tabindex="0" data-info-tip="nieuw-oud">${opts.titleHtml}</span>` +
+      `<span class="title-nav-label" tabindex="0" data-info-tip="titel" ` +
+      `data-info-unit="${unit}">${opts.titleHtml}</span>` +
       `<button type="button" class="title-step" data-${opts.deltaAttr}="1" ` +
       `aria-label="${opts.nextLabel}"${nextDis} ` +
       `data-info-tip="nav" data-info-title="${nextTitle}" data-info-body="${nextBody}">›</button>`
@@ -727,38 +728,111 @@
   let infoCloseTimer = null;
   let infoAnchor = null;
 
+  function nieuwOudTitle(style) {
+    return style === "juliaans"
+      ? "Oude kalender (Juliaans)"
+      : "Nieuwe/Gregoriaanse kalender";
+  }
+
+  function fillNieuwOudMeer(meer) {
+    if (!meer) return;
+    meer.hidden = false;
+    meer.innerHTML = achtergrondLink("nieuw-oud", "Meer over Nieuw/Oud");
+  }
+
+  /** Titel-popover: tekst past bij dag-, maand- of jaarnavigatie. */
+  function fillTitelPopover(trigger, title, body, meer) {
+    const style = getStyle();
+    const unit = (trigger && trigger.dataset.infoUnit) || "dag";
+    title.textContent = nieuwOudTitle(style);
+
+    if (unit === "jaar") {
+      body.innerHTML =
+        style === "juliaans"
+          ? `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
+            `Daarop staan vaste feesten op hun wereldlijke vierdatum ` +
+            `(Besnijdenis op 14 januari). ` +
+            `Pascha blijft op dezelfde wereldlijke dag.</p>`
+          : `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
+            `Daarop vallen vaste feesten op hun feestdatum ` +
+            `(Besnijdenis op 1 januari). ` +
+            `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+      fillNieuwOudMeer(meer);
+      return;
+    }
+
+    if (unit === "maand") {
+      const monthName = MONTHS[parseInt(roosterMonth, 10)] || "";
+      body.innerHTML =
+        style === "juliaans"
+          ? `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
+            `Het rooster volgt de oude kalender: vaste dagen op hun ` +
+            `wereldlijke vierdatum. Pascha blijft ongewijzigd.</p>`
+          : `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
+            `Het rooster volgt de nieuwe kalender: vaste dagen op hun ` +
+            `feestdatum. Pascha blijft ongewijzigd.</p>`;
+      fillNieuwOudMeer(meer);
+      return;
+    }
+
+    // dag (home / datumpagina)
+    const view = getViewDate(style);
+    const julianOnView = mmddFromDate(
+      civilToLiturgical(view.year, view.mmdd)
+    );
+    const dayPhrase = isViewToday(style)
+      ? `Vandaag is het wereldlijk ${label(view.mmdd)}`
+      : `Deze dag is wereldlijk ${label(view.mmdd)} ${view.year}`;
+    if (style === "juliaans") {
+      body.innerHTML =
+        `<p>${dayPhrase}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
+        `Vaste feesten staan op hun wereldlijke vierdatum ` +
+        `(Besnijdenis op 14 januari). ` +
+        `Pascha blijft op dezelfde wereldlijke dag.</p>`;
+    } else {
+      body.innerHTML =
+        `<p>${dayPhrase}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
+        `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
+        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+    }
+    fillNieuwOudMeer(meer);
+  }
+
   function fillInfoPopover(trigger) {
     const body = document.getElementById("info-popover-body");
     const title = document.getElementById("info-popover-title");
     const meer = document.getElementById("info-popover-meer");
     if (!body || !title) return;
     const kind = (trigger && trigger.dataset.infoTip) || "nav";
+    if (kind === "titel") {
+      fillTitelPopover(trigger, title, body, meer);
+      return;
+    }
     if (kind === "nieuw-oud") {
+      // Knop «?» naast Nieuw/Oud: algemene uitleg, geankerd op vandaag.
       const style = getStyle();
       const civilToday = civilTodayMmdd();
       const now = new Date();
       const julianToday = mmddFromDate(
         civilToLiturgical(now.getFullYear(), civilToday)
       );
+      title.textContent = nieuwOudTitle(style);
       if (style === "juliaans") {
-        title.textContent = "Oude kalender (Juliaans)";
         body.innerHTML =
           `<p>Wereldlijk is het ${label(civilToday)}. ` +
           `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
           `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
           `Pascha blijft op dezelfde wereldlijke dag.</p>`;
       } else {
-        title.textContent = "Nieuwe/Gregoriaanse kalender";
         body.innerHTML =
           `<p>Wereldlijk is het ${label(civilToday)}. ` +
           `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
           `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
           `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
       }
-      if (meer) {
-        meer.hidden = false;
-        meer.innerHTML = achtergrondLink("nieuw-oud", "Meer over Nieuw/Oud");
-      }
+      fillNieuwOudMeer(meer);
       return;
     }
     title.textContent = (trigger && trigger.dataset.infoTitle) || "Navigatie";
