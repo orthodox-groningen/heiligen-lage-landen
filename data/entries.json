@@ -2,1054 +2,4661 @@
   {
     "id": "besnijdenis-des-heren",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Besnijdenis des Heren",
+    "alternatief": [
+      "Besnijdenis",
+      "Besnijdenis van Christus"
+    ],
     "titels": [],
     "samenvatting": "Het feest van de Besnijdenis des Heren volgens de vaste jaarcyclus.",
     "url": "/feesten/besnijdenis-des-heren/",
-    "feestdatum": "01-01",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "01-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "theofanie",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Theofanie (Doop des Heren)",
+    "alternatief": [
+      "Theofanie",
+      "Doop des Heren",
+      "Doop van Christus",
+      "Epifanie",
+      "Openbaring des Heren"
+    ],
     "titels": [],
     "samenvatting": "Openbaring van de Heilige Drie-eenheid bij de doop van Christus in de Jordaan.",
     "url": "/feesten/theofanie/",
-    "feestdatum": "01-06",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "01-06",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "gudula-van-brussel",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Gudula van Brussel",
+    "alternatief": [
+      "Goedele",
+      "Sint-Goedele",
+      "Gudula"
+    ],
     "titels": [
       "Virgin"
     ],
     "samenvatting": "Heilige van de Lage Landen: Gudula van Brussel. Virgin.",
     "url": "/heiligen/gudula-van-brussel/",
-    "feestdatum": "01-08",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "01-08",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "adelgondis-van-drongen",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Adelgondis van Drongen",
+    "alternatief": [
+      "Aldegundis"
+    ],
     "titels": [
       "Kloosterlinge"
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.",
     "url": "/heiligen/adelgondis-van-drongen/",
-    "feestdatum": "01-26",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "01-26",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "adelgonda",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Adelgonda",
+    "alternatief": [
+      "Aldegonda van Maubeuge",
+      "Aldegondis",
+      "Aldegonda",
+      "Aldegundis"
+    ],
     "titels": [
       "Stichteres van Maubeuge"
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelgonda. Stichteres van Maubeuge.",
     "url": "/heiligen/adelgonda/",
-    "feestdatum": "01-30",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "01-30",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ontmoeting-in-de-tempel",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Ontmoeting in de Tempel",
+    "alternatief": [
+      "Ontmoeting",
+      "Ontmoeting des Heren",
+      "Hypapante",
+      "Opdracht in de tempel"
+    ],
     "titels": [],
     "samenvatting": "Christus wordt in de tempel gebracht; Simeon en Anna begroeten Hem.",
     "url": "/feesten/ontmoeting-in-de-tempel/",
-    "feestdatum": "02-02",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "02-02",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "agricolaus-van-maastricht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Agricolaus van Maastricht",
+    "alternatief": [],
     "titels": [
       "Tweede bisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.",
     "url": "/heiligen/agricolaus-van-maastricht/",
-    "feestdatum": "02-05",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "02-05",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "amandus-van-maastricht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Amandus van Maastricht",
+    "alternatief": [
+      "Amandus",
+      "Amand"
+    ],
     "titels": [
       "Apostel van Maastricht (17e Bisschop van Maastricht)"
     ],
     "samenvatting": "Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht (17e Bisschop van Maastricht).",
     "url": "/heiligen/amandus-van-maastricht/",
-    "feestdatum": "02-06",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "02-06",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "gertrudis",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Gertrudis",
+    "alternatief": [
+      "Gertrudis van Nijvel",
+      "Geertrui"
+    ],
     "titels": [
       "Icoon in parochie, abdis van Nijvel"
     ],
     "samenvatting": "Heilige van de Lage Landen: Gertrudis. Icoon in parochie, abdis van Nijvel.",
     "url": "/heiligen/gertrudis/",
-    "feestdatum": "02-12",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "02-12",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "walburga",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Walburga",
+    "alternatief": [],
     "titels": [
       "Abdis van Heidenheim"
     ],
     "samenvatting": "Heilige van de Lage Landen: Walburga. Abdis van Heidenheim.",
     "url": "/heiligen/walburga/",
-    "feestdatum": "02-25",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "02-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "swidbert",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Swidbert",
+    "alternatief": [
+      "Suitbertus",
+      "Suitbert",
+      "Swidbertus"
+    ],
     "titels": [
       "Monastieke stichter aan de Rijn"
     ],
     "samenvatting": "Heilige van de Lage Landen: Swidbert. Monastieke stichter aan de Rijn.",
     "url": "/heiligen/swidbert/",
-    "feestdatum": "03-01",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "03-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "albericus-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Albericus van Utrecht",
+    "alternatief": [
+      "Albricus",
+      "Alberik I van Utrecht",
+      "Alberik van Utrecht"
+    ],
     "titels": [
       "Vierde bisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.",
     "url": "/heiligen/albericus-van-utrecht/",
-    "feestdatum": "03-04",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "03-04",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "fridolin",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Fridolin",
+    "alternatief": [
+      "Fridolin van Säckingen"
+    ],
     "titels": [
       "Abt, verlichter van de Boven-Rijn"
     ],
     "samenvatting": "Heilige van de Lage Landen: Fridolin. Abt, verlichter van de Boven-Rijn.",
     "url": "/heiligen/fridolin/",
-    "feestdatum": "03-06",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "03-06",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "wulfram",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Wulfram",
+    "alternatief": [],
     "titels": [
       "Missionaris"
     ],
     "samenvatting": "Heilige van de Lage Landen: Wulfram. Missionaris.",
     "url": "/heiligen/wulfram/",
-    "feestdatum": "03-20",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "03-20",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "aankondiging",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Aankondiging aan de Moeder Gods",
+    "alternatief": [
+      "Aankondiging",
+      "Annunciatie",
+      "Evangelismos",
+      "Aankondiging aan de Theotokos"
+    ],
     "titels": [],
     "samenvatting": "De aartsengel Gabriël kondigt de geboorte van Christus aan Maria aan.",
     "url": "/feesten/aankondiging/",
-    "feestdatum": "03-25",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "03-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ludger",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Ludger",
+    "alternatief": [
+      "Liudger"
+    ],
     "titels": [
       "Bisschop van Münster"
     ],
     "samenvatting": "Heilige van de Lage Landen: Ludger. Bisschop van Münster.",
     "url": "/heiligen/ludger/",
-    "feestdatum": "03-26",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "03-26",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "woutruide",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Woutruide",
+    "alternatief": [
+      "Waldetrudis",
+      "Waudru"
+    ],
     "titels": [
       "Stichteres van een klooster"
     ],
     "samenvatting": "Heilige van de Lage Landen: Woutruide. Stichteres van een klooster.",
     "url": "/heiligen/woutruide/",
-    "feestdatum": "04-09",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "04-09",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "floribert",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Floribert",
+    "alternatief": [
+      "Floribertus van Luik",
+      "Floribertus"
+    ],
     "titels": [
       "Bisschop van Luik"
     ],
     "samenvatting": "Heilige van de Lage Landen: Floribert. Bisschop van Luik.",
     "url": "/heiligen/floribert/",
-    "feestdatum": "04-27",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "04-27",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "quirillus-van-tongern",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Quirillus van Tongern",
+    "alternatief": [
+      "Quirillus"
+    ],
     "titels": [
       "Bisschop van Tongeren"
     ],
     "samenvatting": "Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van Tongeren.",
     "url": "/heiligen/quirillus-van-tongern/",
-    "feestdatum": "04-30",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "04-30",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ultan",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Ultan",
+    "alternatief": [],
     "titels": [
       "Stichter van Fosse"
     ],
     "samenvatting": "Heilige van de Lage Landen: Ultan. Stichter van Fosse.",
     "url": "/heiligen/ultan/",
-    "feestdatum": "05-01",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ansfried-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Ansfried (van Utrecht)",
+    "alternatief": [
+      "Ansfried van Leuven",
+      "Ansfried",
+      "Ansfried van Utrecht"
+    ],
     "titels": [
       "Bisschop van Utrecht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.",
     "url": "/heiligen/ansfried-van-utrecht/",
-    "feestdatum": "05-03",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-03",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "domitianus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Domitianus",
+    "alternatief": [
+      "Domitianus van Hoei"
+    ],
     "titels": [
       "Bisschop van Maastricht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht.",
     "url": "/heiligen/domitianus/",
-    "feestdatum": "05-07",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-07",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "iduberga",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Iduberga",
+    "alternatief": [
+      "Ida",
+      "Itta",
+      "Ida van Nijvel",
+      "Itta van Nijvel"
+    ],
     "titels": [
       "Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis"
     ],
     "samenvatting": "Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis.",
     "url": "/heiligen/iduberga/",
-    "feestdatum": "05-08",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-08",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "wiro",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Wiro",
+    "alternatief": [
+      "Wiro van Roermond"
+    ],
     "titels": [
       "Ierse missionaris, bisschop in Limburg, Nederland"
     ],
     "samenvatting": "Heilige van de Lage Landen: Wiro. Ierse missionaris, bisschop in Limburg, Nederland.",
     "url": "/heiligen/wiro/",
-    "feestdatum": "05-11",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-11",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "dymphna",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Dymphna",
+    "alternatief": [
+      "Dimpna",
+      "Dymphna van Geel"
+    ],
     "titels": [
       "Icoon in parochie, martelares van Geel, Vlaanderen"
     ],
     "samenvatting": "Heilige van de Lage Landen: Dymphna. Icoon in parochie, martelares van Geel, Vlaanderen.",
     "url": "/heiligen/dymphna/",
-    "feestdatum": "05-15",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-15",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "hubertus-van-maastricht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Hubertus van Maastricht",
+    "alternatief": [
+      "Hubertus van Luik",
+      "Hubertus"
+    ],
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Hubertus van Maastricht.",
     "url": "/heiligen/hubertus-van-maastricht/",
-    "feestdatum": "05-30",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "05-30",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "bonifatius",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Bonifatius",
+    "alternatief": [
+      "Bonifacius",
+      "Wynfrith"
+    ],
     "titels": [
       "Icoon in parochie"
     ],
     "samenvatting": "Missionaris en martelaar, verbonden met de kerstening van de Lage Landen en Germanië.",
     "url": "/heiligen/bonifatius/",
-    "feestdatum": "06-05",
     "lagenlanden": true,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-05",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "medardus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Medardus",
+    "alternatief": [
+      "Medardus van Noyon"
+    ],
     "titels": [
       "Bisschop van Noyon"
     ],
     "samenvatting": "Heilige van de Lage Landen: Medardus. Bisschop van Noyon.",
     "url": "/heiligen/medardus/",
-    "feestdatum": "06-08",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-08",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "cunera",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Cunera",
+    "alternatief": [],
     "titels": [
       "Icoon in parochie, virgin martyr of Rhenen"
     ],
     "samenvatting": "Heilige van de Lage Landen: Cunera. Icoon in parochie, virgin martyr of Rhenen.",
     "url": "/heiligen/cunera/",
-    "feestdatum": "06-12",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-12",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "alena-van-dilbeek",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Alena van Dilbeek",
+    "alternatief": [
+      "Alena"
+    ],
     "titels": [
       "Maagd & Martelares"
     ],
     "samenvatting": "Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelares.",
     "url": "/heiligen/alena-van-dilbeek/",
-    "feestdatum": "06-17",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-17",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "engelmund",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Engelmund",
+    "alternatief": [
+      "Engelmundus",
+      "Engelmundus van Velsen"
+    ],
     "titels": [
       "Abt, geloofsverkondiger in Holland"
     ],
     "samenvatting": "Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.",
     "url": "/heiligen/engelmund/",
-    "feestdatum": "06-21",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-21",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "walfridus-bedum",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Walfridus (Bedum)",
+    "alternatief": [
+      "Walfridus"
+    ],
     "titels": [],
     "samenvatting": "Plaatselijke heilige verbonden met Bedum.",
     "url": "/heiligen/walfridus-bedum/",
-    "feestdatum": "06-22",
     "lagenlanden": true,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-22",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "geboorte-johannes-doper",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Geboorte van Johannes de Doper",
+    "alternatief": [
+      "Geboorte van Johannes de Voorloper",
+      "Geboorte van de Voorloper"
+    ],
     "titels": [],
     "samenvatting": "Feestdag van de geboorte van de Voorloper.",
     "url": "/feesten/geboorte-johannes-doper/",
-    "feestdatum": "06-24",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "06-24",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "adelbert",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Adelbert",
+    "alternatief": [
+      "Adelbert van Egmond",
+      "Adalbert van Egmond"
+    ],
     "titels": [
       "Aartsdiaken"
     ],
     "samenvatting": "Heilige van de Lage Landen: Adelbert. Aartsdiaken.",
     "url": "/heiligen/adelbert/",
-    "feestdatum": "06-25",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "06-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "petrus-en-paulus",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "H.H. Apostelen Petrus en Paulus",
+    "alternatief": [
+      "Petrus en Paulus",
+      "Feest van de apostelen Petrus en Paulus"
+    ],
     "titels": [],
     "samenvatting": "Feestdag van de eerste apostelen Petrus en Paulus.",
     "url": "/feesten/petrus-en-paulus/",
-    "feestdatum": "06-29",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "06-29",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "amalberga-van-temse",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Amalberga van Temse",
+    "alternatief": [
+      "Amalberga"
+    ],
     "titels": [
       "Monnik"
     ],
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Temse. Monnik.",
     "url": "/heiligen/amalberga-van-temse/",
-    "feestdatum": "07-10",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "07-10",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "marcellinus-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Marcellinus van Utrecht",
+    "alternatief": [],
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Marcellinus van Utrecht.",
     "url": "/heiligen/marcellinus-van-utrecht/",
-    "feestdatum": "07-14",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "07-14",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "plechelm-von-odilienberg",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Plechelm von Odilienberg",
+    "alternatief": [
+      "Plechelmus",
+      "Plechelm"
+    ],
     "titels": [
       "Bisschop, geloofsverkondiger aan de Nederrijn"
     ],
     "samenvatting": "Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop, geloofsverkondiger aan de Nederrijn.",
     "url": "/heiligen/plechelm-von-odilienberg/",
-    "feestdatum": "07-15",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "07-15",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "frederich",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Frederich",
+    "alternatief": [
+      "Frederik van Utrecht",
+      "Frederik"
+    ],
     "titels": [
       "Bisschop van Utrecht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.",
     "url": "/heiligen/frederich/",
-    "feestdatum": "07-18",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "07-18",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "bernulphus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Bernulphus",
+    "alternatief": [],
     "titels": [
       "Bisschop van Utrecht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.",
     "url": "/heiligen/bernulphus/",
-    "feestdatum": "07-24",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "07-24",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
-    "id": "verheerlijking",
+    "id": "transfiguratie",
     "soort": "feest",
-    "naam": "Verheerlijking op de berg Thabor",
+    "cyclus": "jaar",
+    "naam": "Transfiguratie (op de berg Thabor)",
+    "alternatief": [
+      "Verheerlijking op de berg Thabor",
+      "Transfiguratie",
+      "Verheerlijking",
+      "Verheerlijking des Heren"
+    ],
     "titels": [],
     "samenvatting": "Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.",
-    "url": "/feesten/verheerlijking/",
-    "feestdatum": "08-06",
+    "url": "/feesten/transfiguratie/",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "08-06",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "werenfrid",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Werenfrid",
+    "alternatief": [
+      "Werenfried van Elst",
+      "Werenfridus",
+      "Werenfried"
+    ],
     "titels": [
       "Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland"
     ],
     "samenvatting": "Heilige van de Lage Landen: Werenfrid. Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland.",
     "url": "/heiligen/werenfrid/",
-    "feestdatum": "08-14",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "08-14",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ontslapen-moeder-gods",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Ontslapen van de Moeder Gods",
+    "alternatief": [
+      "Ontslapen",
+      "Ontslapen van de Theotokos",
+      "Maria Tenhemelopneming"
+    ],
     "titels": [],
     "samenvatting": "Het ontslapen (dood en opname) van de Moeder Gods.",
     "url": "/feesten/ontslapen-moeder-gods/",
-    "feestdatum": "08-15",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "08-15",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "jeroen-van-noordwijk",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Jeroen van Noordwijk",
+    "alternatief": [
+      "Jeroen"
+    ],
     "titels": [
       "Hieromartelaar, icoon in parochie"
     ],
     "samenvatting": "Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar, icoon in parochie.",
     "url": "/heiligen/jeroen-van-noordwijk/",
-    "feestdatum": "08-17",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "08-17",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "alubertus-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Alubertus van Utrecht",
+    "alternatief": [],
     "titels": [
       "Wijbisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.",
     "url": "/heiligen/alubertus-van-utrecht/",
-    "feestdatum": "08-25",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "08-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "gregorius-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Gregorius van Utrecht",
+    "alternatief": [
+      "Gregorius"
+    ],
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Gregorius van Utrecht.",
     "url": "/heiligen/gregorius-van-utrecht/",
-    "feestdatum": "08-25",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "08-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "onthoofding-johannes-doper",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Onthoofding van Johannes de Doper",
+    "alternatief": [
+      "Onthoofding van Johannes de Voorloper",
+      "Onthoofding van de Voorloper"
+    ],
     "titels": [],
     "samenvatting": "Gedachtenis van de marteldood van de Voorloper.",
     "url": "/feesten/onthoofding-johannes-doper/",
-    "feestdatum": "08-29",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "feestdatum": "08-29",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "begin-kerkelijk-jaar",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Begin van het kerkelijk jaar",
+    "alternatief": [
+      "Indictie",
+      "Kerkelijk nieuwjaar",
+      "1 september"
+    ],
     "titels": [],
     "samenvatting": "Indictie: begin van het kerkelijk jaar.",
     "url": "/feesten/begin-kerkelijk-jaar/",
-    "feestdatum": "09-01",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "09-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "remaclus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Remaclus",
+    "alternatief": [],
     "titels": [
       "Bisschop van Maastricht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.",
     "url": "/heiligen/remaclus/",
-    "feestdatum": "09-03",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "09-03",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "adela-van-vlaanderen",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Adela van Vlaanderen",
+    "alternatief": [
+      "Adela van Ieper",
+      "Adela van Mesen",
+      "Adela van Messines"
+    ],
     "titels": [
       "Weduwe & kloosterlinge"
     ],
     "samenvatting": "Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.",
     "url": "/heiligen/adela-van-vlaanderen/",
-    "feestdatum": "09-08",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "09-08",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "geboorte-moeder-gods",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Geboorte van de Moeder Gods",
+    "alternatief": [
+      "Geboorte van de Theotokos",
+      "Maria Geboorte"
+    ],
     "titels": [],
     "samenvatting": "Geboortefeest van de Allerheiligste Moeder Gods.",
     "url": "/feesten/geboorte-moeder-gods/",
-    "feestdatum": "09-08",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "09-08",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "theodaard-van-maastricht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Theodaard van Maastricht",
+    "alternatief": [
+      "Theodardus",
+      "Theodardus van Maastricht",
+      "Theodard van Maastricht",
+      "Theodard"
+    ],
     "titels": [
       "Bisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.",
     "url": "/heiligen/theodaard-van-maastricht/",
-    "feestdatum": "09-10",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "09-10",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "kruisverheffing",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Kruisverheffing",
+    "alternatief": [
+      "Verheffing van het Heilig Kruis",
+      "Universele Kruisverheffing"
+    ],
     "titels": [],
     "samenvatting": "Verheffing van het Heilig Kruis.",
     "url": "/feesten/kruisverheffing/",
-    "feestdatum": "09-14",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "09-14",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "lambertus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Lambertus",
+    "alternatief": [
+      "Lambertus van Maastricht",
+      "Lambert"
+    ],
     "titels": [
       "Icoon in parochie"
     ],
     "samenvatting": "Heilige van de Lage Landen: Lambertus. Icoon in parochie.",
     "url": "/heiligen/lambertus/",
-    "feestdatum": "09-17",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "09-17",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "bavo",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Bavo",
+    "alternatief": [
+      "Bavo van Gent",
+      "Allowin"
+    ],
     "titels": [
       "Icoon in parochie"
     ],
     "samenvatting": "Heilige van de Lage Landen: Bavo. Icoon in parochie.",
     "url": "/heiligen/bavo/",
-    "feestdatum": "10-01",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "10-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "gommar",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Gommar",
+    "alternatief": [
+      "Gommarus van Lier",
+      "Gommarus",
+      "Gummarus"
+    ],
     "titels": [
       "Patroonheilige van Lier"
     ],
     "samenvatting": "Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.",
     "url": "/heiligen/gommar/",
-    "feestdatum": "10-11",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "10-11",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "oda-van-amay",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Oda van Amay",
+    "alternatief": [],
     "titels": [
       "Stichteres van kerken"
     ],
     "samenvatting": "Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken.",
     "url": "/heiligen/oda-van-amay/",
-    "feestdatum": "10-23",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "10-23",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "ermelindis",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Ermelindis",
+    "alternatief": [
+      "Ermelindis van Meldert"
+    ],
     "titels": [
       "Heremiet"
     ],
     "samenvatting": "Heilige van de Lage Landen: Ermelindis. Heremiet.",
     "url": "/heiligen/ermelindis/",
-    "feestdatum": "10-29",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "10-29",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "foillan",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Foillan",
+    "alternatief": [],
     "titels": [
       "Ierse monnik, martelaar"
     ],
     "samenvatting": "Heilige van de Lage Landen: Foillan. Ierse monnik, martelaar.",
     "url": "/heiligen/foillan/",
-    "feestdatum": "10-31",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "10-31",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "odrada",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Odrada",
+    "alternatief": [
+      "Odrada van Alem"
+    ],
     "titels": [
       "Maagd van Balen"
     ],
     "samenvatting": "Heilige van de Lage Landen: Odrada. Maagd van Balen.",
     "url": "/heiligen/odrada/",
-    "feestdatum": "11-05",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-05",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "winnocus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Winnocus",
+    "alternatief": [
+      "Winnoc"
+    ],
     "titels": [
       "Abt"
     ],
     "samenvatting": "Heilige van de Lage Landen: Winnocus. Abt.",
     "url": "/heiligen/winnocus/",
-    "feestdatum": "11-06",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-06",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "willibrord",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Willibrord",
+    "alternatief": [],
     "titels": [
       "Apostel van de Friezen",
       "Aartsbisschop van Utrecht"
     ],
     "samenvatting": "Apostel van de Friezen; aartsbisschop van Utrecht.",
     "url": "/heiligen/willibrord/",
-    "feestdatum": "11-07",
     "lagenlanden": true,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-07",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "lebuinus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Lebuinus",
+    "alternatief": [
+      "Lebuin",
+      "Lebuïnus"
+    ],
     "titels": [
       "Missionaris monnik in Nederland"
     ],
     "samenvatting": "Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Nederland.",
     "url": "/heiligen/lebuinus/",
-    "feestdatum": "11-12",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-12",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "alberik",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Alberik",
+    "alternatief": [
+      "Alberik I van Utrecht",
+      "Albericus"
+    ],
     "titels": [
       "Bisschop van Utrecht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Alberik. Bisschop van Utrecht.",
     "url": "/heiligen/alberik/",
-    "feestdatum": "11-14",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-14",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "lubuinus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Lubuinus",
+    "alternatief": [
+      "Lebuïnus",
+      "Lebuinus"
+    ],
     "titels": [
       "Missionaris in Friesland"
     ],
     "samenvatting": "Heilige van de Lage Landen: Lubuinus. Missionaris in Friesland.",
     "url": "/heiligen/lubuinus/",
-    "feestdatum": "11-16",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-16",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "amalberga-van-susteren",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Amalberga van Susteren",
+    "alternatief": [
+      "Amelberg",
+      "Amelberga",
+      "Amalberga"
+    ],
     "titels": [
       "Abdis"
     ],
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Susteren. Abdis.",
     "url": "/heiligen/amalberga-van-susteren/",
-    "feestdatum": "11-21",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-21",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "tempelgang-moeder-gods",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Tempelgang van de Moeder Gods",
+    "alternatief": [
+      "Tempelgang",
+      "Intocht van de Moeder Gods in de tempel",
+      "Tempelgang van de Theotokos"
+    ],
     "titels": [],
     "samenvatting": "Maria wordt als kind in de tempel gebracht.",
     "url": "/feesten/tempelgang-moeder-gods/",
-    "feestdatum": "11-21",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "11-21",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "trudo",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Trudo",
+    "alternatief": [],
     "titels": [
       "Abt, stichter abdij St. Truiden"
     ],
     "samenvatting": "Heilige van de Lage Landen: Trudo. Abt, stichter abdij St. Truiden.",
     "url": "/heiligen/trudo/",
-    "feestdatum": "11-23",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-23",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "acharius-van-doornik",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Acharius van Doornik",
+    "alternatief": [
+      "Achaire",
+      "Acharius"
+    ],
     "titels": [
       "Bisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Acharius van Doornik. Bisschop.",
     "url": "/heiligen/acharius-van-doornik/",
-    "feestdatum": "11-27",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-27",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "oda-van-de-peel",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Oda van de Peel",
+    "alternatief": [
+      "Oda van Brabant"
+    ],
     "titels": [
       "Icoon in parochie"
     ],
     "samenvatting": "Heilige van de Lage Landen: Oda van de Peel. Icoon in parochie.",
     "url": "/heiligen/oda-van-de-peel/",
-    "feestdatum": "11-28",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-28",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "radboud",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Radboud",
+    "alternatief": [
+      "Radboud van Utrecht"
+    ],
     "titels": [
       "Icoon in parochie, bisschop van Utrecht"
     ],
     "samenvatting": "Heilige van de Lage Landen: Radboud. Icoon in parochie, bisschop van Utrecht.",
     "url": "/heiligen/radboud/",
-    "feestdatum": "11-29",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "11-29",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "eligius",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Eligius",
+    "alternatief": [
+      "Eloi",
+      "Elooi"
+    ],
     "titels": [
       "Bisschop van Noyon"
     ],
     "samenvatting": "Heilige van de Lage Landen: Eligius. Bisschop van Noyon.",
     "url": "/heiligen/eligius/",
-    "feestdatum": "12-01",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-01",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "folciunus",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Folciunus",
+    "alternatief": [
+      "Folcuin",
+      "Folcwin"
+    ],
     "titels": [
       "Bisschop van Tervas"
     ],
     "samenvatting": "Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.",
     "url": "/heiligen/folciunus/",
-    "feestdatum": "12-14",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-14",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "aubertus-van-kamerijk",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Aubertus van Kamerijk",
+    "alternatief": [
+      "Autbertus van Kamerijk",
+      "Autbertus"
+    ],
     "titels": [
       "Bisschop"
     ],
     "samenvatting": "Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.",
     "url": "/heiligen/aubertus-van-kamerijk/",
-    "feestdatum": "12-15",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-15",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "winnibald",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Winnibald",
+    "alternatief": [
+      "Wunibald",
+      "Winebald"
+    ],
     "titels": [
       "Abt en missionaris van Engeland en Heidenheim (Duitsland)"
     ],
     "samenvatting": "Heilige van de Lage Landen: Winnibald. Abt en missionaris van Engeland en Heidenheim (Duitsland).",
     "url": "/heiligen/winnibald/",
-    "feestdatum": "12-18",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-18",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "hunger-van-utrecht",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Hunger van Utrecht",
+    "alternatief": [
+      "Hunger"
+    ],
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Hunger van Utrecht.",
     "url": "/heiligen/hunger-van-utrecht/",
-    "feestdatum": "12-22",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-22",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "egbert-van-rathmelsigi",
     "soort": "heilige",
+    "cyclus": "jaar",
     "naam": "Egbert van Rathmelsigi",
+    "alternatief": [],
     "titels": [],
     "samenvatting": "Heilige van de Lage Landen: Egbert van Rathmelsigi.",
     "url": "/heiligen/egbert-van-rathmelsigi/",
-    "feestdatum": "12-23",
     "lagenlanden": true,
     "status": "stub",
-    "icoon": null
+    "observances": [
+      "heilige"
+    ],
+    "icoon": null,
+    "feestdatum": "12-23",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
   },
   {
     "id": "kerst",
     "soort": "feest",
+    "cyclus": "jaar",
     "naam": "Kerstfeest (Geboorte van Christus)",
+    "alternatief": [
+      "Kerstfeest",
+      "Geboorte van Christus",
+      "Geboorte des Heren",
+      "Kerstmis"
+    ],
     "titels": [],
     "samenvatting": "Geboorte van onze Heer Jezus Christus.",
     "url": "/feesten/kerst/",
-    "feestdatum": "12-25",
     "lagenlanden": false,
     "status": "curated",
-    "icoon": null
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "feestdatum": "12-25",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
+  },
+  {
+    "id": "zacheus-zondag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zacheüs-zondag",
+    "alternatief": [
+      "Zacheüszondag",
+      "Zondag van Zacheüs"
+    ],
+    "titels": [],
+    "samenvatting": "Begin van de voorbereiding op de Grote Vasten; evangelie van Zacheüs.",
+    "url": "/feesten/zacheus-zondag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -77,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "02-18",
+      "2025": "02-02",
+      "2026": "01-25",
+      "2027": "02-14",
+      "2028": "01-30",
+      "2029": "01-21",
+      "2030": "02-10",
+      "2031": "01-26",
+      "2032": "02-15",
+      "2033": "02-06",
+      "2034": "01-22",
+      "2035": "02-11",
+      "2036": "02-03",
+      "2037": "01-18",
+      "2038": "02-07",
+      "2039": "01-30",
+      "2040": "02-19",
+      "2041": "02-03",
+      "2042": "01-26",
+      "2043": "02-15",
+      "2044": "02-07",
+      "2045": "01-22",
+      "2046": "02-11",
+      "2047": "02-03",
+      "2048": "01-19",
+      "2049": "02-07",
+      "2050": "01-30",
+      "2051": "02-19"
+    },
+    "occurrences_juliaans": {
+      "2024": "02-05",
+      "2025": "01-20",
+      "2026": "01-12",
+      "2027": "02-01",
+      "2028": "01-17",
+      "2029": "01-08",
+      "2030": "01-28",
+      "2031": "01-13",
+      "2032": "02-02",
+      "2033": "01-24",
+      "2034": "01-09",
+      "2035": "01-29",
+      "2036": "01-21",
+      "2037": "01-05",
+      "2038": "01-25",
+      "2039": "01-17",
+      "2040": "02-06",
+      "2041": "01-21",
+      "2042": "01-13",
+      "2043": "02-02",
+      "2044": "01-25",
+      "2045": "01-09",
+      "2046": "01-29",
+      "2047": "01-21",
+      "2048": "01-06",
+      "2049": "01-25",
+      "2050": "01-17",
+      "2051": "02-06"
+    }
+  },
+  {
+    "id": "zondag-tollenaar-en-farizeeer",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de tollenaar en de Farizeeër",
+    "alternatief": [
+      "Zondag van de tollenaar en Farizeeër",
+      "Tollenaar en Farizeeër"
+    ],
+    "titels": [],
+    "samenvatting": "Opening van het Triodion; les over ootmoedig gebed.",
+    "url": "/feesten/zondag-tollenaar-en-farizeeer/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -70,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "02-25",
+      "2025": "02-09",
+      "2026": "02-01",
+      "2027": "02-21",
+      "2028": "02-06",
+      "2029": "01-28",
+      "2030": "02-17",
+      "2031": "02-02",
+      "2032": "02-22",
+      "2033": "02-13",
+      "2034": "01-29",
+      "2035": "02-18",
+      "2036": "02-10",
+      "2037": "01-25",
+      "2038": "02-14",
+      "2039": "02-06",
+      "2040": "02-26",
+      "2041": "02-10",
+      "2042": "02-02",
+      "2043": "02-22",
+      "2044": "02-14",
+      "2045": "01-29",
+      "2046": "02-18",
+      "2047": "02-10",
+      "2048": "01-26",
+      "2049": "02-14",
+      "2050": "02-06",
+      "2051": "02-26"
+    },
+    "occurrences_juliaans": {
+      "2024": "02-12",
+      "2025": "01-27",
+      "2026": "01-19",
+      "2027": "02-08",
+      "2028": "01-24",
+      "2029": "01-15",
+      "2030": "02-04",
+      "2031": "01-20",
+      "2032": "02-09",
+      "2033": "01-31",
+      "2034": "01-16",
+      "2035": "02-05",
+      "2036": "01-28",
+      "2037": "01-12",
+      "2038": "02-01",
+      "2039": "01-24",
+      "2040": "02-13",
+      "2041": "01-28",
+      "2042": "01-20",
+      "2043": "02-09",
+      "2044": "02-01",
+      "2045": "01-16",
+      "2046": "02-05",
+      "2047": "01-28",
+      "2048": "01-13",
+      "2049": "02-01",
+      "2050": "01-24",
+      "2051": "02-13"
+    }
+  },
+  {
+    "id": "zondag-verloren-zoon",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de verloren zoon",
+    "alternatief": [
+      "Verloren zoon"
+    ],
+    "titels": [],
+    "samenvatting": "Gelijkenis van de barmhartige vader; oproep tot terugkeer.",
+    "url": "/feesten/zondag-verloren-zoon/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -63,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-03",
+      "2025": "02-16",
+      "2026": "02-08",
+      "2027": "02-28",
+      "2028": "02-13",
+      "2029": "02-04",
+      "2030": "02-24",
+      "2031": "02-09",
+      "2032": "02-29",
+      "2033": "02-20",
+      "2034": "02-05",
+      "2035": "02-25",
+      "2036": "02-17",
+      "2037": "02-01",
+      "2038": "02-21",
+      "2039": "02-13",
+      "2040": "03-04",
+      "2041": "02-17",
+      "2042": "02-09",
+      "2043": "03-01",
+      "2044": "02-21",
+      "2045": "02-05",
+      "2046": "02-25",
+      "2047": "02-17",
+      "2048": "02-02",
+      "2049": "02-21",
+      "2050": "02-13",
+      "2051": "03-05"
+    },
+    "occurrences_juliaans": {
+      "2024": "02-19",
+      "2025": "02-03",
+      "2026": "01-26",
+      "2027": "02-15",
+      "2028": "01-31",
+      "2029": "01-22",
+      "2030": "02-11",
+      "2031": "01-27",
+      "2032": "02-16",
+      "2033": "02-07",
+      "2034": "01-23",
+      "2035": "02-12",
+      "2036": "02-04",
+      "2037": "01-19",
+      "2038": "02-08",
+      "2039": "01-31",
+      "2040": "02-20",
+      "2041": "02-04",
+      "2042": "01-27",
+      "2043": "02-16",
+      "2044": "02-08",
+      "2045": "01-23",
+      "2046": "02-12",
+      "2047": "02-04",
+      "2048": "01-20",
+      "2049": "02-08",
+      "2050": "01-31",
+      "2051": "02-20"
+    }
+  },
+  {
+    "id": "zaterdag-allerzielen-vleesmijding",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Allerzielen-zaterdag (vóór Vleesvaarwel)",
+    "alternatief": [
+      "Allerzielen-zaterdag",
+      "Zaterdag vóór Vleesvaarwel"
+    ],
+    "titels": [],
+    "samenvatting": "Gedachtenis van alle overledenen vóór de Vleesvaarwelzondag.",
+    "url": "/feesten/zaterdag-allerzielen-vleesmijding/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -57,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-09",
+      "2025": "02-22",
+      "2026": "02-14",
+      "2027": "03-06",
+      "2028": "02-19",
+      "2029": "02-10",
+      "2030": "03-02",
+      "2031": "02-15",
+      "2032": "03-06",
+      "2033": "02-26",
+      "2034": "02-11",
+      "2035": "03-03",
+      "2036": "02-23",
+      "2037": "02-07",
+      "2038": "02-27",
+      "2039": "02-19",
+      "2040": "03-10",
+      "2041": "02-23",
+      "2042": "02-15",
+      "2043": "03-07",
+      "2044": "02-27",
+      "2045": "02-11",
+      "2046": "03-03",
+      "2047": "02-23",
+      "2048": "02-08",
+      "2049": "02-27",
+      "2050": "02-19",
+      "2051": "03-11"
+    },
+    "occurrences_juliaans": {
+      "2024": "02-25",
+      "2025": "02-09",
+      "2026": "02-01",
+      "2027": "02-21",
+      "2028": "02-06",
+      "2029": "01-28",
+      "2030": "02-17",
+      "2031": "02-02",
+      "2032": "02-22",
+      "2033": "02-13",
+      "2034": "01-29",
+      "2035": "02-18",
+      "2036": "02-10",
+      "2037": "01-25",
+      "2038": "02-14",
+      "2039": "02-06",
+      "2040": "02-26",
+      "2041": "02-10",
+      "2042": "02-02",
+      "2043": "02-22",
+      "2044": "02-14",
+      "2045": "01-29",
+      "2046": "02-18",
+      "2047": "02-10",
+      "2048": "01-26",
+      "2049": "02-14",
+      "2050": "02-06",
+      "2051": "02-26"
+    }
+  },
+  {
+    "id": "zondag-laatste-oordeel",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van het Laatste Oordeel (Vleesvaarwel)",
+    "alternatief": [
+      "Vleesvaarwelzondag",
+      "Zondag van het Laatste Oordeel",
+      "Vleesvaarwel"
+    ],
+    "titels": [],
+    "samenvatting": "Laatste dag met vlees; evangelie van het Laatste Oordeel.",
+    "url": "/feesten/zondag-laatste-oordeel/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -56,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-10",
+      "2025": "02-23",
+      "2026": "02-15",
+      "2027": "03-07",
+      "2028": "02-20",
+      "2029": "02-11",
+      "2030": "03-03",
+      "2031": "02-16",
+      "2032": "03-07",
+      "2033": "02-27",
+      "2034": "02-12",
+      "2035": "03-04",
+      "2036": "02-24",
+      "2037": "02-08",
+      "2038": "02-28",
+      "2039": "02-20",
+      "2040": "03-11",
+      "2041": "02-24",
+      "2042": "02-16",
+      "2043": "03-08",
+      "2044": "02-28",
+      "2045": "02-12",
+      "2046": "03-04",
+      "2047": "02-24",
+      "2048": "02-09",
+      "2049": "02-28",
+      "2050": "02-20",
+      "2051": "03-12"
+    },
+    "occurrences_juliaans": {
+      "2024": "02-26",
+      "2025": "02-10",
+      "2026": "02-02",
+      "2027": "02-22",
+      "2028": "02-07",
+      "2029": "01-29",
+      "2030": "02-18",
+      "2031": "02-03",
+      "2032": "02-23",
+      "2033": "02-14",
+      "2034": "01-30",
+      "2035": "02-19",
+      "2036": "02-11",
+      "2037": "01-26",
+      "2038": "02-15",
+      "2039": "02-07",
+      "2040": "02-27",
+      "2041": "02-11",
+      "2042": "02-03",
+      "2043": "02-23",
+      "2044": "02-15",
+      "2045": "01-30",
+      "2046": "02-19",
+      "2047": "02-11",
+      "2048": "01-27",
+      "2049": "02-15",
+      "2050": "02-07",
+      "2051": "02-27"
+    }
+  },
+  {
+    "id": "vergevingszondag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Vergevingszondag (Kaasvaarwel)",
+    "alternatief": [
+      "Kaasvaarwelzondag",
+      "Zondag van de verdrijving uit het paradijs",
+      "Vergevingszondag",
+      "Kaasvaarwel"
+    ],
+    "titels": [],
+    "samenvatting": "Einde van de Kaasweek; wederzijdse vergeving vóór de Grote Vasten.",
+    "url": "/feesten/vergevingszondag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -49,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-17",
+      "2025": "03-02",
+      "2026": "02-22",
+      "2027": "03-14",
+      "2028": "02-27",
+      "2029": "02-18",
+      "2030": "03-10",
+      "2031": "02-23",
+      "2032": "03-14",
+      "2033": "03-06",
+      "2034": "02-19",
+      "2035": "03-11",
+      "2036": "03-02",
+      "2037": "02-15",
+      "2038": "03-07",
+      "2039": "02-27",
+      "2040": "03-18",
+      "2041": "03-03",
+      "2042": "02-23",
+      "2043": "03-15",
+      "2044": "03-06",
+      "2045": "02-19",
+      "2046": "03-11",
+      "2047": "03-03",
+      "2048": "02-16",
+      "2049": "03-07",
+      "2050": "02-27",
+      "2051": "03-19"
+    },
+    "occurrences_juliaans": {
+      "2024": "03-04",
+      "2025": "02-17",
+      "2026": "02-09",
+      "2027": "03-01",
+      "2028": "02-14",
+      "2029": "02-05",
+      "2030": "02-25",
+      "2031": "02-10",
+      "2032": "03-01",
+      "2033": "02-21",
+      "2034": "02-06",
+      "2035": "02-26",
+      "2036": "02-18",
+      "2037": "02-02",
+      "2038": "02-22",
+      "2039": "02-14",
+      "2040": "03-05",
+      "2041": "02-18",
+      "2042": "02-10",
+      "2043": "03-02",
+      "2044": "02-22",
+      "2045": "02-06",
+      "2046": "02-26",
+      "2047": "02-18",
+      "2048": "02-03",
+      "2049": "02-22",
+      "2050": "02-14",
+      "2051": "03-06"
+    }
+  },
+  {
+    "id": "schone-maandag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Schone Maandag (begin Grote Vasten)",
+    "alternatief": [
+      "Schone Maandag",
+      "begin Grote Vasten",
+      "Begin van de Grote Vasten"
+    ],
+    "titels": [],
+    "samenvatting": "Eerste dag van de Grote Vasten.",
+    "url": "/feesten/schone-maandag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -48,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-18",
+      "2025": "03-03",
+      "2026": "02-23",
+      "2027": "03-15",
+      "2028": "02-28",
+      "2029": "02-19",
+      "2030": "03-11",
+      "2031": "02-24",
+      "2032": "03-15",
+      "2033": "03-07",
+      "2034": "02-20",
+      "2035": "03-12",
+      "2036": "03-03",
+      "2037": "02-16",
+      "2038": "03-08",
+      "2039": "02-28",
+      "2040": "03-19",
+      "2041": "03-04",
+      "2042": "02-24",
+      "2043": "03-16",
+      "2044": "03-07",
+      "2045": "02-20",
+      "2046": "03-12",
+      "2047": "03-04",
+      "2048": "02-17",
+      "2049": "03-08",
+      "2050": "02-28",
+      "2051": "03-20"
+    },
+    "occurrences_juliaans": {
+      "2024": "03-05",
+      "2025": "02-18",
+      "2026": "02-10",
+      "2027": "03-02",
+      "2028": "02-15",
+      "2029": "02-06",
+      "2030": "02-26",
+      "2031": "02-11",
+      "2032": "03-02",
+      "2033": "02-22",
+      "2034": "02-07",
+      "2035": "02-27",
+      "2036": "02-19",
+      "2037": "02-03",
+      "2038": "02-23",
+      "2039": "02-15",
+      "2040": "03-06",
+      "2041": "02-19",
+      "2042": "02-11",
+      "2043": "03-03",
+      "2044": "02-23",
+      "2045": "02-07",
+      "2046": "02-27",
+      "2047": "02-19",
+      "2048": "02-04",
+      "2049": "02-23",
+      "2050": "02-15",
+      "2051": "03-07"
+    }
+  },
+  {
+    "id": "zondag-orthodoxie",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Eerste zondag van de Vasten (Zondag van de Orthodoxie)",
+    "alternatief": [
+      "Eerste zondag van de Vasten",
+      "Zondag van de Orthodoxie",
+      "Orthodoxiezondag"
+    ],
+    "titels": [],
+    "samenvatting": "Herstel van de iconenverering; eerste vastenzondag.",
+    "url": "/feesten/zondag-orthodoxie/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -42,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-24",
+      "2025": "03-09",
+      "2026": "03-01",
+      "2027": "03-21",
+      "2028": "03-05",
+      "2029": "02-25",
+      "2030": "03-17",
+      "2031": "03-02",
+      "2032": "03-21",
+      "2033": "03-13",
+      "2034": "02-26",
+      "2035": "03-18",
+      "2036": "03-09",
+      "2037": "02-22",
+      "2038": "03-14",
+      "2039": "03-06",
+      "2040": "03-25",
+      "2041": "03-10",
+      "2042": "03-02",
+      "2043": "03-22",
+      "2044": "03-13",
+      "2045": "02-26",
+      "2046": "03-18",
+      "2047": "03-10",
+      "2048": "02-23",
+      "2049": "03-14",
+      "2050": "03-06",
+      "2051": "03-26"
+    },
+    "occurrences_juliaans": {
+      "2024": "03-11",
+      "2025": "02-24",
+      "2026": "02-16",
+      "2027": "03-08",
+      "2028": "02-21",
+      "2029": "02-12",
+      "2030": "03-04",
+      "2031": "02-17",
+      "2032": "03-08",
+      "2033": "02-28",
+      "2034": "02-13",
+      "2035": "03-05",
+      "2036": "02-25",
+      "2037": "02-09",
+      "2038": "03-01",
+      "2039": "02-21",
+      "2040": "03-12",
+      "2041": "02-25",
+      "2042": "02-17",
+      "2043": "03-09",
+      "2044": "02-29",
+      "2045": "02-13",
+      "2046": "03-05",
+      "2047": "02-25",
+      "2048": "02-10",
+      "2049": "03-01",
+      "2050": "02-21",
+      "2051": "03-13"
+    }
+  },
+  {
+    "id": "zondag-gregorius-palamas",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Tweede zondag van de Vasten (Gregorius Palamas)",
+    "alternatief": [
+      "Tweede zondag van de Vasten",
+      "Gregorius Palamas",
+      "Zondag van Gregorius Palamas"
+    ],
+    "titels": [],
+    "samenvatting": "Gedachtenis van de heilige Gregorius Palamas.",
+    "url": "/feesten/zondag-gregorius-palamas/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -35,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "03-31",
+      "2025": "03-16",
+      "2026": "03-08",
+      "2027": "03-28",
+      "2028": "03-12",
+      "2029": "03-04",
+      "2030": "03-24",
+      "2031": "03-09",
+      "2032": "03-28",
+      "2033": "03-20",
+      "2034": "03-05",
+      "2035": "03-25",
+      "2036": "03-16",
+      "2037": "03-01",
+      "2038": "03-21",
+      "2039": "03-13",
+      "2040": "04-01",
+      "2041": "03-17",
+      "2042": "03-09",
+      "2043": "03-29",
+      "2044": "03-20",
+      "2045": "03-05",
+      "2046": "03-25",
+      "2047": "03-17",
+      "2048": "03-01",
+      "2049": "03-21",
+      "2050": "03-13",
+      "2051": "04-02"
+    },
+    "occurrences_juliaans": {
+      "2024": "03-18",
+      "2025": "03-03",
+      "2026": "02-23",
+      "2027": "03-15",
+      "2028": "02-28",
+      "2029": "02-19",
+      "2030": "03-11",
+      "2031": "02-24",
+      "2032": "03-15",
+      "2033": "03-07",
+      "2034": "02-20",
+      "2035": "03-12",
+      "2036": "03-03",
+      "2037": "02-16",
+      "2038": "03-08",
+      "2039": "02-28",
+      "2040": "03-19",
+      "2041": "03-04",
+      "2042": "02-24",
+      "2043": "03-16",
+      "2044": "03-07",
+      "2045": "02-20",
+      "2046": "03-12",
+      "2047": "03-04",
+      "2048": "02-17",
+      "2049": "03-08",
+      "2050": "02-28",
+      "2051": "03-20"
+    }
+  },
+  {
+    "id": "zondag-kruisverering",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Derde zondag van de Vasten (Kruisverering)",
+    "alternatief": [
+      "Derde zondag van de Vasten",
+      "Kruisverering",
+      "Zondag van de Kruisverering"
+    ],
+    "titels": [],
+    "samenvatting": "Midden in de vasten: verering van het Heilig Kruis.",
+    "url": "/feesten/zondag-kruisverering/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -28,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-07",
+      "2025": "03-23",
+      "2026": "03-15",
+      "2027": "04-04",
+      "2028": "03-19",
+      "2029": "03-11",
+      "2030": "03-31",
+      "2031": "03-16",
+      "2032": "04-04",
+      "2033": "03-27",
+      "2034": "03-12",
+      "2035": "04-01",
+      "2036": "03-23",
+      "2037": "03-08",
+      "2038": "03-28",
+      "2039": "03-20",
+      "2040": "04-08",
+      "2041": "03-24",
+      "2042": "03-16",
+      "2043": "04-05",
+      "2044": "03-27",
+      "2045": "03-12",
+      "2046": "04-01",
+      "2047": "03-24",
+      "2048": "03-08",
+      "2049": "03-28",
+      "2050": "03-20",
+      "2051": "04-09"
+    },
+    "occurrences_juliaans": {
+      "2024": "03-25",
+      "2025": "03-10",
+      "2026": "03-02",
+      "2027": "03-22",
+      "2028": "03-06",
+      "2029": "02-26",
+      "2030": "03-18",
+      "2031": "03-03",
+      "2032": "03-22",
+      "2033": "03-14",
+      "2034": "02-27",
+      "2035": "03-19",
+      "2036": "03-10",
+      "2037": "02-23",
+      "2038": "03-15",
+      "2039": "03-07",
+      "2040": "03-26",
+      "2041": "03-11",
+      "2042": "03-03",
+      "2043": "03-23",
+      "2044": "03-14",
+      "2045": "02-27",
+      "2046": "03-19",
+      "2047": "03-11",
+      "2048": "02-24",
+      "2049": "03-15",
+      "2050": "03-07",
+      "2051": "03-27"
+    }
+  },
+  {
+    "id": "zondag-johannes-klimacus",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Vierde zondag van de Vasten (Johannes Klimacus)",
+    "alternatief": [
+      "Vierde zondag van de Vasten",
+      "Johannes Klimacus",
+      "Zondag van Johannes Klimacus"
+    ],
+    "titels": [],
+    "samenvatting": "Gedachtenis van Johannes van de Ladder.",
+    "url": "/feesten/zondag-johannes-klimacus/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -21,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-14",
+      "2025": "03-30",
+      "2026": "03-22",
+      "2027": "04-11",
+      "2028": "03-26",
+      "2029": "03-18",
+      "2030": "04-07",
+      "2031": "03-23",
+      "2032": "04-11",
+      "2033": "04-03",
+      "2034": "03-19",
+      "2035": "04-08",
+      "2036": "03-30",
+      "2037": "03-15",
+      "2038": "04-04",
+      "2039": "03-27",
+      "2040": "04-15",
+      "2041": "03-31",
+      "2042": "03-23",
+      "2043": "04-12",
+      "2044": "04-03",
+      "2045": "03-19",
+      "2046": "04-08",
+      "2047": "03-31",
+      "2048": "03-15",
+      "2049": "04-04",
+      "2050": "03-27",
+      "2051": "04-16"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-01",
+      "2025": "03-17",
+      "2026": "03-09",
+      "2027": "03-29",
+      "2028": "03-13",
+      "2029": "03-05",
+      "2030": "03-25",
+      "2031": "03-10",
+      "2032": "03-29",
+      "2033": "03-21",
+      "2034": "03-06",
+      "2035": "03-26",
+      "2036": "03-17",
+      "2037": "03-02",
+      "2038": "03-22",
+      "2039": "03-14",
+      "2040": "04-02",
+      "2041": "03-18",
+      "2042": "03-10",
+      "2043": "03-30",
+      "2044": "03-21",
+      "2045": "03-06",
+      "2046": "03-26",
+      "2047": "03-18",
+      "2048": "03-02",
+      "2049": "03-22",
+      "2050": "03-14",
+      "2051": "04-03"
+    }
+  },
+  {
+    "id": "zondag-maria-van-egypte",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Vijfde zondag van de Vasten (Maria van Egypte)",
+    "alternatief": [
+      "Vijfde zondag van de Vasten",
+      "Maria van Egypte",
+      "Zondag van Maria van Egypte"
+    ],
+    "titels": [],
+    "samenvatting": "Gedachtenis van de heilige Maria van Egypte.",
+    "url": "/feesten/zondag-maria-van-egypte/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -14,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-21",
+      "2025": "04-06",
+      "2026": "03-29",
+      "2027": "04-18",
+      "2028": "04-02",
+      "2029": "03-25",
+      "2030": "04-14",
+      "2031": "03-30",
+      "2032": "04-18",
+      "2033": "04-10",
+      "2034": "03-26",
+      "2035": "04-15",
+      "2036": "04-06",
+      "2037": "03-22",
+      "2038": "04-11",
+      "2039": "04-03",
+      "2040": "04-22",
+      "2041": "04-07",
+      "2042": "03-30",
+      "2043": "04-19",
+      "2044": "04-10",
+      "2045": "03-26",
+      "2046": "04-15",
+      "2047": "04-07",
+      "2048": "03-22",
+      "2049": "04-11",
+      "2050": "04-03",
+      "2051": "04-23"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-08",
+      "2025": "03-24",
+      "2026": "03-16",
+      "2027": "04-05",
+      "2028": "03-20",
+      "2029": "03-12",
+      "2030": "04-01",
+      "2031": "03-17",
+      "2032": "04-05",
+      "2033": "03-28",
+      "2034": "03-13",
+      "2035": "04-02",
+      "2036": "03-24",
+      "2037": "03-09",
+      "2038": "03-29",
+      "2039": "03-21",
+      "2040": "04-09",
+      "2041": "03-25",
+      "2042": "03-17",
+      "2043": "04-06",
+      "2044": "03-28",
+      "2045": "03-13",
+      "2046": "04-02",
+      "2047": "03-25",
+      "2048": "03-09",
+      "2049": "03-29",
+      "2050": "03-21",
+      "2051": "04-10"
+    }
+  },
+  {
+    "id": "lazarus-zaterdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Lazarus-zaterdag",
+    "alternatief": [
+      "Opwekking van Lazarus"
+    ],
+    "titels": [],
+    "samenvatting": "Opwekking van Lazarus; vooravond van Palmzondag.",
+    "url": "/feesten/lazarus-zaterdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -8,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-27",
+      "2025": "04-12",
+      "2026": "04-04",
+      "2027": "04-24",
+      "2028": "04-08",
+      "2029": "03-31",
+      "2030": "04-20",
+      "2031": "04-05",
+      "2032": "04-24",
+      "2033": "04-16",
+      "2034": "04-01",
+      "2035": "04-21",
+      "2036": "04-12",
+      "2037": "03-28",
+      "2038": "04-17",
+      "2039": "04-09",
+      "2040": "04-28",
+      "2041": "04-13",
+      "2042": "04-05",
+      "2043": "04-25",
+      "2044": "04-16",
+      "2045": "04-01",
+      "2046": "04-21",
+      "2047": "04-13",
+      "2048": "03-28",
+      "2049": "04-17",
+      "2050": "04-09",
+      "2051": "04-29"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-14",
+      "2025": "03-30",
+      "2026": "03-22",
+      "2027": "04-11",
+      "2028": "03-26",
+      "2029": "03-18",
+      "2030": "04-07",
+      "2031": "03-23",
+      "2032": "04-11",
+      "2033": "04-03",
+      "2034": "03-19",
+      "2035": "04-08",
+      "2036": "03-30",
+      "2037": "03-15",
+      "2038": "04-04",
+      "2039": "03-27",
+      "2040": "04-15",
+      "2041": "03-31",
+      "2042": "03-23",
+      "2043": "04-12",
+      "2044": "04-03",
+      "2045": "03-19",
+      "2046": "04-08",
+      "2047": "03-31",
+      "2048": "03-15",
+      "2049": "04-04",
+      "2050": "03-27",
+      "2051": "04-16"
+    }
+  },
+  {
+    "id": "palmzondag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Palmzondag (Intocht in Jeruzalem)",
+    "alternatief": [
+      "Palmzondag",
+      "Intocht in Jeruzalem",
+      "Vaienzondag"
+    ],
+    "titels": [],
+    "samenvatting": "Christus’ intocht in Jeruzalem; begin van de Heilige Week.",
+    "url": "/feesten/palmzondag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": -7,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-28",
+      "2025": "04-13",
+      "2026": "04-05",
+      "2027": "04-25",
+      "2028": "04-09",
+      "2029": "04-01",
+      "2030": "04-21",
+      "2031": "04-06",
+      "2032": "04-25",
+      "2033": "04-17",
+      "2034": "04-02",
+      "2035": "04-22",
+      "2036": "04-13",
+      "2037": "03-29",
+      "2038": "04-18",
+      "2039": "04-10",
+      "2040": "04-29",
+      "2041": "04-14",
+      "2042": "04-06",
+      "2043": "04-26",
+      "2044": "04-17",
+      "2045": "04-02",
+      "2046": "04-22",
+      "2047": "04-14",
+      "2048": "03-29",
+      "2049": "04-18",
+      "2050": "04-10",
+      "2051": "04-30"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-15",
+      "2025": "03-31",
+      "2026": "03-23",
+      "2027": "04-12",
+      "2028": "03-27",
+      "2029": "03-19",
+      "2030": "04-08",
+      "2031": "03-24",
+      "2032": "04-12",
+      "2033": "04-04",
+      "2034": "03-20",
+      "2035": "04-09",
+      "2036": "03-31",
+      "2037": "03-16",
+      "2038": "04-05",
+      "2039": "03-28",
+      "2040": "04-16",
+      "2041": "04-01",
+      "2042": "03-24",
+      "2043": "04-13",
+      "2044": "04-04",
+      "2045": "03-20",
+      "2046": "04-09",
+      "2047": "04-01",
+      "2048": "03-16",
+      "2049": "04-05",
+      "2050": "03-28",
+      "2051": "04-17"
+    }
+  },
+  {
+    "id": "grote-maandag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Maandag",
+    "alternatief": [
+      "Heilige en Grote Maandag"
+    ],
+    "titels": [],
+    "samenvatting": "Eerste dag van de Heilige Week; Jozef de Alschone; onvruchtbare vijgenboom.",
+    "url": "/feesten/grote-maandag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -6,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-29",
+      "2025": "04-14",
+      "2026": "04-06",
+      "2027": "04-26",
+      "2028": "04-10",
+      "2029": "04-02",
+      "2030": "04-22",
+      "2031": "04-07",
+      "2032": "04-26",
+      "2033": "04-18",
+      "2034": "04-03",
+      "2035": "04-23",
+      "2036": "04-14",
+      "2037": "03-30",
+      "2038": "04-19",
+      "2039": "04-11",
+      "2040": "04-30",
+      "2041": "04-15",
+      "2042": "04-07",
+      "2043": "04-27",
+      "2044": "04-18",
+      "2045": "04-03",
+      "2046": "04-23",
+      "2047": "04-15",
+      "2048": "03-30",
+      "2049": "04-19",
+      "2050": "04-11",
+      "2051": "05-01"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-16",
+      "2025": "04-01",
+      "2026": "03-24",
+      "2027": "04-13",
+      "2028": "03-28",
+      "2029": "03-20",
+      "2030": "04-09",
+      "2031": "03-25",
+      "2032": "04-13",
+      "2033": "04-05",
+      "2034": "03-21",
+      "2035": "04-10",
+      "2036": "04-01",
+      "2037": "03-17",
+      "2038": "04-06",
+      "2039": "03-29",
+      "2040": "04-17",
+      "2041": "04-02",
+      "2042": "03-25",
+      "2043": "04-14",
+      "2044": "04-05",
+      "2045": "03-21",
+      "2046": "04-10",
+      "2047": "04-02",
+      "2048": "03-17",
+      "2049": "04-06",
+      "2050": "03-29",
+      "2051": "04-18"
+    }
+  },
+  {
+    "id": "grote-dinsdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Dinsdag",
+    "alternatief": [
+      "Heilige en Grote Dinsdag"
+    ],
+    "titels": [],
+    "samenvatting": "Heilige Week; gelijkenissen van waakzaamheid.",
+    "url": "/feesten/grote-dinsdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -5,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "04-30",
+      "2025": "04-15",
+      "2026": "04-07",
+      "2027": "04-27",
+      "2028": "04-11",
+      "2029": "04-03",
+      "2030": "04-23",
+      "2031": "04-08",
+      "2032": "04-27",
+      "2033": "04-19",
+      "2034": "04-04",
+      "2035": "04-24",
+      "2036": "04-15",
+      "2037": "03-31",
+      "2038": "04-20",
+      "2039": "04-12",
+      "2040": "05-01",
+      "2041": "04-16",
+      "2042": "04-08",
+      "2043": "04-28",
+      "2044": "04-19",
+      "2045": "04-04",
+      "2046": "04-24",
+      "2047": "04-16",
+      "2048": "03-31",
+      "2049": "04-20",
+      "2050": "04-12",
+      "2051": "05-02"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-17",
+      "2025": "04-02",
+      "2026": "03-25",
+      "2027": "04-14",
+      "2028": "03-29",
+      "2029": "03-21",
+      "2030": "04-10",
+      "2031": "03-26",
+      "2032": "04-14",
+      "2033": "04-06",
+      "2034": "03-22",
+      "2035": "04-11",
+      "2036": "04-02",
+      "2037": "03-18",
+      "2038": "04-07",
+      "2039": "03-30",
+      "2040": "04-18",
+      "2041": "04-03",
+      "2042": "03-26",
+      "2043": "04-15",
+      "2044": "04-06",
+      "2045": "03-22",
+      "2046": "04-11",
+      "2047": "04-03",
+      "2048": "03-18",
+      "2049": "04-07",
+      "2050": "03-30",
+      "2051": "04-19"
+    }
+  },
+  {
+    "id": "grote-woensdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Woensdag",
+    "alternatief": [
+      "Heilige en Grote Woensdag"
+    ],
+    "titels": [],
+    "samenvatting": "Zalving te Bethanië; verraad van Judas.",
+    "url": "/feesten/grote-woensdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -4,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-01",
+      "2025": "04-16",
+      "2026": "04-08",
+      "2027": "04-28",
+      "2028": "04-12",
+      "2029": "04-04",
+      "2030": "04-24",
+      "2031": "04-09",
+      "2032": "04-28",
+      "2033": "04-20",
+      "2034": "04-05",
+      "2035": "04-25",
+      "2036": "04-16",
+      "2037": "04-01",
+      "2038": "04-21",
+      "2039": "04-13",
+      "2040": "05-02",
+      "2041": "04-17",
+      "2042": "04-09",
+      "2043": "04-29",
+      "2044": "04-20",
+      "2045": "04-05",
+      "2046": "04-25",
+      "2047": "04-17",
+      "2048": "04-01",
+      "2049": "04-21",
+      "2050": "04-13",
+      "2051": "05-03"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-18",
+      "2025": "04-03",
+      "2026": "03-26",
+      "2027": "04-15",
+      "2028": "03-30",
+      "2029": "03-22",
+      "2030": "04-11",
+      "2031": "03-27",
+      "2032": "04-15",
+      "2033": "04-07",
+      "2034": "03-23",
+      "2035": "04-12",
+      "2036": "04-03",
+      "2037": "03-19",
+      "2038": "04-08",
+      "2039": "03-31",
+      "2040": "04-19",
+      "2041": "04-04",
+      "2042": "03-27",
+      "2043": "04-16",
+      "2044": "04-07",
+      "2045": "03-23",
+      "2046": "04-12",
+      "2047": "04-04",
+      "2048": "03-19",
+      "2049": "04-08",
+      "2050": "03-31",
+      "2051": "04-20"
+    }
+  },
+  {
+    "id": "grote-donderdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Donderdag",
+    "alternatief": [
+      "Heilige en Grote Donderdag",
+      "Witte Donderdag",
+      "Donderdag van het Mysterie"
+    ],
+    "titels": [],
+    "samenvatting": "Laatste Avondmaal; voetwassing; overlevering aan het lijden.",
+    "url": "/feesten/grote-donderdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -3,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-02",
+      "2025": "04-17",
+      "2026": "04-09",
+      "2027": "04-29",
+      "2028": "04-13",
+      "2029": "04-05",
+      "2030": "04-25",
+      "2031": "04-10",
+      "2032": "04-29",
+      "2033": "04-21",
+      "2034": "04-06",
+      "2035": "04-26",
+      "2036": "04-17",
+      "2037": "04-02",
+      "2038": "04-22",
+      "2039": "04-14",
+      "2040": "05-03",
+      "2041": "04-18",
+      "2042": "04-10",
+      "2043": "04-30",
+      "2044": "04-21",
+      "2045": "04-06",
+      "2046": "04-26",
+      "2047": "04-18",
+      "2048": "04-02",
+      "2049": "04-22",
+      "2050": "04-14",
+      "2051": "05-04"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-19",
+      "2025": "04-04",
+      "2026": "03-27",
+      "2027": "04-16",
+      "2028": "03-31",
+      "2029": "03-23",
+      "2030": "04-12",
+      "2031": "03-28",
+      "2032": "04-16",
+      "2033": "04-08",
+      "2034": "03-24",
+      "2035": "04-13",
+      "2036": "04-04",
+      "2037": "03-20",
+      "2038": "04-09",
+      "2039": "04-01",
+      "2040": "04-20",
+      "2041": "04-05",
+      "2042": "03-28",
+      "2043": "04-17",
+      "2044": "04-08",
+      "2045": "03-24",
+      "2046": "04-13",
+      "2047": "04-05",
+      "2048": "03-20",
+      "2049": "04-09",
+      "2050": "04-01",
+      "2051": "04-21"
+    }
+  },
+  {
+    "id": "grote-vrijdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Vrijdag (Heilige en Grote Vrijdag)",
+    "alternatief": [
+      "Grote Vrijdag",
+      "Heilige en Grote Vrijdag",
+      "Goede Vrijdag"
+    ],
+    "titels": [],
+    "samenvatting": "Kruisiging en graflegging van de Heer.",
+    "url": "/feesten/grote-vrijdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -2,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-03",
+      "2025": "04-18",
+      "2026": "04-10",
+      "2027": "04-30",
+      "2028": "04-14",
+      "2029": "04-06",
+      "2030": "04-26",
+      "2031": "04-11",
+      "2032": "04-30",
+      "2033": "04-22",
+      "2034": "04-07",
+      "2035": "04-27",
+      "2036": "04-18",
+      "2037": "04-03",
+      "2038": "04-23",
+      "2039": "04-15",
+      "2040": "05-04",
+      "2041": "04-19",
+      "2042": "04-11",
+      "2043": "05-01",
+      "2044": "04-22",
+      "2045": "04-07",
+      "2046": "04-27",
+      "2047": "04-19",
+      "2048": "04-03",
+      "2049": "04-23",
+      "2050": "04-15",
+      "2051": "05-05"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-20",
+      "2025": "04-05",
+      "2026": "03-28",
+      "2027": "04-17",
+      "2028": "04-01",
+      "2029": "03-24",
+      "2030": "04-13",
+      "2031": "03-29",
+      "2032": "04-17",
+      "2033": "04-09",
+      "2034": "03-25",
+      "2035": "04-14",
+      "2036": "04-05",
+      "2037": "03-21",
+      "2038": "04-10",
+      "2039": "04-02",
+      "2040": "04-21",
+      "2041": "04-06",
+      "2042": "03-29",
+      "2043": "04-18",
+      "2044": "04-09",
+      "2045": "03-25",
+      "2046": "04-14",
+      "2047": "04-06",
+      "2048": "03-21",
+      "2049": "04-10",
+      "2050": "04-02",
+      "2051": "04-22"
+    }
+  },
+  {
+    "id": "grote-zaterdag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Grote Zaterdag",
+    "alternatief": [
+      "Heilige en Grote Zaterdag"
+    ],
+    "titels": [],
+    "samenvatting": "Christus in het graf; vooravond van Pascha.",
+    "url": "/feesten/grote-zaterdag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest",
+      "vasten"
+    ],
+    "icoon": null,
+    "offset_dagen": -1,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-04",
+      "2025": "04-19",
+      "2026": "04-11",
+      "2027": "05-01",
+      "2028": "04-15",
+      "2029": "04-07",
+      "2030": "04-27",
+      "2031": "04-12",
+      "2032": "05-01",
+      "2033": "04-23",
+      "2034": "04-08",
+      "2035": "04-28",
+      "2036": "04-19",
+      "2037": "04-04",
+      "2038": "04-24",
+      "2039": "04-16",
+      "2040": "05-05",
+      "2041": "04-20",
+      "2042": "04-12",
+      "2043": "05-02",
+      "2044": "04-23",
+      "2045": "04-08",
+      "2046": "04-28",
+      "2047": "04-20",
+      "2048": "04-04",
+      "2049": "04-24",
+      "2050": "04-16",
+      "2051": "05-06"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-21",
+      "2025": "04-06",
+      "2026": "03-29",
+      "2027": "04-18",
+      "2028": "04-02",
+      "2029": "03-25",
+      "2030": "04-14",
+      "2031": "03-30",
+      "2032": "04-18",
+      "2033": "04-10",
+      "2034": "03-26",
+      "2035": "04-15",
+      "2036": "04-06",
+      "2037": "03-22",
+      "2038": "04-11",
+      "2039": "04-03",
+      "2040": "04-22",
+      "2041": "04-07",
+      "2042": "03-30",
+      "2043": "04-19",
+      "2044": "04-10",
+      "2045": "03-26",
+      "2046": "04-15",
+      "2047": "04-07",
+      "2048": "03-22",
+      "2049": "04-11",
+      "2050": "04-03",
+      "2051": "04-23"
+    }
+  },
+  {
+    "id": "pascha",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Pascha (Heilige Opstanding van Christus)",
+    "alternatief": [
+      "Orthodox Pasen",
+      "Feest van de Opstanding",
+      "Pascha",
+      "Heilige Opstanding van Christus",
+      "Heilige Opstanding",
+      "Opstanding van Christus"
+    ],
+    "titels": [],
+    "samenvatting": "Feest van de Opstanding; middelpunt van het kerkelijk jaar.",
+    "url": "/feesten/pascha/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 0,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-05",
+      "2025": "04-20",
+      "2026": "04-12",
+      "2027": "05-02",
+      "2028": "04-16",
+      "2029": "04-08",
+      "2030": "04-28",
+      "2031": "04-13",
+      "2032": "05-02",
+      "2033": "04-24",
+      "2034": "04-09",
+      "2035": "04-29",
+      "2036": "04-20",
+      "2037": "04-05",
+      "2038": "04-25",
+      "2039": "04-17",
+      "2040": "05-06",
+      "2041": "04-21",
+      "2042": "04-13",
+      "2043": "05-03",
+      "2044": "04-24",
+      "2045": "04-09",
+      "2046": "04-29",
+      "2047": "04-21",
+      "2048": "04-05",
+      "2049": "04-25",
+      "2050": "04-17",
+      "2051": "05-07"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-22",
+      "2025": "04-07",
+      "2026": "03-30",
+      "2027": "04-19",
+      "2028": "04-03",
+      "2029": "03-26",
+      "2030": "04-15",
+      "2031": "03-31",
+      "2032": "04-19",
+      "2033": "04-11",
+      "2034": "03-27",
+      "2035": "04-16",
+      "2036": "04-07",
+      "2037": "03-23",
+      "2038": "04-12",
+      "2039": "04-04",
+      "2040": "04-23",
+      "2041": "04-08",
+      "2042": "03-31",
+      "2043": "04-20",
+      "2044": "04-11",
+      "2045": "03-27",
+      "2046": "04-16",
+      "2047": "04-08",
+      "2048": "03-23",
+      "2049": "04-12",
+      "2050": "04-04",
+      "2051": "04-24"
+    }
+  },
+  {
+    "id": "lichte-maandag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Lichte Maandag",
+    "alternatief": [
+      "Maandag van de Lichte Week"
+    ],
+    "titels": [],
+    "samenvatting": "Tweede dag van de Lichte Week na Pascha.",
+    "url": "/feesten/lichte-maandag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 1,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-06",
+      "2025": "04-21",
+      "2026": "04-13",
+      "2027": "05-03",
+      "2028": "04-17",
+      "2029": "04-09",
+      "2030": "04-29",
+      "2031": "04-14",
+      "2032": "05-03",
+      "2033": "04-25",
+      "2034": "04-10",
+      "2035": "04-30",
+      "2036": "04-21",
+      "2037": "04-06",
+      "2038": "04-26",
+      "2039": "04-18",
+      "2040": "05-07",
+      "2041": "04-22",
+      "2042": "04-14",
+      "2043": "05-04",
+      "2044": "04-25",
+      "2045": "04-10",
+      "2046": "04-30",
+      "2047": "04-22",
+      "2048": "04-06",
+      "2049": "04-26",
+      "2050": "04-18",
+      "2051": "05-08"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-23",
+      "2025": "04-08",
+      "2026": "03-31",
+      "2027": "04-20",
+      "2028": "04-04",
+      "2029": "03-27",
+      "2030": "04-16",
+      "2031": "04-01",
+      "2032": "04-20",
+      "2033": "04-12",
+      "2034": "03-28",
+      "2035": "04-17",
+      "2036": "04-08",
+      "2037": "03-24",
+      "2038": "04-13",
+      "2039": "04-05",
+      "2040": "04-24",
+      "2041": "04-09",
+      "2042": "04-01",
+      "2043": "04-21",
+      "2044": "04-12",
+      "2045": "03-28",
+      "2046": "04-17",
+      "2047": "04-09",
+      "2048": "03-24",
+      "2049": "04-13",
+      "2050": "04-05",
+      "2051": "04-25"
+    }
+  },
+  {
+    "id": "thomaszondag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Thomaszondag (Antipascha)",
+    "alternatief": [
+      "Zondag van de ongelovige Thomas",
+      "Thomaszondag",
+      "Antipascha",
+      "Zondag van Thomas"
+    ],
+    "titels": [],
+    "samenvatting": "Eerste zondag na Pascha; belijdenis van Thomas.",
+    "url": "/feesten/thomaszondag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 7,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-12",
+      "2025": "04-27",
+      "2026": "04-19",
+      "2027": "05-09",
+      "2028": "04-23",
+      "2029": "04-15",
+      "2030": "05-05",
+      "2031": "04-20",
+      "2032": "05-09",
+      "2033": "05-01",
+      "2034": "04-16",
+      "2035": "05-06",
+      "2036": "04-27",
+      "2037": "04-12",
+      "2038": "05-02",
+      "2039": "04-24",
+      "2040": "05-13",
+      "2041": "04-28",
+      "2042": "04-20",
+      "2043": "05-10",
+      "2044": "05-01",
+      "2045": "04-16",
+      "2046": "05-06",
+      "2047": "04-28",
+      "2048": "04-12",
+      "2049": "05-02",
+      "2050": "04-24",
+      "2051": "05-14"
+    },
+    "occurrences_juliaans": {
+      "2024": "04-29",
+      "2025": "04-14",
+      "2026": "04-06",
+      "2027": "04-26",
+      "2028": "04-10",
+      "2029": "04-02",
+      "2030": "04-22",
+      "2031": "04-07",
+      "2032": "04-26",
+      "2033": "04-18",
+      "2034": "04-03",
+      "2035": "04-23",
+      "2036": "04-14",
+      "2037": "03-30",
+      "2038": "04-19",
+      "2039": "04-11",
+      "2040": "04-30",
+      "2041": "04-15",
+      "2042": "04-07",
+      "2043": "04-27",
+      "2044": "04-18",
+      "2045": "04-03",
+      "2046": "04-23",
+      "2047": "04-15",
+      "2048": "03-30",
+      "2049": "04-19",
+      "2050": "04-11",
+      "2051": "05-01"
+    }
+  },
+  {
+    "id": "zondag-mirredraagsters",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de mirredraagsters",
+    "alternatief": [
+      "Mirredraagsterszondag",
+      "Zondag van de myrrhedraagsters"
+    ],
+    "titels": [],
+    "samenvatting": "De vrouwen bij het graf; Jozef van Arimatea en Nicodemus.",
+    "url": "/feesten/zondag-mirredraagsters/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 14,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-19",
+      "2025": "05-04",
+      "2026": "04-26",
+      "2027": "05-16",
+      "2028": "04-30",
+      "2029": "04-22",
+      "2030": "05-12",
+      "2031": "04-27",
+      "2032": "05-16",
+      "2033": "05-08",
+      "2034": "04-23",
+      "2035": "05-13",
+      "2036": "05-04",
+      "2037": "04-19",
+      "2038": "05-09",
+      "2039": "05-01",
+      "2040": "05-20",
+      "2041": "05-05",
+      "2042": "04-27",
+      "2043": "05-17",
+      "2044": "05-08",
+      "2045": "04-23",
+      "2046": "05-13",
+      "2047": "05-05",
+      "2048": "04-19",
+      "2049": "05-09",
+      "2050": "05-01",
+      "2051": "05-21"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-06",
+      "2025": "04-21",
+      "2026": "04-13",
+      "2027": "05-03",
+      "2028": "04-17",
+      "2029": "04-09",
+      "2030": "04-29",
+      "2031": "04-14",
+      "2032": "05-03",
+      "2033": "04-25",
+      "2034": "04-10",
+      "2035": "04-30",
+      "2036": "04-21",
+      "2037": "04-06",
+      "2038": "04-26",
+      "2039": "04-18",
+      "2040": "05-07",
+      "2041": "04-22",
+      "2042": "04-14",
+      "2043": "05-04",
+      "2044": "04-25",
+      "2045": "04-10",
+      "2046": "04-30",
+      "2047": "04-22",
+      "2048": "04-06",
+      "2049": "04-26",
+      "2050": "04-18",
+      "2051": "05-08"
+    }
+  },
+  {
+    "id": "zondag-verlamde",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de verlamde",
+    "alternatief": [
+      "Zondag van de verlamde man",
+      "Zondag van de genezing van de verlamde"
+    ],
+    "titels": [],
+    "samenvatting": "Genezing bij Betesda; derde zondag na Pascha.",
+    "url": "/feesten/zondag-verlamde/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 21,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-26",
+      "2025": "05-11",
+      "2026": "05-03",
+      "2027": "05-23",
+      "2028": "05-07",
+      "2029": "04-29",
+      "2030": "05-19",
+      "2031": "05-04",
+      "2032": "05-23",
+      "2033": "05-15",
+      "2034": "04-30",
+      "2035": "05-20",
+      "2036": "05-11",
+      "2037": "04-26",
+      "2038": "05-16",
+      "2039": "05-08",
+      "2040": "05-27",
+      "2041": "05-12",
+      "2042": "05-04",
+      "2043": "05-24",
+      "2044": "05-15",
+      "2045": "04-30",
+      "2046": "05-20",
+      "2047": "05-12",
+      "2048": "04-26",
+      "2049": "05-16",
+      "2050": "05-08",
+      "2051": "05-28"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-13",
+      "2025": "04-28",
+      "2026": "04-20",
+      "2027": "05-10",
+      "2028": "04-24",
+      "2029": "04-16",
+      "2030": "05-06",
+      "2031": "04-21",
+      "2032": "05-10",
+      "2033": "05-02",
+      "2034": "04-17",
+      "2035": "05-07",
+      "2036": "04-28",
+      "2037": "04-13",
+      "2038": "05-03",
+      "2039": "04-25",
+      "2040": "05-14",
+      "2041": "04-29",
+      "2042": "04-21",
+      "2043": "05-11",
+      "2044": "05-02",
+      "2045": "04-17",
+      "2046": "05-07",
+      "2047": "04-29",
+      "2048": "04-13",
+      "2049": "05-03",
+      "2050": "04-25",
+      "2051": "05-15"
+    }
+  },
+  {
+    "id": "midden-pinksterfeest",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Midden-Pinksterfeest",
+    "alternatief": [
+      "Mid-Pinksteren",
+      "Middenfeest"
+    ],
+    "titels": [],
+    "samenvatting": "Halverwege tussen Pascha en Pinksteren.",
+    "url": "/feesten/midden-pinksterfeest/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 24,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "05-29",
+      "2025": "05-14",
+      "2026": "05-06",
+      "2027": "05-26",
+      "2028": "05-10",
+      "2029": "05-02",
+      "2030": "05-22",
+      "2031": "05-07",
+      "2032": "05-26",
+      "2033": "05-18",
+      "2034": "05-03",
+      "2035": "05-23",
+      "2036": "05-14",
+      "2037": "04-29",
+      "2038": "05-19",
+      "2039": "05-11",
+      "2040": "05-30",
+      "2041": "05-15",
+      "2042": "05-07",
+      "2043": "05-27",
+      "2044": "05-18",
+      "2045": "05-03",
+      "2046": "05-23",
+      "2047": "05-15",
+      "2048": "04-29",
+      "2049": "05-19",
+      "2050": "05-11",
+      "2051": "05-31"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-16",
+      "2025": "05-01",
+      "2026": "04-23",
+      "2027": "05-13",
+      "2028": "04-27",
+      "2029": "04-19",
+      "2030": "05-09",
+      "2031": "04-24",
+      "2032": "05-13",
+      "2033": "05-05",
+      "2034": "04-20",
+      "2035": "05-10",
+      "2036": "05-01",
+      "2037": "04-16",
+      "2038": "05-06",
+      "2039": "04-28",
+      "2040": "05-17",
+      "2041": "05-02",
+      "2042": "04-24",
+      "2043": "05-14",
+      "2044": "05-05",
+      "2045": "04-20",
+      "2046": "05-10",
+      "2047": "05-02",
+      "2048": "04-16",
+      "2049": "05-06",
+      "2050": "04-28",
+      "2051": "05-18"
+    }
+  },
+  {
+    "id": "zondag-samaritaanse",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de Samaritaanse vrouw",
+    "alternatief": [
+      "Zondag van de Samaritaanse",
+      "Zondag van de Samaritaanse vrouw bij de put"
+    ],
+    "titels": [],
+    "samenvatting": "Ontmoeting bij de put; levend water.",
+    "url": "/feesten/zondag-samaritaanse/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 28,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-02",
+      "2025": "05-18",
+      "2026": "05-10",
+      "2027": "05-30",
+      "2028": "05-14",
+      "2029": "05-06",
+      "2030": "05-26",
+      "2031": "05-11",
+      "2032": "05-30",
+      "2033": "05-22",
+      "2034": "05-07",
+      "2035": "05-27",
+      "2036": "05-18",
+      "2037": "05-03",
+      "2038": "05-23",
+      "2039": "05-15",
+      "2040": "06-03",
+      "2041": "05-19",
+      "2042": "05-11",
+      "2043": "05-31",
+      "2044": "05-22",
+      "2045": "05-07",
+      "2046": "05-27",
+      "2047": "05-19",
+      "2048": "05-03",
+      "2049": "05-23",
+      "2050": "05-15",
+      "2051": "06-04"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-20",
+      "2025": "05-05",
+      "2026": "04-27",
+      "2027": "05-17",
+      "2028": "05-01",
+      "2029": "04-23",
+      "2030": "05-13",
+      "2031": "04-28",
+      "2032": "05-17",
+      "2033": "05-09",
+      "2034": "04-24",
+      "2035": "05-14",
+      "2036": "05-05",
+      "2037": "04-20",
+      "2038": "05-10",
+      "2039": "05-02",
+      "2040": "05-21",
+      "2041": "05-06",
+      "2042": "04-28",
+      "2043": "05-18",
+      "2044": "05-09",
+      "2045": "04-24",
+      "2046": "05-14",
+      "2047": "05-06",
+      "2048": "04-20",
+      "2049": "05-10",
+      "2050": "05-02",
+      "2051": "05-22"
+    }
+  },
+  {
+    "id": "zondag-blinde",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de blinde",
+    "alternatief": [
+      "Zondag van de blindgeborene",
+      "Zondag van de genezing van de blinde"
+    ],
+    "titels": [],
+    "samenvatting": "Genezing van de blindgeborene.",
+    "url": "/feesten/zondag-blinde/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 35,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-09",
+      "2025": "05-25",
+      "2026": "05-17",
+      "2027": "06-06",
+      "2028": "05-21",
+      "2029": "05-13",
+      "2030": "06-02",
+      "2031": "05-18",
+      "2032": "06-06",
+      "2033": "05-29",
+      "2034": "05-14",
+      "2035": "06-03",
+      "2036": "05-25",
+      "2037": "05-10",
+      "2038": "05-30",
+      "2039": "05-22",
+      "2040": "06-10",
+      "2041": "05-26",
+      "2042": "05-18",
+      "2043": "06-07",
+      "2044": "05-29",
+      "2045": "05-14",
+      "2046": "06-03",
+      "2047": "05-26",
+      "2048": "05-10",
+      "2049": "05-30",
+      "2050": "05-22",
+      "2051": "06-11"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-27",
+      "2025": "05-12",
+      "2026": "05-04",
+      "2027": "05-24",
+      "2028": "05-08",
+      "2029": "04-30",
+      "2030": "05-20",
+      "2031": "05-05",
+      "2032": "05-24",
+      "2033": "05-16",
+      "2034": "05-01",
+      "2035": "05-21",
+      "2036": "05-12",
+      "2037": "04-27",
+      "2038": "05-17",
+      "2039": "05-09",
+      "2040": "05-28",
+      "2041": "05-13",
+      "2042": "05-05",
+      "2043": "05-25",
+      "2044": "05-16",
+      "2045": "05-01",
+      "2046": "05-21",
+      "2047": "05-13",
+      "2048": "04-27",
+      "2049": "05-17",
+      "2050": "05-09",
+      "2051": "05-29"
+    }
+  },
+  {
+    "id": "teruggave-pascha",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Teruggave van Pascha",
+    "alternatief": [
+      "Apodosis van Pascha",
+      "Teruggave van Pasen"
+    ],
+    "titels": [],
+    "samenvatting": "Laatste dag van de Pascha-viering vóór Hemelvaart.",
+    "url": "/feesten/teruggave-pascha/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 38,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-12",
+      "2025": "05-28",
+      "2026": "05-20",
+      "2027": "06-09",
+      "2028": "05-24",
+      "2029": "05-16",
+      "2030": "06-05",
+      "2031": "05-21",
+      "2032": "06-09",
+      "2033": "06-01",
+      "2034": "05-17",
+      "2035": "06-06",
+      "2036": "05-28",
+      "2037": "05-13",
+      "2038": "06-02",
+      "2039": "05-25",
+      "2040": "06-13",
+      "2041": "05-29",
+      "2042": "05-21",
+      "2043": "06-10",
+      "2044": "06-01",
+      "2045": "05-17",
+      "2046": "06-06",
+      "2047": "05-29",
+      "2048": "05-13",
+      "2049": "06-02",
+      "2050": "05-25",
+      "2051": "06-14"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-30",
+      "2025": "05-15",
+      "2026": "05-07",
+      "2027": "05-27",
+      "2028": "05-11",
+      "2029": "05-03",
+      "2030": "05-23",
+      "2031": "05-08",
+      "2032": "05-27",
+      "2033": "05-19",
+      "2034": "05-04",
+      "2035": "05-24",
+      "2036": "05-15",
+      "2037": "04-30",
+      "2038": "05-20",
+      "2039": "05-12",
+      "2040": "05-31",
+      "2041": "05-16",
+      "2042": "05-08",
+      "2043": "05-28",
+      "2044": "05-19",
+      "2045": "05-04",
+      "2046": "05-24",
+      "2047": "05-16",
+      "2048": "04-30",
+      "2049": "05-20",
+      "2050": "05-12",
+      "2051": "06-01"
+    }
+  },
+  {
+    "id": "hemelvaart",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Hemelvaart van de Heer",
+    "alternatief": [
+      "Hemelvaart",
+      "Hemelvaartsdag"
+    ],
+    "titels": [],
+    "samenvatting": "Veertig dagen na Pascha; Christus’ hemelvaart.",
+    "url": "/feesten/hemelvaart/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 39,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-13",
+      "2025": "05-29",
+      "2026": "05-21",
+      "2027": "06-10",
+      "2028": "05-25",
+      "2029": "05-17",
+      "2030": "06-06",
+      "2031": "05-22",
+      "2032": "06-10",
+      "2033": "06-02",
+      "2034": "05-18",
+      "2035": "06-07",
+      "2036": "05-29",
+      "2037": "05-14",
+      "2038": "06-03",
+      "2039": "05-26",
+      "2040": "06-14",
+      "2041": "05-30",
+      "2042": "05-22",
+      "2043": "06-11",
+      "2044": "06-02",
+      "2045": "05-18",
+      "2046": "06-07",
+      "2047": "05-30",
+      "2048": "05-14",
+      "2049": "06-03",
+      "2050": "05-26",
+      "2051": "06-15"
+    },
+    "occurrences_juliaans": {
+      "2024": "05-31",
+      "2025": "05-16",
+      "2026": "05-08",
+      "2027": "05-28",
+      "2028": "05-12",
+      "2029": "05-04",
+      "2030": "05-24",
+      "2031": "05-09",
+      "2032": "05-28",
+      "2033": "05-20",
+      "2034": "05-05",
+      "2035": "05-25",
+      "2036": "05-16",
+      "2037": "05-01",
+      "2038": "05-21",
+      "2039": "05-13",
+      "2040": "06-01",
+      "2041": "05-17",
+      "2042": "05-09",
+      "2043": "05-29",
+      "2044": "05-20",
+      "2045": "05-05",
+      "2046": "05-25",
+      "2047": "05-17",
+      "2048": "05-01",
+      "2049": "05-21",
+      "2050": "05-13",
+      "2051": "06-02"
+    }
+  },
+  {
+    "id": "zondag-vaderen-eerste-concilie",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Zondag van de heilige Vaderen van het Eerste Concilie",
+    "alternatief": [
+      "Zondag van de Vaderen van Nicea",
+      "Zondag van de 318 Vaderen"
+    ],
+    "titels": [],
+    "samenvatting": "Vaderen van Nicea (325); zondag na Hemelvaart.",
+    "url": "/feesten/zondag-vaderen-eerste-concilie/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 42,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-16",
+      "2025": "06-01",
+      "2026": "05-24",
+      "2027": "06-13",
+      "2028": "05-28",
+      "2029": "05-20",
+      "2030": "06-09",
+      "2031": "05-25",
+      "2032": "06-13",
+      "2033": "06-05",
+      "2034": "05-21",
+      "2035": "06-10",
+      "2036": "06-01",
+      "2037": "05-17",
+      "2038": "06-06",
+      "2039": "05-29",
+      "2040": "06-17",
+      "2041": "06-02",
+      "2042": "05-25",
+      "2043": "06-14",
+      "2044": "06-05",
+      "2045": "05-21",
+      "2046": "06-10",
+      "2047": "06-02",
+      "2048": "05-17",
+      "2049": "06-06",
+      "2050": "05-29",
+      "2051": "06-18"
+    },
+    "occurrences_juliaans": {
+      "2024": "06-03",
+      "2025": "05-19",
+      "2026": "05-11",
+      "2027": "05-31",
+      "2028": "05-15",
+      "2029": "05-07",
+      "2030": "05-27",
+      "2031": "05-12",
+      "2032": "05-31",
+      "2033": "05-23",
+      "2034": "05-08",
+      "2035": "05-28",
+      "2036": "05-19",
+      "2037": "05-04",
+      "2038": "05-24",
+      "2039": "05-16",
+      "2040": "06-04",
+      "2041": "05-20",
+      "2042": "05-12",
+      "2043": "06-01",
+      "2044": "05-23",
+      "2045": "05-08",
+      "2046": "05-28",
+      "2047": "05-20",
+      "2048": "05-04",
+      "2049": "05-24",
+      "2050": "05-16",
+      "2051": "06-05"
+    }
+  },
+  {
+    "id": "allerzielen-zaterdag-pinksteren",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Allerzielen-zaterdag (vóór Pinksteren)",
+    "alternatief": [
+      "Allerzielen-zaterdag",
+      "Zaterdag van de zielen (vóór Pinksteren)"
+    ],
+    "titels": [],
+    "samenvatting": "Gedachtenis van de overledenen vóór Pinksteren.",
+    "url": "/feesten/allerzielen-zaterdag-pinksteren/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 48,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-22",
+      "2025": "06-07",
+      "2026": "05-30",
+      "2027": "06-19",
+      "2028": "06-03",
+      "2029": "05-26",
+      "2030": "06-15",
+      "2031": "05-31",
+      "2032": "06-19",
+      "2033": "06-11",
+      "2034": "05-27",
+      "2035": "06-16",
+      "2036": "06-07",
+      "2037": "05-23",
+      "2038": "06-12",
+      "2039": "06-04",
+      "2040": "06-23",
+      "2041": "06-08",
+      "2042": "05-31",
+      "2043": "06-20",
+      "2044": "06-11",
+      "2045": "05-27",
+      "2046": "06-16",
+      "2047": "06-08",
+      "2048": "05-23",
+      "2049": "06-12",
+      "2050": "06-04",
+      "2051": "06-24"
+    },
+    "occurrences_juliaans": {
+      "2024": "06-09",
+      "2025": "05-25",
+      "2026": "05-17",
+      "2027": "06-06",
+      "2028": "05-21",
+      "2029": "05-13",
+      "2030": "06-02",
+      "2031": "05-18",
+      "2032": "06-06",
+      "2033": "05-29",
+      "2034": "05-14",
+      "2035": "06-03",
+      "2036": "05-25",
+      "2037": "05-10",
+      "2038": "05-30",
+      "2039": "05-22",
+      "2040": "06-10",
+      "2041": "05-26",
+      "2042": "05-18",
+      "2043": "06-07",
+      "2044": "05-29",
+      "2045": "05-14",
+      "2046": "06-03",
+      "2047": "05-26",
+      "2048": "05-10",
+      "2049": "05-30",
+      "2050": "05-22",
+      "2051": "06-11"
+    }
+  },
+  {
+    "id": "pinksteren",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Pinksteren (Nederdaling van de Heilige Geest)",
+    "alternatief": [
+      "Feest van de Drie-eenheid",
+      "Pinksteren",
+      "Nederdaling van de Heilige Geest",
+      "Drie-eenheidsfeest"
+    ],
+    "titels": [],
+    "samenvatting": "Vijftig dagen na Pascha; gave van de Heilige Geest.",
+    "url": "/feesten/pinksteren/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 49,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-23",
+      "2025": "06-08",
+      "2026": "05-31",
+      "2027": "06-20",
+      "2028": "06-04",
+      "2029": "05-27",
+      "2030": "06-16",
+      "2031": "06-01",
+      "2032": "06-20",
+      "2033": "06-12",
+      "2034": "05-28",
+      "2035": "06-17",
+      "2036": "06-08",
+      "2037": "05-24",
+      "2038": "06-13",
+      "2039": "06-05",
+      "2040": "06-24",
+      "2041": "06-09",
+      "2042": "06-01",
+      "2043": "06-21",
+      "2044": "06-12",
+      "2045": "05-28",
+      "2046": "06-17",
+      "2047": "06-09",
+      "2048": "05-24",
+      "2049": "06-13",
+      "2050": "06-05",
+      "2051": "06-25"
+    },
+    "occurrences_juliaans": {
+      "2024": "06-10",
+      "2025": "05-26",
+      "2026": "05-18",
+      "2027": "06-07",
+      "2028": "05-22",
+      "2029": "05-14",
+      "2030": "06-03",
+      "2031": "05-19",
+      "2032": "06-07",
+      "2033": "05-30",
+      "2034": "05-15",
+      "2035": "06-04",
+      "2036": "05-26",
+      "2037": "05-11",
+      "2038": "05-31",
+      "2039": "05-23",
+      "2040": "06-11",
+      "2041": "05-27",
+      "2042": "05-19",
+      "2043": "06-08",
+      "2044": "05-30",
+      "2045": "05-15",
+      "2046": "06-04",
+      "2047": "05-27",
+      "2048": "05-11",
+      "2049": "05-31",
+      "2050": "05-23",
+      "2051": "06-12"
+    }
+  },
+  {
+    "id": "geestesmaandag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Maandag van de Heilige Geest",
+    "alternatief": [
+      "Maandag van de Geest",
+      "Dag van de Heilige Geest",
+      "Pinkstermaandag"
+    ],
+    "titels": [],
+    "samenvatting": "Tweede dag van Pinksteren; eer aan de Heilige Geest.",
+    "url": "/feesten/geestesmaandag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 50,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-24",
+      "2025": "06-09",
+      "2026": "06-01",
+      "2027": "06-21",
+      "2028": "06-05",
+      "2029": "05-28",
+      "2030": "06-17",
+      "2031": "06-02",
+      "2032": "06-21",
+      "2033": "06-13",
+      "2034": "05-29",
+      "2035": "06-18",
+      "2036": "06-09",
+      "2037": "05-25",
+      "2038": "06-14",
+      "2039": "06-06",
+      "2040": "06-25",
+      "2041": "06-10",
+      "2042": "06-02",
+      "2043": "06-22",
+      "2044": "06-13",
+      "2045": "05-29",
+      "2046": "06-18",
+      "2047": "06-10",
+      "2048": "05-25",
+      "2049": "06-14",
+      "2050": "06-06",
+      "2051": "06-26"
+    },
+    "occurrences_juliaans": {
+      "2024": "06-11",
+      "2025": "05-27",
+      "2026": "05-19",
+      "2027": "06-08",
+      "2028": "05-23",
+      "2029": "05-15",
+      "2030": "06-04",
+      "2031": "05-20",
+      "2032": "06-08",
+      "2033": "05-31",
+      "2034": "05-16",
+      "2035": "06-05",
+      "2036": "05-27",
+      "2037": "05-12",
+      "2038": "06-01",
+      "2039": "05-24",
+      "2040": "06-12",
+      "2041": "05-28",
+      "2042": "05-20",
+      "2043": "06-09",
+      "2044": "05-31",
+      "2045": "05-16",
+      "2046": "06-05",
+      "2047": "05-28",
+      "2048": "05-12",
+      "2049": "06-01",
+      "2050": "05-24",
+      "2051": "06-13"
+    }
+  },
+  {
+    "id": "allerheiligen-zondag",
+    "soort": "feest",
+    "cyclus": "paascyclus",
+    "naam": "Allerheiligen-zondag",
+    "alternatief": [
+      "Zondag van Alle Heiligen",
+      "Allerheiligen"
+    ],
+    "titels": [],
+    "samenvatting": "Eerste zondag na Pinksteren; alle heiligen.",
+    "url": "/feesten/allerheiligen-zondag/",
+    "lagenlanden": false,
+    "status": "curated",
+    "observances": [
+      "feest"
+    ],
+    "icoon": null,
+    "offset_dagen": 56,
+    "feestdatum": null,
+    "occurrences": {
+      "2024": "06-30",
+      "2025": "06-15",
+      "2026": "06-07",
+      "2027": "06-27",
+      "2028": "06-11",
+      "2029": "06-03",
+      "2030": "06-23",
+      "2031": "06-08",
+      "2032": "06-27",
+      "2033": "06-19",
+      "2034": "06-04",
+      "2035": "06-24",
+      "2036": "06-15",
+      "2037": "05-31",
+      "2038": "06-20",
+      "2039": "06-12",
+      "2040": "07-01",
+      "2041": "06-16",
+      "2042": "06-08",
+      "2043": "06-28",
+      "2044": "06-19",
+      "2045": "06-04",
+      "2046": "06-24",
+      "2047": "06-16",
+      "2048": "05-31",
+      "2049": "06-20",
+      "2050": "06-12",
+      "2051": "07-02"
+    },
+    "occurrences_juliaans": {
+      "2024": "06-17",
+      "2025": "06-02",
+      "2026": "05-25",
+      "2027": "06-14",
+      "2028": "05-29",
+      "2029": "05-21",
+      "2030": "06-10",
+      "2031": "05-26",
+      "2032": "06-14",
+      "2033": "06-06",
+      "2034": "05-22",
+      "2035": "06-11",
+      "2036": "06-02",
+      "2037": "05-18",
+      "2038": "06-07",
+      "2039": "05-30",
+      "2040": "06-18",
+      "2041": "06-03",
+      "2042": "05-26",
+      "2043": "06-15",
+      "2044": "06-06",
+      "2045": "05-22",
+      "2046": "06-11",
+      "2047": "06-03",
+      "2048": "05-18",
+      "2049": "06-07",
+      "2050": "05-30",
+      "2051": "06-19"
+    }
   }
 ]
