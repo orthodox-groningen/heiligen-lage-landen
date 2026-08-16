@@ -347,7 +347,7 @@ def ensure_hand_owned_indexes() -> None:
 ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "nieuw-oud",
-        "title": "Nieuw / Oud — wat doet de knop?",
+        "title": "Nieuwe en Oude kalender",
         "description": "Hoe we vandaag rekenen op de nieuwe of oude kalender",
     },
     {
