@@ -1,0 +1,17 @@
+# Parochiespecifieke lezingen — Orthodox klooster van de Heilige Joannes
+# de Voorloper, Den Haag.
+# Id: den-haag (bestand = parochies/den-haag.yaml; zie config.yaml).
+
+parochie: den-haag
+naam: "Orthodox klooster van de Heilige Joannes de Voorloper, Den Haag"
+overrides:
+  - id: silvester
+    match: { mmdd: "01-02" }
+    rang: polyeleos
+    modus: toevoegen
+    apostel: [{ ref: "Heb. 5:4-10" }]
+    evangelie: [{ ref: "Joh. 3:1-15" }]
+    regels: [R2, R5]
+    bron:
+      label: "Apostel (klooster Johannes de Voorloper, Den Haag, 1995)"
+      geraadpleegd: "2026-08-16"

@@ -84,7 +84,18 @@ def test_februari_2025_eindreeks_niet_leeg() -> None:
     assert r2.override_id == "ontmoeting-in-de-tempel"
 
 
-def test_parochie_override_wint_van_gedeeld(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_den_haag_silvester_toevoegen() -> None:
+    """Actieve parochie den-haag: Silvester op 2 jan bij rijádovoe."""
+    r = resolve_lezingen(2026, "01-02", "nieuw")
+    assert r.override_id == "silvester"
+    assert r.modus == "toevoegen"
+    assert "Heb. 5:4-10" in [a.ref for a in r.apostel]
+    assert "Joh. 3:1-15" in [e.ref for e in r.evangelie]
+
+
+def test_parochie_override_wint_van_gedeeld(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     from lezingen import load_overrides
 
     monkeypatch.setattr("lezingen.DATA_DIR", tmp_path)

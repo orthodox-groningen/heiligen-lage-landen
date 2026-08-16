@@ -969,54 +969,102 @@
     if (yearEl) yearEl.textContent = String(viewYear);
     const stil = style === "juliaans" ? "oud" : "nieuw";
     const byDay = ((lezingenIndex || {})[stil] || {})[String(viewYear)] || {};
-    let html = "";
-    for (let month = 1; month <= 12; month++) {
-      const prefix = String(month).padStart(2, "0") + "-";
-      const days = Object.keys(byDay)
-        .filter((k) => k.startsWith(prefix))
-        .sort();
-      if (!days.length) continue;
-      html += `<section class="rooster-month" id="rooster-m${month}">`;
-      html += `<h2>${MONTHS[month]} ${viewYear}</h2>`;
-      html +=
-        `<div class="table-wrap"><table class="rooster-table">` +
-        `<thead><tr>` +
-        `<th scope="col">Datum</th>` +
-        `<th scope="col">Liturgische dag</th>` +
-        `<th scope="col">Apostel</th>` +
-        `<th scope="col">Evangelie</th>` +
-        `</tr></thead><tbody>`;
-      for (const mmdd of days) {
-        const lez = byDay[mmdd] || {};
-        const dagUrl = assetUrl(
-          `datum/?jaar=${viewYear}&dag=${encodeURIComponent(mmdd)}`
-        );
-        let apostel = refsText(lez.apostel);
-        let evangelie = refsText(lez.evangelie);
-        if (lez.status === "geen_liturgie") {
-          apostel = apostel || "—";
-          evangelie = evangelie || "(geen liturgie)";
-        } else if (lez.status === "onbekend") {
-          apostel = apostel || "—";
-          evangelie = evangelie || "—";
-        }
-        html +=
-          `<tr>` +
-          `<td><a href="${dagUrl}">${label(mmdd)}</a></td>` +
-          `<td>${lez.daglabel || ""}</td>` +
-          `<td>${apostel}</td>` +
-          `<td>${evangelie}</td>` +
-          `</tr>`;
-      }
-      html += `</tbody></table></div></section>`;
+    const monthNav = document.getElementById("rooster-month-nav");
+    const hint = document.getElementById("rooster-hint");
+    const monthNum = parseInt(roosterMonth, 10);
+
+    if (monthNav) {
+      monthNav.innerHTML = MONTHS.slice(1)
+        .map((name, i) => {
+          const mm = String(i + 1).padStart(2, "0");
+          const prefix = mm + "-";
+          const count = Object.keys(byDay).filter((k) => k.startsWith(prefix))
+            .length;
+          const pressed = mm === roosterMonth ? "true" : "false";
+          return (
+            `<button type="button" class="letter-btn" data-month="${mm}" ` +
+            `aria-pressed="${pressed}" ${count ? "" : "disabled"}>` +
+            `${name.slice(0, 3)}</button>`
+          );
+        })
+        .join("");
+      monthNav.querySelectorAll(".letter-btn").forEach((btn) => {
+        btn.onclick = () => {
+          roosterMonth = btn.dataset.month;
+          const url = new URL(window.location.href);
+          url.searchParams.set("maand", roosterMonth);
+          window.history.replaceState({}, "", url);
+          renderRooster(getStyle());
+        };
+      });
     }
-    root.innerHTML =
-      html ||
-      `<p class="muted">Geen lezingengegevens voor ${viewYear}. Genereer de site opnieuw.</p>`;
+
+    const prefix = roosterMonth + "-";
+    const days = Object.keys(byDay)
+      .filter((k) => k.startsWith(prefix))
+      .sort();
+
+    if (hint) {
+      hint.textContent = days.length
+        ? `${MONTHS[monthNum]} ${viewYear}: ${days.length} dag(en).`
+        : `${MONTHS[monthNum]} ${viewYear}: geen lezingengegevens.`;
+    }
+
+    if (!days.length) {
+      root.innerHTML =
+        `<p class="muted">Geen lezingengegevens voor ${MONTHS[monthNum]} ${viewYear}. ` +
+        `Genereer de site opnieuw of kies een andere maand.</p>`;
+      return;
+    }
+
+    let html = `<section class="rooster-month" id="rooster-m${monthNum}">`;
+    html += `<h2>${MONTHS[monthNum]} ${viewYear}</h2>`;
+    html +=
+      `<div class="table-wrap"><table class="rooster-table">` +
+      `<thead><tr>` +
+      `<th scope="col">Datum</th>` +
+      `<th scope="col">Liturgische dag</th>` +
+      `<th scope="col">Apostel</th>` +
+      `<th scope="col">Evangelie</th>` +
+      `</tr></thead><tbody>`;
+    for (const mmdd of days) {
+      const lez = byDay[mmdd] || {};
+      const dagUrl = assetUrl(
+        `datum/?jaar=${viewYear}&dag=${encodeURIComponent(mmdd)}`
+      );
+      let apostel = refsText(lez.apostel);
+      let evangelie = refsText(lez.evangelie);
+      if (lez.status === "geen_liturgie") {
+        apostel = apostel || "—";
+        evangelie = evangelie || "(geen liturgie)";
+      } else if (lez.status === "onbekend") {
+        apostel = apostel || "—";
+        evangelie = evangelie || "—";
+      }
+      html +=
+        `<tr>` +
+        `<td><a href="${dagUrl}">${label(mmdd)}</a></td>` +
+        `<td>${lez.daglabel || ""}</td>` +
+        `<td>${apostel}</td>` +
+        `<td>${evangelie}</td>` +
+        `</tr>`;
+    }
+    html += `</tbody></table></div></section>`;
+    root.innerHTML = html;
   }
 
   function initRooster(style) {
     if (!document.querySelector("[data-lezingenrooster]")) return;
+    const params = new URLSearchParams(window.location.search);
+    const m = params.get("maand");
+    if (m && /^\d{2}$/.test(m) && Number(m) >= 1 && Number(m) <= 12) {
+      roosterMonth = m;
+    } else {
+      const now = new Date();
+      if (viewYear === now.getFullYear()) {
+        roosterMonth = String(now.getMonth() + 1).padStart(2, "0");
+      }
+    }
     const prev = document.getElementById("rooster-prev");
     const next = document.getElementById("rooster-next");
     if (prev && prev.dataset.bound !== "1") {
@@ -1057,6 +1105,7 @@
   }
 
   let viewYear = new Date().getFullYear();
+  let roosterMonth = String(new Date().getMonth() + 1).padStart(2, "0");
   try {
     const stored = localStorage.getItem(YEAR_KEY);
     if (stored) viewYear = parseInt(stored, 10) || viewYear;

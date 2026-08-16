@@ -539,6 +539,12 @@ h2 {
   vertical-align: middle;
 }
 
+.year-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.75rem;
+}
 
 .filter-bar,
 .browse-mode,

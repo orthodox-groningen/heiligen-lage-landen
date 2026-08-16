@@ -150,22 +150,23 @@ Optioneel per parochie:
 
 ```yaml
 # data/lezingen/config.yaml
-parochie: groningen   # of leeg = alleen gedeelde lijst
+parochie: den-haag   # of leeg = alleen gedeelde lijst
 ```
 
 ```yaml
-# data/lezingen/parochies/groningen.yaml
-parochie: groningen
+# data/lezingen/parochies/den-haag.yaml
+parochie: den-haag
+naam: "Orthodox klooster van de Heilige Joannes de Voorloper, Den Haag"
 overrides:
   - id: silvester
     match: { mmdd: "01-02" }
     rang: polyeleos
     modus: toevoegen          # of vervangen / negeren / weglaten (= auto via rang)
-    apostel: [{ ref: "…" }]
-    evangelie: [{ ref: "…" }]
+    apostel: [{ ref: "Heb. 5:4-10" }]
+    evangelie: [{ ref: "Joh. 3:1-15" }]
     regels: [R2, R5]
     bron:
-      label: "Parochieboekje"
+      label: "Apostel (klooster Johannes de Voorloper, Den Haag, 1995)"
       geraadpleegd: "2026-08-16"
 ```
 
@@ -174,7 +175,8 @@ Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
 of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
 een apart `theofanie_offset`-veld kan later worden toegevoegd.
 
-Voorbeeldbestand (niet actief): `data/lezingen/parochies/voorbeeld.yaml`.
+Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
+Actief in deze repo: `parochie: den-haag` (Silvester e.d.).
 
 ## Machine-leesbare voorbeelden
 

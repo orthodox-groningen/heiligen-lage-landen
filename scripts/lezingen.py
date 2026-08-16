@@ -92,6 +92,7 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "drie-hiërarchen": "Drie Hiërarchen",
     "serafim-van-sarov": "Serafim van Sarov",
     "vladimir-gelijkaan-apostelen": "Vladimir, gelijkaan de apostelen",
+    "silvester": "Silvester van Rome",
 }
 
 
