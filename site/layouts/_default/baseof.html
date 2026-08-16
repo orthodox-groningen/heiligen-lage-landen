@@ -31,16 +31,12 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <div id="nieuw-oud-dialog" class="info-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="nieuw-oud-title">
-    <div class="info-dialog-backdrop" data-close-nieuw-oud></div>
-    <div class="info-dialog-inner">
-      <h2 id="nieuw-oud-title">Over deze datum</h2>
-      <div id="nieuw-oud-body"></div>
-      <div class="info-dialog-actions">
-        <a class="button button-secondary" id="nieuw-oud-meer" href="{{ "uitleg/" | relURL }}#nieuw-oud">Korte uitlegpagina</a>
-        <button type="button" class="button" data-close-nieuw-oud>Sluiten</button>
-      </div>
-    </div>
+  <div id="nieuw-oud-dialog" class="info-popover" hidden role="tooltip" aria-labelledby="nieuw-oud-title">
+    <h2 id="nieuw-oud-title">Over deze datum</h2>
+    <div id="nieuw-oud-body"></div>
+    <p class="info-popover-meer">
+      <a id="nieuw-oud-meer" href="{{ "uitleg/" | relURL }}#nieuw-oud">Korte uitlegpagina</a>
+    </p>
   </div>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>

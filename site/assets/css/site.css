@@ -458,51 +458,41 @@ h2 {
   pointer-events: none;
 }
 
-.info-dialog {
+.info-popover {
   position: fixed;
-  inset: 0;
   z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
+  margin: 0;
+  padding: 0.85rem 1rem 1rem;
+  width: min(22rem, calc(100vw - 1.5rem));
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--bg-elev);
+  color: var(--ink);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
 }
 
-.info-dialog[hidden] {
+.info-popover[hidden] {
   display: none !important;
 }
 
-.info-dialog-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+.info-popover h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
 }
 
-.info-dialog-inner {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 1.25rem 1.35rem 1.35rem;
-  max-width: min(28rem, calc(100vw - 2rem));
-  border: 1px solid var(--line);
-  border-radius: 0.4rem;
-  background: var(--bg-elev);
-  color: var(--ink);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+.info-popover p {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
-.info-dialog-inner h2 {
-  margin-top: 0;
+.info-popover-meer {
+  margin-top: 0.75rem !important;
 }
 
-.info-dialog-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-body.dialog-open {
-  overflow: hidden;
+.info-popover-meer a {
+  color: var(--gold-soft);
 }
 
 .style-help {

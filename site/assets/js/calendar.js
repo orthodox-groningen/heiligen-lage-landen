@@ -95,6 +95,8 @@
     );
   }
 
+  let nieuwOudCloseTimer = null;
+
   function fillNieuwOudDialog(style) {
     const body = document.getElementById("nieuw-oud-body");
     const title = document.getElementById("nieuw-oud-title");
@@ -117,41 +119,79 @@
     }
   }
 
+  function positionNieuwOudPopover(trigger) {
+    const dlg = document.getElementById("nieuw-oud-dialog");
+    if (!dlg || !trigger) return;
+    dlg.style.left = "0px";
+    dlg.style.top = "0px";
+    const gap = 8;
+    const rect = trigger.getBoundingClientRect();
+    const pop = dlg.getBoundingClientRect();
+    let left = rect.left;
+    let top = rect.bottom + gap;
+    if (left + pop.width > window.innerWidth - 8) {
+      left = Math.max(8, window.innerWidth - pop.width - 8);
+    }
+    if (top + pop.height > window.innerHeight - 8) {
+      top = Math.max(8, rect.top - pop.height - gap);
+    }
+    dlg.style.left = `${Math.max(8, left)}px`;
+    dlg.style.top = `${top}px`;
+  }
+
   function closeNieuwOudDialog() {
     const dlg = document.getElementById("nieuw-oud-dialog");
     if (!dlg) return;
     dlg.hidden = true;
-    document.body.classList.remove("dialog-open");
   }
 
-  function openNieuwOudDialog() {
+  function cancelNieuwOudClose() {
+    if (nieuwOudCloseTimer) {
+      clearTimeout(nieuwOudCloseTimer);
+      nieuwOudCloseTimer = null;
+    }
+  }
+
+  function scheduleNieuwOudClose() {
+    cancelNieuwOudClose();
+    nieuwOudCloseTimer = setTimeout(closeNieuwOudDialog, 180);
+  }
+
+  function openNieuwOudDialog(trigger) {
     const dlg = document.getElementById("nieuw-oud-dialog");
     if (!dlg) return;
+    cancelNieuwOudClose();
     fillNieuwOudDialog(getStyle());
     dlg.hidden = false;
-    document.body.classList.add("dialog-open");
-    const closeBtn = dlg.querySelector("[data-close-nieuw-oud].button, .info-dialog-actions [data-close-nieuw-oud]");
-    if (closeBtn) closeBtn.focus();
+    positionNieuwOudPopover(trigger || document.querySelector("[data-open-nieuw-oud]"));
   }
 
   function wireNieuwOudTriggers(root) {
     (root || document).querySelectorAll("[data-open-nieuw-oud]").forEach((el) => {
       if (el.dataset.bound === "1") return;
       el.dataset.bound = "1";
+      el.addEventListener("mouseenter", () => openNieuwOudDialog(el));
+      el.addEventListener("mouseleave", scheduleNieuwOudClose);
+      el.addEventListener("focus", () => openNieuwOudDialog(el));
+      el.addEventListener("blur", scheduleNieuwOudClose);
       el.addEventListener("click", (ev) => {
+        // Touch / toetsenbord: toggle; voorkom dat knop “doet niets”.
         ev.preventDefault();
         ev.stopPropagation();
-        openNieuwOudDialog();
+        const dlg = document.getElementById("nieuw-oud-dialog");
+        if (dlg && !dlg.hidden) {
+          closeNieuwOudDialog();
+        } else {
+          openNieuwOudDialog(el);
+        }
       });
     });
-    (root || document).querySelectorAll("[data-close-nieuw-oud]").forEach((el) => {
-      if (el.dataset.boundClose === "1") return;
-      el.dataset.boundClose = "1";
-      el.addEventListener("click", (ev) => {
-        ev.preventDefault();
-        closeNieuwOudDialog();
-      });
-    });
+    const dlg = document.getElementById("nieuw-oud-dialog");
+    if (dlg && dlg.dataset.boundHover !== "1") {
+      dlg.dataset.boundHover = "1";
+      dlg.addEventListener("mouseenter", cancelNieuwOudClose);
+      dlg.addEventListener("mouseleave", scheduleNieuwOudClose);
+    }
   }
 
   function todayMmdd(style) {
