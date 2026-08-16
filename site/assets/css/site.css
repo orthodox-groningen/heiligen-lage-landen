@@ -331,6 +331,101 @@ h2 {
   line-height: 1.9;
 }
 
+.agenda-stappen {
+  list-style: none;
+  counter-reset: agenda-stap;
+  padding: 0;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.agenda-stappen > li {
+  counter-increment: agenda-stap;
+  margin: 0 0 1.6rem;
+  padding: 1rem 1.15rem 1.15rem 1.15rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.agenda-stappen h2 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 0 0 0.45rem;
+}
+
+.agenda-stappen h2::before {
+  content: counter(agenda-stap) ". ";
+  color: var(--gold-soft);
+}
+
+.agenda-stappen p {
+  margin: 0 0 0.35rem;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+}
+
+.agenda-actie {
+  margin: 0 0 2rem;
+}
+
+.agenda-samenvatting {
+  font-size: 1.05rem;
+  margin: 0 0 0.85rem;
+}
+
+.ics-url-row {
+  margin: 0.85rem 0 0;
+}
+
+.ics-url-row label {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gold-soft);
+  margin-bottom: 0.35rem;
+}
+
+.ics-url-row input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--bg-elev);
+  color: var(--ink);
+}
+
+button.button {
+  appearance: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.agenda-howto {
+  margin: 0 0 2rem;
+}
+
+.agenda-howto h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin: 0 0 0.65rem;
+}
+
+.agenda-howto h3 {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  margin: 1.4rem 0 0.45rem;
+}
+
+.agenda-howto ol {
+  margin: 0.4rem 0 0.2rem;
+  padding-left: 1.25rem;
+}
+
+.agenda-howto li + li {
+  margin-top: 0.35rem;
+}
+
 .year-grid {
   display: grid;
   gap: 1.25rem;
@@ -616,6 +711,12 @@ h2 {
 .button.is-disabled {
   opacity: 0.45;
   pointer-events: none;
+}
+
+.button[hidden],
+.ics-url-row[hidden],
+.agenda-howto[hidden] {
+  display: none !important;
 }
 
 .info-popover {

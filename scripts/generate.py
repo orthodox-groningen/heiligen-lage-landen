@@ -463,7 +463,7 @@ def ensure_hand_owned_indexes() -> None:
         },
         {
             "path": CONTENT / "agenda" / "_index.md",
-            "title": "Agenda (ICS)",
+            "title": "Agenda",
             "layout": "agenda",
         },
         {
@@ -546,7 +546,7 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "agenda",
         "title": "Agenda",
-        "description": "Heiligen, feesten en vasten in Google Calendar, Apple Agenda of Outlook",
+        "description": "De kerkelijke kalender op uw telefoon of computer: kiezen, downloaden of abonneren",
     },
 ]
 

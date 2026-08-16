@@ -125,3 +125,17 @@ def test_achtergrond_topics_hebben_geen_technische_ids() -> None:
     for topic in HANDMATIGE_ONDERWERPEN:
         assert topic in ids
         assert f"{topic}-technisch" not in ids
+
+
+def test_agenda_pagina_heeft_geen_lijst_vaste_feeds() -> None:
+    layout = (ROOT / "site" / "layouts" / "_default" / "agenda.html").read_text(
+        encoding="utf-8"
+    )
+    js = (ROOT / "site" / "assets" / "js" / "calendar.js").read_text(encoding="utf-8")
+    assert "ics-all-links" not in layout
+    assert "Alle vaste feeds" not in layout
+    assert 'name="ics-modus"' in layout
+    assert "Kopieer de agenda-link" in layout
+    assert "Download de kalender" in layout
+    assert "ics-all-links" not in js
+    assert "heiligen-feesten-nieuw" not in js
