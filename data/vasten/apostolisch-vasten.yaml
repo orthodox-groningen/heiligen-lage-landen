@@ -1,0 +1,29 @@
+id: apostolisch-vasten
+soort: vasten
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+vastenniveau: lichter
+observances:
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: 57
+  tot: "06-28"
+samenvatting: |
+  Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).
+verhaal: |
+  Het Apostelvasten begint op de maandag na Allerheiligen-zondag (de zondag
+  na Pinksteren) en eindigt op 28 juni, de dag vóór het feest van de apostelen
+  Petrus en Paulus (29 juni). De lengte wisselt met Pascha: soms kort, soms lang.
+  De strengheid is doorgaans lichter dan de Grote Vasten, maar woensdag/vrijdag
+  blijven streng; details (vis, olie, wijn) volgen typikon en lokale praktijk.
+referenties:
+  - label: "Wikipedia (EN) — Apostles' Fast"
+    url: "https://en.wikipedia.org/wiki/Apostles%27_Fast"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"

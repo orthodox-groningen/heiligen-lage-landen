@@ -6,8 +6,13 @@
   <div class="filter-bar" role="group" aria-label="Toon">
     <label class="chip"><input type="checkbox" name="show" value="heilige" checked> Heiligen</label>
     <label class="chip"><input type="checkbox" name="show" value="feest" checked> Feesten</label>
-    <label class="chip"><input type="checkbox" name="show" value="vasten" disabled> Vasten <span class="meta">(binnenkort)</span></label>
+    <label class="chip"><input type="checkbox" name="show" value="vasten" checked> Vasten</label>
   </div>
+
+  <p class="filter-bar">
+    <label class="search-label" for="overzicht-search">Zoeken (ook alternatieve namen)</label>
+    <input type="search" id="overzicht-search" class="search-input" placeholder="bijv. Zuivelvaarwel, Apostelvasten…" autocomplete="off">
+  </p>
 
   <div class="browse-mode" role="group" aria-label="Bladeren">
     <button type="button" class="style-btn" data-browse="letter" aria-pressed="true">Alfabet</button>

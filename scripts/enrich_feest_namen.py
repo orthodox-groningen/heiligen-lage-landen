@@ -125,8 +125,7 @@ EXTRA: dict[str, list[str]] = {
     ],
     "vergevingszondag": [
         "Vergevingszondag",
-        "Kaasvaarwel",
-        "Kaasvaarwelzondag",
+        "Zuivelvaarwel",
         "Zondag van de verdrijving uit het paradijs",
     ],
     "zacheus-zondag": ["Zacheüszondag", "Zondag van Zacheüs"],

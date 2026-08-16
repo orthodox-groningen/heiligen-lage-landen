@@ -4,12 +4,11 @@ status: curated
 cyclus: paascyclus
 lagenlanden: false
 namen:
-  primair: "Vergevingszondag (Kaasvaarwel)"
+  primair: "Vergevingszondag"
   alternatief:
-  - Kaasvaarwelzondag
+  - Zuivelvaarwel
   - Zondag van de verdrijving uit het paradijs
   - Vergevingszondag
-  - Kaasvaarwel
 observances:
   - feest
 datum:
@@ -18,13 +17,13 @@ datum:
     anker: pascha
     offset_dagen: -49
 samenvatting: |
-  Einde van de Kaasweek; wederzijdse vergeving vóór de Grote Vasten.
+  Einde van de Boterweek; wederzijdse vergeving vóór de Grote Vasten.
 verhaal: |
-  Op Vergevingszondag vraagt de gemeenschap elkaar om vergeving en begint ’s avonds de Grote Vasten. De Kerk gedenkt de verdrijving uit het paradijs en wijst op terugkeer door vasten, gebed en barmhartigheid. Kaas en eieren worden na deze dag traditioneel gemeden tot Pascha.
+  Op Vergevingszondag vraagt de gemeenschap elkaar om vergeving en begint ’s avonds de Grote Vasten. De Kerk gedenkt de verdrijving uit het paradijs en wijst op terugkeer door vasten, gebed en barmhartigheid. Kaas, eieren en andere zuivelproducten worden na deze dag traditioneel gemeden tot Pascha.
 referenties:
   - label: "OrthodoxWiki — Vergevingszondag"
     url: "https://orthodoxwiki.org/Forgiveness_Sunday"
     geraadpleegd: "2026-08-16"
-  - label: "OrthodoxWiki — Kaasmijding"
+  - label: "OrthodoxWiki — Zuivelvaarwel"
     url: "https://orthodoxwiki.org/Cheesefare_Sunday"
     geraadpleegd: "2026-08-16"

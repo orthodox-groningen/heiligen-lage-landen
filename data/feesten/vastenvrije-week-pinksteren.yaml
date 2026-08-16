@@ -1,0 +1,28 @@
+id: vastenvrije-week-pinksteren
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+vastenniveau: vrij
+onderdrukt_wekelijks_vasten: true
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: 49
+    tot_offset_dagen: 56
+samenvatting: |
+  Van Pinksteren tot Allerheiligen-zondag: geen wekelijks woensdag-/vrijdagvasten.
+verhaal: |
+  Na Pinksteren tot (en met) Allerheiligen geldt in veel typika geen wekelijks
+  vasten op woensdag en vrijdag. De maandag daarna begint doorgaans het
+  Apostelvasten (tot Petrus en Paulus).
+referenties:
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pentecost"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"

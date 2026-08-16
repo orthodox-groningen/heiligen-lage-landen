@@ -1,0 +1,30 @@
+id: vrijdag-vasten
+soort: vasten
+status: curated
+cyclus: wekelijks
+lagenlanden: false
+vastenniveau: wijn_olie
+namen:
+  primair: "Vrijdagvasten"
+  alternatief:
+    - "Vasten op vrijdag"
+    - "Vrijdag (wekelijks vasten)"
+observances:
+  - vasten
+datum:
+  weekdagen: [5]
+samenvatting: |
+  Wekelijks vasten op vrijdag, ter herinnering aan het Kruis van Christus.
+verhaal: |
+  Op vrijdag gedenkt de Kerk het lijden en de kruisiging van Christus. Samen met
+  de woensdag vormt dit het vaste wekelijkse ritme van onthouding. Typisch: geen
+  vlees en geen zuivel/eieren; strengere praktijk sluit ook vis, wijn en olie uit,
+  behalve op feestdagen waarop de typikon versoepelt. Gezondheid, werk en lokale
+  gewoonte bepalen mede hoe streng een gelovige dit houdt.
+referenties:
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — The Orthodox Faith: Fasting"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/spirituality/prayer-fasting-and-almsgiving/fasting"
+    geraadpleegd: "2026-08-16"

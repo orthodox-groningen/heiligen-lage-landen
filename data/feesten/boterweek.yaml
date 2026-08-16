@@ -1,0 +1,26 @@
+id: boterweek
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: -55
+    tot_offset_dagen: -49
+samenvatting: |
+  Week vóór de Grote Vasten: geen vlees, wel zuivel tot Vergevingszondag.
+verhaal: |
+  De Boterweek (Kaasweek) volgt op de Vleesvaarwelzondag. Traditioneel eet men
+  geen vlees meer, maar wel kaas, eieren en andere zuivel tot en met
+  Vergevingszondag (Zuivelvaarwel). Daarna begint de Grote Vasten.
+referenties:
+  - label: "OrthodoxWiki — Cheesefare Week"
+    url: "https://orthodoxwiki.org/Cheesefare_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"

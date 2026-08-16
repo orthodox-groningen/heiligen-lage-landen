@@ -174,7 +174,7 @@ BESTE_REFS: dict[str, list[tuple[str, str]]] = {
     ],
     "vergevingszondag": [
         ("OrthodoxWiki — Vergevingszondag", "https://orthodoxwiki.org/Forgiveness_Sunday"),
-        ("OrthodoxWiki — Kaasvaarwel", "https://orthodoxwiki.org/Cheesefare_Sunday"),
+        ("OrthodoxWiki — Zuivelvaarwel", "https://orthodoxwiki.org/Cheesefare_Sunday"),
     ],
     "schone-maandag": [
         ("OrthodoxWiki — Schone Maandag", "https://orthodoxwiki.org/Clean_Monday"),

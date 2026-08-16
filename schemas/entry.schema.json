@@ -4,7 +4,7 @@
   "title": "Heiligenkalender entry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "soort", "namen", "datum"],
+  "required": ["id", "soort", "datum"],
   "properties": {
     "id": {
       "type": "string",
@@ -12,12 +12,13 @@
     },
     "soort": {
       "type": "string",
-      "enum": ["heilige", "feest"]
+      "enum": ["heilige", "feest", "vasten"]
     },
     "namen": {
       "type": "object",
       "additionalProperties": false,
       "required": ["primair"],
+      "description": "Optioneel als de id in data/namen.yaml staat (die wint bij laden).",
       "properties": {
         "primair": { "type": "string", "minLength": 1 },
         "alternatief": {
@@ -26,6 +27,15 @@
         }
       }
     },
+    "vastenniveau": {
+      "type": "string",
+      "enum": ["streng", "wijn_olie", "vis", "lichter", "vrij"],
+      "description": "Indicatie van strengheid; 'vrij' onderdrukt wekelijks vasten."
+    },
+    "onderdrukt_wekelijks_vasten": {
+      "type": "boolean",
+      "description": "Indien true: woensdag/vrijdag-vasten geldt niet in deze periode."
+    },
     "datum": {
       "type": "object",
       "additionalProperties": false,
@@ -33,6 +43,25 @@
         "waarde": {
           "type": "string",
           "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "van": {
+          "type": "string",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "tot": {
+          "type": "string",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "weekdagen": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7,
+            "description": "ISO-weekdag: 1=maandag … 7=zondag"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "stijl": {
           "type": "string",
@@ -69,20 +98,28 @@
         "paascyclus": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["offset_dagen"],
           "properties": {
             "anker": {
               "type": "string",
               "const": "pascha",
               "default": "pascha"
             },
-            "offset_dagen": { "type": "integer" }
-          }
+            "offset_dagen": { "type": "integer" },
+            "van_offset_dagen": { "type": "integer" },
+            "tot_offset_dagen": { "type": "integer" }
+          },
+          "anyOf": [
+            { "required": ["offset_dagen"] },
+            { "required": ["van_offset_dagen", "tot_offset_dagen"] },
+            { "required": ["van_offset_dagen"] }
+          ]
         }
       },
       "anyOf": [
         { "required": ["waarde"] },
-        { "required": ["paascyclus"] }
+        { "required": ["paascyclus"] },
+        { "required": ["van", "tot"] },
+        { "required": ["weekdagen"] }
       ]
     },
     "observances": {
@@ -105,7 +142,7 @@
     "lagenlanden": { "type": "boolean" },
     "cyclus": {
       "type": "string",
-      "enum": ["jaar", "paascyclus"]
+      "enum": ["jaar", "paascyclus", "wekelijks"]
     },
     "samenvatting": { "type": "string" },
     "verhaal": { "type": "string" },

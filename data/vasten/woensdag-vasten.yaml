@@ -1,0 +1,30 @@
+id: woensdag-vasten
+soort: vasten
+status: curated
+cyclus: wekelijks
+lagenlanden: false
+vastenniveau: wijn_olie
+namen:
+  primair: "Woensdagvasten"
+  alternatief:
+    - "Vasten op woensdag"
+    - "Woensdag (wekelijks vasten)"
+observances:
+  - vasten
+datum:
+  weekdagen: [3]
+samenvatting: |
+  Wekelijks vasten op woensdag, ter herinnering aan het verraad van Christus.
+verhaal: |
+  Op woensdag gedenkt de Kerk het verraad van Judas. Samen met de vrijdag is dit
+  de standaard wekelijkse vastendag buiten de grote feesttijden. Typisch: geen vlees
+  en geen zuivel/eieren; in strengere praktijk ook geen vis, wijn of olie — tenzij
+  een feest of de lokale typikon anders voorschrijft. Parochies en biechtvaders
+  passen de strengheid vaak aan (economia).
+referenties:
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Church Calendar"
+    url: "https://orthodoxwiki.org/Church_Calendar"
+    geraadpleegd: "2026-08-16"

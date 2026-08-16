@@ -1,6 +1,7 @@
 # Datamodel
 
-Elke entry is één YAML-bestand in `data/feesten/` of `data/heiligen/`.
+Elke entry is één YAML-bestand in `data/feesten/`, `data/heiligen/` of
+`data/vasten/`.
 
 ## Datum en stijl (vaste jaarcyclus)
 
@@ -36,6 +37,50 @@ datum:
 
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
 kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
+
+## Namen (één plek wijzigen)
+
+Canonieke weergavenamen staan in **`data/namen.yaml`**:
+
+- `entries.<id>.primair` / `alternatief` — wint bij laden over `namen:` in
+  individuele YAML-bestanden
+- `labels.<id>` — termen zonder eigen entry (bijv. Vleesvaarwel als label)
+
+Ids (bestandsnamen) blijven stabiel; wijzig alleen de getoonde namen in
+`namen.yaml`.
+
+```yaml
+soort: vasten
+# Wekelijks (ISO-weekdag 1=ma … 7=zo):
+cyclus: wekelijks
+datum:
+  weekdagen: [3]           # woensdag
+
+# Vaste periode (MM-DD … MM-DD):
+cyclus: jaar
+datum:
+  van: "08-01"
+  tot: "08-14"
+
+# Paascyclus-periode:
+cyclus: paascyclus
+datum:
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: -48
+    tot_offset_dagen: -1
+# of hybride: van_offset_dagen + datum.tot (MM-DD), bv. Apostolisch vasten
+```
+
+Pagina’s onder `/vasten/{id}/`; zichtbaar in overzicht/agenda/kalender met
+aan/uit-filters. ICS: `vasten-*.ics` en combinaties met heiligen/feesten.
+
+Optioneel op entries:
+
+```yaml
+vastenniveau: streng   # streng | wijn_olie | vis | lichter | vrij
+onderdrukt_wekelijks_vasten: true   # wo/vr gelden niet (ook impliciet bij niveau: vrij)
+```
 
 ## Observances (kleuren)
 

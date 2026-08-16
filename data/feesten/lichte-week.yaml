@@ -1,0 +1,28 @@
+id: lichte-week
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+vastenniveau: vrij
+onderdrukt_wekelijks_vasten: true
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: 0
+    tot_offset_dagen: 6
+samenvatting: |
+  Bright Week: van Pascha tot en met Lichte Zaterdag; geen wekelijks vasten.
+verhaal: |
+  In de Lichte Week (Bright Week) viert de Kerk de Opstanding zonder de
+  gebruikelijke woensdag- en vrijdagvasten. De vreugde van Pascha gaat vóór
+  ascese; vasten hervat typisch na Thomaszondag (of volgens lokale typikon).
+referenties:
+  - label: "OrthodoxWiki — Bright Week"
+    url: "https://orthodoxwiki.org/Bright_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"

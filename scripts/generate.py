@@ -83,10 +83,36 @@ def write_text(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
+SOORT_DIR = {
+    "feest": "feesten",
+    "heilige": "heiligen",
+    "vasten": "vasten",
+}
+SOORT_LABEL = {
+    "feest": "Feest",
+    "heilige": "Heilige",
+    "vasten": "Vasten",
+}
+
+
 def entry_permalink(entry: dict[str, Any]) -> str:
-    kind = "feesten" if entry["soort"] == "feest" else "heiligen"
-    # Leading slash: Hugo canonifyURLs zet baseURL-prefix voor Pages.
+    kind = SOORT_DIR[entry["soort"]]
     return f"/{kind}/{entry['id']}/"
+
+
+def mmdd_in_inclusive_range(mmdd: str, van: str, tot: str) -> bool:
+    """True als mmdd in [van, tot] ligt; ondersteunt jaarovergang (van > tot)."""
+    if van <= tot:
+        return van <= mmdd <= tot
+    return mmdd >= van or mmdd <= tot
+
+
+def iter_civil_days(start: date, end: date):
+    """Inclusieve reeks kalenderdagen."""
+    cur = start
+    while cur <= end:
+        yield cur
+        cur += timedelta(days=1)
 
 
 def render_refs_md(refs: list[dict[str, Any]]) -> str:
@@ -120,10 +146,56 @@ def render_refs_md(refs: list[dict[str, Any]]) -> str:
     return "\n".join(lines) + "\n"
 
 
+
+def iter_mmdd_period(van: str, tot: str):
+    """Yield MM-DD strings in inclusive period (supports year wrap)."""
+    vm, vd = parse_mmdd(van)
+    tm, td = parse_mmdd(tot)
+    # Leap year so 02-29 is reachable.
+    start = date(2024, vm, vd)
+    end = date(2024, tm, td)
+    if start <= end:
+        for d in iter_civil_days(start, end):
+            yield mmdd_from_date(d)
+        return
+    for d in iter_civil_days(start, date(2024, 12, 31)):
+        yield mmdd_from_date(d)
+    for d in iter_civil_days(date(2024, 1, 1), end):
+        yield mmdd_from_date(d)
+
+
+def period_bounds_for_year(
+    entry: dict[str, Any], year: int
+) -> tuple[date, date] | None:
+    """Start/eind (inclusief) van een periode in een burgerlijk jaar."""
+    dn = entry["datum_norm"]
+    vorm = dn.get("vorm") or "dag"
+    if vorm == "periode" and dn.get("van") and dn.get("tot"):
+        vm, vd = parse_mmdd(dn["van"])
+        tm, td = parse_mmdd(dn["tot"])
+        return date(year, vm, vd), date(year, tm, td)
+    if entry.get("cyclus") == "paascyclus" and vorm == "periode":
+        start = pascha_offset_date(year, dn["van_offset_dagen"])
+        end = pascha_offset_date(year, dn["tot_offset_dagen"])
+        if start > end:
+            return None
+        return start, end
+    if entry.get("cyclus") == "paascyclus" and vorm == "periode_hybride":
+        start = pascha_offset_date(year, dn["van_offset_dagen"])
+        tm, td = parse_mmdd(dn["tot_mmdd"])
+        end = date(year, tm, td)
+        if start > end:
+            return None
+        return start, end
+    return None
+
+
 def write_entry_page(entry: dict[str, Any]) -> None:
-    kind = "feesten" if entry["soort"] == "feest" else "heiligen"
+    kind = SOORT_DIR[entry["soort"]]
     title = entry["namen"]["primair"]
-    feestdatum = entry["datum_norm"].get("feestdatum")
+    dn = entry["datum_norm"]
+    feestdatum = dn.get("feestdatum")
+    vorm = dn.get("vorm") or "dag"
     fm = [
         "---",
         f"title: {yaml_quote(title)}",
@@ -136,10 +208,24 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         f"lagenlanden: {'true' if entry.get('lagenlanden') else 'false'}",
         f"source_path: {yaml_quote(entry['source_path'])}",
     ]
-    if feestdatum:
+    if feestdatum and vorm == "dag":
         fm.append(f"feestdatum: {feestdatum}")
+    if dn.get("van") and dn.get("tot"):
+        fm.append(f"van: {dn['van']}")
+        fm.append(f"tot: {dn['tot']}")
+    if dn.get("weekdagen"):
+        fm.append("weekdagen:")
+        for d in dn["weekdagen"]:
+            fm.append(f"  - {d}")
     if entry.get("cyclus") == "paascyclus":
-        fm.append(f"paascyclus_offset: {entry['datum_norm']['paascyclus_offset']}")
+        if dn.get("paascyclus_offset") is not None and vorm == "dag":
+            fm.append(f"paascyclus_offset: {dn['paascyclus_offset']}")
+        if dn.get("van_offset_dagen") is not None:
+            fm.append(f"van_offset_dagen: {dn['van_offset_dagen']}")
+        if dn.get("tot_offset_dagen") is not None:
+            fm.append(f"tot_offset_dagen: {dn['tot_offset_dagen']}")
+        if dn.get("tot_mmdd"):
+            fm.append(f"tot: {dn['tot_mmdd']}")
     if entry.get("titels"):
         fm.append("titels:")
         for t in entry["titels"]:
@@ -158,8 +244,51 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     if entry.get("titels"):
         body.append("*" + " · ".join(entry["titels"]) + "*")
         body.append("")
-    if entry.get("cyclus") == "paascyclus":
-        offset = entry["datum_norm"]["paascyclus_offset"]
+
+    weeknamen = {
+        1: "maandag",
+        2: "dinsdag",
+        3: "woensdag",
+        4: "donderdag",
+        5: "vrijdag",
+        6: "zaterdag",
+        7: "zondag",
+    }
+    if vorm == "weekdagen":
+        namen = ", ".join(weeknamen[d] for d in dn["weekdagen"])
+        body.append(f"**Wekelijks:** elke {namen}.")
+        body.append("")
+    elif entry.get("cyclus") == "paascyclus" and vorm in {"periode", "periode_hybride"}:
+        van_o = dn["van_offset_dagen"]
+        body.append(
+            f"**Paascyclus-periode:** vanaf {van_o:+d} dagen t.o.v. Orthodox Pascha"
+        )
+        if vorm == "periode":
+            body.append(f" tot en met {dn['tot_offset_dagen']:+d} dagen.")
+        else:
+            body.append(
+                f" tot en met {mmdd_label(dn['tot_mmdd'])} (vaste einddatum)."
+            )
+        body.append("")
+        body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
+        body.append("")
+        for y in occurrence_years():
+            start = pascha_offset_date(y, van_o)
+            if vorm == "periode":
+                end = pascha_offset_date(y, dn["tot_offset_dagen"])
+            else:
+                tm, td = parse_mmdd(dn["tot_mmdd"])
+                end = date(y, tm, td)
+            if start > end:
+                body.append(f"- {y}: _geen dagen_ (begin na einddatum)")
+            else:
+                body.append(
+                    f"- {y}: {mmdd_label(mmdd_from_date(start))} – "
+                    f"{mmdd_label(mmdd_from_date(end))}"
+                )
+        body.append("")
+    elif entry.get("cyclus") == "paascyclus":
+        offset = dn["paascyclus_offset"]
         sign = "+" if offset >= 0 else ""
         body.append(
             f"**Paascyclus:** {sign}{offset} dagen t.o.v. Orthodox Pascha "
@@ -176,13 +305,18 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 f"(Juliaans {jd} {MONTH_NAMES_NL[jm]})"
             )
         body.append("")
+    elif vorm == "periode" and dn.get("van") and dn.get("tot"):
+        body.append(
+            f"**Periode:** {mmdd_label(dn['van'])} – {mmdd_label(dn['tot'])} "
+            "(zelfde dagnamen in nieuwe én oude kalender)."
+        )
+        body.append("")
     else:
         assert feestdatum
         body.append(
             f"**Feestdag:** {mmdd_label(feestdatum)} "
             f"(zelfde datum in de nieuwe/Gregoriaanse én de oude/Juliaanse kalender)"
         )
-        dn = entry["datum_norm"]
         if dn.get("gregoriaans") or dn.get("juliaans"):
             parts = []
             if dn.get("gregoriaans"):
@@ -191,6 +325,24 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 parts.append(f"Juliaans {mmdd_label(dn['juliaans'])}")
             body.append("")
             body.append("**Expliciete notatie:** " + "; ".join(parts))
+        body.append("")
+    if entry.get("vastenniveau"):
+        niveau_labels = {
+            "streng": "streng",
+            "wijn_olie": "wijn en olie",
+            "vis": "vis toegestaan (typikon)",
+            "lichter": "lichter",
+            "vrij": "vastenvrij",
+        }
+        body.append(
+            f"**Vastenniveau (indicatief):** "
+            f"{niveau_labels.get(entry['vastenniveau'], entry['vastenniveau'])}."
+        )
+        body.append("")
+    if entry.get("onderdrukt_wekelijks_vasten"):
+        body.append(
+            "**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode."
+        )
         body.append("")
     if entry.get("locaties"):
         body.append("**Plaatsen:** " + "; ".join(entry["locaties"]))
@@ -216,8 +368,10 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     body.append("")
     body.append(render_refs_md(entry.get("referenties") or []))
     body.append("")
-    if feestdatum:
-        body.append(f"[Datumpagina {mmdd_label(feestdatum)}](/datum/{feestdatum}/)")
+    if feestdatum and vorm == "dag":
+        body.append(
+            f"[Datumpagina {mmdd_label(feestdatum)}](/datum/{feestdatum}/)"
+        )
         body.append("")
     write_text(CONTENT / kind / f"{entry['id']}.md", "\n".join(fm + ["", *body]))
 
@@ -225,20 +379,49 @@ def write_entry_page(entry: dict[str, Any]) -> None:
 def write_date_pages(entries: list[dict[str, Any]]) -> None:
     years = list(occurrence_years())
     by_date: dict[str, list[tuple[dict[str, Any], int | None]]] = defaultdict(list)
+
+    def add_day(mmdd: str, entry: dict[str, Any], year: int | None) -> None:
+        by_date[mmdd].append((entry, year))
+
     for entry in entries:
-        if entry.get("cyclus") == "paascyclus":
-            offset = entry["datum_norm"]["paascyclus_offset"]
-            for y in years:
-                mmdd = mmdd_from_date(pascha_offset_date(y, offset))
-                by_date[mmdd].append((entry, y))
+        dn = entry["datum_norm"]
+        vorm = dn.get("vorm") or "dag"
+        if vorm == "weekdagen":
             continue
-        feestdatum = entry["datum_norm"]["feestdatum"]
-        by_date[feestdatum].append((entry, None))
+        if entry.get("cyclus") == "paascyclus" and vorm == "dag":
+            offset = dn["paascyclus_offset"]
+            for y in years:
+                add_day(mmdd_from_date(pascha_offset_date(y, offset)), entry, y)
+            continue
+        if entry.get("cyclus") == "paascyclus" and vorm == "periode":
+            for y in years:
+                start = pascha_offset_date(y, dn["van_offset_dagen"])
+                end = pascha_offset_date(y, dn["tot_offset_dagen"])
+                if start > end:
+                    continue
+                for d in iter_civil_days(start, end):
+                    add_day(mmdd_from_date(d), entry, y)
+            continue
+        if entry.get("cyclus") == "paascyclus" and vorm == "periode_hybride":
+            for y in years:
+                start = pascha_offset_date(y, dn["van_offset_dagen"])
+                tm, td = parse_mmdd(dn["tot_mmdd"])
+                end = date(y, tm, td)
+                if start > end:
+                    continue
+                for d in iter_civil_days(start, end):
+                    add_day(mmdd_from_date(d), entry, y)
+            continue
+        if vorm == "periode" and dn.get("van") and dn.get("tot"):
+            for mmdd in iter_mmdd_period(dn["van"], dn["tot"]):
+                add_day(mmdd, entry, None)
+            continue
+        feestdatum = dn["feestdatum"]
+        add_day(feestdatum, entry, None)
         for extra in entry.get("datum_extra_norm") or []:
-            by_date[extra["feestdatum"]].append((entry, None))
+            add_day(extra["feestdatum"], entry, None)
 
     for mmdd, items in sorted(by_date.items()):
-        # Vaste entries eerst (uniek), daarna paascyclus gegroepeerd per id.
         fixed: list[dict[str, Any]] = []
         movable: dict[str, dict[str, Any]] = {}
         movable_years: dict[str, list[int]] = defaultdict(list)
@@ -261,31 +444,36 @@ def write_date_pages(entries: list[dict[str, Any]]) -> None:
             "type: datum",
             "---",
             "",
-            "Dit is een **datumpagina**: feesten en heiligen waarvan de feestdag "
-            f"**{mmdd_label(mmdd)}** is — in de nieuwe (Gregoriaanse) én de oude "
+            "Dit is een **datumpagina**: feesten, heiligen en vasten waarvan de "
+            f"dag **{mmdd_label(mmdd)}** is — in de nieuwe (Gregoriaanse) én de oude "
             "(Juliaanse) kalender dezelfde dagnaam — plus paascyclus-dagen die in "
             f"bepaalde jaren ({years[0]}–{years[-1]}) op deze wereldlijke datum vallen.",
             "",
         ]
         if not fixed and not movable:
-            lines.append("_Geen feesten of heiligen op deze datum._")
+            lines.append("_Geen feesten, heiligen of vasten op deze datum._")
         for entry in fixed:
             link = entry_permalink(entry)
-            kind_label = "Feest" if entry["soort"] == "feest" else "Heilige"
-            lines.append(f"- **[{entry['namen']['primair']}]({link})** ({kind_label})")
+            kind_label = SOORT_LABEL[entry["soort"]]
+            lines.append(
+                f"- **[{entry['namen']['primair']}]({link})** ({kind_label})"
+            )
             if entry.get("samenvatting"):
                 lines.append(f"  {entry['samenvatting'].strip().splitlines()[0]}")
-        for eid, entry in sorted(movable.items(), key=lambda kv: kv[1]["namen"]["primair"]):
+        for eid, entry in sorted(
+            movable.items(), key=lambda kv: kv[1]["namen"]["primair"]
+        ):
             link = entry_permalink(entry)
-            ys = ", ".join(str(y) for y in sorted(movable_years[eid]))
+            ys = ", ".join(str(y) for y in sorted(set(movable_years[eid])))
+            kind_label = SOORT_LABEL[entry["soort"]]
             lines.append(
-                f"- **[{entry['namen']['primair']}]({link})** (paascyclus; in {ys})"
+                f"- **[{entry['namen']['primair']}]({link})** "
+                f"({kind_label}; paascyclus; in {ys})"
             )
             if entry.get("samenvatting"):
                 lines.append(f"  {entry['samenvatting'].strip().splitlines()[0]}")
         lines.append("")
         write_text(CONTENT / "datum" / f"{mmdd}.md", "\n".join(lines))
-
 
 def write_generated_indexes() -> None:
     """Sectie-indexes die bij --clean opnieuw worden aangemaakt."""
@@ -308,12 +496,21 @@ Grote vaste feesten van de jaarcyclus en de paascyclus.
 """,
     )
     write_text(
+        CONTENT / "vasten" / "_index.md",
+        """---
+title: "Vasten"
+---
+
+Vastenperiodes en wekelijkse vastendagen.
+""",
+    )
+    write_text(
         CONTENT / "datum" / "_index.md",
         """---
 title: "Datums"
 ---
 
-Datumpagina's: alle feesten en heiligen op een kalenderdatum (MM-DD).
+Datumpagina's: alle feesten, heiligen en vasten op een kalenderdatum (MM-DD).
 """,
     )
 
@@ -497,10 +694,13 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
     years = list(occurrence_years())
     payload = []
     for entry in entries:
+        dn = entry["datum_norm"]
+        vorm = dn.get("vorm") or "dag"
         item: dict[str, Any] = {
             "id": entry["id"],
             "soort": entry["soort"],
             "cyclus": entry.get("cyclus") or "jaar",
+            "vorm": vorm,
             "naam": entry["namen"]["primair"],
             "alternatief": entry["namen"].get("alternatief") or [],
             "titels": entry.get("titels") or [],
@@ -509,12 +709,45 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             "lagenlanden": bool(entry.get("lagenlanden")),
             "status": entry.get("status") or "stub",
             "observances": entry.get("observances") or [],
+            "onderdrukt_wekelijks_vasten": bool(
+                entry.get("onderdrukt_wekelijks_vasten")
+            ),
             "icoon": (entry.get("icoon") or {}).get("bestand")
             if (entry.get("icoon") or {}).get("rechten") == "ok"
             else None,
         }
-        if entry.get("cyclus") == "paascyclus":
-            offset = entry["datum_norm"]["paascyclus_offset"]
+        if entry.get("vastenniveau"):
+            item["vastenniveau"] = entry["vastenniveau"]
+        if vorm == "weekdagen":
+            item["weekdagen"] = list(dn["weekdagen"])
+            item["feestdatum"] = None
+        elif vorm == "periode" and dn.get("van") and dn.get("tot"):
+            item["van"] = dn["van"]
+            item["tot"] = dn["tot"]
+            item["feestdatum"] = dn["van"]
+        elif entry.get("cyclus") == "paascyclus" and vorm in {
+            "periode",
+            "periode_hybride",
+        }:
+            item["van_offset_dagen"] = dn["van_offset_dagen"]
+            if vorm == "periode":
+                item["tot_offset_dagen"] = dn["tot_offset_dagen"]
+            else:
+                item["tot"] = dn["tot_mmdd"]
+            item["feestdatum"] = None
+            periods: dict[str, dict[str, str]] = {}
+            for y in years:
+                bounds = period_bounds_for_year(entry, y)
+                if not bounds:
+                    continue
+                start, end = bounds
+                periods[str(y)] = {
+                    "van": mmdd_from_date(start),
+                    "tot": mmdd_from_date(end),
+                }
+            item["period_occurrences"] = periods
+        elif entry.get("cyclus") == "paascyclus":
+            offset = dn["paascyclus_offset"]
             occ: dict[str, str] = {}
             occ_j: dict[str, str] = {}
             for y in years:
@@ -527,15 +760,16 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             item["occurrences"] = occ
             item["occurrences_juliaans"] = occ_j
         else:
-            feestdatum = entry["datum_norm"]["feestdatum"]
+            feestdatum = dn["feestdatum"]
             item["feestdatum"] = feestdatum
-            item["feestdatum_juliaans"] = entry["datum_norm"].get("juliaans")
-            item["feestdatum_gregoriaans"] = entry["datum_norm"].get("gregoriaans")
+            item["feestdatum_juliaans"] = dn.get("juliaans")
+            item["feestdatum_gregoriaans"] = dn.get("gregoriaans")
         payload.append(item)
     write_text(
         STATIC_DATA / "entries.json",
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
     )
+
 
 
 def _ics_escape(text: str) -> str:
@@ -563,16 +797,19 @@ def build_ics(
     *,
     cal_name: str,
     stijl: str = "nieuw",
+    context_entries: list[dict[str, Any]] | None = None,
 ) -> str:
     """Bouw ICS voor jaren huidig−2 … +25.
 
-    ``nieuw``: vaste feesten op de feestdatum (wereldlijk = dagnaam);
+    ``nieuw``: vaste feesten/periodes op de feestdatum (wereldlijk = dagnaam);
     paascyclus op de berekende Orthodoxe (wereldlijke) datum.
-    ``oud``: vaste feesten op Juliaanse feestdatum→wereldlijke vierdatum
-    (offset 13/14 jaargevoelig); paascyclus ongewijzigd (zelfde Orthodoxe datum).
+    ``oud``: vaste feesten op Juliaanse feestdatum→wereldlijke vierdatum;
+    paascyclus ongewijzigd. Wekelijks vasten blijft op burgerlijke weekdag.
+    ``context_entries``: volledige set (voor vastenvrije onderdrukking van wo/vr).
     """
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     years = list(occurrence_years())
+    context = context_entries if context_entries is not None else entries
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
@@ -582,15 +819,130 @@ def build_ics(
         f"X-WR-CALNAME:{_ics_escape(cal_name)}",
         "X-WR-TIMEZONE:UTC",
     ]
+
+    def weekly_suppressed(day: date) -> bool:
+        for e in context:
+            if not e.get("onderdrukt_wekelijks_vasten"):
+                continue
+            bounds = period_bounds_for_year(e, day.year)
+            if not bounds:
+                continue
+            start, end = bounds
+            if start <= end:
+                if start <= day <= end:
+                    return True
+            else:
+                if day >= start or day <= end:
+                    return True
+        return False
+
+    def emit_day(
+        entry: dict[str, Any],
+        civil: date,
+        *,
+        summary: str,
+        uid_key: str,
+        fee_label: str,
+        extra_desc: list[str] | None = None,
+    ) -> None:
+        dt_start = civil.strftime("%Y%m%d")
+        dt_end_s = (civil + timedelta(days=1)).strftime("%Y%m%d")
+        uid = str(uuid.uuid5(uuid.NAMESPACE_URL, uid_key))
+        desc_parts = []
+        if entry.get("samenvatting"):
+            desc_parts.append(entry["samenvatting"].strip())
+        desc_parts.append(fee_label)
+        if extra_desc:
+            desc_parts.extend(extra_desc)
+        for ref in entry.get("referenties") or []:
+            label = ref.get("label") or "Bron"
+            url = ref.get("url")
+            desc_parts.append(f"Bron: {label}" + (f" ({url})" if url else ""))
+        description = _ics_escape("\n".join(desc_parts))
+        event = [
+            "BEGIN:VEVENT",
+            f"DTSTART;VALUE=DATE:{dt_start}",
+            f"DTEND;VALUE=DATE:{dt_end_s}",
+            f"DTSTAMP:{now}",
+            f"UID:{uid}",
+            f"SUMMARY:{_ics_escape(summary)}",
+            f"DESCRIPTION:{description}",
+            "TRANSP:TRANSPARENT",
+            "END:VEVENT",
+        ]
+        lines.extend(event)
+
     for entry in entries:
+        dn = entry["datum_norm"]
+        vorm = dn.get("vorm") or "dag"
+        if vorm == "weekdagen":
+            for year in years:
+                for d in iter_civil_days(date(year, 1, 1), date(year, 12, 31)):
+                    if d.isoweekday() not in dn["weekdagen"]:
+                        continue
+                    if weekly_suppressed(d):
+                        continue
+                    emit_day(
+                        entry,
+                        d,
+                        summary=entry["namen"]["primair"],
+                        uid_key=f"{entry['id']}:week:{stijl}:{d.isoformat()}",
+                        fee_label=(
+                            f"Wekelijks vasten · "
+                            f"{mmdd_label(mmdd_from_date(d))} {year}"
+                        ),
+                    )
+            continue
+
+        if vorm in {"periode", "periode_hybride"}:
+            for year in years:
+                bounds = period_bounds_for_year(entry, year)
+                if not bounds:
+                    continue
+                start, end = bounds
+                if start <= end:
+                    days = list(iter_civil_days(start, end))
+                else:
+                    days = list(iter_civil_days(start, date(year, 12, 31)))
+                    days += list(iter_civil_days(date(year, 1, 1), end))
+                for d in days:
+                    feast_mmdd = mmdd_from_date(d)
+                    if stijl == "oud" and dn.get("van") and dn.get("tot"):
+                        civil = julian_feast_to_civil_date(year, feast_mmdd)
+                        summary = (
+                            f"{entry['namen']['primair']} "
+                            f"({mmdd_label(feast_mmdd)} Juliaans)"
+                        )
+                        uid_key = f"{entry['id']}:oud:{year}:{feast_mmdd}"
+                        fee_label = (
+                            f"Periode · Juliaans {mmdd_label(feast_mmdd)}"
+                        )
+                    else:
+                        civil = d
+                        summary = entry["namen"]["primair"]
+                        uid_key = f"{entry['id']}:{stijl}:{year}:{feast_mmdd}"
+                        fee_label = (
+                            f"Vastenperiode · {mmdd_label(feast_mmdd)} {year}"
+                        )
+                    emit_day(
+                        entry,
+                        civil,
+                        summary=summary,
+                        uid_key=uid_key,
+                        fee_label=fee_label,
+                    )
+            continue
+
         for year in years:
             if entry.get("cyclus") == "paascyclus":
-                civil = pascha_offset_date(year, entry["datum_norm"]["paascyclus_offset"])
+                civil = pascha_offset_date(
+                    year, entry["datum_norm"]["paascyclus_offset"]
+                )
                 summary = entry["namen"]["primair"]
                 if stijl == "oud":
                     summary = f"{summary} (Orthodoxe paascyclus)"
                 uid_key = f"{entry['id']}:{stijl}:{year}:paas"
-                fee_label = mmdd_label(mmdd_from_date(civil))
+                fee_label = f"Wereldlijke datum: {mmdd_label(mmdd_from_date(civil))} {year}"
             else:
                 feestdatum = entry["datum_norm"]["feestdatum"]
                 if stijl == "oud":
@@ -600,68 +952,72 @@ def build_ics(
                         f"({mmdd_label(feestdatum)} Juliaans)"
                     )
                     uid_key = f"{entry['id']}:oud:{year}:{feestdatum}"
-                    fee_label = mmdd_label(feestdatum)
+                    fee_label = f"Feestdatum: {mmdd_label(feestdatum)}"
                 else:
                     month, day = parse_mmdd(feestdatum)
                     civil = date(year, month, day)
                     summary = entry["namen"]["primair"]
                     uid_key = f"{entry['id']}:nieuw:{year}:{feestdatum}"
-                    fee_label = mmdd_label(feestdatum)
-            dt_start = civil.strftime("%Y%m%d")
-            dt_end_s = (civil + timedelta(days=1)).strftime("%Y%m%d")
-            uid = str(uuid.uuid5(uuid.NAMESPACE_URL, uid_key))
-            desc_parts = []
-            if entry.get("samenvatting"):
-                desc_parts.append(entry["samenvatting"].strip())
-            if entry.get("cyclus") == "paascyclus":
-                desc_parts.append(f"Wereldlijke datum: {fee_label} {year}")
-            else:
-                desc_parts.append(f"Feestdatum: {fee_label}")
-                if stijl == "oud":
-                    desc_parts.append(
-                        f"In westerse agenda's: {mmdd_label(mmdd_from_date(civil))} {year} "
-                        "(Juliaanse feestdatum omgezet; offset 13 tot 2100, daarna 14)."
-                    )
-            for ref in entry.get("referenties") or []:
-                label = ref.get("label") or "Bron"
-                url = ref.get("url")
-                desc_parts.append(f"Bron: {label}" + (f" ({url})" if url else ""))
-            description = _ics_escape("\n".join(desc_parts))
-            event = [
-                "BEGIN:VEVENT",
-                f"DTSTART;VALUE=DATE:{dt_start}",
-                f"DTEND;VALUE=DATE:{dt_end_s}",
-                f"DTSTAMP:{now}",
-                f"UID:{uid}",
-                f"SUMMARY:{_ics_escape(summary)}",
-                f"DESCRIPTION:{description}",
-                "TRANSP:TRANSPARENT",
-                "END:VEVENT",
-            ]
-            lines.extend(event)
+                    fee_label = f"Feestdatum: {mmdd_label(feestdatum)}"
+            emit_day(
+                entry,
+                civil,
+                summary=summary,
+                uid_key=uid_key,
+                fee_label=fee_label,
+            )
     lines.append("END:VCALENDAR")
     return "\r\n".join(_fold(line) for line in lines) + "\r\n"
 
 
+def _ics_subset_key(kinds: frozenset[str]) -> str | None:
+    mapping = {
+        frozenset({"heilige", "feest", "vasten"}): "alles",
+        frozenset({"heilige"}): "heiligen",
+        frozenset({"feest"}): "feesten",
+        frozenset({"vasten"}): "vasten",
+        frozenset({"heilige", "feest"}): "heiligen-feesten",
+        frozenset({"heilige", "vasten"}): "heiligen-vasten",
+        frozenset({"feest", "vasten"}): "feesten-vasten",
+    }
+    return mapping.get(kinds)
+
+
 def write_ics(entries: list[dict[str, Any]]) -> None:
     STATIC_ICS.mkdir(parents=True, exist_ok=True)
-    subsets = {
-        "alles": entries,
-        "heiligen": [e for e in entries if e["soort"] == "heilige"],
-        "feesten": [e for e in entries if e["soort"] == "feest"],
-    }
+    combos = [
+        frozenset({"heilige", "feest", "vasten"}),
+        frozenset({"heilige"}),
+        frozenset({"feest"}),
+        frozenset({"vasten"}),
+        frozenset({"heilige", "feest"}),
+        frozenset({"heilige", "vasten"}),
+        frozenset({"feest", "vasten"}),
+    ]
     labels = {
         "alles": "Heiligenkalender (alles)",
         "heiligen": "Heiligen",
         "feesten": "Feesten (vast + paascyclus)",
+        "vasten": "Vasten",
+        "heiligen-feesten": "Heiligen + feesten",
+        "heiligen-vasten": "Heiligen + vasten",
+        "feesten-vasten": "Feesten + vasten",
     }
-    for key, subset in subsets.items():
+    for kinds in combos:
+        key = _ics_subset_key(kinds)
+        assert key
+        subset = [e for e in entries if e["soort"] in kinds]
         for stijl, suffix in (("nieuw", "nieuw"), ("oud", "oud")):
             name = f"{labels[key]} — {suffix}"
             filename = f"{key}-{suffix}.ics"
             write_text(
                 STATIC_ICS / filename,
-                build_ics(subset, cal_name=name, stijl=stijl),
+                build_ics(
+                    subset,
+                    cal_name=name,
+                    stijl=stijl,
+                    context_entries=entries,
+                ),
             )
 
 
@@ -671,6 +1027,7 @@ def clean_generated() -> None:
         "content/datum",
         "content/heiligen",
         "content/feesten",
+        "content/vasten",
         "static/data/entries.json",
     ):
         path = SITE / rel
@@ -680,6 +1037,7 @@ def clean_generated() -> None:
             path.unlink()
     for ics in (SITE / "static" / "ics").glob("*.ics"):
         ics.unlink()
+
 
 
 def main() -> int:

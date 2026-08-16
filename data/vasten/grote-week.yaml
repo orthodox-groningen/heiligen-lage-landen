@@ -1,0 +1,28 @@
+id: grote-week
+soort: vasten
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+vastenniveau: streng
+observances:
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: -6
+    tot_offset_dagen: -1
+samenvatting: |
+  Grote Maandag tot en met Grote Zaterdag: de strengste dagen vóór Pascha.
+verhaal: |
+  De Grote Week (Heilige Week) volgt op Palmzondag. Liturgisch en ascese-matig
+  is dit vaak strenger dan de veertigdagen: geen vlees of zuivel; wijn en olie
+  doorgaans niet (behalve waar typikon versoepelt); Grote Vrijdag en Grote
+  Zaterdag zijn bijzonder streng. Parochiepraktijk en economia kunnen afwijken.
+referenties:
+  - label: "OrthodoxWiki — Holy Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"

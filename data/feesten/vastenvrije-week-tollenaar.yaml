@@ -1,0 +1,28 @@
+id: vastenvrije-week-tollenaar
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+vastenniveau: vrij
+onderdrukt_wekelijks_vasten: true
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: -69
+    tot_offset_dagen: -63
+samenvatting: |
+  Week na de zondag van de tollenaar en de Farizeeër: vastenvrij (wo/vr).
+verhaal: |
+  Na de opening van het Triodion volgt een week zonder wekelijks vasten op
+  woensdag en vrijdag — een korte “adempauze” vóór de strengere voorvasten.
+  Lokale typika kunnen hiervan afwijken.
+referenties:
+  - label: "OrthodoxWiki — Fasting"
+    url: "https://orthodoxwiki.org/Fasting"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Sunday of the Publican and Pharisee"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Publican_and_Pharisee"
+    geraadpleegd: "2026-08-16"

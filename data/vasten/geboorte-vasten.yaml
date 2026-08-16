@@ -1,0 +1,33 @@
+id: geboorte-vasten
+soort: vasten
+status: curated
+cyclus: jaar
+lagenlanden: false
+vastenniveau: lichter
+namen:
+  primair: "Geboortevasten"
+  alternatief:
+    - "Filipsvasten"
+    - "Kerstvasten"
+    - "Adventsvasten"
+observances:
+  - vasten
+datum:
+  van: "11-15"
+  tot: "12-24"
+  stijl: gregoriaans
+samenvatting: |
+  Vasten van 15 november tot Kerstavond (24 december), ter voorbereiding op Kerstfeest.
+verhaal: |
+  Het Geboortevasten (ook Filipsvasten, omdat het na het feest van de apostel Filips
+  begint) loopt van 15 november tot 24 december. Vaak is de eerste periode milder
+  (vis/olie/wijn op meer dagen) en wordt de laatste periode strenger. Op Kerstavond
+  zelf is de onthouding traditioneel streng tot na de liturgie. “Advent” is een
+  westers woord; in orthodox jargon zijn Geboortevasten of Filipsvasten gebruikelijker.
+referenties:
+  - label: "Wikipedia (EN) — Nativity Fast"
+    url: "https://en.wikipedia.org/wiki/Nativity_Fast"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Geboorte van Christus"
+    url: "https://orthodoxwiki.org/Nativity"
+    geraadpleegd: "2026-08-16"

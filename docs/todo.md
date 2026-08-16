@@ -1,7 +1,10 @@
 # TODO
 
-- [ ] Jaarrooster: **meerdere kleuren** op één dag wanneer `observances` zowel
-  `feest` als `vasten` (of heilige) bevat — nu wint één dominante kleur.
+- [x] Jaarrooster: **meerdere kleuren** op één dag wanneer `observances` zowel
+  `feest` als `vasten` (of heilige) bevat.
 - [ ] Lezingen van de dag koppelen aan vaste- en paascyclus-entries.
-- [ ] Apostolisch vasten en overige vastenperiodes als periodes (niet alleen
-  ankerdagen) in data + UI.
+- [x] Apostolisch vasten en overige vastenperiodes als periodes in data + UI.
+- [x] Vastenvrije weken (Bright Week, na Pinksteren, …) als uitzonderingen op
+  woensdag/vrijdag.
+- [x] Optioneel veld voor vastenniveau (streng / wijn-olie / vis) per periode.
+- [x] ICS: uitzonderingen voor wekelijks vasten in vastenvrije periodes.

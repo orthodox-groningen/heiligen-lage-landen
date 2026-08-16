@@ -103,9 +103,26 @@
     return mmddFromDate(new Date());
   }
 
+  function mmddInRange(mmdd, van, tot) {
+    if (!van || !tot) return false;
+    if (van <= tot) return van <= mmdd && mmdd <= tot;
+    return mmdd >= van || mmdd <= tot;
+  }
+
+  function isoWeekdayFromMmdd(mmdd, year) {
+    const [m, d] = mmdd.split("-").map(Number);
+    const js = new Date(year, m - 1, d).getDay();
+    return js === 0 ? 7 : js;
+  }
+
+  function civilMmddForView(mmdd, style, year) {
+    if (style !== "juliaans") return mmdd;
+    return shiftMmdd(mmdd, julianGregorianOffsetDays(year));
+  }
+
   function entryMmddOnYear(entry, year, style) {
     if (!entry) return null;
-    if (entry.cyclus === "paascyclus") {
+    if (entry.cyclus === "paascyclus" && entry.occurrences) {
       const map =
         style === "juliaans"
           ? entry.occurrences_juliaans || {}
@@ -115,15 +132,74 @@
     return entry.feestdatum || null;
   }
 
+  function entryMatchesMmdd(entry, mmdd, year, style, allEntries) {
+    if (!entry || !mmdd) return false;
+    if (entry.vorm === "weekdagen") {
+      if (isWeeklyFastSuppressed(allEntries || [], mmdd, year, style)) {
+        return false;
+      }
+      const civil = civilMmddForView(mmdd, style, year);
+      return (entry.weekdagen || []).includes(isoWeekdayFromMmdd(civil, year));
+    }
+    if (entry.van && entry.tot && entry.vorm === "periode") {
+      return mmddInRange(mmdd, entry.van, entry.tot);
+    }
+    if (entry.period_occurrences) {
+      const p = entry.period_occurrences[String(year)];
+      if (!p) return false;
+      const civil = civilMmddForView(mmdd, style, year);
+      return mmddInRange(civil, p.van, p.tot);
+    }
+    return entryMmddOnYear(entry, year, style) === mmdd;
+  }
+
+  function isWeeklyFastSuppressed(entries, mmdd, year, style) {
+    return (entries || []).some((e) => {
+      if (!e || !e.onderdrukt_wekelijks_vasten) return false;
+      if (e.vorm === "weekdagen") return false;
+      if (e.van && e.tot && e.vorm === "periode") {
+        return mmddInRange(mmdd, e.van, e.tot);
+      }
+      if (e.period_occurrences) {
+        const p = e.period_occurrences[String(year)];
+        if (!p) return false;
+        const civil = civilMmddForView(mmdd, style, year);
+        return mmddInRange(civil, p.van, p.tot);
+      }
+      return entryMmddOnYear(e, year, style) === mmdd;
+    });
+  }
+
   function entriesOnMmdd(entries, mmdd, style, year) {
-    return (entries || []).filter((e) => entryMmddOnYear(e, year, style) === mmdd);
+    return (entries || []).filter((e) =>
+      entryMatchesMmdd(e, mmdd, year, style, entries)
+    );
+  }
+
+  function kindLabel(entry) {
+    if (entry.soort === "vasten") {
+      if (entry.vorm === "weekdagen") return "Vasten (wekelijks)";
+      if (entry.vorm === "periode" || entry.vorm === "periode_hybride") {
+        return "Vastenperiode";
+      }
+      return "Vasten";
+    }
+    if (entry.cyclus === "paascyclus") return "Paascyclus";
+    if (entry.soort === "feest") return "Feest";
+    return "Heilige";
   }
 
   function addObservances(set, entry) {
     const obs =
       entry.observances && entry.observances.length
         ? entry.observances
-        : [entry.soort === "heilige" ? "heilige" : "feest"];
+        : [
+            entry.soort === "heilige"
+              ? "heilige"
+              : entry.soort === "vasten"
+                ? "vasten"
+                : "feest",
+          ];
     for (const o of obs) set.add(o);
   }
 
@@ -362,19 +438,14 @@
     const matched = entriesOnMmdd(entries, view, style, year);
     if (!matched.length) {
       cardEntries.innerHTML =
-        "<p>Geen feest of heilige uit deze collectie op deze kalenderdatum.</p>";
+        "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
       return;
     }
     cardEntries.innerHTML =
       "<ul>" +
       matched
         .map((e) => {
-          const kind =
-            e.cyclus === "paascyclus"
-              ? "Paascyclus"
-              : e.soort === "feest"
-                ? "Feest"
-                : "Heilige";
+          const kind = kindLabel(e);
           const summary = e.samenvatting
             ? `<div class="muted">${e.samenvatting}</div>`
             : "";
@@ -388,12 +459,13 @@
     const hasF = kinds.has("feest");
     const hasH = kinds.has("heilige");
     const hasV = kinds.has("vasten");
-    // TODO: multi-kleur wanneer feest én vasten op één dag (nu vasten wijkt voor feest/heilige).
-    if (hasV && !hasF && !hasH) return "day-vasten";
+    if (hasF && hasH && hasV) return "day-feest-heilige-vasten";
+    if (hasF && hasV) return "day-feest-vasten";
+    if (hasH && hasV) return "day-heilige-vasten";
     if (hasF && hasH) return "day-beide";
+    if (hasV) return "day-vasten";
     if (hasF) return "day-feest";
     if (hasH) return "day-heilige";
-    if (hasV) return "day-vasten";
     return "";
   }
 
@@ -412,9 +484,83 @@
     const byDay = new Map();
     for (const e of entries) {
       if (!e) continue;
+      if (e.vorm === "weekdagen") {
+        const daysInYear =
+          (viewYear % 4 === 0 && viewYear % 100 !== 0) || viewYear % 400 === 0
+            ? 366
+            : 365;
+        for (let i = 0; i < daysInYear; i++) {
+          const d = new Date(viewYear, 0, 1 + i);
+          const iso = d.getDay() === 0 ? 7 : d.getDay();
+          if (!(e.weekdagen || []).includes(iso)) continue;
+          const mmdd = mmddFromDate(d);
+          if (isWeeklyFastSuppressed(entries, mmdd, viewYear, "gregoriaans")) {
+            continue;
+          }
+          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+          addObservances(byDay.get(mmdd), e);
+        }
+        continue;
+      }
+      if (e.period_occurrences) {
+        const p = e.period_occurrences[String(viewYear)];
+        if (!p) continue;
+        const start = new Date(
+          viewYear,
+          Number(p.van.slice(0, 2)) - 1,
+          Number(p.van.slice(3, 5))
+        );
+        const end = new Date(
+          viewYear,
+          Number(p.tot.slice(0, 2)) - 1,
+          Number(p.tot.slice(3, 5))
+        );
+        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+          const mmdd = mmddFromDate(d);
+          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+          addObservances(byDay.get(mmdd), e);
+        }
+        continue;
+      }
+      if (e.vorm === "periode" && e.van && e.tot) {
+        const leap = 2024;
+        const start = new Date(
+          leap,
+          Number(e.van.slice(0, 2)) - 1,
+          Number(e.van.slice(3, 5))
+        );
+        let end = new Date(
+          leap,
+          Number(e.tot.slice(0, 2)) - 1,
+          Number(e.tot.slice(3, 5))
+        );
+        const wrap = start > end;
+        if (wrap) end = new Date(leap, 11, 31);
+        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+          const mmdd = mmddFromDate(d);
+          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+          addObservances(byDay.get(mmdd), e);
+        }
+        if (wrap) {
+          const end2 = new Date(
+            leap,
+            Number(e.tot.slice(0, 2)) - 1,
+            Number(e.tot.slice(3, 5))
+          );
+          for (
+            let d = new Date(leap, 0, 1);
+            d <= end2;
+            d.setDate(d.getDate() + 1)
+          ) {
+            const mmdd = mmddFromDate(d);
+            if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+            addObservances(byDay.get(mmdd), e);
+          }
+        }
+        continue;
+      }
       let mmdd = null;
       if (e.cyclus === "paascyclus") {
-        // Jaarrooster is Gregoriaans: altijd wereldlijke occurrence.
         mmdd = (e.occurrences || {})[String(viewYear)] || null;
       } else {
         mmdd = e.feestdatum || null;
@@ -476,6 +622,15 @@
   let browseMode = "letter";
   let activeLetter = "A";
   let activeMonth = "01";
+  let searchQuery = "";
+
+  function matchesSearch(entry, q) {
+    if (!q) return true;
+    const hay = [entry.naam, ...(entry.alternatief || [])]
+      .join(" ")
+      .toLocaleLowerCase("nl");
+    return hay.includes(q);
+  }
 
   function checkedShows(name) {
     return Array.from(
@@ -487,6 +642,37 @@
     return entries.filter((e) => shows.includes(e.soort));
   }
 
+  function entrySortMmdd(entry, year) {
+    if (entry.vorm === "weekdagen") return "99-99";
+    if (entry.period_occurrences) {
+      const p = entry.period_occurrences[String(year)];
+      return (p && p.van) || "99-99";
+    }
+    if (entry.van) return entry.van;
+    return entryMmddOnYear(entry, year, "gregoriaans") || "99-99";
+  }
+
+  function entryTouchesMonth(entry, year, mm) {
+    if (entry.vorm === "weekdagen") return false;
+    if (entry.period_occurrences) {
+      const p = entry.period_occurrences[String(year)];
+      if (!p) return false;
+      return p.van.startsWith(mm + "-") || p.tot.startsWith(mm + "-") ||
+        (p.van < mm + "-01" && p.tot > mm + "-31");
+    }
+    if (entry.van && entry.tot) {
+      for (const part of [entry.van, entry.tot]) {
+        if (part.startsWith(mm + "-")) return true;
+      }
+      if (entry.van <= entry.tot) {
+        return entry.van.slice(0, 2) <= mm && entry.tot.slice(0, 2) >= mm;
+      }
+      return entry.van.slice(0, 2) <= mm || entry.tot.slice(0, 2) >= mm;
+    }
+    const fd = entryMmddOnYear(entry, year, "gregoriaans");
+    return Boolean(fd && fd.startsWith(mm + "-"));
+  }
+
   function renderOverzicht(entries) {
     const list = document.getElementById("overzicht-list");
     const hint = document.getElementById("overzicht-hint");
@@ -495,7 +681,9 @@
     if (!list) return;
 
     const shows = checkedShows("show");
-    const filtered = filterEntries(entries, shows);
+    const filtered = filterEntries(entries, shows).filter((e) =>
+      matchesSearch(e, searchQuery)
+    );
 
     if (letterNav) {
       letterNav.hidden = browseMode !== "letter";
@@ -518,10 +706,8 @@
       monthNav.innerHTML = MONTHS.slice(1)
         .map((name, i) => {
           const mm = String(i + 1).padStart(2, "0");
-          const count = filtered.filter((e) => {
-            const fd = entryMmddOnYear(e, year, "gregoriaans");
-            return fd && fd.startsWith(mm + "-");
-          }).length;
+          const count = filtered.filter((e) => entryTouchesMonth(e, year, mm))
+            .length;
           const pressed = mm === activeMonth ? "true" : "false";
           return `<button type="button" class="letter-btn" data-month="${mm}" aria-pressed="${pressed}" ${count ? "" : "disabled"}>${name.slice(0, 3)}</button>`;
         })
@@ -543,30 +729,30 @@
       }
       subset.sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
     } else {
-      subset = filtered.filter((e) => {
-        const fd = entryMmddOnYear(e, year, "gregoriaans");
-        return fd && fd.startsWith(activeMonth + "-");
-      });
+      subset = filtered.filter((e) => entryTouchesMonth(e, year, activeMonth));
       if (hint) {
         hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]} ${year}: ${subset.length} item(s).`;
       }
       subset.sort((a, b) => {
-        const fa = entryMmddOnYear(a, year, "gregoriaans") || "";
-        const fb = entryMmddOnYear(b, year, "gregoriaans") || "";
+        const fa = entrySortMmdd(a, year);
+        const fb = entrySortMmdd(b, year);
         return fa.localeCompare(fb) || a.naam.localeCompare(b.naam, "nl");
       });
     }
 
     list.innerHTML = subset
       .map((e) => {
-        const kind =
-          e.cyclus === "paascyclus"
-            ? "Paascyclus"
-            : e.soort === "feest"
-              ? "Feest"
-              : "Heilige";
-        const fd = entryMmddOnYear(e, year, "gregoriaans");
-        const when = fd ? label(fd) : "paascyclus";
+        const kind = kindLabel(e);
+        let when = "—";
+        if (e.vorm === "weekdagen") when = "wekelijks";
+        else if (e.van && e.tot) when = `${label(e.van)} – ${label(e.tot)}`;
+        else if (e.period_occurrences) {
+          const p = e.period_occurrences[String(year)];
+          when = p ? `${label(p.van)} – ${label(p.tot)}` : "paascyclus";
+        } else {
+          const fd = entryMmddOnYear(e, year, "gregoriaans");
+          when = fd ? label(fd) : "paascyclus";
+        }
         return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">${when} · ${kind}</span></li>`;
       })
       .join("");
@@ -586,6 +772,13 @@
     document.querySelectorAll('input[name="show"]').forEach((el) => {
       el.addEventListener("change", () => renderOverzicht(entries));
     });
+    const search = document.getElementById("overzicht-search");
+    if (search) {
+      search.addEventListener("input", () => {
+        searchQuery = (search.value || "").trim().toLocaleLowerCase("nl");
+        renderOverzicht(entries);
+      });
+    }
     renderOverzicht(entries);
   }
 
@@ -595,10 +788,24 @@
     const stijl =
       (document.querySelector('input[name="ics-stijl"]:checked') || {}).value ||
       "nieuw";
-    let key = "alles";
-    if (shows.includes("heilige") && !shows.includes("feest")) key = "heiligen";
-    else if (shows.includes("feest") && !shows.includes("heilige")) key = "feesten";
-    else if (!shows.length) key = null;
+    if (!shows.length) return null;
+    const set = new Set(shows);
+    const mapping = [
+      [["heilige", "feest", "vasten"], "alles"],
+      [["heilige"], "heiligen"],
+      [["feest"], "feesten"],
+      [["vasten"], "vasten"],
+      [["heilige", "feest"], "heiligen-feesten"],
+      [["heilige", "vasten"], "heiligen-vasten"],
+      [["feest", "vasten"], "feesten-vasten"],
+    ];
+    let key = null;
+    for (const [need, name] of mapping) {
+      if (need.length === set.size && need.every((k) => set.has(k))) {
+        key = name;
+        break;
+      }
+    }
     return key ? `${key}-${stijl}.ics` : null;
   }
 
@@ -616,7 +823,7 @@
       } else {
         link.removeAttribute("href");
         link.classList.add("is-disabled");
-        link.textContent = "Kies minstens heiligen of feesten";
+        link.textContent = "Kies minstens één categorie";
       }
     }
     if (hint) {
@@ -636,6 +843,14 @@
         "heiligen-oud",
         "feesten-nieuw",
         "feesten-oud",
+        "vasten-nieuw",
+        "vasten-oud",
+        "heiligen-feesten-nieuw",
+        "heiligen-feesten-oud",
+        "heiligen-vasten-nieuw",
+        "heiligen-vasten-oud",
+        "feesten-vasten-nieuw",
+        "feesten-vasten-oud",
       ];
       all.innerHTML = files
         .map((f) => `<li><a href="${assetUrl("ics/" + f + ".ics")}">${f}.ics</a></li>`)

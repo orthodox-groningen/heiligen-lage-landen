@@ -74,29 +74,28 @@ PAASCYCLUS: list[dict[str, Any]] = [
             "Vleesvaarwelzondag is de laatste dag waarop traditioneel vlees "
             "wordt gegeten vóór de vasten. Het evangelie van het Laatste Oordeel "
             "(Mt. 25) herinnert eraan dat liefde tot de naaste meetelt voor Gods "
-            "oordeel. Daarna volgt de Kaasweek."
+            "oordeel. Daarna volgt de Boterweek."
         ),
     },
     {
         "id": "vergevingszondag",
         "offset_dagen": -49,
         "namen": {
-            "primair": "Vergevingszondag (Kaasvaarwel)",
+            "primair": "Vergevingszondag",
             "alternatief": [
-                "Kaasvaarwelzondag",
                 "Zondag van de verdrijving uit het paradijs",
                 "Vergevingszondag",
-                "Kaasvaarwel",
+                "Zuivelvaarwel",
             ],
         },
         "observances": ["feest"],
-        "samenvatting": "Einde van de Kaasweek; wederzijdse vergeving vóór de Grote Vasten.",
+        "samenvatting": "Einde van de Boterweek; wederzijdse vergeving vóór de Grote Vasten.",
         "verhaal": (
             "Op Vergevingszondag vraagt de gemeenschap elkaar om vergeving en "
             "begint ’s avonds de Grote Vasten. De Kerk gedenkt de verdrijving "
             "uit het paradijs en wijst op terugkeer door vasten, gebed en "
-            "barmhartigheid. Kaas en eieren worden na deze dag traditioneel "
-            "gemeden tot Pascha."
+            "barmhartigheid. Kaas, eieren en andere zuivelproducten worden "
+            "na deze dag traditioneel gemeden tot Pascha."
         ),
     },
     {
