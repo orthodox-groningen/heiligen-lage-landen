@@ -44,8 +44,9 @@
     "observances": [
       "feest"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
+    "vastenniveau": "vrij",
     "feestdatum": "01-06",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -152,6 +153,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "wijn_olie",
     "feestdatum": "02-02",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -378,6 +380,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "03-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -830,6 +833,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "06-24",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -880,6 +884,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "06-29",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1025,7 +1030,7 @@
     "observances": [
       "vasten"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
     "vastenniveau": "streng",
     "van": "08-01",
@@ -1054,6 +1059,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "08-06",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1202,6 +1208,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "streng",
     "feestdatum": "08-29",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1301,6 +1308,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "09-08",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1349,10 +1357,12 @@
     "lagenlanden": false,
     "status": "curated",
     "observances": [
-      "feest"
+      "feest",
+      "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "streng",
     "feestdatum": "09-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1652,7 +1662,7 @@
     "observances": [
       "vasten"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
     "vastenniveau": "lichter",
     "van": "11-15",
@@ -1733,6 +1743,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "feestdatum": "11-21",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2004,8 +2015,9 @@
     "observances": [
       "feest"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
+    "vastenniveau": "vrij",
     "feestdatum": "12-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2583,8 +2595,9 @@
     "observances": [
       "feest"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
+    "vastenniveau": "lichter",
     "van_offset_dagen": -55,
     "tot_offset_dagen": -49,
     "feestdatum": null,
@@ -2806,7 +2819,7 @@
     "observances": [
       "vasten"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
     "vastenniveau": "streng",
     "van_offset_dagen": -48,
@@ -3456,6 +3469,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "offset_dagen": -8,
     "feestdatum": null,
     "occurrences": {
@@ -3536,10 +3550,12 @@
     "lagenlanden": false,
     "status": "curated",
     "observances": [
-      "feest"
+      "feest",
+      "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
+    "vastenniveau": "vis",
     "offset_dagen": -7,
     "feestdatum": null,
     "occurrences": {
@@ -3704,7 +3720,7 @@
     "observances": [
       "vasten"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
     "vastenniveau": "streng",
     "van_offset_dagen": -6,
@@ -5794,7 +5810,7 @@
     "observances": [
       "vasten"
     ],
-    "onderdrukt_wekelijks_vasten": false,
+    "onderdrukt_wekelijks_vasten": true,
     "icoon": null,
     "vastenniveau": "lichter",
     "van_offset_dagen": 57,
