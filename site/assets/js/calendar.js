@@ -34,10 +34,6 @@
     return new URL(rel.replace(/^\//, ""), siteBase()).href;
   }
 
-  function uitlegUrl(hash) {
-    return assetUrl("uitleg/") + (hash ? "#" + hash : "");
-  }
-
   function getStyle() {
     const params = new URLSearchParams(window.location.search);
     const fromQuery = params.get("stijl");
@@ -82,18 +78,27 @@
     return `${d} ${MONTHS[m]}`;
   }
 
-  function shortStyle(style) {
-    return style === "juliaans" ? "oud" : "nieuw";
+  function updateHeading(style) {
+    const heading = document.getElementById("today-heading");
+    if (!heading) return;
+    const today = todayMmdd(style);
+    heading.innerHTML =
+      `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">` +
+      `Vandaag · ${label(today)}` +
+      `</span>`;
+    wireNieuwOudTriggers(heading);
   }
 
-  function styleLink(style) {
-    const word = shortStyle(style);
-    // Popup-knop + aparte link naar de uitlegpagina (blijft bereikbaar).
-    return (
-      `<button type="button" class="text-link" data-open-nieuw-oud>${word}</button>` +
-      ` · <a class="text-link" href="${uitlegUrl("nieuw-oud")}">meer</a>`
-    );
+  function updateNote(style) {
+    const cardNote = document.getElementById("today-note");
+    if (!cardNote) return;
+    if (style === "juliaans") {
+      cardNote.textContent = `Burgerlijk: ${label(civilTodayMmdd())}.`;
+    } else {
+      cardNote.textContent = `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}.`;
+    }
   }
+
 
   let nieuwOudCloseTimer = null;
 
@@ -214,29 +219,6 @@
     const res = await fetch(url);
     if (!res.ok) throw new Error(`entries.json (${res.status}) ${url}`);
     return res.json();
-  }
-
-  function updateHeading(style) {
-    const heading = document.getElementById("today-heading");
-    if (!heading) return;
-    const today = todayMmdd(style);
-    heading.innerHTML = `Vandaag · ${label(today)} (${styleLink(style)})`;
-    wireNieuwOudTriggers(heading);
-  }
-
-  function updateNote(style) {
-    const cardNote = document.getElementById("today-note");
-    if (!cardNote) return;
-    if (style === "juliaans") {
-      cardNote.innerHTML =
-        `Burgerlijk: ${label(civilTodayMmdd())}. ` +
-        `<button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
-    } else {
-      cardNote.innerHTML =
-        `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}. ` +
-        `<button type="button" class="text-link" data-open-nieuw-oud>Uitleg</button>`;
-    }
-    wireNieuwOudTriggers(cardNote);
   }
 
   function renderToday(entries, style) {

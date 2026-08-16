@@ -164,6 +164,18 @@ h2 {
   max-width: 38rem;
 }
 
+.today-title-hint {
+  cursor: help;
+  text-decoration: underline dotted color-mix(in srgb, var(--muted) 70%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.today-title-hint:hover,
+.today-title-hint:focus-visible {
+  text-decoration-color: var(--gold-soft);
+  outline: none;
+}
+
 .today-card {
   margin: 1.5rem 0;
   padding: 1.25rem 1.35rem;
