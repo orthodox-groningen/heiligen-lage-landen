@@ -1,0 +1,48 @@
+# Feestoverrides voor liturgische Apostel/Evangelie-lezingen.
+# Match: paascyclus_offset (t.o.v. Orthodox Pascha) of mmdd (feestdatum-dagnaam).
+# modus: vervangen (default) | toevoegen (fase 3)
+
+overrides:
+  - id: pascha
+    match:
+      paascyclus_offset: 0
+    modus: vervangen
+    apostel:
+      - ref: "Hand. 1:1-8"
+        zacalo: 1
+    evangelie:
+      - ref: "Joh. 1:1-17"
+        zacalo: 1
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Pascha)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: palmzondag
+    match:
+      paascyclus_offset: -7
+    modus: vervangen
+    apostel:
+      - ref: "Fil. 4:4-9"
+    evangelie:
+      - ref: "Joh. 12:1-18"
+    regels: [R2]
+    bron:
+      label: "Azbyka — ukazatel’ (Palmzondag)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
+  - id: theofanie
+    match:
+      mmdd: "01-06"
+    modus: vervangen
+    apostel:
+      - ref: "Tit. 2:11-14; 3:4-7"
+    evangelie:
+      - ref: "Matt. 3:13-17"
+    regels: [R2]
+    bron:
+      label: "Azbyka / MP — Theofanie"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"

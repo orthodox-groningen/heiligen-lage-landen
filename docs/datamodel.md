@@ -49,6 +49,8 @@ Canonieke weergavenamen staan in **`data/namen.yaml`**:
 Ids (bestandsnamen) blijven stabiel; wijzig alleen de getoonde namen in
 `namen.yaml`.
 
+## Vasten
+
 ```yaml
 soort: vasten
 # Wekelijks (ISO-weekdag 1=ma … 7=zo):
@@ -69,7 +71,7 @@ datum:
     anker: pascha
     van_offset_dagen: -48
     tot_offset_dagen: -1
-# of hybride: van_offset_dagen + datum.tot (MM-DD), bv. Apostolisch vasten
+# of hybride: van_offset_dagen + datum.tot (MM-DD), bv. Apostelvasten
 ```
 
 Pagina’s onder `/vasten/{id}/`; zichtbaar in meneon/agenda/kalender met
@@ -113,14 +115,21 @@ Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
 **Normatief voor de dagregel:** `data/regels/vasten.yaml` (uitleg
 `/uitleg/vasten/`). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
 
+## Lezingen (Apostel / Evangelie)
+
+Normatieve regels: **`docs/specs/lezingen.md`** (traditie Moskou, ROCOR bij
+twijfel). Publieke spiegel: `/uitleg/lezingen/` (gegenereerd bij `generate.py`).
+
+Data: `data/lezingen/` (`feest-overrides.yaml`, `meta.yaml`). Engine:
+`scripts/lezingen.py`. Machine-leesbare voorbeelden in de spec sturen pytest.
+
 ## Observances (kleuren)
 
 ```yaml
 observances: [feest, vasten]   # optioneel; default volgt soort
 ```
 
-Het jaarrooster kleurt nu één dominante categorie. **TODO:** meerdere kleuren
-tegelijk tonen wanneer een dag feest én vasten is (bijv. Onthoofding van Johannes).
+Het jaarrooster ondersteunt gecombineerde kleuren (feest+vasten, heilige+vasten).
 
 ## Referenties
 

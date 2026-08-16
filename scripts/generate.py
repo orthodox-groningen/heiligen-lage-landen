@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
+from lezingen import SPEC_PATH, spec_body_for_uitleg  # noqa: E402
 from vasten import load_vastenregels, render_vasten_uitleg  # noqa: E402
 from kalender import (  # noqa: E402
     format_mmdd,
@@ -539,6 +540,11 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
         "title": "Agenda (ICS)",
         "description": "Abonneren op heiligen- en feestfeeds in nieuw of oud",
     },
+    {
+        "id": "lezingen",
+        "title": "Lezingen van de dag",
+        "description": "Apostel en Evangelie volgens Moskou (ROCOR bij twijfel)",
+    },
 ]
 
 
@@ -546,12 +552,16 @@ def ensure_achtergrond_topics() -> None:
     """Zorg dat bekende uitleg-onderwerpen bestaan met niet-lege title.
 
     Body en overige front matter blijven onaangeroerd. Ontbrekende bestanden
-    krijgen een korte stub.
+    krijgen een korte stub. Uitzondering: ``lezingen`` wordt gespiegeld vanuit
+    ``docs/specs/lezingen.md``.
     """
     uitleg_dir = CONTENT / "uitleg"
     uitleg_dir.mkdir(parents=True, exist_ok=True)
     for topic in ACHTERGROND_TOPICS:
         path = uitleg_dir / f"{topic['id']}.md"
+        if topic["id"] == "lezingen":
+            sync_lezingen_uitleg()
+            continue
         if not path.exists():
             meta = {
                 "title": topic["title"],
@@ -587,6 +597,28 @@ def write_vasten_uitleg() -> None:
         CONTENT / "uitleg" / "vasten.md",
         _dump_hugo_markdown(meta, render_vasten_uitleg(regels)),
     )
+
+
+def sync_lezingen_uitleg() -> None:
+    """Spiegel docs/specs/lezingen.md → site/content/uitleg/lezingen.md."""
+    if not SPEC_PATH.is_file():
+        raise SystemExit(f"Ontbreekt: {SPEC_PATH.relative_to(ROOT)}")
+    path = CONTENT / "uitleg" / "lezingen.md"
+    meta = {
+        "title": "Lezingen van de dag",
+        "description": (
+            "Apostel en Evangelie: regels Moskou (ROCOR bij twijfel), "
+            "met verantwoording"
+        ),
+    }
+    intro = (
+        "Deze pagina is de **publieke spiegel** van de normatieve specificatie\n"
+        "`docs/specs/lezingen.md`. Wijzig die specificatie (regels + voorbeelden);\n"
+        "daarna moet `scripts/lezingen.py` meekomen — pytest bewaakt dat.\n\n"
+        "---\n\n"
+    )
+    body = intro + spec_body_for_uitleg()
+    write_text(path, _dump_hugo_markdown(meta, body))
 
 
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
