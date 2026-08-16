@@ -89,14 +89,14 @@
     return x;
   }
 
-  function todayMmdd(style) {
-    const civil = new Date();
-    if (style === "juliaans") {
-      return mmddFromDate(
-        addDays(civil, -julianGregorianOffsetDays(civil.getFullYear()))
-      );
-    }
-    return mmddFromDate(civil);
+  function dateFromMmdd(year, mmdd) {
+    const [m, d] = mmdd.split("-").map(Number);
+    return new Date(year, m - 1, d);
+  }
+
+  /** Home, datumpagina en jaarkalender rekenen in wereldlijke (Gregoriaanse) datums. */
+  function todayMmdd(_style) {
+    return mmddFromDate(new Date());
   }
 
   function civilTodayMmdd() {
@@ -110,26 +110,55 @@
   }
 
   function isoWeekdayFromMmdd(mmdd, year) {
-    const [m, d] = mmdd.split("-").map(Number);
-    const js = new Date(year, m - 1, d).getDay();
+    const js = dateFromMmdd(year, mmdd).getDay();
     return js === 0 ? 7 : js;
   }
 
-  function civilMmddForView(mmdd, style, year) {
-    if (style !== "juliaans") return mmdd;
-    return shiftMmdd(mmdd, julianGregorianOffsetDays(year));
+  function liturgicalToCivil(year, mmdd) {
+    return addDays(dateFromMmdd(year, mmdd), julianGregorianOffsetDays(year));
   }
 
-  function entryMmddOnYear(entry, year, style) {
-    if (!entry) return null;
-    if (entry.cyclus === "paascyclus" && entry.occurrences) {
-      const map =
-        style === "juliaans"
-          ? entry.occurrences_juliaans || {}
-          : entry.occurrences || {};
-      return map[String(year)] || null;
+  function civilToLiturgical(year, mmdd) {
+    return addDays(dateFromMmdd(year, mmdd), -julianGregorianOffsetDays(year));
+  }
+
+  function liturgicalMmddOnCivil(civilMmdd, year, style) {
+    if (style !== "juliaans") return civilMmdd;
+    return mmddFromDate(civilToLiturgical(year, civilMmdd));
+  }
+
+  /** Wereldlijke MM-DD in `year` waarop een vaste feestdatum valt. */
+  function civilMmddsForLiturgical(mmdd, year, style) {
+    if (!mmdd) return [];
+    if (style !== "juliaans") {
+      return mmddExistsInYear(mmdd, year) ? [mmdd] : [];
     }
-    return entry.feestdatum || null;
+    const out = [];
+    for (const y of [year - 1, year]) {
+      const civil = liturgicalToCivil(y, mmdd);
+      if (civil.getFullYear() === year) out.push(mmddFromDate(civil));
+    }
+    return out;
+  }
+
+  function iterPeriodMmdds(van, tot) {
+    const days = [];
+    if (!van || !tot) return days;
+    const leap = 2024;
+    const start = dateFromMmdd(leap, van);
+    let end = dateFromMmdd(leap, tot);
+    const wrap = start > end;
+    if (wrap) end = new Date(leap, 11, 31);
+    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+      days.push(mmddFromDate(d));
+    }
+    if (wrap) {
+      const end2 = dateFromMmdd(leap, tot);
+      for (let d = new Date(leap, 0, 1); d <= end2; d.setDate(d.getDate() + 1)) {
+        days.push(mmddFromDate(d));
+      }
+    }
+    return days;
   }
 
   function entryMatchesMmdd(entry, mmdd, year, style, allEntries) {
@@ -138,19 +167,24 @@
       if (isWeeklyFastSuppressed(allEntries || [], mmdd, year, style)) {
         return false;
       }
-      const civil = civilMmddForView(mmdd, style, year);
-      return (entry.weekdagen || []).includes(isoWeekdayFromMmdd(civil, year));
+      return (entry.weekdagen || []).includes(isoWeekdayFromMmdd(mmdd, year));
     }
     if (entry.van && entry.tot && entry.vorm === "periode") {
-      return mmddInRange(mmdd, entry.van, entry.tot);
+      return mmddInRange(
+        liturgicalMmddOnCivil(mmdd, year, style),
+        entry.van,
+        entry.tot
+      );
     }
     if (entry.period_occurrences) {
       const p = entry.period_occurrences[String(year)];
       if (!p) return false;
-      const civil = civilMmddForView(mmdd, style, year);
-      return mmddInRange(civil, p.van, p.tot);
+      return mmddInRange(mmdd, p.van, p.tot);
     }
-    return entryMmddOnYear(entry, year, style) === mmdd;
+    if (entry.cyclus === "paascyclus" && entry.occurrences) {
+      return entry.occurrences[String(year)] === mmdd;
+    }
+    return civilMmddsForLiturgical(entry.feestdatum, year, style).includes(mmdd);
   }
 
   function isWeeklyFastSuppressed(entries, mmdd, year, style) {
@@ -161,15 +195,21 @@
         (e.soort === "vasten" && e.vorm !== "weekdagen");
       if (!suppresses) return false;
       if (e.van && e.tot && e.vorm === "periode") {
-        return mmddInRange(mmdd, e.van, e.tot);
+        return mmddInRange(
+          liturgicalMmddOnCivil(mmdd, year, style),
+          e.van,
+          e.tot
+        );
       }
       if (e.period_occurrences) {
         const p = e.period_occurrences[String(year)];
         if (!p) return false;
-        const civil = civilMmddForView(mmdd, style, year);
-        return mmddInRange(civil, p.van, p.tot);
+        return mmddInRange(mmdd, p.van, p.tot);
       }
-      return entryMmddOnYear(e, year, style) === mmdd;
+      if (e.cyclus === "paascyclus" && e.occurrences) {
+        return e.occurrences[String(year)] === mmdd;
+      }
+      return civilMmddsForLiturgical(e.feestdatum, year, style).includes(mmdd);
     });
   }
 
@@ -567,10 +607,20 @@
   async function applyStyle(style) {
     const url = new URL(window.location.href);
     url.searchParams.set("stijl", style);
-    // Feestdatum in de URL blijft; “vandaag” hangt van de stijl af.
+    // Wereldlijke dag in de URL blijft; Nieuw/Oud verplaatst de vaste feesten.
     window.history.replaceState({}, "", url);
     setStyle(style);
     await refresh();
+  }
+
+  function titleNavHtml(opts) {
+    const prevDis = opts.prevDisabled ? " disabled" : "";
+    const nextDis = opts.nextDisabled ? " disabled" : "";
+    return (
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="-1" aria-label="${opts.prevLabel}"${prevDis}>‹</button>` +
+      `<span class="title-nav-label">${opts.titleHtml}</span>` +
+      `<button type="button" class="title-step" data-${opts.deltaAttr}="1" aria-label="${opts.nextLabel}"${nextDis}>›</button>`
+    );
   }
 
   function updateHeading(style) {
@@ -585,20 +635,19 @@
         : `${label(view.mmdd)} ${view.year}`;
     let titleInner = titleText;
     if (style === "juliaans") {
-      const [m, d] = view.mmdd.split("-").map(Number);
-      const civil = addDays(
-        new Date(view.year, m - 1, d),
-        julianGregorianOffsetDays(view.year)
-      );
+      const jul = civilToLiturgical(view.year, view.mmdd);
       titleInner +=
-        ` <span class="today-civil-hint">Wereldlijk: ${label(mmddFromDate(civil))} ${civil.getFullYear()}</span>`;
+        ` <span class="today-civil-hint">Juliaans: ${label(mmddFromDate(jul))} ${jul.getFullYear()}</span>`;
     }
-    heading.innerHTML =
-      `<button type="button" class="day-step" data-day-delta="-1" aria-label="Vorige dag">&lt;</button>` +
-      `<span class="day-step-gap" aria-hidden="true"></span>` +
-      `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>` +
-      `<span class="day-step-gap" aria-hidden="true"></span>` +
-      `<button type="button" class="day-step" data-day-delta="1" aria-label="Volgende dag">&gt;</button>`;
+    heading.classList.add("title-nav");
+    heading.innerHTML = titleNavHtml({
+      titleHtml: `<span class="today-title-hint" data-open-nieuw-oud tabindex="0">${titleInner}</span>`,
+      prevLabel: "Vorige dag",
+      nextLabel: "Volgende dag",
+      deltaAttr: "day-delta",
+      prevDisabled: false,
+      nextDisabled: false,
+    });
     wireNieuwOudTriggers(heading);
     wireDaySteps(heading);
   }
@@ -634,7 +683,11 @@
       cardNote.hidden = true;
       return;
     }
-    cardNote.textContent = `Oud/Juliaans vandaag: ${label(todayMmdd("juliaans"))}.`;
+    const now = new Date();
+    const julianToday = mmddFromDate(
+      civilToLiturgical(now.getFullYear(), civilTodayMmdd())
+    );
+    cardNote.textContent = `Oud/Juliaans vandaag: ${label(julianToday)}.`;
     cardNote.hidden = false;
   }
 
@@ -645,12 +698,18 @@
     const body = document.getElementById("nieuw-oud-body");
     const title = document.getElementById("nieuw-oud-title");
     if (!body) return;
-    const today = todayMmdd(style);
+    const civilToday = civilTodayMmdd();
+    const now = new Date();
+    const julianToday = mmddFromDate(
+      civilToLiturgical(now.getFullYear(), civilToday)
+    );
     if (style === "juliaans") {
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
-        `<p>Dat is ${label(civilTodayMmdd())} (nieuw/Gregoriaans)..` +
-        `De Gregoriaanse kalender is de wereldlijke kalender.</p>` +
+        `<p>Wereldlijk is het ${label(civilToday)}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+        `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
+        `Pascha blijft op dezelfde wereldlijke dag.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
@@ -658,8 +717,10 @@
     } else {
       if (title) title.textContent = "Nieuwe/Gregoriaanse kalender";
       body.innerHTML =
-        `<p>Dat is ${label(todayMmdd("juliaans"))} (oud/Juliaans).` +
-        `De Gregoriaanse kalender is de wereldlijke kalender.</p>` +
+        `<p>Wereldlijk is het ${label(civilToday)}. ` +
+        `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
+        `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
+        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
@@ -857,8 +918,7 @@
       return;
     }
     const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
-    const civil = civilMmddForView(view.mmdd, style, view.year);
-    const weekday = isoWeekdayFromMmdd(civil, view.year);
+    const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
     const vasten = mixVastenniveau(matched, weekday, view.mmdd);
     const vastenHtml = vasten
       ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
@@ -1002,11 +1062,52 @@
     if (stored) viewYear = parseInt(stored, 10) || viewYear;
   } catch (_) {}
 
+  function markDay(byDay, mmdd, entry) {
+    if (!mmdd) return;
+    if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+    addObservances(byDay.get(mmdd), entry);
+  }
+
+  function updateKalenderHeading(entries, style) {
+    const nav = document.getElementById("kalender-title-nav");
+    if (!nav) return;
+    const title = nav.dataset.title || "Jaarkalender";
+    nav.innerHTML = titleNavHtml({
+      titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
+      prevLabel: "Vorig jaar",
+      nextLabel: "Volgend jaar",
+      deltaAttr: "year-delta",
+      prevDisabled: viewYear <= yearBounds.min,
+      nextDisabled: viewYear >= yearBounds.max,
+    });
+    wireYearSteps(nav, entries, style);
+  }
+
+  function wireYearSteps(root, entries, style) {
+    (root || document).querySelectorAll("[data-year-delta]").forEach((btn) => {
+      if (btn.dataset.boundYear === "1") return;
+      btn.dataset.boundYear = "1";
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (btn.disabled) return;
+        const delta = Number(btn.dataset.yearDelta);
+        if (!delta) return;
+        const next = clampYear(viewYear + delta);
+        if (next === viewYear) return;
+        viewYear = next;
+        try {
+          localStorage.setItem(YEAR_KEY, String(viewYear));
+        } catch (_) {}
+        renderYearGrid(entries, style);
+      });
+    });
+  }
+
   function renderYearGrid(entries, style) {
     const root = document.getElementById("year-grid");
     if (!root) return;
-    const yearEl = document.getElementById("kalender-jaar");
-    if (yearEl) yearEl.textContent = String(viewYear);
+    updateKalenderHeading(entries, style);
 
     const byDay = new Map();
     for (const e of entries) {
@@ -1021,80 +1122,38 @@
           const iso = d.getDay() === 0 ? 7 : d.getDay();
           if (!(e.weekdagen || []).includes(iso)) continue;
           const mmdd = mmddFromDate(d);
-          if (isWeeklyFastSuppressed(entries, mmdd, viewYear, "gregoriaans")) {
+          if (isWeeklyFastSuppressed(entries, mmdd, viewYear, style)) {
             continue;
           }
-          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
-          addObservances(byDay.get(mmdd), e);
+          markDay(byDay, mmdd, e);
         }
         continue;
       }
       if (e.period_occurrences) {
         const p = e.period_occurrences[String(viewYear)];
         if (!p) continue;
-        const start = new Date(
-          viewYear,
-          Number(p.van.slice(0, 2)) - 1,
-          Number(p.van.slice(3, 5))
-        );
-        const end = new Date(
-          viewYear,
-          Number(p.tot.slice(0, 2)) - 1,
-          Number(p.tot.slice(3, 5))
-        );
+        const start = dateFromMmdd(viewYear, p.van);
+        const end = dateFromMmdd(viewYear, p.tot);
         for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-          const mmdd = mmddFromDate(d);
-          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
-          addObservances(byDay.get(mmdd), e);
+          markDay(byDay, mmddFromDate(d), e);
         }
         continue;
       }
       if (e.vorm === "periode" && e.van && e.tot) {
-        const leap = 2024;
-        const start = new Date(
-          leap,
-          Number(e.van.slice(0, 2)) - 1,
-          Number(e.van.slice(3, 5))
-        );
-        let end = new Date(
-          leap,
-          Number(e.tot.slice(0, 2)) - 1,
-          Number(e.tot.slice(3, 5))
-        );
-        const wrap = start > end;
-        if (wrap) end = new Date(leap, 11, 31);
-        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-          const mmdd = mmddFromDate(d);
-          if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
-          addObservances(byDay.get(mmdd), e);
-        }
-        if (wrap) {
-          const end2 = new Date(
-            leap,
-            Number(e.tot.slice(0, 2)) - 1,
-            Number(e.tot.slice(3, 5))
-          );
-          for (
-            let d = new Date(leap, 0, 1);
-            d <= end2;
-            d.setDate(d.getDate() + 1)
-          ) {
-            const mmdd = mmddFromDate(d);
-            if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
-            addObservances(byDay.get(mmdd), e);
+        for (const lit of iterPeriodMmdds(e.van, e.tot)) {
+          for (const civil of civilMmddsForLiturgical(lit, viewYear, style)) {
+            markDay(byDay, civil, e);
           }
         }
         continue;
       }
-      let mmdd = null;
       if (e.cyclus === "paascyclus") {
-        mmdd = (e.occurrences || {})[String(viewYear)] || null;
-      } else {
-        mmdd = e.feestdatum || null;
+        markDay(byDay, (e.occurrences || {})[String(viewYear)] || null, e);
+        continue;
       }
-      if (!mmdd) continue;
-      if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
-      addObservances(byDay.get(mmdd), e);
+      for (const civil of civilMmddsForLiturgical(e.feestdatum, viewYear, style)) {
+        markDay(byDay, civil, e);
+      }
     }
 
     const civilToday = civilTodayMmdd();
@@ -1123,32 +1182,6 @@
       html += `</div></section>`;
     }
     root.innerHTML = html;
-  }
-
-  function initYearControls(entries, style) {
-    const prev = document.getElementById("year-prev");
-    const next = document.getElementById("year-next");
-    if (!prev || !next) return;
-    prev.disabled = viewYear <= yearBounds.min;
-    next.disabled = viewYear >= yearBounds.max;
-    prev.onclick = () => {
-      if (viewYear <= yearBounds.min) return;
-      viewYear -= 1;
-      try {
-        localStorage.setItem(YEAR_KEY, String(viewYear));
-      } catch (_) {}
-      renderYearGrid(entries, style);
-      initYearControls(entries, style);
-    };
-    next.onclick = () => {
-      if (viewYear >= yearBounds.max) return;
-      viewYear += 1;
-      try {
-        localStorage.setItem(YEAR_KEY, String(viewYear));
-      } catch (_) {}
-      renderYearGrid(entries, style);
-      initYearControls(entries, style);
-    };
   }
 
   /* ---- Meneon ---- */

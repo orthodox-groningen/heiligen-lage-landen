@@ -1,9 +1,19 @@
 {{ define "main" }}
-<article class="page uitleg-page">
+<article class="page uitleg-page{{ with .Params.uitleg_stijl }} uitleg-{{ . }}{{ end }}">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <p class="hint">
-    <a href="{{ "uitleg/" | relURL }}">← Alle uitleg</a>
+  <p class="hint uitleg-nav">
+    {{ if eq .Params.uitleg_stijl "vasten-technisch" }}
+      <a href="{{ "uitleg/vasten/" | relURL }}">Terug naar de vastenuitleg</a>
+      ·
+      <a href="{{ "uitleg/" | relURL }}">Alle uitleg</a>
+    {{ else if eq .Params.uitleg_stijl "lezingen-technisch" }}
+      <a href="{{ "uitleg/lezingen/" | relURL }}">Terug naar de lezingenuitleg</a>
+      ·
+      <a href="{{ "uitleg/" | relURL }}">Alle uitleg</a>
+    {{ else }}
+      <a href="{{ "uitleg/" | relURL }}">Alle uitleg</a>
+    {{ end }}
   </p>
 </article>
 {{ end }}

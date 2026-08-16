@@ -21,8 +21,9 @@ Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
 automatische +13 op de feestdatum zelf toegepast.
 
 De offset Gregoriaans−Juliaans is **jaarafhankelijk** (13 tot 2099, 14 vanaf 2100:
-`⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset wordt gebruikt om **vandaag** om te
-rekenen, en voor **ICS-feeds “oud”** (vierdatum in westerse agenda’s).
+`⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset zet vaste feesten op hun **wereldlijke
+vierdatum** in de stand Oud (jaarkalender, home, datumpagina, ICS “oud”).
+De paascyclus blijft in beide standen op de wereldlijke Orthodoxe Pascha-datum.
 
 ## Paascyclus
 
@@ -112,8 +113,9 @@ niet de som van overlappende vasten.
    vasten op; anders versoepelt het alleen wo/vr of zet het uit (`vrij`).
 
 Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
-**Normatief voor de dagregel:** `data/regels/vasten.yaml` (uitleg
-`/uitleg/vasten/`). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
+**Normatief voor de dagregel:** `data/regels/vasten.yaml`. Cleruspagina:
+`/uitleg/vasten/`; technische bijlage: `/uitleg/vasten-technisch/` (niet in het
+uitleg-overzicht). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
 
 ## Lezingen (Apostel / Evangelie)
 
