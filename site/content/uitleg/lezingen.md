@@ -47,8 +47,8 @@ de **feestdatum** (MM-DD-dagnaam), consistent met de rest van deze site
 
 Als voor de dag een feestoverride bestaat in `data/lezingen/feest-overrides.yaml`
 (match op paascyclus-offset of vaste MM-DD), dan gelden die Apostel- en
-Evangelielezingen. Ze **vervangen** de doorlopende lezing tenzij de override
-expliciet `modus: toevoegen` heeft (fase 3).
+Evangelielezingen. Ze **vervangen** de doorlopende lezing tenzij R5 een andere
+`modus` voorschrijft (`toevoegen` / `negeren`).
 
 ### R3 — Doorlopende weekreeks
 
@@ -60,18 +60,28 @@ Pinksteren en de weekdag (ma–zo), uit `data/lezingen/weekreeks.yaml`
 Kruisverheffing** (14 sept.) volgt het Evangelie de Lucasse reeks vanaf
 tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
 
-### R4 — Vasten / geen liturgie (documentair)
+### R4 — Vasten / geen liturgie
 
 Op sommige vastendagen is er geen liturgie met Apostel/Evangelie van het type
-“van de dag” (bijv. bepaalde weekdagen in de Grote Vasten: OT-lezingen op uren).
-De engine markeert dat later expliciet; vooralsnog geen automatische uitspraak
-buiten gedocumenteerde overrides.
+“van de dag” (bijv. weekdagen in de Grote Vasten: OT-lezingen op uren). De
+engine markeert dat als `status: geen_liturgie` wanneer de weekreeks dat
+aangeeft.
 
-### R5 — Rang en samenval (nog niet geïmplementeerd)
+### R5 — Rang en samenval
 
-Bij samenval van heilige en rijádovoe of twee feesten volgt Moskou-rang
-(groot feest > polyeleos > …). Bij twijfel: ROCOR-kalender raadplegen en de
-uitkomst hier als voorbeeld vastleggen. → Fase 3.
+Bij samenval van feest/heilige en rijádovoe (of meerdere overrides) volgt
+Moskou-rang. Configuratie: `data/lezingen/rang.yaml`.
+
+| Rang | Standaard-modus |
+|------|-----------------|
+| `groot` | `vervangen` — alleen feestlezing |
+| `vigil` / `polyeleos` / `doxologie` | `auto`: **zondag** → `toevoegen` (rijádovoe + feest); **weekdag** → `vervangen` |
+| `zesstichiria` / `gewoon` | `negeren` — alleen rijádovoe |
+
+Overrides mogen `rang` en/of expliciete `modus` zetten. Bij meerdere matches
+wint de hoogste `prioriteit`. Wanneer een feest de rijádovoe **vervangt**
+(andere perikopen), vermeldt het resultaat `R5` en optioneel het onderdrukte
+`rijadovoe`-blok. Bij twijfel: ROCOR-kalender en voorbeeld hier vastleggen.
 
 ### R6 — Bronvermelding
 
@@ -99,6 +109,6 @@ Drukwerk (jaarlijks): *Богослужебные указания* (Издат�
 | R1 | deels (kalenderhulp via `kalender.py`) |
 | R2 | ja (feestoverrides + UI vandaag/datum) |
 | R3 | ja (weekreeks + Lucaanse sprong; zie rooster) |
-| R4 | deels (vasten-weekdagen zonder liturgie gemarkeerd) |
-| R5 | pending |
+| R4 | deels (`geen_liturgie` via weekreeks) |
+| R5 | ja (`rang.yaml` + modus vervangen/toevoegen/negeren) |
 | R6 | documentair (data + voorbeelden) |

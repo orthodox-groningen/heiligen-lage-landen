@@ -76,6 +76,21 @@ def test_lucaanse_sprong_switches_gospel() -> None:
     assert r.evangelie and r.evangelie[0].ref.startswith("Luc.")
 
 
+def test_r5_ontslapen_vervangt() -> None:
+    r = resolve_lezingen(2025, "08-15", "nieuw")
+    assert r.modus == "vervangen"
+    assert "R5" in r.regels
+    assert r.rijadovoe is not None
+    assert [a.ref for a in r.apostel] == ["Fil. 2:5-11"]
+
+
+def test_r5_elia_zondag_toevoegen() -> None:
+    r = resolve_lezingen(2025, "07-20", "nieuw")
+    assert r.modus == "toevoegen"
+    assert r.regels == ["R3", "R2", "R5"]
+    assert [a.ref for a in r.apostel] == ["Rom. 12:6-14", "Jak. 5:10-20"]
+
+
 def test_spec_body_for_uitleg_strips_examples() -> None:
     body = spec_body_for_uitleg()
     assert "```lezingen-voorbeeld" not in body

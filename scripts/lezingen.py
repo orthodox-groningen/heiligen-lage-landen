@@ -80,7 +80,41 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "kruisverheffing": "Kruisverheffing",
     "tempelgang-moeder-gods": "Tempelgang van de Moeder Gods",
     "kerst": "Kerst",
+    "elia-profeet": "Profeet Elia",
 }
+
+
+RANG_PATH = DATA_DIR / "rang.yaml"
+_RANG_CFG: dict[str, Any] | None = None
+
+
+def load_rang_config() -> dict[str, Any]:
+    global _RANG_CFG
+    if _RANG_CFG is not None:
+        return _RANG_CFG
+    if RANG_PATH.is_file():
+        _RANG_CFG = load_yaml(RANG_PATH) or {}
+    else:
+        _RANG_CFG = {
+            "rangen": {
+                "groot": {"prioriteit": 100, "default_modus": "vervangen"},
+                "polyeleos": {"prioriteit": 70, "default_modus": "auto"},
+            },
+            "auto": {"zondag": "toevoegen", "weekdag": "vervangen"},
+        }
+    return _RANG_CFG
+
+
+def rang_prioriteit(rang: str) -> int:
+    cfg = load_rang_config().get("rangen") or {}
+    info = cfg.get(rang) or {}
+    return int(info.get("prioriteit") or 0)
+
+
+def default_modus_voor_rang(rang: str) -> str:
+    cfg = load_rang_config().get("rangen") or {}
+    info = cfg.get(rang) or {}
+    return str(info.get("default_modus") or "vervangen")
 
 
 @dataclass
@@ -104,9 +138,12 @@ class LezingenResultaat:
     daglabel: str = ""
     toelichting: str = ""
     status: str = "onbekend"  # gevonden | geen_liturgie | onbekend
+    rang: str | None = None
+    modus: str | None = None  # vervangen | toevoegen | negeren
+    rijadovoe: dict[str, Any] | None = None  # onderdrukte of meegenomen basis
 
     def as_dict(self) -> dict[str, Any]:
-        return {
+        out: dict[str, Any] = {
             "apostel": [a.as_dict() for a in self.apostel],
             "evangelie": [e.as_dict() for e in self.evangelie],
             "regels": list(self.regels),
@@ -114,7 +151,12 @@ class LezingenResultaat:
             "daglabel": self.daglabel,
             "toelichting": self.toelichting,
             "status": self.status,
+            "rang": self.rang,
+            "modus": self.modus,
         }
+        if self.rijadovoe is not None:
+            out["rijadovoe"] = self.rijadovoe
+        return out
 
 
 def load_yaml(path: Path) -> Any:
@@ -445,6 +487,63 @@ def _resolve_weekreeks(
     return None
 
 
+def _override_matches(
+    ov: dict[str, Any],
+    jaar: int,
+    mmdd: str,
+    stijl: str,
+) -> bool:
+    match = ov.get("match") or {}
+    if "paascyclus_offset" in match:
+        want = _mmdd_for_offset(jaar, int(match["paascyclus_offset"]), stijl)
+        return want == mmdd
+    if "mmdd" in match:
+        return match["mmdd"] == mmdd
+    return False
+
+
+def _pick_override(
+    jaar: int,
+    mmdd: str,
+    stijl: str,
+    overrides: list[dict[str, Any]],
+) -> dict[str, Any] | None:
+    hits = [ov for ov in overrides if _override_matches(ov, jaar, mmdd, stijl)]
+    if not hits:
+        return None
+    hits.sort(
+        key=lambda ov: rang_prioriteit(str(ov.get("rang") or "groot")),
+        reverse=True,
+    )
+    return hits[0]
+
+
+def _resolve_modus(ov: dict[str, Any], civil: date) -> str:
+    """Bepaal vervangen | toevoegen | negeren voor deze override + weekdag."""
+    explicit = ov.get("modus")
+    if explicit in {"vervangen", "toevoegen", "negeren"}:
+        return str(explicit)
+    rang = str(ov.get("rang") or "groot")
+    default = default_modus_voor_rang(rang)
+    if default != "auto":
+        return default
+    auto = load_rang_config().get("auto") or {}
+    if civil.isoweekday() == 7:
+        return str(auto.get("zondag") or "toevoegen")
+    return str(auto.get("weekdag") or "vervangen")
+
+
+def _rijadovoe_snapshot(basis: LezingenResultaat | None) -> dict[str, Any] | None:
+    if basis is None or basis.status not in {"gevonden", "geen_liturgie"}:
+        return None
+    return {
+        "apostel": [a.as_dict() for a in basis.apostel],
+        "evangelie": [e.as_dict() for e in basis.evangelie],
+        "status": basis.status,
+        "regels": list(basis.regels),
+    }
+
+
 def resolve_lezingen(
     jaar: int,
     mmdd: str,
@@ -457,44 +556,98 @@ def resolve_lezingen(
     ``stijl``: ``nieuw`` (Gregoriaanse/wereldlijke MM-DD voor paascyclus) of
     ``oud`` (Juliaanse dagnaam voor paascyclus). Vaste MM-DD-overrides matchen
     altijd op de feestdatum-dagnaam.
+
+    R5: bij feestoverride + bestaande rijádovoe geldt ``modus`` (vervangen /
+    toevoegen / negeren), afgeleid van ``rang`` tenzij expliciet gezet.
     """
     parse_mmdd(mmdd)
     if stijl not in {"nieuw", "oud"}:
         raise ValueError(f"onbekende stijl {stijl!r}")
 
-    for ov in overrides if overrides is not None else load_overrides():
-        match = ov.get("match") or {}
-        hit = False
-        if "paascyclus_offset" in match:
-            want = _mmdd_for_offset(jaar, int(match["paascyclus_offset"]), stijl)
-            hit = want == mmdd
-        elif "mmdd" in match:
-            hit = match["mmdd"] == mmdd
-        if not hit:
-            continue
-        regels = [str(r) for r in (ov.get("regels") or ["R2"])]
-        oid = str(ov.get("id") or "")
+    ovs = overrides if overrides is not None else load_overrides()
+    civil = _civil_date(jaar, mmdd, stijl)
+    basis = _resolve_weekreeks(jaar, mmdd, stijl)
+    ov = _pick_override(jaar, mmdd, stijl, ovs)
+
+    if ov is None:
+        if basis is not None and basis.status in {"gevonden", "geen_liturgie"}:
+            if not basis.daglabel:
+                basis.daglabel = liturgische_daglabel(jaar, mmdd, stijl)
+            return basis
         return LezingenResultaat(
-            apostel=_refs(ov.get("apostel")),
-            evangelie=_refs(ov.get("evangelie")),
-            regels=regels,
-            override_id=oid,
-            daglabel=liturgische_daglabel(jaar, mmdd, stijl, override_id=oid),
-            toelichting="+".join(regels),
-            status="gevonden",
+            status="onbekend",
+            daglabel=liturgische_daglabel(jaar, mmdd, stijl),
+            toelichting="Geen override en geen weekreeks-treffer.",
+            regels=[],
         )
 
-    wr = _resolve_weekreeks(jaar, mmdd, stijl)
-    if wr is not None and wr.status in {"gevonden", "geen_liturgie"}:
-        if not wr.daglabel:
-            wr.daglabel = liturgische_daglabel(jaar, mmdd, stijl)
-        return wr
+    oid = str(ov.get("id") or "")
+    rang = str(ov.get("rang") or "groot")
+    modus = _resolve_modus(ov, civil)
+    feast_a = _refs(ov.get("apostel"))
+    feast_e = _refs(ov.get("evangelie"))
+    label = liturgische_daglabel(jaar, mmdd, stijl, override_id=oid)
+    snap = _rijadovoe_snapshot(basis)
+    base_ok = (
+        basis is not None
+        and basis.status == "gevonden"
+        and (basis.apostel or basis.evangelie)
+    )
 
+    if modus == "negeren":
+        if basis is not None and basis.status in {"gevonden", "geen_liturgie"}:
+            out = basis
+            out.daglabel = label or out.daglabel
+            out.override_id = oid
+            out.rang = rang
+            out.modus = modus
+            if "R5" not in out.regels:
+                out.regels = list(out.regels) + ["R5"]
+            out.toelichting = "R5 negeren: rijádovoe behouden"
+            return out
+        return LezingenResultaat(
+            status="onbekend",
+            daglabel=label,
+            override_id=oid,
+            rang=rang,
+            modus=modus,
+            toelichting="R5 negeren zonder rijádovoe",
+        )
+
+    if modus == "toevoegen" and base_ok:
+        return LezingenResultaat(
+            apostel=list(basis.apostel) + feast_a,
+            evangelie=list(basis.evangelie) + feast_e,
+            regels=["R3", "R2", "R5"],
+            override_id=oid,
+            daglabel=label,
+            toelichting="R5 toevoegen: rijádovoe + feest",
+            status="gevonden",
+            rang=rang,
+            modus=modus,
+            rijadovoe=snap,
+        )
+
+    # vervangen (default), of toevoegen zonder bruikbare basis
+    regels = [str(r) for r in (ov.get("regels") or ["R2"])]
+    displaced = False
+    if base_ok:
+        displaced = [a.ref for a in feast_a] != [a.ref for a in basis.apostel] or [
+            e.ref for e in feast_e
+        ] != [e.ref for e in basis.evangelie]
+    if displaced and "R5" not in regels:
+        regels = list(regels) + ["R5"]
     return LezingenResultaat(
-        status="onbekend",
-        daglabel=liturgische_daglabel(jaar, mmdd, stijl),
-        toelichting="Geen override en geen weekreeks-treffer.",
-        regels=[],
+        apostel=feast_a,
+        evangelie=feast_e,
+        regels=regels,
+        override_id=oid,
+        daglabel=label,
+        toelichting="R5 vervangen" if displaced else "+".join(regels),
+        status="gevonden",
+        rang=rang,
+        modus="vervangen" if modus == "toevoegen" else modus,
+        rijadovoe=snap if displaced else None,
     )
 
 

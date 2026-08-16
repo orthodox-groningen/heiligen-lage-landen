@@ -1,0 +1,37 @@
+# Rang en standaard-modus bij samenval (Moskou; ROCOR bij twijfel).
+# prioriteit: hoger wint als meerdere overrides op één dag matchen.
+
+rangen:
+  groot:
+    prioriteit: 100
+    default_modus: vervangen
+    toelichting: "Twaalf grote feesten, Pascha, Kruisverheffing, e.d. — feestlezing i.p.v. rijádovoe."
+  vigil:
+    prioriteit: 80
+    default_modus: auto
+    toelichting: "Waken/vigil-heiligen."
+  polyeleos:
+    prioriteit: 70
+    default_modus: auto
+    toelichting: "Polyeleos-heiligen."
+  doxologie:
+    prioriteit: 50
+    default_modus: auto
+    toelichting: "Grote doxologie."
+  zesstichiria:
+    prioriteit: 30
+    default_modus: negeren
+    toelichting: "Zes stichiren — gewoonlijk alleen rijádovoe."
+  gewoon:
+    prioriteit: 10
+    default_modus: negeren
+    toelichting: "Eenvoudige herdenking — alleen rijádovoe."
+
+# auto: zondag → toevoegen (rijádovoe + feest); weekdag → vervangen.
+auto:
+  zondag: toevoegen
+  weekdag: vervangen
+
+bron:
+  label: "Typikon / BU-praktijk Moskou (samenvatting); ROCOR-kalenders ter controle"
+  geraadpleegd: "2026-08-16"

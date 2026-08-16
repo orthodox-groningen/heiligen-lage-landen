@@ -298,6 +298,7 @@ overrides:
 
   - id: petrus-en-paulus
     match: { mmdd: "06-29" }
+    rang: groot
     apostel: [{ ref: "2 Kor. 11:21-12:9" }]
     evangelie: [{ ref: "Matt. 16:13-19" }]
     regels: [R2]
@@ -306,8 +307,21 @@ overrides:
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
+  - id: elia-profeet
+    match: { mmdd: "07-20" }
+    rang: polyeleos
+    # modus: auto → op zondag toevoegen (rijádovoe + feest), op weekdag vervangen
+    apostel: [{ ref: "Jak. 5:10-20" }]
+    evangelie: [{ ref: "Luc. 4:22-30" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka / Menaion — Profeet Elia (20 juli)"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-16"
+
   - id: transfiguratie
     match: { mmdd: "08-06" }
+    rang: groot
     apostel: [{ ref: "2 Petr. 1:10-19" }]
     evangelie: [{ ref: "Matt. 17:1-9" }]
     regels: [R2]
@@ -318,6 +332,8 @@ overrides:
 
   - id: ontslapen-moeder-gods
     match: { mmdd: "08-15" }
+    rang: groot
+    modus: vervangen
     apostel: [{ ref: "Fil. 2:5-11" }]
     evangelie: [{ ref: "Luc. 10:38-42; 11:27-28" }]
     regels: [R2]

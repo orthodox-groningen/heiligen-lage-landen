@@ -825,10 +825,19 @@
     const labelHtml = lez.daglabel
       ? `<p class="day-lezingen-label">${lez.daglabel}</p>`
       : "";
+    let samenvalHtml = "";
+    if (lez.modus === "toevoegen") {
+      samenvalHtml =
+        `<p class="muted day-lezingen-samenval">Samenval: rijádovoe én feestlezing.</p>`;
+    } else if (lez.modus === "vervangen" && lez.rijadovoe) {
+      samenvalHtml =
+        `<p class="muted day-lezingen-samenval">Feestlezing vervangt de rijádovoe van de dag.</p>`;
+    }
     return (
       `<div class="day-lezingen" id="day-lezingen">` +
       `<h2 class="day-lezingen-title">Lezingen${regelsHtml}</h2>` +
       labelHtml +
+      samenvalHtml +
       `<ul>` +
       (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
       (evangelie ? `<li><strong>Evangelie:</strong> ${evangelie}</li>` : "") +
