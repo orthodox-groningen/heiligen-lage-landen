@@ -16,6 +16,17 @@
     "november",
     "december",
   ];
+  /** ISO-weekdag 1=ma … 7=zo */
+  const WEEKDAYS = [
+    "",
+    "Maandag",
+    "Dinsdag",
+    "Woensdag",
+    "Donderdag",
+    "Vrijdag",
+    "Zaterdag",
+    "Zondag",
+  ];
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   function siteBase() {
@@ -572,19 +583,43 @@
     );
   }
 
+  function daySurfaceHref(year, mmdd, style) {
+    const isToday =
+      year === new Date().getFullYear() && mmdd === todayMmdd(style);
+    const stijl = style === "juliaans" ? { stijl: style } : {};
+    if (isToday) return pageUrl("", stijl);
+    return pageUrl("datum/", { jaar: year, dag: mmdd, ...stijl });
+  }
+
+  /** Home = vandaag; andere dagen = /datum/. */
+  function redirectDaySurfaceIfNeeded(style) {
+    const onHome = Boolean(document.querySelector("[data-home]"));
+    const onDatum = Boolean(document.querySelector("[data-datum]"));
+    if (!onHome && !onDatum) return false;
+    const view = getViewDate(style);
+    const isToday = isViewToday(style);
+    if (onHome && !isToday) {
+      window.location.replace(daySurfaceHref(view.year, view.mmdd, style));
+      return true;
+    }
+    if (onDatum && isToday) {
+      window.location.replace(daySurfaceHref(view.year, view.mmdd, style));
+      return true;
+    }
+    return false;
+  }
+
   function setViewDate(year, mmdd) {
-    const url = new URL(window.location.href);
     const style = getStyle();
     year = clampYear(year);
-    const onHome = Boolean(document.querySelector("[data-home]"));
-    if (onHome && year === new Date().getFullYear() && mmdd === todayMmdd(style)) {
-      url.searchParams.delete("dag");
-      url.searchParams.delete("jaar");
-    } else {
-      url.searchParams.set("dag", mmdd);
-      url.searchParams.set("jaar", String(year));
+    const target = daySurfaceHref(year, mmdd, style);
+    const here = new URL(window.location.href);
+    const next = new URL(target);
+    if (here.pathname !== next.pathname) {
+      window.location.assign(target);
+      return;
     }
-    window.history.pushState({}, "", url);
+    window.history.pushState({}, "", target);
     refresh();
   }
 
@@ -623,9 +658,10 @@
     );
   }
 
-  function fillPageTitleRow(navEl, titleNavInnerHtml) {
+  function fillPageTitleRow(navEl, titleNavInnerHtml, opts) {
     const row = navEl.closest(".page-title-row");
     if (!row) return null;
+    const includeStyle = !opts || opts.includeStyleToggle !== false;
     const id = navEl.id || "";
     const dataTitle = navEl.dataset.title || "";
     row.innerHTML =
@@ -633,10 +669,18 @@
       (id ? ` id="${id}"` : "") +
       (dataTitle ? ` data-title="${dataTitle.replace(/"/g, "&quot;")}"` : "") +
       `>${titleNavInnerHtml}</span>` +
-      styleToggleHtml("Kalenderstijl Nieuw/Oud");
+      (includeStyle ? styleToggleHtml("Kalenderstijl Nieuw/Oud") : "");
     setStyle(getStyle());
     wireInfoTips(row);
     return row;
+  }
+
+  function dayTitleText(view, style) {
+    const weekday = WEEKDAYS[isoWeekdayFromMmdd(view.mmdd, view.year)] || "";
+    const paren = isViewToday(style)
+      ? `(${weekday}, vandaag)`
+      : `(${weekday})`;
+    return `${label(view.mmdd)} ${view.year} ${paren}`;
   }
 
   function titleNavHtml(opts) {
@@ -679,14 +723,8 @@
     const heading = document.getElementById("today-heading");
     if (!heading) return;
     const view = getViewDate(style);
-    const isToday = isViewToday(style);
-    const onHome = Boolean(document.querySelector("[data-home]"));
-    const titleText =
-      onHome && isToday
-        ? `Vandaag: ${label(view.mmdd)} ${view.year}`
-        : `${label(view.mmdd)} ${view.year}`;
     const navHtml = titleNavHtml({
-      titleHtml: titleText,
+      titleHtml: dayTitleText(view, style),
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
       deltaAttr: "day-delta",
@@ -696,7 +734,8 @@
     });
     const row = heading.closest(".page-title-row");
     if (row) {
-      fillPageTitleRow(heading, navHtml);
+      // Nieuw/Oud staat in de inhoudsbox, niet in de (wereldlijke) titel.
+      fillPageTitleRow(heading, navHtml, { includeStyleToggle: false });
       const fresh = document.getElementById("today-heading");
       if (fresh) wireDaySteps(fresh);
     } else {
@@ -1020,46 +1059,56 @@
     if (!cardEntries) return;
     updateHeading(style);
     const view = getViewDate(style);
+    const toolbar =
+      `<div class="today-card-bar">` +
+      styleToggleHtml("Kalenderstijl Nieuw/Oud") +
+      `</div>`;
+    let bodyHtml;
     if (!mmddExistsInYear(view.mmdd, view.year)) {
-      cardEntries.innerHTML =
-        `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
-      return;
-    }
-    const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
-    const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
-    const vasten = mixVastenniveau(matched, weekday, view.mmdd);
-    const vastenHtml = vasten
-      ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
-      : "";
-    const lezHtml = renderLezingenHtml(
-      lezingenForDay(view.year, view.mmdd, style)
-    );
-    if (!matched.length) {
-      cardEntries.innerHTML =
-        vastenHtml +
-        lezHtml +
-        "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
+      bodyHtml = `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
     } else {
-      cardEntries.innerHTML =
-        vastenHtml +
-        lezHtml +
-        "<ul>" +
-        matched
-          .map((e) => {
-            const kind = kindLabel(e);
-            const summary = e.samenvatting
-              ? `<div class="muted">${e.samenvatting}</div>`
-              : "";
-            return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
-          })
-          .join("") +
-        "</ul>";
+      const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
+      const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
+      const vasten = mixVastenniveau(matched, weekday, view.mmdd);
+      const vastenHtml = vasten
+        ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
+        : "";
+      const lezHtml = renderLezingenHtml(
+        lezingenForDay(view.year, view.mmdd, style)
+      );
+      if (!matched.length) {
+        bodyHtml =
+          vastenHtml +
+          lezHtml +
+          "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
+      } else {
+        bodyHtml =
+          vastenHtml +
+          lezHtml +
+          "<ul>" +
+          matched
+            .map((e) => {
+              const kind = kindLabel(e);
+              const summary = e.samenvatting
+                ? `<div class="muted">${e.samenvatting}</div>`
+                : "";
+              return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
+            })
+            .join("") +
+          "</ul>";
+      }
     }
-    if (document.querySelector("[data-datum]")) {
+    cardEntries.innerHTML = toolbar + bodyHtml;
+    setStyle(style);
+    wireInfoTips(cardEntries);
+    if (
+      document.querySelector("[data-datum]") ||
+      document.querySelector("[data-home]")
+    ) {
       const site = document.title.includes(" · ")
         ? document.title.slice(document.title.lastIndexOf(" · ") + 3)
         : document.title;
-      document.title = `${label(view.mmdd)} ${view.year} · ${site}`;
+      document.title = `${dayTitleText(view, style)} · ${site}`;
     }
   }
 
@@ -1120,9 +1169,7 @@
       const yearBucket =
         ((lezingenIndex || {})[stil] || {})[String(keyYear)] || {};
       const lez = yearBucket[keyMmdd] || null;
-      const dagUrl = assetUrl(
-        `datum/?jaar=${viewYear}&dag=${encodeURIComponent(civilMmdd)}`
-      );
+      const dagUrl = daySurfaceHref(viewYear, civilMmdd, style);
       let apostel = refsText(lez && lez.apostel);
       let evangelie = refsText(lez && lez.evangelie);
       const status = (lez && lez.status) || "onbekend";
@@ -1344,7 +1391,7 @@
         const cls = ["day", has ? "has-entry" : "", color, isToday ? "is-today" : ""]
           .filter(Boolean)
           .join(" ");
-        html += `<a class="${cls}" href="${pageUrl("datum/", { jaar: viewYear, dag: mmdd })}" title="${label(mmdd)} ${viewYear}">${day}</a>`;
+        html += `<a class="${cls}" href="${daySurfaceHref(viewYear, mmdd, style)}" title="${label(mmdd)} ${viewYear}">${day}</a>`;
       }
       html += `</div></section>`;
     }
@@ -1439,7 +1486,7 @@
     const prev = shiftMmdd(mmdd, -1);
     const next = shiftMmdd(mmdd, 1);
     const thisYear = clampYear(new Date().getFullYear());
-    const datumHref = pageUrl("datum/", { jaar: thisYear, dag: mmdd });
+    const datumHref = daySurfaceHref(thisYear, mmdd, getStyle());
     if (nav) {
       nav.innerHTML =
         `<a href="${pageUrl("meneon/", {})}">← Meneon</a> · ` +
@@ -1729,6 +1776,7 @@
   async function refresh() {
     const style = getStyle();
     setStyle(style);
+    if (redirectDaySurfaceIfNeeded(style)) return;
     updateHeading(style);
     try {
       const entries = await loadEntries();
