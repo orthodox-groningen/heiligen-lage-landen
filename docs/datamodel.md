@@ -21,8 +21,9 @@ Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
 automatische +13 op de feestdatum zelf toegepast.
 
 De offset Gregoriaans−Juliaans is **jaarafhankelijk** (13 tot 2099, 14 vanaf 2100:
-`⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset wordt gebruikt om **vandaag** om te
-rekenen, en voor **ICS-feeds “oud”** (vierdatum in westerse agenda’s).
+`⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset zet vaste feesten op hun **wereldlijke
+vierdatum** in de stand Oud (jaarkalender, home, datumpagina, ICS “oud”).
+De paascyclus blijft in beide standen op de wereldlijke Orthodoxe Pascha-datum.
 
 ## Paascyclus
 

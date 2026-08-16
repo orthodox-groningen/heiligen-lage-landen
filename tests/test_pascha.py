@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,3 +65,8 @@ def test_julian_component_converts_to_same_gregorian():
 
 def test_civil_aug_roundtrip_unchanged():
     assert julian_to_civil_mmdd("08-02") == "08-15"
+
+
+def test_pascha_not_shifted_by_julian_offset():
+    """Pascha 2026 is 12 april wereldlijk; +13 zou 25 april zijn."""
+    assert orthodox_pascha(2026) == date(2026, 4, 12)

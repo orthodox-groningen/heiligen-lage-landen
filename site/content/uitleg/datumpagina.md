@@ -4,8 +4,9 @@ description: "Wat er op een kalenderdag in een bepaald jaar valt"
 ---
 
 Via de [jaarkalender]({{% ref "/kalender" %}}) open je een dag **in dat jaar**:
-feesten, heiligen, paascyclus en vasten die op die datum vallen.
-De URL is `/datum/?jaar=2026&dag=08-15`.
+feesten, heiligen, paascyclus en vasten die op die **wereldlijke** datum vallen.
+De URL is `/datum/?jaar=2026&dag=08-15`. Met **Oud** staan vaste feesten op hun
+wereldlijke vierdatum (Besnijdenis op 14 januari); Pascha verschuift niet.
 
 Als er vasten geldt, staat bovenaan één regel met het **effectieve** niveau
 (niet twee vasten tegelijk). De precieze regels — Moskou, bij twijfel ROCOR —

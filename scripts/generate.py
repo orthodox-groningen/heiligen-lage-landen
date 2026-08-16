@@ -507,7 +507,7 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "nieuw-oud",
         "title": "Nieuwe en Oude kalender",
-        "description": "Hoe we vandaag rekenen op de nieuwe of oude kalender",
+        "description": "Wereldlijke datums; vaste feesten verschuiven bij Oud, Pascha niet",
     },
     {
         "id": "feestdatum",
