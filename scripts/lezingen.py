@@ -175,11 +175,39 @@ def load_yaml(path: Path) -> Any:
 
 
 def load_overrides() -> list[dict[str, Any]]:
+    """Gedeelde feestoverrides + optionele parochie-lijst.
+
+    Volgorde: eerst ``feest-overrides.yaml``, daarna
+    ``parochies/<parochie-id>.yaml`` (als ``config.yaml`` een ``parochie`` zet).
+    Bij meerdere matches wint nog steeds de hoogste ``prioriteit`` (R5).
+    """
     path = DATA_DIR / "feest-overrides.yaml"
-    if not path.is_file():
-        return []
-    raw = load_yaml(path) or {}
-    return list(raw.get("overrides") or [])
+    out: list[dict[str, Any]] = []
+    if path.is_file():
+        raw = load_yaml(path) or {}
+        out.extend(list(raw.get("overrides") or []))
+
+    cfg_path = DATA_DIR / "config.yaml"
+    parochie_id = ""
+    if cfg_path.is_file():
+        cfg = load_yaml(cfg_path) or {}
+        parochie_id = str(cfg.get("parochie") or "").strip()
+    if parochie_id:
+        p_path = DATA_DIR / "parochies" / f"{parochie_id}.yaml"
+        if not p_path.is_file():
+            raise FileNotFoundError(
+                f"Parochie-lezingen ontbreken: {p_path.relative_to(REPO_ROOT)}"
+            )
+        raw_p = load_yaml(p_path) or {}
+        for ov in raw_p.get("overrides") or []:
+            if not isinstance(ov, dict):
+                continue
+            item = dict(ov)
+            # Parochiekeuzes winnen standaard van gedeelde overrides.
+            if "prioriteit" not in item:
+                item["prioriteit"] = 300
+            out.append(item)
+    return out
 
 
 _WEEKREEKS: dict[tuple[str, int, int], dict[str, Any]] | None = None

@@ -4,6 +4,7 @@ description: 'Normatieve specificatie: regels, bestanden en implementatiestatus'
 build:
   list: never
   render: always
+uitleg_stijl: lezingen-technisch
 ---
 
 Deze pagina is de **technische spiegel** van `docs/specs/lezingen.md`. Wijzig die specificatie (regels + voorbeelden); daarna moet `scripts/lezingen.py` meekomen — pytest bewaakt dat.
@@ -58,6 +59,12 @@ Als voor de dag een feestoverride bestaat in `data/lezingen/feest-overrides.yaml
 Evangelielezingen. Ze **vervangen** de doorlopende lezing tenzij R5 een andere
 `modus` voorschrijft (`toevoegen` / `negeren`).
 
+**Parochielijsten:** optioneel `data/lezingen/config.yaml` → `parochie: <id>`
+laadt `data/lezingen/parochies/<id>.yaml` met dezelfde override-vorm. Die
+entries krijgen standaard `prioriteit: 300` (boven de gedeelde lijst), zodat
+parochiefeesten (bijv. H. Silvester) het roosteren kunnen bijsturen zonder de
+Moskou-basis te herschrijven. Zie § Parochie-overrides.
+
 ### R3 — Doorlopende weekreeks
 
 Buiten feestoverrides: Apostel/Evangelie volgens de week na Pascha of na
@@ -78,9 +85,11 @@ tabelweek 18; de Apostel blijft de doorlopende weektelling na Pinksteren.
 
 Tags in het resultaat: `R3-lucaans`, eventueel `R3-otstupka` / `R3-prestupka`.
 
-**Theofanie-/winter-отступка** (Bogoyavlenskaya): als er tussen het einde van
-tabelweek 33 na Pinksteren en Tollenaar-zondag 1–5 weekdagenweken tekortkomen,
-worden die gevuld met herhaling van de eindreeks. Volgorde (Bogaiskov / MP):
+**Theofanie-/winter-отступка** (Bogoyavlenskaya): zolang tabelweken 32–33 nog
+vóór Tollenaar-zondag vallen, blijven die de gewone rijádovoe (geen herhaling).
+Pas als er tussen het einde van tabelweek 33 en Tollenaar-zondag 1–5
+weekdagenweken tekortkomen, worden die gevuld met herhaling van de eindreeks.
+Volgorde (Bogaiskov / MP):
 
 | N | Herhaalde tabelweken (ma→zo) |
 |---|------------------------------|
@@ -90,8 +99,8 @@ worden die gevuld met herhaling van de eindreeks. Volgorde (Bogaiskov / MP):
 | 4 | 30, 31, 32, 33 |
 | 5 | 30, 31, 17, 32, 33 |
 
-Tag: `R3-theofanie-otstupka`. (Zondagen vóór week 34 blijven de doorlopende
-telling; vanaf week 34 volgt dezelfde herschaling.)
+Tag: `R3-theofanie-otstupka`. Voorbeeld zonder отступка: 1–8 feb 2025 (32e/33e
+week); met N=5: vanaf ma 22 jan 2024.
 
 ### R4 — Vasten / geen liturgie
 
@@ -145,3 +154,37 @@ Drukwerk (jaarlijks): *Богослужебные указания* (Издат�
 | R4 | deels (`geen_liturgie` via weekreeks) |
 | R5 | ja (`rang.yaml` + modus vervangen/toevoegen/negeren) |
 | R6 | documentair (data + voorbeelden) |
+
+## Parochie-overrides
+
+Gedeelde basis: `data/lezingen/feest-overrides.yaml`.
+
+Optioneel per parochie:
+
+```yaml
+# data/lezingen/config.yaml
+parochie: groningen   # of leeg = alleen gedeelde lijst
+```
+
+```yaml
+# data/lezingen/parochies/groningen.yaml
+parochie: groningen
+overrides:
+  - id: silvester
+    match: { mmdd: "01-02" }
+    rang: polyeleos
+    modus: toevoegen          # of vervangen / negeren / weglaten (= auto via rang)
+    apostel: [{ ref: "…" }]
+    evangelie: [{ ref: "…" }]
+    regels: [R2, R5]
+    bron:
+      label: "Parochieboekje"
+      geraadpleegd: "2026-08-16"
+```
+
+Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
+`paascyclus_offset_in` (met optioneel `stijl: oud`). Relatief t.o.v. Theofanie
+of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
+een apart `theofanie_offset`-veld kan later worden toegevoegd.
+
+Voorbeeldbestand (niet actief): `data/lezingen/parochies/voorbeeld.yaml`.

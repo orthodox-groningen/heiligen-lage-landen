@@ -1,0 +1,31 @@
+# Voorbeeld: parochiespecifieke lezingenoverrides.
+# Kopieer naar <parochie-id>.yaml en zet in data/lezingen/config.yaml:
+#   parochie: <parochie-id>
+#
+# Zelfde match-vorm als feest-overrides.yaml:
+#   match.mmdd                  — vaste feestdatum (dagnaam)
+#   match.paascyclus_offset     — dagen t.o.v. Orthodox Pascha
+#   match.paascyclus_offset_in  — bereik, bv. Grote Week
+# Optioneel relatief t.o.v. Theofanie e.d.: gebruik mmdd of een vaste offset
+# die je in de notitie toelicht; uitbreidingen (offset t.o.v. Theofanie) kunnen
+# later als expliciet match-veld worden toegevoegd.
+#
+# prioriteit: default 300 (wint van gedeelde overrides). Zet lager om te delen.
+
+parochie: voorbeeld
+overrides:
+  - id: silvester-voorbeeld
+    match: { mmdd: "01-02" }
+    rang: polyeleos
+    modus: toevoegen
+    apostel:
+      - ref: "(voorbeeld — vul Apostel van H. Silvester)"
+    evangelie:
+      - ref: "(voorbeeld — vul Evangelie van H. Silvester)"
+    regels: [R2, R5]
+    bron:
+      label: "Parochieboekje / lokale praktijk (voorbeeld)"
+      geraadpleegd: "2026-08-16"
+    notitie: >
+      Voorbeeldregel: niet actief tenzij dit bestand als parochie is gekozen.
+      Vervang de refs door de lezingen uit het parochieboekje.

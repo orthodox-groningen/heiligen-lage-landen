@@ -103,11 +103,18 @@ Pascha-datum kan het nodig zijn Matteüs-weken te herhalen vóór die sprong
 nog achterloopt (преступка). Zie Azbyka voor de drempels (rond eind maart /
 begin april Juliaans).
 
-**Theofanie-отступка in de winter.** Als er tussen het einde van de gewone
-eindreeks (na week 33 na Pinksteren) en de zondag van de tollenaar en de
-farizeeër te weinig weken zijn, worden één tot vijf weken herhaald uit die
-eindreeks (bij vijf weken komt ook week 17 terug). Zo blijft de overgang naar
-het Triodion kloppen.
+**Theofanie-отступка in de winter.** Eerst geldt: zolang de doorlopende reeks
+na Pinksteren nog weken 32 en 33 heeft vóór de zondag van de tollenaar en de
+farizeeër, lezen we die gewone eindreeks gewoon uit. Voorbeeld **2025**:
+Tollenaar valt op 9 februari; 1 februari is nog de 32e week, 3–8 februari de
+33e week (2 februari is Ontmoeting in de tempel). Er is dan géén “gat” en dus
+geen herhaling.
+
+Alleen als er *na* week 33 nog weekdagen overblijven tot Tollenaar (één tot
+vijf weken), vullen we die met herhaling van de eindreeks. Daarbij komen de
+lezingen van onder meer de **32e week na Pinksteren** opnieuw voor wanneer er
+twee of meer weken tekort zijn (bij vijf weken ook week 17). Zo blijft de
+overgang naar het Triodion kloppen.
 
 ### 4. Vasten zonder die liturgie
 
@@ -142,3 +149,12 @@ die is geraadpleegd. Zo blijft overleg met de clerus navolgbaar.
 Klopt iets niet met uw lokale typikon of BU, dan is dat precies het gesprek
 dat we met deze uitleg willen voeren — het liefst met een concrete datum en
 bron erbij.
+
+## Lokale of parochiefeesten
+
+Soms kiest een parochieboekje anders dan de gedeelde Moskouse lijst — bijvoorbeeld
+een heilige als Silvester op 2 januari met eigen Apostel en Evangelie. Dat kan:
+per parochie houden we (desgewenst) een eigen lijst van zulke dagen bij, naast
+de gedeelde regels. De technische bijlage beschrijft hoe die lijst eruitziet;
+voor overleg met de clerus volstaat: datum (of relatie tot Pascha/Theofanie),
+gewenste lezingen, en of ze de doorlopende lezing vervangen of erbíj komen.

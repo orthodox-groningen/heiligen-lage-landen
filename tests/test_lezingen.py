@@ -71,6 +71,51 @@ def test_theofanie_otstupka_afwezig_2025() -> None:
     assert [a.ref for a in r.apostel] == ["Heb. 8:7-13"]
 
 
+def test_februari_2025_eindreeks_niet_leeg() -> None:
+    """Regressie: dagen vóór Tollenaar blijven op de Pinksterreeks (32e/33e week)."""
+    r1 = resolve_lezingen(2025, "02-01", "nieuw")
+    assert r1.status == "gevonden"
+    assert "R3" in r1.regels
+    assert r1.apostel and r1.evangelie
+    r3 = resolve_lezingen(2025, "02-03", "nieuw")
+    assert r3.status == "gevonden"
+    assert r3.apostel and r3.evangelie
+    r2 = resolve_lezingen(2025, "02-02", "nieuw")
+    assert r2.override_id == "ontmoeting-in-de-tempel"
+
+
+def test_parochie_override_wint_van_gedeeld(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    from lezingen import load_overrides
+
+    monkeypatch.setattr("lezingen.DATA_DIR", tmp_path)
+    (tmp_path / "parochies").mkdir()
+    (tmp_path / "feest-overrides.yaml").write_text(
+        "overrides:\n"
+        "  - id: basis\n"
+        "    match: { mmdd: \"01-02\" }\n"
+        "    apostel: [{ ref: \"BASIS-A\" }]\n"
+        "    evangelie: [{ ref: \"BASIS-E\" }]\n"
+        "    regels: [R2]\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "config.yaml").write_text("parochie: test\n", encoding="utf-8")
+    (tmp_path / "parochies" / "test.yaml").write_text(
+        "overrides:\n"
+        "  - id: silvester-lokaal\n"
+        "    match: { mmdd: \"01-02\" }\n"
+        "    apostel: [{ ref: \"LOKAAL-A\" }]\n"
+        "    evangelie: [{ ref: \"LOKAAL-E\" }]\n"
+        "    regels: [R2]\n",
+        encoding="utf-8",
+    )
+    ovs = load_overrides()
+    assert len(ovs) == 2
+    assert ovs[1]["prioriteit"] == 300
+    r = resolve_lezingen(2026, "01-02", "nieuw", overrides=ovs)
+    assert r.override_id == "silvester-lokaal"
+    assert [a.ref for a in r.apostel] == ["LOKAAL-A"]
+
+
 def test_pending_voorbeelden_are_skipped_by_filter() -> None:
     pending = [v for v in parse_spec_voorbeelden() if v["status"] == "pending"]
     # Mag leeg zijn als alle voorbeelden geïmplementeerd zijn.
