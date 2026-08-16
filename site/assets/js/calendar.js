@@ -125,9 +125,8 @@
     if (style === "juliaans") {
       if (title) title.textContent = "Oude kalender (Juliaans)";
       body.innerHTML =
-        `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
-        `<strong>oude / Juliaanse</strong> tijdrekening ` +
-        `(wereldlijk: ${label(civilTodayMmdd())}).</p>` +
+        `<p>Deze datum is volgens de <strong>oude / Juliaanse</strong> kalender` +
+        `(in de wereld is het vandaag ${label(civilTodayMmdd())}).</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="false">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="true">Oud</button>` +
@@ -135,8 +134,8 @@
     } else {
       if (title) title.textContent = "Nieuwe kalender (Gregoriaans)";
       body.innerHTML =
-        `<p>De datum <strong>${label(today)}</strong> die je hier ziet, is volgens de ` +
-        `<strong>nieuwe / Gregoriaanse</strong> (wereldlijke) kalender.</p>` +
+        `<p>Deze datum is volgens de <strong>nieuwe / Gregoriaanse</strong> (wereldlijke) kalender.` +
+        `(volgens de oude kalender is het vandaag ${label(civilTodayMmdd())}).</p>` +
         `<div class="style-toggle popover-style" role="group" aria-label="Kalender voor vandaag">` +
         `<button type="button" data-style="gregoriaans" class="style-btn" aria-pressed="true">Nieuw</button>` +
         `<button type="button" data-style="juliaans" class="style-btn" aria-pressed="false">Oud</button>` +
