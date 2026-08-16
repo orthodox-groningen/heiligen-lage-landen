@@ -111,8 +111,9 @@ niet de som van overlappende vasten.
    vasten op; anders versoepelt het alleen wo/vr of zet het uit (`vrij`).
 
 Rang bij vergelijking: `streng` < `wijn_olie` ≈ `lichter` < `vis` < `vrij`.
-**Normatief voor de dagregel:** `data/regels/vasten.yaml` (uitleg
-`/uitleg/vasten/`). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
+**Normatief voor de dagregel:** `data/regels/vasten.yaml`. Cleruspagina:
+`/uitleg/vasten/`; technische bijlage: `/uitleg/vasten-technisch/` (niet in het
+uitleg-overzicht). Code: `scripts/vasten.py` en `site/assets/js/calendar.js`.
 
 ## Observances (kleuren)
 
