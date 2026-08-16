@@ -4,15 +4,14 @@ status: curated
 cyclus: jaar
 lagenlanden: true
 namen:
-  primair: Walfridus (Bedum)
+  primair: "Walfridus (Bedum)"
+  alternatief:
+  - Walfridus
 datum:
   waarde: 06-22
   stijl: gregoriaans
 samenvatting: Plaatselijke heilige verbonden met Bedum.
 referenties:
-- label: Thabor-notities augustus 2024
-  geraadpleegd: '2026-08-15'
-  opmerking: Lokale liturgische notitie; nader te publiceren/archiveren.
-verhaal: Walfridus (of Walfried) wordt in Groninger traditie verbonden met Bedum.
-  De feestdag 22 juni volgt lokale notities; verdere hagiografische details vragen
-  om aanvullende bronnen.
+  - label: "Wikipedia (NL) — Walfridus"
+    url: "https://nl.wikipedia.org/wiki/Walfridus"
+    geraadpleegd: "2026-08-16"

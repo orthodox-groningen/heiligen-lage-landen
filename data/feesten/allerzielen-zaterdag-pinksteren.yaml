@@ -1,0 +1,28 @@
+id: allerzielen-zaterdag-pinksteren
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Allerzielen-zaterdag (vóór Pinksteren)"
+  alternatief:
+  - Allerzielen-zaterdag
+  - "Zaterdag van de zielen (vóór Pinksteren)"
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 48
+samenvatting: |
+  Gedachtenis van de overledenen vóór Pinksteren.
+verhaal: |
+  Opnieuw gedenkt de Kerk de ontslapenen, nu aan de vooravond van Pinksteren, wanneer de Geest de gemeenschap van levenden en doden verzegelt in Christus.
+referenties:
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"

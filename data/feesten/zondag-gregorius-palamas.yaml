@@ -1,0 +1,30 @@
+id: zondag-gregorius-palamas
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Tweede zondag van de Vasten (Gregorius Palamas)"
+  alternatief:
+  - Tweede zondag van de Vasten
+  - Gregorius Palamas
+  - Zondag van Gregorius Palamas
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -35
+samenvatting: |
+  Gedachtenis van de heilige Gregorius Palamas.
+verhaal: |
+  De tweede vastenzondag eert Gregorius Palamas (†1359), leraar van het hesychasme en de onderscheiding tussen Gods wezen en energieën. Zijn theologie verbindt vasten met werkelijke gemeenschap met God.
+referenties:
+  - label: "OrthodoxWiki — Gregorius Palamas"
+    url: "https://orthodoxwiki.org/Gregory_Palamas"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Vasten"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    geraadpleegd: "2026-08-16"

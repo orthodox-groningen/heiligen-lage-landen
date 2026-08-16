@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Engelmund
+  alternatief:
+  - Engelmundus
+  - Engelmundus van Velsen
 datum:
   waarde: 06-21
   stijl: gregoriaans
@@ -15,6 +18,9 @@ locaties:
 periode: ~680
 samenvatting: 'Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.'
 referenties:
-- label: Legacy import (bron nog te verifiëren)
-  geraadpleegd: '2026-08-15'
-  opmerking: Geïmporteerd uit heiligen_lage_landen_vsn_0.yaml
+  - label: "Wikipedia (NL) — Engelmundus"
+    url: "https://nl.wikipedia.org/wiki/Engelmundus"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Engelmundus"
+    url: "https://www.heiligen.net/heiligen/06/21/06-21-0739-engelmundus.php"
+    geraadpleegd: "2026-08-16"

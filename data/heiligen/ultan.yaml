@@ -13,5 +13,9 @@ titels:
 periode: '680'
 samenvatting: 'Heilige van de Lage Landen: Ultan. Stichter van Fosse.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (EN) — Ultan"
+    url: "https://en.wikipedia.org/wiki/Saint_Ultan"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Ultan"
+    url: "https://www.heiligen.net/heiligen/05/02/05-02-0686-ultan.php"
+    geraadpleegd: "2026-08-16"

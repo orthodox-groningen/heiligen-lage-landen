@@ -4,7 +4,10 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Geboorte van de Moeder Gods"
+  primair: Geboorte van de Moeder Gods
+  alternatief:
+  - Geboorte van de Theotokos
+  - Maria Geboorte
 datum:
   waarde: "09-08"
   stijl: juliaans
@@ -13,7 +16,9 @@ samenvatting: |
 verhaal: |
   De geboorte van Maria uit Joachim en Anna wordt gevierd als begin van het heilseconomie-verhaal in de jaarcyclus.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Geboorte van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Nativity_of_the_Theotokos"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Geboorte van de Moeder Gods"
+    url: "https://www.oca.org/saints/lives/2024/09/08/102498-the-nativity-of-our-most-holy-lady-the-mother-of-god-and-ever-vi"
+    geraadpleegd: "2026-08-16"

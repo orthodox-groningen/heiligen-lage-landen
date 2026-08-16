@@ -4,16 +4,22 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Begin van het kerkelijk jaar"
+  primair: Begin van het kerkelijk jaar
+  alternatief:
+  - Indictie
+  - Kerkelijk nieuwjaar
+  - 1 september
 datum:
   waarde: "09-01"
   stijl: juliaans
 samenvatting: |
   Indictie: begin van het kerkelijk jaar.
 verhaal: |
-  Op 1 september begint het kerkelijk jaar in de Byzantijnse traditie.
+  Op 1 september begint het kerkelijk jaar in de Orthodoxe traditie.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Indictie"
+    url: "https://orthodoxwiki.org/Indiction"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Begin van het kerkelijk jaar"
+    url: "https://www.oca.org/saints/lives/2024/09/01/102423-church-new-year"
+    geraadpleegd: "2026-08-16"

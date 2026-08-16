@@ -1,0 +1,28 @@
+id: zondag-blinde
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de blinde
+  alternatief:
+  - Zondag van de blindgeborene
+  - Zondag van de genezing van de blinde
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 35
+samenvatting: |
+  Genezing van de blindgeborene.
+verhaal: |
+  De genezing van de blindgeborene (Joh. 9) toont Christus als licht van de wereld. Geloof opent de ogen — thema in de dagen vóór Hemelvaart.
+referenties:
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Hemelvaart"
+    url: "https://orthodoxwiki.org/Ascension"
+    geraadpleegd: "2026-08-16"

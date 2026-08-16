@@ -13,5 +13,6 @@ titels:
 periode: '1054'
 samenvatting: 'Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Bernulphus"
+    url: "https://nl.wikipedia.org/wiki/Bernulphus"
+    geraadpleegd: "2026-08-16"

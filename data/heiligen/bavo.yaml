@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Bavo
+  alternatief:
+  - Bavo van Gent
+  - Allowin
 datum:
   waarde: 10-01
   stijl: gregoriaans
@@ -12,5 +15,6 @@ titels:
 - Icoon in parochie
 samenvatting: 'Heilige van de Lage Landen: Bavo. Icoon in parochie.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Bavo van Gent"
+    url: "https://nl.wikipedia.org/wiki/Bavo_van_Gent"
+    geraadpleegd: "2026-08-16"

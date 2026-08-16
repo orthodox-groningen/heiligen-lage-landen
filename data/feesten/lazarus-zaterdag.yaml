@@ -1,0 +1,28 @@
+id: lazarus-zaterdag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Lazarus-zaterdag
+  alternatief:
+  - Opwekking van Lazarus
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -8
+samenvatting: |
+  Opwekking van Lazarus; vooravond van Palmzondag.
+verhaal: |
+  Christus wekt Lazarus uit de doden (Joh. 11) als voorteken van zijn eigen opstanding. Liturgisch eindigt hier de veertigdagenvasten streng genomen; de Heilige Week breekt aan.
+referenties:
+  - label: "OrthodoxWiki — Lazarus-zaterdag"
+    url: "https://orthodoxwiki.org/Lazarus_Saturday"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"

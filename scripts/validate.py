@@ -49,6 +49,11 @@ def main() -> int:
             errors.append(
                 f"{path}: verhaal/samenvatting aanwezig maar referenties ontbreken"
             )
+        for i, ref in enumerate(entry.get("referenties") or []):
+            if not (ref.get("url") or ref.get("isbn") or ref.get("locator")):
+                errors.append(
+                    f"{path}: referenties[{i}]: ontbreekt url, isbn of locator"
+                )
         icoon = entry.get("icoon") or {}
         if icoon.get("bestand"):
             if icoon.get("rechten") != "ok":

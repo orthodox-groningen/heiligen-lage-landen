@@ -2,44 +2,74 @@
 
 Elke entry is één YAML-bestand in `data/feesten/` of `data/heiligen/`.
 
-## Datum en stijl
+## Datum en stijl (vaste jaarcyclus)
 
 ```yaml
 datum:
   waarde: "08-15"          # MM-DD = feestdatum
   # stijl weglaten = gregoriaans (default) — alleen documentatie van de invoer
   stijl: juliaans          # of: gregoriaans
+  # optioneel expliciet dubbel:
+  # gregoriaans: "08-15"
+  # juliaans: "08-15"
 ```
 
 De **feestdatum** is de kalenderdag van het feest (bijv. Ontslapen = 15 augustus).
 Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
 `stijl` legt alleen vast hoe de beheerder de waarde bedoelde; er wordt géén
-+13-dagenverschuiving op de feestdatum toegepast.
+automatische +13 op de feestdatum zelf toegepast.
 
-De offset van 13 dagen (tot 2100) wordt gebruikt om **vandaag** om te
-rekenen, en voor **ICS-feeds “oud”**: de afspraak valt op de burgerlijke
-vierdatum (feestdatum+13), met de Juliaanse feestdatum in de titel.
+De offset Gregoriaans−Juliaans is **jaarafhankelijk** (13 tot 2099, 14 vanaf 2100:
+`⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset wordt gebruikt om **vandaag** om te
+rekenen, en voor **ICS-feeds “oud”** (vierdatum in westerse agenda’s).
+
+## Paascyclus
+
+```yaml
+cyclus: paascyclus
+datum:
+  stijl: gregoriaans       # default; berekende datums zijn wereldlijk
+  paascyclus:
+    anker: pascha
+    offset_dagen: 0        # t.o.v. Orthodox Pascha (negatief = vóór)
+```
+
+Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
+kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
+
+## Observances (kleuren)
+
+```yaml
+observances: [feest, vasten]   # optioneel; default volgt soort
+```
+
+Het jaarrooster kleurt nu één dominante categorie. **TODO:** meerdere kleuren
+tegelijk tonen wanneer een dag feest én vasten is (bijv. Onthoofding van Johannes).
 
 ## Referenties
 
-Verhaal of samenvatting mag alleen als er minstens één referentie is:
+Verhaal of samenvatting mag alleen als er minstens één referentie is.
+Elke referentie heeft `bron_id` en/of `label`, plus een **raadpleegbare locator**:
+
+- `url` — bij voorkeur, of
+- `isbn` (+ optioneel `pagina`), of
+- `locator` — vrije tekst (archief, app, signatuur, …)
 
 ```yaml
 referenties:
-  - bron_id: hnet
-    geraadpleegd: "2026-08-15"
-  - label: "Eigen notitie"
-    url: "https://…"
-    geraadpleegd: "2026-08-15"
+  - bron_id: oca-calendar
+    url: "https://www.oca.org/saints/lives"
+    geraadpleegd: "2026-08-16"
+  - label: "Handboek X"
+    isbn: "978-…"
+    pagina: "120–124"
+    geraadpleegd: "2026-08-16"
 ```
 
-`bron_id` verwijst naar `data/bronnen/bronnen.yaml`.
+`bron_id` verwijst naar `data/bronnen/bronnen.yaml` (naam/metadata); de locator
+hoort **ook** op de referentie zelf te staan.
 
 ## Status
 
 - `stub` — basisgegevens, kort of geen verhaal
 - `curated` — nagekeken tekst met traceerbare bronnen
-
-## Iconen
-
-Alleen publiceren met `icoon.rechten: ok` plus bron en licentie; bestand onder `site/static/`.

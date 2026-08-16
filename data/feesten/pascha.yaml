@@ -1,0 +1,32 @@
+id: pascha
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Pascha (Heilige Opstanding van Christus)"
+  alternatief:
+  - Orthodox Pasen
+  - Feest van de Opstanding
+  - Pascha
+  - Heilige Opstanding van Christus
+  - Heilige Opstanding
+  - Opstanding van Christus
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 0
+samenvatting: |
+  Feest van de Opstanding; middelpunt van het kerkelijk jaar.
+verhaal: |
+  Pascha is het feest van feesten: Christus is opgestaan uit de doden. Alle Orthodoxe kerken vieren Pascha op dezelfde datum, berekend volgens de Alexandrijnse/Juliaanse computus (wereldlijk vaak op een andere zondag dan westers Pasen). Vanaf hier telt de lichte week en de weg naar Pinksteren.
+referenties:
+  - label: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Heilig Pascha"
+    url: "https://www.oca.org/saints/lives/2025/04/20/27-holy-pascha-the-resurrection-of-our-lord"
+    geraadpleegd: "2026-08-16"

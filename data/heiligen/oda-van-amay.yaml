@@ -13,5 +13,6 @@ titels:
 periode: '723'
 samenvatting: 'Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Oda van Amay"
+    url: "https://nl.wikipedia.org/wiki/Oda_van_Amay"
+    geraadpleegd: "2026-08-16"

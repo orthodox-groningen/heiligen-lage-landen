@@ -1,0 +1,28 @@
+id: hemelvaart
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Hemelvaart van de Heer
+  alternatief:
+  - Hemelvaart
+  - Hemelvaartsdag
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 39
+samenvatting: |
+  Veertig dagen na Pascha; Christus’ hemelvaart.
+verhaal: |
+  Veertig dagen na Pascha viert de Kerk de Hemelvaart: de opgestane Heer gaat ten hemel en belooft de Geest. Het is een van de grote feesten van het kerkelijk jaar.
+referenties:
+  - label: "OrthodoxWiki — Hemelvaart"
+    url: "https://orthodoxwiki.org/Ascension"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Hemelvaart"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/ascension"
+    geraadpleegd: "2026-08-16"

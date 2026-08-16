@@ -1,0 +1,29 @@
+id: transfiguratie
+soort: feest
+status: curated
+cyclus: jaar
+lagenlanden: false
+namen:
+  primair: "Transfiguratie (op de berg Thabor)"
+  alternatief:
+  - Verheerlijking op de berg Thabor
+  - Transfiguratie
+  - Verheerlijking
+  - Verheerlijking des Heren
+datum:
+  waarde: "08-06"
+  stijl: juliaans
+samenvatting: |
+  Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.
+verhaal: |
+  Op de berg Thabor wordt de heerlijkheid van Christus geopenbaard; Mozes en Elia verschijnen met Hem.
+referenties:
+  - label: "OrthodoxWiki — Transfiguratie"
+    url: "https://orthodoxwiki.org/Transfiguration"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Heilige Transfiguratie"
+    url: "https://www.oca.org/saints/lives/2024/08/06/100795-the-holy-transfiguration-of-our-lord-god-and-savior-jesus-christ"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Het Orthodoxe geloof: Transfiguratie"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/transfiguration"
+    geraadpleegd: "2026-08-16"

@@ -1,0 +1,28 @@
+id: zondag-samaritaanse
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de Samaritaanse vrouw
+  alternatief:
+  - Zondag van de Samaritaanse
+  - Zondag van de Samaritaanse vrouw bij de put
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 28
+samenvatting: |
+  Ontmoeting bij de put; levend water.
+verhaal: |
+  Christus openbaart zich aan de Samaritaanse vrouw (Joh. 4) als gever van levend water. De Kerk leest dit als uitnodiging tot aanbidding in Geest en waarheid op weg naar Pinksteren.
+referenties:
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
+    geraadpleegd: "2026-08-16"

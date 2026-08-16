@@ -1,0 +1,30 @@
+id: grote-donderdag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Grote Donderdag
+  alternatief:
+  - Heilige en Grote Donderdag
+  - Witte Donderdag
+  - Donderdag van het Mysterie
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -3
+samenvatting: |
+  Laatste Avondmaal; voetwassing; overlevering aan het lijden.
+verhaal: |
+  Christus stelt het mysterie van zijn Lichaam en Bloed in, wast de voeten van de leerlingen en gaat vrijwillig het lijden in. Grote Donderdag is middelpunt van de Heilige Week vóór Golgotha.
+referenties:
+  - label: "OrthodoxWiki — Grote Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Grote Week"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/holy-week"
+    geraadpleegd: "2026-08-16"

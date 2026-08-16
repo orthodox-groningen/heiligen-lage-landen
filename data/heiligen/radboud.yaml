@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Radboud
+  alternatief:
+  - Radboud van Utrecht
 datum:
   waarde: 11-29
   stijl: gregoriaans
@@ -14,5 +16,9 @@ periode: '917'
 samenvatting: 'Heilige van de Lage Landen: Radboud. Icoon in parochie, bisschop van
   Utrecht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Radboud van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Radboud_van_Utrecht"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Radboud"
+    url: "https://www.heiligen.net/heiligen/11/29/11-29-0917-radboud.php"
+    geraadpleegd: "2026-08-16"

@@ -13,5 +13,9 @@ titels:
 periode: '703'
 samenvatting: 'Heilige van de Lage Landen: Wulfram. Missionaris.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Wulfram"
+    url: "https://nl.wikipedia.org/wiki/Wulfram"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Wulfram"
+    url: "https://www.heiligen.net/heiligen/03/20/03-20-0720-wulfram.php"
+    geraadpleegd: "2026-08-16"

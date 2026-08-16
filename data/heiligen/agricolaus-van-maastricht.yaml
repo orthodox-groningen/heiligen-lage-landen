@@ -20,5 +20,6 @@ locaties:
 periode: 401(?)
 samenvatting: 'Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Lijst van bisschoppen van Maastricht"
+    url: "https://nl.wikipedia.org/wiki/Lijst_van_bisschoppen_van_Maastricht"
+    geraadpleegd: "2026-08-16"

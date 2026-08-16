@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Lambertus
+  alternatief:
+  - Lambertus van Maastricht
+  - Lambert
 datum:
   waarde: 09-17
   stijl: gregoriaans
@@ -13,6 +16,9 @@ titels:
 periode: '704'
 samenvatting: 'Heilige van de Lage Landen: Lambertus. Icoon in parochie.'
 referenties:
-- label: orthodox synaxarion
-  geraadpleegd: '2026-08-15'
-  opmerking: Nog te normaliseren naar bronnen.yaml
+  - label: "Wikipedia (NL) — Lambertus van Maastricht"
+    url: "https://nl.wikipedia.org/wiki/Lambertus_van_Maastricht"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Lambertus"
+    url: "https://www.heiligen.net/heiligen/09/17/09-17-0705-lambertus.php"
+    geraadpleegd: "2026-08-16"

@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Dymphna
+  alternatief:
+  - Dimpna
+  - Dymphna van Geel
 datum:
   waarde: 05-15
   stijl: gregoriaans
@@ -14,5 +17,9 @@ periode: 7e eeuw
 samenvatting: 'Heilige van de Lage Landen: Dymphna. Icoon in parochie, martelares
   van Geel, Vlaanderen.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Dymphna"
+    url: "https://nl.wikipedia.org/wiki/Dymphna"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Dymphna"
+    url: "https://orthodoxwiki.org/Dymphna"
+    geraadpleegd: "2026-08-16"

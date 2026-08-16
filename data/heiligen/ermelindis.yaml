@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Ermelindis
+  alternatief:
+  - Ermelindis van Meldert
 datum:
   waarde: 10-29
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: 6e eeuw
 samenvatting: 'Heilige van de Lage Landen: Ermelindis. Heremiet.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Ermelindis van Meldert"
+    url: "https://nl.wikipedia.org/wiki/Ermelindis_van_Meldert"
+    geraadpleegd: "2026-08-16"

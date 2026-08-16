@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Aubertus van Kamerijk
+  alternatief:
+  - Autbertus van Kamerijk
+  - Autbertus
 datum:
   waarde: 12-15
   stijl: gregoriaans
@@ -13,7 +16,6 @@ titels:
 periode: '668'
 samenvatting: 'Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
-- bron_id: wiki-heiligen
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Autbertus van Kamerijk"
+    url: "https://nl.wikipedia.org/wiki/Autbertus_van_Kamerijk"
+    geraadpleegd: "2026-08-16"

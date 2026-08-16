@@ -1,0 +1,28 @@
+id: allerheiligen-zondag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Allerheiligen-zondag
+  alternatief:
+  - Zondag van Alle Heiligen
+  - Allerheiligen
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 56
+samenvatting: |
+  Eerste zondag na Pinksteren; alle heiligen.
+verhaal: |
+  Allerheiligen besluit de reeks na Pinksteren met de gedachtenis van alle heiligen — bekend en onbekend — als vrucht van de Geest. Daarna begint in veel kerken het Apostolisch vasten tot het feest van Petrus en Paulus.
+referenties:
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Kerkelijk jaar"
+    url: "https://orthodoxwiki.org/Church_Calendar"
+    geraadpleegd: "2026-08-16"

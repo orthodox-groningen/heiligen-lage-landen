@@ -11,7 +11,6 @@ datum:
 periode: 8e eeuw
 samenvatting: 'Heilige van de Lage Landen: Marcellinus van Utrecht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
-- bron_id: hlex
-  geraadpleegd: '2026-08-15'
+  - bron_id: eir3app
+    locator: "Interne notities; nader te specificeren in curated entries."
+    geraadpleegd: "2026-08-16"

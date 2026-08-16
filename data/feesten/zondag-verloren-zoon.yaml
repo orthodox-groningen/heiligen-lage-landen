@@ -1,0 +1,27 @@
+id: zondag-verloren-zoon
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de verloren zoon
+  alternatief:
+  - Verloren zoon
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -63
+samenvatting: |
+  Gelijkenis van de barmhartige vader; oproep tot terugkeer.
+verhaal: |
+  De Kerk leest de gelijkenis van de verloren zoon (Lc. 15). God wacht als een vader op wie terugkeert. In de voorvasten klinkt zo het thema van bekering en thuiskomst.
+referenties:
+  - label: "OrthodoxWiki — Zondag van de verloren zoon"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Prodigal_Son"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Triodion"
+    url: "https://orthodoxwiki.org/Lenten_Triodion"
+    geraadpleegd: "2026-08-16"

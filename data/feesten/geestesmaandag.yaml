@@ -1,0 +1,29 @@
+id: geestesmaandag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Maandag van de Heilige Geest
+  alternatief:
+  - Maandag van de Geest
+  - Dag van de Heilige Geest
+  - Pinkstermaandag
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 50
+samenvatting: |
+  Tweede dag van Pinksteren; eer aan de Heilige Geest.
+verhaal: |
+  De dag na Pinksteren is bijzonder gewijd aan de Heilige Geest. De vreugde van het feest duurt voort; in veel tradities begint hierna het Apostolisch vasten.
+referenties:
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Kerkelijk jaar"
+    url: "https://orthodoxwiki.org/Church_Calendar"
+    geraadpleegd: "2026-08-16"

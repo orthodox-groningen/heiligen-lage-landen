@@ -29,7 +29,6 @@
     "datum": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["waarde"],
       "properties": {
         "waarde": {
           "type": "string",
@@ -39,6 +38,14 @@
           "type": "string",
           "enum": ["gregoriaans", "juliaans"],
           "default": "gregoriaans"
+        },
+        "gregoriaans": {
+          "type": "string",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "juliaans": {
+          "type": "string",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
         },
         "extra": {
           "type": "array",
@@ -58,8 +65,33 @@
               "toelichting": { "type": "string" }
             }
           }
+        },
+        "paascyclus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["offset_dagen"],
+          "properties": {
+            "anker": {
+              "type": "string",
+              "const": "pascha",
+              "default": "pascha"
+            },
+            "offset_dagen": { "type": "integer" }
+          }
         }
-      }
+      },
+      "anyOf": [
+        { "required": ["waarde"] },
+        { "required": ["paascyclus"] }
+      ]
+    },
+    "observances": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["feest", "vasten", "heilige"]
+      },
+      "uniqueItems": true
     },
     "titels": {
       "type": "array",
@@ -73,7 +105,7 @@
     "lagenlanden": { "type": "boolean" },
     "cyclus": {
       "type": "string",
-      "enum": ["jaar"]
+      "enum": ["jaar", "paascyclus"]
     },
     "samenvatting": { "type": "string" },
     "verhaal": { "type": "string" },
@@ -90,11 +122,23 @@
             "type": "string",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
           },
-          "opmerking": { "type": "string" }
+          "opmerking": { "type": "string" },
+          "isbn": { "type": "string", "minLength": 1 },
+          "pagina": { "type": "string", "minLength": 1 },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Alternatief voor url (bijv. archiefsignatuur, app-pad)."
+          }
         },
         "anyOf": [
           { "required": ["label"] },
           { "required": ["bron_id"] }
+        ],
+        "oneOf": [
+          { "required": ["url"] },
+          { "required": ["isbn"] },
+          { "required": ["locator"] }
         ]
       }
     },

@@ -15,5 +15,6 @@ locaties:
 periode: <777
 samenvatting: 'Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - bron_id: eir3app
+    locator: "Interne notities; nader te specificeren in curated entries."
+    geraadpleegd: "2026-08-16"

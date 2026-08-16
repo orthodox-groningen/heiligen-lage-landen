@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Alena van Dilbeek
+  alternatief:
+  - Alena
 datum:
   waarde: 06-17
   stijl: gregoriaans
@@ -15,5 +17,6 @@ locaties:
 periode: ~640
 samenvatting: 'Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelares.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Alena (heilige)"
+    url: "https://nl.wikipedia.org/wiki/Alena_(heilige)"
+    geraadpleegd: "2026-08-16"

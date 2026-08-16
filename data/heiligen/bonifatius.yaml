@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Bonifatius
+  alternatief:
+  - Bonifacius
+  - Wynfrith
 datum:
   waarde: 06-05
   stijl: gregoriaans
@@ -14,10 +17,15 @@ periode: ~754
 samenvatting: Missionaris en martelaar, verbonden met de kerstening van de Lage Landen
   en Germanië.
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
-verhaal: Bonifatius (Wynfreth) werkte als missionaris op het vasteland en stierf als
-  martelaar bij Dokkum (ca. 754). Hij wordt breed vereerd in de Lage Landen; de feestdag
-  valt op 5 juni in gangbare bronnen.
+  - label: "Wikipedia (NL) — Bonifatius (heilige)"
+    url: "https://nl.wikipedia.org/wiki/Bonifatius_(heilige)"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Bonifatius"
+    url: "https://www.heiligen.net/heiligen/06/05/06-05-0754-bonifatius.php"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Bonifatius"
+    url: "https://orthodoxwiki.org/Boniface"
+    geraadpleegd: "2026-08-16"
+  - label: "Heiligenlexikon — Bonifatius"
+    url: "https://www.heiligenlexikon.de/BiographienB/Bonifatius.html"
+    geraadpleegd: "2026-08-16"

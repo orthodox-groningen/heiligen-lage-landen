@@ -4,9 +4,11 @@ status: stub
 cyclus: jaar
 lagenlanden: true
 namen:
-  primair: Ansfried (van Utrecht)
+  primair: "Ansfried (van Utrecht)"
   alternatief:
   - Ansfried van Leuven
+  - Ansfried
+  - Ansfried van Utrecht
 datum:
   waarde: 05-03
   stijl: gregoriaans
@@ -22,7 +24,9 @@ locaties:
 periode: '1010'
 samenvatting: 'Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Ansfried"
+    url: "https://nl.wikipedia.org/wiki/Ansfried"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Ansfried"
+    url: "https://www.heiligen.net/heiligen/05/03/05-03-1010-ansfried.php"
+    geraadpleegd: "2026-08-16"

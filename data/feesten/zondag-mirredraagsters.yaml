@@ -1,0 +1,28 @@
+id: zondag-mirredraagsters
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de mirredraagsters
+  alternatief:
+  - Mirredraagsterszondag
+  - Zondag van de myrrhedraagsters
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 14
+samenvatting: |
+  De vrouwen bij het graf; Jozef van Arimatea en Nicodemus.
+verhaal: |
+  De mirredraagsters gaan vroeg naar het graf en worden de eerste getuigen van de Opstanding. Met hen eert de Kerk ook wie Christus begroef: trouwe liefde na het kruis.
+referenties:
+  - label: "OrthodoxWiki — Zondag van de mirredraagsters"
+    url: "https://orthodoxwiki.org/Sunday_of_Myrrh-bearing_Women"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"

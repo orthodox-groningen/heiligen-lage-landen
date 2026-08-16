@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Quirillus van Tongern
+  alternatief:
+  - Quirillus
 datum:
   waarde: 04-30
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: ~520 of ~489
 samenvatting: 'Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van Tongeren.'
 referenties:
-- bron_id: hlex
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Quirillus"
+    url: "https://nl.wikipedia.org/wiki/Quirillus"
+    geraadpleegd: "2026-08-16"

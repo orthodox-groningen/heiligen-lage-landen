@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Plechelm von Odilienberg
+  alternatief:
+  - Plechelmus
+  - Plechelm
 datum:
   waarde: 07-15
   stijl: gregoriaans
@@ -17,5 +20,6 @@ periode: '713'
 samenvatting: 'Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop, geloofsverkondiger
   aan de Nederrijn.'
 referenties:
-- bron_id: hlex
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Plechelmus"
+    url: "https://nl.wikipedia.org/wiki/Plechelmus"
+    geraadpleegd: "2026-08-16"

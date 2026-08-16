@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Winnocus
+  alternatief:
+  - Winnoc
 datum:
   waarde: 11-06
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: '716'
 samenvatting: 'Heilige van de Lage Landen: Winnocus. Abt.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (EN) — Winnoc"
+    url: "https://en.wikipedia.org/wiki/Saint_Winnoc"
+    geraadpleegd: "2026-08-16"

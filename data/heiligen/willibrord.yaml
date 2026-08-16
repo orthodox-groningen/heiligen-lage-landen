@@ -18,9 +18,12 @@ verhaal: |
   Hij wordt gerekend tot de voornaamste heiligen van de Lage Landen.
   Zijn feestdag wordt in veel bronnen op 7 november gezet.
 referenties:
-  - bron_id: hnet
-    geraadpleegd: "2026-08-15"
-  - bron_id: eir3app
-    geraadpleegd: "2026-08-15"
-  - bron_id: hlex
-    geraadpleegd: "2026-08-15"
+  - label: "Wikipedia (NL) — Willibrord"
+    url: "https://nl.wikipedia.org/wiki/Willibrord"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Willibrord"
+    url: "https://www.heiligen.net/heiligen/11/07/11-07-0739-willibrord.php"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Willibrord"
+    url: "https://orthodoxwiki.org/Willibrord"
+    geraadpleegd: "2026-08-16"

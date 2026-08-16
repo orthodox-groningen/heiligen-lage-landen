@@ -7,6 +7,8 @@ namen:
   primair: Gudula van Brussel
   alternatief:
   - Goedele
+  - Sint-Goedele
+  - Gudula
 datum:
   waarde: 01-08
   stijl: gregoriaans
@@ -15,5 +17,9 @@ titels:
 periode: '659'
 samenvatting: 'Heilige van de Lage Landen: Gudula van Brussel. Virgin.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Sint-Goedele"
+    url: "https://nl.wikipedia.org/wiki/Sint-Goedele"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Goedele"
+    url: "https://www.heiligen.net/heiligen/01/08/01-08-0712-goedele.php"
+    geraadpleegd: "2026-08-16"

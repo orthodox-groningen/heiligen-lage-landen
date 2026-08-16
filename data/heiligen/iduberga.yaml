@@ -8,6 +8,8 @@ namen:
   alternatief:
   - Ida
   - Itta
+  - Ida van Nijvel
+  - Itta van Nijvel
 datum:
   waarde: 05-08
   stijl: gregoriaans
@@ -19,5 +21,9 @@ periode: '652'
 samenvatting: 'Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder
   van H. Bavo, Begga en Gertrudis.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Iduberga"
+    url: "https://nl.wikipedia.org/wiki/Iduberga"
+    geraadpleegd: "2026-08-16"
+  - label: "Wikipedia (NL) — Ida van Nijvel"
+    url: "https://nl.wikipedia.org/wiki/Ida_van_Nijvel"
+    geraadpleegd: "2026-08-16"

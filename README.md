@@ -1,7 +1,8 @@
 # Heiligen van de Lage Landen
 
 Statische site met orthodoxe **vaste feesten** (jaarcyclus) en **heiligen van de Lage Landen**.
-MVP: nog géén paascyclus.
+MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus
+(huidig jaar −2 … +25 in site/ICS).
 
 - Productie: https://orthodox-groningen.github.io/heiligen-lage-landen/
 - Preview (niet-`main`): https://orthodox-groningen.github.io/heiligen-lage-landen/preview/

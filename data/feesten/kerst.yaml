@@ -5,6 +5,11 @@ cyclus: jaar
 lagenlanden: false
 namen:
   primair: "Kerstfeest (Geboorte van Christus)"
+  alternatief:
+  - Kerstfeest
+  - Geboorte van Christus
+  - Geboorte des Heren
+  - Kerstmis
 datum:
   waarde: "12-25"
   stijl: juliaans
@@ -16,7 +21,9 @@ verhaal: |
   (Parochies die de oude kalender volgen vieren liturisch op Juliaans 25 december,
   wat burgerlijk later in januari valt; deze site toont de feestdatum zelf.)
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Geboorte van Christus"
+    url: "https://orthodoxwiki.org/Nativity"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Geboorte van Christus"
+    url: "https://www.oca.org/saints/lives/2024/12/25/103533-the-nativity-of-our-lord-god-and-savior-jesus-christ"
+    geraadpleegd: "2026-08-16"

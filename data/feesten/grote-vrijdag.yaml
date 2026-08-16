@@ -1,0 +1,30 @@
+id: grote-vrijdag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Grote Vrijdag (Heilige en Grote Vrijdag)"
+  alternatief:
+  - Grote Vrijdag
+  - Heilige en Grote Vrijdag
+  - Goede Vrijdag
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -2
+samenvatting: |
+  Kruisiging en graflegging van de Heer.
+verhaal: |
+  Op Grote Vrijdag gedenkt de Kerk het lijden, de kruisiging en de graflegging van Christus. Het is een dag van streng vasten, stilte en aanbidding van het Kruis — in verwachting van de Opstanding.
+referenties:
+  - label: "OrthodoxWiki — Grote Vrijdag"
+    url: "https://orthodoxwiki.org/Holy_Friday"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Grote Vrijdag"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/holy-friday"
+    geraadpleegd: "2026-08-16"

@@ -14,5 +14,6 @@ periode: '451'
 samenvatting: 'Heilige van de Lage Landen: Cunera. Icoon in parochie, virgin martyr
   of Rhenen.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Cunera"
+    url: "https://nl.wikipedia.org/wiki/Cunera"
+    geraadpleegd: "2026-08-16"

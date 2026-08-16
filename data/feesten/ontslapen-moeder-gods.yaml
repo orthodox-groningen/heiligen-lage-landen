@@ -4,7 +4,11 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Ontslapen van de Moeder Gods"
+  primair: Ontslapen van de Moeder Gods
+  alternatief:
+  - Ontslapen
+  - Ontslapen van de Theotokos
+  - Maria Tenhemelopneming
 datum:
   waarde: "08-15"
   stijl: juliaans
@@ -13,7 +17,9 @@ samenvatting: |
 verhaal: |
   De Kerk viert het einde van het aardse leven van de Moeder Gods en haar overgang tot het eeuwige leven.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Ontslapen"
+    url: "https://orthodoxwiki.org/Dormition"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Ontslapen van de Moeder Gods"
+    url: "https://www.oca.org/saints/lives/2024/08/15/102304-the-dormition-of-our-most-holy-lady-the-mother-of-god-and-ever-v"
+    geraadpleegd: "2026-08-16"

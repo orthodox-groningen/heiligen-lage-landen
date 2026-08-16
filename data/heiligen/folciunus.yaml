@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Folciunus
+  alternatief:
+  - Folcuin
+  - Folcwin
 datum:
   waarde: 12-14
   stijl: gregoriaans
@@ -13,5 +16,9 @@ titels:
 periode: '855'
 samenvatting: 'Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Folcuin"
+    url: "https://nl.wikipedia.org/wiki/Folcuin"
+    geraadpleegd: "2026-08-16"
+  - label: "Wikipedia (EN) — Folcuin"
+    url: "https://en.wikipedia.org/wiki/Folcwin"
+    geraadpleegd: "2026-08-16"

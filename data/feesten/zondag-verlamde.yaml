@@ -1,0 +1,28 @@
+id: zondag-verlamde
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de verlamde
+  alternatief:
+  - Zondag van de verlamde man
+  - Zondag van de genezing van de verlamde
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 21
+samenvatting: |
+  Genezing bij Betesda; derde zondag na Pascha.
+verhaal: |
+  Christus geneest de verlamde bij het bad Betesda (Joh. 5). De lezing verbindt lichamelijke heling met het leven dat van de Opgestane uitgaat.
+referenties:
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
+    geraadpleegd: "2026-08-16"

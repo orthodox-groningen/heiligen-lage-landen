@@ -1,7 +1,6 @@
 (() => {
   const STORAGE_KEY = "kalender-stijl";
   const YEAR_KEY = "kalender-jaar";
-  const OFFSET_DAYS = 13;
   const MONTHS = [
     "",
     "januari",
@@ -72,6 +71,10 @@
     });
   }
 
+  function julianGregorianOffsetDays(year) {
+    return Math.floor(year / 100) - Math.floor(year / 400) - 2;
+  }
+
   function mmddFromDate(d) {
     return (
       String(d.getMonth() + 1).padStart(2, "0") +
@@ -84,6 +87,44 @@
     const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     x.setDate(x.getDate() + n);
     return x;
+  }
+
+  function todayMmdd(style) {
+    const civil = new Date();
+    if (style === "juliaans") {
+      return mmddFromDate(
+        addDays(civil, -julianGregorianOffsetDays(civil.getFullYear()))
+      );
+    }
+    return mmddFromDate(civil);
+  }
+
+  function civilTodayMmdd() {
+    return mmddFromDate(new Date());
+  }
+
+  function entryMmddOnYear(entry, year, style) {
+    if (!entry) return null;
+    if (entry.cyclus === "paascyclus") {
+      const map =
+        style === "juliaans"
+          ? entry.occurrences_juliaans || {}
+          : entry.occurrences || {};
+      return map[String(year)] || null;
+    }
+    return entry.feestdatum || null;
+  }
+
+  function entriesOnMmdd(entries, mmdd, style, year) {
+    return (entries || []).filter((e) => entryMmddOnYear(e, year, style) === mmdd);
+  }
+
+  function addObservances(set, entry) {
+    const obs =
+      entry.observances && entry.observances.length
+        ? entry.observances
+        : [entry.soort === "heilige" ? "heilige" : "feest"];
+    for (const o of obs) set.add(o);
   }
 
   function label(mmdd) {
@@ -132,8 +173,9 @@
       titleInner +=
         ` <span class="today-civil-hint">Wereldlijk: ${label(civilTodayMmdd())}</span>`;
     } else if (style === "juliaans" && !isToday) {
+      const off = julianGregorianOffsetDays(new Date().getFullYear());
       titleInner +=
-        ` <span class="today-civil-hint">Wereldlijk: ${label(shiftMmdd(view, OFFSET_DAYS))}</span>`;
+        ` <span class="today-civil-hint">Wereldlijk: ${label(shiftMmdd(view, off))}</span>`;
     }
     heading.innerHTML =
       `<button type="button" class="day-step" data-day-delta="-1" aria-label="Vorige dag">&lt;</button>` +
@@ -298,16 +340,6 @@
     }
   }
 
-  function todayMmdd(style) {
-    const civil = new Date();
-    if (style === "juliaans") return mmddFromDate(addDays(civil, -OFFSET_DAYS));
-    return mmddFromDate(civil);
-  }
-
-  function civilTodayMmdd() {
-    return mmddFromDate(new Date());
-  }
-
   function firstLetter(name) {
     const ch = (name || "").trim().charAt(0).toUpperCase();
     return LETTERS.includes(ch) ? ch : "#";
@@ -326,7 +358,8 @@
     updateHeading(style);
     updateNote(style);
     const view = getViewMmdd(style);
-    const matched = entries.filter((e) => e && e.feestdatum === view);
+    const year = new Date().getFullYear();
+    const matched = entriesOnMmdd(entries, view, style, year);
     if (!matched.length) {
       cardEntries.innerHTML =
         "<p>Geen feest of heilige uit deze collectie op deze kalenderdatum.</p>";
@@ -336,7 +369,12 @@
       "<ul>" +
       matched
         .map((e) => {
-          const kind = e.soort === "feest" ? "Feest" : "Heilige";
+          const kind =
+            e.cyclus === "paascyclus"
+              ? "Paascyclus"
+              : e.soort === "feest"
+                ? "Feest"
+                : "Heilige";
           const summary = e.samenvatting
             ? `<div class="muted">${e.samenvatting}</div>`
             : "";
@@ -350,6 +388,7 @@
     const hasF = kinds.has("feest");
     const hasH = kinds.has("heilige");
     const hasV = kinds.has("vasten");
+    // TODO: multi-kleur wanneer feest én vasten op één dag (nu vasten wijkt voor feest/heilige).
     if (hasV && !hasF && !hasH) return "day-vasten";
     if (hasF && hasH) return "day-beide";
     if (hasF) return "day-feest";
@@ -372,12 +411,20 @@
 
     const byDay = new Map();
     for (const e of entries) {
-      if (!e || !e.feestdatum) continue;
-      if (!byDay.has(e.feestdatum)) byDay.set(e.feestdatum, new Set());
-      byDay.get(e.feestdatum).add(e.soort);
+      if (!e) continue;
+      let mmdd = null;
+      if (e.cyclus === "paascyclus") {
+        // Jaarrooster is Gregoriaans: altijd wereldlijke occurrence.
+        mmdd = (e.occurrences || {})[String(viewYear)] || null;
+      } else {
+        mmdd = e.feestdatum || null;
+      }
+      if (!mmdd) continue;
+      if (!byDay.has(mmdd)) byDay.set(mmdd, new Set());
+      addObservances(byDay.get(mmdd), e);
     }
 
-    const today = todayMmdd(style);
+    const civilToday = civilTodayMmdd();
     const dow = ["ma", "di", "wo", "do", "vr", "za", "zo"];
     let html = "";
     for (let month = 1; month <= 12; month++) {
@@ -394,7 +441,7 @@
         const color = dayClass(kinds);
         const has = kinds.size > 0;
         const isToday =
-          viewYear === new Date().getFullYear() && mmdd === today;
+          viewYear === new Date().getFullYear() && mmdd === civilToday;
         const cls = ["day", has ? "has-entry" : "", color, isToday ? "is-today" : ""]
           .filter(Boolean)
           .join(" ");
@@ -467,10 +514,14 @@
 
     if (monthNav) {
       monthNav.hidden = browseMode !== "maand";
+      const year = new Date().getFullYear();
       monthNav.innerHTML = MONTHS.slice(1)
         .map((name, i) => {
           const mm = String(i + 1).padStart(2, "0");
-          const count = filtered.filter((e) => e.feestdatum.startsWith(mm + "-")).length;
+          const count = filtered.filter((e) => {
+            const fd = entryMmddOnYear(e, year, "gregoriaans");
+            return fd && fd.startsWith(mm + "-");
+          }).length;
           const pressed = mm === activeMonth ? "true" : "false";
           return `<button type="button" class="letter-btn" data-month="${mm}" aria-pressed="${pressed}" ${count ? "" : "disabled"}>${name.slice(0, 3)}</button>`;
         })
@@ -484,6 +535,7 @@
     }
 
     let subset;
+    const year = new Date().getFullYear();
     if (browseMode === "letter") {
       subset = filtered.filter((e) => firstLetter(e.naam) === activeLetter);
       if (hint) {
@@ -491,17 +543,31 @@
       }
       subset.sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
     } else {
-      subset = filtered.filter((e) => e.feestdatum.startsWith(activeMonth + "-"));
+      subset = filtered.filter((e) => {
+        const fd = entryMmddOnYear(e, year, "gregoriaans");
+        return fd && fd.startsWith(activeMonth + "-");
+      });
       if (hint) {
-        hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]}: ${subset.length} item(s).`;
+        hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]} ${year}: ${subset.length} item(s).`;
       }
-      subset.sort((a, b) => a.feestdatum.localeCompare(b.feestdatum) || a.naam.localeCompare(b.naam, "nl"));
+      subset.sort((a, b) => {
+        const fa = entryMmddOnYear(a, year, "gregoriaans") || "";
+        const fb = entryMmddOnYear(b, year, "gregoriaans") || "";
+        return fa.localeCompare(fb) || a.naam.localeCompare(b.naam, "nl");
+      });
     }
 
     list.innerHTML = subset
       .map((e) => {
-        const kind = e.soort === "feest" ? "Feest" : "Heilige";
-        return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">${label(e.feestdatum)} · ${kind}</span></li>`;
+        const kind =
+          e.cyclus === "paascyclus"
+            ? "Paascyclus"
+            : e.soort === "feest"
+              ? "Feest"
+              : "Heilige";
+        const fd = entryMmddOnYear(e, year, "gregoriaans");
+        const when = fd ? label(fd) : "paascyclus";
+        return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">${when} · ${kind}</span></li>`;
       })
       .join("");
   }

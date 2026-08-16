@@ -1,0 +1,27 @@
+id: grote-dinsdag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Grote Dinsdag
+  alternatief:
+  - Heilige en Grote Dinsdag
+observances:
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -5
+samenvatting: |
+  Heilige Week; gelijkenissen van waakzaamheid.
+verhaal: |
+  Grote Dinsdag houdt de gelijkenissen van de tien maagden en de talentenvoor ogen: waakzaamheid en trouw terwijl de Bruidegom nadert.
+referenties:
+  - label: "OrthodoxWiki — Grote Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Lijdensweek"
+    url: "https://orthodoxwiki.org/Passion_Week"
+    geraadpleegd: "2026-08-16"

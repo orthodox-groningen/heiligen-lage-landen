@@ -19,5 +19,6 @@ locaties:
 periode: '1079'
 samenvatting: 'Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Adela van Mesen"
+    url: "https://nl.wikipedia.org/wiki/Adela_van_Mesen"
+    geraadpleegd: "2026-08-16"

@@ -1,0 +1,28 @@
+id: midden-pinksterfeest
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Midden-Pinksterfeest
+  alternatief:
+  - Mid-Pinksteren
+  - Middenfeest
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 24
+samenvatting: |
+  Halverwege tussen Pascha en Pinksteren.
+verhaal: |
+  Het Midden-Pinksterfeest markeert het midden van de vijftig dagen. Christus leert in de tempel over levend water (Joh. 7): verlangen naar de gave van de Geest.
+referenties:
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"

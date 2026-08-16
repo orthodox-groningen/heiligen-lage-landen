@@ -5,6 +5,10 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Werenfrid
+  alternatief:
+  - Werenfried van Elst
+  - Werenfridus
+  - Werenfried
 datum:
   waarde: 08-14
   stijl: gregoriaans
@@ -16,5 +20,9 @@ periode: ~760
 samenvatting: 'Heilige van de Lage Landen: Werenfrid. Icoon in parochie, monnik, priester,
   geloofsverkondiger in Friesland.'
 referenties:
-- bron_id: hlex
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Werenfried van Elst"
+    url: "https://nl.wikipedia.org/wiki/Werenfried_van_Elst"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Werenfridus"
+    url: "https://www.heiligen.net/heiligen/08/14/08-14-0760-werenfridus.php"
+    geraadpleegd: "2026-08-16"

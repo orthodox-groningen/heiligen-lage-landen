@@ -8,6 +8,7 @@ namen:
   alternatief:
   - Amelberg
   - Amelberga
+  - Amalberga
 datum:
   waarde: 11-21
   stijl: gregoriaans
@@ -21,5 +22,6 @@ locaties:
 periode: 9e eeuw
 samenvatting: 'Heilige van de Lage Landen: Amalberga van Susteren. Abdis.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "heiligen.net — Amalberga"
+    url: "https://www.heiligen.net/heiligen/11/21/11-21-0900-amalberga.php"
+    geraadpleegd: "2026-08-16"

@@ -7,6 +7,8 @@ namen:
   primair: Albericus van Utrecht
   alternatief:
   - Albricus
+  - Alberik I van Utrecht
+  - Alberik van Utrecht
 datum:
   waarde: 03-04
   stijl: gregoriaans
@@ -26,5 +28,6 @@ locaties:
 periode: '784'
 samenvatting: 'Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Alberik I van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht"
+    geraadpleegd: "2026-08-16"

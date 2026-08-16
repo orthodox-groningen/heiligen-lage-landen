@@ -4,7 +4,12 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Aankondiging aan de Moeder Gods"
+  primair: Aankondiging aan de Moeder Gods
+  alternatief:
+  - Aankondiging
+  - Annunciatie
+  - Evangelismos
+  - Aankondiging aan de Theotokos
 datum:
   waarde: "03-25"
   stijl: juliaans
@@ -13,7 +18,12 @@ samenvatting: |
 verhaal: |
   Op dit feest wordt herdacht dat Maria ja zegt op Gods uitnodiging; het Woord wordt vlees.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Aankondiging"
+    url: "https://orthodoxwiki.org/Annunciation"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Aankondiging"
+    url: "https://www.oca.org/saints/lives/2024/03/25/100884-the-annunciation-of-our-most-holy-lady-the-theotokos-and-ever-vi"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Het Orthodoxe geloof: Aankondiging"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/annunciation"
+    geraadpleegd: "2026-08-16"

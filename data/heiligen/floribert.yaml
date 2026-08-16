@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Floribert
+  alternatief:
+  - Floribertus van Luik
+  - Floribertus
 datum:
   waarde: 04-27
   stijl: gregoriaans
@@ -13,5 +16,6 @@ titels:
 periode: '746'
 samenvatting: 'Heilige van de Lage Landen: Floribert. Bisschop van Luik.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Floribertus van Luik"
+    url: "https://nl.wikipedia.org/wiki/Floribertus_van_Luik"
+    geraadpleegd: "2026-08-16"

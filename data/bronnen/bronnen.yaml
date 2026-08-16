@@ -12,17 +12,26 @@ bronnen:
     naam: "Ökumenisches Heiligenlexikon"
     url: "https://www.heiligenlexikon.de/"
   - id: hlex-plaatsen
-    naam: "Heiligenlexikon — Orte Niederlande"
+    naam: "Heiligenlexikon — plaatsen Nederland"
     url: "https://www.heiligenlexikon.de/Orte/GLand.html?Niederlande.kml"
   - id: orthodoxwiki-nativity
-    naam: "OrthodoxWiki — Nativity"
+    naam: "OrthodoxWiki — Geboorte van Christus"
     url: "https://orthodoxwiki.org/Nativity"
   - id: orthodoxwiki-theophany
-    naam: "OrthodoxWiki — Theophany"
+    naam: "OrthodoxWiki — Theofanie"
     url: "https://orthodoxwiki.org/Theophany"
   - id: orthodoxwiki-pascha-note
-    naam: "OrthodoxWiki — Great Feasts"
-    url: "https://orthodoxwiki.org/Great_Feasts"
+    naam: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
   - id: oca-calendar
-    naam: "OCA — Lives of the Saints / Feasts"
-    url: "https://www.oca.org/saints/lives"
+    naam: "OCA — Heilig Pascha"
+    url: "https://www.oca.org/saints/lives/2025/04/20/27-holy-pascha-the-resurrection-of-our-lord"
+  - id: orthodoxwiki-pascha
+    naam: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
+  - id: orthodoxwiki-triodion
+    naam: "OrthodoxWiki — Triodion"
+    url: "https://orthodoxwiki.org/Triodion"
+  - id: goarch-lent
+    naam: "GOARCH — Grote Vasten & Grote Week"
+    url: "https://www.goarch.org/lent"

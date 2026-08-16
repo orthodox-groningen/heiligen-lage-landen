@@ -4,6 +4,6 @@ description: "Wat een vaste feestdatum wel en niet betekent"
 ---
 
 Een vast feest of een heilige heeft een **feestdatum**: een dag in het jaar,
-zoals *6 augustus* (Verheerlijking) of *15 augustus* (Ontslapen).
+zoals *6 augustus* (Transfiguratie) of *15 augustus* (Ontslapen).
 Die dagnaam is in de nieuwe en de oude kalender **dezelfde**:
 Ontslapen is 15 augustus in beide.

@@ -1,0 +1,31 @@
+id: teruggave-pascha
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Teruggave van Pascha
+  alternatief:
+  - Apodosis van Pascha
+  - Teruggave van Pasen
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 38
+samenvatting: |
+  Laatste dag van de Pascha-viering vóór Hemelvaart.
+verhaal: |
+  Met de teruggave van Pascha eindigt de periode waarin het opstandingsfeest liturgisch centraal staat. De volgende dag volgt Hemelvaart.
+referenties:
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pascha"
+    url: "https://orthodoxwiki.org/Pascha"
+    geraadpleegd: "2026-08-16"

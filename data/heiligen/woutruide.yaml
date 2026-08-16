@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Woutruide
+  alternatief:
+  - Waldetrudis
+  - Waudru
 datum:
   waarde: 04-09
   stijl: gregoriaans
@@ -13,5 +16,6 @@ titels:
 periode: '688'
 samenvatting: 'Heilige van de Lage Landen: Woutruide. Stichteres van een klooster.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Waldetrudis"
+    url: "https://nl.wikipedia.org/wiki/Waldetrudis"
+    geraadpleegd: "2026-08-16"

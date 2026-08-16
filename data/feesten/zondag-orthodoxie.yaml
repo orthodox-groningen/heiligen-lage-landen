@@ -1,0 +1,30 @@
+id: zondag-orthodoxie
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Eerste zondag van de Vasten (Zondag van de Orthodoxie)"
+  alternatief:
+  - Eerste zondag van de Vasten
+  - Zondag van de Orthodoxie
+  - Orthodoxiezondag
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -42
+samenvatting: |
+  Herstel van de iconenverering; eerste vastenzondag.
+verhaal: |
+  Deze zondag viert het herstel van de iconen in 843 na de iconoclastische strijd. De Orthodoxy-processie belijdt het geloof van de Kerk en de rechtmatigheid van heilige beelden als vensters op de incarnatie.
+referenties:
+  - label: "OrthodoxWiki — Zondag van de Orthodoxie"
+    url: "https://orthodoxwiki.org/Sunday_of_Orthodoxy"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Vasten"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    geraadpleegd: "2026-08-16"

@@ -1,0 +1,32 @@
+id: schone-maandag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Schone Maandag (begin Grote Vasten)"
+  alternatief:
+  - Schone Maandag
+  - begin Grote Vasten
+  - Begin van de Grote Vasten
+observances:
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -48
+samenvatting: |
+  Eerste dag van de Grote Vasten.
+verhaal: |
+  Schone Maandag opent de veertigdagenvasten. De nadruk ligt op reiniging van hart en gewoonten: gebed, onthouding en aalmoezen als weg naar Pascha.
+referenties:
+  - label: "OrthodoxWiki — Schone Maandag"
+    url: "https://orthodoxwiki.org/Clean_Monday"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Vasten"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Grote Vasten"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/great-lent"
+    geraadpleegd: "2026-08-16"

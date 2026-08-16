@@ -5,12 +5,17 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Gregorius van Utrecht
+  alternatief:
+  - Gregorius
 datum:
   waarde: 08-25
   stijl: gregoriaans
 periode: '775'
 samenvatting: 'Heilige van de Lage Landen: Gregorius van Utrecht.'
 referenties:
-- label: thabor aug. 2024
-  geraadpleegd: '2026-08-15'
-  opmerking: Nog te normaliseren naar bronnen.yaml
+  - label: "Wikipedia (NL) — Gregorius van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Gregorius_van_Utrecht"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Gregorius"
+    url: "https://www.heiligen.net/heiligen/08/25/08-25-0775-gregorius.php"
+    geraadpleegd: "2026-08-16"

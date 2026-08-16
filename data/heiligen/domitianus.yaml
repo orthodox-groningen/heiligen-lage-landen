@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Domitianus
+  alternatief:
+  - Domitianus van Hoei
 datum:
   waarde: 05-07
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: '560'
 samenvatting: 'Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Domitianus van Hoei"
+    url: "https://nl.wikipedia.org/wiki/Domitianus_van_Hoei"
+    geraadpleegd: "2026-08-16"

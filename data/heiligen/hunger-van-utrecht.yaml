@@ -5,11 +5,17 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Hunger van Utrecht
+  alternatief:
+  - Hunger
 datum:
   waarde: 12-22
   stijl: gregoriaans
 periode: '866'
 samenvatting: 'Heilige van de Lage Landen: Hunger van Utrecht.'
 referenties:
-- bron_id: wiki-heiligen
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Hunger van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Hunger_van_Utrecht"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Hunger"
+    url: "https://www.heiligen.net/heiligen/12/22/12-22-0866-hunger.php"
+    geraadpleegd: "2026-08-16"

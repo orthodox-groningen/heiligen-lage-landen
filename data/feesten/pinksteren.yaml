@@ -1,0 +1,30 @@
+id: pinksteren
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Pinksteren (Nederdaling van de Heilige Geest)"
+  alternatief:
+  - Feest van de Drie-eenheid
+  - Pinksteren
+  - Nederdaling van de Heilige Geest
+  - Drie-eenheidsfeest
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 49
+samenvatting: |
+  Vijftig dagen na Pascha; gave van de Heilige Geest.
+verhaal: |
+  Op Pinksteren daalt de Heilige Geest neer op de apostelen. Het feest voltooit de paascyclus van vijftig dagen en viert de geborenwording van de Kerk in de kracht van de Geest. Vaak wordt ook de Allerheiligste Drie-eenheid bijzonder herdacht.
+referenties:
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"

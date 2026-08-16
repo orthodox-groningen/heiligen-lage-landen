@@ -1,0 +1,30 @@
+id: grote-maandag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Grote Maandag
+  alternatief:
+  - Heilige en Grote Maandag
+observances:
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -6
+samenvatting: |
+  Eerste dag van de Heilige Week; Jozef de Alschone; onvruchtbare vijgenboom.
+verhaal: |
+  In de Heilige Week richt de liturgie zich op Christus’ weg naar het kruis. Grote Maandag gedenkt onder meer de kuise Jozef en de les van de onvruchtbare vijgenboom.
+referenties:
+  - label: "OrthodoxWiki — Grote Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Lijdensweek"
+    url: "https://orthodoxwiki.org/Passion_Week"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Grote Week"
+    url: "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/holy-week"
+    geraadpleegd: "2026-08-16"

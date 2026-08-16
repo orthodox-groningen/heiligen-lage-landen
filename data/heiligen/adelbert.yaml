@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Adelbert
+  alternatief:
+  - Adelbert van Egmond
+  - Adalbert van Egmond
 datum:
   waarde: 06-25
   stijl: gregoriaans
@@ -13,9 +16,9 @@ titels:
 periode: '740'
 samenvatting: 'Heilige van de Lage Landen: Adelbert. Aartsdiaken.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
-- bron_id: wiki-heiligen
-  geraadpleegd: '2026-08-15'
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Adelbert van Egmond"
+    url: "https://nl.wikipedia.org/wiki/Adelbert_van_Egmond"
+    geraadpleegd: "2026-08-16"
+  - label: "Heiligenlexikon — Adelbert van Egmond"
+    url: "https://www.heiligenlexikon.de/BiographienA/Adalbert_von_Egmond.html"
+    geraadpleegd: "2026-08-16"

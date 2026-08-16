@@ -11,5 +11,6 @@ datum:
 periode: '729'
 samenvatting: 'Heilige van de Lage Landen: Egbert van Rathmelsigi.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Egbert van Rathmelsigi"
+    url: "https://nl.wikipedia.org/wiki/Egbert_van_Rathmelsigi"
+    geraadpleegd: "2026-08-16"

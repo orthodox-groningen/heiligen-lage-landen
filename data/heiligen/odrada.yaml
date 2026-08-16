@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Odrada
+  alternatief:
+  - Odrada van Alem
 datum:
   waarde: 11-05
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: 8e eeuw
 samenvatting: 'Heilige van de Lage Landen: Odrada. Maagd van Balen.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Odrada van Alem"
+    url: "https://nl.wikipedia.org/wiki/Odrada_van_Alem"
+    geraadpleegd: "2026-08-16"

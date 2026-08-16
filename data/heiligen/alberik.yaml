@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Alberik
+  alternatief:
+  - Alberik I van Utrecht
+  - Albericus
 datum:
   waarde: 11-14
   stijl: gregoriaans
@@ -13,5 +16,6 @@ titels:
 periode: '784'
 samenvatting: 'Heilige van de Lage Landen: Alberik. Bisschop van Utrecht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Alberik I van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht"
+    geraadpleegd: "2026-08-16"

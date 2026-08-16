@@ -5,6 +5,10 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Swidbert
+  alternatief:
+  - Suitbertus
+  - Suitbert
+  - Swidbertus
 datum:
   waarde: 03-01
   stijl: gregoriaans
@@ -13,5 +17,6 @@ titels:
 periode: '713'
 samenvatting: 'Heilige van de Lage Landen: Swidbert. Monastieke stichter aan de Rijn.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Suitbertus"
+    url: "https://nl.wikipedia.org/wiki/Suitbertus"
+    geraadpleegd: "2026-08-16"

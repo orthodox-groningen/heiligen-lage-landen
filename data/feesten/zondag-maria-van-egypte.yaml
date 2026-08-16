@@ -1,0 +1,30 @@
+id: zondag-maria-van-egypte
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Vijfde zondag van de Vasten (Maria van Egypte)"
+  alternatief:
+  - Vijfde zondag van de Vasten
+  - Maria van Egypte
+  - Zondag van Maria van Egypte
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -14
+samenvatting: |
+  Gedachtenis van de heilige Maria van Egypte.
+verhaal: |
+  Maria van Egypte, van zondares tot woestijnheilige, belichaamt radicale bekering. Haar leven wordt in de vasten gelezen als hoop voor wie laat tot inkeer komt.
+referenties:
+  - label: "OrthodoxWiki — Maria van Egypte"
+    url: "https://orthodoxwiki.org/Mary_of_Egypt"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Vasten"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    geraadpleegd: "2026-08-16"

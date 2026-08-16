@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Wiro
+  alternatief:
+  - Wiro van Roermond
 datum:
   waarde: 05-11
   stijl: gregoriaans
@@ -14,5 +16,6 @@ periode: '710'
 samenvatting: 'Heilige van de Lage Landen: Wiro. Ierse missionaris, bisschop in Limburg,
   Nederland.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Wiro van Roermond"
+    url: "https://nl.wikipedia.org/wiki/Wiro_van_Roermond"
+    geraadpleegd: "2026-08-16"

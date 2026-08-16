@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Lebuinus
+  alternatief:
+  - Lebuin
+  - Lebuïnus
 datum:
   waarde: 11-12
   stijl: gregoriaans
@@ -12,5 +15,6 @@ titels:
 - Missionaris monnik in Nederland
 samenvatting: 'Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Nederland.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Lebuïnus"
+    url: "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"
+    geraadpleegd: "2026-08-16"

@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Amalberga van Temse
+  alternatief:
+  - Amalberga
 datum:
   waarde: 07-10
   stijl: gregoriaans
@@ -15,5 +17,9 @@ locaties:
 periode: '772'
 samenvatting: 'Heilige van de Lage Landen: Amalberga van Temse. Monnik.'
 referenties:
-- bron_id: wiki-heiligen
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Amalberga van Temse"
+    url: "https://nl.wikipedia.org/wiki/Amalberga_van_Temse"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Amalberga"
+    url: "https://www.heiligen.net/heiligen/07/10/07-10-0772-amalberga.php"
+    geraadpleegd: "2026-08-16"

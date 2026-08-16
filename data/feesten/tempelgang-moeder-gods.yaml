@@ -4,7 +4,11 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Tempelgang van de Moeder Gods"
+  primair: Tempelgang van de Moeder Gods
+  alternatief:
+  - Tempelgang
+  - Intocht van de Moeder Gods in de tempel
+  - Tempelgang van de Theotokos
 datum:
   waarde: "11-21"
   stijl: juliaans
@@ -13,7 +17,9 @@ samenvatting: |
 verhaal: |
   De traditie viert dat Maria als kind aan God wordt toegewijd in de tempel te Jeruzalem.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Tempelgang van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Entrance_of_the_Theotokos"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Tempelgang van de Moeder Gods"
+    url: "https://www.oca.org/saints/lives/2024/11/21/103341-the-entry-of-the-most-holy-mother-of-god-into-the-temple"
+    geraadpleegd: "2026-08-16"

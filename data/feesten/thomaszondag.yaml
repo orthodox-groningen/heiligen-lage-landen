@@ -1,0 +1,33 @@
+id: thomaszondag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Thomaszondag (Antipascha)"
+  alternatief:
+  - Zondag van de ongelovige Thomas
+  - Thomaszondag
+  - Antipascha
+  - Zondag van Thomas
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 7
+samenvatting: |
+  Eerste zondag na Pascha; belijdenis van Thomas.
+verhaal: |
+  Thomas belijdt “Mijn Heer en mijn God” wanneer hij de wonden van de Opgestane ziet (Joh. 20). Antipascha sluit de Lichte Week en opent de reeks zondagen tot Pinksteren.
+referenties:
+  - label: "OrthodoxWiki — Apostel Thomas"
+    url: "https://orthodoxwiki.org/Apostle_Thomas"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Pentecostarion"
+    url: "https://orthodoxwiki.org/Pentecostarion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Lichte Week"
+    url: "https://orthodoxwiki.org/Bright_Week"
+    geraadpleegd: "2026-08-16"

@@ -13,5 +13,6 @@ titels:
 periode: '667'
 samenvatting: 'Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Remaclus"
+    url: "https://nl.wikipedia.org/wiki/Remaclus"
+    geraadpleegd: "2026-08-16"

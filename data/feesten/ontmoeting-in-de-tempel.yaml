@@ -4,7 +4,12 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Ontmoeting in de Tempel"
+  primair: Ontmoeting in de Tempel
+  alternatief:
+  - Ontmoeting
+  - Ontmoeting des Heren
+  - Hypapante
+  - Opdracht in de tempel
 datum:
   waarde: "02-02"
   stijl: juliaans
@@ -13,7 +18,9 @@ samenvatting: |
 verhaal: |
   Veertig dagen na Kerst wordt het Kind naar de tempel gebracht. De rechtvaardige Simeon herkent Hem als het heil van God.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Ontmoeting in de tempel"
+    url: "https://orthodoxwiki.org/Presentation"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Ontmoeting van de Heer in de tempel"
+    url: "https://www.oca.org/saints/lives/2024/02/02/100406-the-meeting-of-our-lord-god-and-savior-jesus-christ-in-the-temple"
+    geraadpleegd: "2026-08-16"

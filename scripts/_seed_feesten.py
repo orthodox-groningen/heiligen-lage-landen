@@ -47,8 +47,8 @@ feesten = [
         "De kerk eert Petrus en Paulus als zuilen van de apostolische verkondiging.",
     ),
     (
-        "verheerlijking",
-        "Verheerlijking op de berg Thabor",
+        "transfiguratie",
+        "Transfiguratie (op de berg Thabor)",
         "08-06",
         "Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.",
         "Op de berg Thabor wordt de heerlijkheid van Christus geopenbaard; Mozes en Elia verschijnen met Hem.",

@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Medardus
+  alternatief:
+  - Medardus van Noyon
 datum:
   waarde: 06-08
   stijl: gregoriaans
@@ -13,5 +15,6 @@ titels:
 periode: '560'
 samenvatting: 'Heilige van de Lage Landen: Medardus. Bisschop van Noyon.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Medardus van Noyon"
+    url: "https://nl.wikipedia.org/wiki/Medardus_van_Noyon"
+    geraadpleegd: "2026-08-16"

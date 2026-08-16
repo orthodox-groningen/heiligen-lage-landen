@@ -1,0 +1,28 @@
+id: zondag-tollenaar-en-farizeeer
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de tollenaar en de Farizeeër
+  alternatief:
+  - Zondag van de tollenaar en Farizeeër
+  - Tollenaar en Farizeeër
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -70
+samenvatting: |
+  Opening van het Triodion; les over ootmoedig gebed.
+verhaal: |
+  Met deze zondag begint het liturgische boek Triodion. De gelijkenis (Lc. 18) stelt de nederige tollenaar tegenover de zelfgenoegzame Farizeeër: rechtvaardiging komt door berouw, niet door opscheppen over verdiensten.
+referenties:
+  - label: "OrthodoxWiki — Zondag van de tollenaar en de Farizeeër"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Publican_and_Pharisee"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Triodion"
+    url: "https://orthodoxwiki.org/Lenten_Triodion"
+    geraadpleegd: "2026-08-16"

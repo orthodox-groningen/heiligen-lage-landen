@@ -1,0 +1,29 @@
+id: zondag-laatste-oordeel
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Zondag van het Laatste Oordeel (Vleesvaarwel)"
+  alternatief:
+  - Vleesvaarwelzondag
+  - Zondag van het Laatste Oordeel
+  - Vleesvaarwel
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -56
+samenvatting: |
+  Laatste dag met vlees; evangelie van het Laatste Oordeel.
+verhaal: |
+  Vleesmijdingszondag is de laatste dag waarop traditioneel vlees wordt gegeten vóór de vasten. Het evangelie van het Laatste Oordeel (Mt. 25) herinnert eraan dat liefde tot de naaste meetelt voor Gods oordeel. Daarna volgt de Kaasweek.
+referenties:
+  - label: "OrthodoxWiki — Zondag van het Laatste Oordeel"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Last_Judgment"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Vleesmijding"
+    url: "https://orthodoxwiki.org/Meatfare_Sunday"
+    geraadpleegd: "2026-08-16"

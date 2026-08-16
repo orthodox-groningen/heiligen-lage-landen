@@ -4,7 +4,13 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Onthoofding van Johannes de Doper"
+  primair: Onthoofding van Johannes de Doper
+  alternatief:
+  - Onthoofding van Johannes de Voorloper
+  - Onthoofding van de Voorloper
+observances:
+  - feest
+  - vasten
 datum:
   waarde: "08-29"
   stijl: juliaans
@@ -13,7 +19,9 @@ samenvatting: |
 verhaal: |
   Johannes wordt onthoofd op bevel van Herodes; de Kerk bewaart deze dag als vastendag in veel tradities.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Onthoofding van Johannes de Voorloper"
+    url: "https://orthodoxwiki.org/Beheading_of_St._John_the_Forerunner"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Onthoofding van Johannes de Voorloper"
+    url: "https://www.oca.org/saints/lives/2024/08/29/102409-the-beheading-of-the-holy-glorious-prophet-forerunner-and-baptis"
+    geraadpleegd: "2026-08-16"

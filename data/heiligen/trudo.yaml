@@ -13,5 +13,6 @@ titels:
 periode: '693'
 samenvatting: 'Heilige van de Lage Landen: Trudo. Abt, stichter abdij St. Truiden.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Trudo"
+    url: "https://nl.wikipedia.org/wiki/Trudo"
+    geraadpleegd: "2026-08-16"

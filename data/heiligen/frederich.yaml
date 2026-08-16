@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Frederich
+  alternatief:
+  - Frederik van Utrecht
+  - Frederik
 datum:
   waarde: 07-18
   stijl: gregoriaans
@@ -13,5 +16,6 @@ titels:
 periode: 9e eeuw
 samenvatting: 'Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Frederik van Utrecht"
+    url: "https://nl.wikipedia.org/wiki/Frederik_van_Utrecht"
+    geraadpleegd: "2026-08-16"

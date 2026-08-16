@@ -5,6 +5,11 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Theodaard van Maastricht
+  alternatief:
+  - Theodardus
+  - Theodardus van Maastricht
+  - Theodard van Maastricht
+  - Theodard
 datum:
   waarde: 09-10
   stijl: gregoriaans
@@ -15,5 +20,9 @@ locaties:
 periode: '668'
 samenvatting: 'Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Theodardus"
+    url: "https://nl.wikipedia.org/wiki/Theodardus"
+    geraadpleegd: "2026-08-16"
+  - label: "Wikipedia (EN) — Theodardus van Maastricht"
+    url: "https://en.wikipedia.org/wiki/Theodard_of_Maastricht"
+    geraadpleegd: "2026-08-16"

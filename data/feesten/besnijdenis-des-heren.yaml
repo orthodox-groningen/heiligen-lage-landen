@@ -4,7 +4,10 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "Besnijdenis des Heren"
+  primair: Besnijdenis des Heren
+  alternatief:
+  - Besnijdenis
+  - Besnijdenis van Christus
 datum:
   waarde: "01-01"
   stijl: juliaans
@@ -13,7 +16,9 @@ samenvatting: |
 verhaal: |
   Het Kind Jezus wordt volgens de wet van Mozes besneden op de achtste dag na Zijn geboorte. In de orthodoxe traditie valt dit feest op 1 januari volgens de Juliaanse kalenderrekening van de vaste cyclus.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Besnijdenis des Heren"
+    url: "https://orthodoxwiki.org/Circumcision_of_our_Lord"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Besnijdenis des Heren"
+    url: "https://www.oca.org/saints/lives/2024/01/01/100001-the-circumcision-of-our-lord-and-savior-jesus-christ"
+    geraadpleegd: "2026-08-16"

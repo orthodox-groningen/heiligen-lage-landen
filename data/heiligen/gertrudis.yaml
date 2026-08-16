@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Gertrudis
+  alternatief:
+  - Gertrudis van Nijvel
+  - Geertrui
 datum:
   waarde: 02-12
   stijl: gregoriaans
@@ -17,5 +20,6 @@ periode: '659'
 samenvatting: 'Heilige van de Lage Landen: Gertrudis. Icoon in parochie, abdis van
   Nijvel.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Gertrudis van Nijvel"
+    url: "https://nl.wikipedia.org/wiki/Gertrudis_van_Nijvel"
+    geraadpleegd: "2026-08-16"

@@ -1,0 +1,28 @@
+id: zondag-vaderen-eerste-concilie
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zondag van de heilige Vaderen van het Eerste Concilie
+  alternatief:
+  - Zondag van de Vaderen van Nicea
+  - Zondag van de 318 Vaderen
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 42
+samenvatting: |
+  Vaderen van Nicea (325); zondag na Hemelvaart.
+verhaal: |
+  Tussen Hemelvaart en Pinksteren eert de Kerk de Vaderen van het Eerste Oecumenische Concilie te Nicea, die het geloof in Christus als ware God beleden.
+referenties:
+  - label: "OrthodoxWiki — Eerste Oecumenische Concilie"
+    url: "https://orthodoxwiki.org/First_Ecumenical_Council"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Hemelvaart"
+    url: "https://orthodoxwiki.org/Ascension"
+    geraadpleegd: "2026-08-16"

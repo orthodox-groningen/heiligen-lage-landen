@@ -7,6 +7,7 @@ namen:
   primair: Acharius van Doornik
   alternatief:
   - Achaire
+  - Acharius
 datum:
   waarde: 11-27
   stijl: gregoriaans
@@ -17,5 +18,6 @@ locaties:
 periode: ~640
 samenvatting: 'Heilige van de Lage Landen: Acharius van Doornik. Bisschop.'
 referenties:
-- bron_id: hnet
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Acharius"
+    url: "https://nl.wikipedia.org/wiki/Acharius"
+    geraadpleegd: "2026-08-16"

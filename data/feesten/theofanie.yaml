@@ -5,6 +5,12 @@ cyclus: jaar
 lagenlanden: false
 namen:
   primair: "Theofanie (Doop des Heren)"
+  alternatief:
+  - Theofanie
+  - Doop des Heren
+  - Doop van Christus
+  - Epifanie
+  - Openbaring des Heren
 datum:
   waarde: "01-06"
   stijl: juliaans
@@ -13,7 +19,9 @@ samenvatting: |
 verhaal: |
   Bij de doop van Christus in de Jordaan openbaart God zich als Vader (stem), Zoon (Christus) en Heilige Geest (duif). Theofanie is een van de grote vaste feesten.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Theofanie"
+    url: "https://orthodoxwiki.org/Theophany"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Heilige Theofanie"
+    url: "https://www.oca.org/saints/lives/2024/01/06/100105-the-holy-theophany-of-our-lord-god-and-savior-jesus-christ"
+    geraadpleegd: "2026-08-16"

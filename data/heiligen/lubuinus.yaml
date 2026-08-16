@@ -5,6 +5,9 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Lubuinus
+  alternatief:
+  - Lebuïnus
+  - Lebuinus
 datum:
   waarde: 11-16
   stijl: gregoriaans
@@ -13,5 +16,6 @@ titels:
 periode: '773'
 samenvatting: 'Heilige van de Lage Landen: Lubuinus. Missionaris in Friesland.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Lebuïnus"
+    url: "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"
+    geraadpleegd: "2026-08-16"

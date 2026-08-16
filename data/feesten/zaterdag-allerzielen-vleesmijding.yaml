@@ -1,0 +1,28 @@
+id: zaterdag-allerzielen-vleesmijding
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Allerzielen-zaterdag (vóór Vleesvaarwel)"
+  alternatief:
+  - Allerzielen-zaterdag
+  - Zaterdag vóór Vleesvaarwel
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -57
+samenvatting: |
+  Gedachtenis van alle overledenen vóór de Vleesvaarwelzondag.
+verhaal: |
+  Op deze zaterdag gedenkt de Kerk allen die in geloof zijn ontslapen. De voorvasten verbindt zo gebed voor de levenden met voorbede voor de doden.
+referenties:
+  - label: "OrthodoxWiki — Vleesvaarwel"
+    url: "https://orthodoxwiki.org/Meatfare_Sunday"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Triodion"
+    url: "https://orthodoxwiki.org/Lenten_Triodion"
+    geraadpleegd: "2026-08-16"

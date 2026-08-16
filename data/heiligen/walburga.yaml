@@ -13,5 +13,6 @@ titels:
 periode: '779'
 samenvatting: 'Heilige van de Lage Landen: Walburga. Abdis van Heidenheim.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Walburga"
+    url: "https://nl.wikipedia.org/wiki/Walburga"
+    geraadpleegd: "2026-08-16"

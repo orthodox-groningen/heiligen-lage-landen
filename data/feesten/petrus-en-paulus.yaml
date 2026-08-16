@@ -4,7 +4,10 @@ status: curated
 cyclus: jaar
 lagenlanden: false
 namen:
-  primair: "H.H. Apostelen Petrus en Paulus"
+  primair: H.H. Apostelen Petrus en Paulus
+  alternatief:
+  - Petrus en Paulus
+  - Feest van de apostelen Petrus en Paulus
 datum:
   waarde: "06-29"
   stijl: juliaans
@@ -13,7 +16,12 @@ samenvatting: |
 verhaal: |
   De kerk eert Petrus en Paulus als zuilen van de apostolische verkondiging.
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
-    geraadpleegd: "2026-08-15"
-  - bron_id: oca-calendar
-    geraadpleegd: "2026-08-15"
+  - label: "OrthodoxWiki — Apostel Petrus"
+    url: "https://orthodoxwiki.org/Apostle_Peter"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Apostel Paulus"
+    url: "https://orthodoxwiki.org/Apostle_Paul"
+    geraadpleegd: "2026-08-16"
+  - label: "OCA — Petrus en Paulus"
+    url: "https://www.oca.org/saints/lives/2024/06/29/101838-the-holy-glorious-and-all-praised-leaders-of-the-apostles-peter"
+    geraadpleegd: "2026-08-16"

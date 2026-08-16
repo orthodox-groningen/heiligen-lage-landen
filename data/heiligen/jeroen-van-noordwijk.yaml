@@ -5,6 +5,8 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Jeroen van Noordwijk
+  alternatief:
+  - Jeroen
 datum:
   waarde: 08-17
   stijl: gregoriaans
@@ -14,5 +16,9 @@ periode: '857'
 samenvatting: 'Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar, icoon
   in parochie.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Jeroen van Noordwijk"
+    url: "https://nl.wikipedia.org/wiki/Jeroen_van_Noordwijk"
+    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Jeroen"
+    url: "https://www.heiligen.net/heiligen/08/17/08-17-0856-jeroen.php"
+    geraadpleegd: "2026-08-16"

@@ -5,6 +5,10 @@ cyclus: jaar
 lagenlanden: true
 namen:
   primair: Gommar
+  alternatief:
+  - Gommarus van Lier
+  - Gommarus
+  - Gummarus
 datum:
   waarde: 10-11
   stijl: gregoriaans
@@ -13,5 +17,6 @@ titels:
 periode: '775'
 samenvatting: 'Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.'
 referenties:
-- bron_id: eir3app
-  geraadpleegd: '2026-08-15'
+  - label: "Wikipedia (NL) — Gommarus van Lier"
+    url: "https://nl.wikipedia.org/wiki/Gommarus_van_Lier"
+    geraadpleegd: "2026-08-16"

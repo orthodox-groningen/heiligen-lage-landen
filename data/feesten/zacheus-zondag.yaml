@@ -1,0 +1,28 @@
+id: zacheus-zondag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Zacheüs-zondag
+  alternatief:
+  - Zacheüszondag
+  - Zondag van Zacheüs
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -77
+samenvatting: |
+  Begin van de voorbereiding op de Grote Vasten; evangelie van Zacheüs.
+verhaal: |
+  De zondag van Zacheüs opent in veel Orthodoxe tradities de reeks Triodion-zondagen die naar de Grote Vasten leiden. Het evangelie (Lc. 19) over de tollenaar die Christus wil zien, nodigt uit tot bekering en verlangen naar Gods aanwezigheid.
+referenties:
+  - label: "OrthodoxWiki — Triodion"
+    url: "https://orthodoxwiki.org/Lenten_Triodion"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Kerkelijk jaar"
+    url: "https://orthodoxwiki.org/Church_Calendar"
+    geraadpleegd: "2026-08-16"

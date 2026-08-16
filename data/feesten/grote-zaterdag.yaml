@@ -1,0 +1,28 @@
+id: grote-zaterdag
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: Grote Zaterdag
+  alternatief:
+  - Heilige en Grote Zaterdag
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -1
+samenvatting: |
+  Christus in het graf; vooravond van Pascha.
+verhaal: |
+  Grote Zaterdag viert Christus’ rust in het graf en zijn nederdaling ter helle. De liturgie draait al naar het licht van Pascha: de dood is verslagen, al is de Opstanding nog niet gevierd.
+referenties:
+  - label: "OrthodoxWiki — Grote Zaterdag"
+    url: "https://orthodoxwiki.org/Holy_Saturday"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Week"
+    url: "https://orthodoxwiki.org/Holy_Week"
+    geraadpleegd: "2026-08-16"

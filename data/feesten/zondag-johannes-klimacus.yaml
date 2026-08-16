@@ -1,0 +1,30 @@
+id: zondag-johannes-klimacus
+soort: feest
+status: curated
+cyclus: paascyclus
+lagenlanden: false
+namen:
+  primair: "Vierde zondag van de Vasten (Johannes Klimacus)"
+  alternatief:
+  - Vierde zondag van de Vasten
+  - Johannes Klimacus
+  - Zondag van Johannes Klimacus
+observances:
+  - feest
+  - vasten
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: -21
+samenvatting: |
+  Gedachtenis van Johannes van de Ladder.
+verhaal: |
+  Johannes Klimacus, auteur van *De Ladder van de goddelijke opgang*, wijst de ascetische treden van bekering. De vierde vastenzondag houdt zijn voorbeeld voor ogen in de strijd van de veertigdagen.
+referenties:
+  - label: "OrthodoxWiki — Johannes Klimacus"
+    url: "https://orthodoxwiki.org/John_Climacus"
+    geraadpleegd: "2026-08-16"
+  - label: "OrthodoxWiki — Grote Vasten"
+    url: "https://orthodoxwiki.org/Great_Lent"
+    geraadpleegd: "2026-08-16"
