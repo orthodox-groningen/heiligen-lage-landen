@@ -8,9 +8,9 @@ generator: scripts/generate.py
 Gegenereerd uit `selectie` op heiligen-YAML. Niet bedoeld voor bezoekers.
 Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 
-**62** heiligen.
+**71** heiligen.
 
-## Voldoet (50)
+## Voldoet (59)
 
 - [Acharius van Doornik](/heiligen/acharius-van-doornik/) (`data/heiligen/acharius-van-doornik.yaml`) — Bisschop van Doornik.
 - [Adelbert](/heiligen/adelbert/) (`data/heiligen/adelbert.yaml`) — Egmond; metgezel van Willibrord.
@@ -23,6 +23,7 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Amandus van Maastricht](/heiligen/amandus-van-maastricht/) (`data/heiligen/amandus-van-maastricht.yaml`) — Maastricht en Elno bij Doornik.
 - [Ansfried (van Utrecht)](/heiligen/ansfried-van-utrecht/) (`data/heiligen/ansfried-van-utrecht.yaml`) — Bisschop van Utrecht.
 - [Bavo](/heiligen/bavo/) (`data/heiligen/bavo.yaml`) — Gent.
+- [Begga](/heiligen/begga/) (`data/heiligen/begga.yaml`) — Dochter van Iduberga; stichting Andenne.
 - [Bernulphus](/heiligen/bernulphus/) (`data/heiligen/bernulphus.yaml`) — Bisschop van Utrecht; sterfjaar 1054, westers episcopaat in de Lage Landen.
 - [Bonifatius](/heiligen/bonifatius/) (`data/heiligen/bonifatius.yaml`) — Missie in Frisia; martelaarschap bij Dokkum.
 - [Cunera](/heiligen/cunera/) (`data/heiligen/cunera.yaml`) — Rhenen.
@@ -36,22 +37,30 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Frederich](/heiligen/frederich/) (`data/heiligen/frederich.yaml`) — Bisschop van Utrecht.
 - [Gertrudis](/heiligen/gertrudis/) (`data/heiligen/gertrudis.yaml`) — Abdis van Nijvel.
 - [Gommar](/heiligen/gommar/) (`data/heiligen/gommar.yaml`) — Lier.
+- [Gondulphus](/heiligen/gondulphus/) (`data/heiligen/gondulphus.yaml`) — Bisschop van Maastricht; cultus samen met Monulphus.
 - [Gregorius van Utrecht](/heiligen/gregorius-van-utrecht/) (`data/heiligen/gregorius-van-utrecht.yaml`) — Utrecht; leerling van Bonifatius.
 - [Gudula van Brussel](/heiligen/gudula-van-brussel/) (`data/heiligen/gudula-van-brussel.yaml`) — Brussel.
 - [Hubertus van Maastricht](/heiligen/hubertus-van-maastricht/) (`data/heiligen/hubertus-van-maastricht.yaml`) — Maastricht / Luik.
 - [Hunger van Utrecht](/heiligen/hunger-van-utrecht/) (`data/heiligen/hunger-van-utrecht.yaml`) — Bisschop van Utrecht.
 - [Iduberga](/heiligen/iduberga/) (`data/heiligen/iduberga.yaml`) — Nijvel.
 - [Jeroen van Noordwijk](/heiligen/jeroen-van-noordwijk/) (`data/heiligen/jeroen-van-noordwijk.yaml`) — Noordwijk.
-- [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`) — Bisschop van Maastricht.
+- [Johannes van Shanghai](/heiligen/johannes-van-shanghai/) (`data/heiligen/johannes-van-shanghai.yaml`) — Bisschop van West-Europa; Nederlandse missie, klooster Den Haag, bisdom 1965.
+- [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`) — Bisschop van Maastricht; martelaar te Luik.
 - [Lebuinus](/heiligen/lebuinus/) (`data/heiligen/lebuinus.yaml`) — Deventer / Friesland.
 - [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`) — Geboren bij Utrecht; missie in Frisia.
 - [Marcellinus van Utrecht](/heiligen/marcellinus-van-utrecht/) (`data/heiligen/marcellinus-van-utrecht.yaml`) — Utrecht.
+- [Monulphus](/heiligen/monulphus/) (`data/heiligen/monulphus.yaml`) — Bisschop van Maastricht; stenen kerk boven het graf van Servatius.
 - [Oda van Amay](/heiligen/oda-van-amay/) (`data/heiligen/oda-van-amay.yaml`) — Amay.
 - [Oda van de Peel](/heiligen/oda-van-de-peel/) (`data/heiligen/oda-van-de-peel.yaml`) — Peel.
 - [Odrada](/heiligen/odrada/) (`data/heiligen/odrada.yaml`) — Balen.
+- [Odulphus](/heiligen/odulphus/) (`data/heiligen/odulphus.yaml`) — Kanunnik van Utrecht; missie in Friesland (Stavoren).
+- [Otger](/heiligen/otger/) (`data/heiligen/otger.yaml`) — Metgezel van Wiro en Plechelm; stichting Odiliënberg.
 - [Plechelm von Odilienberg](/heiligen/plechelm-von-odilienberg/) (`data/heiligen/plechelm-von-odilienberg.yaml`) — Odiliënberg / Nederrijn.
 - [Radboud](/heiligen/radboud/) (`data/heiligen/radboud.yaml`) — Bisschop van Utrecht.
 - [Remaclus](/heiligen/remaclus/) (`data/heiligen/remaclus.yaml`) — Maastricht / Stavelot.
+- [Rumold](/heiligen/rumold/) (`data/heiligen/rumold.yaml`) — Patroon van Mechelen; prediking en martelaarschap in Vlaanderen.
+- [Servatius](/heiligen/servatius/) (`data/heiligen/servatius.yaml`) — Eerste bevestigde bisschop van Tongeren; graf in Maastricht.
+- [Sophrony van Essex](/heiligen/sophrony-van-essex/) (`data/heiligen/sophrony-van-essex.yaml`) — Liturgie in Gent (14 september 1980); geestelijke raad aan de stichteres van Asten.
 - [Swidbert](/heiligen/swidbert/) (`data/heiligen/swidbert.yaml`) — Missie met Willibrord in Frisia; later Kaiserswerth.
 - [Theodaard van Maastricht](/heiligen/theodaard-van-maastricht/) (`data/heiligen/theodaard-van-maastricht.yaml`) — Maastricht.
 - [Trudo](/heiligen/trudo/) (`data/heiligen/trudo.yaml`) — Sint-Truiden.

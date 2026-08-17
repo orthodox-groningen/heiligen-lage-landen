@@ -6,7 +6,7 @@ soort: vasten
 entry_id: apostolisch-vasten
 cyclus: paascyclus
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/apostolisch-vasten.yaml"
 van_offset_dagen: 57
 tot: 06-28

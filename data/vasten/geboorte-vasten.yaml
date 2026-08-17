@@ -2,7 +2,7 @@ id: geboorte-vasten
 soort: vasten
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 vastenniveau: lichter
 namen:
   primair: "Geboortevasten"

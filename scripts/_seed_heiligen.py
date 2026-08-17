@@ -123,7 +123,7 @@ def main() -> int:
             "soort": "heilige",
             "status": "stub",
             "cyclus": "jaar",
-            "lagenlanden": True,
+            "lage_landen": True,
             "namen": {"primair": naam},
             "datum": {"waarde": primary, "stijl": "gregoriaans"},
         }

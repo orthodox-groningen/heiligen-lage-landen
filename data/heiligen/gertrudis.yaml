@@ -1,26 +1,52 @@
 id: gertrudis
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Abdis van Nijvel."
 namen:
   primair: Gertrudis
   alternatief:
-  - Gertrudis van Nijvel
-  - Geertrui
+    - Gertrudis van Nijvel
+    - Geertrui
 datum:
-  waarde: 02-12
+  waarde: "03-17"
   stijl: gregoriaans
   extra:
-  - waarde: 03-17
-    toelichting: 17 maart
+    - waarde: "02-12"
+      toelichting: 12 februari (eerdere catalogusdatum; hoofddag is 17 maart)
 titels:
-- Abdis van Nijvel
-periode: '659'
-samenvatting: 'Heilige van de Lage Landen: Gertrudis. Abdis van Nijvel.'
+  - Abdis van Nijvel
+periode: "659"
+locaties:
+  - Nijvel
+samenvatting: |
+  Dochter van Iduberga; leidde het klooster van Nijvel. Feestdag 17 maart.
+betekenis_lage_landen: |
+  Gertrudis maakte Nijvel tot het huis-klooster van de Pippiniden: onderwijs
+  voor meisjes, boeken uit Rome, banden met het columbaanse monnikendom.
+  Haar moeder Iduberga stichtte Nijvel; Gertrudis leidde het na 652. Uit
+  Nijvel gingen nonnen naar Andenne (Begga). De vita van circa 680 is vroeg
+  genoeg om haar als historische abdis van Brabant te lezen, niet als late
+  legende.
+verhaal: |
+  Gertrudis werd 625/626 geboren als dochter van Pepijn van Landen en
+  Iduberga. Het Heiligenlexikon merkt op dat geen vroege bron haar
+  uitdrukkelijk «abdis» noemt, wel leidster van Nijvel na de dood van haar
+  moeder (652). Zij stierf op 17 maart 659 (of 653). Ierse monniken in
+  Nijvel zouden die sterfdag — dezelfde als Patrick — hebben voorspeld.
+
+  Het Heiligenlexikon noemt Bavo van Gent als broer; die koppeling is in
+  overzichten gangbaar maar genealogisch niet onomstreden. De feestdag in
+  deze kalender volgt 17 maart (Heiligenlexikon, algemene traditie); 12
+  februari stond eerder als hoofddag in de catalogus zonder hier gevonden
+  bron.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Gertrud von Nivelles"
+    url: "https://www.heiligenlexikon.de/BiographienG/Gertrud_von_Nivelles.htm"
+    geraadpleegd: "2026-08-17"
   - label: "Wikipedia (NL) — Gertrudis van Nijvel"
     url: "https://nl.wikipedia.org/wiki/Gertrudis_van_Nijvel"
     geraadpleegd: "2026-08-16"

@@ -2,7 +2,7 @@ id: ontslapen-vasten
 soort: vasten
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 vastenniveau: streng
 observances:
   - vasten

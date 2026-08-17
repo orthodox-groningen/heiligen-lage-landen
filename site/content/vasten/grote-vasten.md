@@ -6,7 +6,7 @@ soort: vasten
 entry_id: grote-vasten
 cyclus: paascyclus
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/grote-vasten.yaml"
 van_offset_dagen: -48
 tot_offset_dagen: -8

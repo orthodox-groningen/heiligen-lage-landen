@@ -2,7 +2,7 @@ id: hemelvaart
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: Hemelvaart van de Heer
   alternatief:

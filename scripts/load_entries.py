@@ -253,8 +253,8 @@ def normalize_entry(
 
     entry["referenties"] = _resolve_referenties(entry, bronnen)
     entry["status"] = entry.get("status") or "stub"
-    betekenis = entry.get("betekenis_lagenlanden")
-    entry["betekenis_lagenlanden"] = (
+    betekenis = entry.get("betekenis_lage_landen")
+    entry["betekenis_lage_landen"] = (
         str(betekenis).strip() if betekenis is not None else ""
     )
     aliases = entry.get("id_aliassen") or []
@@ -269,8 +269,8 @@ def normalize_entry(
         entry["selectie"] = sel
         toel = entry.get("selectie_toelichting")
         entry["selectie_toelichting"] = str(toel).strip() if toel else ""
-    entry["lagenlanden"] = bool(
-        entry.get("lagenlanden", entry.get("soort") == "heilige")
+    entry["lage_landen"] = bool(
+        entry.get("lage_landen", entry.get("soort") == "heilige")
     )
     entry["observances"] = list(entry.get("observances") or [])
     if not entry["observances"]:

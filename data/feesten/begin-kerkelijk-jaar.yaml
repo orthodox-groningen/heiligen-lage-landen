@@ -2,7 +2,7 @@ id: begin-kerkelijk-jaar
 soort: feest
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 namen:
   primair: Begin van het kerkelijk jaar
   alternatief:

@@ -28,7 +28,7 @@ def _heilige(**overrides):
         "soort": "heilige",
         "status": "stub",
         "cyclus": "jaar",
-        "lagenlanden": True,
+        "lage_landen": True,
         "source_path": "data/heiligen/voorbeeld.yaml",
         "namen": {"primair": "Voorbeeld", "alternatief": ["Altnaam"]},
         "datum_norm": {
@@ -39,7 +39,7 @@ def _heilige(**overrides):
         "titels": [],
         "referenties": [],
         "id_aliassen": [],
-        "betekenis_lagenlanden": "",
+        "betekenis_lage_landen": "",
         "selectie": "nader-onderzoek",
         "selectie_toelichting": "",
         "observances": ["heilige"],
@@ -56,7 +56,7 @@ def test_entry_page_heeft_betekenis_en_aliases(
     monkeypatch.setattr("generate.CONTENT", content)
     write_entry_page(
         _heilige(
-            betekenis_lagenlanden="Predikte onder de Friezen.",
+            betekenis_lage_landen="Predikte onder de Friezen.",
             id_aliassen=["oud-id"],
             selectie="voldoet",
             selectie_toelichting="niet op de publieke pagina",
@@ -76,19 +76,19 @@ def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
 ) -> None:
     static = tmp_path / "static" / "data"
     monkeypatch.setattr("generate.STATIC_DATA", static)
-    heilige = _heilige(betekenis_lagenlanden="Voor de Lage Landen.")
+    heilige = _heilige(betekenis_lage_landen="Voor de Lage Landen.")
     feest = {
         **_heilige(id="kerst", soort="feest"),
         "namen": {"primair": "Kerst", "alternatief": []},
         "source_path": "data/feesten/kerst.yaml",
         "observances": ["feest"],
-        "betekenis_lagenlanden": "",
+        "betekenis_lage_landen": "",
     }
     write_entries_json([heilige, feest])
     payload = json.loads((static / "entries.json").read_text(encoding="utf-8"))
     by_id = {item["id"]: item for item in payload}
-    assert by_id["voorbeeld"]["betekenis_lagenlanden"] == "Voor de Lage Landen."
-    assert "betekenis_lagenlanden" not in by_id["kerst"]
+    assert by_id["voorbeeld"]["betekenis_lage_landen"] == "Voor de Lage Landen."
+    assert "betekenis_lage_landen" not in by_id["kerst"]
     assert "selectie" not in by_id["voorbeeld"]
 
 
@@ -139,7 +139,7 @@ def test_write_beheer_selectie_naar_beheer_map(
     assert "alberik.yaml" not in body
     assert "lebuinus.yaml" in body
     assert "albericus-van-utrecht.yaml" in body
-    assert "## Voldoet (50)" in body
+    assert "## Voldoet (59)" in body
     assert "## Nader onderzoek (7)" in body
     assert "## Kandidaat om te schrappen (5)" in body
     assert "Rath Melsigi" in body

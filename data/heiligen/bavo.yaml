@@ -2,18 +2,35 @@ id: bavo
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Gent."
 namen:
   primair: Bavo
   alternatief:
-  - Bavo van Gent
-  - Allowin
+    - Bavo van Gent
+    - Allowin
 datum:
-  waarde: 10-01
+  waarde: "10-01"
   stijl: gregoriaans
-samenvatting: 'Heilige van de Lage Landen: Bavo.'
+locaties:
+  - Gent
+samenvatting: |
+  Edelman die kluizenaar werd bij de abdij van Sint-Baafs te Gent.
+  Feestdag 1 oktober.
+betekenis_lage_landen: |
+  Bavo (Allowin) is de stadsheilige van Gent. De overlevering maakt hem tot
+  een bekeerde edelman die onder Amandus tot inkeer kwam en als kluizenaar
+  bij de Gentse abdij stierf. De Sint-Baafskathedraal draagt zijn naam.
+  Een Heiligenlexikon-artikel is in deze ronde niet op een stabiele URL
+  gevonden; tot die toets blijft de tekst een stub op Wikipedia.
+verhaal: |
+  Volgens de Nederlandse Wikipedia was Allowin een Brabantse edelman
+  (zevende eeuw) die na de dood van zijn vrouw boete deed, door Amandus
+  tot het kloosterleven werd gebracht en als kluizenaar bij Gent stierf
+  (feestdag 1 oktober). Genealogische koppeling aan het huis van Nijvel
+  (broer van Gertrudis) komt in overzichten voor maar is niet hard. Zonder
+  vita-editie of lexikonartikel blijft dit beknopt.
 referenties:
   - label: "Wikipedia (NL) — Bavo van Gent"
     url: "https://nl.wikipedia.org/wiki/Bavo_van_Gent"

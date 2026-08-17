@@ -1,0 +1,67 @@
+id: servatius
+soort: heilige
+status: curated
+cyclus: jaar
+lage_landen: true
+selectie: voldoet
+selectie_toelichting: "Eerste bevestigde bisschop van Tongeren; graf in Maastricht."
+namen:
+  primair: Servatius
+  alternatief:
+    - Servatius van Maastricht
+    - Servatius van Tongeren
+    - Sint Servaas
+    - Aravatius
+datum:
+  waarde: "05-13"
+  stijl: gregoriaans
+  extra:
+    - waarde: "06-07"
+      toelichting: 7 juni (overbrenging van de relieken)
+titels:
+  - Bisschop van Tongeren
+periode: "384?"
+locaties:
+  - Tongeren
+  - Maastricht
+samenvatting: |
+  Eerste historisch bevestigde bisschop van Tongeren; begraven in Maastricht.
+  Feestdag 13 mei.
+betekenis_lage_landen: |
+  Servatius is de vroegst bevestigde bisschop van de Maasstreek. Zijn graf
+  in Maastricht werd al in de vijfde eeuw een bedevaartsoord; de later hem
+  gewijde basiliek geldt als de oudste kerk van de Nederlanden boven een
+  heiligengraf. Daarmee hoort hij tot de wortel van het christendom in de
+  Lage Landen, nog vóór de Angelsaksische missie van de zevende en achtste
+  eeuw. De Orthodoxe Kerk eert hem als heilige van vóór het schisma.
+verhaal: |
+  Servatius (ook Aravatius) wordt gewoonlijk vereenzelvigd met de bisschop
+  die midden vierde eeuw op synoden tegen het arianisme optrad (Sardica 343,
+  Keulen 346/348, Rimini 359) en in 350 in een gezantschap naar keizer
+  Constans voorkomt. Of die identificatie klopt, is omstreden: sommige
+  onderzoekers plaatsen hem eerder in de vijfde eeuw. De overlevering dat
+  hij de bisschopszetel van Tongeren naar Maastricht verlegde, hoort volgens
+  het Heiligenlexikon eerder bij een opvolger.
+
+  Gregorius van Tours is de oudste bron voor zijn leven en geeft ook
+  wonderverhalen door, waaronder een sneeuwwonder bij het graf. Latere
+  vitae (vanaf circa 780) en de twaalfde-eeuwse *Sente Servas* van Hendrik
+  van Veldeke bouwen de legende uit: Armeense afkomst, verwantschap met de
+  Heilige Familie, de sleutel van Petrus, verdrijving door Hunnen. Die
+  trekken zijn niet historisch hard te maken.
+
+  Traditioneel sterft hij op 13 mei 384 in Maastricht. Zijn relieken rusten
+  in de Sint-Servaasbasiliek; de zevenjaarlijkse Heiligdomsvaart is een
+  laatmiddeleeuwse voortzetting van die cultus (sinds 1829 opnieuw in die
+  cyclus).
+referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Servatius von Tongern"
+    url: "https://www.heiligenlexikon.de/BiographienS/Servatius.htm"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (NL) — Servatius van Maastricht"
+    url: "https://nl.wikipedia.org/wiki/Servatius_van_Maastricht"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (EN) — Servatius of Tongeren"
+    url: "https://en.wikipedia.org/wiki/Servatius_of_Tongeren"
+    geraadpleegd: "2026-08-17"

@@ -1,8 +1,8 @@
 id: lebuinus
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Deventer / Friesland."
 id_aliassen:
@@ -13,18 +13,47 @@ namen:
     - Lebuin
     - Lebuïnus
     - Lubuinus
+    - Liafwin
 datum:
-  waarde: 11-12
+  waarde: "11-12"
   stijl: gregoriaans
   extra:
-    - waarde: 11-16
+    - waarde: "11-16"
       toelichting: 16 november
 titels:
-  - Missionaris, monnik
-periode: "773"
+  - Missionaris
+  - Apostel van de IJsselstreek
+periode: "773/780"
+locaties:
+  - Deventer
 samenvatting: |
-  Heilige van de Lage Landen: Lebuinus. Missionaris, monnik in Nederland en Friesland.
+  Angelsaksische priester; stichtte de kerk van Deventer. Feestdag
+  12 november.
+betekenis_lage_landen: |
+  Lebuinus (Liafwin) is de apostel van de IJsselstreek. Onder Gregorius
+  van Utrecht zette hij na Bonifatius’ dood de missie voort, bouwde een
+  kapel te Wilp en daarna de kerk te Deventer, waar heidense Saksen die
+  kerk verbrandden en hij haar herbouwde. Ludger begroef hem daar. De
+  Lebuïnuskerk blijft het stadsheiligtom van Deventer.
+verhaal: |
+  Lebuinus kwam uit Engeland (Ripon), ging omstreeks 754 naar het
+  vasteland en werkte met Marchelm onder Gregorius van Utrecht. Rond 770
+  stichtte hij de eerste kerk te Deventer. Het Heiligenlexikon noemt ook
+  een (mislukte) prediking op de Saksische stamvergadering te Marklô; de
+  vita uit Werden (circa 850) is daarvoor de bron en geldt in de
+  vakliteratuur als belangrijk voor de Saksische instellingen.
+
+  Hij stierf te Deventer omstreeks 773–780. Ludger vond later zijn
+  relieken terug onder de herbouwde kerk. Of hij dezelfde is als Livinus
+  van Gent (zelfde feestdag), is omstreden; deze kalender houdt Lebuinus
+  van Deventer aan. 16 november is een tweede lokale gedachtenis in de
+  eerdere catalogus; het Heiligenlexikon noemt 12 november als
+  hoofddag en translaties in juni/juli.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Lebuin von Deventer"
+    url: "https://www.heiligenlexikon.de/BiographienL/Lebuin_Liafwin_Livinus.html"
+    geraadpleegd: "2026-08-17"
   - label: "Wikipedia (NL) — Lebuïnus"
     url: "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"
     geraadpleegd: "2026-08-16"

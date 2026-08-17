@@ -42,7 +42,7 @@ Werklijst (scores, gaten, post-schisma):
 ## Betekenis voor de Lage Landen
 
 ```yaml
-betekenis_lagenlanden: |
+betekenis_lage_landen: |
   Apart stuk: betekenis voor het christendom of de Orthodoxie
   in de Lage Landen.
 ```
@@ -50,13 +50,13 @@ betekenis_lagenlanden: |
 Verplicht bij `status: curated` voor `soort: heilige`. Als het veld gezet
 is, gelden dezelfde referentie-eisen als bij `verhaal` / `samenvatting`.
 `generate.py` zet het onder het kopje **Betekenis voor de Lage Landen**
-en in `entries.json` (veld `betekenis_lagenlanden`, alleen heiligen).
+en in `entries.json` (veld `betekenis_lage_landen`, alleen heiligen).
 
 ## Status curated (heiligen)
 
 `validate.py` weigert `status: curated` bij een heilige tenzij:
 
-1. `betekenis_lagenlanden` niet leeg is, en
+1. `betekenis_lage_landen` niet leeg is, en
 2. minstens één referentie **niet** Wikipedia of heiligen.net is
    (`bron_id` `wiki-heiligen` / `hnet`, of url/label met `wikipedia.org` /
    `heiligen.net`; OrthodoxWiki telt wél als eigen bron).

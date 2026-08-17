@@ -109,7 +109,7 @@ for eid, naam, mmdd, samenvatting, verhaal in feesten:
 soort: feest
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 namen:
   primair: "{naam}"
 datum:

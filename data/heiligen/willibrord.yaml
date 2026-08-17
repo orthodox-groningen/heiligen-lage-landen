@@ -1,8 +1,8 @@
 id: willibrord
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Apostel van de Friezen; aartsbisschop van Utrecht."
 namen:
@@ -13,19 +13,39 @@ datum:
 titels:
   - Apostel van de Friezen
   - Aartsbisschop van Utrecht
+periode: "658–739"
+locaties:
+  - Utrecht
+  - Echternach
 samenvatting: |
-  Apostel van de Friezen; aartsbisschop van Utrecht.
+  Angelsaksische missionaris; stichtte de zetel van Utrecht en predikte
+  onder de Friezen. Feestdag 7 november.
+betekenis_lage_landen: |
+  Willibrord is de apostel van de Friezen en de stichter van de
+  bisschopszetel Utrecht (695/696, met steun van Pepijn van Herstal en
+  wijding door paus Sergius I). Vanuit Utrecht liep de kerstening van
+  Holland, Friesland en de IJsselstreek; Echternach werd zijn
+  grafklooster. Zonder hem is de vroege kerk van de noordelijke Lage
+  Landen niet te vertellen. OrthodoxWiki eert hem als heilige van de
+  ongedeelde Kerk.
 verhaal: |
-  Willibrord (ca. 658–739) predikte onder de Friezen en stichtte de zetel van Utrecht.
-  Hij wordt gerekend tot de voornaamste heiligen van de Lage Landen.
-  Zijn feestdag wordt in veel bronnen op 7 november gezet.
+  Willibrord werd circa 658 in Northumbrië geboren, trad in te Ripon en
+  verbleef twaalf jaar in Ierland (Rath Melsigi) voordat hij in 690 naar
+  Frisia ging. In 695 wijdde paus Sergius I hem in Rome tot aartsbisschop
+  van de Friezen. Hij stichtte kerken en kloosters, waaronder Utrecht en
+  Echternach. Hij ontsliep op 7 november 739 te Echternach.
+
+  Alcuinus schreef zijn vita in de achtste eeuw. OrthodoxWiki volgt die
+  hoofdlijn; details van individuele stichtingen (onder meer de exacte
+  omvang van het Utrechtse territorium) blijven in de vakliteratuur in
+  discussie.
 referenties:
+  - label: "OrthodoxWiki — Willibrord"
+    url: "https://orthodoxwiki.org/Willibrord"
+    geraadpleegd: "2026-08-17"
   - label: "Wikipedia (NL) — Willibrord"
     url: "https://nl.wikipedia.org/wiki/Willibrord"
     geraadpleegd: "2026-08-16"
   - label: "heiligen.net — Willibrord"
     url: "https://www.heiligen.net/heiligen/11/07/11-07-0739-willibrord.php"
-    geraadpleegd: "2026-08-16"
-  - label: "OrthodoxWiki — Willibrord"
-    url: "https://orthodoxwiki.org/Willibrord"
     geraadpleegd: "2026-08-16"

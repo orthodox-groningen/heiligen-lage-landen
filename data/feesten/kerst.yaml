@@ -2,7 +2,7 @@ id: kerst
 soort: feest
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 vastenniveau: vrij
 namen:
   primair: "Kerstfeest (Geboorte van Christus)"

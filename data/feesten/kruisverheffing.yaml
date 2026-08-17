@@ -2,7 +2,7 @@ id: kruisverheffing
 soort: feest
 status: curated
 cyclus: jaar
-lagenlanden: false
+lage_landen: false
 vastenniveau: streng
 observances:
   - feest

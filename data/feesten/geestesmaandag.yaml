@@ -2,7 +2,7 @@ id: geestesmaandag
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: Maandag van de Heilige Geest
   alternatief:

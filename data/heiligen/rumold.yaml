@@ -1,0 +1,59 @@
+id: rumold
+soort: heilige
+status: curated
+cyclus: jaar
+lage_landen: true
+selectie: voldoet
+selectie_toelichting: "Patroon van Mechelen; prediking en martelaarschap in Vlaanderen."
+namen:
+  primair: Rumold
+  alternatief:
+    - Rumoldus
+    - Rombout
+    - Rumbold
+    - Rumold van Mechelen
+datum:
+  waarde: "06-24"
+  stijl: gregoriaans
+  extra:
+    - waarde: "07-01"
+      toelichting: 1 juli (bisdom Mechelen-Brussel)
+titels:
+  - Martelaar
+  - Patroon van Mechelen
+periode: "7e eeuw?"
+locaties:
+  - Mechelen
+samenvatting: |
+  Patroonheilige van Mechelen; volgens de overlevering missionaris en
+  martelaar. Feestdag 24 juni (in het bisdom Mechelen-Brussel 1 juli).
+betekenis_lage_landen: |
+  Rumold is de stadsheilige van Mechelen. De relieken in de
+  Sint-Romboutskathedraal en de middeleeuwse vita (*Passio Sancti Rumoldi*,
+  elfde eeuw, Diederik van Sint-Truiden) maken hem tot een van de
+  hoofdfiguren van de Vlaamse heiligenverering. Hoe legendarisch het
+  levensverhaal ook is: de cultus is lokaal, oud en aan Mechelen gebonden.
+verhaal: |
+  De elfde-eeuwse vita maakt van Rumold een Ierse koningszoon en bisschop
+  van Dublin die naar Rome ging en in Mechelen predikte; latere versies
+  (vanaf circa 1300, en zestiende eeuw) voegen een marteldood door roverij
+  toe. Betrouwbare contemporaine bronnen ontbreken. De traditionele
+  sterfdatum 775 duikt pas in de dertiende eeuw op.
+
+  Onderzoek aan de relieken (1974 en 2004) wijst op een man van 35–40 jaar
+  die met grote waarschijnlijkheid tussen 580 en 655 stierf — eerder zevende
+  dan achtste eeuw. Dat past bij Ierse en Angelsaksische missie in de Lage
+  Landen, maar bewijst niet dat de beenderen «de» Rumold van de legende
+  zijn; wel dat de vereerde dode vroeg en belangrijk was. Dit kalenderstuk
+  volgt die voorzichtigheid: de cultus is historisch; de Ierse bisschop
+  en het jaartal 775 zijn overlevering.
+referenties:
+  - label: "Van Eck, Xander. The high altar of the archiepiscopal cathedral of Mechelen (Simiolus 38, 2015)"
+    url: "https://www.researchgate.net/publication/309121137_The_high_Altar_of_the_archiepiscopal_cathedral_of_Mechelen_St_Rumbold_s_grand_reliquary_and_tomb"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (NL) — Rumoldus van Mechelen"
+    url: "https://nl.wikipedia.org/wiki/Rumoldus"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (DE) — Rumold von Mecheln"
+    url: "https://de.wikipedia.org/wiki/Rumold_von_Mecheln"
+    geraadpleegd: "2026-08-17"

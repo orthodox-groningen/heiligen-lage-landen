@@ -191,7 +191,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         f"entry_id: {entry['id']}",
         f"cyclus: {entry.get('cyclus') or 'jaar'}",
         f"status: {entry.get('status', 'stub')}",
-        f"lagenlanden: {'true' if entry.get('lagenlanden') else 'false'}",
+        f"lage_landen: {'true' if entry.get('lage_landen') else 'false'}",
         f"source_path: {yaml_quote(entry['source_path'])}",
     ]
     if feestdatum and vorm == "dag":
@@ -345,7 +345,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     if entry.get("samenvatting"):
         body.append(entry["samenvatting"].strip())
         body.append("")
-    betekenis = (entry.get("betekenis_lagenlanden") or "").strip()
+    betekenis = (entry.get("betekenis_lage_landen") or "").strip()
     if betekenis:
         body.append("## Betekenis voor de Lage Landen")
         body.append("")
@@ -797,7 +797,7 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             "titels": entry.get("titels") or [],
             "samenvatting": (entry.get("samenvatting") or "").strip(),
             "url": entry_permalink(entry),
-            "lagenlanden": bool(entry.get("lagenlanden")),
+            "lage_landen": bool(entry.get("lage_landen")),
             "status": entry.get("status") or "stub",
             "observances": entry.get("observances") or [],
             "onderdrukt_wekelijks_vasten": bool(
@@ -808,8 +808,8 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             else None,
         }
         if entry.get("soort") == "heilige":
-            item["betekenis_lagenlanden"] = (
-                (entry.get("betekenis_lagenlanden") or "").strip()
+            item["betekenis_lage_landen"] = (
+                (entry.get("betekenis_lage_landen") or "").strip()
             )
         if entry.get("vastenniveau"):
             item["vastenniveau"] = entry["vastenniveau"]

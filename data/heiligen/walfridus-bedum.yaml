@@ -2,17 +2,33 @@ id: walfridus-bedum
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Bedum."
 namen:
   primair: "Walfridus (Bedum)"
   alternatief:
-  - Walfridus
+    - Walfridus
 datum:
-  waarde: 06-22
+  waarde: "06-22"
   stijl: gregoriaans
-samenvatting: Plaatselijke heilige verbonden met Bedum.
+locaties:
+  - Bedum
+samenvatting: |
+  Plaatselijke martelaar, vereerd te Bedum. Feestdag 22 juni.
+betekenis_lage_landen: |
+  Walfridus is de heilige van Bedum in Groningen: volgens de
+  plaatselijke overlevering een landbouwer (soms met zijn zoon Radfridus)
+  die bij een Noormanneninval werd gedood. De middeleeuwse kerk van Bedum
+  droeg zijn naam. Een zelfstandige vroege vita is hier niet gevonden;
+  Wikipedia is voorlopig de enige geraadpleegde bron. De cultus is
+  Gronings en lokaal, geen algemene Nederlandse missieheilige.
+verhaal: |
+  De overlevering maakt van Walfridus een vrome leek te Bedum, vermoord
+  door Vikingen, begraven waar later de Walfriduskerk stond. Jaartallen
+  en details wisselen. Zolang geen Heiligenlexikon- of oorkondetekst is
+  nagetrokken, blijft het verhaal een stub op basis van de Nederlandse
+  Wikipedia-samenvatting.
 referenties:
   - label: "Wikipedia (NL) — Walfridus"
     url: "https://nl.wikipedia.org/wiki/Walfridus"

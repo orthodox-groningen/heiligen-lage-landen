@@ -1,0 +1,54 @@
+id: gondulphus
+soort: heilige
+status: curated
+cyclus: jaar
+lage_landen: true
+selectie: voldoet
+selectie_toelichting: "Bisschop van Maastricht; cultus samen met Monulphus."
+namen:
+  primair: Gondulphus
+  alternatief:
+    - Gondulf
+    - Gondulphus van Maastricht
+    - Betulphus
+datum:
+  waarde: "07-16"
+  stijl: gregoriaans
+  extra:
+    - waarde: "08-10"
+      toelichting: 10 augustus (overbrenging van de relieken, met Monulphus)
+titels:
+  - Bisschop van Maastricht
+periode: "614?"
+locaties:
+  - Maastricht
+samenvatting: |
+  Bisschop van Maastricht, opvolger van Monulphus in de overlevering.
+  Feestdag 16 juli (samen met Monulphus).
+betekenis_lage_landen: |
+  Gondulphus wordt samen met Monulphus vereerd als bisschop van Maastricht
+  in de vroege zevende eeuw. Hun gemeenschappelijke cultus (reliekverheffing
+  1039, feestdag 16 juli) hoort bij dezelfde Servaasbasiliek. Zelfs als de
+  vitae legendarisch zijn, is de lokale bisschoppelijke opvolging na
+  Servatius en Monulphus deel van de Maaslandse kerkgeschiedenis.
+verhaal: |
+  Het Heiligenlexikon noemt hem opvolger van Monulphus (wijding 597) en
+  geeft als sterfjaar circa 614. De middeleeuwse levensbeschrijvingen zijn
+  volgens de Catholic Encyclopedia (via hetzelfde lexikon) weinig meer dan
+  uittreksels uit de *Vita Servatii* van Jocundus: historisch zonder waarde,
+  vol legende (onder meer een mislukte herbouw van Tongeren). Authentiek
+  is vooral het episcopaat te Maastricht en de begrafenis in de door
+  Monulphus herstelde Servaaskerk.
+
+  Of Gondulphus dezelfde is als de Betulphus die in 614 te Parijs op een
+  concilie voorkomt, is onzeker. Deze kalender houdt hem apart van
+  Monulphus, omdat de cultus hen als paar eert; de vraag of het één
+  persoon is, blijft open.
+referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Gondulphus von Maastricht"
+    url: "https://www.heiligenlexikon.de/BiographienG/Gondulf_von_Maastricht.html"
+    geraadpleegd: "2026-08-17"
+  - label: "Heiligenlexikon (Catholic Encyclopedia) — Gondulphus"
+    url: "https://www.heiligenlexikon.de/CatholicEncyclopedia/Gondulf.html"
+    geraadpleegd: "2026-08-17"

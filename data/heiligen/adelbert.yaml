@@ -1,26 +1,46 @@
 id: adelbert
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Egmond; metgezel van Willibrord."
 namen:
   primair: Adelbert
   alternatief:
-  - Adelbert van Egmond
-  - Adalbert van Egmond
+    - Adelbert van Egmond
+    - Adalbert van Egmond
 datum:
-  waarde: 06-25
+  waarde: "06-25"
   stijl: gregoriaans
 titels:
-- Aartsdiaken
-periode: '740'
-samenvatting: 'Heilige van de Lage Landen: Adelbert. Aartsdiaken.'
+  - Aartsdiaken
+periode: "740"
+locaties:
+  - Egmond
+samenvatting: |
+  Aartsdiaken en metgezel van Willibrord; begraven te Egmond. Feestdag
+  25 juni.
+betekenis_lage_landen: |
+  Adelbert is de huisheilige van Egmond: metgezel van Willibrord, later
+  vereerd in de abdij die boven zijn graf groeide. Daarmee is hij de
+  schakel tussen de Friese missie en het Noord-Hollandse
+  kloosterchristendom. De abdij van Egmond werd het geestelijk centrum
+  van Holland; zijn cultus is daarvan de kiem.
+verhaal: |
+  Het Heiligenlexikon en de Nederlandse overlevering maken hem tot
+  Angelsaksische aartsdiaken in het gevolg van Willibrord. Hij zou te
+  Egmond hebben gepredikt en daar zijn begraven (circa 740). De abdij
+  van Egmond ontstond in de tiende eeuw rond dat graf.
+
+  Een zelfstandige vroege vita ontbreekt; veel rust op latere
+  abdijoverlevering. Wat vaststaat is de middeleeuwse cultus te Egmond
+  en de band met Willibrord in de heiligenkalenders van Holland.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Adelbert van Egmond"
+    url: "https://www.heiligenlexikon.de/BiographienA/Adalbert_von_Egmond.html"
+    geraadpleegd: "2026-08-16"
   - label: "Wikipedia (NL) — Adelbert van Egmond"
     url: "https://nl.wikipedia.org/wiki/Adelbert_van_Egmond"
-    geraadpleegd: "2026-08-16"
-  - label: "Heiligenlexikon — Adelbert van Egmond"
-    url: "https://www.heiligenlexikon.de/BiographienA/Adalbert_von_Egmond.html"
     geraadpleegd: "2026-08-16"

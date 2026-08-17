@@ -2,18 +2,35 @@ id: oda-van-de-peel
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Peel."
 namen:
   primair: Oda van de Peel
   alternatief:
-  - Oda van Brabant
+    - Oda van Brabant
 datum:
-  waarde: 11-28
+  waarde: "11-28"
   stijl: gregoriaans
-periode: '726'
-samenvatting: 'Heilige van de Lage Landen: Oda van de Peel.'
+periode: "726"
+locaties:
+  - Sint-Oedenrode
+samenvatting: |
+  Schotse (of Ierse) kluizenares, vereerd in de Meierij (Sint-Oedenrode).
+  Feestdag 28 november.
+betekenis_lage_landen: |
+  Oda is de heilige van de Meierij: volgens de overlevering een blinde
+  prinses die na genezing kluizenares werd in de Peel, bij het latere
+  Sint-Oedenrode. De plaatsnaam bewaart haar cultus. Wikipedia is de
+  geraadpleegde bron; de vita is laat en legendarisch. Haar betekenis is
+  Brabants-lokaal, naast Oda van Amay (een andere heilige in deze
+  kalender).
+verhaal: |
+  De late overlevering maakt Oda tot een Schotse of Ierse edelvrouw,
+  blind geboren, genezen in Luik of Maastricht, daarna kluizenares in de
+  bossen van de Peel (sterfjaar traditioneel 726). Dat is hagiografische
+  stof, geen contemporaine berichtgeving. Feestdag 28 november in de
+  Nederlandse kalenders.
 referenties:
   - label: "Wikipedia (NL) — Oda van Brabant"
     url: "https://nl.wikipedia.org/wiki/Oda_van_Brabant"

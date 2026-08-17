@@ -21,7 +21,7 @@ De bronnen mengen drie verschillende vragen:
    (werk van kloosters en parochies, niet van de heilige zelf)
 
 Alleen vraag 1 telt voor de catalogus. Vraag 2 en 3 zijn nuttig voor
-context en voor `betekenis_lagenlanden` van wie er wél in komt, niet
+context en voor `betekenis_lage_landen` van wie er wél in komt, niet
 als zelfstandige reden tot opname.
 
 Universele of pre-schisma patroonheiligen (Johannes de Doper, Johannes

@@ -6,7 +6,7 @@ soort: vasten
 entry_id: grote-week
 cyclus: paascyclus
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/grote-week.yaml"
 van_offset_dagen: -6
 tot_offset_dagen: -1

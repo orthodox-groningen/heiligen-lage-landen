@@ -2,7 +2,7 @@ id: zondag-verlamde
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: Zondag van de verlamde
   alternatief:

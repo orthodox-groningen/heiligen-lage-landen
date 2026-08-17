@@ -153,7 +153,7 @@ Selectiecriteria (wie in de lijst hoort) staan op `/uitleg/heiligen/`;
 veldsemantiek hier. How-to: `/beheer/how-to-heiligen-feesten/`.
 
 ```yaml
-betekenis_lagenlanden: |
+betekenis_lage_landen: |
   Apart stuk: wat deze heilige voor het christendom of de Orthodoxie
   in de Lage Landen betekende.
 selectie: voldoet            # of: nader-onderzoek | kandidaat-schrappen
@@ -161,7 +161,7 @@ selectie_toelichting: "…"    # optioneel; niet op de publieke pagina
 id_aliassen: [lubuinus]      # oude ids na een merge
 ```
 
-- **`betekenis_lagenlanden`** — verplicht bij `status: curated` voor
+- **`betekenis_lage_landen`** — verplicht bij `status: curated` voor
   `soort: heilige`. Zelfde referentieverplichting als verhaal/samenvatting.
   Eigen kop op de heiligenpagina (**Betekenis voor de Lage Landen**); ook in
   `site/static/data/entries.json` (alleen bij heiligen).
@@ -180,7 +180,7 @@ Werklijst (scores, gaten, post-schisma): [`docs/inventaris.md`](inventaris.md).
 
 ## Referenties
 
-Verhaal, samenvatting of `betekenis_lagenlanden` mag alleen als er minstens
+Verhaal, samenvatting of `betekenis_lage_landen` mag alleen als er minstens
 één referentie is.
 Elke referentie heeft `bron_id` en/of `label`, plus een **raadpleegbare locator**:
 
@@ -209,7 +209,7 @@ hoort **ook** op de referentie zelf te staan.
 
 Voor **heiligen** geldt `curated` alleen als:
 
-1. `betekenis_lagenlanden` aanwezig en niet leeg is, en
+1. `betekenis_lage_landen` aanwezig en niet leeg is, en
 2. er minstens één referentie is die **niet** alleen Wikipedia of
    heiligen.net is (die twee mogen aanvullen).
 

@@ -2,18 +2,34 @@ id: cunera
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Rhenen."
 namen:
   primair: Cunera
 datum:
-  waarde: 06-12
+  waarde: "06-12"
   stijl: gregoriaans
 titels:
-- Maagd-martelares van Rhenen
-periode: '451'
-samenvatting: 'Heilige van de Lage Landen: Cunera. Maagd-martelares van Rhenen.'
+  - Maagd-martelares van Rhenen
+periode: "451"
+locaties:
+  - Rhenen
+samenvatting: |
+  Maagd-martelares, vereerd te Rhenen. Feestdag 12 juni.
+betekenis_lage_landen: |
+  Cunera is de heilige van Rhenen. De late legende (Ursula-cyclus: een
+  maagd die te Rhenen achterbleef en door haar gastvrouw werd gewurgd)
+  is niet historisch hard te maken; het jaartal 451 hoort bij die cyclus.
+  De middeleeuwse cultus te Rhenen — relieken, kerktoren, stadsheilige —
+  is wel een feit van de Utrechtse heiligenverering. Primaire vita-edities
+  zijn hier niet geraadpleegd.
+verhaal: |
+  De overlevering voegt Cunera in bij de elfduizend maagden van Ursula:
+  ziek achtergelaten te Rhenen, gewurgd door de jaloerse vrouw van haar
+  gastheer. Dat is middeleeuwse legende. De lokale verering in de
+  Cunerakerk is de historische kern. Tot een lexikon- of oorkondetoets
+  blijft dit een stub.
 referenties:
   - label: "Wikipedia (NL) — Cunera"
     url: "https://nl.wikipedia.org/wiki/Cunera"

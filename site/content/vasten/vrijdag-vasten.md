@@ -6,7 +6,7 @@ soort: vasten
 entry_id: vrijdag-vasten
 cyclus: wekelijks
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/vrijdag-vasten.yaml"
 weekdagen:
   - 5

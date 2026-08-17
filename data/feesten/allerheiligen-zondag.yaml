@@ -2,7 +2,7 @@ id: allerheiligen-zondag
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: Allerheiligen-zondag
   alternatief:

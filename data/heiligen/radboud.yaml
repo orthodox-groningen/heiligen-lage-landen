@@ -2,20 +2,38 @@ id: radboud
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Bisschop van Utrecht."
 namen:
   primair: Radboud
   alternatief:
-  - Radboud van Utrecht
+    - Radboud van Utrecht
 datum:
-  waarde: 11-29
+  waarde: "11-29"
   stijl: gregoriaans
 titels:
-- Bisschop van Utrecht
-periode: '917'
-samenvatting: 'Heilige van de Lage Landen: Radboud. Bisschop van Utrecht.'
+  - Bisschop van Utrecht
+periode: "917"
+locaties:
+  - Utrecht
+samenvatting: |
+  Bisschop van Utrecht (899–917); geleerde en hagiograaf. Feestdag
+  29 november.
+betekenis_lage_landen: |
+  Radboud is de Utrechtse bisschop van de vroege tiende eeuw: bestuurder
+  in een tijd van Noormanneninvallen, en schrijver van heiligenlevens
+  (onder meer van Bonifatius en van Utrechtse voorgangers). Daarmee is
+  hij én herder én de eerste literaire stem van de Utrechtse kerk. De
+  Radbouduniversiteit draagt zijn naam. Wikipedia en heiligen.net zijn
+  hier de bronnen; zijn Latijnse werken zijn niet in deze ronde
+  nageslagen.
+verhaal: |
+  Radboud werd omstreeks 850 geboren, studeerde onder meer te Tours, en
+  werd in 899 bisschop van Utrecht. Hij resideerde tijdelijk buiten de
+  stad vanwege invallen. Hij stierf op 29 november 917. De toeschrijving
+  van vitae aan hem is in de vakliteratuur deels omstreden; tot een
+  editie-toets blijft dat voorbehoud staan.
 referenties:
   - label: "Wikipedia (NL) — Radboud van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Radboud_van_Utrecht"

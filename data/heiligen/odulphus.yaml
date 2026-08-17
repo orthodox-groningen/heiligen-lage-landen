@@ -1,0 +1,58 @@
+id: odulphus
+soort: heilige
+status: curated
+cyclus: jaar
+lage_landen: true
+selectie: voldoet
+selectie_toelichting: "Kanunnik van Utrecht; missie in Friesland (Stavoren)."
+namen:
+  primair: Odulphus
+  alternatief:
+    - Odulf
+    - Odulfus
+    - Odulphus van Utrecht
+datum:
+  waarde: "06-12"
+  stijl: gregoriaans
+  extra:
+    - waarde: "09-02"
+      toelichting: 2 september (overbrenging van de relieken)
+titels:
+  - Priester
+  - Kanunnik van Utrecht
+periode: "na 854"
+locaties:
+  - Utrecht
+  - Stavoren
+  - Oirschot
+samenvatting: |
+  Priester en kanunnik van Utrecht; door bisschop Frederik naar Stavoren
+  gezonden. Feestdag 12 juni.
+betekenis_lage_landen: |
+  Odulphus verbindt het Utrechtse kapittel met de Friese missie in de
+  negende eeuw, in het spoor van Willibrord, Bonifatius en Ludger. Hij
+  predikte te Stavoren en keerde naar Utrecht terug. Later droeg de
+  abdij bij Stavoren zijn naam. Daarmee hoort hij tot de tweede golf van
+  kerstening in het noorden van de Lage Landen, ná de martelaren van de
+  achtste eeuw.
+verhaal: |
+  Volgens het Heiligenlexikon kwam Odulphus uit Oirschot (Noord-Brabant),
+  werd hij in Utrecht tot priester gewijd en was hij eerst werkzaam aan de
+  kerk op het familiebezit. Daarna werd hij benedictijn bij het
+  Martinusklooster in Utrecht. Bisschop Frederik zond hem vóór 836 naar
+  Stavoren, tegen heidendom en afwijkende leer onder de Friezen. Daar zou
+  hij een gemeenschap hebben gesticht die later zijn naam droeg. Zijn
+  laatste jaren sleet hij weer in Utrecht; hij stierf na 854.
+
+  De abdij bij Stavoren is volgens hetzelfde lexikon eerder rond 960 door
+  bisschop Balderik gesticht; de koppeling aan Odulphus zelf is dus
+  traditioneel, niet archeologisch hard. Relieken worden onder meer in
+  Utrecht, Stavoren en (via een middeleeuwse roof) Evesham bewaard.
+referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Odulf von Utrecht"
+    url: "https://www.heiligenlexikon.de/BiographienO/Odulf.html"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (NL) — Odulfus"
+    url: "https://nl.wikipedia.org/wiki/Odulfus"
+    geraadpleegd: "2026-08-17"

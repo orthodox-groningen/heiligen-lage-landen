@@ -2,7 +2,7 @@ id: walburga
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: kandidaat-schrappen
 selectie_toelichting: "Abdis van Heidenheim; cultus elders is geen werk in de Lage Landen."
 namen:

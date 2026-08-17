@@ -31,7 +31,7 @@ Nederlandse dienst/vertaling, is daarvoor niet genoeg.
 
 ## Besluiten voor stap 5
 
-Nieuwe YAML volgt in stap 5, in deze volgorde.
+Uitgevoerd 17 augustus 2026 (YAML in `data/heiligen/`).
 
 ### Post-schisma — toevoegen
 
@@ -40,7 +40,7 @@ Nieuwe YAML volgt in stap 5, in deze volgorde.
 | `johannes-van-shanghai` | Johannes Maximovitsj van Shanghai | Categorie A: institutionele ontwikkeling van de Orthodoxie in Nederland |
 | `sophrony-van-essex` | Sophrony (Sacharov) van Essex | Categorie B: liturgie in Gent (14 september 1980); geestelijke raad aan de stichteres van Asten |
 
-Feestdag, `betekenis_lagenlanden` en `status: curated` in stap 5. Voor
+Feestdag, `betekenis_lage_landen` en `status: curated` in stap 5. Voor
 Johannes de keten 1952 (bezoek) / 1954 (opname in zijn bisdom, wijding
 van Jakob Akkersdijk, klooster Johannes de Doper in Den Haag) meenemen;
 het bisdom van 1965 later toetsen aan synodale stukken. Pervijze
@@ -88,9 +88,20 @@ Alle zeven voldoen aan «in de Lage Landen geweest en daar iets gedaan».
 | `gondulphus` | Gondulphus | Bisschop van Maastricht |
 | `rumold` | Rumold van Mechelen | Martelaar / Mechelen |
 
-Niet uitputtend. Andere namen alleen na bron, niet ad hoc. In stap 5 eerst
-Servatius, Otger (completteert Wiro/Plechelm) en Odulphus, daarna de rest
-van deze zeven, daarna Johannes en Sophrony, daarna de bestaande kernset.
+## Stap 5 (kerninhoud, 17 augustus 2026)
+
+YAML staat in `data/heiligen/`. `selectie: voldoet` voor de nieuwe ids.
+
+Toegevoegd: `servatius`, `otger`, `odulphus`, `begga`, `monulphus`,
+`gondulphus`, `rumold`, `johannes-van-shanghai`, `sophrony-van-essex`.
+
+Bestaande kern met `betekenis_lage_landen`: Willibrord, Bonifatius,
+Lambertus, Lebuinus, Adelbert, Gertrudis, Dymphna (`curated` waar minstens
+één bron niet Wikipedia/heiligen.net is); Jeroen, Walfridus, Bavo, Cunera,
+Werenfrid, Radboud, Oda van de Peel blijven `stub` tot een niet-encyclopedische
+bron is nagetrokken.
+
+C-heiligen uit het post-schisma-onderzoek niet in deze ronde.
 
 ## Huidige catalogus (62)
 

@@ -2,7 +2,7 @@ id: zondag-orthodoxie
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: "Eerste zondag van de Vasten (Zondag van de Orthodoxie)"
   alternatief:

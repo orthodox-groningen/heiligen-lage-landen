@@ -1,0 +1,57 @@
+id: begga
+soort: heilige
+status: curated
+cyclus: jaar
+lage_landen: true
+selectie: voldoet
+selectie_toelichting: "Dochter van Iduberga; stichting Andenne."
+namen:
+  primair: Begga
+  alternatief:
+    - Begga van Andenne
+    - Begga van Landen
+    - Begga van Herstal
+datum:
+  waarde: "12-17"
+  stijl: gregoriaans
+  extra:
+    - waarde: "07-06"
+      toelichting: 6–7 juli (overbrenging van de relieken)
+titels:
+  - Abdis van Andenne
+periode: "693/694"
+locaties:
+  - Andenne
+  - Nijvel
+samenvatting: |
+  Dochter van Iduberga en Pepijn van Landen; stichtte het klooster van
+  Andenne. Feestdag 17 december.
+betekenis_lage_landen: |
+  Begga hoort tot het Pippinidische huis dat Nijvel, Andenne en de
+  Maasvallei tot kerken- en kloosterland maakte. Als weduwe stichtte zij
+  omstreeks 691/692 het vrouwenklooster te Andenne, bevolkt vanuit Nijvel
+  (haar moeder Iduberga en zuster Gertrudis). Daarmee is zij een schakel
+  in dezelfde stichtingsgeschiedenis als Iduberga en Gertrudis, die al in
+  deze kalender staan.
+verhaal: |
+  Begga (circa 620–17 december 693 of 694) was dochter van Pepijn van
+  Landen en Iduberga van Nijvel, zuster van Gertrudis. Zij huwde Ansegisel
+  (zoon van Arnulf van Metz); hun zoon Pepijn van Herstal is de grootvader
+  van Karel Martel. Na de moord op haar man en politieke slachting in de
+  familie ondernam zij een pelgrimstocht naar Rome. Daarna stichtte zij
+  Andenne, met nonnen uit Nijvel.
+
+  Het Heiligenlexikon noemt haar ook zuster van Bavo van Gent; die
+  identificatie is in overzichten gangbaar, maar de vroege familie van
+  Nijvel en die van Bavo worden in de literatuur niet altijd tot één
+  gezin gerekend. De vita uit circa 1085 noemt het lexikon historisch
+  waardeloos. Dat Begga de begijnen heeft gesticht, is een late,
+  naam-geïnspireerde vergissing (de begijnen dateren eeuwen later).
+referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Begga"
+    url: "https://www.heiligenlexikon.de/BiographienB/Begga.htm"
+    geraadpleegd: "2026-08-17"
+  - label: "Wikipedia (NL) — Begga van Herstal"
+    url: "https://nl.wikipedia.org/wiki/Begga"
+    geraadpleegd: "2026-08-17"

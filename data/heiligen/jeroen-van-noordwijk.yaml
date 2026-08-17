@@ -2,20 +2,38 @@ id: jeroen-van-noordwijk
 soort: heilige
 status: stub
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Noordwijk."
 namen:
   primair: Jeroen van Noordwijk
   alternatief:
-  - Jeroen
+    - Jeroen
 datum:
-  waarde: 08-17
+  waarde: "08-17"
   stijl: gregoriaans
 titels:
-- Hieromartelaar
-periode: '857'
-samenvatting: 'Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar.'
+  - Hieromartelaar
+periode: "857"
+locaties:
+  - Noordwijk
+samenvatting: |
+  Priester-martelaar van Noordwijk, volgens de overlevering door Noormannen
+  gedood. Feestdag 17 augustus.
+betekenis_lage_landen: |
+  Jeroen is de hieromartelaar van de Hollandse kust. De overlevering
+  (heiligen.net, Wikipedia) plaatst zijn dood in 856/857 te Noordwijk,
+  tijdens Noormanneninvallen: een priester die de plaatselijke kerk diende
+  en weigerde te vluchten. Een vroege vita of contemporaine oorkonde is
+  hier niet geraadpleegd; de cultus te Noordwijk is wel middeleeuws
+  bevestigd in latere kalenders en plaatselijke verering.
+verhaal: |
+  Volgens de gangbare samenvatting predikte Jeroen in Holland en werd hij
+  te Noordwijk door Vikingen vermoord. Details (Ierse of Schotse afkomst,
+  exacte toedracht) wisselen per late bron en zijn hier niet tot een
+  primaire tekst herleid. Tot die toets blijft dit een stub: de
+  feestdag 17 augustus en de band met Noordwijk staan vast in de
+  Nederlandse heiligenkalenders.
 referenties:
   - label: "Wikipedia (NL) — Jeroen van Noordwijk"
     url: "https://nl.wikipedia.org/wiki/Jeroen_van_Noordwijk"

@@ -103,6 +103,12 @@ entries:
     alternatief:
     - Bavo van Gent
     - Allowin
+  begga:
+    primair: Begga
+    alternatief:
+    - Begga van Andenne
+    - Begga van Landen
+    - Begga van Herstal
   begin-kerkelijk-jaar:
     primair: Begin van het kerkelijk jaar
     alternatief:
@@ -202,6 +208,12 @@ entries:
     - Gommarus van Lier
     - Gommarus
     - Gummarus
+  gondulphus:
+    primair: Gondulphus
+    alternatief:
+    - Gondulf
+    - Gondulphus van Maastricht
+    - Betulphus
   gregorius-van-utrecht:
     primair: Gregorius van Utrecht
     alternatief:
@@ -272,6 +284,12 @@ entries:
     primair: Jeroen van Noordwijk
     alternatief:
     - Jeroen
+  johannes-van-shanghai:
+    primair: Johannes van Shanghai
+    alternatief:
+    - Johannes Maximovitsj
+    - Johannes van Shanghai en San Francisco
+    - Johannes de Wonderdoener
   kerst:
     primair: Kerstfeest (Geboorte van Christus)
     alternatief:
@@ -299,6 +317,7 @@ entries:
     - Lebuin
     - Lebuïnus
     - Lubuinus
+    - Liafwin
   lichte-maandag:
     primair: Lichte Maandag
     alternatief:
@@ -318,6 +337,12 @@ entries:
     alternatief:
     - Mid-Pinksteren
     - Middenfeest
+  monulphus:
+    primair: Monulphus
+    alternatief:
+    - Monulf
+    - Monulph
+    - Monulphus van Maastricht
   oda-van-amay:
     primair: Oda van Amay
   oda-van-de-peel:
@@ -328,6 +353,12 @@ entries:
     primair: Odrada
     alternatief:
     - Odrada van Alem
+  odulphus:
+    primair: Odulphus
+    alternatief:
+    - Odulf
+    - Odulfus
+    - Odulphus van Utrecht
   onthoofding-johannes-doper:
     primair: Onthoofding van Johannes de Doper
     alternatief:
@@ -353,6 +384,11 @@ entries:
     - Ontslapen-vasten
     - Vasten vóór het Ontslapen
     - Dormition Fast
+  otger:
+    primair: Otger
+    alternatief:
+    - Otgerus
+    - Otger van Odiliënberg
   palmzondag:
     primair: Palmzondag (Intocht in Jeruzalem)
     alternatief:
@@ -395,12 +431,32 @@ entries:
     - Radboud van Utrecht
   remaclus:
     primair: Remaclus
+  rumold:
+    primair: Rumold
+    alternatief:
+    - Rumoldus
+    - Rombout
+    - Rumbold
+    - Rumold van Mechelen
   schone-maandag:
     primair: Schone Maandag (begin Grote Vasten)
     alternatief:
     - Schone Maandag
     - begin Grote Vasten
     - Begin van de Grote Vasten
+  servatius:
+    primair: Servatius
+    alternatief:
+    - Servatius van Maastricht
+    - Servatius van Tongeren
+    - Sint Servaas
+    - Aravatius
+  sophrony-van-essex:
+    primair: Sophrony van Essex
+    alternatief:
+    - Sophrony Sacharov
+    - Sophrony de Athoniet
+    - Sofrony
   swidbert:
     primair: Swidbert
     alternatief:

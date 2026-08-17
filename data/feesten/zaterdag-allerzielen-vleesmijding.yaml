@@ -2,7 +2,7 @@ id: zaterdag-allerzielen-vleesmijding
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 namen:
   primair: "Allerzielen-zaterdag (vóór Vleesvaarwel)"
   alternatief:

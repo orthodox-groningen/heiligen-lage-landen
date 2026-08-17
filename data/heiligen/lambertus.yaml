@@ -1,23 +1,53 @@
 id: lambertus
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
-selectie_toelichting: "Bisschop van Maastricht."
+selectie_toelichting: "Bisschop van Maastricht; martelaar te Luik."
 namen:
   primair: Lambertus
   alternatief:
-  - Lambertus van Maastricht
-  - Lambert
+    - Lambertus van Maastricht
+    - Lambert
 datum:
-  waarde: 09-17
+  waarde: "09-17"
   stijl: gregoriaans
 titels:
-- Bisschop van Maastricht
-periode: '704'
-samenvatting: 'Heilige van de Lage Landen: Lambertus. Bisschop van Maastricht.'
+  - Bisschop van Maastricht
+  - Martelaar
+periode: "704/705"
+locaties:
+  - Maastricht
+  - Luik
+samenvatting: |
+  Bisschop van Maastricht; predikte in Brabant en Toxandrië; vermoord te
+  Luik. Feestdag 17 september.
+betekenis_lage_landen: |
+  Lambertus is de martelaarsbisschop van de Maaszetel. Hij volgde zijn
+  oom Theodardus op, predikte onder de nog heidense Toxandren rond
+  Tongeren, en werd circa 705 in zijn huis te Luik vermoord. Zijn
+  opvolger Hubertus bracht de relieken naar Luik en verlegde de zetel
+  daarheen. Maastricht en Luik danken hun middeleeuwse bisschopsstad aan
+  deze keten.
+verhaal: |
+  Lambertus (Lantpert) werd omstreeks 635 geboren, neef van bisschop
+  Theodardus van Maastricht. Na Theodards moord benoemde Childerik II hem
+  tot opvolger (na 669). Na de moord op de koning leefde hij zeven jaar
+  verbannen in Stavelot. Onder Pepijn van Herstal keerde hij terug en
+  zette de missie in Toxandrië voort.
+
+  Hij werd op 17 september circa 705 te Luik gedood, samen met verwanten.
+  Het Heiligenlexikon noemt twee motieven in de overlevering: bloedwraak
+  door Pippins huismeier Dodo, of — in latere vitae — terechtwijzing van
+  Pippins overspel. De vroege vita (achtste eeuw) gaat aan die tweede
+  lezing vooraf. Relieken gingen van Maastricht naar Luik (715); in de
+  Franse Revolutie gingen de Luikse relieken verloren.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Lambert von Maastricht"
+    url: "https://www.heiligenlexikon.de/BiographienL/Lambert_von_Maastricht.html"
+    geraadpleegd: "2026-08-17"
   - label: "Wikipedia (NL) — Lambertus van Maastricht"
     url: "https://nl.wikipedia.org/wiki/Lambertus_van_Maastricht"
     geraadpleegd: "2026-08-16"

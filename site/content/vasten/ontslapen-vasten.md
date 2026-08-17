@@ -6,7 +6,7 @@ soort: vasten
 entry_id: ontslapen-vasten
 cyclus: jaar
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/ontslapen-vasten.yaml"
 van: 08-01
 tot: 08-14

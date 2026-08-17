@@ -139,14 +139,14 @@
       "items": { "type": "string", "minLength": 1 }
     },
     "periode": { "type": "string" },
-    "lagenlanden": { "type": "boolean" },
+    "lage_landen": { "type": "boolean" },
     "cyclus": {
       "type": "string",
       "enum": ["jaar", "paascyclus", "wekelijks"]
     },
     "samenvatting": { "type": "string" },
     "verhaal": { "type": "string" },
-    "betekenis_lagenlanden": {
+    "betekenis_lage_landen": {
       "type": "string",
       "description": "Apart stuk: wat deze heilige voor het christendom of de Orthodoxie in de Lage Landen betekende. Herbruikbaar buiten de heiligenpagina."
     },

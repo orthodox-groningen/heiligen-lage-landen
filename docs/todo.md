@@ -2,7 +2,7 @@
 
 Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
 
-- [x] Beleid en datamodel: selectiecriteria, `betekenis_lagenlanden`,
+- [x] Beleid en datamodel: selectiecriteria, `betekenis_lage_landen`,
       `selectie`, `id_aliassen`, aangescherpte `curated` voor heiligen.
 - [x] Generatie en index: betekenis-sectie, Hugo-aliases, `entries.json`,
       beheer-selectielijst; heiligenindex toont en zoekt alternatieve namen.
@@ -11,8 +11,8 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
 - [x] Inventaris: alle heiligen gescored (`selectie` in YAML);
       gatenlijst + Johannes en Sophrony op toevoegen; C-heiligen niet
       automatisch (`docs/inventaris.md`, `/beheer/selectie/`).
-- [ ] Kerninhoud: ontbrekenden + Johannes van Shanghai + kernset met
-      betekenis, verhaal, referenties, `curated`.
+- [x] Kerninhoud: ontbrekenden + Johannes van Shanghai + Sophrony + kernset
+      met betekenis, verhaal, referenties; `curated` waar de lat gehaald wordt.
 - [ ] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
       zondagen vóór Kerst waar modelbaar.
 - [ ] Iconen: legale bestanden voor de curated kern (`rechten: ok`).

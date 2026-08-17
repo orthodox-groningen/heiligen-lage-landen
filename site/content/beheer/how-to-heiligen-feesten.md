@@ -28,7 +28,7 @@ Schema: `schemas/entry.schema.json`. Publiceren:
 - Feest: `data/feesten/<id>.yaml` met `soort: feest`
 
 Minimaal: `id`, `soort`, `datum`. Voor een verhaal, samenvatting of
-`betekenis_lagenlanden` is minstens één **referentie** verplicht, met een
+`betekenis_lage_landen` is minstens één **referentie** verplicht, met een
 locator: `url`, of `isbn`, of `locator`.
 
 ### Vaste dag
@@ -38,7 +38,7 @@ id: willibrord
 soort: heilige
 status: stub             # curated: zie onder
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 datum:
   waarde: "11-07"
   stijl: gregoriaans     # documentatie van de invoer; default gregoriaans
@@ -104,7 +104,7 @@ Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 [docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
 
 ```yaml
-betekenis_lagenlanden: |
+betekenis_lage_landen: |
   Wat deze heilige voor het christendom of de Orthodoxie
   in de Lage Landen betekende.
 selectie: voldoet          # of nader-onderzoek | kandidaat-schrappen
@@ -117,13 +117,13 @@ selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
   Overzicht: [Selectie heiligen]({{% ref "/beheer/selectie" %}}). Nieuwe
   heiligen (Servatius, Otger, Johannes van Shanghai, Sophrony van Essex,
   …) in stap 5 volgens die lijst.
-- `betekenis_lagenlanden` is een **apart** stuk, niet hetzelfde als
+- `betekenis_lage_landen` is een **apart** stuk, niet hetzelfde als
   `verhaal` of `samenvatting`.
 
 `status: stub` — basisgegevens, kort of geen nagekeken betekenis-stuk.
 `status: curated` bij een **heilige** alleen als:
 
-1. `betekenis_lagenlanden` niet leeg is, en
+1. `betekenis_lage_landen` niet leeg is, en
 2. minstens één referentie niet Wikipedia of heiligen.net is
    (die twee mogen aanvullen; OrthodoxWiki telt wél).
 
@@ -146,7 +146,7 @@ id_aliassen:
 `id_aliassen` mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
-`betekenis_lagenlanden` onder **Betekenis voor de Lage Landen**. Selectie
+`betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
 staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}), niet op de
 publieke pagina.
 

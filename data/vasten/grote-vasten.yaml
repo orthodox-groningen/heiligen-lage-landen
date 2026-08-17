@@ -2,7 +2,7 @@ id: grote-vasten
 soort: vasten
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 vastenniveau: streng
 observances:
   - vasten

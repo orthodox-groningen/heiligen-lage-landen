@@ -2,7 +2,7 @@ id: boterweek
 soort: feest
 status: curated
 cyclus: paascyclus
-lagenlanden: false
+lage_landen: false
 vastenniveau: lichter
 onderdrukt_wekelijks_vasten: true
 observances:

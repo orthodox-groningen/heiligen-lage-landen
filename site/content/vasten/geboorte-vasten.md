@@ -6,7 +6,7 @@ soort: vasten
 entry_id: geboorte-vasten
 cyclus: jaar
 status: curated
-lagenlanden: false
+lage_landen: false
 source_path: "data/vasten/geboorte-vasten.yaml"
 van: 11-15
 tot: 12-24

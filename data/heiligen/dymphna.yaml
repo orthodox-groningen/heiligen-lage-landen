@@ -1,26 +1,46 @@
 id: dymphna
 soort: heilige
-status: stub
+status: curated
 cyclus: jaar
-lagenlanden: true
+lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Geel."
 namen:
   primair: Dymphna
   alternatief:
-  - Dimpna
-  - Dymphna van Geel
+    - Dimpna
+    - Dymphna van Geel
 datum:
-  waarde: 05-15
+  waarde: "05-15"
   stijl: gregoriaans
 titels:
-- Martelares van Geel
-periode: 7e eeuw
-samenvatting: 'Heilige van de Lage Landen: Dymphna. Martelares van Geel.'
+  - Martelares van Geel
+periode: "7e eeuw"
+locaties:
+  - Geel
+samenvatting: |
+  Ierse maagd-martelares, vereerd te Geel. Feestdag 15 mei.
+betekenis_lage_landen: |
+  Dymphna is de heilige van Geel. De middeleeuwse vita (dertiende eeuw)
+  plaatst haar vlucht uit Ierland en haar moord door haar vader in de
+  Kempen; of dat historisch is, is onzeker. Wat vaststaat is de cultus te
+  Geel, die de stad tot een van de oudste Europese centra van zorg voor
+  mensen met een psychische aandoening maakte (gezinsverpleging). OrthodoxWiki
+  neemt haar op als maagd-martelares.
+verhaal: |
+  Volgens de late vita was Dymphna een Ierse koningsdochter die voor de
+  incestueuze toenadering van haar vader naar het vasteland vluchtte, met
+  de priester Gerebernus, en bij Geel werd achterhaald en onthoofd (zevende
+  eeuw in de traditie). Gerebernus werd mee vermoord.
+
+  OrthodoxWiki volgt die overlevering. Een contemporaine bron ontbreekt;
+  de historische kern kan een lokale martelares zijn waarop later een Iers
+  vluchtverhaal is gelegd. De relieken en het hospitaal te Geel zijn de
+  tastbare voortzetting van de cultus.
 referenties:
-  - label: "Wikipedia (NL) — Dymphna"
-    url: "https://nl.wikipedia.org/wiki/Dymphna"
-    geraadpleegd: "2026-08-16"
   - label: "OrthodoxWiki — Dymphna"
     url: "https://orthodoxwiki.org/Dymphna"
+    geraadpleegd: "2026-08-16"
+  - label: "Wikipedia (NL) — Dymphna"
+    url: "https://nl.wikipedia.org/wiki/Dymphna"
     geraadpleegd: "2026-08-16"

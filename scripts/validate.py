@@ -57,7 +57,7 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
 
     for entry in entries:
         path = entry["source_path"]
-        betekenis = (entry.get("betekenis_lagenlanden") or "").strip()
+        betekenis = (entry.get("betekenis_lage_landen") or "").strip()
         text = (
             (entry.get("verhaal") or "").strip()
             or (entry.get("samenvatting") or "").strip()
@@ -65,7 +65,7 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
         )
         if text and not entry.get("referenties"):
             errors.append(
-                f"{path}: verhaal/samenvatting/betekenis_lagenlanden aanwezig "
+                f"{path}: verhaal/samenvatting/betekenis_lage_landen aanwezig "
                 "maar referenties ontbreken"
             )
         for i, ref in enumerate(entry.get("referenties") or []):
@@ -90,7 +90,7 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
             if (entry.get("status") or "stub") == "curated":
                 if not betekenis:
                     errors.append(
-                        f"{path}: status curated vereist betekenis_lagenlanden"
+                        f"{path}: status curated vereist betekenis_lage_landen"
                     )
                 refs = list(entry.get("referenties") or [])
                 if refs and all(referentie_is_aanvullend(r) for r in refs):

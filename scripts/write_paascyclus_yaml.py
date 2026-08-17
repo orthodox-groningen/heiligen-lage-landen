@@ -21,7 +21,7 @@ def main() -> None:
             "soort: feest",
             "status: curated",
             "cyclus: paascyclus",
-            "lagenlanden: false",
+            "lage_landen: false",
             "namen:",
             f'  primair: "{item["namen"]["primair"]}"',
         ]
