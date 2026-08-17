@@ -279,7 +279,10 @@ def normalize_entry(
         entry["datum_extra_norm"] = extra_norm
 
     entry["referenties"] = _resolve_referenties(entry, bronnen)
-    entry["status"] = entry.get("status") or "stub"
+    bronlaag = entry.get("bronlaag") or "encyclopedie"
+    if bronlaag not in {"nagekeken", "encyclopedie"}:
+        raise ValueError(f"{path}: onbekende bronlaag {bronlaag!r}")
+    entry["bronlaag"] = bronlaag
     betekenis = entry.get("betekenis_lage_landen")
     entry["betekenis_lage_landen"] = (
         str(betekenis).strip() if betekenis is not None else ""

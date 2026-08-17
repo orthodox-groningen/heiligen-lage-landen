@@ -1,0 +1,28 @@
+name: Vraag of opmerking
+description: Feedback over de kalender, de uitleg of de site — geen heilige voorstellen en geen correctie
+title: "[vraag] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Voor een ontbrekende heilige gebruikt u liever **Heilige voorstellen**.
+        Voor een fout in de gegevens **Correctie**.
+  - type: dropdown
+    id: over
+    attributes:
+      label: Waarover
+      options:
+        - Kalender of datum
+        - Heiligen of feesten
+        - Lezingen
+        - Vasten
+        - Uitleg
+        - Anders
+    validations:
+      required: true
+  - type: textarea
+    id: bericht
+    attributes:
+      label: Uw vraag of opmerking
+    validations:
+      required: true

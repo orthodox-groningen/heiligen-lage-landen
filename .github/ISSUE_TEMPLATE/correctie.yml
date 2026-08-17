@@ -1,0 +1,26 @@
+name: Correctie
+description: Datum, naam, verhaal, bron of iets anders dat niet klopt
+title: "[correctie] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Noem de pagina of de heilige/het feest, en wat er volgens u anders moet.
+  - type: input
+    id: waar
+    attributes:
+      label: Waar (pagina, heilige, feest, datum)
+      placeholder: Bijvoorbeeld /heiligen/willibrord/ of 7 november
+    validations:
+      required: true
+  - type: textarea
+    id: wat
+    attributes:
+      label: Wat klopt niet, en wat zou het wel moeten zijn?
+    validations:
+      required: true
+  - type: textarea
+    id: bron
+    attributes:
+      label: Bron (als u die hebt)
+      description: Link, boek of andere aanwijzing.

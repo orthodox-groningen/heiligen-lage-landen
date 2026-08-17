@@ -1,0 +1,33 @@
+name: Heilige voorstellen
+description: Iemand die volgens de criteria van de Lage Landen in de kalender hoort, maar ontbreekt
+title: "[heilige] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wie erin hoort, staat op [Heiligen van de Lage Landen](https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/heiligen/).
+        Patroon van een parochie is op zich niet genoeg.
+  - type: input
+    id: naam
+    attributes:
+      label: Naam
+      placeholder: Bijvoorbeeld Jeroen van Noordwijk
+    validations:
+      required: true
+  - type: input
+    id: feestdag
+    attributes:
+      label: Feestdag (als u die weet)
+      placeholder: Bijvoorbeeld 17 augustus
+  - type: textarea
+    id: waarom
+    attributes:
+      label: Waarom hoort deze heilige in de kalender?
+      description: In de Lage Landen geweest en daar iets gedaan (vóór het schisma), of orthodox vereerd én bijgedragen aan de Orthodoxie in NL/BE (na het schisma).
+    validations:
+      required: true
+  - type: textarea
+    id: bronnen
+    attributes:
+      label: Bronnen
+      description: Links of boeken die u raadpleegde (vita, lexikon, Wikipedia, parochiesite, …).

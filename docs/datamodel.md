@@ -210,7 +210,7 @@ selectie_toelichting: "…"    # optioneel; niet op de publieke pagina
 id_aliassen: [lubuinus]      # oude ids na een merge
 ```
 
-- **`betekenis_lage_landen`** — verplicht bij `status: curated` voor
+- **`betekenis_lage_landen`** — verplicht bij `bronlaag: nagekeken` voor
   `soort: heilige`. Zelfde referentieverplichting als verhaal/samenvatting.
   Eigen kop op de heiligenpagina (**Betekenis voor de Lage Landen**); ook in
   `site/static/data/entries.json` (alleen bij heiligen).
@@ -224,8 +224,9 @@ id_aliassen: [lubuinus]      # oude ids na een merge
 Niemand wordt automatisch geschrapt. `kandidaat-schrappen` is een markering
 voor een later, expliciet besluit.
 
-Werklijst (scores, gaten, post-schisma): [`docs/inventaris.md`](inventaris.md).
+Werklijst (beslissingen, geen catalogustelling): [`docs/inventaris.md`](inventaris.md).
 `selectie` staat per heilige in YAML; gegenereerd overzicht `/beheer/selectie/`.
+Later (niet gebouwd): [`docs/voorstellen.md`](voorstellen.md).
 
 ## Referenties
 
@@ -251,19 +252,24 @@ referenties:
 `bron_id` verwijst naar `data/bronnen/bronnen.yaml` (naam/metadata); de locator
 hoort **ook** op de referentie zelf te staan.
 
-## Status
+## Bronlaag
 
-- `stub` — basisgegevens, kort of geen nagekeken betekenis-stuk
-- `curated` — nagekeken tekst met traceerbare bronnen
+- `encyclopedie` — tekst volgt open naslagwerken (Wikipedia, heiligen.net)
+- `nagekeken` — nagekeken tekst met traceerbare bronnen (lexikon, vita, …)
 
-Voor **heiligen** geldt `curated` alleen als:
+Zelfde paginastructuur; `generate.py` zet een publieke bronzin.
+Default als het veld ontbreekt: `encyclopedie`.
+
+Voor **heiligen** geldt `nagekeken` alleen als:
 
 1. `betekenis_lage_landen` aanwezig en niet leeg is, en
 2. er minstens één referentie is die **niet** alleen Wikipedia of
    heiligen.net is (die twee mogen aanvullen).
 
-Feesten en vasten: `curated` blijft «nagekeken tekst met traceerbare
+Feesten en vasten: `nagekeken` blijft «nagekeken tekst met traceerbare
 bronnen» (bestaande referentieverplichting bij verhaal/samenvatting).
+
+Verouderd: `status: stub` / `status: curated`.
 
 ## Icoon
 

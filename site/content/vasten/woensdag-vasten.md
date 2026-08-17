@@ -5,7 +5,7 @@ type: vasten
 soort: vasten
 entry_id: woensdag-vasten
 cyclus: wekelijks
-status: curated
+bronlaag: nagekeken
 lage_landen: false
 source_path: "data/vasten/woensdag-vasten.yaml"
 weekdagen:
@@ -18,6 +18,8 @@ alternatief:
 **Wekelijks:** elke woensdag.
 
 **Vastenniveau (indicatief):** wijn en olie.
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Wekelijks vasten op woensdag, ter herinnering aan het verraad van Christus.
 

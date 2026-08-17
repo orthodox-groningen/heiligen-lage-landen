@@ -36,7 +36,7 @@ locator: `url`, of `isbn`, of `locator`.
 ```yaml
 id: willibrord
 soort: heilige
-status: stub             # curated: zie onder
+bronlaag: encyclopedie   # nagekeken: zie onder
 cyclus: jaar
 lage_landen: true
 datum:
@@ -118,7 +118,7 @@ referenties:
 `bron_id` wijst naar `data/bronnen/bronnen.yaml`. De locator hoort **ook**
 op de referentie in de entry, niet alleen in de catalogus.
 
-## Heiligen: selectie, betekenis, status
+## Heiligen: selectie, betekenis, bronlaag
 
 Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen" %}}).
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
@@ -134,23 +134,23 @@ selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
-- Scores en gatenlijst: [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md).
-  Overzicht: [Selectie heiligen]({{% ref "/beheer/selectie" %}}). Nieuwe
-  heiligen (Servatius, Otger, Johannes van Shanghai, Sophrony van Essex,
-  …) in stap 5 volgens die lijst.
+- Beslissingslog: [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md)
+  (geen vaste aantallen). Live overzicht:
+  [Selectie heiligen]({{% ref "/beheer/selectie" %}}).
 - `betekenis_lage_landen` is een **apart** stuk, niet hetzelfde als
   `verhaal` of `samenvatting`.
 
-`status: stub` — basisgegevens, kort of geen nagekeken betekenis-stuk.
-`status: curated` bij een **heilige** alleen als:
+`bronlaag: encyclopedie` — tekst volgt Wikipedia/heiligen.net; zelfde
+pagina-opbouw als nagekeken.
+`bronlaag: nagekeken` bij een **heilige** alleen als:
 
 1. `betekenis_lage_landen` niet leeg is, en
 2. minstens één referentie niet Wikipedia of heiligen.net is
    (die twee mogen aanvullen; OrthodoxWiki telt wél).
 
-Feesten: `curated` blijft nagekeken tekst met traceerbare bronnen.
+Feesten: `nagekeken` blijft nagekeken tekst met traceerbare bronnen.
 
-`validate.py` weigert een heilige die `curated` is zonder die lat.
+`validate.py` weigert een heilige die `nagekeken` is zonder die lat.
 
 ## Icoon
 

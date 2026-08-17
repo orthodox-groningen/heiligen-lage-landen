@@ -1,6 +1,6 @@
 id: cunera
 soort: heilige
-status: stub
+bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
 selectie: voldoet
@@ -29,7 +29,7 @@ verhaal: |
   ziek achtergelaten te Rhenen, gewurgd door de jaloerse vrouw van haar
   gastheer. Dat is middeleeuwse legende. De lokale verering in de
   Cunerakerk is de historische kern. Tot een lexikon- of oorkondetoets
-  blijft dit een stub.
+  volgt dit Wikipedia.
 referenties:
   - label: "Wikipedia (NL) — Cunera"
     url: "https://nl.wikipedia.org/wiki/Cunera"

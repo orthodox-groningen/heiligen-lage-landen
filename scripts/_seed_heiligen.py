@@ -121,7 +121,7 @@ def main() -> int:
         doc = {
             "id": eid,
             "soort": "heilige",
-            "status": "stub",
+            "bronlaag": "encyclopedie",
             "cyclus": "jaar",
             "lage_landen": True,
             "namen": {"primair": naam},
@@ -150,7 +150,7 @@ def main() -> int:
     # A few curated upgrades
     curated = {
         "willibrord": {
-            "status": "curated",
+            "bronlaag": "nagekeken",
             "samenvatting": "Apostel van de Friezen; aartsbisschop van Utrecht.",
             "verhaal": (
                 "Willibrord (ca. 658–739) predikte onder de Friezen en stichtte de zetel van Utrecht. "
@@ -164,7 +164,7 @@ def main() -> int:
             ],
         },
         "bonifatius": {
-            "status": "curated",
+            "bronlaag": "nagekeken",
             "samenvatting": "Missionaris en martelaar, verbonden met de kerstening van de Lage Landen en Germanië.",
             "verhaal": (
                 "Bonifatius (Wynfreth) werkte als missionaris op het vasteland en stierf als martelaar bij Dokkum (ca. 754). "
@@ -176,7 +176,7 @@ def main() -> int:
             ],
         },
         "walfridus-bedum": {
-            "status": "curated",
+            "bronlaag": "nagekeken",
             "samenvatting": "Plaatselijke heilige verbonden met Bedum.",
             "verhaal": (
                 "Walfridus (of Walfried) wordt in Groninger traditie verbonden met Bedum. "

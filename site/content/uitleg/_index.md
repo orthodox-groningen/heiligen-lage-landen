@@ -1,6 +1,6 @@
 ---
-title: "Help"
-git_date: 2026-08-16
+title: "Uitleg"
+git_date: 2026-08-17
 ---
 
 Deze pagina’s zijn voor wie de kalender *gebruikt*: thuis, in de parochie of
@@ -13,3 +13,4 @@ wil doorgeven.
 Kies een onderwerp. Technische details voor wie de site bijhoudt staan niet
 hier, maar op een bijlage bij elk onderwerp en op de pagina
 [Voor beheerders]({{% ref "/beheer" %}}).
+Een vraag of correctie: [Reactie geven]({{% ref "/uitleg/reactie" %}}).

@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from load_entries import load_entries  # noqa: E402
 from validate import collect_content_errors  # noqa: E402
 
-from test_kerninhoud import CURATED_KERN  # noqa: E402
+from test_kerninhoud import NAGEKEKEN_KERN  # noqa: E402
 
 STATIC = ROOT / "site" / "static"
 SCHEMA = ROOT / "schemas" / "entry.schema.json"
@@ -47,9 +47,9 @@ def test_schema_verbiedt_url_als_bestand() -> None:
     assert "[Hh][Tt][Tt][Pp]" in bestand.get("pattern", "")
 
 
-def test_curated_kern_iconen_lokaal_of_weggelaten() -> None:
+def test_nagekeken_kern_iconen_lokaal_of_weggelaten() -> None:
     by_id = {e["id"]: e for e in load_entries() if e["soort"] == "heilige"}
-    for sid in CURATED_KERN:
+    for sid in NAGEKEKEN_KERN:
         icoon = by_id[sid].get("icoon") or {}
         if sid in ZONDER_LEGAAL_BESTAND:
             assert not icoon.get("bestand"), sid

@@ -1,4 +1,4 @@
-"""Kerninhoud (stap 5): nieuwe heiligen en curated-lat."""
+"""Kerninhoud: nieuwe heiligen en nagekeken-lat."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ NIEUW = {
     "sophrony-van-essex",
 }
 
-CURATED_KERN = NIEUW | {
+NAGEKEKEN_KERN = NIEUW | {
     "willibrord",
     "bonifatius",
     "lambertus",
@@ -43,10 +43,10 @@ def test_nieuwe_heiligen_bestaan_met_betekenis() -> None:
         assert entry["referenties"]
 
 
-def test_curated_kern_heeft_niet_alleen_wikipedia() -> None:
+def test_nagekeken_kern_heeft_niet_alleen_wikipedia() -> None:
     by_id = {e["id"]: e for e in load_entries() if e["soort"] == "heilige"}
-    for sid in CURATED_KERN:
+    for sid in NAGEKEKEN_KERN:
         entry = by_id[sid]
-        assert entry["status"] == "curated", sid
+        assert entry["bronlaag"] == "nagekeken", sid
         assert (entry.get("betekenis_lage_landen") or "").strip(), sid
         assert any(not referentie_is_aanvullend(r) for r in entry["referenties"]), sid

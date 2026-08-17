@@ -1,6 +1,6 @@
 ---
 title: Heiligen van de Lage Landen (technisch)
-description: Selectievelden, curated-lat, id_aliassen; bron is YAML onder data/heiligen/
+description: Selectievelden, bronlaag, id_aliassen; bron is YAML onder data/heiligen/
 uitleg_stijl: heiligen-technisch
 build:
   list: never
@@ -31,11 +31,11 @@ selectie_toelichting: "Kort waarom, voor beheerders."
   (`scripts/load_entries.py`).
 - `selectie` en `selectie_toelichting` horen **niet** op de publieke
   heiligenpagina. Overzicht voor beheerders: `/beheer/selectie/`
-  (gegenereerd).
+  (gegenereerd; live telling).
 - `kandidaat-schrappen` verwijdert niets; dat is een markering tot een
   expliciet besluit.
 
-Werklijst (scores, gaten, post-schisma):
+Beslissingslog (geen catalogusdump):
 [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md).
 `selectie` staat per heilige in YAML; overzicht `/beheer/selectie/`.
 
@@ -47,21 +47,28 @@ betekenis_lage_landen: |
   in de Lage Landen.
 ```
 
-Verplicht bij `status: curated` voor `soort: heilige`. Als het veld gezet
-is, gelden dezelfde referentie-eisen als bij `verhaal` / `samenvatting`.
-`generate.py` zet het onder het kopje **Betekenis voor de Lage Landen**
-en in `entries.json` (veld `betekenis_lage_landen`, alleen heiligen).
+Verplicht bij `bronlaag: nagekeken` voor `soort: heilige`. Als het veld
+gezet is, gelden dezelfde referentie-eisen als bij `verhaal` /
+`samenvatting`. `generate.py` zet het onder het kopje **Betekenis voor de
+Lage Landen** en in `entries.json` (veld `betekenis_lage_landen`, alleen
+heiligen).
 
-## Status curated (heiligen)
+## Bronlaag
 
-`validate.py` weigert `status: curated` bij een heilige tenzij:
+`bronlaag: encyclopedie` of `bronlaag: nagekeken` (default: encyclopedie).
+Zelfde paginastructuur; de publieke zin zegt hoe stevig de basis is.
+
+`validate.py` weigert `bronlaag: nagekeken` bij een heilige tenzij:
 
 1. `betekenis_lage_landen` niet leeg is, en
 2. minstens één referentie **niet** Wikipedia of heiligen.net is
    (`bron_id` `wiki-heiligen` / `hnet`, of url/label met `wikipedia.org` /
    `heiligen.net`; OrthodoxWiki telt wél als eigen bron).
 
-Feesten en vasten: curated blijft nagekeken tekst met traceerbare bronnen.
+Feesten en vasten: `nagekeken` blijft nagekeken tekst met traceerbare
+bronnen.
+
+Verouderd: `status: stub` / `status: curated` (vervangen door bronlaag).
 
 ## Eén persoon, één id
 

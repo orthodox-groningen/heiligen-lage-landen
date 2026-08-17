@@ -107,7 +107,7 @@ feesten = [
 for eid, naam, mmdd, samenvatting, verhaal in feesten:
     text = f"""id: {eid}
 soort: feest
-status: curated
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: false
 namen:

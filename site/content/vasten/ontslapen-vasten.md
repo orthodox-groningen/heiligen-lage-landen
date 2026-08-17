@@ -5,7 +5,7 @@ type: vasten
 soort: vasten
 entry_id: ontslapen-vasten
 cyclus: jaar
-status: curated
+bronlaag: nagekeken
 lage_landen: false
 source_path: "data/vasten/ontslapen-vasten.yaml"
 van: 08-01
@@ -22,6 +22,8 @@ alternatief:
 **Vastenniveau (indicatief):** streng.
 
 **Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Vasten van 1 tot en met 14 augustus, ter voorbereiding op het Ontslapen.
 

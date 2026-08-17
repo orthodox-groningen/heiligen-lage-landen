@@ -16,7 +16,7 @@ def _heilige(**overrides):
     base = {
         "id": "voorbeeld",
         "soort": "heilige",
-        "status": "stub",
+        "bronlaag": "encyclopedie",
         "source_path": "data/heiligen/voorbeeld.yaml",
         "referenties": [],
         "id_aliassen": [],
@@ -42,11 +42,11 @@ def test_aanvullende_bron_wikipedia_niet_orthodoxwiki() -> None:
     )
 
 
-def test_curated_heilige_zonder_betekenis_faalt() -> None:
+def test_nagekeken_heilige_zonder_betekenis_faalt() -> None:
     errors = collect_content_errors(
         [
             _heilige(
-                status="curated",
+                bronlaag="nagekeken",
                 referenties=[
                     {
                         "label": "OrthodoxWiki",
@@ -59,11 +59,11 @@ def test_curated_heilige_zonder_betekenis_faalt() -> None:
     assert any("betekenis_lage_landen" in e for e in errors)
 
 
-def test_curated_heilige_alleen_wikipedia_faalt() -> None:
+def test_nagekeken_heilige_alleen_wikipedia_faalt() -> None:
     errors = collect_content_errors(
         [
             _heilige(
-                status="curated",
+                bronlaag="nagekeken",
                 betekenis_lage_landen="Werkte onder de Friezen.",
                 referenties=[
                     {
@@ -77,11 +77,11 @@ def test_curated_heilige_alleen_wikipedia_faalt() -> None:
     assert any("Wikipedia/heiligen.net" in e for e in errors)
 
 
-def test_curated_heilige_met_betekenis_en_orthodoxwiki_ok() -> None:
+def test_nagekeken_heilige_met_betekenis_en_orthodoxwiki_ok() -> None:
     errors = collect_content_errors(
         [
             _heilige(
-                status="curated",
+                bronlaag="nagekeken",
                 betekenis_lage_landen="Apostel van de Friezen.",
                 referenties=[
                     {
@@ -119,6 +119,6 @@ def test_id_alias_niet_eigen_id_en_niet_levend() -> None:
 
 def test_bestaande_heiligen_laden_met_selectie() -> None:
     by_id = {e["id"]: e for e in load_entries() if e["soort"] == "heilige"}
-    assert by_id["willibrord"]["status"] == "curated"
+    assert by_id["willibrord"]["bronlaag"] == "nagekeken"
     assert by_id["willibrord"]["selectie"] == "voldoet"
     assert by_id["willibrord"]["betekenis_lage_landen"]

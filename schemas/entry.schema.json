@@ -245,10 +245,11 @@
         "rechten": { "type": "string", "enum": ["ok", "onbekend", "nee"] }
       }
     },
-    "status": {
+    "bronlaag": {
       "type": "string",
-      "enum": ["stub", "curated"],
-      "default": "stub"
+      "enum": ["nagekeken", "encyclopedie"],
+      "default": "encyclopedie",
+      "description": "nagekeken = lexikon/vita of vergelijkbare bron; encyclopedie = Wikipedia/heiligen.net. Zelfde paginastructuur."
     }
   }
 }

@@ -26,7 +26,7 @@ def _heilige(**overrides):
     entry = {
         "id": "voorbeeld",
         "soort": "heilige",
-        "status": "stub",
+        "bronlaag": "encyclopedie",
         "cyclus": "jaar",
         "lage_landen": True,
         "source_path": "data/heiligen/voorbeeld.yaml",
@@ -69,6 +69,26 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert "niet op de publieke pagina" not in body
     assert "## Betekenis voor de Lage Landen" in body
     assert "Predikte onder de Friezen." in body
+    assert "nagekeken aan een lexikon" not in body
+    assert "open naslagwerken" in body
+
+
+def test_entry_page_nagekeken_bronzin(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            bronlaag="nagekeken",
+            betekenis_lage_landen="Predikte onder de Friezen.",
+            verhaal="Een vita.",
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    assert "nagekeken aan een lexikon" in text
+    assert "open naslagwerken" not in text
+    assert "Deze pagina is nog een stub" not in text
 
 
 def test_entry_page_icoon_alleen_bij_rechten_ok(
@@ -123,6 +143,7 @@ def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
     assert by_id["voorbeeld"]["betekenis_lage_landen"] == "Voor de Lage Landen."
     assert "betekenis_lage_landen" not in by_id["kerst"]
     assert "selectie" not in by_id["voorbeeld"]
+    assert by_id["voorbeeld"]["bronlaag"] == "encyclopedie"
 
 
 def test_beheer_selectie_groepeert_en_toont_toelichting() -> None:
@@ -172,9 +193,13 @@ def test_write_beheer_selectie_naar_beheer_map(
     assert "alberik.yaml" not in body
     assert "lebuinus.yaml" in body
     assert "albericus-van-utrecht.yaml" in body
-    assert "## Voldoet (59)" in body
-    assert "## Nader onderzoek (7)" in body
-    assert "## Kandidaat om te schrappen (5)" in body
+    heiligen = [e for e in load_entries() if e["soort"] == "heilige"]
+    n_voldoet = sum(1 for e in heiligen if e["selectie"] == "voldoet")
+    n_nader = sum(1 for e in heiligen if e["selectie"] == "nader-onderzoek")
+    n_kand = sum(1 for e in heiligen if e["selectie"] == "kandidaat-schrappen")
+    assert f"## Voldoet ({n_voldoet})" in body
+    assert f"## Nader onderzoek ({n_nader})" in body
+    assert f"## Kandidaat om te schrappen ({n_kand})" in body
     assert "Rath Melsigi" in body
 
 

@@ -5,7 +5,7 @@ type: vasten
 soort: vasten
 entry_id: geboorte-vasten
 cyclus: jaar
-status: curated
+bronlaag: nagekeken
 lage_landen: false
 source_path: "data/vasten/geboorte-vasten.yaml"
 van: 11-15
@@ -21,6 +21,8 @@ alternatief:
 **Vastenniveau (indicatief):** lichter.
 
 **Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Vasten van 15 november tot Kerstavond (24 december), ter voorbereiding op Kerstfeest.
 

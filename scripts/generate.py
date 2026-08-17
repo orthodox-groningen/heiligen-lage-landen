@@ -108,6 +108,27 @@ SOORT_DIR = {
     "vasten": "vasten",
 }
 
+BRONLAAG_NAGEKEKEN = (
+    "> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of "
+    "vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen."
+)
+BRONLAAG_ENCYCLOPEDIE = (
+    "> **Bron:** Deze tekst volgt open naslagwerken (Wikipedia, heiligen.net). "
+    "Die worden door velen bijgehouden, maar zijn geen kerkelijke uitgave. "
+    "Later toetsen we aan een lexikon of vita."
+)
+
+
+def bronlaag_van(entry: dict[str, Any]) -> str:
+    laag = entry.get("bronlaag") or "encyclopedie"
+    return laag if laag in {"nagekeken", "encyclopedie"} else "encyclopedie"
+
+
+def bronlaag_note_md(entry: dict[str, Any]) -> str:
+    if bronlaag_van(entry) == "nagekeken":
+        return BRONLAAG_NAGEKEKEN
+    return BRONLAAG_ENCYCLOPEDIE
+
 
 def entry_permalink(entry: dict[str, Any]) -> str:
     kind = SOORT_DIR[entry["soort"]]
@@ -200,7 +221,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         f"soort: {entry['soort']}",
         f"entry_id: {entry['id']}",
         f"cyclus: {entry.get('cyclus') or 'jaar'}",
-        f"status: {entry.get('status', 'stub')}",
+        f"bronlaag: {bronlaag_van(entry)}",
         f"lage_landen: {'true' if entry.get('lage_landen') else 'false'}",
         f"source_path: {yaml_quote(entry['source_path'])}",
     ]
@@ -392,6 +413,8 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     if entry.get("periode"):
         body.append(f"**Periode:** {entry['periode']}")
         body.append("")
+    body.append(bronlaag_note_md(entry))
+    body.append("")
     if entry.get("samenvatting"):
         body.append(entry["samenvatting"].strip())
         body.append("")
@@ -405,12 +428,6 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         body.append("## Verhaal")
         body.append("")
         body.append(entry["verhaal"].strip())
-        body.append("")
-    elif entry.get("status") == "stub":
-        body.append(
-            "> Deze pagina is nog een stub: alleen basisgegevens. "
-            "Een onderbouwd verhaal volgt."
-        )
         body.append("")
     body.append("## Referenties")
     body.append("")
@@ -435,6 +452,8 @@ title: "Heiligen"
 
 Overzicht van heiligen van de Lage Landen in deze kalender.
 Zoeken vindt ook andere namen van dezelfde heilige.
+Niet iedere heilige van de Kerk staat hier; zie de
+[uitleg](/uitleg/heiligen/).
 """,
     )
     write_text(
@@ -598,7 +617,7 @@ def ensure_hand_owned_indexes() -> None:
         },
         {
             "path": CONTENT / "uitleg" / "_index.md",
-            "title": "Help",
+            "title": "Uitleg",
             "layout": None,
         },
         {
@@ -666,7 +685,7 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
     {
         "id": "heiligen",
         "title": "Heiligen van de Lage Landen",
-        "description": "Wie in deze kalender staat, wat een stub is, en wat nagekeken tekst inhoudt",
+        "description": "Wie in deze kalender staat, hoe stevig de tekst is, en waarom een dag zonder heilige kan",
     },
     {
         "id": "kleuren",
@@ -848,7 +867,7 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             "samenvatting": (entry.get("samenvatting") or "").strip(),
             "url": entry_permalink(entry),
             "lage_landen": bool(entry.get("lage_landen")),
-            "status": entry.get("status") or "stub",
+            "bronlaag": bronlaag_van(entry),
             "observances": entry.get("observances") or [],
             "onderdrukt_wekelijks_vasten": bool(
                 entry.get("onderdrukt_wekelijks_vasten")

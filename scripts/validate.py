@@ -32,7 +32,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def referentie_is_aanvullend(ref: dict[str, Any]) -> bool:
-    """Wikipedia / heiligen.net mogen curated aanvullen, niet als enige bron."""
+    """Wikipedia / heiligen.net mogen nagekeken tekst aanvullen, niet als enige bron."""
     bron = str(ref.get("bron_id") or "").strip()
     if bron in AANVULLENDE_BRON_IDS:
         return True
@@ -99,15 +99,15 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
             sel = entry.get("selectie") or "nader-onderzoek"
             if sel not in SELECTIE_WAARDEN:
                 errors.append(f"{path}: onbekende selectie {sel!r}")
-            if (entry.get("status") or "stub") == "curated":
+            if (entry.get("bronlaag") or "encyclopedie") == "nagekeken":
                 if not betekenis:
                     errors.append(
-                        f"{path}: status curated vereist betekenis_lage_landen"
+                        f"{path}: bronlaag nagekeken vereist betekenis_lage_landen"
                     )
                 refs = list(entry.get("referenties") or [])
                 if refs and all(referentie_is_aanvullend(r) for r in refs):
                     errors.append(
-                        f"{path}: status curated vereist minstens één bron "
+                        f"{path}: bronlaag nagekeken vereist minstens één bron "
                         "naast Wikipedia/heiligen.net"
                     )
 

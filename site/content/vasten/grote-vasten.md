@@ -5,7 +5,7 @@ type: vasten
 soort: vasten
 entry_id: grote-vasten
 cyclus: paascyclus
-status: curated
+bronlaag: nagekeken
 lage_landen: false
 source_path: "data/vasten/grote-vasten.yaml"
 van_offset_dagen: -48
@@ -54,6 +54,8 @@ alternatief:
 **Vastenniveau (indicatief):** streng.
 
 **Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Van Schone Maandag tot en met Lazarus-zaterdag (veertigdagen); daarna volgt de Grote Week.
 

@@ -1,6 +1,6 @@
 id: walfridus-bedum
 soort: heilige
-status: stub
+bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
 selectie: voldoet
@@ -27,8 +27,7 @@ verhaal: |
   De overlevering maakt van Walfridus een vrome leek te Bedum, vermoord
   door Vikingen, begraven waar later de Walfriduskerk stond. Jaartallen
   en details wisselen. Zolang geen Heiligenlexikon- of oorkondetekst is
-  nagetrokken, blijft het verhaal een stub op basis van de Nederlandse
-  Wikipedia-samenvatting.
+  nagetrokken, volgt het verhaal de Nederlandse Wikipedia-samenvatting.
 referenties:
   - label: "Wikipedia (NL) — Walfridus"
     url: "https://nl.wikipedia.org/wiki/Walfridus"

@@ -960,7 +960,12 @@
       bodyEl.innerHTML = popoverListHtml(items);
     } else {
       bodyEl.innerHTML =
-        `<p class="muted day-popover-empty">Geen feesten of heiligen op deze dag.</p>`;
+        `<p class="muted day-popover-empty">Geen feesten of heiligen van de Lage Landen op deze dag. ` +
+        achtergrondLink(
+          "heiligen",
+          "Waarom niet iedere heilige hier staat"
+        ) +
+        `</p>`;
     }
   }
 
@@ -1254,7 +1259,16 @@
       .filter((e) => e.soort === "heilige")
       .filter((e) => entryNaam(e))
       .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
-    if (!saints.length) return "";
+    if (!saints.length) {
+      return (
+        `<p class="muted today-geen-heilige">Geen heilige van de Lage Landen op deze dag. ` +
+        achtergrondLink(
+          "heiligen",
+          "Waarom niet iedere heilige hier staat"
+        ) +
+        `</p>`
+      );
+    }
     const items = saints
       .map((e) => {
         const icoon = e.icoon
@@ -1745,7 +1759,12 @@
       );
     if (!matched.length) {
       list.innerHTML =
-        "<p>Geen vaste feesten, heiligen of vasten op deze kalenderdag.</p>";
+        "<p>Geen vaste feesten, heiligen of vasten op deze kalenderdag. " +
+        achtergrondLink(
+          "heiligen",
+          "Waarom niet iedere heilige hier staat"
+        ) +
+        "</p>";
     } else {
       list.innerHTML =
         '<ul class="entry-list">' +

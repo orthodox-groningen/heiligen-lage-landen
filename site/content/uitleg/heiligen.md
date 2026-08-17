@@ -1,14 +1,18 @@
 ---
 title: "Heiligen van de Lage Landen"
-description: "Wie in deze kalender staat, wat een stub is, en wat nagekeken tekst inhoudt"
+description: "Wie in deze kalender staat, hoe stevig de tekst is, en waarom een dag zonder heilige kan"
 uitleg_stijl: heiligen
 git_date: 2026-08-17
 ---
 
 Deze kalender verzamelt **heiligen die bij de Lage Landen horen**, naast de
 vaste feesten en de paascyclus. Niet iedere heilige van de universele Kerk
-staat hier. Deze pagina zegt wie we opnemen, en wat u op een
-heiligenpagina kunt verwachten.
+staat hier. Deze pagina zegt wie we opnemen, wat u op een heiligenpagina
+kunt verwachten, en waarom een dag soms **geen heilige** toont.
+
+Het [overzicht van heiligen]({{% ref "/heiligen" %}}) is de ingang op
+**persoon** (zoeken, belang, verhaal, datum). Het
+[Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
 
 ## Wie staat erin?
 
@@ -28,7 +32,24 @@ zomaar. Blijkt later dat iemand niet aan deze maatstaf voldoet, dan merken
 we dat intern aan; verwijderen gebeurt alleen na een uitdrukkelijk besluit.
 
 Ontbreekt iemand die wél voldoet, dan hoort die erbij. Dat vullen we
-geleidelijk aan.
+geleidelijk aan. Zie [Reactie geven]({{% ref "/uitleg/reactie" %}}).
+
+## Wie staat er niet in?
+
+**Patroon van een parochie of klooster is niet genoeg.** Dat iemand de
+naamheilige is van een kerk in Eindhoven, Rotterdam of Aalsmeer, zegt nog
+niet dat die heilige zelf in de Lage Landen heeft gewerkt of hier de
+Orthodoxie heeft opgebouwd. Daarom staan hier bijvoorbeeld niet Nektarios
+van Egina, Nicolaas van Myra of Serafim van Sarov — hoe vertrouwd die
+namen in parochies ook zijn.
+
+Later kan een aparte, duidelijk gemerkte groep **parochiepatronen**
+onderaan de daglijst komen, met een link naar de betreffende parochie.
+Dat is nog geen onderdeel van deze kalender.
+
+Ook de **universele menologion** (iedere heilige van de Kerk, elke dag)
+hoort hier niet. Een dag zonder heilige van de Lage Landen is dus geen
+fout: er kunnen wel een feest, vasten of lezingen zijn.
 
 ## Eén persoon, meer namen
 
@@ -39,14 +60,17 @@ overzicht van heiligen.
 
 ## Wat u op een pagina leest
 
-Een nagekeken pagina heeft een apart stuk **wat deze heilige voor het
-christendom of de Orthodoxie in de Lage Landen betekende**. Dat stuk is
-bewust los van het levensverhaal, zodat het ook elders hergebruikt kan
-worden. Alles wat er staat, steunt op genoemde bronnen.
+Elke heiligenpagina heeft dezelfde opbouw: naam, feestdag, plaatsen, een
+korte aanduiding, waar mogelijk betekenis en verhaal, en de bronnen.
 
-Pagina’s die nog niet nagekeken zijn, tonen alleen basisgegevens (naam,
-feestdag, korte aanduiding). Daar staat bij dat een onderbouwd verhaal
-nog volgt.
+Bovenaan staat hoe **stevig** die tekst is:
+
+- **Nagekeken:** de tekst steunt op een lexikon, vita of vergelijkbare
+  bron. Wikipedia en heiligen.net mogen aanvullen; die alleen zijn niet
+  genoeg.
+- **Open naslagwerk:** de tekst volgt Wikipedia of heiligen.net. Dat zijn
+  zorgvuldig bijgehouden naslagwerken, geen kerkelijke uitgave. Later
+  toetsen we aan een lexikon of vita.
 
 Soms staat er een afbeelding bij. Alleen als we die met een duidelijke
 licentie lokaal mogen tonen; een plaatje elders op internet is daarvoor
@@ -54,5 +78,6 @@ niet genoeg.
 
 ## Voor wie de site bijhoudt
 
-Velden, status `stub`/`curated` en hoe u een heilige toevoegt, staan op de
+Velden, bronlaag (`nagekeken` / `encyclopedie`) en hoe u een heilige
+toevoegt, staan op de
 [technische pagina bij deze uitleg]({{% ref "/uitleg/heiligen-technisch" %}}).

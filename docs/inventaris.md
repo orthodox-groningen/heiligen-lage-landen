@@ -1,9 +1,13 @@
 # Inventaris heiligen van de Lage Landen
 
-Stap 4 van het verbeterplan. Scores staan in `data/heiligen/*.yaml`
-(`selectie`, `selectie_toelichting`). Overzicht: `/beheer/selectie/`
-(gegenereerd). Niemand van de huidige lijst is verwijderd;
-`kandidaat-schrappen` is alleen een markering.
+Beslissingslog: wie erin hoort, wie nader onderzocht wordt, wie kandidaat
+is om te schrappen, en welke post-schisma-heiligen bewust **niet** in de
+catalogus staan. Geen telling van het aantal YAML-bestanden — die wijzigt.
+
+Live overzicht (gegenereerd uit `selectie` op elke heilige):
+`/beheer/selectie/`. Scores zelf: `data/heiligen/*.yaml`.
+Niemand van de huidige lijst is verwijderd; `kandidaat-schrappen` is alleen
+een markering.
 
 Criteria (normatief voor gebruikers):
 [Heiligen van de Lage Landen](../site/content/uitleg/heiligen.md).
@@ -29,9 +33,9 @@ Post-schisma: alleen Orthodox vereerd **én** bijgedragen aan de Orthodoxie
 in NL/BE. Een kerk of parochie die naar iemand is genoemd, of een
 Nederlandse dienst/vertaling, is daarvoor niet genoeg.
 
-## Besluiten voor stap 5
+## Besluiten 17 augustus 2026
 
-Uitgevoerd 17 augustus 2026 (YAML in `data/heiligen/`).
+YAML in `data/heiligen/`. `selectie: voldoet` voor de nieuwe ids.
 
 ### Post-schisma — toevoegen
 
@@ -40,12 +44,11 @@ Uitgevoerd 17 augustus 2026 (YAML in `data/heiligen/`).
 | `johannes-van-shanghai` | Johannes Maximovitsj van Shanghai | Categorie A: institutionele ontwikkeling van de Orthodoxie in Nederland |
 | `sophrony-van-essex` | Sophrony (Sacharov) van Essex | Categorie B: liturgie in Gent (14 september 1980); geestelijke raad aan de stichteres van Asten |
 
-Feestdag, `betekenis_lage_landen` en `status: curated` in stap 5. Voor
-Johannes de keten 1952 (bezoek) / 1954 (opname in zijn bisdom, wijding
-van Jakob Akkersdijk, klooster Johannes de Doper in Den Haag) meenemen;
-het bisdom van 1965 later toetsen aan synodale stukken. Pervijze
-(1976, vanuit Den Haag) is bron voor Nederlandstalige liturgie, geen
-aparte heilige.
+Feestdag, `betekenis_lage_landen` en `bronlaag: nagekeken`. Voor Johannes
+de keten 1952 (bezoek) / 1954 (opname in zijn bisdom, wijding van Jakob
+Akkersdijk, klooster Johannes de Doper in Den Haag) meenemen; het bisdom
+van 1965 later toetsen aan synodale stukken. Pervijze (1976, vanuit Den
+Haag) is bron voor Nederlandstalige liturgie, geen aparte heilige.
 
 ### Post-schisma — niet invoeren
 
@@ -72,7 +75,11 @@ Pre-schisma patroonheiligen van huidige parochies (Maximos de Belijder,
 Theofano, Antonius en Theodosius van Kiev, Nicolaas, Johannes de Doper,
 Chrysostomos) horen niet automatisch in de catalogus: alleen
 patroonschap volstaat niet. Servatius is geen patroon-alleen: hij
-werkte in Maastricht/Tongeren en blijft op de toevoeglijst hieronder.
+werkte in Maastricht/Tongeren.
+
+Later denkbaar: een gemerkte groep **parochiepatronen** (categorie C/D)
+onderaan de daglijst, met link naar de parochiesite. Dat is geen
+vervanging van de kernselectie. Zie [docs/voorstellen.md](voorstellen.md).
 
 ### Pre-schisma — toevoegen
 
@@ -88,41 +95,18 @@ Alle zeven voldoen aan «in de Lage Landen geweest en daar iets gedaan».
 | `gondulphus` | Gondulphus | Bisschop van Maastricht |
 | `rumold` | Rumold van Mechelen | Martelaar / Mechelen |
 
-## Stap 5 (kerninhoud, 17 augustus 2026)
+Bestaande kern met `betekenis_lage_landen` en `bronlaag: nagekeken` waar
+minstens één bron niet Wikipedia/heiligen.net is: Willibrord, Bonifatius,
+Lambertus, Lebuinus, Adelbert, Gertrudis, Dymphna. Jeroen, Walfridus,
+Bavo, Cunera, Werenfrid, Radboud, Oda van de Peel blijven
+`bronlaag: encyclopedie` tot een niet-encyclopedische bron is nagetrokken.
 
-YAML staat in `data/heiligen/`. `selectie: voldoet` voor de nieuwe ids.
+## Beleidslijsten (geen catalogusdump)
 
-Toegevoegd: `servatius`, `otger`, `odulphus`, `begga`, `monulphus`,
-`gondulphus`, `rumold`, `johannes-van-shanghai`, `sophrony-van-essex`.
+Toelichting per id staat in de YAML. De groep **voldoet** groeit; die
+staat niet hier. Live: `/beheer/selectie/`.
 
-Bestaande kern met `betekenis_lage_landen`: Willibrord, Bonifatius,
-Lambertus, Lebuinus, Adelbert, Gertrudis, Dymphna (`curated` waar minstens
-één bron niet Wikipedia/heiligen.net is); Jeroen, Walfridus, Bavo, Cunera,
-Werenfrid, Radboud, Oda van de Peel blijven `stub` tot een niet-encyclopedische
-bron is nagetrokken.
-
-C-heiligen uit het post-schisma-onderzoek niet in deze ronde.
-
-## Huidige catalogus (62)
-
-Scores 17 augustus 2026. Toelichting per id staat in de YAML.
-
-### Voldoet (50)
-
-`acharius-van-doornik`, `adelbert`, `adelgondis-van-drongen`,
-`albericus-van-utrecht`, `alena-van-dilbeek`, `alubertus-van-utrecht`,
-`amalberga-van-susteren`, `amalberga-van-temse`, `amandus-van-maastricht`,
-`ansfried-van-utrecht`, `bavo`, `bernulphus`, `bonifatius`, `cunera`,
-`domitianus`, `dymphna`, `eligius`, `engelmund`, `ermelindis`, `floribert`,
-`foillan`, `frederich`, `gertrudis`, `gommar`, `gregorius-van-utrecht`,
-`gudula-van-brussel`, `hubertus-van-maastricht`, `hunger-van-utrecht`,
-`iduberga`, `jeroen-van-noordwijk`, `lambertus`, `lebuinus`, `ludger`,
-`marcellinus-van-utrecht`, `oda-van-amay`, `oda-van-de-peel`, `odrada`,
-`plechelm-von-odilienberg`, `radboud`, `remaclus`, `swidbert`,
-`theodaard-van-maastricht`, `trudo`, `ultan`, `walfridus-bedum`,
-`werenfrid`, `willibrord`, `wiro`, `woutruide`, `wulfram`.
-
-### Nader onderzoek (7)
+### Nader onderzoek
 
 | Id | Toelichting |
 | --- | --- |
@@ -134,7 +118,7 @@ Scores 17 augustus 2026. Toelichting per id staat in de YAML.
 | `quirillus-van-tongern` | Vroege bisschop van Tongeren; of hij historisch is, is onzeker |
 | `winnocus` | Wormhout; historisch Vlaanderen, nu Frankrijk |
 
-### Kandidaat-schrappen (5)
+### Kandidaat-schrappen
 
 Niet verwijderen tot een uitdrukkelijk besluit.
 

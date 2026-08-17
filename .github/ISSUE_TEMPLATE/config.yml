@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Uitleg op de site
+    url: https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/
+    about: Wat er wel en niet in de kalender staat, vasten, lezingen, nieuw/oud
+  - name: Reactie geven (toelichting)
+    url: https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/reactie/
+    about: Welk formulier u kiest, en wat we met een melding doen

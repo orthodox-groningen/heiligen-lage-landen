@@ -5,7 +5,7 @@ type: vasten
 soort: vasten
 entry_id: apostolisch-vasten
 cyclus: paascyclus
-status: curated
+bronlaag: nagekeken
 lage_landen: false
 source_path: "data/vasten/apostolisch-vasten.yaml"
 van_offset_dagen: 57
@@ -54,6 +54,8 @@ alternatief:
 **Vastenniveau (indicatief):** lichter.
 
 **Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).
 

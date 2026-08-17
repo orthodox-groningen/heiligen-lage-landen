@@ -19,7 +19,7 @@ def main() -> None:
         lines: list[str] = [
             f"id: {item['id']}",
             "soort: feest",
-            "status: curated",
+            "bronlaag: nagekeken",
             "cyclus: paascyclus",
             "lage_landen: false",
             "namen:",
