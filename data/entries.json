@@ -63,9 +63,9 @@
       "Gudula"
     ],
     "titels": [
-      "Virgin"
+      "Maagd"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Gudula van Brussel. Virgin.",
+    "samenvatting": "Heilige van de Lage Landen: Gudula van Brussel. Maagd.",
     "url": "/heiligen/gudula-van-brussel/",
     "lagenlanden": true,
     "status": "stub",
@@ -223,9 +223,9 @@
       "Geertrui"
     ],
     "titels": [
-      "Icoon in parochie, abdis van Nijvel"
+      "Abdis van Nijvel"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Gertrudis. Icoon in parochie, abdis van Nijvel.",
+    "samenvatting": "Heilige van de Lage Landen: Gertrudis. Abdis van Nijvel.",
     "url": "/heiligen/gertrudis/",
     "lagenlanden": true,
     "status": "stub",
@@ -300,12 +300,14 @@
     "alternatief": [
       "Albricus",
       "Alberik I van Utrecht",
-      "Alberik van Utrecht"
+      "Alberik van Utrecht",
+      "Alberik",
+      "Albericus"
     ],
     "titels": [
-      "Vierde bisschop"
+      "Vierde bisschop van Utrecht"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.",
+    "samenvatting": "Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop van Utrecht.",
     "url": "/heiligen/albericus-van-utrecht/",
     "lagenlanden": true,
     "status": "stub",
@@ -646,9 +648,9 @@
       "Dymphna van Geel"
     ],
     "titels": [
-      "Icoon in parochie, martelares van Geel, Vlaanderen"
+      "Martelares van Geel"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Dymphna. Icoon in parochie, martelares van Geel, Vlaanderen.",
+    "samenvatting": "Heilige van de Lage Landen: Dymphna. Martelares van Geel.",
     "url": "/heiligen/dymphna/",
     "lagenlanden": true,
     "status": "stub",
@@ -697,9 +699,7 @@
       "Bonifacius",
       "Wynfrith"
     ],
-    "titels": [
-      "Icoon in parochie"
-    ],
+    "titels": [],
     "samenvatting": "Missionaris en martelaar, verbonden met de kerstening van de Lage Landen en Germanië.",
     "url": "/heiligen/bonifatius/",
     "lagenlanden": true,
@@ -748,9 +748,9 @@
     "naam": "Cunera",
     "alternatief": [],
     "titels": [
-      "Icoon in parochie, virgin martyr of Rhenen"
+      "Maagd-martelares van Rhenen"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Cunera. Icoon in parochie, virgin martyr of Rhenen.",
+    "samenvatting": "Heilige van de Lage Landen: Cunera. Maagd-martelares van Rhenen.",
     "url": "/heiligen/cunera/",
     "lagenlanden": true,
     "status": "stub",
@@ -928,9 +928,9 @@
       "Amalberga"
     ],
     "titels": [
-      "Monnik"
+      "Maagd"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Amalberga van Temse. Monnik.",
+    "samenvatting": "Heilige van de Lage Landen: Amalberga van Temse. Maagd.",
     "url": "/heiligen/amalberga-van-temse/",
     "lagenlanden": true,
     "status": "stub",
@@ -1110,9 +1110,9 @@
       "Werenfried"
     ],
     "titels": [
-      "Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland"
+      "Monnik, priester, geloofsverkondiger in Friesland"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Werenfrid. Icoon in parochie, monnik, priester, geloofsverkondiger in Friesland.",
+    "samenvatting": "Heilige van de Lage Landen: Werenfrid. Monnik, priester, geloofsverkondiger in Friesland.",
     "url": "/heiligen/werenfrid/",
     "lagenlanden": true,
     "status": "stub",
@@ -1161,9 +1161,9 @@
       "Jeroen"
     ],
     "titels": [
-      "Hieromartelaar, icoon in parochie"
+      "Hieromartelaar"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar, icoon in parochie.",
+    "samenvatting": "Heilige van de Lage Landen: Jeroen van Noordwijk. Hieromartelaar.",
     "url": "/heiligen/jeroen-van-noordwijk/",
     "lagenlanden": true,
     "status": "stub",
@@ -1419,9 +1419,9 @@
       "Lambert"
     ],
     "titels": [
-      "Icoon in parochie"
+      "Bisschop van Maastricht"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Lambertus. Icoon in parochie.",
+    "samenvatting": "Heilige van de Lage Landen: Lambertus. Bisschop van Maastricht.",
     "url": "/heiligen/lambertus/",
     "lagenlanden": true,
     "status": "stub",
@@ -1445,10 +1445,8 @@
       "Bavo van Gent",
       "Allowin"
     ],
-    "titels": [
-      "Icoon in parochie"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Bavo. Icoon in parochie.",
+    "titels": [],
+    "samenvatting": "Heilige van de Lage Landen: Bavo.",
     "url": "/heiligen/bavo/",
     "lagenlanden": true,
     "status": "stub",
@@ -1649,12 +1647,13 @@
     "naam": "Lebuinus",
     "alternatief": [
       "Lebuin",
-      "Lebuïnus"
+      "Lebuïnus",
+      "Lubuinus"
     ],
     "titels": [
-      "Missionaris monnik in Nederland"
+      "Missionaris, monnik"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Nederland.",
+    "samenvatting": "Heilige van de Lage Landen: Lebuinus. Missionaris, monnik in Nederland en Friesland.",
     "url": "/heiligen/lebuinus/",
     "lagenlanden": true,
     "status": "stub",
@@ -1665,33 +1664,6 @@
     "icoon": null,
     "betekenis_lagenlanden": "",
     "feestdatum": "11-12",
-    "feestdatum_juliaans": null,
-    "feestdatum_gregoriaans": null
-  },
-  {
-    "id": "alberik",
-    "soort": "heilige",
-    "cyclus": "jaar",
-    "vorm": "dag",
-    "naam": "Alberik",
-    "alternatief": [
-      "Alberik I van Utrecht",
-      "Albericus"
-    ],
-    "titels": [
-      "Bisschop van Utrecht"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Alberik. Bisschop van Utrecht.",
-    "url": "/heiligen/alberik/",
-    "lagenlanden": true,
-    "status": "stub",
-    "observances": [
-      "heilige"
-    ],
-    "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
-    "betekenis_lagenlanden": "",
-    "feestdatum": "11-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
   },
@@ -1720,33 +1692,6 @@
     "van": "11-15",
     "tot": "12-24",
     "feestdatum": "11-15"
-  },
-  {
-    "id": "lubuinus",
-    "soort": "heilige",
-    "cyclus": "jaar",
-    "vorm": "dag",
-    "naam": "Lubuinus",
-    "alternatief": [
-      "Lebuïnus",
-      "Lebuinus"
-    ],
-    "titels": [
-      "Missionaris in Friesland"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Lubuinus. Missionaris in Friesland.",
-    "url": "/heiligen/lubuinus/",
-    "lagenlanden": true,
-    "status": "stub",
-    "observances": [
-      "heilige"
-    ],
-    "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
-    "betekenis_lagenlanden": "",
-    "feestdatum": "11-16",
-    "feestdatum_juliaans": null,
-    "feestdatum_gregoriaans": null
   },
   {
     "id": "amalberga-van-susteren",
@@ -1862,10 +1807,8 @@
     "alternatief": [
       "Oda van Brabant"
     ],
-    "titels": [
-      "Icoon in parochie"
-    ],
-    "samenvatting": "Heilige van de Lage Landen: Oda van de Peel. Icoon in parochie.",
+    "titels": [],
+    "samenvatting": "Heilige van de Lage Landen: Oda van de Peel.",
     "url": "/heiligen/oda-van-de-peel/",
     "lagenlanden": true,
     "status": "stub",
@@ -1889,9 +1832,9 @@
       "Radboud van Utrecht"
     ],
     "titels": [
-      "Icoon in parochie, bisschop van Utrecht"
+      "Bisschop van Utrecht"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Radboud. Icoon in parochie, bisschop van Utrecht.",
+    "samenvatting": "Heilige van de Lage Landen: Radboud. Bisschop van Utrecht.",
     "url": "/heiligen/radboud/",
     "lagenlanden": true,
     "status": "stub",

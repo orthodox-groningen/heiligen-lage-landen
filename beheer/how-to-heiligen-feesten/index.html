@@ -52,7 +52,9 @@ Velden: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg
 </span></span><span style=display:flex><span><span style=color:#f92672>selectie</span>: <span style=color:#ae81ff>voldoet         </span> <span style=color:#75715e># of nader-onderzoek | kandidaat-schrappen</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>selectie_toelichting</span>: <span style=color:#e6db74>&#34;…&#34;</span>  <span style=color:#75715e># optioneel; niet op de publieke pagina</span>
 </span></span></code></pre></div><ul><li>Ontbreekt <code>selectie</code>: behandel als <code>nader-onderzoek</code>. Zet het veld als u
-een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li><code>betekenis_lagenlanden</code> is een <strong>apart</strong> stuk, niet hetzelfde als
+een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li>Wie ontbreekt of voorgesteld is: <a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md>docs/inventaris.md</a>.
+Geen nieuwe YAML tot die lijst is nagekeken. Johannes van Shanghai en
+Sophrony van Essex staan op toevoegen.</li><li><code>betekenis_lagenlanden</code> is een <strong>apart</strong> stuk, niet hetzelfde als
 <code>verhaal</code> of <code>samenvatting</code>.</li></ul><p><code>status: stub</code> — basisgegevens, kort of geen nagekeken betekenis-stuk.
 <code>status: curated</code> bij een <strong>heilige</strong> alleen als:</p><ol><li><code>betekenis_lagenlanden</code> niet leeg is, en</li><li>minstens één referentie niet Wikipedia of heiligen.net is
 (die twee mogen aanvullen; OrthodoxWiki telt wél).</li></ol><p>Feesten: <code>curated</code> blijft nagekeken tekst met traceerbare bronnen.</p><p><code>validate.py</code> weigert een heilige die <code>curated</code> is zonder die lat.</p><h2 id=dubbele-ids-samenvoegen>Dubbele ids samenvoegen</h2><p>Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
