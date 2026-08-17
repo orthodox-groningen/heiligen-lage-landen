@@ -278,6 +278,13 @@
     lichter: "lichter",
     vrij: "vastenvrij",
   };
+  const VASTEN_UITLEG = {
+    streng: "Geen vlees, zuivel, vis, wijn of olie.",
+    wijn_olie: "Wijn en plantaardige olie zijn toegestaan; vis niet.",
+    vis: "Vis, wijn en olie zijn toegestaan; vlees en zuivel niet.",
+    lichter: "Alleen vlees is uitgesloten (zoals in de Boterweek, waar zuivel wel mag).",
+    vrij: "Geen vasten, bijvoorbeeld in de Lichte Week, met Kerst of Theofanie.",
+  };
 
   function entryNaam(entry) {
     return (entry && (entry.naam || (entry.namen && entry.namen.primair))) || "";
@@ -730,10 +737,9 @@
 
   function dayTitleText(view, style) {
     const weekday = WEEKDAYS[isoWeekdayFromMmdd(view.mmdd, view.year)] || "";
-    const paren = isViewToday(style)
-      ? `(${weekday}, vandaag)`
-      : `(${weekday})`;
-    return `${label(view.mmdd)} ${view.year} ${paren}`;
+    const datePart = `${shortLabel(view.mmdd)} ${view.year}`;
+    const today = isViewToday(style) ? " (vandaag)" : "";
+    return `${weekday}, ${datePart}${today}`;
   }
 
   function titleNavHtml(opts) {
@@ -911,10 +917,13 @@
     return entry && entry.soort === "heilige";
   }
 
-  function vastenBadgeHtml(niveau) {
+  function vastenBadgeHtml(niveau, interactive) {
     const text = VASTEN_LABELS[niveau] || niveau;
+    const tip = interactive
+      ? ` tabindex="0" data-info-tip="vasten-niveau" data-info-niveau="${escapeHtml(niveau)}" title="Uitleg ${escapeHtml(text)}"`
+      : "";
     return (
-      `<span class="vasten-badge vasten-badge-${escapeHtml(niveau)}">` +
+      `<span class="vasten-badge vasten-badge-${escapeHtml(niveau)}"${tip}>` +
       `${escapeHtml(text)}</span>`
     );
   }
@@ -986,6 +995,31 @@
     }
     if (kind === "titel") {
       fillTitelPopover(trigger, title, body, meer);
+      return;
+    }
+    if (kind === "site") {
+      title.textContent = "Orthodoxe kalender";
+      body.innerHTML =
+        `<p>Deze kalender toont vasten, Apostel en Evangelie, feesten, ` +
+        `en heiligen van de Lage Landen. Met Nieuw of Oud kiest u de ` +
+        `kalenderstijl.</p>`;
+      if (meer) {
+        meer.hidden = false;
+        meer.innerHTML =
+          `<a class="text-link" href="${assetUrl("uitleg/")}">Uitleg over deze kalender</a>`;
+      }
+      return;
+    }
+    if (kind === "vasten-niveau") {
+      const niveau = (trigger && trigger.dataset.infoNiveau) || "vrij";
+      const labelText = VASTEN_LABELS[niveau] || niveau;
+      const uitleg = VASTEN_UITLEG[niveau] || "";
+      title.textContent = labelText;
+      body.innerHTML = `<p>${escapeHtml(uitleg)}</p>`;
+      if (meer) {
+        meer.hidden = false;
+        meer.innerHTML = achtergrondLink("vasten", "Meer over vasten");
+      }
       return;
     }
     if (kind === "nieuw-oud") {
@@ -1104,6 +1138,8 @@
       el.addEventListener("click", (ev) => {
         // Navigatieknoppen (‹ ›) moeten gewoon klikken.
         if (el.classList.contains("title-step")) return;
+        // Sitenaam: op desktop naar home; op aanraakscherm eerst de popup.
+        if (el.classList.contains("brand") && canHover()) return;
         ev.preventDefault();
         ev.stopPropagation();
         const dlg = document.getElementById("info-popover");
@@ -1184,7 +1220,7 @@
     }
     return (
       `<span class="today-vasten">` +
-      vastenBadgeHtml(niveau) +
+      vastenBadgeHtml(niveau, true) +
       periodeHtml +
       `</span>`
     );
@@ -1259,16 +1295,7 @@
       .filter((e) => e.soort === "heilige")
       .filter((e) => entryNaam(e))
       .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
-    if (!saints.length) {
-      return (
-        `<p class="muted today-geen-heilige">Geen heilige van de Lage Landen op deze dag. ` +
-        achtergrondLink(
-          "heiligen",
-          "Waarom niet iedere heilige hier staat"
-        ) +
-        `</p>`
-      );
-    }
+    if (!saints.length) return "";
     const items = saints
       .map((e) => {
         const icoon = e.icoon
@@ -1301,6 +1328,7 @@
     if (!mmddExistsInYear(view.mmdd, view.year)) {
       bodyHtml =
         `<div class="today-card-bar">` +
+        renderVastenClusterHtml({ niveau: "vrij" }) +
         styleToggleHtml("Kalenderstijl Nieuw/Oud") +
         `</div>` +
         `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
@@ -1312,8 +1340,8 @@
       const lez = lezingenForDay(view.year, view.mmdd, style);
       bodyHtml =
         `<div class="today-card-bar">` +
-        styleToggleHtml("Kalenderstijl Nieuw/Oud") +
         renderVastenClusterHtml(vasten) +
+        styleToggleHtml("Kalenderstijl Nieuw/Oud") +
         `</div>` +
         renderDagtypeHtml(matched, lez) +
         renderLezingenHtml(lez) +

@@ -9,7 +9,8 @@ Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf
 *Vandaag* met de pijltjes. U krijgt dan **die dag in dat jaar** te zien:
 feesten, heiligen, dagen van de paascyclus en vasten die op die
 **burgerlijke** datum vallen — de datum zoals Nederland die noemt. De titel
-noemt ook de weekdag; is het vandaag, dan staat dat erbij.
+is de weekdag en de datum; is het vandaag, dan staat *(vandaag)* erbij,
+vóór de pijl naar de volgende dag.
 
 De startpagina (logo) is dezelfde weergave als een datumpagina, maar dan
 voor de huidige dag.
@@ -20,14 +21,15 @@ op 15 augustus **in 2026** (of welk jaar u ook kiest)?
 
 ## Nieuw of oud
 
-In het vak met de inhoud van de dag kiest u **Nieuw** of **Oud**. Direct
-daarachter staat een kort vastenlabel: *vastenvrij*, *vis*, *streng*, en
-zo verder. Valt de dag in een vastenperiode (bijvoorbeeld het Apostelvasten),
-dan staat die naam tussen haakjes, met een link naar de pagina over die
-periode. Met **Oud** staan vaste feesten op hun burgerlijke vierdatum. De
-Besnijdenis des Heren (feestdatum 1 januari) staat dan op 14 januari.
-**Pascha** en de rest van de paascyclus schuiven niet mee. De burgerlijke
-datum in de titel blijft staan. Zie
+In het vak met de inhoud van de dag staat eerst het vastenlabel
+(*vastenvrij*, *vis*, *streng*, …). Wijst u op het label, dan verschijnt een
+korte uitleg; meer detail staat op de pagina [Vasten]({{% ref "/uitleg/vasten" %}}).
+Valt de dag in een vastenperiode (bijvoorbeeld het Apostelvasten), dan staat
+die naam tussen haakjes, met een link naar de pagina over die periode.
+Daarachter kiest u **Nieuw** of **Oud**. Met **Oud** staan vaste feesten op
+hun burgerlijke vierdatum. De Besnijdenis des Heren (feestdatum 1 januari)
+staat dan op 14 januari. **Pascha** en de rest van de paascyclus schuiven
+niet mee. De burgerlijke datum in de titel blijft staan. Zie
 [Nieuwe en Oude kalender]({{% ref "/uitleg/nieuw-oud" %}}).
 
 Daaronder staat wat voor dag het is: bijvoorbeeld de 23e donderdag na
@@ -36,6 +38,7 @@ staat hier de naam van het feest — die wordt niet nog eens herhaald.
 Vervolgens Apostel en Evangelie. Zijn er heiligen van de Lage Landen op
 die dag, dan volgt de kop *Heilige van de dag* (of *Heiligen* in het
 meervoud) en daaronder de lijst, met een klein icoon als we er een hebben.
+Zijn er geen heiligen van de Lage Landen, dan blijft dat blok weg.
 
 ## Eén vastenregel
 
