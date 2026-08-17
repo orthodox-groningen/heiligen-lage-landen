@@ -163,13 +163,14 @@ id_aliassen: [lubuinus]      # oude ids na een merge
 
 - **`betekenis_lagenlanden`** — verplicht bij `status: curated` voor
   `soort: heilige`. Zelfde referentieverplichting als verhaal/samenvatting.
-  Bedoeld als herbruikbaar stuk (eigen kop op de pagina; ook in
-  `entries.json` zodra generate dat veld opneemt).
+  Eigen kop op de heiligenpagina (**Betekenis voor de Lage Landen**); ook in
+  `site/static/data/entries.json` (alleen bij heiligen).
 - **`selectie`** — toetsing aan de criteria. Ontbreekt bij een heilige:
   behandel als `nader-onderzoek`. Waarden: `voldoet`, `nader-onderzoek`,
   `kandidaat-schrappen`. Verschijnt niet op de publieke heiligenpagina.
 - **`id_aliassen`** — oude `[a-z0-9_-]+` ids; niet gelijk aan het eigen id
-  en niet gelijk aan een ander levend entry-id.
+  en niet gelijk aan een ander levend entry-id. `generate.py` zet Hugo
+  `aliases` (`/heiligen/<oud-id>/`).
 
 Niemand wordt automatisch geschrapt. `kandidaat-schrappen` is een markering
 voor een later, expliciet besluit.

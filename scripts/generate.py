@@ -224,6 +224,12 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     icoon = entry.get("icoon") or {}
     if icoon.get("bestand") and icoon.get("rechten") == "ok":
         fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
+    aliases = entry.get("id_aliassen") or []
+    if aliases:
+        fm.append("aliases:")
+        for alias in aliases:
+            slug = str(alias).strip().strip("/")
+            fm.append(f"  - {yaml_quote(f'/{kind}/{slug}/')}")
     fm.append("---")
 
     body: list[str] = []
@@ -339,6 +345,12 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     if entry.get("samenvatting"):
         body.append(entry["samenvatting"].strip())
         body.append("")
+    betekenis = (entry.get("betekenis_lagenlanden") or "").strip()
+    if betekenis:
+        body.append("## Betekenis voor de Lage Landen")
+        body.append("")
+        body.append(betekenis)
+        body.append("")
     if entry.get("verhaal"):
         body.append("## Verhaal")
         body.append("")
@@ -372,6 +384,7 @@ title: "Heiligen"
 ---
 
 Overzicht van heiligen van de Lage Landen in deze kalender.
+Zoeken vindt ook andere namen van dezelfde heilige.
 """,
     )
     write_text(
@@ -391,6 +404,68 @@ title: "Vasten"
 
 Vastenperiodes en wekelijkse vastendagen.
 """,
+    )
+
+
+SELECTIE_GROEPEN = (
+    ("voldoet", "Voldoet"),
+    ("nader-onderzoek", "Nader onderzoek"),
+    ("kandidaat-schrappen", "Kandidaat om te schrappen"),
+)
+
+
+def render_beheer_selectie(entries: list[dict[str, Any]]) -> str:
+    """Markdown-body: heiligen gegroepeerd op selectie (niet publiek)."""
+    heiligen = [e for e in entries if e.get("soort") == "heilige"]
+    by_sel: dict[str, list[dict[str, Any]]] = {key: [] for key, _title in SELECTIE_GROEPEN}
+    for entry in heiligen:
+        sel = entry.get("selectie") or "nader-onderzoek"
+        by_sel.setdefault(sel, []).append(entry)
+    for groep in by_sel.values():
+        groep.sort(key=lambda e: (e["namen"]["primair"].casefold(), e["id"]))
+
+    lines = [
+        "Gegenereerd uit `selectie` op heiligen-YAML. Niet bedoeld voor bezoekers.",
+        "Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.",
+        "",
+        f"**{len(heiligen)}** heiligen.",
+        "",
+    ]
+    for key, title in SELECTIE_GROEPEN:
+        groep = by_sel.get(key) or []
+        lines.append(f"## {title} ({len(groep)})")
+        lines.append("")
+        if not groep:
+            lines.append("_Geen._")
+            lines.append("")
+            continue
+        for entry in groep:
+            naam = entry["namen"]["primair"]
+            url = entry_permalink(entry)
+            src = entry["source_path"]
+            item = f"- [{naam}]({url}) (`{src}`)"
+            toel = (entry.get("selectie_toelichting") or "").strip()
+            if toel:
+                item += f" — {toel}"
+            lines.append(item)
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def write_beheer_selectie(entries: list[dict[str, Any]]) -> None:
+    write_text(
+        CONTENT / "beheer" / "selectie.md",
+        _dump_hugo_markdown(
+            {
+                "title": "Selectie heiligen",
+                "description": (
+                    "Toetsing aan de opnamecriteria; alleen voor wie de repo bijhoudt"
+                ),
+                "weight": 90,
+                "generator": "scripts/generate.py",
+            },
+            render_beheer_selectie(entries),
+        ),
     )
 
 
@@ -732,6 +807,10 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             if (entry.get("icoon") or {}).get("rechten") == "ok"
             else None,
         }
+        if entry.get("soort") == "heilige":
+            item["betekenis_lagenlanden"] = (
+                (entry.get("betekenis_lagenlanden") or "").strip()
+            )
         if entry.get("vastenniveau"):
             item["vastenniveau"] = entry["vastenniveau"]
         if vorm == "weekdagen":
@@ -1081,6 +1160,7 @@ def main() -> int:
     for entry in entries:
         write_entry_page(entry)
     write_entries_json(entries)
+    write_beheer_selectie(entries)
     write_lezingen_json()
     write_ics(entries)
     print(f"Gegenereerd: {len(entries)} entries.")

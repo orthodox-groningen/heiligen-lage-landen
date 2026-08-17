@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="section-list" data-heiligen-index>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p class="filter-bar">
+    <label class="search-label" for="heiligen-zoek">Zoeken (ook andere namen)</label>
+    <input type="search" id="heiligen-zoek" class="search-input" placeholder="bijv. Lubuinus, Goedele…" autocomplete="off">
+  </p>
+  <p class="hint" id="heiligen-zoek-leeg" hidden>Geen heilige met die naam in dit overzicht.</p>
+  <ul class="entry-list" data-heiligen-lijst>
+    {{ range sort .Pages "Title" }}
+      {{ $alts := .Params.alternatief | default (slice) }}
+      {{ $zoek := printf "%s %s" .Title (delimit $alts " ") }}
+      <li data-zoek="{{ $zoek }}">
+        <span class="entry-list-namen">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with $alts }}
+            <span class="meta">ook {{ delimit . ", " }}</span>
+          {{ end }}
+        </span>
+        {{ with .Params.feestdatum }}
+          <span class="meta">{{ . }}</span>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ $filter := resources.Get "js/entry-filter.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $filter.RelPermalink }}" defer></script>
+{{ end }}

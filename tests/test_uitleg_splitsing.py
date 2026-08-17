@@ -97,6 +97,8 @@ def test_beheer_home_onderscheidt_aanraken_en_overschrijven() -> None:
     assert "beheer-tabel-afblijven" in body
     for slug in HOW_TOS:
         assert f"/beheer/{slug}" in body
+    assert "/beheer/selectie" in body
+    assert "site/content/beheer/selectie.md" in body
 
 
 def test_how_tos_bestaan() -> None:

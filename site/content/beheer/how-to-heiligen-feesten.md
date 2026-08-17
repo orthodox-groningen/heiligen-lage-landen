@@ -141,7 +141,10 @@ id_aliassen:
 
 `id_aliassen` mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
-wijziging.
+wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
+`betekenis_lagenlanden` onder **Betekenis voor de Lage Landen**. Selectie
+staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}), niet op de
+publieke pagina.
 
 ## Controleren
 

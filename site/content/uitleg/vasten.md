@@ -3,7 +3,6 @@ title: Vasten
 description: Waar onze vastenregels vandaan komen, en wat de kalender op een dag toont
 generator: data/regels/vasten.yaml
 uitleg_stijl: vasten
-git_date: 2026-08-16
 ---
 
 Orthodox vasten is een manier van eten en bidden die de Kerk het jaar door

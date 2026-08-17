@@ -30,7 +30,8 @@ selectie_toelichting: "Kort waarom, voor beheerders."
 - Ontbreekt `selectie` bij een heilige: behandel als `nader-onderzoek`
   (`scripts/load_entries.py`).
 - `selectie` en `selectie_toelichting` horen **niet** op de publieke
-  heiligenpagina.
+  heiligenpagina. Overzicht voor beheerders: `/beheer/selectie/`
+  (gegenereerd).
 - `kandidaat-schrappen` verwijdert niets; dat is een markering tot een
   expliciet besluit.
 
@@ -44,7 +45,8 @@ betekenis_lagenlanden: |
 
 Verplicht bij `status: curated` voor `soort: heilige`. Als het veld gezet
 is, gelden dezelfde referentie-eisen als bij `verhaal` / `samenvatting`.
-Het is herbruikbaar (eigen kop; later ook in `entries.json`).
+`generate.py` zet het onder het kopje **Betekenis voor de Lage Landen**
+en in `entries.json` (veld `betekenis_lagenlanden`, alleen heiligen).
 
 ## Status curated (heiligen)
 
@@ -69,9 +71,9 @@ id_aliassen:
 ```
 
 - `id_aliassen`: oude ids, patroon `[a-z0-9_-]+`, niet het eigen id, niet
-  een nog levend entry-id, uniek over de catalogus.
+  een nog levend entry-id, uniek over de catalogus. Wordt Hugo `aliases`.
 - Zet de oude naam(en) ook in `namen.yaml` onder `alternatief`, anders
-  vindt zoeken ze niet.
+  vindt zoeken ze niet (Meneon en heiligenindex).
 
 ## Referenties
 

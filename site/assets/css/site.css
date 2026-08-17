@@ -491,6 +491,17 @@ h2 {
   justify-content: space-between;
 }
 
+.entry-list li[hidden] {
+  display: none;
+}
+
+.entry-list-namen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.9rem;

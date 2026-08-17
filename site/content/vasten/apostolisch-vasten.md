@@ -15,7 +15,6 @@ alternatief:
   - "Apostelenvasten"
   - "Petrus-en-Paulusvasten"
   - "Vasten der Apostelen"
-git_date: 2026-08-16
 ---
 
 **Paascyclus-periode:** vanaf +57 dagen t.o.v. Orthodox Pascha

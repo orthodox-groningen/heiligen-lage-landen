@@ -15,7 +15,6 @@ alternatief:
   - "Ontslapen-vasten"
   - "Vasten vóór het Ontslapen"
   - "Dormition Fast"
-git_date: 2026-08-16
 ---
 
 **Periode:** 1 augustus – 14 augustus (zelfde dagnamen in nieuwe én oude kalender).

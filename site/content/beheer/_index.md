@@ -66,6 +66,7 @@ gooit het weg.
 <thead><tr><th>Pad</th><th>Waarom niet aanraken</th></tr></thead>
 <tbody>
 <tr><td><code>site/content/heiligen/*.md</code></td><td>Gegenereerd uit <code>data/heiligen/</code>. Ook <code>_index.md</code> van deze map.</td></tr>
+<tr><td><code>site/content/beheer/selectie.md</code></td><td>Gegenereerd uit <code>selectie</code> op heiligen-YAML.</td></tr>
 <tr><td><code>site/content/feesten/*.md</code></td><td>Gegenereerd uit <code>data/feesten/</code>, inclusief <code>_index.md</code>.</td></tr>
 <tr><td><code>site/content/vasten/*.md</code></td><td>Gegenereerd uit <code>data/vasten/</code>, inclusief <code>_index.md</code>. (De <em>bron</em> is YAML, niet deze markdown.)</td></tr>
 <tr><td><code>site/content/uitleg/vasten.md</code></td><td>Komt uit <code>data/regels/vasten.yaml</code> (<code>render_vasten_clerus</code>).</td></tr>
@@ -86,6 +87,8 @@ in die map verdwijnen bij `--clean`.
 - [Weergavenamen wijzigen]({{% ref "/beheer/how-to-namen" %}})
 - [Vastenregels wijzigen]({{% ref "/beheer/how-to-vasten" %}})
 - [Lezingenrooster wijzigen]({{% ref "/beheer/how-to-lezingen" %}})
+- [Selectie heiligen]({{% ref "/beheer/selectie" %}}) — gegenereerd overzicht
+  (`voldoet` / nader onderzoek / kandidaat); niet voor bezoekers
 
 ## Uitleg: twee lagen
 

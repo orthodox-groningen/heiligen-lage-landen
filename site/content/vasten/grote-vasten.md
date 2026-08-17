@@ -15,7 +15,6 @@ alternatief:
   - "Grote Veertig Dagen"
   - "Heilige Vasten"
   - "Tessarakostí"
-git_date: 2026-08-16
 ---
 
 **Paascyclus-periode:** vanaf -48 dagen t.o.v. Orthodox Pascha

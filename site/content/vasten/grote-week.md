@@ -14,7 +14,6 @@ alternatief:
   - "Heilige Week"
   - "Passieweek"
   - "Grote en Heilige Week"
-git_date: 2026-08-16
 ---
 
 **Paascyclus-periode:** vanaf -6 dagen t.o.v. Orthodox Pascha

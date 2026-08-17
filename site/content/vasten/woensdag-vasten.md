@@ -13,7 +13,6 @@ weekdagen:
 alternatief:
   - "Vasten op woensdag"
   - "Woensdag (wekelijks vasten)"
-git_date: 2026-08-16
 ---
 
 **Wekelijks:** elke woensdag.
