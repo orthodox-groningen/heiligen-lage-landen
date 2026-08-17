@@ -123,6 +123,43 @@ def test_how_to_lezingen_zonder_hugo_ref_naar_ontbrekende_paginas() -> None:
 def test_uitleg_index_wijst_naar_beheer() -> None:
     _meta, body = _meta_body(UITLEG / "_index.md")
     assert "/beheer" in body
+    assert "geen" in body.lower()
+    assert "Lage Landen" in body
+    assert "typikon" in body.lower()
+
+
+def test_uitleg_overzicht_groepeert_onderwerpen() -> None:
+    layout = (ROOT / "site" / "layouts" / "uitleg" / "list.html").read_text(
+        encoding="utf-8"
+    )
+    assert "Op één dag" in layout
+    assert "Heiligen van hier" in layout
+    assert "Kalender gebruiken" in layout
+    assert "Reageren" in layout
+    for slug in (
+        "datumpagina",
+        "toon",
+        "lezingen",
+        "vasten",
+        "heiligen",
+        "nieuw-oud",
+        "feestdatum",
+        "meneon",
+        "kleuren",
+        "agenda",
+        "reactie",
+    ):
+        assert f'"{slug}"' in layout
+
+
+def test_sitenaam_popover_wijst_naar_uitleg() -> None:
+    js = (ROOT / "site" / "assets" / "js" / "calendar.js").read_text(
+        encoding="utf-8"
+    )
+    assert 'kind === "site"' in js
+    assert "Nederlandersmet" not in js
+    assert "Lage Landen" in js
+    assert 'assetUrl("uitleg/")' in js
 
 
 def test_achtergrond_topics_hebben_geen_technische_ids() -> None:

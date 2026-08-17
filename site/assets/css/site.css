@@ -1259,6 +1259,14 @@ a.text-link {
   margin: 1.25rem 0 0;
 }
 
+.uitleg-groepen .achtergrond-index {
+  margin: 0.35rem 0 0;
+}
+
+.uitleg-groepen h2 {
+  margin-top: 2rem;
+}
+
 .achtergrond-index li {
   margin: 0.55rem 0;
 }

@@ -2,15 +2,46 @@
 <article class="page uitleg-page">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ with .Pages }}
-    <ul class="achtergrond-index">
-      {{ range .ByTitle }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
-        </li>
+  {{ $all := .Pages }}
+  {{ $bekend := slice "datumpagina" "toon" "lezingen" "vasten" "heiligen" "nieuw-oud" "feestdatum" "meneon" "kleuren" "agenda" "reactie" }}
+  {{ $groepen := slice
+    (dict "titel" "Op één dag" "slugs" (slice "datumpagina" "toon" "lezingen" "vasten"))
+    (dict "titel" "Heiligen van hier" "slugs" (slice "heiligen"))
+    (dict "titel" "Kalender gebruiken" "slugs" (slice "nieuw-oud" "feestdatum" "meneon" "kleuren" "agenda"))
+    (dict "titel" "Reageren" "slugs" (slice "reactie"))
+  }}
+  <div class="uitleg-groepen">
+    {{ range $groepen }}
+      <h2>{{ .titel }}</h2>
+      <ul class="achtergrond-index">
+        {{ range .slugs }}
+          {{ $slug := . }}
+          {{ range where $all "File.ContentBaseName" $slug }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    {{ end }}
+    {{ $rest := slice }}
+    {{ range $all }}
+      {{ if not (in $bekend .File.ContentBaseName) }}
+        {{ $rest = $rest | append . }}
       {{ end }}
-    </ul>
-  {{ end }}
+    {{ end }}
+    {{ with $rest }}
+      <h2>Overig</h2>
+      <ul class="achtergrond-index">
+        {{ range . }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
 </article>
 {{ end }}

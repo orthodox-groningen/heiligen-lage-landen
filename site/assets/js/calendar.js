@@ -1174,13 +1174,13 @@
     if (kind === "site") {
       title.textContent = "Orthodoxe kalender";
       body.innerHTML =
-        `<p>Deze kalender toont vasten, Apostel en Evangelie, feesten, ` +
-        `en heiligen van de Lage Landen. Met Nieuw of Oud kiest u de ` +
-        `kalenderstijl.</p>`;
+        `<p>Deze site is een praktisch hulpmiddel voor orthodoxe gelovigen ` +
+        `in de Lage Landen — vooral in de Russische traditie — met bijzondere ` +
+        `aandacht voor heiligen die hier hoorden. ` +
+        `<a class="text-link" href="${assetUrl("uitleg/")}">Meer uitleg</a>.</p>`;
       if (meer) {
-        meer.hidden = false;
-        meer.innerHTML =
-          `<a class="text-link" href="${assetUrl("uitleg/")}">Uitleg over deze kalender</a>`;
+        meer.hidden = true;
+        meer.innerHTML = "";
       }
       return;
     }
