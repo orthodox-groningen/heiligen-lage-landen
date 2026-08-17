@@ -129,6 +129,20 @@ a:hover {
   text-decoration: none;
 }
 
+.brand[data-info-tip] {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--gold-soft) 55%, transparent);
+}
+
+.brand[data-info-tip]:hover,
+.brand[data-info-tip]:focus-visible {
+  text-decoration-color: var(--gold-soft);
+  outline: none;
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -1429,6 +1443,10 @@ a.text-link {
   font-weight: 600;
   line-height: 1.45;
   white-space: nowrap;
+}
+
+.vasten-badge[data-info-tip] {
+  cursor: help;
 }
 
 .vasten-badge-streng {
