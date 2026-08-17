@@ -40,7 +40,8 @@ Vervolgens Apostel en Evangelie: de verwijzing is een link naar dat
 hoofdstuk in een Bijbelvertaling (nieuw venster). Zijn er heiligen van de Lage Landen op
 die dag, dan volgt de kop *Heilige van de dag* (of *Heiligen* in het
 meervoud) en daaronder de lijst, met een klein icoon als we er een hebben.
-Zijn er geen heiligen van de Lage Landen, dan blijft dat blok weg.
+Zijn er geen heiligen van de Lage Landen, dan komt die kop niet. In plaats
+daarvan staat een korte zin met een link waarom de dag leeg kan zijn.
 
 ## Eén vastenregel
 

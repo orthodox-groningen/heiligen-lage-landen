@@ -44,7 +44,7 @@ Op de burgerlijke datum van dat jaar, in deze volgorde:
    `localStorage` `bijbel-vertaling`).
 4. Alleen als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de
    lijst, met `icoon` uit `entries.json` als dat veld gezet is. Zonder
-   heilige blijft dit blok weg.
+   heilige: geen kop, wel `today-geen-heilige` met link naar uitleg/heiligen.
 
 De titel toont de Slavische toon van de week (`octoechosToon` in
 `calendar.js`, zelfde formule als `octoechos_toon` in `scripts/kalender.py`).
