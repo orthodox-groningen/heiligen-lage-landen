@@ -1282,7 +1282,14 @@
         );
       })
       .join("");
-    return `<ul class="today-heiligen">${items}</ul>`;
+    const titel =
+      saints.length === 1 ? "Heilige van de dag" : "Heiligen van de dag";
+    return (
+      `<div class="today-heiligen-blok">` +
+      `<h2 class="today-heiligen-title">${titel}</h2>` +
+      `<ul class="today-heiligen">${items}</ul>` +
+      `</div>`
+    );
   }
 
   function renderToday(entries, style) {
