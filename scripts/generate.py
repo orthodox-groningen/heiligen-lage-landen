@@ -539,6 +539,11 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
         "description": "De vaste jaarcyclus: wat er altijd op een kalenderdag hoort",
     },
     {
+        "id": "heiligen",
+        "title": "Heiligen van de Lage Landen",
+        "description": "Wie in deze kalender staat, wat een stub is, en wat nagekeken tekst inhoudt",
+    },
+    {
         "id": "kleuren",
         "title": "Kleuren in de jaarkalender",
         "description": "Wat de kleuren op de jaarkalender betekenen",

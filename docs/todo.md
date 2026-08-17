@@ -1,12 +1,18 @@
 # TODO
 
-- [x] Jaarrooster: **meerdere kleuren** op één dag wanneer `observances` zowel
-  `feest` als `vasten` (of heilige) bevat.
-- [x] Lezingen: rang/samenval (R5) — zie `docs/specs/lezingen.md`.
-- [x] Lezingen: Lucaanse sprong met отступка/преступка; Aankondiging × paascyclus;
-      extra polyeleos-menaion.
-- [x] Apostolisch vasten en overige vastenperiodes als periodes in data + UI.
-- [x] Vastenvrije weken (Bright Week, na Pinksteren, …) als uitzonderingen op
-  woensdag/vrijdag.
-- [x] Optioneel veld voor vastenniveau (streng / wijn-olie / vis) per periode.
-- [x] ICS: uitzonderingen voor wekelijks vasten in vastenvrije periodes.
+Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
+
+- [x] Beleid en datamodel: selectiecriteria, `betekenis_lagenlanden`,
+      `selectie`, `id_aliassen`, aangescherpte `curated` voor heiligen.
+- [ ] Generatie en index: betekenis-sectie, Hugo-aliases, `entries.json`,
+      beheer-selectielijst; heiligenindex toont en zoekt alternatieve namen.
+- [ ] Datahygiëne: merges (Lebuïnus, Alberik), titels Nederlands/correct,
+      «Icoon in parochie» uit titels.
+- [ ] Inventaris: alle heiligen scoren; gatenlijst; menselijke review.
+- [ ] Kerninhoud: ontbrekenden + Johannes van Shanghai + kernset met
+      betekenis, verhaal, referenties, `curated`.
+- [ ] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
+      zondagen vóór Kerst waar modelbaar.
+- [ ] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
+- [ ] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
+      `bronnen.yaml` opschonen.

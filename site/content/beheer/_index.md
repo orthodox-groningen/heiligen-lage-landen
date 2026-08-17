@@ -1,7 +1,7 @@
 ---
 title: "Voor beheerders"
 description: "Wat staat waar, wat u mag wijzigen, en waar generate.py overheen schrijft"
-git_date: 2026-08-16
+git_date: 2026-08-17
 ---
 
 Deze pagina is voor wie de kalender **in de git-repo bijhoudt**: YAML
@@ -44,7 +44,7 @@ committen. Zie [site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %
 <table class="beheer-tabel beheer-tabel-aanraken">
 <thead><tr><th>U wijzigt</th><th>Effect op de site</th></tr></thead>
 <tbody>
-<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam, datum, verhaal, referenties, vastenniveau van die entry. Entry-pagina, Meneon, jaarkalender, datumpagina en ICS volgen na <code>generate.py</code>.</td></tr>
+<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam, datum, verhaal, <code>betekenis_lagenlanden</code>, referenties, <code>selectie</code>, vastenniveau van die entry. Entry-pagina, Meneon, jaarkalender, datumpagina en ICS volgen na <code>generate.py</code>. <code>selectie</code> is niet publiek.</td></tr>
 <tr><td><code>data/vasten/*.yaml</code></td><td>Wanneer een periode loopt, of wo/vr wekelijks is, welk seizoensniveau de periode heeft. De <em>mengregel</em> (wat er op een dag getoond wordt) zit niet hier, maar in <code>data/regels/vasten.yaml</code> plus code.</td></tr>
 <tr><td><code>data/namen.yaml</code></td><td>De getoonde naam overal. Het <code>id</code> (bestandsnaam) blijft gelijk. Alternatieve namen tellen mee in de Meneon-zoekfunctie.</td></tr>
 <tr><td><code>data/bronnen/bronnen.yaml</code></td><td>Metadata bij <code>bron_id</code>. De locator (<code>url</code> / ISBN / …) hoort óók op de referentie in de entry.</td></tr>

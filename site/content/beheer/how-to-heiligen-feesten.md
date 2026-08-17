@@ -2,7 +2,7 @@
 title: "Heilige of feest toevoegen of wijzigen"
 description: "YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"
 weight: 20
-git_date: 2026-08-16
+git_date: 2026-08-17
 ---
 
 Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de
@@ -27,16 +27,16 @@ Schema: `schemas/entry.schema.json`. Publiceren:
 - Heilige: `data/heiligen/<id>.yaml` met `soort: heilige`
 - Feest: `data/feesten/<id>.yaml` met `soort: feest`
 
-Minimaal: `id`, `soort`, `datum`. Voor een verhaal of samenvatting is
-minstens één **referentie** verplicht, met een locator: `url`, of `isbn`,
-of `locator`.
+Minimaal: `id`, `soort`, `datum`. Voor een verhaal, samenvatting of
+`betekenis_lagenlanden` is minstens één **referentie** verplicht, met een
+locator: `url`, of `isbn`, of `locator`.
 
 ### Vaste dag
 
 ```yaml
 id: willibrord
 soort: heilige
-status: curated          # of stub
+status: stub             # curated: zie onder
 cyclus: jaar
 lagenlanden: true
 datum:
@@ -97,8 +97,51 @@ referenties:
 `bron_id` wijst naar `data/bronnen/bronnen.yaml`. De locator hoort **ook**
 op de referentie in de entry, niet alleen in de catalogus.
 
-`status: stub` — basisgegevens, kort of geen verhaal.
-`status: curated` — nagekeken tekst met traceerbare bronnen.
+## Heiligen: selectie, betekenis, status
+
+Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen" %}}).
+Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
+[docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
+
+```yaml
+betekenis_lagenlanden: |
+  Wat deze heilige voor het christendom of de Orthodoxie
+  in de Lage Landen betekende.
+selectie: voldoet          # of nader-onderzoek | kandidaat-schrappen
+selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
+```
+
+- Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
+  een heilige toetst. `kandidaat-schrappen` verwijdert niets.
+- `betekenis_lagenlanden` is een **apart** stuk, niet hetzelfde als
+  `verhaal` of `samenvatting`.
+
+`status: stub` — basisgegevens, kort of geen nagekeken betekenis-stuk.
+`status: curated` bij een **heilige** alleen als:
+
+1. `betekenis_lagenlanden` niet leeg is, en
+2. minstens één referentie niet Wikipedia of heiligen.net is
+   (die twee mogen aanvullen; OrthodoxWiki telt wél).
+
+Feesten: `curated` blijft nagekeken tekst met traceerbare bronnen.
+
+`validate.py` weigert een heilige die `curated` is zonder die lat.
+
+## Dubbele ids samenvoegen
+
+Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
+ids in `id_aliassen` en de oude namen in `data/namen.yaml` onder
+`alternatief`:
+
+```yaml
+id: lebuinus
+id_aliassen:
+  - lubuinus
+```
+
+`id_aliassen` mag het eigen id niet herhalen en geen id dat nog als
+apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
+wijziging.
 
 ## Controleren
 

@@ -54,6 +54,11 @@ Canonieke weergavenamen staan in **`data/namen.yaml`**:
 Ids (bestandsnamen) blijven stabiel; wijzig alleen de getoonde namen in
 `namen.yaml`.
 
+Eén persoon is één bestand. Andere spellingen en historische namen horen
+in `alternatief` (via `namen.yaml`). Na een merge van twee ids blijft het
+canonieke id de bestandsnaam; de oude id(s) komen in `id_aliassen` (voor
+oude URL’s) én als naam in `alternatief` (zoeken en index).
+
 ## Vasten
 
 ```yaml
@@ -142,9 +147,37 @@ observances: [feest, vasten]   # optioneel; default volgt soort
 
 Het jaarrooster ondersteunt gecombineerde kleuren (feest+vasten, heilige+vasten).
 
+## Heiligen: selectie en betekenis
+
+Selectiecriteria (wie in de lijst hoort) staan op `/uitleg/heiligen/`;
+veldsemantiek hier. How-to: `/beheer/how-to-heiligen-feesten/`.
+
+```yaml
+betekenis_lagenlanden: |
+  Apart stuk: wat deze heilige voor het christendom of de Orthodoxie
+  in de Lage Landen betekende.
+selectie: voldoet            # of: nader-onderzoek | kandidaat-schrappen
+selectie_toelichting: "…"    # optioneel; niet op de publieke pagina
+id_aliassen: [lubuinus]      # oude ids na een merge
+```
+
+- **`betekenis_lagenlanden`** — verplicht bij `status: curated` voor
+  `soort: heilige`. Zelfde referentieverplichting als verhaal/samenvatting.
+  Bedoeld als herbruikbaar stuk (eigen kop op de pagina; ook in
+  `entries.json` zodra generate dat veld opneemt).
+- **`selectie`** — toetsing aan de criteria. Ontbreekt bij een heilige:
+  behandel als `nader-onderzoek`. Waarden: `voldoet`, `nader-onderzoek`,
+  `kandidaat-schrappen`. Verschijnt niet op de publieke heiligenpagina.
+- **`id_aliassen`** — oude `[a-z0-9_-]+` ids; niet gelijk aan het eigen id
+  en niet gelijk aan een ander levend entry-id.
+
+Niemand wordt automatisch geschrapt. `kandidaat-schrappen` is een markering
+voor een later, expliciet besluit.
+
 ## Referenties
 
-Verhaal of samenvatting mag alleen als er minstens één referentie is.
+Verhaal, samenvatting of `betekenis_lagenlanden` mag alleen als er minstens
+één referentie is.
 Elke referentie heeft `bron_id` en/of `label`, plus een **raadpleegbare locator**:
 
 - `url` — bij voorkeur, of
@@ -167,5 +200,14 @@ hoort **ook** op de referentie zelf te staan.
 
 ## Status
 
-- `stub` — basisgegevens, kort of geen verhaal
+- `stub` — basisgegevens, kort of geen nagekeken betekenis-stuk
 - `curated` — nagekeken tekst met traceerbare bronnen
+
+Voor **heiligen** geldt `curated` alleen als:
+
+1. `betekenis_lagenlanden` aanwezig en niet leeg is, en
+2. er minstens één referentie is die **niet** alleen Wikipedia of
+   heiligen.net is (die twee mogen aanvullen).
+
+Feesten en vasten: `curated` blijft «nagekeken tekst met traceerbare
+bronnen» (bestaande referentieverplichting bij verhaal/samenvatting).

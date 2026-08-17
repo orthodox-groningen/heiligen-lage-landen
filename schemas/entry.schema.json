@@ -146,6 +146,28 @@
     },
     "samenvatting": { "type": "string" },
     "verhaal": { "type": "string" },
+    "betekenis_lagenlanden": {
+      "type": "string",
+      "description": "Apart stuk: wat deze heilige voor het christendom of de Orthodoxie in de Lage Landen betekende. Herbruikbaar buiten de heiligenpagina."
+    },
+    "selectie": {
+      "type": "string",
+      "enum": ["voldoet", "nader-onderzoek", "kandidaat-schrappen"],
+      "description": "Toetsing aan de selectiecriteria (heiligen). Ontbreekt: behandel als nader-onderzoek. Niet op de publieke heiligenpagina."
+    },
+    "selectie_toelichting": {
+      "type": "string",
+      "description": "Korte toelichting bij selectie, alleen voor beheerders."
+    },
+    "id_aliassen": {
+      "type": "array",
+      "description": "Oude ids na samenvoegen van dubbele entries. Bestandsnaam blijft het canonieke id.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]*$"
+      },
+      "uniqueItems": true
+    },
     "referenties": {
       "type": "array",
       "items": {

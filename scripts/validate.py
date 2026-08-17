@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
+from typing import Any
 
 from jsonschema import Draft202012Validator
 
@@ -13,6 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries, load_raw_entries  # noqa: E402
+
+ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
+SELECTIE_WAARDEN = frozenset({"voldoet", "nader-onderzoek", "kandidaat-schrappen"})
+AANVULLENDE_BRON_IDS = frozenset({"wiki-heiligen", "hnet"})
 
 
 def parse_args() -> argparse.Namespace:
@@ -23,6 +29,100 @@ def parse_args() -> argparse.Namespace:
         default=ROOT / "schemas" / "entry.schema.json",
     )
     return parser.parse_args()
+
+
+def referentie_is_aanvullend(ref: dict[str, Any]) -> bool:
+    """Wikipedia / heiligen.net mogen curated aanvullen, niet als enige bron."""
+    bron = str(ref.get("bron_id") or "").strip()
+    if bron in AANVULLENDE_BRON_IDS:
+        return True
+    url = str(ref.get("url") or "").lower()
+    if "heiligen.net" in url:
+        return True
+    if "wikipedia.org" in url and "orthodoxwiki.org" not in url:
+        return True
+    label = str(ref.get("label") or "").lower()
+    if "heiligen.net" in label:
+        return True
+    if "wikipedia" in label and "orthodoxwiki" not in label:
+        return True
+    return False
+
+
+def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
+    """Inhoudsregels bovenop het JSON-schema."""
+    errors: list[str] = []
+    living_ids = {entry["id"] for entry in entries}
+    seen_aliassen: dict[str, str] = {}
+
+    for entry in entries:
+        path = entry["source_path"]
+        betekenis = (entry.get("betekenis_lagenlanden") or "").strip()
+        text = (
+            (entry.get("verhaal") or "").strip()
+            or (entry.get("samenvatting") or "").strip()
+            or betekenis
+        )
+        if text and not entry.get("referenties"):
+            errors.append(
+                f"{path}: verhaal/samenvatting/betekenis_lagenlanden aanwezig "
+                "maar referenties ontbreken"
+            )
+        for i, ref in enumerate(entry.get("referenties") or []):
+            if not (ref.get("url") or ref.get("isbn") or ref.get("locator")):
+                errors.append(
+                    f"{path}: referenties[{i}]: ontbreekt url, isbn of locator"
+                )
+        icoon = entry.get("icoon") or {}
+        if icoon.get("bestand"):
+            if icoon.get("rechten") != "ok":
+                errors.append(
+                    f"{path}: icoon.bestand gezet maar icoon.rechten is niet 'ok'"
+                )
+            icon_path = ROOT / "site" / "static" / icoon["bestand"]
+            if not icon_path.is_file():
+                errors.append(f"{path}: icoonbestand ontbreekt: {icoon['bestand']}")
+
+        if entry.get("soort") == "heilige":
+            sel = entry.get("selectie") or "nader-onderzoek"
+            if sel not in SELECTIE_WAARDEN:
+                errors.append(f"{path}: onbekende selectie {sel!r}")
+            if (entry.get("status") or "stub") == "curated":
+                if not betekenis:
+                    errors.append(
+                        f"{path}: status curated vereist betekenis_lagenlanden"
+                    )
+                refs = list(entry.get("referenties") or [])
+                if refs and all(referentie_is_aanvullend(r) for r in refs):
+                    errors.append(
+                        f"{path}: status curated vereist minstens één bron "
+                        "naast Wikipedia/heiligen.net"
+                    )
+
+        for alias in entry.get("id_aliassen") or []:
+            alias_s = str(alias).strip()
+            if not alias_s:
+                continue
+            if not ID_PATTERN.fullmatch(alias_s):
+                errors.append(f"{path}: id_aliassen: ongeldig id {alias_s!r}")
+                continue
+            if alias_s == entry["id"]:
+                errors.append(f"{path}: id_aliassen mag het eigen id niet herhalen")
+                continue
+            if alias_s in living_ids:
+                errors.append(
+                    f"{path}: id_aliassen {alias_s!r} is nog een levend entry-id"
+                )
+                continue
+            vorige = seen_aliassen.get(alias_s)
+            if vorige:
+                errors.append(
+                    f"{path}: id_aliassen {alias_s!r} al gebruikt door {vorige}"
+                )
+            else:
+                seen_aliassen[alias_s] = entry["id"]
+
+    return errors
 
 
 def main() -> int:
@@ -42,27 +142,7 @@ def main() -> int:
         errors.append(str(exc))
         entries = []
 
-    for entry in entries:
-        path = entry["source_path"]
-        text = (entry.get("verhaal") or "").strip() or (entry.get("samenvatting") or "").strip()
-        if text and not entry.get("referenties"):
-            errors.append(
-                f"{path}: verhaal/samenvatting aanwezig maar referenties ontbreken"
-            )
-        for i, ref in enumerate(entry.get("referenties") or []):
-            if not (ref.get("url") or ref.get("isbn") or ref.get("locator")):
-                errors.append(
-                    f"{path}: referenties[{i}]: ontbreekt url, isbn of locator"
-                )
-        icoon = entry.get("icoon") or {}
-        if icoon.get("bestand"):
-            if icoon.get("rechten") != "ok":
-                errors.append(
-                    f"{path}: icoon.bestand gezet maar icoon.rechten is niet 'ok'"
-                )
-            icon_path = ROOT / "site" / "static" / icoon["bestand"]
-            if not icon_path.is_file():
-                errors.append(f"{path}: icoonbestand ontbreekt: {icoon['bestand']}")
+    errors.extend(collect_content_errors(entries))
 
     if errors:
         print(f"{len(errors)} validatiefout(en):", file=sys.stderr)

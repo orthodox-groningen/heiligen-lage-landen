@@ -20,6 +20,7 @@ HANDMATIGE_ONDERWERPEN = (
     "feestdatum",
     "datumpagina",
     "meneon",
+    "heiligen",
     "kleuren",
     "agenda",
 )
