@@ -16,6 +16,22 @@
     "november",
     "december",
   ];
+  /** Korte maandnaam voor kalender-popover (3 letters). */
+  const MONTHS_SHORT = [
+    "",
+    "jan",
+    "feb",
+    "mrt",
+    "apr",
+    "mei",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "okt",
+    "nov",
+    "dec",
+  ];
   /** ISO-weekdag 1=ma … 7=zo */
   const WEEKDAYS = [
     "",
@@ -509,6 +525,11 @@
     return `${d} ${MONTHS[m]}`;
   }
 
+  function shortLabel(mmdd) {
+    const [m, d] = mmdd.split("-").map(Number);
+    return `${d} ${MONTHS_SHORT[m]}`;
+  }
+
   function shiftMmdd(mmdd, deltaDays) {
     const [m, d] = mmdd.split("-").map(Number);
     // Schrikkeljaar: 29 februari blijft bereikbaar in de jaarcyclus.
@@ -879,11 +900,6 @@
   function fillKalenderDagPopover(mmdd, titleEl, bodyEl, meerEl) {
     const style = getStyle();
     const year = viewYear;
-    titleEl.textContent = `${label(mmdd)} ${year}`;
-    if (meerEl) {
-      meer.hidden = false;
-      meer.innerHTML = `<a class="text-link" href="${daySurfaceHref(year, mmdd, style)}">Open deze dag</a>`;
-    }
     const matched = entriesOnMmdd(calendarEntries, mmdd, style, year);
     const feasts = matched
       .filter(isPopoverFeast)
@@ -897,33 +913,23 @@
       .sort((a, b) => a.localeCompare(b, "nl"));
     const weekday = isoWeekdayFromMmdd(mmdd, year);
     const vasten = mixVastenniveau(matched, weekday, mmdd);
+    const vastenNiveau = vasten ? vasten.niveau : "vrij";
 
-    let html = "";
-    if (feasts.length) {
-      html +=
-        `<div class="day-popover-section">` +
-        `<p class="day-popover-label">Feest</p>` +
-        popoverListHtml(feasts) +
-        `</div>`;
+    titleEl.innerHTML =
+      `<span class="day-popover-date">${escapeHtml(shortLabel(mmdd))}</span>` +
+      vastenBadgeHtml(vastenNiveau);
+    if (meerEl) {
+      meerEl.hidden = true;
+      meerEl.innerHTML = "";
     }
-    if (vasten) {
-      html +=
-        `<div class="day-popover-section">` +
-        `<p class="day-popover-label">Vasten</p>` +
-        `<p class="day-popover-vasten">${vastenBadgeHtml(vasten.niveau)}</p>` +
-        `</div>`;
+
+    const items = feasts.concat(saints);
+    if (items.length) {
+      bodyEl.innerHTML = popoverListHtml(items);
+    } else {
+      bodyEl.innerHTML =
+        `<p class="muted day-popover-empty">Geen feesten of heiligen op deze dag.</p>`;
     }
-    if (saints.length) {
-      html +=
-        `<div class="day-popover-section">` +
-        `<p class="day-popover-label">${saints.length === 1 ? "Heilige" : "Heiligen"}</p>` +
-        popoverListHtml(saints) +
-        `</div>`;
-    }
-    if (!html) {
-      html = `<p class="muted">Geen feesten of heiligen op deze dag.</p>`;
-    }
-    bodyEl.innerHTML = html;
   }
 
   function fillInfoPopover(trigger) {
@@ -1013,15 +1019,9 @@
     }
   }
 
-  function scheduleInfoClose(delayMs) {
+  function scheduleInfoClose() {
     cancelInfoClose();
-    const ms =
-      typeof delayMs === "number"
-        ? delayMs
-        : infoAnchor && infoAnchor.dataset.infoTip === "kalender-dag"
-          ? 450
-          : 180;
-    infoCloseTimer = setTimeout(closeInfoPopover, ms);
+    infoCloseTimer = setTimeout(closeInfoPopover, 180);
   }
 
   function openInfoPopover(trigger) {
@@ -1039,14 +1039,12 @@
     requestAnimationFrame(() => positionInfoPopover(trigger));
   }
 
-  function handleKalenderDagClick(el, ev) {
-    ev.preventDefault();
-    const dlg = document.getElementById("info-popover");
-    if (dlg && !dlg.hidden && infoAnchor === el) {
-      window.location.assign(el.href);
-      return;
+  function canHover() {
+    try {
+      return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    } catch (_) {
+      return true;
     }
-    openInfoPopover(el);
   }
 
   function wireInfoTips(root) {
@@ -1055,11 +1053,11 @@
       el.dataset.boundInfo = "1";
       const isKalenderDag = el.dataset.infoTip === "kalender-dag";
       if (isKalenderDag) {
-        el.addEventListener("mouseenter", () => openInfoPopover(el));
-        el.addEventListener("mouseleave", () => scheduleInfoClose());
-        el.addEventListener("focus", () => openInfoPopover(el));
-        el.addEventListener("blur", () => scheduleInfoClose());
-        el.addEventListener("click", (ev) => handleKalenderDagClick(el, ev));
+        // Desktop: hover-preview. Telefoon: tik gaat naar de datumpagina.
+        if (canHover()) {
+          el.addEventListener("mouseenter", () => openInfoPopover(el));
+          el.addEventListener("mouseleave", scheduleInfoClose);
+        }
         return;
       }
       el.addEventListener("mouseenter", () => openInfoPopover(el));
@@ -1412,7 +1410,9 @@
     fillPageTitleRow(
       nav,
       titleNavHtml({
-        titleHtml: `${title} <span class="year-label">${viewYear}</span>`,
+        titleHtml:
+          `<span class="kalender-title-word">${title}</span> ` +
+          `<span class="year-label">${viewYear}</span>`,
         prevLabel: "Vorig jaar",
         nextLabel: "Volgend jaar",
         deltaAttr: "year-delta",
@@ -2080,19 +2080,6 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeInfoPopover();
   });
-
-  document.addEventListener(
-    "click",
-    (e) => {
-      const dlg = document.getElementById("info-popover");
-      if (!dlg || dlg.hidden || !infoAnchor) return;
-      if (infoAnchor.dataset.infoTip !== "kalender-dag") return;
-      const t = e.target;
-      if (dlg.contains(t) || infoAnchor.contains(t)) return;
-      closeInfoPopover();
-    },
-    true
-  );
 
   window.addEventListener("popstate", () => {
     refresh();

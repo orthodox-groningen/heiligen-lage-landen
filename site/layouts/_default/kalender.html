@@ -1,18 +1,19 @@
 {{ define "main" }}
 <section class="kalender-page">
-  <h1 class="page-title-row" id="kalender-heading">
-    <span class="title-nav" id="kalender-title-nav" data-title="{{ .Title }}">{{ .Title }}</span>
-  </h1>
-  {{ .Content }}
-  <ul class="legend compact">
-    <li><span class="swatch day-feest"></span> feest</li>
-    <li><span class="swatch day-heilige"></span> heilige</li>
-    <li><span class="swatch day-beide"></span> beide</li>
-    <li><span class="swatch day-vasten"></span> vasten</li>
-    <li><span class="swatch day-feest-vasten"></span> feest+vasten</li>
-    <li><span class="swatch day-today"></span> vandaag</li>
-  </ul>
-  <p class="hint kalender-hint">Tik of klik op een dag voor een voorvertoning; nogmaals tikken opent de datumpagina.</p>
+  <div class="kalender-sticky-head">
+    <h1 class="page-title-row" id="kalender-heading">
+      <span class="title-nav" id="kalender-title-nav" data-title="{{ .Title }}">{{ .Title }}</span>
+    </h1>
+    {{ .Content }}
+    <ul class="legend compact">
+      <li><span class="swatch day-feest"></span> feest</li>
+      <li><span class="swatch day-heilige"></span> heilige</li>
+      <li><span class="swatch day-beide"></span> beide</li>
+      <li><span class="swatch day-vasten"></span> vasten</li>
+      <li><span class="swatch day-feest-vasten"></span> feest+vasten</li>
+      <li><span class="swatch day-today"></span> vandaag</li>
+    </ul>
+  </div>
   <div id="year-grid" class="year-grid" data-kalender></div>
 </section>
 {{ end }}
