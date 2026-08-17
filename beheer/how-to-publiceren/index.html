@@ -14,8 +14,10 @@ verwacht vastenniveau is meestal: YAML-voorbeeld aangepast, code nog niet.</p><h
 of afwijkt.</li></ul><p>Met <code>--clean</code> verdwijnen bovendien extra bestanden onder
 <code>site/content/datum/</code> (niet <code>_index.md</code>) en de oude ICS-files voordat ze
 opnieuw worden gezet.</p><h2 id=publiceren>Publiceren</h2><p>Push naar <code>main</code> → productie
-(<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/)>https://orthodox-groningen.github.io/heiligen-lage-landen/)</a>.</p><p>Push naar een andere branch → preview onder <code>/preview/</code>.</p><p>CI (<code>.github/workflows/pages.yml</code>) doet: validate → <code>generate.py --clean</code> →
-Hugo → deploy naar <code>gh-pages</code>. U hoeft lokaal geen <code>generated/</code> te committen.</p><h2 id=veelgemaakte-fout>Veelgemaakte fout</h2><p>Tekst «even snel» aanpassen op een heiligenpagina onder
+(<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/)>https://orthodox-groningen.github.io/heiligen-lage-landen/)</a>.</p><p>Push naar een andere branch → preview onder <code>/preview/</code>.</p><p>CI (<code>.github/workflows/pages.yml</code>) doet: pytest → validate →
+<code>generate.py --clean</code> → Hugo → deploy naar <code>gh-pages</code>. U hoeft lokaal geen
+<code>generated/</code> te committen. <code>validate.yml</code> (pull requests) draait dezelfde
+pytest- en generate-stappen.</p><h2 id=veelgemaakte-fout>Veelgemaakte fout</h2><p>Tekst «even snel» aanpassen op een heiligenpagina onder
 <code>site/content/heiligen/</code>. Die pagina is een afdruk. Bij de volgende generate
 is de wijziging weg. Zet de tekst in <code>data/heiligen/&lt;id>.yaml</code> (en de naam
 in <code>data/namen.yaml</code>).</p><p class="hint uitleg-nav"><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/>Voor beheerders</a>
