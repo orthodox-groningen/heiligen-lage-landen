@@ -13,7 +13,7 @@
     "samenvatting": "Het feest van de Besnijdenis des Heren volgens de vaste jaarcyclus.",
     "url": "/feesten/besnijdenis-des-heren/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -37,7 +37,7 @@
     "samenvatting": "Voorfeest van Theofanie, 2–5 januari; 5 januari is de vooravond (paramony).",
     "url": "/feesten/voorfeest-theofanie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -64,7 +64,7 @@
     "samenvatting": "Openbaring van de Heilige Drie-eenheid bij de doop van Christus in de Jordaan.",
     "url": "/feesten/theofanie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -88,7 +88,7 @@
     "samenvatting": "Eerste zondag ná Theofanie.",
     "url": "/feesten/zondag-na-theofanie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -286,7 +286,7 @@
     "samenvatting": "Nafeest van Theofanie tot en met de teruggave op 14 januari.",
     "url": "/feesten/nafeest-theofanie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -310,7 +310,7 @@
     "samenvatting": "Dag na Theofanie: gezamenlijke herdenking van Johannes de Doper.",
     "url": "/feesten/synaxis-johannes-doper/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -337,7 +337,7 @@
     "samenvatting": "Heilige van de Lage Landen: Gudula van Brussel. Maagd.",
     "url": "/heiligen/gudula-van-brussel/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -363,7 +363,7 @@
     "samenvatting": "Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.",
     "url": "/heiligen/adelgondis-van-drongen/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -392,7 +392,7 @@
     "samenvatting": "Heilige van de Lage Landen: Adelgonda. Stichteres van Maubeuge.",
     "url": "/heiligen/adelgonda/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -417,7 +417,7 @@
     "samenvatting": "Dag vóór de Ontmoeting in de Tempel (2 februari).",
     "url": "/feesten/voorfeest-ontmoeting-in-de-tempel/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -443,7 +443,7 @@
     "samenvatting": "Christus wordt in de tempel gebracht; Simeon en Anna begroeten Hem.",
     "url": "/feesten/ontmoeting-in-de-tempel/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -468,7 +468,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 9 februari (volle jaarcyclus).",
     "url": "/feesten/nafeest-ontmoeting-in-de-tempel/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -491,7 +491,7 @@
     "samenvatting": "Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.",
     "url": "/heiligen/agricolaus-van-maastricht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -518,7 +518,7 @@
     "samenvatting": "Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht (17e Bisschop van Maastricht).",
     "url": "/heiligen/amandus-van-maastricht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -542,7 +542,7 @@
     "samenvatting": "Heilige van de Lage Landen: Walburga. Abdis van Heidenheim.",
     "url": "/heiligen/walburga/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -570,7 +570,7 @@
     "samenvatting": "Heilige van de Lage Landen: Swidbert. Monastieke stichter aan de Rijn.",
     "url": "/heiligen/swidbert/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -600,7 +600,7 @@
     "samenvatting": "Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop van Utrecht.",
     "url": "/heiligen/albericus-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -626,7 +626,7 @@
     "samenvatting": "Heilige van de Lage Landen: Fridolin. Abt, verlichter van de Boven-Rijn.",
     "url": "/heiligen/fridolin/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -653,7 +653,7 @@
     "samenvatting": "Dochter van Iduberga; leidde het klooster van Nijvel. Feestdag 17 maart.",
     "url": "/heiligen/gertrudis/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -677,7 +677,7 @@
     "samenvatting": "Heilige van de Lage Landen: Wulfram. Missionaris.",
     "url": "/heiligen/wulfram/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -701,7 +701,7 @@
     "samenvatting": "Dag vóór de Aankondiging (25 maart).",
     "url": "/feesten/voorfeest-aankondiging/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -727,7 +727,7 @@
     "samenvatting": "De aartsengel Gabriël kondigt de geboorte van Christus aan Maria aan.",
     "url": "/feesten/aankondiging/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -753,7 +753,7 @@
     "samenvatting": "Heilige van de Lage Landen: Ludger. Bisschop van Münster.",
     "url": "/heiligen/ludger/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -778,7 +778,7 @@
     "samenvatting": "Dag na de Aankondiging: herdenking van de aartsengel Gabriël.",
     "url": "/feesten/synaxis-gabriel/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -804,7 +804,7 @@
     "samenvatting": "Heilige van de Lage Landen: Woutruide. Stichteres van een klooster.",
     "url": "/heiligen/woutruide/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -831,7 +831,7 @@
     "samenvatting": "Heilige van de Lage Landen: Floribert. Bisschop van Luik.",
     "url": "/heiligen/floribert/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -857,7 +857,7 @@
     "samenvatting": "Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van Tongeren.",
     "url": "/heiligen/quirillus-van-tongern/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -881,7 +881,7 @@
     "samenvatting": "Heilige van de Lage Landen: Ultan. Stichter van Fosse.",
     "url": "/heiligen/ultan/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -909,7 +909,7 @@
     "samenvatting": "Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.",
     "url": "/heiligen/ansfried-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -935,7 +935,7 @@
     "samenvatting": "Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht.",
     "url": "/heiligen/domitianus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -964,7 +964,7 @@
     "samenvatting": "Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis.",
     "url": "/heiligen/iduberga/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -990,7 +990,7 @@
     "samenvatting": "Heilige van de Lage Landen: Wiro. Ierse missionaris, bisschop in Limburg, Nederland.",
     "url": "/heiligen/wiro/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1019,7 +1019,7 @@
     "samenvatting": "Eerste historisch bevestigde bisschop van Tongeren; begraven in Maastricht.\nFeestdag 13 mei.",
     "url": "/heiligen/servatius/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1046,7 +1046,7 @@
     "samenvatting": "Ierse maagd-martelares, vereerd te Geel. Feestdag 15 mei.",
     "url": "/heiligen/dymphna/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1071,7 +1071,7 @@
     "samenvatting": "Heilige van de Lage Landen: Hubertus van Maastricht.",
     "url": "/heiligen/hubertus-van-maastricht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1099,7 +1099,7 @@
     "samenvatting": "Angelsaksische missionaris; aartsbisschop van Mainz; martelaar bij\nDokkum. Feestdag 5 juni.",
     "url": "/heiligen/bonifatius/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1125,7 +1125,7 @@
     "samenvatting": "Heilige van de Lage Landen: Medardus. Bisschop van Noyon.",
     "url": "/heiligen/medardus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1149,7 +1149,7 @@
     "samenvatting": "Maagd-martelares, vereerd te Rhenen. Feestdag 12 juni.",
     "url": "/heiligen/cunera/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1178,7 +1178,7 @@
     "samenvatting": "Priester en kanunnik van Utrecht; door bisschop Frederik naar Stavoren\ngezonden. Feestdag 12 juni.",
     "url": "/heiligen/odulphus/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1204,7 +1204,7 @@
     "samenvatting": "Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelares.",
     "url": "/heiligen/alena-van-dilbeek/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1231,7 +1231,7 @@
     "samenvatting": "Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.",
     "url": "/heiligen/engelmund/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1255,7 +1255,7 @@
     "samenvatting": "Plaatselijke martelaar, vereerd te Bedum. Feestdag 22 juni.",
     "url": "/heiligen/walfridus-bedum/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1280,7 +1280,7 @@
     "samenvatting": "Feestdag van de geboorte van de Voorloper.",
     "url": "/feesten/geboorte-johannes-doper/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1310,7 +1310,7 @@
     "samenvatting": "Patroonheilige van Mechelen; volgens de overlevering missionaris en\nmartelaar. Feestdag 24 juni (in het bisdom Mechelen-Brussel 1 juli).",
     "url": "/heiligen/rumold/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1337,7 +1337,7 @@
     "samenvatting": "Aartsdiaken en metgezel van Willibrord; begraven te Egmond. Feestdag\n25 juni.",
     "url": "/heiligen/adelbert/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1362,7 +1362,7 @@
     "samenvatting": "Feestdag van de eerste apostelen Petrus en Paulus.",
     "url": "/feesten/petrus-en-paulus/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1391,7 +1391,7 @@
     "samenvatting": "Aartsbisschop van de Russische Kerk Buiten Rusland; als bisschop van\nWest-Europa betrokken bij de Nederlandse orthodoxe missie. Feestdag\n2 juli (nieuwe stijl).",
     "url": "/heiligen/johannes-van-shanghai/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1417,7 +1417,7 @@
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Temse. Maagd.",
     "url": "/heiligen/amalberga-van-temse/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1446,7 +1446,7 @@
     "samenvatting": "Leerling van Silouan de Athoniet; stichter van het klooster in Essex.\nBezocht Gent; gaf raad aan de latere abdis van Asten. Feestdag 11 juli.",
     "url": "/heiligen/sophrony-van-essex/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1468,7 +1468,7 @@
     "samenvatting": "Heilige van de Lage Landen: Marcellinus van Utrecht.",
     "url": "/heiligen/marcellinus-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1496,7 +1496,7 @@
     "samenvatting": "Diaken en geloofsverkondiger; met Wiro en Plechelm stichter van het\nklooster te Odiliënberg. Feestdag 15 juli.",
     "url": "/heiligen/otger/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1523,7 +1523,7 @@
     "samenvatting": "Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop, geloofsverkondiger aan de Nederrijn.",
     "url": "/heiligen/plechelm-von-odilienberg/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1551,7 +1551,7 @@
     "samenvatting": "Bisschop van Maastricht, opvolger van Monulphus in de overlevering.\nFeestdag 16 juli (samen met Monulphus).",
     "url": "/heiligen/gondulphus/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1579,7 +1579,7 @@
     "samenvatting": "Bisschop van Maastricht; bouwde een stenen kerk boven het graf van\nServatius. Feestdag 16 juli (samen met Gondulphus).",
     "url": "/heiligen/monulphus/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -1606,7 +1606,7 @@
     "samenvatting": "Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.",
     "url": "/heiligen/frederich/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1630,7 +1630,7 @@
     "samenvatting": "Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.",
     "url": "/heiligen/bernulphus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1657,7 +1657,7 @@
     "samenvatting": "Vasten van 1 tot en met 14 augustus, ter voorbereiding op het Ontslapen.",
     "url": "/vasten/ontslapen-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -1681,7 +1681,7 @@
     "samenvatting": "Dag vóór de Transfiguratie (6 augustus).",
     "url": "/feesten/voorfeest-transfiguratie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1707,7 +1707,7 @@
     "samenvatting": "Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.",
     "url": "/feesten/transfiguratie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1732,7 +1732,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 13 augustus.",
     "url": "/feesten/nafeest-transfiguratie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1755,7 +1755,7 @@
     "samenvatting": "Dag vóór het Ontslapen (15 augustus); laatste dag van het Ontslapen-vasten.",
     "url": "/feesten/voorfeest-ontslapen-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1784,7 +1784,7 @@
     "samenvatting": "Angelsaksische priester in het gevolg van Willibrord; vereerd te Elst\nen Westervoort. Feestdag 14 augustus.",
     "url": "/heiligen/werenfrid/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1810,7 +1810,7 @@
     "samenvatting": "Het ontslapen (dood en opname) van de Moeder Gods.",
     "url": "/feesten/ontslapen-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1834,7 +1834,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 23 augustus.",
     "url": "/feesten/nafeest-ontslapen-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1859,7 +1859,7 @@
     "samenvatting": "Priester-martelaar van Noordwijk, volgens de overlevering door Noormannen\ngedood. Feestdag 17 augustus.",
     "url": "/heiligen/jeroen-van-noordwijk/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1883,7 +1883,7 @@
     "samenvatting": "Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.",
     "url": "/heiligen/alubertus-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1907,7 +1907,7 @@
     "samenvatting": "Heilige van de Lage Landen: Gregorius van Utrecht.",
     "url": "/heiligen/gregorius-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -1932,7 +1932,7 @@
     "samenvatting": "Gedachtenis van de marteldood van de Voorloper.",
     "url": "/feesten/onthoofding-johannes-doper/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -1959,7 +1959,7 @@
     "samenvatting": "Indictie: begin van het kerkelijk jaar.",
     "url": "/feesten/begin-kerkelijk-jaar/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -1982,7 +1982,7 @@
     "samenvatting": "Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.",
     "url": "/heiligen/remaclus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2006,7 +2006,7 @@
     "samenvatting": "Dag vóór de Geboorte van de Moeder Gods (8 september).",
     "url": "/feesten/voorfeest-geboorte-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2033,7 +2033,7 @@
     "samenvatting": "Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.",
     "url": "/heiligen/adela-van-vlaanderen/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2058,7 +2058,7 @@
     "samenvatting": "Geboortefeest van de Allerheiligste Moeder Gods.",
     "url": "/feesten/geboorte-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2083,7 +2083,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 12 september.",
     "url": "/feesten/nafeest-geboorte-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2111,7 +2111,7 @@
     "samenvatting": "Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.",
     "url": "/heiligen/theodaard-van-maastricht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2135,7 +2135,7 @@
     "samenvatting": "Dag vóór de Kruisverheffing (14 september); in het typikon een vastendag.",
     "url": "/feesten/voorfeest-kruisverheffing/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -2161,7 +2161,7 @@
     "samenvatting": "Verheffing van het Heilig Kruis.",
     "url": "/feesten/kruisverheffing/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -2187,7 +2187,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 21 september.",
     "url": "/feesten/nafeest-kruisverheffing/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2214,7 +2214,7 @@
     "samenvatting": "Bisschop van Maastricht; predikte in Brabant en Toxandrië; vermoord te\nLuik. Feestdag 17 september.",
     "url": "/heiligen/lambertus/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -2239,13 +2239,13 @@
     "samenvatting": "Edelman die kluizenaar werd bij de abdij van Sint-Baafs te Gent.\nFeestdag 1 oktober.",
     "url": "/heiligen/bavo/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
-    "betekenis_lage_landen": "Bavo (Allowin) is de stadsheilige van Gent. De overlevering maakt hem tot\neen bekeerde edelman die onder Amandus tot inkeer kwam en als kluizenaar\nbij de Gentse abdij stierf. De Sint-Baafskathedraal draagt zijn naam.\nEen Heiligenlexikon-artikel is in deze ronde niet op een stabiele URL\ngevonden; tot die toets blijft de tekst een stub op Wikipedia.",
+    "betekenis_lage_landen": "Bavo (Allowin) is de stadsheilige van Gent. De overlevering maakt hem tot\neen bekeerde edelman die onder Amandus tot inkeer kwam en als kluizenaar\nbij de Gentse abdij stierf. De Sint-Baafskathedraal draagt zijn naam.\nEen Heiligenlexikon-artikel is in deze ronde niet op een stabiele URL\ngevonden; tot die toets volgt de tekst Wikipedia.",
     "feestdatum": "10-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2266,7 +2266,7 @@
     "samenvatting": "Groot feest in de Russische Kerk: de Moeder Gods spreidt haar omophorion over de gelovigen.",
     "url": "/feesten/pokrov/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2294,7 +2294,7 @@
     "samenvatting": "Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.",
     "url": "/heiligen/gommar/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2318,7 +2318,7 @@
     "samenvatting": "Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken.",
     "url": "/heiligen/oda-van-amay/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2344,7 +2344,7 @@
     "samenvatting": "Heilige van de Lage Landen: Ermelindis. Heremiet.",
     "url": "/heiligen/ermelindis/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2368,7 +2368,7 @@
     "samenvatting": "Heilige van de Lage Landen: Foillan. Ierse monnik, martelaar.",
     "url": "/heiligen/foillan/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2394,7 +2394,7 @@
     "samenvatting": "Heilige van de Lage Landen: Odrada. Maagd van Balen.",
     "url": "/heiligen/odrada/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2420,7 +2420,7 @@
     "samenvatting": "Heilige van de Lage Landen: Winnocus. Abt.",
     "url": "/heiligen/winnocus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2445,7 +2445,7 @@
     "samenvatting": "Angelsaksische missionaris; stichtte de zetel van Utrecht en predikte\nonder de Friezen. Feestdag 7 november.",
     "url": "/heiligen/willibrord/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -2475,7 +2475,7 @@
     "samenvatting": "Angelsaksische priester; stichtte de kerk van Deventer. Feestdag\n12 november.",
     "url": "/heiligen/lebuinus/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -2501,7 +2501,7 @@
     "samenvatting": "Vasten van 15 november tot Kerstavond (24 december), ter voorbereiding op Kerstfeest.",
     "url": "/vasten/geboorte-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -2525,7 +2525,7 @@
     "samenvatting": "Dag vóór de Tempelgang van de Moeder Gods (21 november).",
     "url": "/feesten/voorfeest-tempelgang-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2552,7 +2552,7 @@
     "samenvatting": "Heilige van de Lage Landen: Amalberga van Susteren. Abdis.",
     "url": "/heiligen/amalberga-van-susteren/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2578,7 +2578,7 @@
     "samenvatting": "Maria wordt als kind in de tempel gebracht.",
     "url": "/feesten/tempelgang-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2603,7 +2603,7 @@
     "samenvatting": "Nafeest tot en met de teruggave op 25 november.",
     "url": "/feesten/nafeest-tempelgang-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2626,7 +2626,7 @@
     "samenvatting": "Heilige van de Lage Landen: Trudo. Abt, stichter abdij St. Truiden.",
     "url": "/heiligen/trudo/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2653,7 +2653,7 @@
     "samenvatting": "Heilige van de Lage Landen: Acharius van Doornik. Bisschop.",
     "url": "/heiligen/acharius-van-doornik/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2677,7 +2677,7 @@
     "samenvatting": "Schotse (of Ierse) kluizenares, vereerd in de Meierij (Sint-Oedenrode).\nFeestdag 28 november.",
     "url": "/heiligen/oda-van-de-peel/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2703,7 +2703,7 @@
     "samenvatting": "Bisschop van Utrecht (899–917); geleerde en hagiograaf. Feestdag\n29 november.",
     "url": "/heiligen/radboud/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2730,7 +2730,7 @@
     "samenvatting": "Heilige van de Lage Landen: Eligius. Bisschop van Noyon.",
     "url": "/heiligen/eligius/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2757,7 +2757,7 @@
     "samenvatting": "Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.",
     "url": "/heiligen/folciunus/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2784,7 +2784,7 @@
     "samenvatting": "Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.",
     "url": "/heiligen/aubertus-van-kamerijk/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2812,7 +2812,7 @@
     "samenvatting": "Dochter van Iduberga en Pepijn van Landen; stichtte het klooster van\nAndenne. Feestdag 17 december.",
     "url": "/heiligen/begga/",
     "lage_landen": true,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
@@ -2839,7 +2839,7 @@
     "samenvatting": "Heilige van de Lage Landen: Winnibald. Abt en missionaris van Engeland en Heidenheim (Duitsland).",
     "url": "/heiligen/winnibald/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2864,7 +2864,7 @@
     "samenvatting": "Voorfeest van Kerst, 20–24 december, in het Geboortevasten.",
     "url": "/feesten/voorfeest-kerst/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2887,7 +2887,7 @@
     "samenvatting": "Heilige van de Lage Landen: Hunger van Utrecht.",
     "url": "/heiligen/hunger-van-utrecht/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2909,7 +2909,7 @@
     "samenvatting": "Heilige van de Lage Landen: Egbert van Rathmelsigi.",
     "url": "/heiligen/egbert-van-rathmelsigi/",
     "lage_landen": true,
-    "status": "stub",
+    "bronlaag": "encyclopedie",
     "observances": [
       "heilige"
     ],
@@ -2936,7 +2936,7 @@
     "samenvatting": "Geboorte van onze Heer Jezus Christus.",
     "url": "/feesten/kerst/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -2961,7 +2961,7 @@
     "samenvatting": "Eerste zondag ná Kerst: Jozef de Verloofde, David de koning en Jakobus\nde Broeder des Heren.",
     "url": "/feesten/zondag-na-kerst/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3151,7 +3151,7 @@
     "samenvatting": "Zondag direct vóór Kerst: de heilige Vaderen volgens het vlees van de Heer.",
     "url": "/feesten/zondag-vaderen-voor-kerst/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3341,7 +3341,7 @@
     "samenvatting": "Tweede zondag vóór Kerst: herdenking van de Voorvaderen van Christus.",
     "url": "/feesten/zondag-voorvaderen/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3539,7 +3539,7 @@
     "samenvatting": "Nafeest van Kerst tot en met de teruggave op 31 december.",
     "url": "/feesten/nafeest-kerst/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3564,7 +3564,7 @@
     "samenvatting": "Dag na Kerst: gezamenlijke herdenking van de Moeder Gods.",
     "url": "/feesten/synaxis-moeder-gods/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3588,7 +3588,7 @@
     "samenvatting": "Begin van de voorbereiding op de Grote Vasten; evangelie van Zacheüs.",
     "url": "/feesten/zacheus-zondag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3671,7 +3671,7 @@
     "samenvatting": "Opening van het Triodion; les over ootmoedig gebed.",
     "url": "/feesten/zondag-tollenaar-en-farizeeer/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3753,7 +3753,7 @@
     "samenvatting": "Week na de zondag van de tollenaar en de Farizeeër: vastenvrij (wo/vr).",
     "url": "/feesten/vastenvrije-week-tollenaar/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3891,7 +3891,7 @@
     "samenvatting": "Gelijkenis van de barmhartige vader; oproep tot terugkeer.",
     "url": "/feesten/zondag-verloren-zoon/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -3974,7 +3974,7 @@
     "samenvatting": "Gedachtenis van alle overledenen vóór de Vleesvaarwelzondag.",
     "url": "/feesten/zaterdag-allerzielen-vleesmijding/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -4058,7 +4058,7 @@
     "samenvatting": "Laatste dag met vlees; evangelie van het Laatste Oordeel.",
     "url": "/feesten/zondag-laatste-oordeel/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -4143,7 +4143,7 @@
     "samenvatting": "Week vóór de Grote Vasten: geen vlees, wel zuivel tot Vergevingszondag.",
     "url": "/feesten/boterweek/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -4282,7 +4282,7 @@
     "samenvatting": "Einde van de Boterweek; wederzijdse vergeving vóór de Grote Vasten.",
     "url": "/feesten/vergevingszondag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -4367,7 +4367,7 @@
     "samenvatting": "Van Schone Maandag tot en met Lazarus-zaterdag (veertigdagen); daarna volgt de Grote Week.",
     "url": "/vasten/grote-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -4507,7 +4507,7 @@
     "samenvatting": "Eerste dag van de Grote Vasten.",
     "url": "/feesten/schone-maandag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -4591,7 +4591,7 @@
     "samenvatting": "Herstel van de iconenverering; eerste vastenzondag.",
     "url": "/feesten/zondag-orthodoxie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -4676,7 +4676,7 @@
     "samenvatting": "Gedachtenis van de heilige Gregorius Palamas.",
     "url": "/feesten/zondag-gregorius-palamas/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -4761,7 +4761,7 @@
     "samenvatting": "Midden in de vasten: verering van het Heilig Kruis.",
     "url": "/feesten/zondag-kruisverering/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -4846,7 +4846,7 @@
     "samenvatting": "Gedachtenis van Johannes van de Ladder.",
     "url": "/feesten/zondag-johannes-klimacus/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -4931,7 +4931,7 @@
     "samenvatting": "Gedachtenis van de heilige Maria van Egypte.",
     "url": "/feesten/zondag-maria-van-egypte/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5014,7 +5014,7 @@
     "samenvatting": "Opwekking van Lazarus; vooravond van Palmzondag.",
     "url": "/feesten/lazarus-zaterdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5100,7 +5100,7 @@
     "samenvatting": "Christus’ intocht in Jeruzalem; begin van de Heilige Week.",
     "url": "/feesten/palmzondag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5184,7 +5184,7 @@
     "samenvatting": "Eerste dag van de Heilige Week; Jozef de Alschone; onvruchtbare vijgenboom.",
     "url": "/feesten/grote-maandag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -5268,7 +5268,7 @@
     "samenvatting": "Grote Maandag tot en met Grote Zaterdag: de strengste dagen vóór Pascha.",
     "url": "/vasten/grote-week/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -5406,7 +5406,7 @@
     "samenvatting": "Heilige Week; gelijkenissen van waakzaamheid.",
     "url": "/feesten/grote-dinsdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -5488,7 +5488,7 @@
     "samenvatting": "Zalving te Bethanië; verraad van Judas.",
     "url": "/feesten/grote-woensdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -5572,7 +5572,7 @@
     "samenvatting": "Laatste Avondmaal; voetwassing; overlevering aan het lijden.",
     "url": "/feesten/grote-donderdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5657,7 +5657,7 @@
     "samenvatting": "Kruisiging en graflegging van de Heer.",
     "url": "/feesten/grote-vrijdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5740,7 +5740,7 @@
     "samenvatting": "Christus in het graf; vooravond van Pascha.",
     "url": "/feesten/grote-zaterdag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest",
       "vasten"
@@ -5825,7 +5825,7 @@
     "samenvatting": "Bright Week: van Pascha tot en met Lichte Zaterdag; geen wekelijks vasten.",
     "url": "/feesten/lichte-week/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -5968,7 +5968,7 @@
     "samenvatting": "Feest van de Opstanding; middelpunt van het kerkelijk jaar.",
     "url": "/feesten/pascha/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6050,7 +6050,7 @@
     "samenvatting": "Tweede dag van de Lichte Week na Pascha.",
     "url": "/feesten/lichte-maandag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6135,7 +6135,7 @@
     "samenvatting": "Eerste zondag na Pascha; belijdenis van Thomas.",
     "url": "/feesten/thomaszondag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6218,7 +6218,7 @@
     "samenvatting": "De vrouwen bij het graf; Jozef van Arimatea en Nicodemus.",
     "url": "/feesten/zondag-mirredraagsters/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6301,7 +6301,7 @@
     "samenvatting": "Genezing bij Betesda; derde zondag na Pascha.",
     "url": "/feesten/zondag-verlamde/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6384,7 +6384,7 @@
     "samenvatting": "Halverwege tussen Pascha en Pinksteren.",
     "url": "/feesten/midden-pinksterfeest/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6467,7 +6467,7 @@
     "samenvatting": "Ontmoeting bij de put; levend water.",
     "url": "/feesten/zondag-samaritaanse/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6550,7 +6550,7 @@
     "samenvatting": "Genezing van de blindgeborene.",
     "url": "/feesten/zondag-blinde/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6633,7 +6633,7 @@
     "samenvatting": "Laatste dag van de Pascha-viering vóór Hemelvaart.",
     "url": "/feesten/teruggave-pascha/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6716,7 +6716,7 @@
     "samenvatting": "Veertig dagen na Pascha; Christus’ hemelvaart.",
     "url": "/feesten/hemelvaart/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6798,7 +6798,7 @@
     "samenvatting": "Van de dag na Hemelvaart tot en met de teruggave (vrijdag vóór Pinksteren).",
     "url": "/feesten/nafeest-hemelvaart/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -6936,7 +6936,7 @@
     "samenvatting": "Vaderen van Nicea (325); zondag na Hemelvaart.",
     "url": "/feesten/zondag-vaderen-eerste-concilie/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7018,7 +7018,7 @@
     "samenvatting": "Laatste dag van de Hemelvaart-viering, vrijdag vóór Pinksteren.",
     "url": "/feesten/teruggave-hemelvaart/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7101,7 +7101,7 @@
     "samenvatting": "Gedachtenis van de overledenen vóór Pinksteren.",
     "url": "/feesten/allerzielen-zaterdag-pinksteren/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7186,7 +7186,7 @@
     "samenvatting": "Vijftig dagen na Pascha; gave van de Heilige Geest.",
     "url": "/feesten/pinksteren/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7269,7 +7269,7 @@
     "samenvatting": "Van Pinksteren tot Allerheiligen-zondag: geen wekelijks woensdag-/vrijdagvasten.",
     "url": "/feesten/vastenvrije-week-pinksteren/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7409,7 +7409,7 @@
     "samenvatting": "Tweede dag van Pinksteren; eer aan de Heilige Geest.",
     "url": "/feesten/geestesmaandag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7492,7 +7492,7 @@
     "samenvatting": "Laatste dag van het Pinksternafeest, zaterdag vóór Allerheiligen.",
     "url": "/feesten/teruggave-pinksteren/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7575,7 +7575,7 @@
     "samenvatting": "Eerste zondag na Pinksteren; alle heiligen.",
     "url": "/feesten/allerheiligen-zondag/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "feest"
     ],
@@ -7660,7 +7660,7 @@
     "samenvatting": "Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).",
     "url": "/vasten/apostolisch-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -7783,7 +7783,7 @@
     "samenvatting": "Wekelijks vasten op woensdag, ter herinnering aan het verraad van Christus.",
     "url": "/vasten/woensdag-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
@@ -7809,7 +7809,7 @@
     "samenvatting": "Wekelijks vasten op vrijdag, ter herinnering aan het Kruis van Christus.",
     "url": "/vasten/vrijdag-vasten/",
     "lage_landen": false,
-    "status": "curated",
+    "bronlaag": "nagekeken",
     "observances": [
       "vasten"
     ],
