@@ -9,8 +9,9 @@ Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf
 *Vandaag* met de pijltjes. U krijgt dan **die dag in dat jaar** te zien:
 feesten, heiligen, dagen van de paascyclus en vasten die op die
 **burgerlijke** datum vallen — de datum zoals Nederland die noemt. De titel
-is de weekdag en de datum; is het vandaag, dan staat *(vandaag)* erbij,
-vóór de pijl naar de volgende dag.
+is de weekdag, de datum en de [toon van de week]({{% ref "/uitleg/toon" %}})
+(Toon 1 tot 8). Is het vandaag, dan staat *(vandaag)* erbij, vóór de pijl
+naar de volgende dag.
 
 De startpagina (logo) is dezelfde weergave als een datumpagina, maar dan
 voor de huidige dag.
@@ -35,7 +36,8 @@ niet mee. De burgerlijke datum in de titel blijft staan. Zie
 Daaronder staat wat voor dag het is: bijvoorbeeld de 23e donderdag na
 Pinksteren, of de Zondag van de verloren zoon. Is het een feestdag, dan
 staat hier de naam van het feest — die wordt niet nog eens herhaald.
-Vervolgens Apostel en Evangelie. Zijn er heiligen van de Lage Landen op
+Vervolgens Apostel en Evangelie: de verwijzing is een link naar dat
+hoofdstuk in een Bijbelvertaling (nieuw venster). Zijn er heiligen van de Lage Landen op
 die dag, dan volgt de kop *Heilige van de dag* (of *Heiligen* in het
 meervoud) en daaronder de lijst, met een klein icoon als we er een hebben.
 Zijn er geen heiligen van de Lage Landen, dan komt die kop niet. In plaats

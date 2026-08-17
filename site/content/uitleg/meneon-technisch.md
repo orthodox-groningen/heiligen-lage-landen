@@ -32,6 +32,10 @@ Het Meneon toont entries met een vaste plaats in het jaar:
 Zoeken loopt over `namen.primair` en `namen.alternatief` (na toepassing van
 `data/namen.yaml`).
 
+In de Meneon-lijst toont `entryRowHtml` een klein icoon als `entries.json`
+`icoon` heeft. De jaarkalender-popover (`fillKalenderDagPopover`) toont
+geen iconen.
+
 ## Gegenereerde entry-pagina’s
 
 `scripts/generate.py` schrijft `site/content/heiligen/<id>.md`,

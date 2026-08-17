@@ -144,8 +144,13 @@ die is geraadpleegd. Zo blijft overleg met de clerus navolgbaar.
 ## Wat u op de site ziet
 
 - Op **Vandaag** en de **datumpagina**: Apostel en Evangelie van die dag,
-  onder de aanduiding van de liturgische dag (of de feestdag).
-- Op het **lezingenrooster**: een overzicht over een langere periode.
+  onder de aanduiding van de liturgische dag (of de feestdag). Elke
+  verwijzing opent dat hoofdstuk op
+  [debijbel.nl](https://www.debijbel.nl/) in een nieuw venster. U kiest
+  NBV21, NBG51 of HSV; de site zet de Bijbeltekst zelf niet online.
+  Lukt NBV21 niet, kies dan NBG51 of HSV.
+- Op het **lezingenrooster**: een overzicht over een langere periode,
+  met dezelfde links.
 
 Klopt iets niet met uw lokale typikon of BU, dan is dat precies het gesprek
 dat we met deze uitleg willen voeren — het liefst met een concrete datum en

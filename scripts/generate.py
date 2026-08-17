@@ -748,6 +748,11 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
             "uitleg voor de clerus"
         ),
     },
+    {
+        "id": "toon",
+        "title": "Toon van de week",
+        "description": "De acht wekelijkse zangtonen, gerekend vanaf Thomaszondag",
+    },
 ]
 
 
