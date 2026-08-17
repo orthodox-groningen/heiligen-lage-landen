@@ -14,11 +14,16 @@
       {{ $plaatsen := .Params.locatie_ids | default (slice) }}
       {{ $zoek := printf "%s %s %s %s" .Title (delimit $alts " ") (delimit $plaatsen " ") (.Params.locatie_zoek | default "") }}
       <li data-zoek="{{ $zoek }}" data-plaatsen="{{ delimit $plaatsen " " }}">
-        <span class="entry-list-namen">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ with $alts }}
-            <span class="meta">ook {{ delimit . ", " }}</span>
+        <span class="entry-list-hoofd">
+          {{ with .Params.icoon }}
+            <img class="list-icoon" src="{{ . | relURL }}" alt="" width="28" height="28">
           {{ end }}
+          <span class="entry-list-namen">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with $alts }}
+              <span class="meta">ook {{ delimit . ", " }}</span>
+            {{ end }}
+          </span>
         </span>
         {{ with .Params.locaties }}
           <span class="meta">{{ delimit . ", " }}</span>

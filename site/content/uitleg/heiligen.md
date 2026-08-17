@@ -13,7 +13,8 @@ kunt verwachten, en waarom een dag soms **geen heilige** toont.
 Het [overzicht van heiligen]({{% ref "/heiligen" %}}) is de ingang op
 **persoon** (zoeken, belang, verhaal, datum). U kunt daar ook zoeken op
 plaats of streek — Utrecht, Vlaanderen — en de plaatsen op een kaart
-zien. Het [Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
+zien. Heiligen met een icoon op deze site tonen dat icoon klein in de
+lijst. Het [Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
 
 ## Wie staat erin?
 

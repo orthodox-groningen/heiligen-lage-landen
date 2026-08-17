@@ -23,6 +23,7 @@ HANDMATIGE_ONDERWERPEN = (
     "heiligen",
     "kleuren",
     "agenda",
+    "toon",
 )
 
 TECHNISCHE_SPOREN = (
