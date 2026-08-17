@@ -37,7 +37,7 @@ selectie_toelichting: "Kort waarom, voor beheerders."
 
 Werklijst (scores, gaten, post-schisma):
 [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md).
-Die scores staan nog niet in YAML tot de inventaris is nagekeken.
+`selectie` staat per heilige in YAML; overzicht `/beheer/selectie/`.
 
 ## Betekenis voor de Lage Landen
 

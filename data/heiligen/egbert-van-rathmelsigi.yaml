@@ -3,6 +3,8 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+selectie: kandidaat-schrappen
+selectie_toelichting: "Rath Melsigi (Ierland); zond missionarissen naar Frisia, zelf niet in de Lage Landen."
 namen:
   primair: Egbert van Rathmelsigi
 datum:

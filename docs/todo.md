@@ -8,9 +8,9 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
       beheer-selectielijst; heiligenindex toont en zoekt alternatieve namen.
 - [x] Datahygiëne: merges (Lebuïnus, Alberik), titels Nederlands/correct,
       «Icoon in parochie» uit titels.
-- [ ] Inventaris: eerste score + gatenlijst in `docs/inventaris.md`;
-      Johannes en Sophrony op toevoegen; C-heiligen niet automatisch;
-      menselijke review vóór YAML in stap 5.
+- [x] Inventaris: alle heiligen gescored (`selectie` in YAML);
+      gatenlijst + Johannes en Sophrony op toevoegen; C-heiligen niet
+      automatisch (`docs/inventaris.md`, `/beheer/selectie/`).
 - [ ] Kerninhoud: ontbrekenden + Johannes van Shanghai + kernset met
       betekenis, verhaal, referenties, `curated`.
 - [ ] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,

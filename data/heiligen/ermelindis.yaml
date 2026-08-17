@@ -3,6 +3,8 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+selectie: voldoet
+selectie_toelichting: "Brabant (Meldert)."
 namen:
   primair: Ermelindis
   alternatief:

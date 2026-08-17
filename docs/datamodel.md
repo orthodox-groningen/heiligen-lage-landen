@@ -176,6 +176,7 @@ Niemand wordt automatisch geschrapt. `kandidaat-schrappen` is een markering
 voor een later, expliciet besluit.
 
 Werklijst (scores, gaten, post-schisma): [`docs/inventaris.md`](inventaris.md).
+`selectie` staat per heilige in YAML; gegenereerd overzicht `/beheer/selectie/`.
 
 ## Referenties
 

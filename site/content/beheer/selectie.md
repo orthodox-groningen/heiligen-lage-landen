@@ -10,75 +10,73 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 
 **62** heiligen.
 
-## Voldoet (0)
+## Voldoet (50)
 
-_Geen._
+- [Acharius van Doornik](/heiligen/acharius-van-doornik/) (`data/heiligen/acharius-van-doornik.yaml`) — Bisschop van Doornik.
+- [Adelbert](/heiligen/adelbert/) (`data/heiligen/adelbert.yaml`) — Egmond; metgezel van Willibrord.
+- [Adelgondis van Drongen](/heiligen/adelgondis-van-drongen/) (`data/heiligen/adelgondis-van-drongen.yaml`) — Drongen.
+- [Albericus van Utrecht](/heiligen/albericus-van-utrecht/) (`data/heiligen/albericus-van-utrecht.yaml`) — Bisschop van Utrecht.
+- [Alena van Dilbeek](/heiligen/alena-van-dilbeek/) (`data/heiligen/alena-van-dilbeek.yaml`) — Martelares van Dilbeek.
+- [Alubertus van Utrecht](/heiligen/alubertus-van-utrecht/) (`data/heiligen/alubertus-van-utrecht.yaml`) — Wijbisschop van Utrecht.
+- [Amalberga van Susteren](/heiligen/amalberga-van-susteren/) (`data/heiligen/amalberga-van-susteren.yaml`) — Abdis van Susteren.
+- [Amalberga van Temse](/heiligen/amalberga-van-temse/) (`data/heiligen/amalberga-van-temse.yaml`) — Temse.
+- [Amandus van Maastricht](/heiligen/amandus-van-maastricht/) (`data/heiligen/amandus-van-maastricht.yaml`) — Maastricht en Elno bij Doornik.
+- [Ansfried (van Utrecht)](/heiligen/ansfried-van-utrecht/) (`data/heiligen/ansfried-van-utrecht.yaml`) — Bisschop van Utrecht.
+- [Bavo](/heiligen/bavo/) (`data/heiligen/bavo.yaml`) — Gent.
+- [Bernulphus](/heiligen/bernulphus/) (`data/heiligen/bernulphus.yaml`) — Bisschop van Utrecht; sterfjaar 1054, westers episcopaat in de Lage Landen.
+- [Bonifatius](/heiligen/bonifatius/) (`data/heiligen/bonifatius.yaml`) — Missie in Frisia; martelaarschap bij Dokkum.
+- [Cunera](/heiligen/cunera/) (`data/heiligen/cunera.yaml`) — Rhenen.
+- [Domitianus](/heiligen/domitianus/) (`data/heiligen/domitianus.yaml`) — Bisschop van Maastricht.
+- [Dymphna](/heiligen/dymphna/) (`data/heiligen/dymphna.yaml`) — Geel.
+- [Eligius](/heiligen/eligius/) (`data/heiligen/eligius.yaml`) — Bisdom Noyon-Doornik; prediking in Vlaanderen.
+- [Engelmund](/heiligen/engelmund/) (`data/heiligen/engelmund.yaml`) — Velsen / Holland.
+- [Ermelindis](/heiligen/ermelindis/) (`data/heiligen/ermelindis.yaml`) — Brabant (Meldert).
+- [Floribert](/heiligen/floribert/) (`data/heiligen/floribert.yaml`) — Bisschop van Luik.
+- [Foillan](/heiligen/foillan/) (`data/heiligen/foillan.yaml`) — Fosses.
+- [Frederich](/heiligen/frederich/) (`data/heiligen/frederich.yaml`) — Bisschop van Utrecht.
+- [Gertrudis](/heiligen/gertrudis/) (`data/heiligen/gertrudis.yaml`) — Abdis van Nijvel.
+- [Gommar](/heiligen/gommar/) (`data/heiligen/gommar.yaml`) — Lier.
+- [Gregorius van Utrecht](/heiligen/gregorius-van-utrecht/) (`data/heiligen/gregorius-van-utrecht.yaml`) — Utrecht; leerling van Bonifatius.
+- [Gudula van Brussel](/heiligen/gudula-van-brussel/) (`data/heiligen/gudula-van-brussel.yaml`) — Brussel.
+- [Hubertus van Maastricht](/heiligen/hubertus-van-maastricht/) (`data/heiligen/hubertus-van-maastricht.yaml`) — Maastricht / Luik.
+- [Hunger van Utrecht](/heiligen/hunger-van-utrecht/) (`data/heiligen/hunger-van-utrecht.yaml`) — Bisschop van Utrecht.
+- [Iduberga](/heiligen/iduberga/) (`data/heiligen/iduberga.yaml`) — Nijvel.
+- [Jeroen van Noordwijk](/heiligen/jeroen-van-noordwijk/) (`data/heiligen/jeroen-van-noordwijk.yaml`) — Noordwijk.
+- [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`) — Bisschop van Maastricht.
+- [Lebuinus](/heiligen/lebuinus/) (`data/heiligen/lebuinus.yaml`) — Deventer / Friesland.
+- [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`) — Geboren bij Utrecht; missie in Frisia.
+- [Marcellinus van Utrecht](/heiligen/marcellinus-van-utrecht/) (`data/heiligen/marcellinus-van-utrecht.yaml`) — Utrecht.
+- [Oda van Amay](/heiligen/oda-van-amay/) (`data/heiligen/oda-van-amay.yaml`) — Amay.
+- [Oda van de Peel](/heiligen/oda-van-de-peel/) (`data/heiligen/oda-van-de-peel.yaml`) — Peel.
+- [Odrada](/heiligen/odrada/) (`data/heiligen/odrada.yaml`) — Balen.
+- [Plechelm von Odilienberg](/heiligen/plechelm-von-odilienberg/) (`data/heiligen/plechelm-von-odilienberg.yaml`) — Odiliënberg / Nederrijn.
+- [Radboud](/heiligen/radboud/) (`data/heiligen/radboud.yaml`) — Bisschop van Utrecht.
+- [Remaclus](/heiligen/remaclus/) (`data/heiligen/remaclus.yaml`) — Maastricht / Stavelot.
+- [Swidbert](/heiligen/swidbert/) (`data/heiligen/swidbert.yaml`) — Missie met Willibrord in Frisia; later Kaiserswerth.
+- [Theodaard van Maastricht](/heiligen/theodaard-van-maastricht/) (`data/heiligen/theodaard-van-maastricht.yaml`) — Maastricht.
+- [Trudo](/heiligen/trudo/) (`data/heiligen/trudo.yaml`) — Sint-Truiden.
+- [Ultan](/heiligen/ultan/) (`data/heiligen/ultan.yaml`) — Fosses (met Foillan).
+- [Walfridus (Bedum)](/heiligen/walfridus-bedum/) (`data/heiligen/walfridus-bedum.yaml`) — Bedum.
+- [Werenfrid](/heiligen/werenfrid/) (`data/heiligen/werenfrid.yaml`) — Westervoort / Friesland.
+- [Willibrord](/heiligen/willibrord/) (`data/heiligen/willibrord.yaml`) — Apostel van de Friezen; aartsbisschop van Utrecht.
+- [Wiro](/heiligen/wiro/) (`data/heiligen/wiro.yaml`) — Limburg / Odiliënberg.
+- [Woutruide](/heiligen/woutruide/) (`data/heiligen/woutruide.yaml`) — Bergen (Waudru).
+- [Wulfram](/heiligen/wulfram/) (`data/heiligen/wulfram.yaml`) — Missie onder de Friezen.
 
-## Nader onderzoek (62)
+## Nader onderzoek (7)
 
-- [Acharius van Doornik](/heiligen/acharius-van-doornik/) (`data/heiligen/acharius-van-doornik.yaml`)
-- [Adela van Vlaanderen](/heiligen/adela-van-vlaanderen/) (`data/heiligen/adela-van-vlaanderen.yaml`)
-- [Adelbert](/heiligen/adelbert/) (`data/heiligen/adelbert.yaml`)
-- [Adelgonda](/heiligen/adelgonda/) (`data/heiligen/adelgonda.yaml`)
-- [Adelgondis van Drongen](/heiligen/adelgondis-van-drongen/) (`data/heiligen/adelgondis-van-drongen.yaml`)
-- [Agricolaus van Maastricht](/heiligen/agricolaus-van-maastricht/) (`data/heiligen/agricolaus-van-maastricht.yaml`)
-- [Albericus van Utrecht](/heiligen/albericus-van-utrecht/) (`data/heiligen/albericus-van-utrecht.yaml`)
-- [Alena van Dilbeek](/heiligen/alena-van-dilbeek/) (`data/heiligen/alena-van-dilbeek.yaml`)
-- [Alubertus van Utrecht](/heiligen/alubertus-van-utrecht/) (`data/heiligen/alubertus-van-utrecht.yaml`)
-- [Amalberga van Susteren](/heiligen/amalberga-van-susteren/) (`data/heiligen/amalberga-van-susteren.yaml`)
-- [Amalberga van Temse](/heiligen/amalberga-van-temse/) (`data/heiligen/amalberga-van-temse.yaml`)
-- [Amandus van Maastricht](/heiligen/amandus-van-maastricht/) (`data/heiligen/amandus-van-maastricht.yaml`)
-- [Ansfried (van Utrecht)](/heiligen/ansfried-van-utrecht/) (`data/heiligen/ansfried-van-utrecht.yaml`)
-- [Aubertus van Kamerijk](/heiligen/aubertus-van-kamerijk/) (`data/heiligen/aubertus-van-kamerijk.yaml`)
-- [Bavo](/heiligen/bavo/) (`data/heiligen/bavo.yaml`)
-- [Bernulphus](/heiligen/bernulphus/) (`data/heiligen/bernulphus.yaml`)
-- [Bonifatius](/heiligen/bonifatius/) (`data/heiligen/bonifatius.yaml`)
-- [Cunera](/heiligen/cunera/) (`data/heiligen/cunera.yaml`)
-- [Domitianus](/heiligen/domitianus/) (`data/heiligen/domitianus.yaml`)
-- [Dymphna](/heiligen/dymphna/) (`data/heiligen/dymphna.yaml`)
-- [Egbert van Rathmelsigi](/heiligen/egbert-van-rathmelsigi/) (`data/heiligen/egbert-van-rathmelsigi.yaml`)
-- [Eligius](/heiligen/eligius/) (`data/heiligen/eligius.yaml`)
-- [Engelmund](/heiligen/engelmund/) (`data/heiligen/engelmund.yaml`)
-- [Ermelindis](/heiligen/ermelindis/) (`data/heiligen/ermelindis.yaml`)
-- [Floribert](/heiligen/floribert/) (`data/heiligen/floribert.yaml`)
-- [Foillan](/heiligen/foillan/) (`data/heiligen/foillan.yaml`)
-- [Folciunus](/heiligen/folciunus/) (`data/heiligen/folciunus.yaml`)
-- [Frederich](/heiligen/frederich/) (`data/heiligen/frederich.yaml`)
-- [Fridolin](/heiligen/fridolin/) (`data/heiligen/fridolin.yaml`)
-- [Gertrudis](/heiligen/gertrudis/) (`data/heiligen/gertrudis.yaml`)
-- [Gommar](/heiligen/gommar/) (`data/heiligen/gommar.yaml`)
-- [Gregorius van Utrecht](/heiligen/gregorius-van-utrecht/) (`data/heiligen/gregorius-van-utrecht.yaml`)
-- [Gudula van Brussel](/heiligen/gudula-van-brussel/) (`data/heiligen/gudula-van-brussel.yaml`)
-- [Hubertus van Maastricht](/heiligen/hubertus-van-maastricht/) (`data/heiligen/hubertus-van-maastricht.yaml`)
-- [Hunger van Utrecht](/heiligen/hunger-van-utrecht/) (`data/heiligen/hunger-van-utrecht.yaml`)
-- [Iduberga](/heiligen/iduberga/) (`data/heiligen/iduberga.yaml`)
-- [Jeroen van Noordwijk](/heiligen/jeroen-van-noordwijk/) (`data/heiligen/jeroen-van-noordwijk.yaml`)
-- [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`)
-- [Lebuinus](/heiligen/lebuinus/) (`data/heiligen/lebuinus.yaml`)
-- [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`)
-- [Marcellinus van Utrecht](/heiligen/marcellinus-van-utrecht/) (`data/heiligen/marcellinus-van-utrecht.yaml`)
-- [Medardus](/heiligen/medardus/) (`data/heiligen/medardus.yaml`)
-- [Oda van Amay](/heiligen/oda-van-amay/) (`data/heiligen/oda-van-amay.yaml`)
-- [Oda van de Peel](/heiligen/oda-van-de-peel/) (`data/heiligen/oda-van-de-peel.yaml`)
-- [Odrada](/heiligen/odrada/) (`data/heiligen/odrada.yaml`)
-- [Plechelm von Odilienberg](/heiligen/plechelm-von-odilienberg/) (`data/heiligen/plechelm-von-odilienberg.yaml`)
-- [Quirillus van Tongern](/heiligen/quirillus-van-tongern/) (`data/heiligen/quirillus-van-tongern.yaml`)
-- [Radboud](/heiligen/radboud/) (`data/heiligen/radboud.yaml`)
-- [Remaclus](/heiligen/remaclus/) (`data/heiligen/remaclus.yaml`)
-- [Swidbert](/heiligen/swidbert/) (`data/heiligen/swidbert.yaml`)
-- [Theodaard van Maastricht](/heiligen/theodaard-van-maastricht/) (`data/heiligen/theodaard-van-maastricht.yaml`)
-- [Trudo](/heiligen/trudo/) (`data/heiligen/trudo.yaml`)
-- [Ultan](/heiligen/ultan/) (`data/heiligen/ultan.yaml`)
-- [Walburga](/heiligen/walburga/) (`data/heiligen/walburga.yaml`)
-- [Walfridus (Bedum)](/heiligen/walfridus-bedum/) (`data/heiligen/walfridus-bedum.yaml`)
-- [Werenfrid](/heiligen/werenfrid/) (`data/heiligen/werenfrid.yaml`)
-- [Willibrord](/heiligen/willibrord/) (`data/heiligen/willibrord.yaml`)
-- [Winnibald](/heiligen/winnibald/) (`data/heiligen/winnibald.yaml`)
-- [Winnocus](/heiligen/winnocus/) (`data/heiligen/winnocus.yaml`)
-- [Wiro](/heiligen/wiro/) (`data/heiligen/wiro.yaml`)
-- [Woutruide](/heiligen/woutruide/) (`data/heiligen/woutruide.yaml`)
-- [Wulfram](/heiligen/wulfram/) (`data/heiligen/wulfram.yaml`)
+- [Adelgonda](/heiligen/adelgonda/) (`data/heiligen/adelgonda.yaml`) — Stichteres van Maubeuge; historisch Henegouwen, nu Frankrijk.
+- [Agricolaus van Maastricht](/heiligen/agricolaus-van-maastricht/) (`data/heiligen/agricolaus-van-maastricht.yaml`) — Tweede bisschop van Maastricht; of de vroege bisschoppenlijst historisch is, is onzeker.
+- [Aubertus van Kamerijk](/heiligen/aubertus-van-kamerijk/) (`data/heiligen/aubertus-van-kamerijk.yaml`) — Bisschop van Kamerijk; zetel nu in Frankrijk, bisdom reikte tot Henegouwen.
+- [Folciunus](/heiligen/folciunus/) (`data/heiligen/folciunus.yaml`) — Folquinus van Terwaan; bisdom nu in Frankrijk, gestorven te Ekelsbeke.
+- [Medardus](/heiligen/medardus/) (`data/heiligen/medardus.yaml`) — Bisschop van Noyon (Picardië); band met de Lage Landen vooral via later bisdom of cultus.
+- [Quirillus van Tongern](/heiligen/quirillus-van-tongern/) (`data/heiligen/quirillus-van-tongern.yaml`) — Vroege bisschop van Tongeren; of hij historisch is, is onzeker.
+- [Winnocus](/heiligen/winnocus/) (`data/heiligen/winnocus.yaml`) — Abt van Wormhout; historisch Vlaanderen, nu Frankrijk.
 
-## Kandidaat om te schrappen (0)
+## Kandidaat om te schrappen (5)
 
-_Geen._
+- [Adela van Vlaanderen](/heiligen/adela-van-vlaanderen/) (`data/heiligen/adela-van-vlaanderen.yaml`) — Gestorven 1079; westerse cultus na het schisma, geen orthodoxe bijdrage aan NL/BE.
+- [Egbert van Rathmelsigi](/heiligen/egbert-van-rathmelsigi/) (`data/heiligen/egbert-van-rathmelsigi.yaml`) — Rath Melsigi (Ierland); zond missionarissen naar Frisia, zelf niet in de Lage Landen.
+- [Fridolin](/heiligen/fridolin/) (`data/heiligen/fridolin.yaml`) — Verlichter van de Boven-Rijn (Säckingen); geen aantoonbaar werk in de Lage Landen.
+- [Walburga](/heiligen/walburga/) (`data/heiligen/walburga.yaml`) — Abdis van Heidenheim; cultus elders is geen werk in de Lage Landen.
+- [Winnibald](/heiligen/winnibald/) (`data/heiligen/winnibald.yaml`) — Heidenheim / Engeland; geen aantoonbaar werk in de Lage Landen.

@@ -117,8 +117,8 @@ def test_id_alias_niet_eigen_id_en_niet_levend() -> None:
     assert any("levend entry-id" in e for e in errors2)
 
 
-def test_bestaande_heiligen_laden_met_selectie_default() -> None:
+def test_bestaande_heiligen_laden_met_selectie() -> None:
     by_id = {e["id"]: e for e in load_entries() if e["soort"] == "heilige"}
     assert by_id["willibrord"]["status"] == "stub"
-    assert by_id["willibrord"]["selectie"] == "nader-onderzoek"
+    assert by_id["willibrord"]["selectie"] == "voldoet"
     assert by_id["willibrord"]["betekenis_lagenlanden"] == ""

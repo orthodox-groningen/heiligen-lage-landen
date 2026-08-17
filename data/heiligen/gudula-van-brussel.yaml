@@ -3,6 +3,8 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+selectie: voldoet
+selectie_toelichting: "Brussel."
 namen:
   primair: Gudula van Brussel
   alternatief:

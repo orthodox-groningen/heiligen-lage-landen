@@ -26,7 +26,7 @@ staan hieronder.
 | `data/regels/vasten.yaml` | Normatieve vastenregels + voorbeelden + clerustekst |
 | `data/lezingen/` | Lezingenrooster (gedeelde lijst, weekreeks, parochie) |
 | `docs/datamodel.md` | Datamodel (velden, cycli, referenties) |
-| `docs/inventaris.md` | Selectiescores, gatenlijst, wie toevoegen (review vóór YAML) |
+| `docs/inventaris.md` | Selectiescores, gatenlijst, wie toevoegen |
 | `docs/onderzoek/` | Onderzoeksnotities (o.a. post-schisma-heiligen) |
 | `docs/specs/lezingen.md` | Normatieve lezingenspec (als die feature er is) |
 | `schemas/entry.schema.json` | Schema voor heilige/feest/vasten-YAML |

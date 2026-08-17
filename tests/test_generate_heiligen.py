@@ -139,6 +139,10 @@ def test_write_beheer_selectie_naar_beheer_map(
     assert "alberik.yaml" not in body
     assert "lebuinus.yaml" in body
     assert "albericus-van-utrecht.yaml" in body
+    assert "## Voldoet (50)" in body
+    assert "## Nader onderzoek (7)" in body
+    assert "## Kandidaat om te schrappen (5)" in body
+    assert "Rath Melsigi" in body
 
 
 def test_heiligen_list_layout_zoekt_alternatieve_namen() -> None:

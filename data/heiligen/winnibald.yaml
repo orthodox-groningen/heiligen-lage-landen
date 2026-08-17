@@ -3,6 +3,8 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+selectie: kandidaat-schrappen
+selectie_toelichting: "Heidenheim / Engeland; geen aantoonbaar werk in de Lage Landen."
 namen:
   primair: Winnibald
   alternatief:
