@@ -33,14 +33,16 @@ en `period_occurrences` (periodes). Wijzig die JSON **niet** met de hand;
 
 Op de burgerlijke datum van dat jaar, in deze volgorde:
 
-1. Vastenbadge (effectief niveau) direct naast Nieuw/Oud; bij een named
+1. Vastenbadge (effectief niveau) vóór Nieuw/Oud; bij een named
    periode de periodenaam tussen haakjes, met link naar de entry-pagina
-   (`/vasten/…/` of `/feesten/…/` voor vastenvrije weken).
+   (`/vasten/…/` of `/feesten/…/` voor vastenvrije weken). Hover/klik op
+   de badge opent een korte uitleg (`data-info-tip="vasten-niveau"`).
 2. Dagtype: naam van het feest (`soort: feest`, geen periode), anders
    `daglabel` uit `lezingen-dagen.json` (bijv. «23e donderdag na Pinksteren»).
 3. Apostel en Evangelie (zonder kop «Lezingen»).
-4. Als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de lijst,
-   met `icoon` uit `entries.json` als dat veld gezet is.
+4. Alleen als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de
+   lijst, met `icoon` uit `entries.json` als dat veld gezet is. Zonder
+   heilige blijft dit blok weg.
 
 Brondata voor (1) en (4): vaste feesten en heiligen op feestdatum (Nieuw)
 of burgerlijke vierdatum (Oud); paascyclus op de berekende datum; vastenperiodes
