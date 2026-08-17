@@ -121,6 +121,31 @@
     return new Date(year, m - 1, d);
   }
 
+  /** Meeus’ Juliaans Pascha → wereldlijke datum. Spiegel van scripts/kalender.py. */
+  function orthodoxPascha(year) {
+    const a = year % 4;
+    const b = year % 7;
+    const c = year % 19;
+    const d = (19 * c + 15) % 30;
+    const e = (2 * a + 4 * b - d + 34) % 7;
+    const month = Math.floor((d + e + 114) / 31);
+    const day = ((d + e + 114) % 31) + 1;
+    return addDays(new Date(year, month - 1, day), julianGregorianOffsetDays(year));
+  }
+
+  /** Slavische toon 1–8 (Moskou): Thomaszondag = 1; Lichte Week = 1. */
+  function octoechosToon(d) {
+    const civil = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    let pascha = orthodoxPascha(civil.getFullYear());
+    if (civil < pascha) pascha = orthodoxPascha(civil.getFullYear() - 1);
+    const thomas = addDays(pascha, 7);
+    if (civil >= pascha && civil < thomas) return 1;
+    const utcCivil = Date.UTC(civil.getFullYear(), civil.getMonth(), civil.getDate());
+    const utcThomas = Date.UTC(thomas.getFullYear(), thomas.getMonth(), thomas.getDate());
+    const days = Math.round((utcCivil - utcThomas) / 86400000);
+    return ((((Math.floor(days / 7) % 8) + 8) % 8) + 1);
+  }
+
   /** Home, datumpagina en jaarkalender rekenen in wereldlijke (Gregoriaanse) datums. */
   function todayMmdd(_style) {
     return mmddFromDate(new Date());
@@ -735,11 +760,23 @@
     return row;
   }
 
-  function dayTitleText(view, style) {
+  function dayTitleParts(view, style) {
     const weekday = WEEKDAYS[isoWeekdayFromMmdd(view.mmdd, view.year)] || "";
     const datePart = `${shortLabel(view.mmdd)} ${view.year}`;
+    const toon = octoechosToon(dateFromMmdd(view.year, view.mmdd));
     const today = isViewToday(style) ? " (vandaag)" : "";
-    return `${weekday}, ${datePart}${today}`;
+    return { weekday, datePart, toon, today };
+  }
+
+  function dayTitleText(view, style) {
+    const p = dayTitleParts(view, style);
+    return `${p.weekday}, ${p.datePart} (Toon ${p.toon})${p.today}`;
+  }
+
+  function dayTitleHtml(view, style) {
+    const p = dayTitleParts(view, style);
+    const toonLink = achtergrondLink("toon", `Toon ${p.toon}`);
+    return `${escapeHtml(p.weekday)}, ${escapeHtml(p.datePart)} (${toonLink})${p.today}`;
   }
 
   function titleNavHtml(opts) {
@@ -783,7 +820,7 @@
     if (!heading) return;
     const view = getViewDate(style);
     const navHtml = titleNavHtml({
-      titleHtml: dayTitleText(view, style),
+      titleHtml: dayTitleHtml(view, style),
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
       deltaAttr: "day-delta",
@@ -903,6 +940,134 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  /** Spiegel van scripts/bijbel.py — houd de boekcodes gelijk. */
+  const BOEK_OSIS = {
+    "1 Joh.": "1JN",
+    "2 Joh.": "2JN",
+    "3 Joh.": "3JN",
+    "1 Kor.": "1CO",
+    "2 Kor.": "2CO",
+    "1 Petr.": "1PE",
+    "2 Petr.": "2PE",
+    "1 Tess.": "1TH",
+    "2 Tess.": "2TH",
+    "1 Tim.": "1TI",
+    "2 Tim.": "2TI",
+    "Ef.": "EPH",
+    "Fil.": "PHP",
+    "Gal.": "GAL",
+    "Hand.": "ACT",
+    "Heb.": "HEB",
+    "Jak.": "JAS",
+    "Joh.": "JHN",
+    "Jud.": "JUD",
+    "Kol.": "COL",
+    "Luc.": "LUK",
+    "Mark.": "MRK",
+    "Matt.": "MAT",
+    "Rom.": "ROM",
+    "Tit.": "TIT",
+  };
+  const BIJBEL_VERTALINGEN = ["NBV21", "NBG51", "HSV"];
+  const BIJBEL_STORAGE = "bijbel-vertaling";
+
+  function bibleTranslation() {
+    try {
+      const stored = localStorage.getItem(BIJBEL_STORAGE);
+      if (stored && BIJBEL_VERTALINGEN.includes(stored)) return stored;
+    } catch (_) {}
+    return "NBV21";
+  }
+
+  function osisHoofdstuk(ref) {
+    const text = String(ref || "").trim();
+    if (!text) return "";
+    const lower = text.toLowerCase();
+    const boeken = Object.keys(BOEK_OSIS).sort((a, b) => b.length - a.length);
+    for (const boek of boeken) {
+      if (lower.startsWith(boek.toLowerCase())) {
+        const rest = text.slice(boek.length).trim();
+        const m = rest.match(/^(\d+)/);
+        if (!m) return "";
+        return `${BOEK_OSIS[boek]}.${m[1]}`;
+      }
+    }
+    return "";
+  }
+
+  function refDelen(ref) {
+    const delen = [];
+    let buf = "";
+    String(ref || "")
+      .split(";")
+      .forEach((raw) => {
+        const piece = raw.trim();
+        if (!piece) return;
+        if (buf && !osisHoofdstuk(piece)) buf = `${buf}; ${piece}`;
+        else if (buf) {
+          delen.push(buf);
+          buf = piece;
+        } else buf = piece;
+      });
+    if (buf) delen.push(buf);
+    return delen;
+  }
+
+  function bibleUrl(osis) {
+    return `https://www.debijbel.nl/bijbel/${bibleTranslation()}/${osis}`;
+  }
+
+  function bibleLinkHtml(ref) {
+    return refDelen(ref)
+      .map((deel) => {
+        const text = escapeHtml(deel);
+        const osis = osisHoofdstuk(deel);
+        if (!osis) return text;
+        return (
+          `<a class="bijbel-link" data-osis="${osis}" href="${bibleUrl(osis)}" ` +
+          `target="_blank" rel="noopener noreferrer">${text}</a>`
+        );
+      })
+      .join("; ");
+  }
+
+  function refsHtml(arr) {
+    return (arr || [])
+      .map((x) => x.ref)
+      .filter(Boolean)
+      .map(bibleLinkHtml)
+      .join("; ");
+  }
+
+  function bijbelVertalingSelectHtml() {
+    const cur = bibleTranslation();
+    const opts = BIJBEL_VERTALINGEN.map((v) => {
+      const sel = v === cur ? " selected" : "";
+      return `<option value="${v}"${sel}>${v}</option>`;
+    }).join("");
+    return (
+      `<p class="bijbel-vertaling-rij">` +
+      `<label>Vertaling <select class="bijbel-vertaling">${opts}</select></label>` +
+      `</p>`
+    );
+  }
+
+  function wireBijbelVertaling(root) {
+    (root || document).querySelectorAll("select.bijbel-vertaling").forEach((sel) => {
+      sel.onchange = () => {
+        try {
+          localStorage.setItem(BIJBEL_STORAGE, sel.value);
+        } catch (_) {}
+        document.querySelectorAll("select.bijbel-vertaling").forEach((other) => {
+          other.value = sel.value;
+        });
+        document.querySelectorAll("a.bijbel-link[data-osis]").forEach((a) => {
+          a.setAttribute("href", bibleUrl(a.getAttribute("data-osis")));
+        });
+      };
+    });
   }
 
   function isPopoverFeast(entry) {
@@ -1265,14 +1430,8 @@
         `<p class="muted">Geen liturgie met Apostel/Evangelie van de dag.</p></div>`
       );
     }
-    const apostel = (lez.apostel || [])
-      .map((a) => a.ref)
-      .filter(Boolean)
-      .join("; ");
-    const evangelie = (lez.evangelie || [])
-      .map((e) => e.ref)
-      .filter(Boolean)
-      .join("; ");
+    const apostel = refsHtml(lez.apostel);
+    const evangelie = refsHtml(lez.evangelie);
     if (!apostel && !evangelie) {
       return (
         `<div class="day-lezingen" id="day-lezingen">` +
@@ -1282,11 +1441,13 @@
     return (
       `<div class="day-lezingen" id="day-lezingen">` +
       `<ul>` +
-      (apostel ? `<li><strong>Apostel:</strong> ${escapeHtml(apostel)}</li>` : "") +
+      (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
       (evangelie
-        ? `<li><strong>Evangelie:</strong> ${escapeHtml(evangelie)}</li>`
+        ? `<li><strong>Evangelie:</strong> ${evangelie}</li>`
         : "") +
-      `</ul></div>`
+      `</ul>` +
+      bijbelVertalingSelectHtml() +
+      `</div>`
     );
   }
 
@@ -1350,6 +1511,7 @@
     cardEntries.innerHTML = bodyHtml;
     setStyle(style);
     wireInfoTips(cardEntries);
+    wireBijbelVertaling(cardEntries);
     if (
       document.querySelector("[data-datum]") ||
       document.querySelector("[data-home]")
@@ -1359,13 +1521,6 @@
         : document.title;
       document.title = `${dayTitleText(view, style)} · ${site}`;
     }
-  }
-
-  function refsText(arr) {
-    return (arr || [])
-      .map((x) => x.ref)
-      .filter(Boolean)
-      .join("; ");
   }
 
   function renderRooster(style) {
@@ -1419,8 +1574,8 @@
         ((lezingenIndex || {})[stil] || {})[String(keyYear)] || {};
       const lez = yearBucket[keyMmdd] || null;
       const dagUrl = daySurfaceHref(viewYear, civilMmdd, style);
-      let apostel = refsText(lez && lez.apostel);
-      let evangelie = refsText(lez && lez.evangelie);
+      let apostel = refsHtml(lez && lez.apostel);
+      let evangelie = refsHtml(lez && lez.evangelie);
       const status = (lez && lez.status) || "onbekend";
       if (status === "geen_liturgie") {
         apostel = apostel || "—";
@@ -1441,8 +1596,9 @@
     html += `</tbody></table></div>`;
     root.innerHTML =
       rows > 0
-        ? html
+        ? bijbelVertalingSelectHtml() + html
         : `<p class="muted">Geen lezingengegevens voor ${monthName} ${viewYear}.</p>`;
+    wireBijbelVertaling(root);
   }
 
   function wireRoosterMonthSteps(root) {
@@ -1753,7 +1909,14 @@
   function entryRowHtml(e, when) {
     const kind = kindLabel(e);
     const meta = when ? `${when} · ${kind}` : kind;
-    return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">${meta}</span></li>`;
+    const thumb = e.icoon
+      ? `<img class="list-icoon" src="${assetUrl(String(e.icoon).replace(/^\//, ""))}" alt="" width="28" height="28">`
+      : "";
+    return (
+      `<li>` +
+      `<span class="entry-list-hoofd">${thumb}<a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a></span>` +
+      ` <span class="meta">${meta}</span></li>`
+    );
   }
 
   function renderMeneonDay(entries, mmdd) {

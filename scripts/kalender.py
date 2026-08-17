@@ -152,6 +152,21 @@ def pascha_offset_date(year: int, offset_dagen: int) -> date:
     return orthodox_pascha(year) + timedelta(days=offset_dagen)
 
 
+def octoechos_toon(civil: date) -> int:
+    """Slavische toon van de week (Moskou): 1 tot 8.
+
+    Toon 1 op Thomaszondag, daarna wekelijks +1 modulo 8.
+    Lichte Week (Pascha tot Thomaszondag) is toon 1.
+    """
+    pascha = orthodox_pascha(civil.year)
+    if civil < pascha:
+        pascha = orthodox_pascha(civil.year - 1)
+    thomas = pascha + timedelta(days=7)
+    if pascha <= civil < thomas:
+        return 1
+    return ((civil - thomas).days // 7 % 8) + 1
+
+
 def weekday_relative_date(
     year: int,
     anker_mmdd: str,

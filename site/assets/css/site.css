@@ -450,6 +450,20 @@ h2 {
   margin-top: 0.25rem;
 }
 
+.bijbel-vertaling-rij {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.bijbel-vertaling-rij select {
+  margin-left: 0.35rem;
+}
+
+.bijbel-link {
+  text-underline-offset: 0.15em;
+}
+
 .day-lezingen-label {
   margin: 0 0 0.5rem;
   font-size: 0.98rem;
@@ -575,6 +589,23 @@ h2 {
   flex-wrap: wrap;
   gap: 0.35rem 0.75rem;
   justify-content: space-between;
+  align-items: center;
+}
+
+.entry-list-hoofd {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.list-icoon {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: cover;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
 }
 
 .entry-list li[hidden] {
