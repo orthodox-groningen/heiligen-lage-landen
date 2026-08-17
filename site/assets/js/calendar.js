@@ -970,15 +970,24 @@
     "Rom.": "ROM",
     "Tit.": "TIT",
   };
-  const BIJBEL_VERTALINGEN = ["NBV21", "NBG51", "HSV"];
+  const BIJBEL_VERTALINGEN = [
+    ["HSV", "HSV"],
+    ["NBV", "NBV"],
+    ["NBV21", "NBV21"],
+    ["BGT", "BGT (Gewone Taal)"],
+    ["NBG51", "NBG51"],
+    ["NFB", "NFB (Fries)"],
+    ["UTT", "UTT (Oekraïens)"],
+  ];
   const BIJBEL_STORAGE = "bijbel-vertaling";
 
   function bibleTranslation() {
+    const ids = BIJBEL_VERTALINGEN.map((row) => row[0]);
     try {
       const stored = localStorage.getItem(BIJBEL_STORAGE);
-      if (stored && BIJBEL_VERTALINGEN.includes(stored)) return stored;
+      if (stored && ids.includes(stored)) return stored;
     } catch (_) {}
-    return "NBV21";
+    return "HSV";
   }
 
   function osisHoofdstuk(ref) {
@@ -1043,9 +1052,9 @@
 
   function bijbelVertalingSelectHtml() {
     const cur = bibleTranslation();
-    const opts = BIJBEL_VERTALINGEN.map((v) => {
-      const sel = v === cur ? " selected" : "";
-      return `<option value="${v}"${sel}>${v}</option>`;
+    const opts = BIJBEL_VERTALINGEN.map(([id, label]) => {
+      const sel = id === cur ? " selected" : "";
+      return `<option value="${id}"${sel}>${label}</option>`;
     }).join("");
     return (
       `<p class="bijbel-vertaling-rij">` +

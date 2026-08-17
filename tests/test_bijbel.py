@@ -37,14 +37,14 @@ def test_onbekend_of_leeg() -> None:
     assert osis_hoofdstuk("Onbekend 1:1") is None
 
 
-def test_debijbel_url_nbv21() -> None:
+def test_debijbel_url_standaard_hsv() -> None:
     assert (
         debijbel_url("Luc. 9:57-62")
-        == "https://www.debijbel.nl/bijbel/NBV21/LUK.9"
+        == "https://www.debijbel.nl/bijbel/HSV/LUK.9"
     )
     assert (
-        debijbel_url("Hand. 1:1-8", "NBG51")
-        == "https://www.debijbel.nl/bijbel/NBG51/ACT.1"
+        debijbel_url("Hand. 1:1-8", "BGT")
+        == "https://www.debijbel.nl/bijbel/BGT/ACT.1"
     )
 
 
@@ -79,3 +79,18 @@ def test_calendar_js_spiegel_boekcodes() -> None:
     )
     for boek, osis in BOEK_OSIS.items():
         assert f'"{boek}": "{osis}"' in js, boek
+
+
+def test_calendar_js_spiegel_vertalingen() -> None:
+    from bijbel import STANDAARD_VERTALING, VERTALINGEN
+
+    js = (ROOT / "site" / "assets" / "js" / "calendar.js").read_text(
+        encoding="utf-8"
+    )
+    assert STANDAARD_VERTALING == "HSV"
+    assert VERTALINGEN[0] == "HSV"
+    for code in VERTALINGEN:
+        assert f'"{code}"' in js, code
+    assert 'return "HSV"' in js
+    assert "NFB (Fries)" in js
+    assert "UTT (Oekraïens)" in js

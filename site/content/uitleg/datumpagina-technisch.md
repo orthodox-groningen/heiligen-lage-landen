@@ -41,7 +41,8 @@ Op de burgerlijke datum van dat jaar, in deze volgorde:
    `daglabel` uit `lezingen-dagen.json` (bijv. «23e donderdag na Pinksteren»).
 3. Apostel en Evangelie (zonder kop «Lezingen»); verwijzingen linken
    naar het hoofdstuk op debijbel.nl (`a.bijbel-link`, vertaling in
-   `localStorage` `bijbel-vertaling`).
+   `localStorage` `bijbel-vertaling`, default HSV; ids als op debijbel.nl:
+   HSV, NBV, NBV21, BGT, NBG51, NFB, UTT).
 4. Alleen als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de
    lijst, met `icoon` uit `entries.json` als dat veld gezet is. Zonder
    heilige: geen kop, wel `today-geen-heilige` met link naar uitleg/heiligen.

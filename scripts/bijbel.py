@@ -40,7 +40,17 @@ BOEK_OSIS: dict[str, str] = {
 _BOEKEN_LANGSTE_EERST = tuple(sorted(BOEK_OSIS, key=len, reverse=True))
 
 DEBIJBEL_BASIS = "https://www.debijbel.nl/bijbel"
-STANDAARD_VERTALING = "NBV21"
+# Ids zijn de padsegmenten op debijbel.nl. Spiegel in calendar.js.
+VERTALINGEN = (
+    "HSV",
+    "NBV",
+    "NBV21",
+    "BGT",
+    "NBG51",
+    "NFB",
+    "UTT",
+)
+STANDAARD_VERTALING = "HSV"
 
 
 def osis_hoofdstuk(ref: str) -> str | None:

@@ -146,9 +146,9 @@ die is geraadpleegd. Zo blijft overleg met de clerus navolgbaar.
 - Op **Vandaag** en de **datumpagina**: Apostel en Evangelie van die dag,
   onder de aanduiding van de liturgische dag (of de feestdag). Elke
   verwijzing opent dat hoofdstuk op
-  [debijbel.nl](https://www.debijbel.nl/) in een nieuw venster. U kiest
-  NBV21, NBG51 of HSV; de site zet de Bijbeltekst zelf niet online.
-  Lukt NBV21 niet, kies dan NBG51 of HSV.
+  [debijbel.nl](https://www.debijbel.nl/) in een nieuw venster. Standaard
+  is de HSV; u kunt ook NBV, NBV21, BGT (Gewone Taal), NBG51, NFB (Fries)
+  of UTT (Oekraïens) kiezen. De site zet de Bijbeltekst zelf niet online.
 - Op het **lezingenrooster**: een overzicht over een langere periode,
   met dezelfde links.
 
