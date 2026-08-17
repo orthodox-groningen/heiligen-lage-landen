@@ -47,6 +47,19 @@ datum:
 `stijl` schakelt de site niet tussen Nieuw en Oud. Zie
 [Feestdatum (technisch)]({{% ref "/uitleg/feestdatum-technisch" %}}).
 
+Plaatsen: ids uit `data/plaatsen.yaml`, geen vrije plaatsnamen.
+
+```yaml
+locaties:
+  - utrecht
+  - echternach
+rustplaats:
+  plaats: echternach
+  toelichting: "Abdij van Echternach"
+```
+
+`rustplaats` is alleen waar het lichaam traditioneel rust. Geen relieken.
+
 ### Paascyclus
 
 ```yaml

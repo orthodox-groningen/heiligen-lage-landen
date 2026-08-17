@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - saeckingen
 selectie: kandidaat-schrappen
 selectie_toelichting: "Verlichter van de Boven-Rijn (Säckingen); geen aantoonbaar werk in de Lage Landen."
 namen:

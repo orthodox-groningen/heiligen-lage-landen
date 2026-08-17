@@ -271,6 +271,24 @@ bronnen» (bestaande referentieverplichting bij verhaal/samenvatting).
 
 Verouderd: `status: stub` / `status: curated`.
 
+## Plaatsen
+
+Register: [`data/plaatsen.yaml`](../data/plaatsen.yaml). Op een heilige:
+
+```yaml
+locaties:
+  - utrecht              # plaats-id, geen vrije tekst
+rustplaats:
+  plaats: maastricht
+  toelichting: "Sint-Servaasbasiliek"
+```
+
+`soort: plaats` krijgt een marker als minstens één heilige die id in
+`locaties` heeft. `soort: streek` (Vlaanderen, Frisia) is vooral voor
+zoeken; een marker alleen als een heilige die streek-id zelf in
+`locaties` heeft. Optioneel `streek:` op een plaats koppelt zoeken
+(«Vlaanderen» vindt Drongen). Geen relieken- of bedevaartenlijst.
+
 ## Icoon
 
 ```yaml

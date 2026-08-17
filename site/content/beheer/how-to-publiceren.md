@@ -15,7 +15,7 @@ Vanuit de root van de repo:
 1. `python -m pip install -r requirements.txt` (eenmalig of na wijziging van dependencies)
 2. `python scripts/validate.py` — YAML tegen het schema en inhoudelijke regels (referenties, iconen)
 3. `python -m pytest -q` — onder meer vastenvoorbeelden en handmatige `_index.md`
-4. `python scripts/generate.py` — schrijft entry-pagina’s, `entries.json`, ICS, en de twee vasten-uitlegpagina’s
+4. `python scripts/generate.py` — schrijft entry-pagina’s, `entries.json`, `plaatsen.json`, ICS, en de twee vasten-uitlegpagina’s
 5. Optioneel met schoonmaak: `python scripts/generate.py --clean` (wist eerst gegenereerde mappen; zelfde eindresultaat als CI)
 6. Site bekijken: `scripts/serve.cmd` (Windows) of Hugo serve na generate
 
@@ -27,7 +27,7 @@ verwacht vastenniveau is meestal: YAML-voorbeeld aangepast, code nog niet.
 - **Schrijft opnieuw:** `site/content/heiligen/`, `feesten/`, `vasten/`
   (inclusief hun `_index.md`), `site/content/uitleg/vasten.md`,
   `vasten-technisch.md`, `site/static/data/entries.json`,
-  `site/static/ics/*.ics`.
+  `site/static/data/plaatsen.json`, `site/static/ics/*.ics`.
 - **Laat staan (body):** `site/content/_index.md`, `kalender/_index.md`,
   `meneon/_index.md`, `datum/_index.md`, `agenda/_index.md`,
   `uitleg/_index.md`, en de overige uitleg-markdown (behalve vasten*).

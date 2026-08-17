@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - balen
 selectie: voldoet
 selectie_toelichting: "Balen."
 namen:

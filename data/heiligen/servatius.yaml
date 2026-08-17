@@ -22,8 +22,11 @@ titels:
   - Bisschop van Tongeren
 periode: "384?"
 locaties:
-  - Tongeren
-  - Maastricht
+  - tongeren
+  - maastricht
+rustplaats:
+  plaats: maastricht
+  toelichting: "Sint-Servaasbasiliek"
 icoon:
   bestand: iconen/servatius.jpg
   rechten: ok

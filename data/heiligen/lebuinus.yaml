@@ -25,7 +25,11 @@ titels:
   - Apostel van de IJsselstreek
 periode: "773/780"
 locaties:
-  - Deventer
+  - deventer
+  - frisia
+rustplaats:
+  plaats: deventer
+  toelichting: "Lebuïnuskerk"
 icoon:
   bestand: iconen/lebuinus.jpg
   rechten: ok

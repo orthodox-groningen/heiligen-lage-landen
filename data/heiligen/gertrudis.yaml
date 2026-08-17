@@ -20,7 +20,10 @@ titels:
   - Abdis van Nijvel
 periode: "659"
 locaties:
-  - Nijvel
+  - nijvel
+rustplaats:
+  plaats: nijvel
+  toelichting: "Abdij van Nijvel"
 icoon:
   bestand: iconen/gertrudis.jpg
   rechten: ok

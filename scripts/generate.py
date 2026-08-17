@@ -17,6 +17,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries  # noqa: E402
+from plaatsen import (  # noqa: E402
+    load_plaatsen,
+    locatie_namen,
+    locatie_zoektekst,
+)
 from lezingen import (  # noqa: E402
     SPEC_PATH,
     build_lezingen_dagen_payload,
@@ -257,6 +262,25 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         fm.append("alternatief:")
         for a in alts:
             fm.append(f"  - {yaml_quote(a)}")
+    loc_ids = list(entry.get("locaties") or [])
+    plaatsen = load_plaatsen()
+    if loc_ids:
+        namen = locatie_namen(loc_ids, plaatsen)
+        fm.append("locaties:")
+        for naam in namen:
+            fm.append(f"  - {yaml_quote(naam)}")
+        fm.append("locatie_ids:")
+        for pid in loc_ids:
+            fm.append(f"  - {pid}")
+        zoek = locatie_zoektekst(loc_ids, plaatsen)
+        if zoek:
+            fm.append(f"locatie_zoek: {yaml_quote(zoek)}")
+    rust = entry.get("rustplaats")
+    if rust and rust.get("plaats"):
+        rp_naam = locatie_namen([rust["plaats"]], plaatsen)[0]
+        fm.append(f"rustplaats_plaats: {yaml_quote(rp_naam)}")
+        if rust.get("toelichting"):
+            fm.append(f"rustplaats_toelichting: {yaml_quote(rust['toelichting'])}")
     icoon = entry.get("icoon") or {}
     if icoon.get("bestand") and icoon.get("rechten") == "ok":
         fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
@@ -407,8 +431,21 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             "**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode."
         )
         body.append("")
-    if entry.get("locaties"):
-        body.append("**Plaatsen:** " + "; ".join(entry["locaties"]))
+    if loc_ids:
+        links = [
+            f"[{locatie_namen([pid], plaatsen)[0]}](/heiligen/?plaats={pid})"
+            for pid in loc_ids
+        ]
+        body.append("**Plaatsen:** " + "; ".join(links))
+        body.append("")
+    rust = entry.get("rustplaats")
+    if rust and rust.get("plaats"):
+        rp_naam = locatie_namen([rust["plaats"]], plaatsen)[0]
+        toel = (rust.get("toelichting") or "").strip()
+        if toel:
+            body.append(f"**Rustplaats:** {toel} ({rp_naam}).")
+        else:
+            body.append(f"**Rustplaats:** {rp_naam}.")
         body.append("")
     if entry.get("periode"):
         body.append(f"**Periode:** {entry['periode']}")
@@ -451,7 +488,8 @@ title: "Heiligen"
 ---
 
 Overzicht van heiligen van de Lage Landen in deze kalender.
-Zoeken vindt ook andere namen van dezelfde heilige.
+Zoeken vindt ook andere namen van dezelfde heilige, en plaatsen
+(bijvoorbeeld Utrecht of Vlaanderen). De kaart toont die plaatsen.
 Niet iedere heilige van de Kerk staat hier; zie de
 [uitleg](/uitleg/heiligen/).
 """,
@@ -840,6 +878,14 @@ def sync_lezingen_uitleg() -> None:
     write_text(tech_path, _dump_hugo_markdown(meta, body))
 
 
+def write_plaatsen_json() -> None:
+    payload = list(load_plaatsen().values())
+    write_text(
+        STATIC_DATA / "plaatsen.json",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+    )
+
+
 def write_lezingen_json() -> None:
     """Precompute feestoverride-lezingen voor ICS-jaarvenster (nieuw + oud)."""
     years = list(occurrence_years())
@@ -880,6 +926,14 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
             item["betekenis_lage_landen"] = (
                 (entry.get("betekenis_lage_landen") or "").strip()
             )
+            loc_ids = list(entry.get("locaties") or [])
+            item["locaties"] = loc_ids
+            rust = entry.get("rustplaats")
+            if rust and rust.get("plaats"):
+                item["rustplaats"] = {
+                    "plaats": rust["plaats"],
+                    "toelichting": rust.get("toelichting") or "",
+                }
         if entry.get("vastenniveau"):
             item["vastenniveau"] = entry["vastenniveau"]
         if vorm == "weekdagen":
@@ -1263,6 +1317,7 @@ def clean_generated() -> None:
         "content/vasten",
         "static/data/entries.json",
         "static/data/lezingen-dagen.json",
+        "static/data/plaatsen.json",
     ):
         path = SITE / rel
         if path.is_dir():
@@ -1295,6 +1350,7 @@ def main() -> int:
     for entry in entries:
         write_entry_page(entry)
     write_entries_json(entries)
+    write_plaatsen_json()
     write_beheer_selectie(entries)
     write_lezingen_json()
     write_ics(entries)

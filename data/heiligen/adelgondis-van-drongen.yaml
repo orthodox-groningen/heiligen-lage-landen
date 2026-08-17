@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - drongen
 selectie: voldoet
 selectie_toelichting: "Drongen."
 namen:
@@ -17,8 +19,6 @@ datum:
     toelichting: 20 juni
 titels:
 - Kloosterlinge
-locaties:
-- Drongen, Vlaanderen, België
 periode: ~650
 samenvatting: 'Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.'
 referenties:

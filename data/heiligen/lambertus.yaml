@@ -18,8 +18,11 @@ titels:
   - Martelaar
 periode: "704/705"
 locaties:
-  - Maastricht
-  - Luik
+  - maastricht
+  - luik
+rustplaats:
+  plaats: luik
+  toelichting: "Sint-Lambertuskathedraal"
 icoon:
   bestand: iconen/lambertus.jpg
   rechten: ok

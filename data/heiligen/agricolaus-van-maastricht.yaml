@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maastricht
 selectie: nader-onderzoek
 selectie_toelichting: "Tweede bisschop van Maastricht; of de vroege bisschoppenlijst historisch is, is onzeker."
 namen:
@@ -17,8 +19,6 @@ datum:
     toelichting: 18 juli (sterfdag volgens de legende)
 titels:
 - Tweede bisschop
-locaties:
-- Maastricht, Nederland
 periode: 401(?)
 samenvatting: 'Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.'
 referenties:

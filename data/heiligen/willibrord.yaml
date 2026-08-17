@@ -15,8 +15,12 @@ titels:
   - Aartsbisschop van Utrecht
 periode: "658–739"
 locaties:
-  - Utrecht
-  - Echternach
+  - utrecht
+  - echternach
+  - frisia
+rustplaats:
+  plaats: echternach
+  toelichting: "Abdij van Echternach"
 icoon:
   bestand: iconen/willibrord.jpg
   rechten: ok

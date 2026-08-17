@@ -3,6 +3,9 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - utrecht
+  - frisia
 selectie: voldoet
 selectie_toelichting: "Geboren bij Utrecht; missie in Frisia."
 namen:

@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - noyon
 selectie: nader-onderzoek
 selectie_toelichting: "Bisschop van Noyon (Picardië); band met de Lage Landen vooral via later bisdom of cultus."
 namen:

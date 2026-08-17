@@ -14,7 +14,10 @@ datum:
   waarde: "10-01"
   stijl: gregoriaans
 locaties:
-  - Gent
+  - gent
+rustplaats:
+  plaats: gent
+  toelichting: "Sint-Baafskathedraal"
 samenvatting: |
   Edelman die kluizenaar werd bij de abdij van Sint-Baafs te Gent.
   Feestdag 1 oktober.

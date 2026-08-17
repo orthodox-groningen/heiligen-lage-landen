@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - kamerijk
 selectie: nader-onderzoek
 selectie_toelichting: "Bisschop van Kamerijk; zetel nu in Frankrijk, bisdom reikte tot Henegouwen."
 namen:

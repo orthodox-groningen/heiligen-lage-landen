@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - wormhout
 selectie: nader-onderzoek
 selectie_toelichting: "Abt van Wormhout; historisch Vlaanderen, nu Frankrijk."
 namen:

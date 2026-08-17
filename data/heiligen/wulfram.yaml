@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - frisia
 selectie: voldoet
 selectie_toelichting: "Missie onder de Friezen."
 namen:

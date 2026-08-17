@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from load_entries import load_entries, load_raw_entries, load_yaml  # noqa: E402
+from plaatsen import load_plaatsen  # noqa: E402
 
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 SELECTIE_WAARDEN = frozenset({"voldoet", "nader-onderzoek", "kandidaat-schrappen"})
@@ -49,11 +50,16 @@ def referentie_is_aanvullend(ref: dict[str, Any]) -> bool:
     return False
 
 
-def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
+def collect_content_errors(
+    entries: list[dict[str, Any]],
+    plaats_ids: frozenset[str] | None = None,
+) -> list[str]:
     """Inhoudsregels bovenop het JSON-schema."""
     errors: list[str] = []
     living_ids = {entry["id"] for entry in entries}
     seen_aliassen: dict[str, str] = {}
+    if plaats_ids is None:
+        plaats_ids = frozenset(load_plaatsen())
 
     for entry in entries:
         path = entry["source_path"]
@@ -110,6 +116,14 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
                         f"{path}: bronlaag nagekeken vereist minstens één bron "
                         "naast Wikipedia/heiligen.net"
                     )
+            for loc in entry.get("locaties") or []:
+                if loc not in plaats_ids:
+                    errors.append(f"{path}: onbekende locatie {loc!r}")
+            rust = entry.get("rustplaats") or {}
+            if rust:
+                rp = str(rust.get("plaats") or "").strip()
+                if rp and rp not in plaats_ids:
+                    errors.append(f"{path}: rustplaats.plaats onbekend {rp!r}")
 
         for alias in entry.get("id_aliassen") or []:
             alias_s = str(alias).strip()
@@ -179,7 +193,13 @@ def main() -> int:
         errors.append(str(exc))
         entries = []
 
-    errors.extend(collect_content_errors(entries))
+    plaats_ids: frozenset[str] = frozenset()
+    try:
+        plaats_ids = frozenset(load_plaatsen())
+    except Exception as exc:  # noqa: BLE001 — CLI-rapportage
+        errors.append(str(exc))
+
+    errors.extend(collect_content_errors(entries, plaats_ids))
     errors.extend(collect_bronnen_errors())
 
     if errors:

@@ -581,6 +581,28 @@ h2 {
   display: none;
 }
 
+.heiligen-kaart {
+  height: 22rem;
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  z-index: 0;
+}
+
+.kaart-popup-titel {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+.kaart-popup-lijst {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.leaflet-container a {
+  color: #1a4a7a;
+}
+
 .entry-list-namen {
   display: flex;
   flex-direction: column;

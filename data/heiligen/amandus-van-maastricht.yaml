@@ -3,6 +3,10 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maastricht
+  - elno
+  - doornik
 selectie: voldoet
 selectie_toelichting: "Maastricht en Elno bij Doornik."
 namen:
@@ -20,8 +24,6 @@ datum:
     toelichting: 15 mei
 titels:
 - Apostel van Maastricht (17e Bisschop van Maastricht)
-locaties:
-- Maastricht, Elno bij Doornik (thans Saint-Amand-les-Eaux), Vlaanderen, België
 periode: ~675 (of 684?)
 samenvatting: 'Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht
   (17e Bisschop van Maastricht).'

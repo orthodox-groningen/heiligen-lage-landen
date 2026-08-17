@@ -3,6 +3,9 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maastricht
+  - luik
 selectie: voldoet
 selectie_toelichting: "Maastricht / Luik."
 namen:

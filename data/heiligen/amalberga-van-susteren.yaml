@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - susteren
 selectie: voldoet
 selectie_toelichting: "Abdis van Susteren."
 namen:
@@ -19,8 +21,6 @@ datum:
     toelichting: 27 november
 titels:
 - Abdis
-locaties:
-- Susteren, Limburg, Nederland
 periode: 9e eeuw
 samenvatting: 'Heilige van de Lage Landen: Amalberga van Susteren. Abdis.'
 referenties:

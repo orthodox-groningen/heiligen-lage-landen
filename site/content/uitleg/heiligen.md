@@ -11,8 +11,9 @@ staat hier. Deze pagina zegt wie we opnemen, wat u op een heiligenpagina
 kunt verwachten, en waarom een dag soms **geen heilige** toont.
 
 Het [overzicht van heiligen]({{% ref "/heiligen" %}}) is de ingang op
-**persoon** (zoeken, belang, verhaal, datum). Het
-[Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
+**persoon** (zoeken, belang, verhaal, datum). U kunt daar ook zoeken op
+plaats of streek — Utrecht, Vlaanderen — en de plaatsen op een kaart
+zien. Het [Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
 
 ## Wie staat erin?
 
@@ -60,8 +61,9 @@ overzicht van heiligen.
 
 ## Wat u op een pagina leest
 
-Elke heiligenpagina heeft dezelfde opbouw: naam, feestdag, plaatsen, een
-korte aanduiding, waar mogelijk betekenis en verhaal, en de bronnen.
+Elke heiligenpagina heeft dezelfde opbouw: naam, feestdag, plaatsen, waar
+het lichaam traditioneel rust als dat bekend is, een korte aanduiding,
+waar mogelijk betekenis en verhaal, en de bronnen.
 
 Bovenaan staat hoe **stevig** die tekst is:
 

@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - odilienberg
 selectie: voldoet
 selectie_toelichting: "Odiliënberg / Nederrijn."
 namen:

@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - amay
 selectie: voldoet
 selectie_toelichting: "Amay."
 namen:

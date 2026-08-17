@@ -1,0 +1,105 @@
+(function () {
+  const root = document.getElementById("heiligen-kaart");
+  if (!root || typeof L === "undefined") return;
+
+  const base =
+    (document.body && document.body.getAttribute("data-base")) ||
+    document.baseURI ||
+    "/";
+
+  function dataUrl(name) {
+    return new URL("data/" + name, base).href;
+  }
+
+  function siteUrl(path) {
+    const rel = String(path || "").replace(/^\//, "");
+    return new URL(rel, base).href;
+  }
+
+  const imagePath = new URL("vendor/leaflet/images/", base).href;
+  L.Icon.Default.imagePath = imagePath;
+
+  const map = L.map(root, { scrollWheelZoom: false });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
+  }).addTo(map);
+
+  const markers = [];
+  let lastFilter = { query: "", plaatsIds: null };
+
+  function applyFilter() {
+    const q = lastFilter.query || "";
+    const ids = new Set(lastFilter.plaatsIds || []);
+    markers.forEach((item) => {
+      const show = !q || ids.has(item.id);
+      if (show) {
+        if (!map.hasLayer(item.marker)) item.marker.addTo(map);
+      } else if (map.hasLayer(item.marker)) {
+        map.removeLayer(item.marker);
+      }
+    });
+  }
+
+  Promise.all([
+    fetch(dataUrl("plaatsen.json")).then((r) => r.json()),
+    fetch(dataUrl("entries.json")).then((r) => r.json()),
+  ])
+    .then(([plaatsen, entries]) => {
+      const heiligen = (entries || []).filter((e) => e.soort === "heilige");
+      const byPlaats = {};
+      heiligen.forEach((h) => {
+        (h.locaties || []).forEach((pid) => {
+          (byPlaats[pid] || (byPlaats[pid] = [])).push(h);
+        });
+      });
+
+      (plaatsen || []).forEach((p) => {
+        const saints = byPlaats[p.id] || [];
+        if (!saints.length) return;
+        const isStreek = p.soort === "streek";
+        const marker = L.marker([p.lat, p.lon], {
+          title: p.naam,
+          opacity: isStreek ? 0.85 : 1,
+        });
+        const items = saints
+          .sort((a, b) => a.naam.localeCompare(b.naam, "nl"))
+          .map(
+            (h) =>
+              `<li><a href="${siteUrl(h.url)}">${escapeHtml(h.naam)}</a></li>`
+          )
+          .join("");
+        const heading = isStreek ? "Streek" : "Plaats";
+        marker.bindPopup(
+          `<p class="kaart-popup-titel">${heading}: ${escapeHtml(p.naam)}</p>` +
+            `<ul class="kaart-popup-lijst">${items}</ul>`
+        );
+        marker.addTo(map);
+        markers.push({ id: p.id, marker: marker, streek: isStreek });
+      });
+
+      if (markers.length) {
+        const group = L.featureGroup(markers.map((m) => m.marker));
+        map.fitBounds(group.getBounds().pad(0.12));
+      } else {
+        map.setView([51.5, 5.0], 7);
+      }
+      applyFilter();
+    })
+    .catch(() => {
+      map.setView([51.5, 5.0], 7);
+    });
+
+  document.addEventListener("heiligen-filter", (ev) => {
+    lastFilter = ev.detail || lastFilter;
+    applyFilter();
+  });
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+})();
