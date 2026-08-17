@@ -135,6 +135,10 @@ def test_write_beheer_selectie_naar_beheer_map(
     assert meta["generator"] == "scripts/generate.py"
     assert "Willibrord" in body
     assert "Nader onderzoek" in body
+    assert "lubuinus.yaml" not in body
+    assert "alberik.yaml" not in body
+    assert "lebuinus.yaml" in body
+    assert "albericus-van-utrecht.yaml" in body
 
 
 def test_heiligen_list_layout_zoekt_alternatieve_namen() -> None:

@@ -18,9 +18,10 @@ Iemand hoort in deze lijst als minstens één van beide geldt:
   daar iets gedaan — prediking, stichting, martelaarschap, bestuur van een
   kerk of klooster. Alleen op doorreis zijn is niet genoeg.
 - **Na het schisma:** de heilige wordt in de Orthodoxe Kerk vereerd én
-  heeft bijgedragen aan de Orthodoxie in Nederland of België. Een voorbeeld
-  is de heilige Johannes van Shanghai, die bijdroeg aan het opzetten van
-  de Orthodoxie hier.
+  heeft bijgedragen aan de Orthodoxie in Nederland of België. Voorbeelden
+  zijn de heilige Johannes van Shanghai, die bijdroeg aan het opzetten van
+  de Orthodoxie hier, en de heilige Sophrony van Essex, die in Gent
+  voorging en het kloosterleven in Asten mee vormgaf.
 
 De huidige lijst is een start. Wie er al in staat, schrappen we niet
 zomaar. Blijkt later dat iemand niet aan deze maatstaf voldoet, dan merken

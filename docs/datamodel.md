@@ -175,6 +175,8 @@ id_aliassen: [lubuinus]      # oude ids na een merge
 Niemand wordt automatisch geschrapt. `kandidaat-schrappen` is een markering
 voor een later, expliciet besluit.
 
+Werklijst (scores, gaten, post-schisma): [`docs/inventaris.md`](inventaris.md).
+
 ## Referenties
 
 Verhaal, samenvatting of `betekenis_lagenlanden` mag alleen als er minstens

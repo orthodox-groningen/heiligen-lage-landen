@@ -3,17 +3,25 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+id_aliassen:
+  - lubuinus
 namen:
   primair: Lebuinus
   alternatief:
-  - Lebuin
-  - Lebuïnus
+    - Lebuin
+    - Lebuïnus
+    - Lubuinus
 datum:
   waarde: 11-12
   stijl: gregoriaans
+  extra:
+    - waarde: 11-16
+      toelichting: 16 november
 titels:
-- Missionaris monnik in Nederland
-samenvatting: 'Heilige van de Lage Landen: Lebuinus. Missionaris monnik in Nederland.'
+  - Missionaris, monnik
+periode: "773"
+samenvatting: |
+  Heilige van de Lage Landen: Lebuinus. Missionaris, monnik in Nederland en Friesland.
 referenties:
   - label: "Wikipedia (NL) — Lebuïnus"
     url: "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"

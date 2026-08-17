@@ -18,6 +18,7 @@ MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus
 
 Datums: default **Gregoriaans** invoer; optioneel `datum.stijl`. Feestdatum =
 dagnaam (gelijk in nieuw/oud). Zie [docs/datamodel.md](docs/datamodel.md),
+[docs/inventaris.md](docs/inventaris.md) (wie erin hoort),
 de pagina **Uitleg** (voor wie de kalender gebruikt) en **Voor beheerders**
 (`/beheer/`: wat u mag wijzigen, wat generate overschrijft, how-to’s).
 

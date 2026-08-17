@@ -47,10 +47,7 @@ entries:
     - Albricus
     - Alberik I van Utrecht
     - Alberik van Utrecht
-  alberik:
-    primair: Alberik
-    alternatief:
-    - Alberik I van Utrecht
+    - Alberik
     - Albericus
   alena-van-dilbeek:
     primair: Alena van Dilbeek
@@ -301,15 +298,11 @@ entries:
     alternatief:
     - Lebuin
     - Lebuïnus
+    - Lubuinus
   lichte-maandag:
     primair: Lichte Maandag
     alternatief:
     - Maandag van de Lichte Week
-  lubuinus:
-    primair: Lubuinus
-    alternatief:
-    - Lebuïnus
-    - Lebuinus
   ludger:
     primair: Ludger
     alternatief:

@@ -8,13 +8,13 @@ generator: scripts/generate.py
 Gegenereerd uit `selectie` op heiligen-YAML. Niet bedoeld voor bezoekers.
 Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 
-**64** heiligen.
+**62** heiligen.
 
 ## Voldoet (0)
 
 _Geen._
 
-## Nader onderzoek (64)
+## Nader onderzoek (62)
 
 - [Acharius van Doornik](/heiligen/acharius-van-doornik/) (`data/heiligen/acharius-van-doornik.yaml`)
 - [Adela van Vlaanderen](/heiligen/adela-van-vlaanderen/) (`data/heiligen/adela-van-vlaanderen.yaml`)
@@ -23,7 +23,6 @@ _Geen._
 - [Adelgondis van Drongen](/heiligen/adelgondis-van-drongen/) (`data/heiligen/adelgondis-van-drongen.yaml`)
 - [Agricolaus van Maastricht](/heiligen/agricolaus-van-maastricht/) (`data/heiligen/agricolaus-van-maastricht.yaml`)
 - [Albericus van Utrecht](/heiligen/albericus-van-utrecht/) (`data/heiligen/albericus-van-utrecht.yaml`)
-- [Alberik](/heiligen/alberik/) (`data/heiligen/alberik.yaml`)
 - [Alena van Dilbeek](/heiligen/alena-van-dilbeek/) (`data/heiligen/alena-van-dilbeek.yaml`)
 - [Alubertus van Utrecht](/heiligen/alubertus-van-utrecht/) (`data/heiligen/alubertus-van-utrecht.yaml`)
 - [Amalberga van Susteren](/heiligen/amalberga-van-susteren/) (`data/heiligen/amalberga-van-susteren.yaml`)
@@ -56,7 +55,6 @@ _Geen._
 - [Jeroen van Noordwijk](/heiligen/jeroen-van-noordwijk/) (`data/heiligen/jeroen-van-noordwijk.yaml`)
 - [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`)
 - [Lebuinus](/heiligen/lebuinus/) (`data/heiligen/lebuinus.yaml`)
-- [Lubuinus](/heiligen/lubuinus/) (`data/heiligen/lubuinus.yaml`)
 - [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`)
 - [Marcellinus van Utrecht](/heiligen/marcellinus-van-utrecht/) (`data/heiligen/marcellinus-van-utrecht.yaml`)
 - [Medardus](/heiligen/medardus/) (`data/heiligen/medardus.yaml`)

@@ -3,30 +3,35 @@ soort: heilige
 status: stub
 cyclus: jaar
 lagenlanden: true
+id_aliassen:
+  - alberik
 namen:
   primair: Albericus van Utrecht
   alternatief:
-  - Albricus
-  - Alberik I van Utrecht
-  - Alberik van Utrecht
+    - Albricus
+    - Alberik I van Utrecht
+    - Alberik van Utrecht
+    - Alberik
+    - Albericus
 datum:
   waarde: 03-04
   stijl: gregoriaans
   extra:
-  - waarde: 08-21
-    toelichting: 21 augustus
-  - waarde: 11-08
-    toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
-  - waarde: 11-14
-    toelichting: 14 november
-  - waarde: 11-27
-    toelichting: 27 november
+    - waarde: 08-21
+      toelichting: 21 augustus
+    - waarde: 11-08
+      toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
+    - waarde: 11-14
+      toelichting: 14 november
+    - waarde: 11-27
+      toelichting: 27 november
 titels:
-- Vierde bisschop
+  - Vierde bisschop van Utrecht
 locaties:
-- Utrecht, Nederland
-periode: '784'
-samenvatting: 'Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop.'
+  - Utrecht, Nederland
+periode: "784"
+samenvatting: |
+  Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop van Utrecht.
 referenties:
   - label: "Wikipedia (NL) — Alberik I van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht"

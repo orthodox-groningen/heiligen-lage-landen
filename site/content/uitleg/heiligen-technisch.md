@@ -35,6 +35,10 @@ selectie_toelichting: "Kort waarom, voor beheerders."
 - `kandidaat-schrappen` verwijdert niets; dat is een markering tot een
   expliciet besluit.
 
+Werklijst (scores, gaten, post-schisma):
+[docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md).
+Die scores staan nog niet in YAML tot de inventaris is nagekeken.
+
 ## Betekenis voor de Lage Landen
 
 ```yaml

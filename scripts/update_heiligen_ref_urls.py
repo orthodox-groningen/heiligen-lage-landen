@@ -50,12 +50,6 @@ BESTE: dict[str, list[tuple[str, str]]] = {
             "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht",
         ),
     ],
-    "alberik": [
-        (
-            "Wikipedia (NL) — Alberik I van Utrecht",
-            "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht",
-        ),
-    ],
     "alena-van-dilbeek": [
         ("Wikipedia (NL) — Alena (heilige)", "https://nl.wikipedia.org/wiki/Alena_(heilige)"),
     ],
@@ -246,9 +240,6 @@ BESTE: dict[str, list[tuple[str, str]]] = {
         ),
     ],
     "lebuinus": [
-        ("Wikipedia (NL) — Lebuïnus", "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"),
-    ],
-    "lubuinus": [
         ("Wikipedia (NL) — Lebuïnus", "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"),
     ],
     "ludger": [

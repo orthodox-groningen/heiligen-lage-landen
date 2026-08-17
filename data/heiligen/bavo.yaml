@@ -11,9 +11,7 @@ namen:
 datum:
   waarde: 10-01
   stijl: gregoriaans
-titels:
-- Icoon in parochie
-samenvatting: 'Heilige van de Lage Landen: Bavo. Icoon in parochie.'
+samenvatting: 'Heilige van de Lage Landen: Bavo.'
 referenties:
   - label: "Wikipedia (NL) — Bavo van Gent"
     url: "https://nl.wikipedia.org/wiki/Bavo_van_Gent"

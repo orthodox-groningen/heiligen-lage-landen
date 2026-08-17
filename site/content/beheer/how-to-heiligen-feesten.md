@@ -113,6 +113,9 @@ selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
+- Wie ontbreekt of voorgesteld is: [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md).
+  Geen nieuwe YAML tot die lijst is nagekeken. Johannes van Shanghai en
+  Sophrony van Essex staan op toevoegen.
 - `betekenis_lagenlanden` is een **apart** stuk, niet hetzelfde als
   `verhaal` of `samenvatting`.
 
