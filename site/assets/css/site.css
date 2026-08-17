@@ -365,9 +365,20 @@ h2 {
   line-height: 1.35;
 }
 
+.today-heiligen-blok {
+  margin: 1rem 0 0;
+}
+
+.today-heiligen-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
 .today-heiligen {
   list-style: none;
-  margin: 1rem 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -490,7 +501,7 @@ h2 {
 
 .today-entries .today-heiligen {
   list-style: none;
-  margin: 1rem 0 0;
+  margin: 0;
   padding: 0;
 }
 

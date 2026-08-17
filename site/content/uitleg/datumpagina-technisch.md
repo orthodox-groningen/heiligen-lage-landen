@@ -39,7 +39,8 @@ Op de burgerlijke datum van dat jaar, in deze volgorde:
 2. Dagtype: naam van het feest (`soort: feest`, geen periode), anders
    `daglabel` uit `lezingen-dagen.json` (bijv. «23e donderdag na Pinksteren»).
 3. Apostel en Evangelie (zonder kop «Lezingen»).
-4. Heiligen van die dag, met `icoon` uit `entries.json` als dat veld gezet is.
+4. Als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de lijst,
+   met `icoon` uit `entries.json` als dat veld gezet is.
 
 Brondata voor (1) en (4): vaste feesten en heiligen op feestdatum (Nieuw)
 of burgerlijke vierdatum (Oud); paascyclus op de berekende datum; vastenperiodes

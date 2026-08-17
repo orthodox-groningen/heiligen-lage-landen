@@ -33,8 +33,9 @@ datum in de titel blijft staan. Zie
 Daaronder staat wat voor dag het is: bijvoorbeeld de 23e donderdag na
 Pinksteren, of de Zondag van de verloren zoon. Is het een feestdag, dan
 staat hier de naam van het feest — die wordt niet nog eens herhaald.
-Vervolgens Apostel en Evangelie, en daaronder de heiligen van de Lage
-Landen van die dag, met een klein icoon als we er een hebben.
+Vervolgens Apostel en Evangelie. Zijn er heiligen van de Lage Landen op
+die dag, dan volgt de kop *Heilige van de dag* (of *Heiligen* in het
+meervoud) en daaronder de lijst, met een klein icoon als we er een hebben.
 
 ## Eén vastenregel
 
