@@ -42,7 +42,7 @@ Op de burgerlijke datum van dat jaar, in deze volgorde:
 3. Apostel en Evangelie (zonder kop «Lezingen»).
 4. Alleen als er heiligen zijn: kop «Heilige(n) van de dag», daaronder de
    lijst, met `icoon` uit `entries.json` als dat veld gezet is. Zonder
-   heilige blijft dit blok weg.
+   heilige: geen kop, wel `today-geen-heilige` met link naar uitleg/heiligen.
 
 Brondata voor (1) en (4): vaste feesten en heiligen op feestdatum (Nieuw)
 of burgerlijke vierdatum (Oud); paascyclus op de berekende datum; vastenperiodes
