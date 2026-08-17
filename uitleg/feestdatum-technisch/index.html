@@ -19,7 +19,15 @@ als de site de <strong>burgerlijke vierdatum</strong> in de stand Oud berekent.<
 </span></span><span style=display:flex><span>    <span style=color:#f92672>anker</span>: <span style=color:#ae81ff>pascha</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>offset_dagen</span>: <span style=color:#ae81ff>0</span>        <span style=color:#75715e># t.o.v. Orthodox Pascha (negatief = vóór)</span>
 </span></span></code></pre></div><p>Bereik in generatie en ICS: huidig jaar −2 … +25. Functies:
-<code>pascha_offset_date</code> in <code>scripts/kalender.py</code>.</p><h2 id=ids>Ids</h2><p>Bestandsnaam = <code>id</code> = <code>[a-z0-9_-]+</code>. Weergavenamen staan bij voorkeur in
+<code>pascha_offset_date</code> in <code>scripts/kalender.py</code>.</p><h2 id=weekdag-tov-een-feestdatum>Weekdag t.o.v. een feestdatum</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>weekdag_relatief</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>anker</span>: <span style=color:#e6db74>&#34;12-25&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>weekdag</span>: <span style=color:#ae81ff>7</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>welke</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>richting</span>: <span style=color:#ae81ff>voor</span>
+</span></span></code></pre></div><p><code>weekday_relative_date</code> in <code>scripts/kalender.py</code>. Stand Oud: anker is de
+Juliaanse feestdatum van dat jaar. Niet in het Meneon.</p><h2 id=ids>Ids</h2><p>Bestandsnaam = <code>id</code> = <code>[a-z0-9_-]+</code>. Weergavenamen staan bij voorkeur in
 <code>data/namen.yaml</code>, niet alleen in het entry-bestand. Zie
 <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/how-to-namen/>namen wijzigen</a>.</p><p class="hint uitleg-nav"><a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/feestdatum/>Terug naar de uitleg</a>
 ·
@@ -29,4 +37,4 @@ als de site de <strong>burgerlijke vierdatum</strong> in de stand Oud berekent.<
 ·
 <a href=https://github.com/orthodox-groningen>orthodox-groningen</a>
 ·
-<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-17</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/calendar.min.6de9f04a1c4314deefbaef4fc6db648f5c669e297e1bea8d9b6d9a22caa3969d.js defer></script></body></html>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-17</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/calendar.min.2b64fc5e397191a4f41cfa76724eed0a322a86351a75929ee5a5943a6d706f72.js defer></script></body></html>

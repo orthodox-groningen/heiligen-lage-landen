@@ -11,12 +11,12 @@ Schema: <code>schemas/entry.schema.json</code>. Publiceren:
 of cijfer. Voorbeeld: <code>willibrord</code>, <code>ontslapen-moeder-gods</code>.</li><li>Dat id is de <strong>bestandsnaam</strong> zonder <code>.yaml</code> en blijft stabiel. Wijzig
 later liever de getoonde naam dan het id.</li><li>Zet de canonieke naam in <code>data/namen.yaml</code> onder <code>entries.&lt;id></code> (primair,
 optioneel <code>alternatief</code>). Zie <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>. Voor een verhaal, samenvatting of
-<code>betekenis_lagenlanden</code> is minstens één <strong>referentie</strong> verplicht, met een
+<code>betekenis_lage_landen</code> is minstens één <strong>referentie</strong> verplicht, met een
 locator: <code>url</code>, of <code>isbn</code>, of <code>locator</code>.</p><h3 id=vaste-dag>Vaste dag</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>willibrord</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>soort</span>: <span style=color:#ae81ff>heilige</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>status: stub             # curated</span>: <span style=color:#ae81ff>zie onder</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>lagenlanden</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>lage_landen</span>: <span style=color:#66d9ef>true</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>waarde</span>: <span style=color:#e6db74>&#34;11-07&#34;</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>stijl</span>: <span style=color:#ae81ff>gregoriaans    </span> <span style=color:#75715e># documentatie van de invoer; default gregoriaans</span>
@@ -28,7 +28,17 @@ locator: <code>url</code>, of <code>isbn</code>, of <code>locator</code>.</p><h3
 </span></span><span style=display:flex><span>    <span style=color:#f92672>offset_dagen</span>: <span style=color:#ae81ff>0</span>      <span style=color:#75715e># 0 = Pascha; negatief = dagen vóór</span>
 </span></span></code></pre></div><p>Periodes (vasten of een week) gebruiken <code>van_offset_dagen</code> /
 <code>tot_offset_dagen</code>, of hybride <code>van_offset_dagen</code> plus <code>datum.tot</code> (MM-DD),
-zoals het Apostelvasten.</p><h2 id=namen-in-het-entry-bestand>Namen in het entry-bestand</h2><p>U <em>mag</em> <code>namen.primair</code> in de YAML zetten. Bij laden <strong>wint</strong>
+zoals het Apostelvasten.</p><p>Voorfeest, nafeest en synaxis rond de twaalf zijn gewone feest-YAML
+(één dag of <code>van</code>/<code>tot</code>).</p><h3 id=weekdag-tov-een-feestdatum>Weekdag t.o.v. een feestdatum</h3><p>Zondagen vóór/ná Kerst (en ná Theofanie) hebben geen vaste MM-DD:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>stijl</span>: <span style=color:#ae81ff>juliaans</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>weekdag_relatief</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>anker</span>: <span style=color:#e6db74>&#34;12-25&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>weekdag: 7           # ISO</span>: <span style=color:#ae81ff>1</span><span style=color:#ae81ff>=ma … 7=zo</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>welke</span>: <span style=color:#ae81ff>1</span>             <span style=color:#75715e># 1 = dichtstbijzijnde, 2 = de volgende</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>richting: voor       # of</span>: <span style=color:#ae81ff>na</span>
+</span></span></code></pre></div><p>Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
+18 december. Zie <code>docs/datamodel.md</code>.</p><h2 id=namen-in-het-entry-bestand>Namen in het entry-bestand</h2><p>U <em>mag</em> <code>namen.primair</code> in de YAML zetten. Bij laden <strong>wint</strong>
 <code>data/namen.yaml</code>. Zet nieuwe namen dus daar, anders lijkt de YAML-naam te
 werken tot iemand <code>namen.yaml</code> aanvult.</p><h2 id=vasten-op-een-feest>Vasten op een feest</h2><p>Optioneel:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>vis       </span> <span style=color:#75715e># streng | wijn_olie | vis | lichter | vrij</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>observances</span>: [<span style=color:#ae81ff>feest, vasten]</span>
@@ -46,7 +56,7 @@ Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
 </span></span></code></pre></div><p><code>bron_id</code> wijst naar <code>data/bronnen/bronnen.yaml</code>. De locator hoort <strong>ook</strong>
 op de referentie in de entry, niet alleen in de catalogus.</p><h2 id=heiligen-selectie-betekenis-status>Heiligen: selectie, betekenis, status</h2><p>Criteria in gewone taal: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/heiligen/>Heiligen van de Lage Landen</a>.
 Velden: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/heiligen-technisch/>technisch</a> en
-<a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lagenlanden</span>: |<span style=color:#e6db74>
+<a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lage_landen</span>: |<span style=color:#e6db74>
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  Wat deze heilige voor het christendom of de Orthodoxie
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  in de Lage Landen betekende.</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>selectie</span>: <span style=color:#ae81ff>voldoet         </span> <span style=color:#75715e># of nader-onderzoek | kandidaat-schrappen</span>
@@ -55,9 +65,9 @@ Velden: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg
 een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li>Scores en gatenlijst: <a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md>docs/inventaris.md</a>.
 Overzicht: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/selectie/>Selectie heiligen</a>. Nieuwe
 heiligen (Servatius, Otger, Johannes van Shanghai, Sophrony van Essex,
-…) in stap 5 volgens die lijst.</li><li><code>betekenis_lagenlanden</code> is een <strong>apart</strong> stuk, niet hetzelfde als
+…) in stap 5 volgens die lijst.</li><li><code>betekenis_lage_landen</code> is een <strong>apart</strong> stuk, niet hetzelfde als
 <code>verhaal</code> of <code>samenvatting</code>.</li></ul><p><code>status: stub</code> — basisgegevens, kort of geen nagekeken betekenis-stuk.
-<code>status: curated</code> bij een <strong>heilige</strong> alleen als:</p><ol><li><code>betekenis_lagenlanden</code> niet leeg is, en</li><li>minstens één referentie niet Wikipedia of heiligen.net is
+<code>status: curated</code> bij een <strong>heilige</strong> alleen als:</p><ol><li><code>betekenis_lage_landen</code> niet leeg is, en</li><li>minstens één referentie niet Wikipedia of heiligen.net is
 (die twee mogen aanvullen; OrthodoxWiki telt wél).</li></ol><p>Feesten: <code>curated</code> blijft nagekeken tekst met traceerbare bronnen.</p><p><code>validate.py</code> weigert een heilige die <code>curated</code> is zonder die lat.</p><h2 id=dubbele-ids-samenvoegen>Dubbele ids samenvoegen</h2><p>Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
 ids in <code>id_aliassen</code> en de oude namen in <code>data/namen.yaml</code> onder
 <code>alternatief</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>lebuinus</span>
@@ -66,7 +76,7 @@ ids in <code>id_aliassen</code> en de oude namen in <code>data/namen.yaml</code>
 </span></span></code></pre></div><p><code>id_aliassen</code> mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. <code>generate.py</code> zet oude ids om in Hugo-aliases en schrijft
-<code>betekenis_lagenlanden</code> onder <strong>Betekenis voor de Lage Landen</strong>. Selectie
+<code>betekenis_lage_landen</code> onder <strong>Betekenis voor de Lage Landen</strong>. Selectie
 staat op <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/selectie/>Selectie heiligen</a>, niet op de
 publieke pagina.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
 </span></span><span style=display:flex><span>python scripts/generate.py
@@ -78,4 +88,4 @@ eventueel ICS. Klopt de naam niet, dan eerst <code>namen.yaml</code>.</p><p clas
 ·
 <a href=https://github.com/orthodox-groningen>orthodox-groningen</a>
 ·
-<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-17</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/calendar.min.6de9f04a1c4314deefbaef4fc6db648f5c669e297e1bea8d9b6d9a22caa3969d.js defer></script></body></html>
+<a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-17</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-groningen.github.io/heiligen-lage-landen/js/calendar.min.2b64fc5e397191a4f41cfa76724eed0a322a86351a75929ee5a5943a6d706f72.js defer></script></body></html>
