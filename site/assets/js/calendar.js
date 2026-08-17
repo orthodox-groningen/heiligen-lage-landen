@@ -1474,10 +1474,18 @@
     }
 
     const civilToday = civilTodayMmdd();
+    const nowYear = new Date().getFullYear();
+    const nowMonth = new Date().getMonth() + 1;
     const dow = ["ma", "di", "wo", "do", "vr", "za", "zo"];
     let html = "";
     for (let month = 1; month <= 12; month++) {
-      html += `<section class="month-card"><h2>${MONTHS[month]} ${viewYear}</h2><div class="month-days">`;
+      const isCurrentMonth = viewYear === nowYear && month === nowMonth;
+      html +=
+        `<section class="month-card${isCurrentMonth ? " is-current-month" : ""}" ` +
+        `id="month-${String(month).padStart(2, "0")}">` +
+        `<h2>${MONTHS[month]} ${viewYear}` +
+        (isCurrentMonth ? `<span class="month-now-label">deze maand</span>` : "") +
+        `</h2><div class="month-days">`;
       for (const d of dow) html += `<div class="dow">${d}</div>`;
       const first = new Date(viewYear, month - 1, 1);
       let start = (first.getDay() + 6) % 7;
@@ -1489,19 +1497,32 @@
         const kinds = byDay.get(mmdd) || new Set();
         const color = dayClass(kinds);
         const has = kinds.size > 0;
-        const isToday =
-          viewYear === new Date().getFullYear() && mmdd === civilToday;
+        const isToday = viewYear === nowYear && mmdd === civilToday;
         const cls = ["day", has ? "has-entry" : "", color, isToday ? "is-today" : ""]
           .filter(Boolean)
           .join(" ");
+        const ariaToday = isToday ? ` aria-label="${day} ${MONTHS[month]}, vandaag"` : "";
         html +=
           `<a class="${cls}" href="${daySurfaceHref(viewYear, mmdd, style)}" ` +
-          `data-info-tip="kalender-dag" data-day-mmdd="${mmdd}">${day}</a>`;
+          `data-info-tip="kalender-dag" data-day-mmdd="${mmdd}"${ariaToday}>${day}</a>`;
       }
       html += `</div></section>`;
     }
     root.innerHTML = html;
     wireInfoTips(root);
+    scrollKalenderToCurrentMonth();
+  }
+
+  /** Op telefoon: start bij de huidige maand als we het lopende jaar tonen. */
+  function scrollKalenderToCurrentMonth() {
+    if (!document.querySelector("[data-kalender]")) return;
+    if (viewYear !== new Date().getFullYear()) return;
+    const monthId = `month-${String(new Date().getMonth() + 1).padStart(2, "0")}`;
+    const el = document.getElementById(monthId);
+    if (!el) return;
+    requestAnimationFrame(() => {
+      el.scrollIntoView({ block: "start", behavior: "auto" });
+    });
   }
 
   /* ---- Meneon ---- */
