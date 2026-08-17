@@ -117,6 +117,17 @@ def test_id_alias_niet_eigen_id_en_niet_levend() -> None:
     assert any("levend entry-id" in e for e in errors2)
 
 
+def test_onbekende_locatie_en_rustplaats_falen() -> None:
+    errors = collect_content_errors(
+        [_heilige(locaties=["niet-bestaande-plaats"])]
+    )
+    assert any("onbekende locatie" in e for e in errors)
+    errors_r = collect_content_errors(
+        [_heilige(rustplaats={"plaats": "niet-bestaande-plaats"})]
+    )
+    assert any("rustplaats.plaats onbekend" in e for e in errors_r)
+
+
 def test_bestaande_heiligen_laden_met_selectie() -> None:
     by_id = {e["id"]: e for e in load_entries() if e["soort"] == "heilige"}
     assert by_id["willibrord"]["bronlaag"] == "nagekeken"

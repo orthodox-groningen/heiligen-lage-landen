@@ -22,9 +22,10 @@ titels:
   - Kanunnik van Utrecht
 periode: "na 854"
 locaties:
-  - Utrecht
-  - Stavoren
-  - Oirschot
+  - utrecht
+  - stavoren
+  - oirschot
+  - frisia
 icoon:
   bestand: iconen/odulphus.jpg
   rechten: ok

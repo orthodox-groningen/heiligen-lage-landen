@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - sint-truiden
 selectie: voldoet
 selectie_toelichting: "Sint-Truiden."
 namen:

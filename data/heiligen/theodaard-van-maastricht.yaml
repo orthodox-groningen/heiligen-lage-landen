@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maastricht
 selectie: voldoet
 selectie_toelichting: "Maastricht."
 namen:
@@ -17,8 +19,6 @@ datum:
   stijl: gregoriaans
 titels:
 - Bisschop
-locaties:
-- Maastricht
 periode: '668'
 samenvatting: 'Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.'
 referenties:

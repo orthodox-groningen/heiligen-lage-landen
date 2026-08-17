@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - terwaan
 selectie: nader-onderzoek
 selectie_toelichting: "Folquinus van Terwaan; bisdom nu in Frankrijk, gestorven te Ekelsbeke."
 namen:

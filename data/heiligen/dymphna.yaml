@@ -17,7 +17,10 @@ titels:
   - Martelares van Geel
 periode: "7e eeuw"
 locaties:
-  - Geel
+  - geel
+rustplaats:
+  plaats: geel
+  toelichting: "Sint-Dimpnakerk"
 icoon:
   bestand: iconen/dymphna.jpg
   rechten: ok

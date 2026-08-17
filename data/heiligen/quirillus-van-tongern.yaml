@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - tongeren
 selectie: nader-onderzoek
 selectie_toelichting: "Vroege bisschop van Tongeren; of hij historisch is, is onzeker."
 namen:

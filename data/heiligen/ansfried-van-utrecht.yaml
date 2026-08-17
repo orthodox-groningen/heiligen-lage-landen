@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - utrecht
 selectie: voldoet
 selectie_toelichting: "Bisschop van Utrecht."
 namen:
@@ -21,8 +23,6 @@ datum:
     toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
 titels:
 - Bisschop van Utrecht
-locaties:
-- Utrecht, Nederland
 periode: '1010'
 samenvatting: 'Heilige van de Lage Landen: Ansfried (van Utrecht). Bisschop van Utrecht.'
 referenties:

@@ -3,6 +3,10 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - doornik
+  - noyon
+  - vlaanderen
 selectie: voldoet
 selectie_toelichting: "Bisdom Noyon-Doornik; prediking in Vlaanderen."
 namen:

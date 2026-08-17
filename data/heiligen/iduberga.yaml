@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - nijvel
 selectie: voldoet
 selectie_toelichting: "Nijvel."
 namen:
@@ -17,8 +19,6 @@ datum:
   stijl: gregoriaans
 titels:
 - Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis
-locaties:
-- Nijvel
 periode: '652'
 samenvatting: 'Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder
   van H. Bavo, Begga en Gertrudis.'

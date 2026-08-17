@@ -18,6 +18,7 @@ from generate import (  # noqa: E402
     write_beheer_selectie,
     write_entries_json,
     write_entry_page,
+    write_plaatsen_json,
 )
 from load_entries import load_entries  # noqa: E402
 
@@ -71,6 +72,32 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert "Predikte onder de Friezen." in body
     assert "nagekeken aan een lexikon" not in body
     assert "open naslagwerken" in body
+    assert "selectie" not in meta
+
+
+def test_entry_page_plaatsen_als_namen_en_rustplaats(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            locaties=["utrecht", "drongen"],
+            rustplaats={
+                "plaats": "echternach",
+                "toelichting": "Abdij van Echternach",
+            },
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    meta, body = _split_hugo_markdown(text)
+    assert meta["locaties"] == ["Utrecht", "Drongen"]
+    assert meta["locatie_ids"] == ["utrecht", "drongen"]
+    assert "utrecht" not in meta["locaties"]
+    assert "Utrecht" in meta["locatie_zoek"]
+    assert "Vlaanderen" in meta["locatie_zoek"]
+    assert "[Utrecht](/heiligen/?plaats=utrecht)" in body
+    assert "Abdij van Echternach (Echternach)" in body
 
 
 def test_entry_page_nagekeken_bronzin(
@@ -129,7 +156,11 @@ def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
 ) -> None:
     static = tmp_path / "static" / "data"
     monkeypatch.setattr("generate.STATIC_DATA", static)
-    heilige = _heilige(betekenis_lage_landen="Voor de Lage Landen.")
+    heilige = _heilige(
+        betekenis_lage_landen="Voor de Lage Landen.",
+        locaties=["utrecht"],
+        rustplaats={"plaats": "echternach", "toelichting": "Abdij"},
+    )
     feest = {
         **_heilige(id="kerst", soort="feest"),
         "namen": {"primair": "Kerst", "alternatief": []},
@@ -144,6 +175,9 @@ def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
     assert "betekenis_lage_landen" not in by_id["kerst"]
     assert "selectie" not in by_id["voorbeeld"]
     assert by_id["voorbeeld"]["bronlaag"] == "encyclopedie"
+    assert by_id["voorbeeld"]["locaties"] == ["utrecht"]
+    assert by_id["voorbeeld"]["rustplaats"]["plaats"] == "echternach"
+    assert "locaties" not in by_id["kerst"]
 
 
 def test_beheer_selectie_groepeert_en_toont_toelichting() -> None:
@@ -210,8 +244,32 @@ def test_heiligen_list_layout_zoekt_alternatieve_namen() -> None:
     assert "heiligen-zoek" in layout
     assert "alternatief" in layout
     assert "entry-filter.js" in layout
+    assert "heiligen-kaart" in layout
+    assert "locatie_zoek" in layout
+    assert "vendor/leaflet/leaflet.js" in layout
     js = (ROOT / "site" / "assets" / "js" / "entry-filter.js").read_text(
         encoding="utf-8"
     )
     assert "data-zoek" in js
     assert "toLocaleLowerCase" in js
+    assert 'params.get("plaats")' in js
+    assert "heiligen-filter" in js
+    kaart = (ROOT / "site" / "assets" / "js" / "heiligen-kaart.js").read_text(
+        encoding="utf-8"
+    )
+    assert "plaatsen.json" in kaart
+    assert "tile.openstreetmap.org" in kaart
+    assert "unpkg.com" not in kaart
+
+
+def test_write_plaatsen_json(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    static = tmp_path / "static" / "data"
+    monkeypatch.setattr("generate.STATIC_DATA", static)
+    write_plaatsen_json()
+    payload = json.loads((static / "plaatsen.json").read_text(encoding="utf-8"))
+    by_id = {item["id"]: item for item in payload}
+    assert by_id["utrecht"]["naam"] == "Utrecht"
+    assert by_id["vlaanderen"]["soort"] == "streek"
+    assert "lat" in by_id["utrecht"] and "lon" in by_id["utrecht"]

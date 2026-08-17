@@ -291,6 +291,21 @@ def normalize_entry(
     if not isinstance(aliases, list):
         raise ValueError(f"{path}: id_aliassen moet een lijst zijn")
     entry["id_aliassen"] = [str(a).strip() for a in aliases if str(a).strip()]
+    locs = entry.get("locaties") or []
+    if not isinstance(locs, list):
+        raise ValueError(f"{path}: locaties moet een lijst zijn")
+    entry["locaties"] = [str(x).strip() for x in locs if str(x).strip()]
+    rust = entry.get("rustplaats")
+    if rust:
+        if not isinstance(rust, dict):
+            raise ValueError(f"{path}: rustplaats moet een mapping zijn")
+        plaats = str(rust.get("plaats") or "").strip()
+        toel = str(rust.get("toelichting") or "").strip()
+        if not plaats:
+            raise ValueError(f"{path}: rustplaats.plaats ontbreekt")
+        entry["rustplaats"] = {"plaats": plaats, "toelichting": toel}
+    else:
+        entry["rustplaats"] = None
     if entry.get("soort") == "heilige":
         sel = entry.get("selectie") or "nader-onderzoek"
         allowed = {"voldoet", "nader-onderzoek", "kandidaat-schrappen"}

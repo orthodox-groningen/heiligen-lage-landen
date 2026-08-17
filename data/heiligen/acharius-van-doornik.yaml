@@ -3,6 +3,9 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - doornik
+  - noyon
 selectie: voldoet
 selectie_toelichting: "Bisschop van Doornik."
 namen:
@@ -15,8 +18,6 @@ datum:
   stijl: gregoriaans
 titels:
 - Bisschop
-locaties:
-- Doornik, België; ook van Noyon, Frankrijk
 periode: ~640
 samenvatting: 'Heilige van de Lage Landen: Acharius van Doornik. Bisschop.'
 referenties:

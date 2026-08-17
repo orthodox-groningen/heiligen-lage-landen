@@ -18,8 +18,9 @@ titels:
   - Martelaar
 periode: "~754"
 locaties:
-  - Dokkum
-  - Utrecht
+  - dokkum
+  - utrecht
+  - frisia
 icoon:
   bestand: iconen/bonifatius.jpg
   rechten: ok

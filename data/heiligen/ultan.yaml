@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - fosses
 selectie: voldoet
 selectie_toelichting: "Fosses (met Foillan)."
 namen:

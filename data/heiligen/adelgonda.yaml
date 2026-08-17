@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maubeuge
 selectie: nader-onderzoek
 selectie_toelichting: "Stichteres van Maubeuge; historisch Henegouwen, nu Frankrijk."
 namen:

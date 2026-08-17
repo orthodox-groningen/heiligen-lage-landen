@@ -3,21 +3,26 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p class="filter-bar">
-    <label class="search-label" for="heiligen-zoek">Zoeken (ook andere namen)</label>
-    <input type="search" id="heiligen-zoek" class="search-input" placeholder="bijv. Lubuinus, Goedele…" autocomplete="off">
+    <label class="search-label" for="heiligen-zoek">Zoeken (naam of plaats)</label>
+    <input type="search" id="heiligen-zoek" class="search-input" placeholder="bijv. Utrecht, Vlaanderen, Goedele…" autocomplete="off">
   </p>
-  <p class="hint" id="heiligen-zoek-leeg" hidden>Geen heilige met die naam in dit overzicht.</p>
+  <div id="heiligen-kaart" class="heiligen-kaart" role="region" aria-label="Kaart van plaatsen"></div>
+  <p class="hint" id="heiligen-zoek-leeg" hidden>Geen heilige met die naam of plaats in dit overzicht.</p>
   <ul class="entry-list" data-heiligen-lijst>
     {{ range sort .Pages "Title" }}
       {{ $alts := .Params.alternatief | default (slice) }}
-      {{ $zoek := printf "%s %s" .Title (delimit $alts " ") }}
-      <li data-zoek="{{ $zoek }}">
+      {{ $plaatsen := .Params.locatie_ids | default (slice) }}
+      {{ $zoek := printf "%s %s %s %s" .Title (delimit $alts " ") (delimit $plaatsen " ") (.Params.locatie_zoek | default "") }}
+      <li data-zoek="{{ $zoek }}" data-plaatsen="{{ delimit $plaatsen " " }}">
         <span class="entry-list-namen">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ with $alts }}
             <span class="meta">ook {{ delimit . ", " }}</span>
           {{ end }}
         </span>
+        {{ with .Params.locaties }}
+          <span class="meta">{{ delimit . ", " }}</span>
+        {{ end }}
         {{ with .Params.feestdatum }}
           <span class="meta">{{ . }}</span>
         {{ end }}
@@ -25,6 +30,11 @@
     {{ end }}
   </ul>
 </section>
+{{ $leafletCss := "vendor/leaflet/leaflet.css" | relURL }}
+<link rel="stylesheet" href="{{ $leafletCss }}">
+{{ $leaflet := resources.Get "js/heiligen-kaart.js" | resources.Minify | resources.Fingerprint }}
 {{ $filter := resources.Get "js/entry-filter.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ "vendor/leaflet/leaflet.js" | relURL }}" defer></script>
+<script src="{{ $leaflet.RelPermalink }}" defer></script>
 <script src="{{ $filter.RelPermalink }}" defer></script>
 {{ end }}

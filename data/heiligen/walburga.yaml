@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - heidenheim
 selectie: kandidaat-schrappen
 selectie_toelichting: "Abdis van Heidenheim; cultus elders is geen werk in de Lage Landen."
 namen:

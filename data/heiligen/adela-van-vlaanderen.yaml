@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - mesen
 selectie: kandidaat-schrappen
 selectie_toelichting: "Gestorven 1079; westerse cultus na het schisma, geen orthodoxe bijdrage aan NL/BE."
 namen:
@@ -16,8 +18,6 @@ datum:
   stijl: gregoriaans
 titels:
 - Weduwe & kloosterlinge
-locaties:
-- Mesen, België
 periode: '1079'
 samenvatting: 'Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.'
 referenties:

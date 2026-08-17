@@ -91,6 +91,26 @@ id_aliassen:
 Zie [docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
 Wikipedia en heiligen.net mogen aanvullen.
 
+## Plaatsen en rustplaats
+
+```yaml
+locaties:
+  - utrecht
+  - echternach
+rustplaats:
+  plaats: echternach
+  toelichting: "Abdij van Echternach"
+```
+
+Plaats-ids staan in `data/plaatsen.yaml` (naam, coördinaten, optioneel
+`streek` en `alternatief`). Een `soort: plaats` krijgt een marker als
+minstens één heilige die id in `locaties` heeft. Een `soort: streek`
+alleen als een heilige die streek-id zelf noemt. Relieken en bedevaarten
+horen niet in dit veld.
+
+`generate.py` schrijft `site/static/data/plaatsen.json` en zet
+plaatsnamen plus zoektekst op de heiligenpagina.
+
 ## Icoon
 
 ```yaml

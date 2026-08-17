@@ -67,6 +67,9 @@ def test_reactie_pagina_wijst_naar_github() -> None:
 
 def test_uitleg_heiligen_noemt_parochiepatronen() -> None:
     text = (CONTENT / "uitleg" / "heiligen.md").read_text(encoding="utf-8")
+    hoofd = text.split("## Voor wie de site bijhoudt")[0]
     assert "Patroon van een parochie" in text
     assert "Nektarios" in text
-    assert "bronlaag" not in text.split("## Voor wie de site bijhoudt")[0]
+    assert "bronlaag" not in hoofd
+    assert "kaart" in hoofd
+    assert "data/" not in hoofd

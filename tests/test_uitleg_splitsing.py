@@ -93,6 +93,8 @@ def test_beheer_home_onderscheidt_aanraken_en_overschrijven() -> None:
     assert "site/content/heiligen/*.md" in body
     assert "site/content/uitleg/vasten.md" in body
     assert "entries.json" in body
+    assert "plaatsen.yaml" in body
+    assert "plaatsen.json" in body
     assert "beheer-tabel-aanraken" in body
     assert "beheer-tabel-afblijven" in body
     for slug in HOW_TOS:

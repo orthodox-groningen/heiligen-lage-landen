@@ -21,6 +21,7 @@ staan hieronder.
 | `data/heiligen/` | Eén YAML-bestand per heilige (bron) |
 | `data/feesten/` | Eén YAML-bestand per feest, ook paascyclus |
 | `data/vasten/` | Vastenperiodes en wekelijks wo/vr-vasten (bron) |
+| `data/plaatsen.yaml` | Plaatsen voor kaart en zoeken (`locaties:` op een heilige zijn ids hieruit) |
 | `data/namen.yaml` | Canonieke weergavenamen (wint over `namen:` in een entry) |
 | `data/bronnen/bronnen.yaml` | Catalogus van bronnen (`bron_id`) |
 | `data/regels/vasten.yaml` | Normatieve vastenregels + voorbeelden + clerustekst |
@@ -46,8 +47,9 @@ committen. Zie [site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %
 <table class="beheer-tabel beheer-tabel-aanraken">
 <thead><tr><th>U wijzigt</th><th>Effect op de site</th></tr></thead>
 <tbody>
-<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam, datum, verhaal, <code>betekenis_lage_landen</code>, referenties, <code>selectie</code>, vastenniveau van die entry. Entry-pagina, Meneon, jaarkalender, datumpagina en ICS volgen na <code>generate.py</code>. <code>selectie</code> is niet publiek.</td></tr>
+<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam, datum, verhaal, <code>betekenis_lage_landen</code>, referenties, <code>selectie</code>, <code>locaties</code> (plaats-ids), <code>rustplaats</code>, vastenniveau van die entry. Entry-pagina, Meneon, jaarkalender, datumpagina, kaart en ICS volgen na <code>generate.py</code>. <code>selectie</code> is niet publiek.</td></tr>
 <tr><td><code>data/vasten/*.yaml</code></td><td>Wanneer een periode loopt, of wo/vr wekelijks is, welk seizoensniveau de periode heeft. De <em>mengregel</em> (wat er op een dag getoond wordt) zit niet hier, maar in <code>data/regels/vasten.yaml</code> plus code.</td></tr>
+<tr><td><code>data/plaatsen.yaml</code></td><td>Plaatsnamen, coördinaten, streek. Kaart en zoeken op het heiligenoverzicht.</td></tr>
 <tr><td><code>data/namen.yaml</code></td><td>De getoonde naam overal. Het <code>id</code> (bestandsnaam) blijft gelijk. Alternatieve namen tellen mee in de Meneon-zoekfunctie.</td></tr>
 <tr><td><code>data/bronnen/bronnen.yaml</code></td><td>Metadata bij <code>bron_id</code>. De locator (<code>url</code> / ISBN / …) hoort óók op de referentie in de entry.</td></tr>
 <tr><td><code>data/regels/vasten.yaml</code></td><td>Cleruspagina, technische vastenpagina, en de voorbeelden die pytest toetst. Wijzigt u een verwacht niveau, dan moeten <code>scripts/vasten.py</code> en <code>calendar.js</code> mee — anders falen de tests.</td></tr>
@@ -75,6 +77,7 @@ gooit het weg.
 <tr><td><code>site/content/uitleg/vasten.md</code></td><td>Komt uit <code>data/regels/vasten.yaml</code> (<code>render_vasten_clerus</code>).</td></tr>
 <tr><td><code>site/content/uitleg/vasten-technisch.md</code></td><td>Zelfde YAML, technische weergave.</td></tr>
 <tr><td><code>site/static/data/entries.json</code></td><td>Index voor de kalender in de browser.</td></tr>
+<tr><td><code>site/static/data/plaatsen.json</code></td><td>Kaartgegevens; uit <code>data/plaatsen.yaml</code>.</td></tr>
 <tr><td><code>site/static/ics/*.ics</code></td><td>Agenda-feeds; bij generate eerst gewist.</td></tr>
 <tr><td>gegenereerde dagbestanden onder <code>site/content/datum/</code> (alles behalve <code>_index.md</code>)</td><td>Wordt bij <code>--clean</code> verwijderd.</td></tr>
 </tbody>

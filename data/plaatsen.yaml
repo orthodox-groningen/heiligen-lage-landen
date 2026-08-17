@@ -1,0 +1,296 @@
+# Plaatsen bij heiligen (kaart + zoeken).
+# Ids: [a-z0-9_-]+. Coördinaten bij benadering (WGS84).
+# soort: plaats (marker als een heilige deze id in locaties heeft) of
+# streek (zoeken; marker alleen als een heilige de streek-id zelf noemt).
+
+plaatsen:
+  - id: vlaanderen
+    naam: Vlaanderen
+    alternatief: [Flanders]
+    lat: 51.05
+    lon: 3.72
+    soort: streek
+  - id: frisia
+    naam: Frisia
+    alternatief: [Friesland, Friezen]
+    lat: 53.20
+    lon: 5.80
+    soort: streek
+
+  - id: amay
+    naam: Amay
+    lat: 50.549
+    lon: 5.309
+    soort: plaats
+  - id: andenne
+    naam: Andenne
+    lat: 50.489
+    lon: 5.100
+    soort: plaats
+  - id: asten
+    naam: Asten
+    lat: 51.404
+    lon: 5.744
+    soort: plaats
+  - id: balen
+    naam: Balen
+    lat: 51.171
+    lon: 5.171
+    soort: plaats
+  - id: bedum
+    naam: Bedum
+    lat: 53.300
+    lon: 6.603
+    soort: plaats
+  - id: bergen
+    naam: Bergen
+    alternatief: [Mons, Bergen in Henegouwen]
+    lat: 50.454
+    lon: 3.952
+    soort: plaats
+  - id: brussel
+    naam: Brussel
+    alternatief: [Bruxelles]
+    lat: 50.847
+    lon: 4.352
+    soort: plaats
+  - id: den-haag
+    naam: Den Haag
+    alternatief:
+      - "'s-Gravenhage"
+    lat: 52.070
+    lon: 4.300
+    soort: plaats
+  - id: deventer
+    naam: Deventer
+    lat: 52.255
+    lon: 6.164
+    soort: plaats
+  - id: dilbeek
+    naam: Dilbeek
+    lat: 50.848
+    lon: 4.264
+    soort: plaats
+    streek: vlaanderen
+  - id: dokkum
+    naam: Dokkum
+    lat: 53.325
+    lon: 6.000
+    soort: plaats
+    streek: frisia
+  - id: doornik
+    naam: Doornik
+    alternatief: [Tournai]
+    lat: 50.607
+    lon: 3.389
+    soort: plaats
+    streek: vlaanderen
+  - id: drongen
+    naam: Drongen
+    lat: 51.050
+    lon: 3.663
+    soort: plaats
+    streek: vlaanderen
+  - id: echternach
+    naam: Echternach
+    lat: 49.812
+    lon: 6.422
+    soort: plaats
+  - id: egmond
+    naam: Egmond
+    lat: 52.619
+    lon: 4.627
+    soort: plaats
+  - id: elno
+    naam: Saint-Amand-les-Eaux
+    alternatief: [Elno]
+    lat: 50.448
+    lon: 3.429
+    soort: plaats
+  - id: elst
+    naam: Elst
+    lat: 51.919
+    lon: 5.842
+    soort: plaats
+  - id: fosses
+    naam: Fosses-la-Ville
+    alternatief: [Fosses]
+    lat: 50.398
+    lon: 4.696
+    soort: plaats
+  - id: geel
+    naam: Geel
+    lat: 51.161
+    lon: 4.990
+    soort: plaats
+    streek: vlaanderen
+  - id: gent
+    naam: Gent
+    alternatief: [Gand]
+    lat: 51.054
+    lon: 3.717
+    soort: plaats
+    streek: vlaanderen
+  - id: heidenheim
+    naam: Heidenheim
+    lat: 48.676
+    lon: 10.151
+    soort: plaats
+  - id: kaiserswerth
+    naam: Kaiserswerth
+    lat: 51.299
+    lon: 6.737
+    soort: plaats
+  - id: kamerijk
+    naam: Kamerijk
+    alternatief: [Cambrai]
+    lat: 50.176
+    lon: 3.235
+    soort: plaats
+  - id: lier
+    naam: Lier
+    lat: 51.131
+    lon: 4.570
+    soort: plaats
+    streek: vlaanderen
+  - id: luik
+    naam: Luik
+    alternatief: [Liège]
+    lat: 50.633
+    lon: 5.567
+    soort: plaats
+  - id: maastricht
+    naam: Maastricht
+    lat: 50.851
+    lon: 5.691
+    soort: plaats
+  - id: maubeuge
+    naam: Maubeuge
+    lat: 50.277
+    lon: 3.973
+    soort: plaats
+  - id: mechelen
+    naam: Mechelen
+    lat: 51.026
+    lon: 4.478
+    soort: plaats
+    streek: vlaanderen
+  - id: meldert
+    naam: Meldert
+    lat: 50.906
+    lon: 4.825
+    soort: plaats
+  - id: mesen
+    naam: Mesen
+    alternatief: [Messines]
+    lat: 50.766
+    lon: 2.898
+    soort: plaats
+    streek: vlaanderen
+  - id: nijvel
+    naam: Nijvel
+    alternatief: [Nivelles]
+    lat: 50.597
+    lon: 4.328
+    soort: plaats
+  - id: noordwijk
+    naam: Noordwijk
+    lat: 52.236
+    lon: 4.446
+    soort: plaats
+  - id: noyon
+    naam: Noyon
+    lat: 49.582
+    lon: 3.001
+    soort: plaats
+  - id: odilienberg
+    naam: Sint Odiliënberg
+    alternatief: [Odiliënberg]
+    lat: 51.139
+    lon: 6.003
+    soort: plaats
+  - id: oirschot
+    naam: Oirschot
+    lat: 51.505
+    lon: 5.313
+    soort: plaats
+  - id: rath-melsigi
+    naam: Rath Melsigi
+    lat: 52.770
+    lon: -6.850
+    soort: plaats
+  - id: rhenen
+    naam: Rhenen
+    lat: 51.959
+    lon: 5.568
+    soort: plaats
+  - id: saeckingen
+    naam: Säckingen
+    alternatief: [Bad Säckingen]
+    lat: 47.554
+    lon: 7.949
+    soort: plaats
+  - id: sint-oedenrode
+    naam: Sint-Oedenrode
+    lat: 51.563
+    lon: 5.460
+    soort: plaats
+  - id: sint-truiden
+    naam: Sint-Truiden
+    lat: 50.817
+    lon: 5.186
+    soort: plaats
+  - id: stavelot
+    naam: Stavelot
+    lat: 50.395
+    lon: 5.931
+    soort: plaats
+  - id: stavoren
+    naam: Stavoren
+    lat: 52.885
+    lon: 5.359
+    soort: plaats
+    streek: frisia
+  - id: susteren
+    naam: Susteren
+    lat: 51.064
+    lon: 5.852
+    soort: plaats
+  - id: temse
+    naam: Temse
+    lat: 51.128
+    lon: 4.214
+    soort: plaats
+    streek: vlaanderen
+  - id: terwaan
+    naam: Terwaan
+    alternatief: [Thérouanne]
+    lat: 50.636
+    lon: 2.210
+    soort: plaats
+  - id: tongeren
+    naam: Tongeren
+    lat: 50.781
+    lon: 5.464
+    soort: plaats
+  - id: utrecht
+    naam: Utrecht
+    lat: 52.091
+    lon: 5.121
+    soort: plaats
+  - id: velsen
+    naam: Velsen
+    lat: 52.460
+    lon: 4.650
+    soort: plaats
+  - id: westervoort
+    naam: Westervoort
+    lat: 51.963
+    lon: 5.973
+    soort: plaats
+  - id: wormhout
+    naam: Wormhout
+    lat: 50.881
+    lon: 2.493
+    soort: plaats
+    streek: vlaanderen

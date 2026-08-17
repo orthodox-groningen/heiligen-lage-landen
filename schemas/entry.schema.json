@@ -165,7 +165,25 @@
     },
     "locaties": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 }
+      "description": "Plaats-ids uit data/plaatsen.yaml.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]*$"
+      },
+      "uniqueItems": true
+    },
+    "rustplaats": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Waar het lichaam traditioneel rust. Geen reliekenlijst.",
+      "required": ["plaats"],
+      "properties": {
+        "plaats": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "toelichting": { "type": "string" }
+      }
     },
     "periode": { "type": "string" },
     "lage_landen": { "type": "boolean" },

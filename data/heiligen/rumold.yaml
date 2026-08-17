@@ -23,7 +23,10 @@ titels:
   - Patroon van Mechelen
 periode: "7e eeuw?"
 locaties:
-  - Mechelen
+  - mechelen
+rustplaats:
+  plaats: mechelen
+  toelichting: "Sint-Romboutskathedraal"
 icoon:
   bestand: iconen/rumold.jpg
   rechten: ok

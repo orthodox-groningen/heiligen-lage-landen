@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - temse
 selectie: voldoet
 selectie_toelichting: "Temse."
 namen:
@@ -14,8 +16,6 @@ datum:
   stijl: gregoriaans
 titels:
 - Maagd
-locaties:
-- België
 periode: '772'
 samenvatting: 'Heilige van de Lage Landen: Amalberga van Temse. Maagd.'
 referenties:

@@ -3,6 +3,9 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - maastricht
+  - stavelot
 selectie: voldoet
 selectie_toelichting: "Maastricht / Stavelot."
 namen:

@@ -21,8 +21,11 @@ titels:
   - Abdis van Andenne
 periode: "693/694"
 locaties:
-  - Andenne
-  - Nijvel
+  - andenne
+  - nijvel
+rustplaats:
+  plaats: andenne
+  toelichting: "Abdij van Andenne"
 icoon:
   bestand: iconen/begga.jpg
   rechten: ok

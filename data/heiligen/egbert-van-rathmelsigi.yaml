@@ -3,6 +3,8 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
+locaties:
+  - rath-melsigi
 selectie: kandidaat-schrappen
 selectie_toelichting: "Rath Melsigi (Ierland); zond missionarissen naar Frisia, zelf niet in de Lage Landen."
 namen:
