@@ -823,7 +823,7 @@ dagen:
   apostel:
   - ref: Ef. 4:17-25
   evangelie:
-  - ref: Mark. 12:1-12/ =>
+  - ref: Mark. 12:1-12
 - periode: na_pinksteren
   week: 17
   weekdag: 6
@@ -1269,8 +1269,7 @@ dagen:
   week: 26
   weekdag: 6
   apostel:
-  - ref: Gal. 3:8-12/ {3:11 = Rom.1:17*}Совп. с сб. перед Рожд.вместе с Авраамом, поверившим Богу, получат
-      благословение все, кто верит; кто полагается на дела Закона-под проклятием
+  - ref: Gal. 3:8-12
   evangelie:
   - ref: Luc. 9:57-62
 - periode: na_pinksteren
@@ -1326,7 +1325,7 @@ dagen:
   week: 27
   weekdag: 7
   apostel:
-  - ref: Ef. 6:10-17/то же в сб. по Богоявл."Облекитесь во всеоружие Божие"
+  - ref: Ef. 6:10-17
   evangelie:
   - ref: Luc. 13:10-17
 - periode: na_pinksteren
@@ -1377,7 +1376,7 @@ dagen:
   apostel:
   - ref: Kol. 1:12-18
   evangelie:
-  - ref: Luc. 14:16-24/X
+  - ref: Luc. 14:16-24
 - periode: na_pinksteren
   week: 29
   weekdag: 1
@@ -1424,7 +1423,7 @@ dagen:
   week: 29
   weekdag: 7
   apostel:
-  - ref: Kol. 3:4-11/X
+  - ref: Kol. 3:4-11
   evangelie:
   - ref: Luc. 17:12-19
 - periode: na_pinksteren
@@ -1466,9 +1465,9 @@ dagen:
   week: 30
   weekdag: 6
   apostel:
-  - ref: Ef. 5:1-8/ подраж-е Богу, жертва Христа, грех, дети света
+  - ref: Ef. 5:1-8
   evangelie:
-  - ref: Luc. 14:1-11/ исц. в сб, возвышающийся будет унижен...
+  - ref: Luc. 14:1-11
 - periode: na_pinksteren
   week: 30
   weekdag: 7
@@ -1522,7 +1521,7 @@ dagen:
   week: 31
   weekdag: 7
   apostel:
-  - ref: 1 Tim. 1:15-17/*
+  - ref: 1 Tim. 1:15-17
   evangelie:
   - ref: Luc. 18:35-43
 - periode: na_pinksteren

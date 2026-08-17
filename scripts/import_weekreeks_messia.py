@@ -72,7 +72,12 @@ def translate_ref(raw: str) -> str | None:
             text = text[:idx]
     text = ZACALO_TAIL.sub("", text)
     text = re.sub(r"https?://\S+", "", text)
+    text = re.sub(r"\{[^}]*\}", "", text)
     text = re.sub(r"\([^)]*\)", "", text)
+    slash = text.find("/")
+    if slash >= 0:
+        text = text[:slash]
+    text = re.sub(r"[А-Яа-яЁё].*", "", text)
     text = text.translate(DASHES)
     text = re.sub(r"\s+", " ", text).strip(" ;,")
     if not text:

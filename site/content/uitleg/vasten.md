@@ -9,9 +9,9 @@ Orthodox vasten is een manier van eten en bidden die de Kerk het jaar door
 voorschrijft: geen vlees, vaak ook geen zuivel, vis, wijn of olie. Wat
 precies mag, hangt van de dag af. Op *Vandaag* en op een
 [datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat **één** vastenregel
-per dag. Er worden geen twee vasten tegelijk getoond: als een dag in de
-Grote Vasten valt, is dat het vasten van die dag, niet nog eens het
-wekelijkse vrijdagvasten.
+per dag, als kort label naast de knop Nieuw/Oud. Er worden geen twee vasten
+tegelijk getoond: als een dag in de Grote Vasten valt, is dat het vasten
+van die dag, niet nog eens het wekelijkse vrijdagvasten.
 
 Deze pagina is bedoeld om samen met de clerus te lezen. Zij beschrijft waar
 de regels vandaan komen en hoe de kalender ze toepast. Het is geen biechtregel.

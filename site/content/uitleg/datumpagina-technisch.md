@@ -31,14 +31,20 @@ en `period_occurrences` (periodes). Wijzig die JSON **niet** met de hand;
 
 ## Wat er op een dag komt
 
-Op de burgerlijke datum van dat jaar:
+Op de burgerlijke datum van dat jaar, in deze volgorde:
 
-1. Vaste feesten en heiligen waarvan de feestdatum (Nieuw) of de
-   burgerlijke vierdatum (Oud) op die dag valt.
-2. Paascyclus-dagen waarvan de berekende datum in dat jaar die dag is
-   (onafhankelijk van Nieuw/Oud).
-3. Vastenperiodes die die dag dekken, plus wekelijks vasten als er geen
-   periode of vastenvrije week is.
+1. Vastenbadge (effectief niveau) direct naast Nieuw/Oud; bij een named
+   periode de periodenaam tussen haakjes, met link naar de entry-pagina
+   (`/vasten/…/` of `/feesten/…/` voor vastenvrije weken).
+2. Dagtype: naam van het feest (`soort: feest`, geen periode), anders
+   `daglabel` uit `lezingen-dagen.json` (bijv. «23e donderdag na Pinksteren»).
+3. Apostel en Evangelie (zonder kop «Lezingen»).
+4. Heiligen van die dag, met `icoon` uit `entries.json` als dat veld gezet is.
+
+Brondata voor (1) en (4): vaste feesten en heiligen op feestdatum (Nieuw)
+of burgerlijke vierdatum (Oud); paascyclus op de berekende datum; vastenperiodes
+die die dag dekken, plus wekelijks vasten als er geen periode of vastenvrije
+week is.
 
 Effectief vastenniveau: `scripts/vasten.py` / dezelfde mengregel in
 `calendar.js`. Zie [Vasten (technisch)]({{% ref "/uitleg/vasten-technisch" %}}).

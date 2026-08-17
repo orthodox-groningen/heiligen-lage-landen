@@ -538,7 +538,7 @@ def liturgische_daglabel(
         return f"{_ordinal_nl(n)} zondag van Pascha"
     if 0 < offset < 49:
         week = offset // 7 + 1
-        return f"{wd_name} van de {_ordinal_nl(week)} week van Pascha"
+        return f"{_ordinal_nl(week)} {wd_name.lower()} van Pascha"
 
     pentecost = pascha + timedelta(days=49)
     if civil >= pentecost:
@@ -549,14 +549,14 @@ def liturgische_daglabel(
         if week and wd == 7:
             return f"{_ordinal_nl(week)} zondag na Pinksteren"
         if week:
-            return f"{wd_name} van de {_ordinal_nl(week)} week na Pinksteren"
+            return f"{_ordinal_nl(week)} {wd_name.lower()} na Pinksteren"
 
     if offset < 0:
         # Lent weekdays
         if -48 <= offset <= -9:
             rel = offset - (-48)
             week = rel // 7 + 1
-            return f"{wd_name} van de {_ordinal_nl(week)} week van de Grote Vasten"
+            return f"{_ordinal_nl(week)} {wd_name.lower()} van de Grote Vasten"
         if -6 <= offset <= -2:
             return f"Heilige grote {wd_name.lower()}"
         if -70 < offset < 0 and weekday == 7:
@@ -638,8 +638,8 @@ def _resolve_weekreeks(
         if theo is not None:
             wd_name = WEEKDAG_NL[weekday]
             daglabel = (
-                f"{wd_name} van de {_ordinal_nl(table_week_for_label)} "
-                "week na Pinksteren (Theofanie-otstupka)"
+                f"{_ordinal_nl(table_week_for_label)} {wd_name.lower()} "
+                "na Pinksteren (Theofanie-otstupka)"
             )
 
         return LezingenResultaat(

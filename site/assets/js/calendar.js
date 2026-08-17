@@ -326,6 +326,19 @@
     return line;
   }
 
+  function namedVastenPeriode(entry) {
+    if (!entry || isWeeklyEntry(entry) || !isPeriodEntry(entry)) return null;
+    return entry;
+  }
+
+  function packVasten(niveau, tekstOpts, periodeEntry) {
+    return {
+      niveau,
+      tekst: vastenTekst(tekstOpts),
+      periode: namedVastenPeriode(periodeEntry),
+    };
+  }
+
   function periodDailyBase(entry, weekday, inGroteWeek, mmdd) {
     const tag = entry.vastenniveau || "streng";
     if (tag === "vrij") return { niveau: "vrij", weekend: false };
@@ -375,10 +388,11 @@
 
     const vrijPeriods = periods.filter((e) => e.vastenniveau === "vrij");
     if (vrijPeriods.length) {
-      return {
-        niveau: "vrij",
-        tekst: vastenTekst({ niveau: "vrij", bron: entryNaam(vrijPeriods[0]) }),
-      };
+      return packVasten(
+        "vrij",
+        { niveau: "vrij", bron: entryNaam(vrijPeriods[0]) },
+        vrijPeriods[0]
+      );
     }
 
     const inGroteWeek = periods.some((e) => e.id === "grote-week");
@@ -413,16 +427,17 @@
       if (inGroteWeek && VASTEN_COMPARE_RANK[effective] > VASTEN_COMPARE_RANK.wijn_olie) {
         effective = "wijn_olie";
       }
-      return {
-        niveau: effective,
-        tekst: vastenTekst({
+      return packVasten(
+        effective,
+        {
           niveau: effective,
           bron: entryNaam(baseEntry),
           versoepeldDoor: versoepeld ? entryNaam(versoepeld) : null,
           weekend: weekend && !versoepeld,
           weekday,
-        }),
-      };
+        },
+        baseEntry
+      );
     }
 
     const tightening = dayFeasts.filter((e) =>
@@ -449,10 +464,7 @@
           weekly[0].vastenniveau || "wijn_olie"
         );
       }
-      return {
-        niveau,
-        tekst: vastenTekst({ niveau, bron: entryNaam(chosen) }),
-      };
+      return packVasten(niveau, { niveau, bron: entryNaam(chosen) }, null);
     }
 
     if (weekly.length) {
@@ -470,40 +482,44 @@
         const feastLevel = chosen.vastenniveau;
         const effective = moreLenientNiveau(weeklyLevel, feastLevel);
         if (effective === "vrij") {
-          return {
-            niveau: "vrij",
-            tekst: vastenTekst({ niveau: "vrij", bron: entryNaam(chosen) }),
-          };
+          return packVasten(
+            "vrij",
+            { niveau: "vrij", bron: entryNaam(chosen) },
+            chosen
+          );
         }
         if (VASTEN_COMPARE_RANK[feastLevel] > VASTEN_COMPARE_RANK[weeklyLevel]) {
-          return {
-            niveau: effective,
-            tekst: vastenTekst({
+          return packVasten(
+            effective,
+            {
               niveau: effective,
               bron: entryNaam(weekly[0]),
               versoepeldDoor: entryNaam(chosen),
-            }),
-          };
+            },
+            chosen
+          );
         }
       }
-      return {
-        niveau: weeklyLevel,
-        tekst: vastenTekst({
+      return packVasten(
+        weeklyLevel,
+        {
           niveau: weeklyLevel,
           bron: entryNaam(weekly[0]),
-        }),
-      };
+        },
+        null
+      );
     }
 
     const vrijFeasts = relaxing.filter((e) => e.vastenniveau === "vrij");
     if (vrijFeasts.length) {
-      return {
-        niveau: "vrij",
-        tekst: vastenTekst({
+      return packVasten(
+        "vrij",
+        {
           niveau: "vrij",
           bron: entryNaam(vrijFeasts[0]),
-        }),
-      };
+        },
+        vrijFeasts[0]
+      );
     }
     return null;
   }
@@ -1140,24 +1156,72 @@
     return ((root[stil] || {})[String(keyYear)] || {})[keyMmdd] || null;
   }
 
+  function isDayTypeFeast(entry) {
+    if (!entry || entry.soort !== "feest") return false;
+    if (isWeeklyEntry(entry) || isPeriodEntry(entry)) return false;
+    return true;
+  }
+
+  function entryHref(entry) {
+    return assetUrl((entry.url || "").replace(/^\//, ""));
+  }
+
+  function renderVastenClusterHtml(vasten) {
+    const niveau = (vasten && vasten.niveau) || "vrij";
+    const periode = vasten && vasten.periode;
+    const periodeNaam = periode ? entryNaam(periode) : "";
+    let periodeHtml = "";
+    if (periode && periodeNaam) {
+      const href = entryHref(periode);
+      periodeHtml =
+        ` <span class="today-vasten-periode">(` +
+        `<a href="${href}">${escapeHtml(periodeNaam)}</a>)</span>`;
+    }
+    return (
+      `<span class="today-vasten">` +
+      vastenBadgeHtml(niveau) +
+      periodeHtml +
+      `</span>`
+    );
+  }
+
+  function renderDagtypeHtml(matched, lez) {
+    const feasts = (matched || [])
+      .filter(isDayTypeFeast)
+      .filter((e) => entryNaam(e));
+    feasts.sort((a, b) => {
+      const ac = a.cyclus === "paascyclus" ? 0 : 1;
+      const bc = b.cyclus === "paascyclus" ? 0 : 1;
+      if (ac !== bc) return ac - bc;
+      return entryNaam(a).localeCompare(entryNaam(b), "nl");
+    });
+    let inner;
+    if (feasts.length) {
+      inner = feasts
+        .map(
+          (e) =>
+            `<a href="${entryHref(e)}">${escapeHtml(entryNaam(e))}</a>`
+        )
+        .join(" · ");
+    } else if (lez && lez.daglabel) {
+      inner = escapeHtml(lez.daglabel);
+    } else {
+      return "";
+    }
+    return `<p class="today-dagtype">${inner}</p>`;
+  }
+
   function renderLezingenHtml(lez) {
     if (!lez || (lez.status !== "gevonden" && lez.status !== "geen_liturgie")) {
-      const label = lez && lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "";
       return (
         `<div class="day-lezingen" id="day-lezingen">` +
-        `<h2 class="day-lezingen-title">Lezingen</h2>` +
-        label +
-        `<p class="muted">Geen rijádovoe of feestoverride voor deze dag. ` +
-        `${achtergrondLink("lezingen", "Uitleg lezingen")}</p></div>`
+        `<p class="muted">Geen Apostel of Evangelie van de dag bekend.</p></div>`
       );
     }
     if (lez.status === "geen_liturgie") {
       return (
         `<div class="day-lezingen" id="day-lezingen">` +
-        `<h2 class="day-lezingen-title">Lezingen</h2>` +
-        (lez.daglabel ? `<p class="day-lezingen-label">${lez.daglabel}</p>` : "") +
-        `<p class="muted">Geen liturgie met Apostel/Evangelie van de dag. ` +
-        `${achtergrondLink("lezingen", "Uitleg")}</p></div>`
+        `<p class="muted">Geen liturgie met Apostel/Evangelie van de dag.</p></div>`
       );
     }
     const apostel = (lez.apostel || [])
@@ -1168,31 +1232,43 @@
       .map((e) => e.ref)
       .filter(Boolean)
       .join("; ");
-    const regels = (lez.regels || []).join(", ");
-    const regelsHtml = regels
-      ? ` <span class="meta">(${regels} · ${achtergrondLink("lezingen", "uitleg")})</span>`
-      : ` ${achtergrondLink("lezingen", "Uitleg")}`;
-    const labelHtml = lez.daglabel
-      ? `<p class="day-lezingen-label">${lez.daglabel}</p>`
-      : "";
-    let samenvalHtml = "";
-    if (lez.modus === "toevoegen") {
-      samenvalHtml =
-        `<p class="muted day-lezingen-samenval">Samenval: rijádovoe én feestlezing.</p>`;
-    } else if (lez.modus === "vervangen" && lez.rijadovoe) {
-      samenvalHtml =
-        `<p class="muted day-lezingen-samenval">Feestlezing vervangt de rijádovoe van de dag.</p>`;
+    if (!apostel && !evangelie) {
+      return (
+        `<div class="day-lezingen" id="day-lezingen">` +
+        `<p class="muted">Geen Apostel of Evangelie van de dag bekend.</p></div>`
+      );
     }
     return (
       `<div class="day-lezingen" id="day-lezingen">` +
-      `<h2 class="day-lezingen-title">Lezingen${regelsHtml}</h2>` +
-      labelHtml +
-      samenvalHtml +
       `<ul>` +
-      (apostel ? `<li><strong>Apostel:</strong> ${apostel}</li>` : "") +
-      (evangelie ? `<li><strong>Evangelie:</strong> ${evangelie}</li>` : "") +
+      (apostel ? `<li><strong>Apostel:</strong> ${escapeHtml(apostel)}</li>` : "") +
+      (evangelie
+        ? `<li><strong>Evangelie:</strong> ${escapeHtml(evangelie)}</li>`
+        : "") +
       `</ul></div>`
     );
+  }
+
+  function renderHeiligenHtml(matched) {
+    const saints = (matched || [])
+      .filter((e) => e.soort === "heilige")
+      .filter((e) => entryNaam(e))
+      .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
+    if (!saints.length) return "";
+    const items = saints
+      .map((e) => {
+        const icoon = e.icoon
+          ? `<img class="today-heilige-icoon" src="${assetUrl(e.icoon.replace(/^\//, ""))}" alt="" width="32" height="32">`
+          : "";
+        return (
+          `<li>` +
+          icoon +
+          `<a href="${entryHref(e)}">${escapeHtml(entryNaam(e))}</a>` +
+          `</li>`
+        );
+      })
+      .join("");
+    return `<ul class="today-heiligen">${items}</ul>`;
   }
 
   function renderToday(entries, style) {
@@ -1200,46 +1276,29 @@
     if (!cardEntries) return;
     updateHeading(style);
     const view = getViewDate(style);
-    const toolbar =
-      `<div class="today-card-bar">` +
-      styleToggleHtml("Kalenderstijl Nieuw/Oud") +
-      `</div>`;
     let bodyHtml;
     if (!mmddExistsInYear(view.mmdd, view.year)) {
-      bodyHtml = `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
+      bodyHtml =
+        `<div class="today-card-bar">` +
+        styleToggleHtml("Kalenderstijl Nieuw/Oud") +
+        `</div>` +
+        `<p>${label(view.mmdd)} valt niet in ${view.year}.</p>`;
     } else {
       const matched = entriesOnMmdd(entries, view.mmdd, style, view.year);
       const weekday = isoWeekdayFromMmdd(view.mmdd, view.year);
-      const vasten = mixVastenniveau(matched, weekday, view.mmdd);
-      const vastenHtml = vasten
-        ? `<p class="vasten-indicatie">${achtergrondLink("vasten", vasten.tekst)}</p>`
-        : "";
-      const lezHtml = renderLezingenHtml(
-        lezingenForDay(view.year, view.mmdd, style)
-      );
-      if (!matched.length) {
-        bodyHtml =
-          vastenHtml +
-          lezHtml +
-          "<p>Geen feest, heilige of vasten uit deze collectie op deze kalenderdatum.</p>";
-      } else {
-        bodyHtml =
-          vastenHtml +
-          lezHtml +
-          "<ul>" +
-          matched
-            .map((e) => {
-              const kind = kindLabel(e);
-              const summary = e.samenvatting
-                ? `<div class="muted">${e.samenvatting}</div>`
-                : "";
-              return `<li><a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a> <span class="meta">(${kind})</span>${summary}</li>`;
-            })
-            .join("") +
-          "</ul>";
-      }
+      const vasten =
+        mixVastenniveau(matched, weekday, view.mmdd) || { niveau: "vrij" };
+      const lez = lezingenForDay(view.year, view.mmdd, style);
+      bodyHtml =
+        `<div class="today-card-bar">` +
+        styleToggleHtml("Kalenderstijl Nieuw/Oud") +
+        renderVastenClusterHtml(vasten) +
+        `</div>` +
+        renderDagtypeHtml(matched, lez) +
+        renderLezingenHtml(lez) +
+        renderHeiligenHtml(matched);
     }
-    cardEntries.innerHTML = toolbar + bodyHtml;
+    cardEntries.innerHTML = bodyHtml;
     setStyle(style);
     wireInfoTips(cardEntries);
     if (

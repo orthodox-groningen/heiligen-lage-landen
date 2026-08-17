@@ -217,3 +217,36 @@ def test_spec_body_for_uitleg_strips_examples() -> None:
     body = spec_body_for_uitleg()
     assert "```lezingen-voorbeeld" not in body
     assert "### R2" in body or "## Regels" in body
+
+
+def test_liturgische_daglabel_na_pinksteren_en_triodion() -> None:
+    from datetime import timedelta
+
+    from lezingen import liturgische_daglabel
+
+    pascha = orthodox_pascha(2026)
+    pentecost = pascha + timedelta(days=49)
+    thu23 = pentecost + timedelta(days=22 * 7 + 4)
+    assert liturgische_daglabel(
+        thu23.year, mmdd_from_date(thu23), "nieuw"
+    ) == "23e donderdag na Pinksteren"
+    verloren = pascha + timedelta(days=-63)
+    assert liturgische_daglabel(
+        verloren.year, mmdd_from_date(verloren), "nieuw"
+    ) == "Zondag van de verloren zoon"
+
+
+def test_weekreeks_galaten_zaterdag_26_is_schone_ref() -> None:
+    import yaml
+
+    raw = yaml.safe_load(
+        (ROOT / "data" / "lezingen" / "weekreeks.yaml").read_text(encoding="utf-8")
+    )
+    row = next(
+        r
+        for r in raw["dagen"]
+        if r["periode"] == "na_pinksteren"
+        and r["week"] == 26
+        and r["weekdag"] == 6
+    )
+    assert row["apostel"][0]["ref"] == "Gal. 3:8-12"

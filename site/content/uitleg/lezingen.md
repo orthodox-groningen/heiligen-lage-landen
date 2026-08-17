@@ -143,8 +143,8 @@ die is geraadpleegd. Zo blijft overleg met de clerus navolgbaar.
 
 ## Wat u op de site ziet
 
-- Op **Vandaag** en de **datumpagina**: Apostel en Evangelie van die dag, met
-  een korte aanduiding van de liturgische dag waar mogelijk.
+- Op **Vandaag** en de **datumpagina**: Apostel en Evangelie van die dag,
+  onder de aanduiding van de liturgische dag (of de feestdag).
 - Op het **lezingenrooster**: een overzicht over een langere periode.
 
 Klopt iets niet met uw lokale typikon of BU, dan is dat precies het gesprek

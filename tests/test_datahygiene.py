@@ -53,3 +53,21 @@ def test_titels_zonder_engels_en_zonder_icoon_in_parochie() -> None:
 
 def test_catalogus_valideert_na_hygiene() -> None:
     assert collect_content_errors(load_entries()) == []
+
+
+def test_weekreeks_refs_zonder_bronnotities() -> None:
+    import re
+
+    import yaml
+
+    raw = yaml.safe_load(
+        (ROOT / "data" / "lezingen" / "weekreeks.yaml").read_text(encoding="utf-8")
+    )
+    dirty = []
+    for row in raw["dagen"]:
+        for key in ("apostel", "evangelie"):
+            for item in row.get(key) or []:
+                ref = str(item.get("ref") or "")
+                if re.search(r"[А-Яа-яЁё/{}]", ref):
+                    dirty.append(ref)
+    assert dirty == []
