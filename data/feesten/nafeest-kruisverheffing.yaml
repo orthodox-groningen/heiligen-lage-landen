@@ -1,0 +1,28 @@
+id: nafeest-kruisverheffing
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van de Kruisverheffing
+  alternatief:
+  - Nafeest van de Verheffing van het Kruis
+  - Teruggave Kruisverheffing
+datum:
+  van: "09-15"
+  tot: "09-21"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 21 september.
+verhaal: |
+  Na 14 september blijft de Kruisverheffing liturgisch aanwezig tot de teruggave op 21 september.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Kruisverheffing"
+    url: "https://orthodoxwiki.org/Exaltation_of_the_Cross"
+    geraadpleegd: "2026-08-17"

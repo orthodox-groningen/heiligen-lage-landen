@@ -1,0 +1,27 @@
+id: voorfeest-kruisverheffing
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+vastenniveau: streng
+observances:
+  - feest
+  - vasten
+namen:
+  primair: Voorfeest van de Kruisverheffing
+  alternatief:
+  - Voorfeest van de Verheffing van het Kruis
+datum:
+  waarde: "09-13"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Kruisverheffing (14 september); in het typikon een vastendag.
+verhaal: |
+  Op 13 september bereidt de Kerk de Kruisverheffing voor. In de Moskou-praktijk is deze dag een vastendag, net als het feest zelf.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Kruisverheffing"
+    url: "https://orthodoxwiki.org/Exaltation_of_the_Cross"
+    geraadpleegd: "2026-08-17"

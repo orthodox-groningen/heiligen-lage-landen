@@ -1,0 +1,23 @@
+id: voorfeest-aankondiging
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van de Aankondiging
+  alternatief:
+  - Voorfeest van de Annunciatie
+datum:
+  waarde: "03-24"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Aankondiging (25 maart).
+verhaal: |
+  De Aankondiging heeft één voorfeestdag, 24 maart. In de Grote Vasten of de Grote Week gelden bijzondere typikon-regels; de datum in de jaarcyclus blijft 24 maart.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Aankondiging"
+    url: "https://orthodoxwiki.org/Annunciation"
+    geraadpleegd: "2026-08-17"

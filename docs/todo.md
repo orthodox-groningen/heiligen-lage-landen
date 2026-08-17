@@ -13,8 +13,9 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
       automatisch (`docs/inventaris.md`, `/beheer/selectie/`).
 - [x] Kerninhoud: ontbrekenden + Johannes van Shanghai + Sophrony + kernset
       met betekenis, verhaal, referenties; `curated` waar de lat gehaald wordt.
-- [ ] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
-      zondagen vóór Kerst waar modelbaar.
+- [x] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
+      teruggave Hemelvaart/Pinksteren; zondagen vóór Kerst nog niet
+      (geen weekdag-relatief aan MM-DD).
 - [ ] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
 - [ ] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
       `bronnen.yaml` opschonen.

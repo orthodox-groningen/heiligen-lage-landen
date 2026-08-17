@@ -1,0 +1,29 @@
+id: nafeest-kerst
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+vastenniveau: vrij
+namen:
+  primair: Nafeest van Kerst
+  alternatief:
+  - Nafeest van de Geboorte van Christus
+  - Teruggave van Kerst
+datum:
+  van: "12-26"
+  tot: "12-31"
+  stijl: juliaans
+samenvatting: |
+  Nafeest van Kerst tot en met de teruggave op 31 december.
+verhaal: |
+  Na 25 december blijft Kerst liturgisch aanwezig tot de teruggave op 31 december. 26 december is tegelijk de synaxis van de Moeder Gods. 1 januari is de Besnijdenis; daarna begint het voorfeest van Theofanie.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Geboorte van Christus"
+    url: "https://orthodoxwiki.org/Nativity"
+    geraadpleegd: "2026-08-17"

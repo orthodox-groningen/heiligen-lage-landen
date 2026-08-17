@@ -1,0 +1,25 @@
+id: voorfeest-kerst
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van Kerst
+  alternatief:
+  - Voorfeest van de Geboorte van Christus
+  - Voorfeest Kerstfeest
+datum:
+  van: "12-20"
+  tot: "12-24"
+  stijl: juliaans
+samenvatting: |
+  Voorfeest van Kerst, 20–24 december, in het Geboortevasten.
+verhaal: |
+  Anders dan de meeste van de twaalf heeft Kerst vijf voorfeestdagen (20–24 december). 24 december is de vooravond (paramony). Deze dagen vallen in het Geboortevasten; het vastenniveau volgt die periode.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Geboorte van Christus"
+    url: "https://orthodoxwiki.org/Nativity"
+    geraadpleegd: "2026-08-17"

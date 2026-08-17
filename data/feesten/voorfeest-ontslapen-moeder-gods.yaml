@@ -1,0 +1,23 @@
+id: voorfeest-ontslapen-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van het Ontslapen van de Moeder Gods
+  alternatief:
+  - Voorfeest Ontslapen van de Theotokos
+datum:
+  waarde: "08-14"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór het Ontslapen (15 augustus); laatste dag van het Ontslapen-vasten.
+verhaal: |
+  Het Ontslapen heeft één voorfeestdag, 14 augustus. Die dag sluit tegelijk het Ontslapen-vasten af; het vastenniveau volgt die periode.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Ontslapen"
+    url: "https://orthodoxwiki.org/Dormition"
+    geraadpleegd: "2026-08-17"

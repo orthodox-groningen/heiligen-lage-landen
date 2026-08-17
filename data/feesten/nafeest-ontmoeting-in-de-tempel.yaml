@@ -1,0 +1,28 @@
+id: nafeest-ontmoeting-in-de-tempel
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van de Ontmoeting in de Tempel
+  alternatief:
+  - Nafeest van de Hypapante
+  - Teruggave Ontmoeting
+datum:
+  van: "02-03"
+  tot: "02-09"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 9 februari (volle jaarcyclus).
+verhaal: |
+  Na 2 februari blijft de Ontmoeting liturgisch aanwezig tot de teruggave op 9 februari. Valt het feest in de Boterweek of de Grote Vasten, dan bekort het typikon dit nafeest; deze kalender toont de volle jaarcyclus-periode.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Ontmoeting in de tempel"
+    url: "https://orthodoxwiki.org/Presentation"
+    geraadpleegd: "2026-08-17"

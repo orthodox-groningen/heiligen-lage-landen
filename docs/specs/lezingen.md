@@ -175,6 +175,10 @@ Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
 of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
 een apart `theofanie_offset`-veld kan later worden toegevoegd.
 
+**Zondagen vóór Kerst** (Voorvaderen; Heilige Vaderen): geen override. Die
+dagen zijn de tweede en de laatste zondag vóór 25 december — geen vaste
+MM-DD. Tot het datamodel «zondag vóór MM-DD» kent, geen gok-overrides.
+
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Silvester e.d.).
 
@@ -424,4 +428,64 @@ bron:
   label: "Azbyka / Bogaiskov — Богоявленская отступка (N=5, eerste herhalingsweek = 30)"
   url: "https://azbyka.ru/otstupka-i-prestupka"
   geraadpleegd: "2026-08-16"
+```
+
+```lezingen-voorbeeld
+id: pokrov-nieuw
+status: implemented
+jaar: 2026
+mmdd: "10-01"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Heb. 9:1-7"
+  evangelie:
+    - ref: "Luc. 10:38-42; 11:27-28"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "OCA / Azbyka — Pokrov (1 okt.)"
+  url: "https://www.oca.org/saints/lives/2024/10/01/102824-the-protection-of-our-most-holy-lady-the-mother-of-god-and-ever"
+  geraadpleegd: "2026-08-17"
+```
+
+```lezingen-voorbeeld
+id: synaxis-moeder-gods-nieuw
+status: implemented
+jaar: 2026
+mmdd: "12-26"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Heb. 2:11-18"
+  evangelie:
+    - ref: "Matt. 2:13-23"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "OCA / Azbyka — Synaxis Moeder Gods (26 dec.)"
+  url: "https://www.oca.org/saints/lives/2024/12/26/103616-synaxis-of-the-most-holy-mother-of-god"
+  geraadpleegd: "2026-08-17"
+```
+
+```lezingen-voorbeeld
+id: synaxis-johannes-doper-nieuw
+status: implemented
+jaar: 2026
+mmdd: "01-07"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Hand. 19:1-8"
+  evangelie:
+    - ref: "Joh. 1:29-34"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "OCA / Azbyka — Synaxis Johannes de Doper (7 jan.)"
+  url: "https://www.oca.org/saints/lives/2024/01/07/100109-synaxis-of-the-holy-glorious-prophet-forerunner-and-baptist-john"
+  geraadpleegd: "2026-08-17"
 ```

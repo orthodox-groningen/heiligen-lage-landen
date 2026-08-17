@@ -1,0 +1,23 @@
+id: voorfeest-geboorte-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van de Geboorte van de Moeder Gods
+  alternatief:
+  - Voorfeest Geboorte van de Theotokos
+datum:
+  waarde: "09-07"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Geboorte van de Moeder Gods (8 september).
+verhaal: |
+  Het typikon geeft de twaalf grote feesten een voorfeest. De Geboorte van de Moeder Gods heeft één voorbereidingsdag, 7 september; het feest zelf volgt op 8 september.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Geboorte van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Nativity_of_the_Theotokos"
+    geraadpleegd: "2026-08-17"

@@ -1,0 +1,28 @@
+id: nafeest-tempelgang-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van de Tempelgang van de Moeder Gods
+  alternatief:
+  - Nafeest Tempelgang van de Theotokos
+  - Teruggave Tempelgang
+datum:
+  van: "11-22"
+  tot: "11-25"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 25 november.
+verhaal: |
+  Na 21 november blijft de Tempelgang liturgisch aanwezig tot de teruggave op 25 november.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Tempelgang van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Entrance_of_the_Theotokos"
+    geraadpleegd: "2026-08-17"

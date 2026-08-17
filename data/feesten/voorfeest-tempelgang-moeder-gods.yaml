@@ -1,0 +1,23 @@
+id: voorfeest-tempelgang-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van de Tempelgang van de Moeder Gods
+  alternatief:
+  - Voorfeest Tempelgang van de Theotokos
+datum:
+  waarde: "11-20"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Tempelgang van de Moeder Gods (21 november).
+verhaal: |
+  De Tempelgang heeft één voorfeestdag, 20 november.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Tempelgang van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Entrance_of_the_Theotokos"
+    geraadpleegd: "2026-08-17"

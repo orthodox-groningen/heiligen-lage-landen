@@ -664,6 +664,120 @@ entries:
     - Zuivelweek
     - Maslenitsa
     - Tyrofagie
+  nafeest-geboorte-moeder-gods:
+    primair: Nafeest van de Geboorte van de Moeder Gods
+    alternatief:
+    - Nafeest Geboorte van de Theotokos
+    - Teruggave Geboorte van de Moeder Gods
+  nafeest-hemelvaart:
+    primair: Nafeest van de Hemelvaart
+    alternatief:
+    - Nafeest Hemelvaart
+  nafeest-kerst:
+    primair: Nafeest van Kerst
+    alternatief:
+    - Nafeest van de Geboorte van Christus
+    - Teruggave van Kerst
+  nafeest-kruisverheffing:
+    primair: Nafeest van de Kruisverheffing
+    alternatief:
+    - Nafeest van de Verheffing van het Kruis
+    - Teruggave Kruisverheffing
+  nafeest-ontmoeting-in-de-tempel:
+    primair: Nafeest van de Ontmoeting in de Tempel
+    alternatief:
+    - Nafeest van de Hypapante
+    - Teruggave Ontmoeting
+  nafeest-ontslapen-moeder-gods:
+    primair: Nafeest van het Ontslapen van de Moeder Gods
+    alternatief:
+    - Nafeest Ontslapen van de Theotokos
+    - Teruggave Ontslapen
+  nafeest-tempelgang-moeder-gods:
+    primair: Nafeest van de Tempelgang van de Moeder Gods
+    alternatief:
+    - Nafeest Tempelgang van de Theotokos
+    - Teruggave Tempelgang
+  nafeest-theofanie:
+    primair: Nafeest van Theofanie
+    alternatief:
+    - Nafeest van de Doop des Heren
+    - Teruggave van Theofanie
+  nafeest-transfiguratie:
+    primair: Nafeest van de Transfiguratie
+    alternatief:
+    - Nafeest van de Verheerlijking
+    - Teruggave Transfiguratie
+  pokrov:
+    primair: Pokrov (Bescherming van de Moeder Gods)
+    alternatief:
+    - Pokrov
+    - Bescherming van de Moeder Gods
+    - Bescherming van de Theotokos
+    - Protection of the Theotokos
+  synaxis-gabriel:
+    primair: Synaxis van de aartsengel Gabriël
+    alternatief:
+    - Synaxis van Gabriël
+    - Sobor van de aartsengel Gabriël
+  synaxis-johannes-doper:
+    primair: Synaxis van Johannes de Doper
+    alternatief:
+    - Synaxis van de Voorloper
+    - Sobor van Johannes de Doper
+  synaxis-moeder-gods:
+    primair: Synaxis van de Moeder Gods
+    alternatief:
+    - Synaxis van de Theotokos
+    - Sobor van de Moeder Gods
+  teruggave-hemelvaart:
+    primair: Teruggave van de Hemelvaart
+    alternatief:
+    - Apodosis van de Hemelvaart
+  teruggave-pinksteren:
+    primair: Teruggave van Pinksteren
+    alternatief:
+    - Apodosis van Pinksteren
+    - Teruggave van de Nederdaling van de Heilige Geest
+  voorfeest-aankondiging:
+    primair: Voorfeest van de Aankondiging
+    alternatief:
+    - Voorfeest van de Annunciatie
+  voorfeest-geboorte-moeder-gods:
+    primair: Voorfeest van de Geboorte van de Moeder Gods
+    alternatief:
+    - Voorfeest Geboorte van de Theotokos
+  voorfeest-kerst:
+    primair: Voorfeest van Kerst
+    alternatief:
+    - Voorfeest van de Geboorte van Christus
+    - Voorfeest Kerstfeest
+  voorfeest-kruisverheffing:
+    primair: Voorfeest van de Kruisverheffing
+    alternatief:
+    - Voorfeest van de Verheffing van het Kruis
+  voorfeest-ontmoeting-in-de-tempel:
+    primair: Voorfeest van de Ontmoeting in de Tempel
+    alternatief:
+    - Voorfeest van de Hypapante
+    - Voorfeest Ontmoeting des Heren
+  voorfeest-ontslapen-moeder-gods:
+    primair: Voorfeest van het Ontslapen van de Moeder Gods
+    alternatief:
+    - Voorfeest Ontslapen van de Theotokos
+  voorfeest-tempelgang-moeder-gods:
+    primair: Voorfeest van de Tempelgang van de Moeder Gods
+    alternatief:
+    - Voorfeest Tempelgang van de Theotokos
+  voorfeest-theofanie:
+    primair: Voorfeest van Theofanie
+    alternatief:
+    - Voorfeest van de Doop des Heren
+    - Voorfeest Epifanie
+  voorfeest-transfiguratie:
+    primair: Voorfeest van de Transfiguratie
+    alternatief:
+    - Voorfeest van de Verheerlijking op de Thabor
 labels:
   vleesvaarwel:
     primair: Vleesvaarwel

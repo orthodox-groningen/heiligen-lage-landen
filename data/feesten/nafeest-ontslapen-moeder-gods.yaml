@@ -1,0 +1,28 @@
+id: nafeest-ontslapen-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van het Ontslapen van de Moeder Gods
+  alternatief:
+  - Nafeest Ontslapen van de Theotokos
+  - Teruggave Ontslapen
+datum:
+  van: "08-16"
+  tot: "08-23"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 23 augustus.
+verhaal: |
+  Na 15 augustus blijft het Ontslapen liturgisch aanwezig tot de teruggave op 23 augustus.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Ontslapen"
+    url: "https://orthodoxwiki.org/Dormition"
+    geraadpleegd: "2026-08-17"

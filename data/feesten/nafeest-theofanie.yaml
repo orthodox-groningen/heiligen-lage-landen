@@ -1,0 +1,28 @@
+id: nafeest-theofanie
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van Theofanie
+  alternatief:
+  - Nafeest van de Doop des Heren
+  - Teruggave van Theofanie
+datum:
+  van: "01-07"
+  tot: "01-14"
+  stijl: juliaans
+samenvatting: |
+  Nafeest van Theofanie tot en met de teruggave op 14 januari.
+verhaal: |
+  Na 6 januari blijft Theofanie liturgisch aanwezig tot de teruggave op 14 januari. 7 januari is tegelijk de synaxis van Johannes de Doper.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Theofanie"
+    url: "https://orthodoxwiki.org/Theophany"
+    geraadpleegd: "2026-08-17"

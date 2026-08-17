@@ -1,0 +1,28 @@
+id: nafeest-geboorte-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van de Geboorte van de Moeder Gods
+  alternatief:
+  - Nafeest Geboorte van de Theotokos
+  - Teruggave Geboorte van de Moeder Gods
+datum:
+  van: "09-09"
+  tot: "09-12"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 12 september.
+verhaal: |
+  Na 8 september blijft de Geboorte van de Moeder Gods liturgisch aanwezig tot de teruggave (apodosis) op 12 september. Deze kalender toont die periode als één nafeest.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Geboorte van de Moeder Gods"
+    url: "https://orthodoxwiki.org/Nativity_of_the_Theotokos"
+    geraadpleegd: "2026-08-17"

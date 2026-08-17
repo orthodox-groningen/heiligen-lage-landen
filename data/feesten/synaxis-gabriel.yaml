@@ -1,0 +1,24 @@
+id: synaxis-gabriel
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Synaxis van de aartsengel Gabriël
+  alternatief:
+  - Synaxis van Gabriël
+  - Sobor van de aartsengel Gabriël
+datum:
+  waarde: "03-26"
+  stijl: juliaans
+samenvatting: |
+  Dag na de Aankondiging: herdenking van de aartsengel Gabriël.
+verhaal: |
+  Op 26 maart viert de Kerk de synaxis van de aartsengel Gabriël, die Maria de blijde boodschap bracht. De Aankondiging heeft in het Slavische typikon geen lang nafeest; deze synaxis is de dag erna.
+referenties:
+  - label: "OrthodoxWiki — Synaxis"
+    url: "https://orthodoxwiki.org/Synaxis"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Synaxis of the Archangel Gabriel"
+    url: "https://www.oca.org/saints/lives/2024/03/26/100890-synaxis-of-the-archangel-gabriel"
+    geraadpleegd: "2026-08-17"

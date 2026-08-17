@@ -188,5 +188,9 @@ Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
 of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
 een apart `theofanie_offset`-veld kan later worden toegevoegd.
 
+**Zondagen vóór Kerst** (Voorvaderen; Heilige Vaderen): geen override. Die
+dagen zijn de tweede en de laatste zondag vóór 25 december — geen vaste
+MM-DD. Tot het datamodel «zondag vóór MM-DD» kent, geen gok-overrides.
+
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Silvester e.d.).

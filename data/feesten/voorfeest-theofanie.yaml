@@ -1,0 +1,25 @@
+id: voorfeest-theofanie
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van Theofanie
+  alternatief:
+  - Voorfeest van de Doop des Heren
+  - Voorfeest Epifanie
+datum:
+  van: "01-02"
+  tot: "01-05"
+  stijl: juliaans
+samenvatting: |
+  Voorfeest van Theofanie, 2–5 januari; 5 januari is de vooravond (paramony).
+verhaal: |
+  Theofanie heeft vier voorfeestdagen. 5 januari is de paramony, traditioneel strenger dan de dagen daarvoor. Het feest zelf valt op 6 januari.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Theofanie"
+    url: "https://orthodoxwiki.org/Theophany"
+    geraadpleegd: "2026-08-17"

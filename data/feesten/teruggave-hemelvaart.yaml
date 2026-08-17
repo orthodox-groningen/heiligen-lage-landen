@@ -1,0 +1,27 @@
+id: teruggave-hemelvaart
+soort: feest
+status: curated
+cyclus: paascyclus
+lage_landen: false
+namen:
+  primair: Teruggave van de Hemelvaart
+  alternatief:
+  - Apodosis van de Hemelvaart
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 47
+samenvatting: |
+  Laatste dag van de Hemelvaart-viering, vrijdag vóór Pinksteren.
+verhaal: |
+  Met de teruggave van de Hemelvaart eindigt het nafeest. Pinksteren volgt op de zondag daarna. Dezelfde dag staat ook in het nafeest van de Hemelvaart.
+referenties:
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Hemelvaart"
+    url: "https://orthodoxwiki.org/Ascension"
+    geraadpleegd: "2026-08-17"

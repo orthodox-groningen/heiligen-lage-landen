@@ -147,6 +147,29 @@ observances: [feest, vasten]   # optioneel; default volgt soort
 
 Het jaarrooster ondersteunt gecombineerde kleuren (feest+vasten, heilige+vasten).
 
+## Kalenderranden (voorfeest, nafeest, synaxis)
+
+Rond de twaalf grote feesten staan gewone `soort: feest`-entries:
+
+- **voorfeest** — één dag of `van`/`tot` (Kerst 20–24 dec., Theofanie 2–5 jan.)
+- **nafeest** — periode tot en met de teruggave (apodosis)
+- **synaxis** — dag na Kerst (Moeder Gods), na Theofanie (Johannes), na
+  de Aankondiging (Gabriël)
+- **Pokrov** (1 okt.) — groot Moeder-Godsfeest in de Moskou-traditie, niet
+  één van de twaalf
+- **teruggave** van Hemelvaart en Pinksteren (paascyclus); teruggave van
+  Pascha bestond al
+
+Palmzondag heeft geen nafeest (Grote Week). De Aankondiging heeft geen lang
+nafeest, wel de synaxis van Gabriël. Het nafeest van de Ontmoeting toont de
+volle jaarcyclus; in Boterweek of Grote Vasten bekort het typikon die periode.
+
+**Zondag van de Voorvaderen** en **Zondag van de Heilige Vaderen** (de twee
+zondagen vóór Kerst) staan **niet** in de kalender. Die dagen hangen af van
+de weekdag van 25 december; het datamodel heeft geen «zondag vóór MM-DD».
+Vaste MM-DD-gokken zouden in de meeste jaren fout zijn. Lezingenoverrides
+daarvoor evenmin, tot zo’n datumvorm bestaat.
+
 ## Heiligen: selectie en betekenis
 
 Selectiecriteria (wie in de lijst hoort) staan op `/uitleg/heiligen/`;

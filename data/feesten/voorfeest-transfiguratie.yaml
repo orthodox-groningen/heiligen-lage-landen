@@ -1,0 +1,23 @@
+id: voorfeest-transfiguratie
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van de Transfiguratie
+  alternatief:
+  - Voorfeest van de Verheerlijking op de Thabor
+datum:
+  waarde: "08-05"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Transfiguratie (6 augustus).
+verhaal: |
+  De Transfiguratie heeft één voorfeestdag, 5 augustus, in het Ontslapen-vasten.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Transfiguratie"
+    url: "https://orthodoxwiki.org/Transfiguration"
+    geraadpleegd: "2026-08-17"

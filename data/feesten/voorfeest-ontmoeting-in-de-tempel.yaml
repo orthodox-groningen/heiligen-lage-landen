@@ -1,0 +1,24 @@
+id: voorfeest-ontmoeting-in-de-tempel
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Voorfeest van de Ontmoeting in de Tempel
+  alternatief:
+  - Voorfeest van de Hypapante
+  - Voorfeest Ontmoeting des Heren
+datum:
+  waarde: "02-01"
+  stijl: juliaans
+samenvatting: |
+  Dag vóór de Ontmoeting in de Tempel (2 februari).
+verhaal: |
+  De Ontmoeting heeft één voorfeestdag, 1 februari.
+referenties:
+  - label: "OrthodoxWiki — Voorfeest"
+    url: "https://orthodoxwiki.org/Forefeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Ontmoeting in de tempel"
+    url: "https://orthodoxwiki.org/Presentation"
+    geraadpleegd: "2026-08-17"

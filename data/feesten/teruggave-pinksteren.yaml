@@ -1,0 +1,28 @@
+id: teruggave-pinksteren
+soort: feest
+status: curated
+cyclus: paascyclus
+lage_landen: false
+namen:
+  primair: Teruggave van Pinksteren
+  alternatief:
+  - Apodosis van Pinksteren
+  - Teruggave van de Nederdaling van de Heilige Geest
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    offset_dagen: 55
+samenvatting: |
+  Laatste dag van het Pinksternafeest, zaterdag vóór Allerheiligen.
+verhaal: |
+  Pinksteren heeft geen voorfeest. Het nafeest loopt tot de zaterdag erna (deze teruggave). Die week is al zichtbaar als vastenvrije week na Pinksteren; Allerheiligen valt op de zondag daarna. Geestesmaandag is de eerste dag na het feest.
+referenties:
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Pinksteren"
+    url: "https://orthodoxwiki.org/Pentecost"
+    geraadpleegd: "2026-08-17"

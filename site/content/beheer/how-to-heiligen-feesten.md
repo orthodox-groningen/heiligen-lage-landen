@@ -61,6 +61,10 @@ Periodes (vasten of een week) gebruiken `van_offset_dagen` /
 `tot_offset_dagen`, of hybride `van_offset_dagen` plus `datum.tot` (MM-DD),
 zoals het Apostelvasten.
 
+Voorfeest, nafeest en synaxis rond de twaalf zijn gewone feest-YAML
+(één dag of `van`/`tot`). Zondagen vóór Kerst (Voorvaderen / Heilige
+Vaderen) nog niet: zie `docs/datamodel.md`.
+
 ## Namen in het entry-bestand
 
 U *mag* `namen.primair` in de YAML zetten. Bij laden **wint**

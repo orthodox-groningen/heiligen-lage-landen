@@ -1,0 +1,24 @@
+id: synaxis-moeder-gods
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Synaxis van de Moeder Gods
+  alternatief:
+  - Synaxis van de Theotokos
+  - Sobor van de Moeder Gods
+datum:
+  waarde: "12-26"
+  stijl: juliaans
+samenvatting: |
+  Dag na Kerst: gezamenlijke herdenking van de Moeder Gods.
+verhaal: |
+  Op 26 december viert de Kerk de synaxis van de Allerheiligste Moeder Gods: de dag na een groot feest waarop de personen rond het mysterie samen worden herdacht. Deze dag valt in het nafeest van Kerst.
+referenties:
+  - label: "OrthodoxWiki — Synaxis"
+    url: "https://orthodoxwiki.org/Synaxis"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Synaxis of the Most Holy Mother of God"
+    url: "https://www.oca.org/saints/lives/2024/12/26/103616-synaxis-of-the-most-holy-mother-of-god"
+    geraadpleegd: "2026-08-17"

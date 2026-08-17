@@ -1,0 +1,28 @@
+id: nafeest-transfiguratie
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Nafeest van de Transfiguratie
+  alternatief:
+  - Nafeest van de Verheerlijking
+  - Teruggave Transfiguratie
+datum:
+  van: "08-07"
+  tot: "08-13"
+  stijl: juliaans
+samenvatting: |
+  Nafeest tot en met de teruggave op 13 augustus.
+verhaal: |
+  Na 6 augustus blijft de Transfiguratie liturgisch aanwezig tot de teruggave op 13 augustus. Daarna volgt de laatste dag van het Ontslapen-vasten en het voorfeest van het Ontslapen.
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Transfiguratie"
+    url: "https://orthodoxwiki.org/Transfiguration"
+    geraadpleegd: "2026-08-17"

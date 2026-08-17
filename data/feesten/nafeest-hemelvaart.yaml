@@ -1,0 +1,31 @@
+id: nafeest-hemelvaart
+soort: feest
+status: curated
+cyclus: paascyclus
+lage_landen: false
+namen:
+  primair: Nafeest van de Hemelvaart
+  alternatief:
+  - Nafeest Hemelvaart
+observances:
+  - feest
+datum:
+  stijl: gregoriaans
+  paascyclus:
+    anker: pascha
+    van_offset_dagen: 40
+    tot_offset_dagen: 47
+samenvatting: |
+  Van de dag na Hemelvaart tot en met de teruggave (vrijdag vóór Pinksteren).
+verhaal: |
+  Hemelvaart (veertig dagen na Pascha) heeft geen voorfeest. Het nafeest loopt tot de vrijdag vóór Pinksteren; die vrijdag is de teruggave. Palmzondag heeft geen nafeest (de Grote Week volgt).
+referenties:
+  - label: "OrthodoxWiki — Nafeest"
+    url: "https://orthodoxwiki.org/Afterfeast"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Teruggave (apodosis)"
+    url: "https://orthodoxwiki.org/Apodosis"
+    geraadpleegd: "2026-08-17"
+  - label: "OrthodoxWiki — Hemelvaart"
+    url: "https://orthodoxwiki.org/Ascension"
+    geraadpleegd: "2026-08-17"
