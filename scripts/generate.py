@@ -34,6 +34,7 @@ from kalender import (  # noqa: E402
     mmdd_from_date,
     parse_mmdd,
     pascha_offset_date,
+    weekday_relative_date,
 )
 
 SITE = ROOT / "site"
@@ -80,6 +81,15 @@ def mmdd_label(mmdd: str) -> str:
 def occurrence_years(today: date | None = None) -> range:
     today = today or date.today()
     return range(today.year - ICS_YEAR_BACK, today.year + ICS_YEAR_FORWARD + 1)
+
+
+def _append_occ(bucket: dict[str, list[str]], d: date) -> None:
+    """Voeg een burgerlijke dag toe; twee ankerjaren kunnen in één burgerjaar vallen."""
+    key = str(d.year)
+    mmdd = mmdd_from_date(d)
+    days = bucket.setdefault(key, [])
+    if mmdd not in days:
+        days.append(mmdd)
 
 
 def yaml_quote(value: str) -> str:
@@ -203,6 +213,11 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         fm.append("weekdagen:")
         for d in dn["weekdagen"]:
             fm.append(f"  - {d}")
+    if vorm == "weekdag_relatief":
+        fm.append(f"anker: {dn['anker']}")
+        fm.append(f"weekdag: {dn['weekdag']}")
+        fm.append(f"welke: {dn['welke']}")
+        fm.append(f"richting: {dn['richting']}")
     if entry.get("cyclus") == "paascyclus":
         if dn.get("paascyclus_offset") is not None and vorm == "dag":
             fm.append(f"paascyclus_offset: {dn['paascyclus_offset']}")
@@ -302,6 +317,37 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             f"**Periode:** {mmdd_label(dn['van'])} – {mmdd_label(dn['tot'])} "
             "(zelfde dagnamen in nieuwe én oude kalender)."
         )
+        body.append("")
+    elif vorm == "weekdag_relatief":
+        wd = weeknamen[dn["weekdag"]]
+        welke = int(dn["welke"])
+        if welke == 1:
+            welke_nl = wd
+        else:
+            welke_nl = f"{welke}e {wd}"
+        richting_nl = "vóór" if dn["richting"] == "voor" else "na"
+        body.append(
+            f"**{welke_nl.capitalize()} {richting_nl} "
+            f"{mmdd_label(dn['anker'])}** "
+            "(geen vaste feestdatum; hangt af van de weekdag van het anker)."
+        )
+        body.append("")
+        body.append("**Komende jaren (nieuwe kalender, wereldlijk):**")
+        body.append("")
+        for y in occurrence_years():
+            d = weekday_relative_date(
+                y,
+                dn["anker"],
+                dn["weekdag"],
+                dn["welke"],
+                dn["richting"],
+                stijl="nieuw",
+            )
+            label = mmdd_label(mmdd_from_date(d))
+            if d.year != y:
+                body.append(f"- {y}: {label} {d.year}")
+            else:
+                body.append(f"- {y}: {label}")
         body.append("")
     else:
         assert feestdatum
@@ -816,6 +862,35 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
         if vorm == "weekdagen":
             item["weekdagen"] = list(dn["weekdagen"])
             item["feestdatum"] = None
+        elif vorm == "weekdag_relatief":
+            item["anker"] = dn["anker"]
+            item["weekdag"] = dn["weekdag"]
+            item["welke"] = dn["welke"]
+            item["richting"] = dn["richting"]
+            item["feestdatum"] = None
+            occ: dict[str, list[str]] = {}
+            occ_oud: dict[str, list[str]] = {}
+            for y in years:
+                nieuw = weekday_relative_date(
+                    y,
+                    dn["anker"],
+                    dn["weekdag"],
+                    dn["welke"],
+                    dn["richting"],
+                    stijl="nieuw",
+                )
+                oud = weekday_relative_date(
+                    y,
+                    dn["anker"],
+                    dn["weekdag"],
+                    dn["welke"],
+                    dn["richting"],
+                    stijl="oud",
+                )
+                _append_occ(occ, nieuw)
+                _append_occ(occ_oud, oud)
+            item["occurrences"] = occ
+            item["occurrences_oud"] = occ_oud
         elif vorm == "periode" and dn.get("van") and dn.get("tot"):
             item["van"] = dn["van"]
             item["tot"] = dn["tot"]
@@ -991,6 +1066,43 @@ def build_ics(
                             f"{mmdd_label(mmdd_from_date(d))} {year}"
                         ),
                     )
+            continue
+
+        if vorm == "weekdag_relatief":
+            rel_stijl = "oud" if stijl == "oud" else "nieuw"
+            for year in years:
+                civil = weekday_relative_date(
+                    year,
+                    dn["anker"],
+                    dn["weekdag"],
+                    dn["welke"],
+                    dn["richting"],
+                    stijl=rel_stijl,
+                )
+                if rel_stijl == "oud":
+                    summary = (
+                        f"{entry['namen']['primair']} "
+                        f"(t.o.v. Juliaans {mmdd_label(dn['anker'])})"
+                    )
+                    uid_key = f"{entry['id']}:oud:{year}:{civil.isoformat()}"
+                    fee_label = (
+                        f"Weekdag t.o.v. {mmdd_label(dn['anker'])} · "
+                        f"{mmdd_label(mmdd_from_date(civil))} {civil.year}"
+                    )
+                else:
+                    summary = entry["namen"]["primair"]
+                    uid_key = f"{entry['id']}:nieuw:{year}:{civil.isoformat()}"
+                    fee_label = (
+                        f"Weekdag t.o.v. {mmdd_label(dn['anker'])} · "
+                        f"{mmdd_label(mmdd_from_date(civil))} {civil.year}"
+                    )
+                emit_day(
+                    entry,
+                    civil,
+                    summary=summary,
+                    uid_key=uid_key,
+                    fee_label=fee_label,
+                )
             continue
 
         if vorm in {"periode", "periode_hybride"}:

@@ -62,8 +62,25 @@ Periodes (vasten of een week) gebruiken `van_offset_dagen` /
 zoals het Apostelvasten.
 
 Voorfeest, nafeest en synaxis rond de twaalf zijn gewone feest-YAML
-(één dag of `van`/`tot`). Zondagen vóór Kerst (Voorvaderen / Heilige
-Vaderen) nog niet: zie `docs/datamodel.md`.
+(één dag of `van`/`tot`).
+
+### Weekdag t.o.v. een feestdatum
+
+Zondagen vóór/ná Kerst (en ná Theofanie) hebben geen vaste MM-DD:
+
+```yaml
+cyclus: jaar
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "12-25"
+    weekdag: 7           # ISO: 1=ma … 7=zo
+    welke: 1             # 1 = dichtstbijzijnde, 2 = de volgende
+    richting: voor       # of: na
+```
+
+Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
+18 december. Zie `docs/datamodel.md`.
 
 ## Namen in het entry-bestand
 

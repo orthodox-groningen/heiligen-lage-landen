@@ -171,13 +171,18 @@ overrides:
 ```
 
 Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
-`paascyclus_offset_in` (met optioneel `stijl: oud`). Relatief t.o.v. Theofanie
-of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
-een apart `theofanie_offset`-veld kan later worden toegevoegd.
+`paascyclus_offset_in` (met optioneel `stijl: oud`), en
+`weekdag_relatief` (`anker`, `weekdag`, `welke`, `richting`) voor de
+zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of een
+ander anker als vaste offset: vooralsnog via `mmdd` of `weekdag_relatief`;
+een apart `theofanie_offset`-veld is niet nodig zolang `anker: "01-06"`
+volstaat.
 
-**Zondagen vóór Kerst** (Voorvaderen; Heilige Vaderen): geen override. Die
-dagen zijn de tweede en de laatste zondag vóór 25 december — geen vaste
-MM-DD. Tot het datamodel «zondag vóór MM-DD» kent, geen gok-overrides.
+**Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
+ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
+en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
+grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
+geen gegokte combinatielezing.
 
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Silvester e.d.).
@@ -487,5 +492,45 @@ verwacht:
 bron:
   label: "OCA / Azbyka — Synaxis Johannes de Doper (7 jan.)"
   url: "https://www.oca.org/saints/lives/2024/01/07/100109-synaxis-of-the-holy-glorious-prophet-forerunner-and-baptist-john"
+  geraadpleegd: "2026-08-17"
+```
+
+```lezingen-voorbeeld
+id: zondag-voorvaderen-2026
+status: implemented
+jaar: 2026
+mmdd: "12-13"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Kol. 3:4-11"
+  evangelie:
+    - ref: "Luc. 14:16-24"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "OCA / Azbyka — Zondag van de Voorvaderen"
+  url: "https://www.oca.org/saints/lives/2024/12/15/103535-sunday-of-the-forefathers"
+  geraadpleegd: "2026-08-17"
+```
+
+```lezingen-voorbeeld
+id: zondag-vaderen-voor-kerst-2026
+status: implemented
+jaar: 2026
+mmdd: "12-20"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Heb. 11:9-10, 17-23, 32-40"
+  evangelie:
+    - ref: "Matt. 1:1-25"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "OCA / Azbyka — Zondag vóór Kerst"
+  url: "https://www.oca.org/saints/lives/2024/12/22/103536-sunday-before-the-nativity-of-our-lord"
   geraadpleegd: "2026-08-17"
 ```

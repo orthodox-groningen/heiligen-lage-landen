@@ -113,13 +113,42 @@
             { "required": ["van_offset_dagen", "tot_offset_dagen"] },
             { "required": ["van_offset_dagen"] }
           ]
+        },
+        "weekdag_relatief": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["anker", "weekdag", "richting"],
+          "properties": {
+            "anker": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+              "description": "Liturgische feestdatum (MM-DD) waar de weekdag aan hangt"
+            },
+            "weekdag": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7,
+              "description": "ISO-weekdag: 1=maandag … 7=zondag"
+            },
+            "welke": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "description": "1 = dichtstbijzijnde in die richting, 2 = de volgende, enz."
+            },
+            "richting": {
+              "type": "string",
+              "enum": ["voor", "na"]
+            }
+          }
         }
       },
       "anyOf": [
         { "required": ["waarde"] },
         { "required": ["paascyclus"] },
         { "required": ["van", "tot"] },
-        { "required": ["weekdagen"] }
+        { "required": ["weekdagen"] },
+        { "required": ["weekdag_relatief"] }
       ]
     },
     "observances": {

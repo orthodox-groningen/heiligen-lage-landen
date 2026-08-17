@@ -1,0 +1,30 @@
+id: zondag-na-theofanie
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Zondag na Theofanie
+  alternatief:
+  - Zondag na de Doop des Heren
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "01-06"
+    weekdag: 7
+    welke: 1
+    richting: na
+samenvatting: |
+  Eerste zondag ná Theofanie.
+verhaal: |
+  De zondag ná 6 januari (7–12 januari) sluit de Theofanie-viering af met
+  de lezing van het begin van Christus’ prediking. Valt die zondag op
+  7 januari, dan is er ook de synaxis van Johannes de Doper; de lezing
+  van die synaxis gaat dan vóór.
+referenties:
+  - label: "OrthodoxWiki — Sunday after Theophany"
+    url: "https://orthodoxwiki.org/Sunday_after_Theophany"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Sunday after the Theophany"
+    url: "https://www.oca.org/saints/lives/2024/01/07/100110-sunday-after-the-theophany"
+    geraadpleegd: "2026-08-17"

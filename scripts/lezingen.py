@@ -21,6 +21,7 @@ from kalender import (
     parse_mmdd,
     pascha_offset_date,
     orthodox_pascha,
+    weekday_relative_date,
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -84,6 +85,10 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "synaxis-johannes-doper": "Synaxis van Johannes de Doper",
     "pokrov": "Pokrov",
     "synaxis-gabriel": "Synaxis van de aartsengel Gabriël",
+    "zondag-voorvaderen": "Zondag van de Voorvaderen",
+    "zondag-vaderen-voor-kerst": "Zondag van de heilige Vaderen (vóór Kerst)",
+    "zondag-na-kerst": "Zondag na Kerst",
+    "zondag-na-theofanie": "Zondag na Theofanie",
     "elia-profeet": "Profeet Elia",
     "aankondiging-op-pascha": "Aankondiging op Pascha (Kyriopascha)",
     "aankondiging-op-palmzondag": "Aankondiging op Palmzondag",
@@ -684,6 +689,24 @@ def _override_matches(
     has_mmdd = "mmdd" in match
     has_off = "paascyclus_offset" in match
     has_off_in = "paascyclus_offset_in" in match
+    rel = match.get("weekdag_relatief")
+
+    if rel:
+        civil = _civil_date(jaar, mmdd, stijl)
+        rel_stijl = "oud" if stijl == "oud" else "nieuw"
+        # Zondag ná Kerst kan op 1 januari vallen (ankerjaar − 1).
+        for y in (jaar, jaar - 1):
+            want = weekday_relative_date(
+                y,
+                str(rel["anker"]),
+                int(rel["weekdag"]),
+                int(rel.get("welke") or 1),
+                str(rel["richting"]),
+                stijl=rel_stijl,
+            )
+            if civil == want:
+                return True
+        return False
 
     if has_mmdd and has_off_in:
         offsets = [int(x) for x in (match.get("paascyclus_offset_in") or [])]

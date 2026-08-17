@@ -622,11 +622,25 @@ entries:
     alternatief:
     - Zondag van de tollenaar en Farizeeër
     - Tollenaar en Farizeeër
+  zondag-na-kerst:
+    primair: Zondag na Kerst
+    alternatief:
+    - Zondag na de Geboorte van Christus
+    - Jozef de Verloofde
+  zondag-na-theofanie:
+    primair: Zondag na Theofanie
+    alternatief:
+    - Zondag na de Doop des Heren
   zondag-vaderen-eerste-concilie:
     primair: Zondag van de heilige Vaderen van het Eerste Concilie
     alternatief:
     - Zondag van de Vaderen van Nicea
     - Zondag van de 318 Vaderen
+  zondag-vaderen-voor-kerst:
+    primair: Zondag van de heilige Vaderen (vóór Kerst)
+    alternatief:
+    - Zondag van de Heilige Vaderen
+    - Zondag vóór Kerst
   zondag-verlamde:
     primair: Zondag van de verlamde
     alternatief:
@@ -636,6 +650,11 @@ entries:
     primair: Zondag van de verloren zoon
     alternatief:
     - Verloren zoon
+  zondag-voorvaderen:
+    primair: Zondag van de Voorvaderen
+    alternatief:
+    - Zondag van de heilige Voorvaderen
+    - Tweede zondag vóór Kerst
   grote-week:
     primair: Grote Week
     alternatief:

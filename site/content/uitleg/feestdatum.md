@@ -24,6 +24,9 @@ Niet elke liturgische dag heeft zo’n vaste feestdatum.
 - **Dagen van de paascyclus** schuiven mee met Pascha. Palmzondag is niet
   altijd dezelfde datum in maart of april. Die dagen hebben geen vaste
   feestdatum; ze horen bij een bepaald jaar.
+- **Zondagen rond Kerst** (Voorvaderen, Vaderen vóór Kerst, zondag ná
+  Kerst, zondag ná Theofanie) hangen af van de weekdag van 25 december
+  of 6 januari. Ze hebben geen vaste feestdatum, maar ook geen Pascha-anker.
 
 Op de [jaarkalender]({{% ref "/kalender" %}}) ziet u de burgerlijke dag van
 de viering. In het [Meneon]({{% ref "/uitleg/meneon" %}}) ziet u de

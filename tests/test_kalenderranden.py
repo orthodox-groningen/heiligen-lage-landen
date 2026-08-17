@@ -43,10 +43,11 @@ PAAS = {
     "teruggave-pinksteren": (55, None),
 }
 
-NIET_GEMODELEERD = (
+NIET_IN_MENEON_ALS_VASTE_DAG = (
     "zondag-voorvaderen",
-    "zondag-heilige-vaderen",
     "zondag-vaderen-voor-kerst",
+    "zondag-na-kerst",
+    "zondag-na-theofanie",
 )
 
 
@@ -55,13 +56,12 @@ def test_kalenderrand_bestanden_bestaan() -> None:
         assert (FEESTEN / f"{eid}.yaml").is_file(), eid
 
 
-def test_zondagen_voor_kerst_niet_als_vaste_dag() -> None:
+def test_zondagen_rond_kerst_zijn_weekdag_relatief() -> None:
     by_id = {e["id"]: e for e in load_entries()}
-    for eid in NIET_GEMODELEERD:
-        assert eid not in by_id
+    for eid in NIET_IN_MENEON_ALS_VASTE_DAG:
+        assert by_id[eid]["datum_norm"]["vorm"] == "weekdag_relatief"
     datamodel = (ROOT / "docs" / "datamodel.md").read_text(encoding="utf-8")
-    assert "Zondag van de Voorvaderen" in datamodel
-    assert "zondag vóór MM-DD" in datamodel
+    assert "weekdag_relatief" in datamodel
 
 
 def test_vaste_randen_datums() -> None:

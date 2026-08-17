@@ -1,0 +1,31 @@
+id: zondag-vaderen-voor-kerst
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Zondag van de heilige Vaderen (vóór Kerst)
+  alternatief:
+  - Zondag van de Heilige Vaderen
+  - Zondag vóór Kerst
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "12-25"
+    weekdag: 7
+    welke: 1
+    richting: voor
+samenvatting: |
+  Zondag direct vóór Kerst: de heilige Vaderen volgens het vlees van de Heer.
+verhaal: |
+  Deze zondag is de laatste zondag vóór 25 december (18–24 december). De
+  lezingen noemen de geslachtslijst van Christus (Matteüs 1) en de
+  geloofsgetuigen van het Oude Verbond (Hebreeën 11). Als Kerst zelf op
+  zondag valt, is deze zondag 18 december.
+referenties:
+  - label: "OrthodoxWiki — Sunday of the Fathers"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Fathers"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Sunday before the Nativity"
+    url: "https://www.oca.org/saints/lives/2024/12/22/103536-sunday-before-the-nativity-of-our-lord"
+    geraadpleegd: "2026-08-17"

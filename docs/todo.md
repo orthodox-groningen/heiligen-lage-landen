@@ -14,8 +14,8 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
 - [x] Kerninhoud: ontbrekenden + Johannes van Shanghai + Sophrony + kernset
       met betekenis, verhaal, referenties; `curated` waar de lat gehaald wordt.
 - [x] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
-      teruggave Hemelvaart/Pinksteren; zondagen vóór Kerst nog niet
-      (geen weekdag-relatief aan MM-DD).
+      teruggave Hemelvaart/Pinksteren; zondagen rond Kerst/Theofanie via
+      `datum.weekdag_relatief`.
 - [ ] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
 - [ ] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
       `bronnen.yaml` opschonen.

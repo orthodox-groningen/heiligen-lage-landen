@@ -19,9 +19,10 @@ bladerpagina bij diezelfde cyclus.
 **Wel:** alles met een vaste plaats in het jaar. Willibrord op 7 november.
 Kerst op 25 december. Het Ontslapen-vasten van 1 tot 14 augustus.
 
-**Niet:** wat van Pascha afhangt (Palmzondag, de Grote Vasten, Pinksteren)
-en het wekelijkse woensdag- en vrijdagvasten. Die horen bij een *bepaald
-jaar*. Daarvoor opent u een [datumpagina]({{% ref "/uitleg/datumpagina" %}}).
+**Niet:** wat van Pascha afhangt (Palmzondag, de Grote Vasten, Pinksteren),
+het wekelijkse woensdag- en vrijdagvasten, en zondagen die van de weekdag
+van Kerst of Theofanie afhangen. Die horen bij een *bepaald jaar*. Daarvoor
+opent u een [datumpagina]({{% ref "/uitleg/datumpagina" %}}).
 
 U kunt zoeken op naam, ook op andere namen die dezelfde heilige of hetzelfde
 feest heeft. Bladeren kan per maand of op alfabet.

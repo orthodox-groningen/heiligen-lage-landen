@@ -184,13 +184,18 @@ overrides:
 ```
 
 Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
-`paascyclus_offset_in` (met optioneel `stijl: oud`). Relatief t.o.v. Theofanie
-of een ander anker: vooralsnog via vaste `mmdd` of een toegelichte offset;
-een apart `theofanie_offset`-veld kan later worden toegevoegd.
+`paascyclus_offset_in` (met optioneel `stijl: oud`), en
+`weekdag_relatief` (`anker`, `weekdag`, `welke`, `richting`) voor de
+zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of een
+ander anker als vaste offset: vooralsnog via `mmdd` of `weekdag_relatief`;
+een apart `theofanie_offset`-veld is niet nodig zolang `anker: "01-06"`
+volstaat.
 
-**Zondagen vóór Kerst** (Voorvaderen; Heilige Vaderen): geen override. Die
-dagen zijn de tweede en de laatste zondag vóór 25 december — geen vaste
-MM-DD. Tot het datamodel «zondag vóór MM-DD» kent, geen gok-overrides.
+**Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
+ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
+en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
+grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
+geen gegokte combinatielezing.
 
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Silvester e.d.).

@@ -188,6 +188,15 @@
     return days;
   }
 
+  function weekdagRelatiefMmdds(entry, year, style) {
+    if (!entry || entry.vorm !== "weekdag_relatief") return [];
+    const occ =
+      style === "juliaans" ? entry.occurrences_oud : entry.occurrences;
+    const v = (occ || {})[String(year)];
+    if (!v) return [];
+    return Array.isArray(v) ? v : [v];
+  }
+
   function entryMatchesMmdd(entry, mmdd, year, style, allEntries) {
     if (!entry || !mmdd) return false;
     if (entry.vorm === "weekdagen") {
@@ -210,6 +219,9 @@
     }
     if (entry.cyclus === "paascyclus" && entry.occurrences) {
       return entry.occurrences[String(year)] === mmdd;
+    }
+    if (entry.vorm === "weekdag_relatief") {
+      return weekdagRelatiefMmdds(entry, year, style).includes(mmdd);
     }
     return civilMmddsForLiturgical(entry.feestdatum, year, style).includes(mmdd);
   }
@@ -235,6 +247,9 @@
       }
       if (e.cyclus === "paascyclus" && e.occurrences) {
         return e.occurrences[String(year)] === mmdd;
+      }
+      if (e.vorm === "weekdag_relatief") {
+        return weekdagRelatiefMmdds(e, year, style).includes(mmdd);
       }
       return civilMmddsForLiturgical(e.feestdatum, year, style).includes(mmdd);
     });
@@ -502,6 +517,7 @@
       return "Vasten";
     }
     if (entry.cyclus === "paascyclus") return "Paascyclus";
+    if (entry.vorm === "weekdag_relatief") return "Feest (weekdag t.o.v. anker)";
     if (entry.soort === "feest") return "Feest";
     return "Heilige";
   }
@@ -1493,6 +1509,12 @@
         markDay(byDay, (e.occurrences || {})[String(viewYear)] || null, e);
         continue;
       }
+      if (e.vorm === "weekdag_relatief") {
+        for (const mm of weekdagRelatiefMmdds(e, viewYear, style)) {
+          markDay(byDay, mm, e);
+        }
+        continue;
+      }
       for (const civil of civilMmddsForLiturgical(e.feestdatum, viewYear, style)) {
         markDay(byDay, civil, e);
       }
@@ -1560,6 +1582,7 @@
     if (!entry) return false;
     if (entry.cyclus === "paascyclus") return false;
     if (entry.vorm === "weekdagen") return false;
+    if (entry.vorm === "weekdag_relatief") return false;
     return true;
   }
 

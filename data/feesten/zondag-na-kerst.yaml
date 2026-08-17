@@ -1,0 +1,33 @@
+id: zondag-na-kerst
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Zondag na Kerst
+  alternatief:
+  - Zondag na de Geboorte van Christus
+  - Jozef de Verloofde
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "12-25"
+    weekdag: 7
+    welke: 1
+    richting: na
+samenvatting: |
+  Eerste zondag ná Kerst: Jozef de Verloofde, David de koning en Jakobus
+  de Broeder des Heren.
+verhaal: |
+  De zondag ná 25 december (26 december–1 januari) eert de familie rond
+  het Kind: Jozef, David en Jakobus. Valt die zondag op 26 december, dan
+  is er ook de synaxis van de Moeder Gods; valt ze op 1 januari, dan de
+  Besnijdenis. Deze kalender toont beide; de lezing van het grootfeest
+  gaat vóór als ze samenvallen.
+referenties:
+  - label: "OrthodoxWiki — Sunday after the Nativity"
+    url: "https://orthodoxwiki.org/Sunday_after_the_Nativity"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Sunday after the Nativity"
+    url: "https://www.oca.org/saints/lives/2024/12/29/103537-sunday-after-the-nativity"
+    geraadpleegd: "2026-08-17"

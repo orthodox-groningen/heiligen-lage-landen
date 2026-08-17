@@ -211,6 +211,33 @@ def normalize_entry(
         else:
             raise ValueError(f"{path}: paascyclus zonder bruikbare offsets")
         entry["datum_extra_norm"] = []
+    elif datum.get("weekdag_relatief"):
+        rel = datum["weekdag_relatief"]
+        if not isinstance(rel, dict):
+            raise ValueError(f"{path}: datum.weekdag_relatief moet een mapping zijn")
+        anker = str(rel.get("anker") or "").strip()
+        parse_mmdd(anker)
+        weekdag = int(rel.get("weekdag"))
+        if weekdag < 1 or weekdag > 7:
+            raise ValueError(f"{path}: weekdag_relatief.weekdag moet 1–7 zijn")
+        welke = int(rel.get("welke") or 1)
+        if welke < 1:
+            raise ValueError(f"{path}: weekdag_relatief.welke moet ≥ 1 zijn")
+        richting = str(rel.get("richting") or "").strip()
+        if richting not in {"voor", "na"}:
+            raise ValueError(
+                f"{path}: weekdag_relatief.richting moet 'voor' of 'na' zijn"
+            )
+        entry["datum_norm"] = {
+            "stijl": _stijl(datum, path),
+            "feestdatum": None,
+            "vorm": "weekdag_relatief",
+            "anker": anker,
+            "weekdag": weekdag,
+            "welke": welke,
+            "richting": richting,
+        }
+        entry["datum_extra_norm"] = []
     elif datum.get("van") and datum.get("tot"):
         if cyclus not in {"jaar", "wekelijks"}:
             # vaste jaarcyclus-periode
@@ -321,8 +348,16 @@ def _sort_key(entry: dict[str, Any]) -> tuple:
     if entry.get("cyclus") == "paascyclus":
         return (1, dn.get("paascyclus_offset") or 0, entry["id"])
     if vorm == "periode":
-        return (0, dn.get("van") or dn.get("feestdatum") or "", entry["id"])
-    return (0, dn.get("feestdatum") or "", entry["id"])
+        return (0, dn.get("van") or dn.get("feestdatum") or "", 0, "", entry["id"])
+    if vorm == "weekdag_relatief":
+        return (
+            0,
+            dn.get("anker") or "",
+            int(dn.get("welke") or 1),
+            dn.get("richting") or "",
+            entry["id"],
+        )
+    return (0, dn.get("feestdatum") or "", 0, "", entry["id"])
 
 
 def load_entries() -> list[dict[str, Any]]:

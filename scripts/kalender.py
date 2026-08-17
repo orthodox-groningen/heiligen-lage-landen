@@ -152,6 +152,52 @@ def pascha_offset_date(year: int, offset_dagen: int) -> date:
     return orthodox_pascha(year) + timedelta(days=offset_dagen)
 
 
+def weekday_relative_date(
+    year: int,
+    anker_mmdd: str,
+    weekdag: int,
+    welke: int,
+    richting: str,
+    *,
+    stijl: str = "nieuw",
+) -> date:
+    """Wereldlijke datum van de n-de weekdag strikt vóór of ná een feestdatum.
+
+    ``anker_mmdd`` is de liturgische dagnaam (zoals Kerst = 25 december).
+    ``weekdag`` is ISO: 1 = maandag … 7 = zondag. ``welke`` 1 = de dichtstbijzijnde
+    in die richting, 2 = de volgende, enz. ``stijl`` ``nieuw``: anker valt op
+    die burgerlijke dag in ``year``; ``oud``/``juliaans``: anker is de
+    Juliaanse feestdatum van ``year`` (vierdatum kan in het volgende
+    burgerlijke jaar vallen).
+    """
+    if weekdag < 1 or weekdag > 7:
+        raise ValueError(f"weekdag moet 1–7 zijn, kreeg {weekdag!r}")
+    if welke < 1:
+        raise ValueError(f"welke moet ≥ 1 zijn, kreeg {welke!r}")
+    if richting not in {"voor", "na"}:
+        raise ValueError(f"richting moet 'voor' of 'na' zijn, kreeg {richting!r}")
+    style = (stijl or "nieuw").strip().lower()
+    if style in {"oud", "juliaans"}:
+        anker = julian_feast_to_civil_date(year, anker_mmdd)
+    elif style in {"nieuw", "gregoriaans"}:
+        month, day = parse_mmdd(anker_mmdd)
+        anker = date(year, month, day)
+    else:
+        raise ValueError(f"Onbekende stijl: {stijl!r}")
+    step = -1 if richting == "voor" else 1
+    cur = anker + timedelta(days=step)
+    found = 0
+    for _ in range(8 * welke + 7):
+        if cur.isoweekday() == weekdag:
+            found += 1
+            if found == welke:
+                return cur
+        cur += timedelta(days=step)
+    raise ValueError(
+        f"geen {welke}e weekdag {weekdag} {richting} {anker_mmdd} in {year}"
+    )
+
+
 def normalize_dates(mmdd: str, stijl: str = "gregoriaans") -> dict[str, str]:
     """Normaliseer vaste invoer tot één feestdatum (MM-DD).
 

@@ -164,11 +164,35 @@ Palmzondag heeft geen nafeest (Grote Week). De Aankondiging heeft geen lang
 nafeest, wel de synaxis van Gabriël. Het nafeest van de Ontmoeting toont de
 volle jaarcyclus; in Boterweek of Grote Vasten bekort het typikon die periode.
 
-**Zondag van de Voorvaderen** en **Zondag van de Heilige Vaderen** (de twee
-zondagen vóór Kerst) staan **niet** in de kalender. Die dagen hangen af van
-de weekdag van 25 december; het datamodel heeft geen «zondag vóór MM-DD».
-Vaste MM-DD-gokken zouden in de meeste jaren fout zijn. Lezingenoverrides
-daarvoor evenmin, tot zo’n datumvorm bestaat.
+## Weekdag t.o.v. een feestdatum
+
+Geen derde cyclus (geen «kerstcyclus»). Wel dagen die aan een vaste
+feestdatum hangen via de weekdag, met `cyclus: jaar`:
+
+```yaml
+datum:
+  stijl: juliaans          # zelfde betekenis als bij Kerst: dagnaam
+  weekdag_relatief:
+    anker: "12-25"         # liturgische MM-DD
+    weekdag: 7             # ISO: 1=ma … 7=zo
+    welke: 1               # 1 = dichtstbijzijnde, 2 = de volgende
+    richting: voor         # of: na
+```
+
+Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
+18 december, niet Kerst zelf. In de stand Oud is het anker de Juliaanse
+feestdatum; de burgerlijke vierdatum schuift mee.
+
+In deze kalender:
+
+- `zondag-voorvaderen` — 2e zondag vóór Kerst
+- `zondag-vaderen-voor-kerst` — zondag direct vóór Kerst
+- `zondag-na-kerst` — zondag ná Kerst
+- `zondag-na-theofanie` — zondag ná Theofanie
+
+Die dagen staan **niet** in het Meneon (geen vaste MM-DD); wel op
+jaarkalender, datumpagina en ICS. Functie: `weekday_relative_date` in
+`scripts/kalender.py`.
 
 ## Heiligen: selectie en betekenis
 

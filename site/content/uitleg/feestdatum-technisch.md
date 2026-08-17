@@ -49,6 +49,21 @@ datum:
 Bereik in generatie en ICS: huidig jaar −2 … +25. Functies:
 `pascha_offset_date` in `scripts/kalender.py`.
 
+## Weekdag t.o.v. een feestdatum
+
+```yaml
+cyclus: jaar
+datum:
+  weekdag_relatief:
+    anker: "12-25"
+    weekdag: 7
+    welke: 1
+    richting: voor
+```
+
+`weekday_relative_date` in `scripts/kalender.py`. Stand Oud: anker is de
+Juliaanse feestdatum van dat jaar. Niet in het Meneon.
+
 ## Ids
 
 Bestandsnaam = `id` = `[a-z0-9_-]+`. Weergavenamen staan bij voorkeur in

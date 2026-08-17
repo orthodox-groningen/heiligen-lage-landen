@@ -1,0 +1,31 @@
+id: zondag-voorvaderen
+soort: feest
+status: curated
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Zondag van de Voorvaderen
+  alternatief:
+  - Zondag van de heilige Voorvaderen
+  - Tweede zondag vóór Kerst
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "12-25"
+    weekdag: 7
+    welke: 2
+    richting: voor
+samenvatting: |
+  Tweede zondag vóór Kerst: herdenking van de Voorvaderen van Christus.
+verhaal: |
+  De Zondag van de Voorvaderen valt op de tweede zondag vóór 25 december
+  (11–17 december). De Kerk eert de rechtvaardigen van het Oude Verbond
+  die de komst van Christus verwachtten. Als 25 december zelf zondag is,
+  valt deze zondag op 11 december, niet op het feest.
+referenties:
+  - label: "OrthodoxWiki — Sunday of the Forefathers"
+    url: "https://orthodoxwiki.org/Sunday_of_the_Forefathers"
+    geraadpleegd: "2026-08-17"
+  - label: "OCA — Sunday of the Holy Forefathers"
+    url: "https://www.oca.org/saints/lives/2024/12/15/103535-sunday-of-the-forefathers"
+    geraadpleegd: "2026-08-17"
