@@ -185,7 +185,10 @@ grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
 geen gegokte combinatielezing.
 
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
-Actief in deze repo: `parochie: den-haag` (Silvester e.d.).
+Actief in deze repo: `parochie: den-haag` (Orthodox klooster Johannes de
+Voorloper, Den Haag — niet Groningen). `parochies/groningen.yaml` staat
+klaar zonder overrides; omzetten is één regel in `config.yaml`. Niet
+stilzwijgend wijzigen.
 
 ## Machine-leesbare voorbeelden
 

@@ -156,6 +156,12 @@ bron erbij.
 Soms kiest een parochieboekje anders dan de gedeelde Moskouse lijst — bijvoorbeeld
 een heilige als Silvester op 2 januari met eigen Apostel en Evangelie. Dat kan:
 per parochie houden we (desgewenst) een eigen lijst van zulke dagen bij, naast
-de gedeelde regels. De technische bijlage beschrijft hoe die lijst eruitziet;
-voor overleg met de clerus volstaat: datum (of relatie tot Pascha/Theofanie),
-gewenste lezingen, en of ze de doorlopende lezing vervangen of erbíj komen.
+de gedeelde regels.
+
+Op deze site is die lokale extra-lijst nu die van het Orthodoxe klooster van
+Johannes de Voorloper in Den Haag — bijvoorbeeld Silvester op 2 januari. Dat
+is niet de parochie Groningen. Een andere lokale lijst zetten we alleen na
+een uitdrukkelijk besluit. De technische bijlage beschrijft hoe die lijst
+eruitziet; voor overleg met de clerus volstaat: datum (of relatie tot
+Pascha/Theofanie), gewenste lezingen, en of ze de doorlopende lezing
+vervangen of erbíj komen.

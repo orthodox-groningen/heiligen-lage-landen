@@ -120,7 +120,7 @@ samenvatting: |
 verhaal: |
   {verhaal}
 referenties:
-  - bron_id: orthodoxwiki-pascha-note
+  - bron_id: orthodoxwiki-pascha
     geraadpleegd: "2026-08-15"
   - bron_id: oca-calendar
     geraadpleegd: "2026-08-15"

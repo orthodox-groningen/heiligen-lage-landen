@@ -1,0 +1,10 @@
+# Klaar voor later: lezingenoverrides van een Groningse parochie.
+# Niet actief. Actief is data/lezingen/config.yaml → den-haag
+# (klooster Johannes de Voorloper, Den Haag).
+#
+# Omzetten: in config.yaml `parochie: groningen` zetten en hieronder
+# overrides vullen (vorm: zie voorbeeld.yaml of den-haag.yaml).
+
+parochie: groningen
+naam: "Orthodoxe parochie Groningen (lezingenlijst nog niet gevuld)"
+overrides: []

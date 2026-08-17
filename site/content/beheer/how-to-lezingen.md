@@ -10,13 +10,16 @@ Het lezingenrooster toont **Apostel** en **Evangelie** van de dag
 bij twijfel ROCOR. Een parochie of klooster mag **daarnaast** een eigen
 lijst hebben, zonder de gedeelde lijst te herschrijven.
 
+**Actief in deze repo:** `parochie: den-haag` — het Orthodoxe klooster van
+de Heilige Joannes de Voorloper in Den Haag (nu o.a. Silvester op 2 jan.).
+Dat is **niet** de parochie Groningen. Wijzig `config.yaml` niet
+stilzwijgend. Voor Groningen staat `data/lezingen/parochies/groningen.yaml`
+klaar (nog zonder overrides); omzetten is één regel in `config.yaml`.
+
 Clerusuitleg in gewone taal: `/uitleg/lezingen/`. Technische spiegel:
 `/uitleg/lezingen-technisch/` (niet in het uitleg-overzicht) en
 `docs/specs/lezingen.md`. Publiceren:
 [site bouwen]({{% ref "/beheer/how-to-publiceren" %}}).
-
-Zolang het rooster nog niet op deze branch staat, leven de YAML-bestanden
-en de spec op de lezingen-feature. De stappen hieronder zijn dezelfde.
 
 ## Wat u wél wijzigt
 

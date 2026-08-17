@@ -20,12 +20,9 @@ bronnen:
   - id: orthodoxwiki-theophany
     naam: "OrthodoxWiki — Theofanie"
     url: "https://orthodoxwiki.org/Theophany"
-  - id: orthodoxwiki-pascha-note
-    naam: "OrthodoxWiki — Pascha"
-    url: "https://orthodoxwiki.org/Pascha"
   - id: oca-calendar
-    naam: "OCA — Heilig Pascha"
-    url: "https://www.oca.org/saints/lives/2025/04/20/27-holy-pascha-the-resurrection-of-our-lord"
+    naam: "OCA — Lives of the Saints"
+    url: "https://www.oca.org/saints/lives"
   - id: orthodoxwiki-pascha
     naam: "OrthodoxWiki — Pascha"
     url: "https://orthodoxwiki.org/Pascha"

@@ -45,8 +45,10 @@ Push naar `main` → productie
 
 Push naar een andere branch → preview onder `/preview/`.
 
-CI (`.github/workflows/pages.yml`) doet: validate → `generate.py --clean` →
-Hugo → deploy naar `gh-pages`. U hoeft lokaal geen `generated/` te committen.
+CI (`.github/workflows/pages.yml`) doet: pytest → validate →
+`generate.py --clean` → Hugo → deploy naar `gh-pages`. U hoeft lokaal geen
+`generated/` te committen. `validate.yml` (pull requests) draait dezelfde
+pytest- en generate-stappen.
 
 ## Veelgemaakte fout
 

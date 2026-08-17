@@ -1,6 +1,10 @@
 # Actieve lezingenconfiguratie.
-# Zet `parochie` op een id onder data/lezingen/parochies/<id>.yaml om
-# parochiespecifieke feestlezingen te laden (bovenop feest-overrides.yaml).
-# Leeg of weggelaten = alleen de gedeelde Moskou/ROCOR-lijst.
+# `parochie` laadt data/lezingen/parochies/<id>.yaml bovenop de gedeelde
+# Moskou/ROCOR-lijst. Leeg of weggelaten = alleen de gedeelde lijst.
+#
+# Huidige keuze: den-haag = Orthodox klooster van de Heilige Joannes de
+# Voorloper, Den Haag. Dat is géén Groningse parochielijst. Niet
+# stilzwijgend wijzigen. Omzetten: deze ene regel plus inhoud in
+# parochies/<id>.yaml (groningen.yaml staat klaar, nog zonder overrides).
 
 parochie: den-haag

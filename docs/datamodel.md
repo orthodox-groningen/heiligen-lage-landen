@@ -133,7 +133,9 @@ Normatieve regels: **`docs/specs/lezingen.md`** (traditie Moskou, ROCOR bij
 twijfel). Clerus: `/uitleg/lezingen/`; technisch: `/uitleg/lezingen-technisch/`.
 
 Data: `data/lezingen/` (`feest-overrides.yaml`, `weekreeks.yaml`, `rang.yaml`,
-`config.yaml`, optioneel `parochies/<id>.yaml`, `meta.yaml`). Engine:
+`config.yaml`, optioneel `parochies/<id>.yaml`, `meta.yaml`). Actieve
+parochielijst in deze repo: `parochie: den-haag` (klooster Den Haag, niet
+Groningen); niet stilzwijgend wijzigen. Engine:
 `scripts/lezingen.py`. Machine-leesbare voorbeelden in de spec sturen pytest.
 Build schrijft `site/static/data/lezingen-dagen.json` (per stijl/jaar/mmdd, met
 `daglabel` / `modus` / optioneel `rijadovoe`); UI op vandaag/`/datum/` en

@@ -14,7 +14,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from load_entries import load_entries, load_raw_entries  # noqa: E402
+from load_entries import load_entries, load_raw_entries, load_yaml  # noqa: E402
 
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 SELECTIE_WAARDEN = frozenset({"voldoet", "nader-onderzoek", "kandidaat-schrappen"})
@@ -137,6 +137,31 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
     return errors
 
 
+def collect_bronnen_errors() -> list[str]:
+    """Catalogus-ids in data/bronnen/bronnen.yaml moeten uniek zijn."""
+    path = ROOT / "data" / "bronnen" / "bronnen.yaml"
+    raw = load_yaml(path) or {}
+    seen: dict[str, int] = {}
+    errors: list[str] = []
+    for i, item in enumerate(raw.get("bronnen") or []):
+        if not isinstance(item, dict):
+            errors.append(f"{path.relative_to(ROOT)}: bronnen[{i}] is geen mapping")
+            continue
+        bron_id = str(item.get("id") or "").strip()
+        if not bron_id:
+            errors.append(f"{path.relative_to(ROOT)}: bronnen[{i}]: id ontbreekt")
+            continue
+        vorige = seen.get(bron_id)
+        if vorige is not None:
+            errors.append(
+                f"{path.relative_to(ROOT)}: dubbele bron_id {bron_id!r} "
+                f"(eerder bronnen[{vorige}])"
+            )
+        else:
+            seen[bron_id] = i
+    return errors
+
+
 def main() -> int:
     args = parse_args()
     schema = json.loads(args.schema.read_text(encoding="utf-8"))
@@ -155,6 +180,7 @@ def main() -> int:
         entries = []
 
     errors.extend(collect_content_errors(entries))
+    errors.extend(collect_bronnen_errors())
 
     if errors:
         print(f"{len(errors)} validatiefout(en):", file=sys.stderr)

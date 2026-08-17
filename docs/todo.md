@@ -17,5 +17,5 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
       teruggave Hemelvaart/Pinksteren; zondagen rond Kerst/Theofanie via
       `datum.weekdag_relatief`.
 - [x] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
-- [ ] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
+- [x] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
       `bronnen.yaml` opschonen.
