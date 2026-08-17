@@ -8,6 +8,11 @@ worden toegevoegd (stap 5). Heiligen met alleen lokale cultus of
 patroonschap (categorie C in deze notitie) komen niet automatisch in de
 catalogus.
 
+Aanvulling dezelfde dag (Russische bronnen, parochielijsten, Pervijze):
+[`post-schisma-aanvulling-2026-08-17.md`](post-schisma-aanvulling-2026-08-17.md).
+Dat bevestigt A voor Johannes (bezoek 1952, opname 1954) en breidt de
+C-lijst uit; de toevoegbesluiten wijzigen niet.
+
 **Onderzoeksdatum:** 17 augustus 2026  
 **Afbakening:** Nederland, België en Luxemburg; met "post-schismatisch" wordt hier bedoeld: heiligen die na het Oost-Westschisma (traditioneel gedateerd 1054) leefden en die door de Orthodoxe Kerk als heilige worden vereerd.
 
@@ -60,10 +65,18 @@ De Orthodoxe Kerk in Nederland schrijft expliciet dat de Russische Orthodoxe Ker
 Dit is een uitzonderlijk sterke historische relatie:
 
 - Johannes was zelf actief als bisschop van West-Europa;
-- zijn episcopale beleid had rechtstreeks betrekking op Nederland;
-- hij stimuleerde de vorming van Nederlandse orthodoxe gemeenschappen;
-- zijn inspanningen hangen volgens de Nederlandse Orthodoxe Kerk rechtstreeks samen met het ontstaan van een zelfstandig Nederlands bisdom;
-- de ontwikkeling liep vervolgens via Jakob Akkersdijk en andere Nederlandse geestelijken verder.
+- in **1952** bezocht hij de Nederlandse gemeenschap van Jakob
+  Akkersdijk en Adriaan Korporaal; in **1954** nam hij die op in zijn
+  bisdom, wijdde Jakob tot hiëromonnik en zette de parochie van
+  Johannes de Doper in Den Haag om tot vrouwenklooster;
+- hij stimuleerde de vorming van Nederlandse orthodoxe gemeenschappen
+  en liturgie in het Nederlands;
+- zijn inspanningen hangen volgens de Nederlandse Orthodoxe Kerk
+  rechtstreeks samen met het ontstaan van een zelfstandig Nederlands
+  bisdom;
+- de ontwikkeling liep vervolgens via Jakob Akkersdijk en andere
+  Nederlandse geestelijken verder (waaronder het klooster in Pervijze,
+  1976, vanuit Den Haag).
 
 Daarmee is Johannes niet slechts een heilige die later in Nederland vereerd werd: hij behoort tot de **institutionele voorgeschiedenis van de moderne Nederlandse Orthodoxie**.
 
@@ -75,6 +88,10 @@ Daarmee is Johannes niet slechts een heilige die later in Nederland vereerd werd
 
 2. Orthodoxe Kerk in Nederland, **"Orthodoxie in Nederland"**.  
    URL: https://orthodoxekerk.net/orthodoxe-kerk/orthodoxie-in-nederland/  
+   Bezocht: 17 augustus 2026.
+
+3. Wikipedia (RU), **"Православие в Нидерландах"** (keten 1936–1954).  
+   URL: https://ru.wikipedia.org/wiki/Православие_в_Нидерландах  
    Bezocht: 17 augustus 2026.
 
 ### Historische voorzichtigheid

@@ -10,7 +10,8 @@ Criteria (normatief voor gebruikers):
 Velden: [docs/datamodel.md](datamodel.md).
 
 Post-schisma-onderzoek (17 augustus 2026):
-[docs/onderzoek/post-schisma-orthodoxe-heiligen-lage-landen.md](onderzoek/post-schisma-orthodoxe-heiligen-lage-landen.md).
+[eerste ronde](onderzoek/post-schisma-orthodoxe-heiligen-lage-landen.md),
+[aanvulling Russische/ROCOR/parochielijsten](onderzoek/post-schisma-aanvulling-2026-08-17.md).
 
 ## Afbakening bij het scoren
 
@@ -25,7 +26,8 @@ Post-schisma-onderzoek (17 augustus 2026):
   bijdrage aan NL/BE.
 
 Post-schisma: alleen Orthodox vereerd **én** bijgedragen aan de Orthodoxie
-in NL/BE.
+in NL/BE. Een kerk of parochie die naar iemand is genoemd, of een
+Nederlandse dienst/vertaling, is daarvoor niet genoeg.
 
 ## Besluiten voor stap 5
 
@@ -38,8 +40,12 @@ Nieuwe YAML volgt in stap 5, in deze volgorde.
 | `johannes-van-shanghai` | Johannes Maximovitsj van Shanghai | Categorie A: institutionele ontwikkeling van de Orthodoxie in Nederland |
 | `sophrony-van-essex` | Sophrony (Sacharov) van Essex | Categorie B: liturgie in Gent (14 september 1980); geestelijke raad aan de stichteres van Asten |
 
-Feestdag, `betekenis_lagenlanden` en `status: curated` in stap 5. De claim
-over het Nederlandse bisdom (1965) later toetsen aan synodale stukken.
+Feestdag, `betekenis_lagenlanden` en `status: curated` in stap 5. Voor
+Johannes de keten 1952 (bezoek) / 1954 (opname in zijn bisdom, wijding
+van Jakob Akkersdijk, klooster Johannes de Doper in Den Haag) meenemen;
+het bisdom van 1965 later toetsen aan synodale stukken. Pervijze
+(1976, vanuit Den Haag) is bron voor Nederlandstalige liturgie, geen
+aparte heilige.
 
 ### Post-schisma — niet invoeren
 
@@ -49,15 +55,24 @@ andere heilige (D).
 | Heilige | Onderzoek | Waarom niet |
 | --- | --- | --- |
 | Silouan de Athoniet | D/C | Geen persoonlijke relatie met NL/BE; invloed via Sophrony |
+| Tichon van Moskou | C | Parochie Nijmegen (2005); ROCOR-stichting is te indirect |
+| Sergius van Radonezj | C | Parochie Amsterdam/Haarlem (2022); patroon, geen eigen bijdrage |
+| Serafim van Sarov | C | Parochie Namen; kerk Luik (met Alexander Nevski) |
 | Porfyrios van Kavsokalivia | C | Parochie Tilburg; geen eigen historische bijdrage |
 | Nektarios van Egina | C | Patroon van Eindhoven; geen eigen historische bijdrage |
 | Paisios de Athoniet | C | Parochie Lasne; geen eigen historische bijdrage |
-| Alexander Nevski | C | Patroon van Rotterdam; geen eigen historische bijdrage |
+| Alexander Nevski | C | Patroon van Rotterdam (en Luik); geen eigen historische bijdrage |
 | Dorothea van Kashin | C | Kapel bij Asten; lokale verering |
+| Maria van Egypte | C | ROCOR-parochie Aalsmeer |
+| Johannes de Doper | C | Patroon van het Haagse missieklooster; universeel, pre-schisma |
+| Johannes Chrysostomos | C | Parochie Maastricht (met Servatius); universeel, pre-schisma |
+| Nicolaas van Myra | C | Klooster Hemelum e.a.; universeel, pre-schisma |
 
 Pre-schisma patroonheiligen van huidige parochies (Maximos de Belijder,
-Theofano, Antonius en Theodosius van Kiev) horen niet automatisch in de
-catalogus: alleen patroonschap volstaat niet.
+Theofano, Antonius en Theodosius van Kiev, Nicolaas, Johannes de Doper,
+Chrysostomos) horen niet automatisch in de catalogus: alleen
+patroonschap volstaat niet. Servatius is geen patroon-alleen: hij
+werkte in Maastricht/Tongeren en blijft op de toevoeglijst hieronder.
 
 ### Pre-schisma — toevoegen
 
