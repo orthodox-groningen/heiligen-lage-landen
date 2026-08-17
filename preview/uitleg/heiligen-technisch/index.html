@@ -34,7 +34,18 @@ Na samenvoegen van dubbele bestanden:</p><div class=highlight><pre tabindex=0 st
 </span></span></code></pre></div><ul><li><code>id_aliassen</code>: oude ids, patroon <code>[a-z0-9_-]+</code>, niet het eigen id, niet
 een nog levend entry-id, uniek over de catalogus. Wordt Hugo <code>aliases</code>.</li><li>Zet de oude naam(en) ook in <code>namen.yaml</code> onder <code>alternatief</code>, anders
 vindt zoeken ze niet (Meneon en heiligenindex).</li></ul><h2 id=referenties>Referenties</h2><p>Zie <a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md>docs/datamodel.md</a>.
-Wikipedia en heiligen.net mogen aanvullen.</p><h2 id=icoon>Icoon</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>icoon</span>:
+Wikipedia en heiligen.net mogen aanvullen.</p><h2 id=plaatsen-en-rustplaats>Plaatsen en rustplaats</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>locaties</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>utrecht</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>echternach</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>rustplaats</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>plaats</span>: <span style=color:#ae81ff>echternach</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>toelichting</span>: <span style=color:#e6db74>&#34;Abdij van Echternach&#34;</span>
+</span></span></code></pre></div><p>Plaats-ids staan in <code>data/plaatsen.yaml</code> (naam, coördinaten, optioneel
+<code>streek</code> en <code>alternatief</code>). Een <code>soort: plaats</code> krijgt een marker als
+minstens één heilige die id in <code>locaties</code> heeft. Een <code>soort: streek</code>
+alleen als een heilige die streek-id zelf noemt. Relieken en bedevaarten
+horen niet in dit veld.</p><p><code>generate.py</code> schrijft <code>site/static/data/plaatsen.json</code> en zet
+plaatsnamen plus zoektekst op de heiligenpagina.</p><h2 id=icoon>Icoon</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>icoon</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>bestand</span>: <span style=color:#ae81ff>iconen/willibrord.jpg  </span> <span style=color:#75715e># onder site/static/</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>rechten</span>: <span style=color:#ae81ff>ok                     </span> <span style=color:#75715e># alleen dan toont generate de afbeelding</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>licentie</span>: <span style=color:#e6db74>&#34;Publiek domein&#34;</span>       <span style=color:#75715e># of bv. CC0, CC BY-SA 4.0</span>

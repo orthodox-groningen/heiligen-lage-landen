@@ -344,6 +344,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "brussel"
+    ],
     "feestdatum": "01-08",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -370,6 +373,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "drongen"
+    ],
     "feestdatum": "01-26",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -399,6 +405,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maubeuge"
+    ],
     "feestdatum": "01-30",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -498,6 +507,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht"
+    ],
     "feestdatum": "02-05",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -525,6 +537,11 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht",
+      "elno",
+      "doornik"
+    ],
     "feestdatum": "02-06",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -549,6 +566,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "heidenheim"
+    ],
     "feestdatum": "02-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -577,6 +597,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "kaiserswerth",
+      "frisia"
+    ],
     "feestdatum": "03-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -607,6 +631,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "03-04",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -633,6 +660,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "saeckingen"
+    ],
     "feestdatum": "03-06",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -660,6 +690,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/gertrudis.jpg",
     "betekenis_lage_landen": "Gertrudis maakte Nijvel tot het huis-klooster van de Pippiniden: onderwijs\nvoor meisjes, boeken uit Rome, banden met het columbaanse monnikendom.\nHaar moeder Iduberga stichtte Nijvel; Gertrudis leidde het na 652. Uit\nNijvel gingen nonnen naar Andenne (Begga). De vita van circa 680 is vroeg\ngenoeg om haar als historische abdis van Brabant te lezen, niet als late\nlegende.",
+    "locaties": [
+      "nijvel"
+    ],
+    "rustplaats": {
+      "plaats": "nijvel",
+      "toelichting": "Abdij van Nijvel"
+    },
     "feestdatum": "03-17",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -684,6 +721,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "frisia"
+    ],
     "feestdatum": "03-20",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -760,6 +800,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht",
+      "frisia"
+    ],
     "feestdatum": "03-26",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -811,6 +855,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "bergen"
+    ],
     "feestdatum": "04-09",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -838,6 +885,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "luik"
+    ],
     "feestdatum": "04-27",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -864,6 +914,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "tongeren"
+    ],
     "feestdatum": "04-30",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -888,6 +941,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "fosses"
+    ],
     "feestdatum": "05-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -916,6 +972,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "05-03",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -942,6 +1001,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht"
+    ],
     "feestdatum": "05-07",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -971,6 +1033,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "nijvel"
+    ],
     "feestdatum": "05-08",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -997,6 +1062,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "odilienberg"
+    ],
     "feestdatum": "05-11",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1026,6 +1094,14 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/servatius.jpg",
     "betekenis_lage_landen": "Servatius is de vroegst bevestigde bisschop van de Maasstreek. Zijn graf\nin Maastricht werd al in de vijfde eeuw een bedevaartsoord; de later hem\ngewijde basiliek geldt als de oudste kerk van de Nederlanden boven een\nheiligengraf. Daarmee hoort hij tot de wortel van het christendom in de\nLage Landen, nog vóór de Angelsaksische missie van de zevende en achtste\neeuw. De Orthodoxe Kerk eert hem als heilige van vóór het schisma.",
+    "locaties": [
+      "tongeren",
+      "maastricht"
+    ],
+    "rustplaats": {
+      "plaats": "maastricht",
+      "toelichting": "Sint-Servaasbasiliek"
+    },
     "feestdatum": "05-13",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1053,6 +1129,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/dymphna.jpg",
     "betekenis_lage_landen": "Dymphna is de heilige van Geel. De middeleeuwse vita (dertiende eeuw)\nplaatst haar vlucht uit Ierland en haar moord door haar vader in de\nKempen; of dat historisch is, is onzeker. Wat vaststaat is de cultus te\nGeel, die de stad tot een van de oudste Europese centra van zorg voor\nmensen met een psychische aandoening maakte (gezinsverpleging). OrthodoxWiki\nneemt haar op als maagd-martelares.",
+    "locaties": [
+      "geel"
+    ],
+    "rustplaats": {
+      "plaats": "geel",
+      "toelichting": "Sint-Dimpnakerk"
+    },
     "feestdatum": "05-15",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1078,6 +1161,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht",
+      "luik"
+    ],
     "feestdatum": "05-30",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1106,6 +1193,11 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/bonifatius.jpg",
     "betekenis_lage_landen": "Bonifatius (Wynfrith) werkte met en na Willibrord in Frisia en Utrecht,\nhervormde de Frankische kerk en stierf op 5 juni 754 bij Dokkum, met\ntientallen metgezellen, tijdens een vormseltocht onder de Friezen. Dat\nmartelaarschap op Friese grond is het keerpunt van de noordelijke\nmissie: Utrecht bleef, de Friese heidenen kregen een bloedgetuige.\nOrthodoxWiki en het Heiligenlexikon bevestigen die lijn.",
+    "locaties": [
+      "dokkum",
+      "utrecht",
+      "frisia"
+    ],
     "feestdatum": "06-05",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1132,6 +1224,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "noyon"
+    ],
     "feestdatum": "06-08",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1156,6 +1251,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Cunera is de heilige van Rhenen. De late legende (Ursula-cyclus: een\nmaagd die te Rhenen achterbleef en door haar gastvrouw werd gewurgd)\nis niet historisch hard te maken; het jaartal 451 hoort bij die cyclus.\nDe middeleeuwse cultus te Rhenen — relieken, kerktoren, stadsheilige —\nis wel een feit van de Utrechtse heiligenverering. Primaire vita-edities\nzijn hier niet geraadpleegd.",
+    "locaties": [
+      "rhenen"
+    ],
     "feestdatum": "06-12",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1185,6 +1283,12 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/odulphus.jpg",
     "betekenis_lage_landen": "Odulphus verbindt het Utrechtse kapittel met de Friese missie in de\nnegende eeuw, in het spoor van Willibrord, Bonifatius en Ludger. Hij\npredikte te Stavoren en keerde naar Utrecht terug. Later droeg de\nabdij bij Stavoren zijn naam. Daarmee hoort hij tot de tweede golf van\nkerstening in het noorden van de Lage Landen, ná de martelaren van de\nachtste eeuw.",
+    "locaties": [
+      "utrecht",
+      "stavoren",
+      "oirschot",
+      "frisia"
+    ],
     "feestdatum": "06-12",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1211,6 +1315,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "dilbeek"
+    ],
     "feestdatum": "06-17",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1238,6 +1345,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "velsen",
+      "frisia"
+    ],
     "feestdatum": "06-21",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1262,6 +1373,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Walfridus is de heilige van Bedum in Groningen: volgens de\nplaatselijke overlevering een landbouwer (soms met zijn zoon Radfridus)\ndie bij een Noormanneninval werd gedood. De middeleeuwse kerk van Bedum\ndroeg zijn naam. Een zelfstandige vroege vita is hier niet gevonden;\nWikipedia is voorlopig de enige geraadpleegde bron. De cultus is\nGronings en lokaal, geen algemene Nederlandse missieheilige.",
+    "locaties": [
+      "bedum"
+    ],
     "feestdatum": "06-22",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1317,6 +1431,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/rumold.jpg",
     "betekenis_lage_landen": "Rumold is de stadsheilige van Mechelen. De relieken in de\nSint-Romboutskathedraal en de middeleeuwse vita (*Passio Sancti Rumoldi*,\nelfde eeuw, Diederik van Sint-Truiden) maken hem tot een van de\nhoofdfiguren van de Vlaamse heiligenverering. Hoe legendarisch het\nlevensverhaal ook is: de cultus is lokaal, oud en aan Mechelen gebonden.",
+    "locaties": [
+      "mechelen"
+    ],
+    "rustplaats": {
+      "plaats": "mechelen",
+      "toelichting": "Sint-Romboutskathedraal"
+    },
     "feestdatum": "06-24",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1344,6 +1465,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/adelbert.jpg",
     "betekenis_lage_landen": "Adelbert is de huisheilige van Egmond: metgezel van Willibrord, later\nvereerd in de abdij die boven zijn graf groeide. Daarmee is hij de\nschakel tussen de Friese missie en het Noord-Hollandse\nkloosterchristendom. De abdij van Egmond werd het geestelijk centrum\nvan Holland; zijn cultus is daarvan de kiem.",
+    "locaties": [
+      "egmond"
+    ],
+    "rustplaats": {
+      "plaats": "egmond",
+      "toelichting": "Abdij van Egmond"
+    },
     "feestdatum": "06-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1398,6 +1526,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Johannes Maximovitsj is de post-schismatische heilige die het duidelijkst\nheeft bijgedragen aan de Orthodoxie in Nederland. De Orthodoxe Kerk in\nNederland schrijft de stichting van Nederlandstalige parochies vooral\naan hem toe, tot de synodale oprichting van het bisdom Den Haag en\nNederland in 1965, met Jakob Akkersdijk als eerste bisschop. Dat laatste\nsteunt op een kerkelijke website, niet op een hier geraadpleegd synodaal\nstuk.\n\nRussische overzichten maken de keten concreter: in 1952 bezocht hij de\ngemeenschap van Jakob Akkersdijk en Adriaan Korporaal; in 1954 nam hij\ndie op in zijn bisdom, wijdde Jakob tot hiëromonnik en zette de parochie\nvan Johannes de Doper in Den Haag om tot vrouwenklooster. Die jaartallen\nstaan in compilaties (Russische Wikipedia, Azbuka palomnika), niet in\neen hier gevonden contemporain document. Het klooster in Pervijze (1976)\nwerd gesticht door een monnik uit dat Haagse huis: institutionele\nvoortzetting van dezelfde missie, geen aparte heilige.",
+    "locaties": [
+      "den-haag"
+    ],
     "feestdatum": "07-02",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1424,6 +1555,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "temse"
+    ],
     "feestdatum": "07-10",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1453,6 +1587,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Sophrony heeft in de Lage Landen zelf gehandeld, niet alleen via zijn\ngeschriften. Op 14 september 1980 ging hij voor in de Goddelijke Liturgie\nin de parochie van de apostel Andreas te Gent en sprak met de parochianen\n(aartsbisdom België, jubileum 2022). De kerk daar is later mede aan hem\ntoegewijd.\n\nMoeder Maria, eerste abdis van het klooster in Asten (1989), getuigt in\neen interview op de kloosterwebsite dat zij hem in Essex ontmoette bij\nhaar terugkeer naar Nederland. Hij was niet haar geestelijke vader, maar\nde ontmoeting was «heel belangrijk». Zijn raad: woon niet als moniale bij\neen parochie; zoek ruimte om te bouwen. Dat is haar eigen getuigenis,\ngeen onafhankelijke derde.",
+    "locaties": [
+      "gent",
+      "asten"
+    ],
     "feestdatum": "07-11",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1475,6 +1613,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "07-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1503,6 +1644,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Otger hoort bij het drietal Angelsaksische (of Ierse) missionarissen dat\nomstreeks 700 het klooster op de Petrusberg stichtte, het huidige Sint\nOdiliënberg in Limburg. Zonder hem is de lokale kerstening van de\nRoerstreek onvolledig: Wiro en Plechelm staan al in deze kalender; Otger\nis de derde van dezelfde stichting. De basiliek draagt nog hun drie namen.",
+    "locaties": [
+      "odilienberg"
+    ],
+    "rustplaats": {
+      "plaats": "odilienberg",
+      "toelichting": "Sint Odiliënberg"
+    },
     "feestdatum": "07-15",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1530,6 +1678,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "odilienberg"
+    ],
     "feestdatum": "07-15",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1558,6 +1709,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/monulphus-gondulphus.jpg",
     "betekenis_lage_landen": "Gondulphus wordt samen met Monulphus vereerd als bisschop van Maastricht\nin de vroege zevende eeuw. Hun gemeenschappelijke cultus (reliekverheffing\n1039, feestdag 16 juli) hoort bij dezelfde Servaasbasiliek. Zelfs als de\nvitae legendarisch zijn, is de lokale bisschoppelijke opvolging na\nServatius en Monulphus deel van de Maaslandse kerkgeschiedenis.",
+    "locaties": [
+      "maastricht"
+    ],
     "feestdatum": "07-16",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1586,6 +1740,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/monulphus-gondulphus.jpg",
     "betekenis_lage_landen": "Monulphus maakte het graf van Servatius tot een stenen kerk — de kern\nvan de latere Sint-Servaasbasiliek. Gregorius van Tours noemt die\n*templum magnum* nog in de zesde eeuw. Daarmee is Monulphus de bouwer\ndie de Maaslandse bisschopsstad een duurzaam heiligencentrum gaf, na\nServatius en vóór Lambertus en Hubertus.",
+    "locaties": [
+      "maastricht"
+    ],
     "feestdatum": "07-16",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1613,6 +1770,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "07-18",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1637,6 +1797,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "07-24",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1791,6 +1954,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Werenfrid (Werenfried) predikte volgens de overlevering in de Betuwe en\nFriesland, in de kring van Willibrord. Elst en Westervoort bewaren zijn\ncultus. Heiligen.net en Wikipedia zijn de geraadpleegde bronnen; een\nvroege vita is hier niet nagetrokken. De betekenis is lokaal: de\nIJssel-Rijn-delta tussen Utrecht en Deventer.",
+    "locaties": [
+      "westervoort",
+      "elst"
+    ],
     "feestdatum": "08-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1866,6 +2033,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Jeroen is de hieromartelaar van de Hollandse kust. De overlevering\n(heiligen.net, Wikipedia) plaatst zijn dood in 856/857 te Noordwijk,\ntijdens Noormanneninvallen: een priester die de plaatselijke kerk diende\nen weigerde te vluchten. Een vroege vita of contemporaine oorkonde is\nhier niet geraadpleegd; de cultus te Noordwijk is wel middeleeuws\nbevestigd in latere kalenders en plaatselijke verering.",
+    "locaties": [
+      "noordwijk"
+    ],
     "feestdatum": "08-17",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1890,6 +2060,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "08-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1914,6 +2087,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "08-25",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1989,6 +2165,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht",
+      "stavelot"
+    ],
     "feestdatum": "09-03",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2040,6 +2220,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "mesen"
+    ],
     "feestdatum": "09-08",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2118,6 +2301,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "maastricht"
+    ],
     "feestdatum": "09-10",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2221,6 +2407,14 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/lambertus.jpg",
     "betekenis_lage_landen": "Lambertus is de martelaarsbisschop van de Maaszetel. Hij volgde zijn\noom Theodardus op, predikte onder de nog heidense Toxandren rond\nTongeren, en werd circa 705 in zijn huis te Luik vermoord. Zijn\nopvolger Hubertus bracht de relieken naar Luik en verlegde de zetel\ndaarheen. Maastricht en Luik danken hun middeleeuwse bisschopsstad aan\ndeze keten.",
+    "locaties": [
+      "maastricht",
+      "luik"
+    ],
+    "rustplaats": {
+      "plaats": "luik",
+      "toelichting": "Sint-Lambertuskathedraal"
+    },
     "feestdatum": "09-17",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2246,6 +2440,13 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Bavo (Allowin) is de stadsheilige van Gent. De overlevering maakt hem tot\neen bekeerde edelman die onder Amandus tot inkeer kwam en als kluizenaar\nbij de Gentse abdij stierf. De Sint-Baafskathedraal draagt zijn naam.\nEen Heiligenlexikon-artikel is in deze ronde niet op een stabiele URL\ngevonden; tot die toets volgt de tekst Wikipedia.",
+    "locaties": [
+      "gent"
+    ],
+    "rustplaats": {
+      "plaats": "gent",
+      "toelichting": "Sint-Baafskathedraal"
+    },
     "feestdatum": "10-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2301,6 +2502,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "lier"
+    ],
     "feestdatum": "10-11",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2325,6 +2529,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "amay"
+    ],
     "feestdatum": "10-23",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2351,6 +2558,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "meldert"
+    ],
     "feestdatum": "10-29",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2375,6 +2585,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "fosses"
+    ],
     "feestdatum": "10-31",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2401,6 +2614,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "balen"
+    ],
     "feestdatum": "11-05",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2427,6 +2643,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "wormhout"
+    ],
     "feestdatum": "11-06",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2452,6 +2671,15 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/willibrord.jpg",
     "betekenis_lage_landen": "Willibrord is de apostel van de Friezen en de stichter van de\nbisschopszetel Utrecht (695/696, met steun van Pepijn van Herstal en\nwijding door paus Sergius I). Vanuit Utrecht liep de kerstening van\nHolland, Friesland en de IJsselstreek; Echternach werd zijn\ngrafklooster. Zonder hem is de vroege kerk van de noordelijke Lage\nLanden niet te vertellen. OrthodoxWiki eert hem als heilige van de\nongedeelde Kerk.",
+    "locaties": [
+      "utrecht",
+      "echternach",
+      "frisia"
+    ],
+    "rustplaats": {
+      "plaats": "echternach",
+      "toelichting": "Abdij van Echternach"
+    },
     "feestdatum": "11-07",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2482,6 +2710,14 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/lebuinus.jpg",
     "betekenis_lage_landen": "Lebuinus (Liafwin) is de apostel van de IJsselstreek. Onder Gregorius\nvan Utrecht zette hij na Bonifatius’ dood de missie voort, bouwde een\nkapel te Wilp en daarna de kerk te Deventer, waar heidense Saksen die\nkerk verbrandden en hij haar herbouwde. Ludger begroef hem daar. De\nLebuïnuskerk blijft het stadsheiligtom van Deventer.",
+    "locaties": [
+      "deventer",
+      "frisia"
+    ],
+    "rustplaats": {
+      "plaats": "deventer",
+      "toelichting": "Lebuïnuskerk"
+    },
     "feestdatum": "11-12",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2559,6 +2795,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "susteren"
+    ],
     "feestdatum": "11-21",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2633,6 +2872,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "sint-truiden"
+    ],
     "feestdatum": "11-23",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2660,6 +2902,10 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "doornik",
+      "noyon"
+    ],
     "feestdatum": "11-27",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2684,6 +2930,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Oda is de heilige van de Meierij: volgens de overlevering een blinde\nprinses die na genezing kluizenares werd in de Peel, bij het latere\nSint-Oedenrode. De plaatsnaam bewaart haar cultus. Wikipedia is de\ngeraadpleegde bron; de vita is laat en legendarisch. Haar betekenis is\nBrabants-lokaal, naast Oda van Amay (een andere heilige in deze\nkalender).",
+    "locaties": [
+      "sint-oedenrode"
+    ],
     "feestdatum": "11-28",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2710,6 +2959,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "Radboud is de Utrechtse bisschop van de vroege tiende eeuw: bestuurder\nin een tijd van Noormanneninvallen, en schrijver van heiligenlevens\n(onder meer van Bonifatius en van Utrechtse voorgangers). Daarmee is\nhij én herder én de eerste literaire stem van de Utrechtse kerk. De\nRadbouduniversiteit draagt zijn naam. Wikipedia en heiligen.net zijn\nhier de bronnen; zijn Latijnse werken zijn niet in deze ronde\nnageslagen.",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "11-29",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2737,6 +2989,11 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "doornik",
+      "noyon",
+      "vlaanderen"
+    ],
     "feestdatum": "12-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2764,6 +3021,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "terwaan"
+    ],
     "feestdatum": "12-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2791,6 +3051,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "kamerijk"
+    ],
     "feestdatum": "12-15",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2819,6 +3082,14 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/begga.jpg",
     "betekenis_lage_landen": "Begga hoort tot het Pippinidische huis dat Nijvel, Andenne en de\nMaasvallei tot kerken- en kloosterland maakte. Als weduwe stichtte zij\nomstreeks 691/692 het vrouwenklooster te Andenne, bevolkt vanuit Nijvel\n(haar moeder Iduberga en zuster Gertrudis). Daarmee is zij een schakel\nin dezelfde stichtingsgeschiedenis als Iduberga en Gertrudis, die al in\ndeze kalender staan.",
+    "locaties": [
+      "andenne",
+      "nijvel"
+    ],
+    "rustplaats": {
+      "plaats": "andenne",
+      "toelichting": "Abdij van Andenne"
+    },
     "feestdatum": "12-17",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2846,6 +3117,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "heidenheim"
+    ],
     "feestdatum": "12-18",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2894,6 +3168,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "utrecht"
+    ],
     "feestdatum": "12-22",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2916,6 +3193,9 @@
     "onderdrukt_wekelijks_vasten": false,
     "icoon": null,
     "betekenis_lage_landen": "",
+    "locaties": [
+      "rath-melsigi"
+    ],
     "feestdatum": "12-23",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null

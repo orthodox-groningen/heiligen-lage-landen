@@ -1,0 +1,464 @@
+[
+  {
+    "id": "vlaanderen",
+    "naam": "Vlaanderen",
+    "alternatief": [
+      "Flanders"
+    ],
+    "lat": 51.05,
+    "lon": 3.72,
+    "soort": "streek"
+  },
+  {
+    "id": "frisia",
+    "naam": "Frisia",
+    "alternatief": [
+      "Friesland",
+      "Friezen"
+    ],
+    "lat": 53.2,
+    "lon": 5.8,
+    "soort": "streek"
+  },
+  {
+    "id": "amay",
+    "naam": "Amay",
+    "alternatief": [],
+    "lat": 50.549,
+    "lon": 5.309,
+    "soort": "plaats"
+  },
+  {
+    "id": "andenne",
+    "naam": "Andenne",
+    "alternatief": [],
+    "lat": 50.489,
+    "lon": 5.1,
+    "soort": "plaats"
+  },
+  {
+    "id": "asten",
+    "naam": "Asten",
+    "alternatief": [],
+    "lat": 51.404,
+    "lon": 5.744,
+    "soort": "plaats"
+  },
+  {
+    "id": "balen",
+    "naam": "Balen",
+    "alternatief": [],
+    "lat": 51.171,
+    "lon": 5.171,
+    "soort": "plaats"
+  },
+  {
+    "id": "bedum",
+    "naam": "Bedum",
+    "alternatief": [],
+    "lat": 53.3,
+    "lon": 6.603,
+    "soort": "plaats"
+  },
+  {
+    "id": "bergen",
+    "naam": "Bergen",
+    "alternatief": [
+      "Mons",
+      "Bergen in Henegouwen"
+    ],
+    "lat": 50.454,
+    "lon": 3.952,
+    "soort": "plaats"
+  },
+  {
+    "id": "brussel",
+    "naam": "Brussel",
+    "alternatief": [
+      "Bruxelles"
+    ],
+    "lat": 50.847,
+    "lon": 4.352,
+    "soort": "plaats"
+  },
+  {
+    "id": "den-haag",
+    "naam": "Den Haag",
+    "alternatief": [
+      "'s-Gravenhage"
+    ],
+    "lat": 52.07,
+    "lon": 4.3,
+    "soort": "plaats"
+  },
+  {
+    "id": "deventer",
+    "naam": "Deventer",
+    "alternatief": [],
+    "lat": 52.255,
+    "lon": 6.164,
+    "soort": "plaats"
+  },
+  {
+    "id": "dilbeek",
+    "naam": "Dilbeek",
+    "alternatief": [],
+    "lat": 50.848,
+    "lon": 4.264,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "dokkum",
+    "naam": "Dokkum",
+    "alternatief": [],
+    "lat": 53.325,
+    "lon": 6.0,
+    "soort": "plaats",
+    "streek": "frisia"
+  },
+  {
+    "id": "doornik",
+    "naam": "Doornik",
+    "alternatief": [
+      "Tournai"
+    ],
+    "lat": 50.607,
+    "lon": 3.389,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "drongen",
+    "naam": "Drongen",
+    "alternatief": [],
+    "lat": 51.05,
+    "lon": 3.663,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "echternach",
+    "naam": "Echternach",
+    "alternatief": [],
+    "lat": 49.812,
+    "lon": 6.422,
+    "soort": "plaats"
+  },
+  {
+    "id": "egmond",
+    "naam": "Egmond",
+    "alternatief": [],
+    "lat": 52.619,
+    "lon": 4.627,
+    "soort": "plaats"
+  },
+  {
+    "id": "elno",
+    "naam": "Saint-Amand-les-Eaux",
+    "alternatief": [
+      "Elno"
+    ],
+    "lat": 50.448,
+    "lon": 3.429,
+    "soort": "plaats"
+  },
+  {
+    "id": "elst",
+    "naam": "Elst",
+    "alternatief": [],
+    "lat": 51.919,
+    "lon": 5.842,
+    "soort": "plaats"
+  },
+  {
+    "id": "fosses",
+    "naam": "Fosses-la-Ville",
+    "alternatief": [
+      "Fosses"
+    ],
+    "lat": 50.398,
+    "lon": 4.696,
+    "soort": "plaats"
+  },
+  {
+    "id": "geel",
+    "naam": "Geel",
+    "alternatief": [],
+    "lat": 51.161,
+    "lon": 4.99,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "gent",
+    "naam": "Gent",
+    "alternatief": [
+      "Gand"
+    ],
+    "lat": 51.054,
+    "lon": 3.717,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "heidenheim",
+    "naam": "Heidenheim",
+    "alternatief": [],
+    "lat": 48.676,
+    "lon": 10.151,
+    "soort": "plaats"
+  },
+  {
+    "id": "kaiserswerth",
+    "naam": "Kaiserswerth",
+    "alternatief": [],
+    "lat": 51.299,
+    "lon": 6.737,
+    "soort": "plaats"
+  },
+  {
+    "id": "kamerijk",
+    "naam": "Kamerijk",
+    "alternatief": [
+      "Cambrai"
+    ],
+    "lat": 50.176,
+    "lon": 3.235,
+    "soort": "plaats"
+  },
+  {
+    "id": "lier",
+    "naam": "Lier",
+    "alternatief": [],
+    "lat": 51.131,
+    "lon": 4.57,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "luik",
+    "naam": "Luik",
+    "alternatief": [
+      "Liège"
+    ],
+    "lat": 50.633,
+    "lon": 5.567,
+    "soort": "plaats"
+  },
+  {
+    "id": "maastricht",
+    "naam": "Maastricht",
+    "alternatief": [],
+    "lat": 50.851,
+    "lon": 5.691,
+    "soort": "plaats"
+  },
+  {
+    "id": "maubeuge",
+    "naam": "Maubeuge",
+    "alternatief": [],
+    "lat": 50.277,
+    "lon": 3.973,
+    "soort": "plaats"
+  },
+  {
+    "id": "mechelen",
+    "naam": "Mechelen",
+    "alternatief": [],
+    "lat": 51.026,
+    "lon": 4.478,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "meldert",
+    "naam": "Meldert",
+    "alternatief": [],
+    "lat": 50.906,
+    "lon": 4.825,
+    "soort": "plaats"
+  },
+  {
+    "id": "mesen",
+    "naam": "Mesen",
+    "alternatief": [
+      "Messines"
+    ],
+    "lat": 50.766,
+    "lon": 2.898,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "nijvel",
+    "naam": "Nijvel",
+    "alternatief": [
+      "Nivelles"
+    ],
+    "lat": 50.597,
+    "lon": 4.328,
+    "soort": "plaats"
+  },
+  {
+    "id": "noordwijk",
+    "naam": "Noordwijk",
+    "alternatief": [],
+    "lat": 52.236,
+    "lon": 4.446,
+    "soort": "plaats"
+  },
+  {
+    "id": "noyon",
+    "naam": "Noyon",
+    "alternatief": [],
+    "lat": 49.582,
+    "lon": 3.001,
+    "soort": "plaats"
+  },
+  {
+    "id": "odilienberg",
+    "naam": "Sint Odiliënberg",
+    "alternatief": [
+      "Odiliënberg"
+    ],
+    "lat": 51.139,
+    "lon": 6.003,
+    "soort": "plaats"
+  },
+  {
+    "id": "oirschot",
+    "naam": "Oirschot",
+    "alternatief": [],
+    "lat": 51.505,
+    "lon": 5.313,
+    "soort": "plaats"
+  },
+  {
+    "id": "rath-melsigi",
+    "naam": "Rath Melsigi",
+    "alternatief": [],
+    "lat": 52.77,
+    "lon": -6.85,
+    "soort": "plaats"
+  },
+  {
+    "id": "rhenen",
+    "naam": "Rhenen",
+    "alternatief": [],
+    "lat": 51.959,
+    "lon": 5.568,
+    "soort": "plaats"
+  },
+  {
+    "id": "saeckingen",
+    "naam": "Säckingen",
+    "alternatief": [
+      "Bad Säckingen"
+    ],
+    "lat": 47.554,
+    "lon": 7.949,
+    "soort": "plaats"
+  },
+  {
+    "id": "sint-oedenrode",
+    "naam": "Sint-Oedenrode",
+    "alternatief": [],
+    "lat": 51.563,
+    "lon": 5.46,
+    "soort": "plaats"
+  },
+  {
+    "id": "sint-truiden",
+    "naam": "Sint-Truiden",
+    "alternatief": [],
+    "lat": 50.817,
+    "lon": 5.186,
+    "soort": "plaats"
+  },
+  {
+    "id": "stavelot",
+    "naam": "Stavelot",
+    "alternatief": [],
+    "lat": 50.395,
+    "lon": 5.931,
+    "soort": "plaats"
+  },
+  {
+    "id": "stavoren",
+    "naam": "Stavoren",
+    "alternatief": [],
+    "lat": 52.885,
+    "lon": 5.359,
+    "soort": "plaats",
+    "streek": "frisia"
+  },
+  {
+    "id": "susteren",
+    "naam": "Susteren",
+    "alternatief": [],
+    "lat": 51.064,
+    "lon": 5.852,
+    "soort": "plaats"
+  },
+  {
+    "id": "temse",
+    "naam": "Temse",
+    "alternatief": [],
+    "lat": 51.128,
+    "lon": 4.214,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  },
+  {
+    "id": "terwaan",
+    "naam": "Terwaan",
+    "alternatief": [
+      "Thérouanne"
+    ],
+    "lat": 50.636,
+    "lon": 2.21,
+    "soort": "plaats"
+  },
+  {
+    "id": "tongeren",
+    "naam": "Tongeren",
+    "alternatief": [],
+    "lat": 50.781,
+    "lon": 5.464,
+    "soort": "plaats"
+  },
+  {
+    "id": "utrecht",
+    "naam": "Utrecht",
+    "alternatief": [],
+    "lat": 52.091,
+    "lon": 5.121,
+    "soort": "plaats"
+  },
+  {
+    "id": "velsen",
+    "naam": "Velsen",
+    "alternatief": [],
+    "lat": 52.46,
+    "lon": 4.65,
+    "soort": "plaats"
+  },
+  {
+    "id": "westervoort",
+    "naam": "Westervoort",
+    "alternatief": [],
+    "lat": 51.963,
+    "lon": 5.973,
+    "soort": "plaats"
+  },
+  {
+    "id": "wormhout",
+    "naam": "Wormhout",
+    "alternatief": [],
+    "lat": 50.881,
+    "lon": 2.493,
+    "soort": "plaats",
+    "streek": "vlaanderen"
+  }
+]
