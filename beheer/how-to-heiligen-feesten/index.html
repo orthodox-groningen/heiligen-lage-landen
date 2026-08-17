@@ -10,11 +10,11 @@ Schema: <code>schemas/entry.schema.json</code>. Publiceren:
 <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/how-to-publiceren/>site bouwen</a>.</p><h2 id=nieuw-id>Nieuw id</h2><ol><li>Kies een id: alleen <code>a-z</code>, <code>0-9</code>, <code>_</code> en <code>-</code>, beginnend met een letter
 of cijfer. Voorbeeld: <code>willibrord</code>, <code>ontslapen-moeder-gods</code>.</li><li>Dat id is de <strong>bestandsnaam</strong> zonder <code>.yaml</code> en blijft stabiel. Wijzig
 later liever de getoonde naam dan het id.</li><li>Zet de canonieke naam in <code>data/namen.yaml</code> onder <code>entries.&lt;id></code> (primair,
-optioneel <code>alternatief</code>). Zie <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>. Voor een verhaal of samenvatting is
-minstens één <strong>referentie</strong> verplicht, met een locator: <code>url</code>, of <code>isbn</code>,
-of <code>locator</code>.</p><h3 id=vaste-dag>Vaste dag</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>willibrord</span>
+optioneel <code>alternatief</code>). Zie <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>. Voor een verhaal, samenvatting of
+<code>betekenis_lagenlanden</code> is minstens één <strong>referentie</strong> verplicht, met een
+locator: <code>url</code>, of <code>isbn</code>, of <code>locator</code>.</p><h3 id=vaste-dag>Vaste dag</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>willibrord</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>soort</span>: <span style=color:#ae81ff>heilige</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>status</span>: <span style=color:#ae81ff>curated         </span> <span style=color:#75715e># of stub</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>status: stub             # curated</span>: <span style=color:#ae81ff>zie onder</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>jaar</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>lagenlanden</span>: <span style=color:#66d9ef>true</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
@@ -44,8 +44,25 @@ Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
 </span></span><span style=display:flex><span>    <span style=color:#f92672>pagina</span>: <span style=color:#e6db74>&#34;120–124&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>geraadpleegd</span>: <span style=color:#e6db74>&#34;2026-08-16&#34;</span>
 </span></span></code></pre></div><p><code>bron_id</code> wijst naar <code>data/bronnen/bronnen.yaml</code>. De locator hoort <strong>ook</strong>
-op de referentie in de entry, niet alleen in de catalogus.</p><p><code>status: stub</code> — basisgegevens, kort of geen verhaal.
-<code>status: curated</code> — nagekeken tekst met traceerbare bronnen.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
+op de referentie in de entry, niet alleen in de catalogus.</p><h2 id=heiligen-selectie-betekenis-status>Heiligen: selectie, betekenis, status</h2><p>Criteria in gewone taal: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/heiligen/>Heiligen van de Lage Landen</a>.
+Velden: <a href=https://orthodox-groningen.github.io/heiligen-lage-landen/uitleg/heiligen-technisch/>technisch</a> en
+<a href=https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lagenlanden</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  Wat deze heilige voor het christendom of de Orthodoxie
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  in de Lage Landen betekende.</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selectie</span>: <span style=color:#ae81ff>voldoet         </span> <span style=color:#75715e># of nader-onderzoek | kandidaat-schrappen</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selectie_toelichting</span>: <span style=color:#e6db74>&#34;…&#34;</span>  <span style=color:#75715e># optioneel; niet op de publieke pagina</span>
+</span></span></code></pre></div><ul><li>Ontbreekt <code>selectie</code>: behandel als <code>nader-onderzoek</code>. Zet het veld als u
+een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li><code>betekenis_lagenlanden</code> is een <strong>apart</strong> stuk, niet hetzelfde als
+<code>verhaal</code> of <code>samenvatting</code>.</li></ul><p><code>status: stub</code> — basisgegevens, kort of geen nagekeken betekenis-stuk.
+<code>status: curated</code> bij een <strong>heilige</strong> alleen als:</p><ol><li><code>betekenis_lagenlanden</code> niet leeg is, en</li><li>minstens één referentie niet Wikipedia of heiligen.net is
+(die twee mogen aanvullen; OrthodoxWiki telt wél).</li></ol><p>Feesten: <code>curated</code> blijft nagekeken tekst met traceerbare bronnen.</p><p><code>validate.py</code> weigert een heilige die <code>curated</code> is zonder die lat.</p><h2 id=dubbele-ids-samenvoegen>Dubbele ids samenvoegen</h2><p>Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
+ids in <code>id_aliassen</code> en de oude namen in <code>data/namen.yaml</code> onder
+<code>alternatief</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>lebuinus</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>id_aliassen</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>lubuinus</span>
+</span></span></code></pre></div><p><code>id_aliassen</code> mag het eigen id niet herhalen en geen id dat nog als
+apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
+wijziging.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
 </span></span><span style=display:flex><span>python scripts/generate.py
 </span></span><span style=display:flex><span>python -m pytest -q
 </span></span></code></pre></div><p>Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
