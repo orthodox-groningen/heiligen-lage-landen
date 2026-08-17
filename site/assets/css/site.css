@@ -881,6 +881,47 @@ button.button {
   color: var(--gold-soft);
 }
 
+.info-popover.is-day-preview {
+  width: min(24rem, calc(100vw - 1.5rem));
+}
+
+.info-popover.is-day-preview #info-popover-body {
+  max-height: min(18rem, 50vh);
+  overflow-y: auto;
+}
+
+.day-popover-section {
+  margin-top: 0.65rem;
+}
+
+.day-popover-section:first-child {
+  margin-top: 0.15rem;
+}
+
+.day-popover-label {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.day-popover-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.day-popover-list li + li {
+  margin-top: 0.15rem;
+}
+
+.day-popover-vasten {
+  margin: 0;
+}
+
 .style-help {
   min-width: 2rem;
   font-weight: 700;

@@ -839,12 +839,108 @@
     fillNieuwOudMeer(meer);
   }
 
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function isPopoverFeast(entry) {
+    if (!entry) return false;
+    if (entry.soort === "heilige") return false;
+    if (entry.soort === "vasten") return false;
+    if (entry.vorm === "weekdagen") return false;
+    return true;
+  }
+
+  function isPopoverSaint(entry) {
+    return entry && entry.soort === "heilige";
+  }
+
+  function vastenBadgeHtml(niveau) {
+    const text = VASTEN_LABELS[niveau] || niveau;
+    return (
+      `<span class="vasten-badge vasten-badge-${escapeHtml(niveau)}">` +
+      `${escapeHtml(text)}</span>`
+    );
+  }
+
+  function popoverListHtml(items) {
+    if (!items.length) return "";
+    return (
+      `<ul class="day-popover-list">` +
+      items.map((n) => `<li>${escapeHtml(n)}</li>`).join("") +
+      `</ul>`
+    );
+  }
+
+  /** Jaarkalender: preview bij hover over een dagcel. */
+  function fillKalenderDagPopover(mmdd, titleEl, bodyEl, meerEl) {
+    const style = getStyle();
+    const year = viewYear;
+    titleEl.textContent = `${label(mmdd)} ${year}`;
+    if (meerEl) {
+      meer.hidden = false;
+      meer.innerHTML = `<a class="text-link" href="${daySurfaceHref(year, mmdd, style)}">Open deze dag</a>`;
+    }
+    const matched = entriesOnMmdd(calendarEntries, mmdd, style, year);
+    const feasts = matched
+      .filter(isPopoverFeast)
+      .map(entryNaam)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "nl"));
+    const saints = matched
+      .filter(isPopoverSaint)
+      .map(entryNaam)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "nl"));
+    const weekday = isoWeekdayFromMmdd(mmdd, year);
+    const vasten = mixVastenniveau(matched, weekday, mmdd);
+
+    let html = "";
+    if (feasts.length) {
+      html +=
+        `<div class="day-popover-section">` +
+        `<p class="day-popover-label">Feest</p>` +
+        popoverListHtml(feasts) +
+        `</div>`;
+    }
+    if (vasten) {
+      html +=
+        `<div class="day-popover-section">` +
+        `<p class="day-popover-label">Vasten</p>` +
+        `<p class="day-popover-vasten">${vastenBadgeHtml(vasten.niveau)}</p>` +
+        `</div>`;
+    }
+    if (saints.length) {
+      html +=
+        `<div class="day-popover-section">` +
+        `<p class="day-popover-label">${saints.length === 1 ? "Heilige" : "Heiligen"}</p>` +
+        popoverListHtml(saints) +
+        `</div>`;
+    }
+    if (!html) {
+      html = `<p class="muted">Geen feesten of heiligen op deze dag.</p>`;
+    }
+    bodyEl.innerHTML = html;
+  }
+
   function fillInfoPopover(trigger) {
     const body = document.getElementById("info-popover-body");
     const title = document.getElementById("info-popover-title");
     const meer = document.getElementById("info-popover-meer");
     if (!body || !title) return;
     const kind = (trigger && trigger.dataset.infoTip) || "nav";
+    if (kind === "kalender-dag") {
+      fillKalenderDagPopover(
+        trigger.dataset.dayMmdd,
+        title,
+        body,
+        meer
+      );
+      return;
+    }
     if (kind === "titel") {
       fillTitelPopover(trigger, title, body, meer);
       return;
@@ -906,6 +1002,7 @@
     const dlg = document.getElementById("info-popover");
     if (!dlg) return;
     dlg.hidden = true;
+    dlg.classList.remove("is-day-preview");
     infoAnchor = null;
   }
 
@@ -926,6 +1023,10 @@
     if (!dlg || !trigger) return;
     cancelInfoClose();
     infoAnchor = trigger;
+    dlg.classList.toggle(
+      "is-day-preview",
+      trigger.dataset.infoTip === "kalender-dag"
+    );
     fillInfoPopover(trigger);
     dlg.hidden = false;
     positionInfoPopover(trigger);
@@ -940,8 +1041,9 @@
       el.addEventListener("focus", () => openInfoPopover(el));
       el.addEventListener("blur", scheduleInfoClose);
       el.addEventListener("click", (ev) => {
-        // Navigatieknoppen (‹ ›) moeten gewoon klikken; tip alleen op hover/focus.
+        // Navigatieknoppen (‹ ›) en kalenderdagen: gewoon klikken.
         if (el.classList.contains("title-step")) return;
+        if (el.dataset.infoTip === "kalender-dag") return;
         ev.preventDefault();
         ev.stopPropagation();
         const dlg = document.getElementById("info-popover");
@@ -1265,6 +1367,7 @@
   }
 
   let viewYear = new Date().getFullYear();
+  let calendarEntries = [];
   let roosterMonth = String(new Date().getMonth() + 1).padStart(2, "0");
   try {
     const stored = localStorage.getItem(YEAR_KEY);
@@ -1391,11 +1494,14 @@
         const cls = ["day", has ? "has-entry" : "", color, isToday ? "is-today" : ""]
           .filter(Boolean)
           .join(" ");
-        html += `<a class="${cls}" href="${daySurfaceHref(viewYear, mmdd, style)}" title="${label(mmdd)} ${viewYear}">${day}</a>`;
+        html +=
+          `<a class="${cls}" href="${daySurfaceHref(viewYear, mmdd, style)}" ` +
+          `data-info-tip="kalender-dag" data-day-mmdd="${mmdd}">${day}</a>`;
       }
       html += `</div></section>`;
     }
     root.innerHTML = html;
+    wireInfoTips(root);
   }
 
   /* ---- Meneon ---- */
@@ -1886,6 +1992,7 @@
     updateHeading(style);
     try {
       const entries = await loadEntries();
+      calendarEntries = entries;
       yearBounds = yearBoundsFromEntries(entries);
       viewYear = clampYear(viewYear);
       renderToday(entries, style);
