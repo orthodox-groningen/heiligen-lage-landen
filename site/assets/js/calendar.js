@@ -1013,9 +1013,15 @@
     }
   }
 
-  function scheduleInfoClose() {
+  function scheduleInfoClose(delayMs) {
     cancelInfoClose();
-    infoCloseTimer = setTimeout(closeInfoPopover, 180);
+    const ms =
+      typeof delayMs === "number"
+        ? delayMs
+        : infoAnchor && infoAnchor.dataset.infoTip === "kalender-dag"
+          ? 450
+          : 180;
+    infoCloseTimer = setTimeout(closeInfoPopover, ms);
   }
 
   function openInfoPopover(trigger) {
@@ -1030,20 +1036,39 @@
     fillInfoPopover(trigger);
     dlg.hidden = false;
     positionInfoPopover(trigger);
+    requestAnimationFrame(() => positionInfoPopover(trigger));
+  }
+
+  function handleKalenderDagClick(el, ev) {
+    ev.preventDefault();
+    const dlg = document.getElementById("info-popover");
+    if (dlg && !dlg.hidden && infoAnchor === el) {
+      window.location.assign(el.href);
+      return;
+    }
+    openInfoPopover(el);
   }
 
   function wireInfoTips(root) {
     (root || document).querySelectorAll("[data-info-tip]").forEach((el) => {
       if (el.dataset.boundInfo === "1") return;
       el.dataset.boundInfo = "1";
+      const isKalenderDag = el.dataset.infoTip === "kalender-dag";
+      if (isKalenderDag) {
+        el.addEventListener("mouseenter", () => openInfoPopover(el));
+        el.addEventListener("mouseleave", () => scheduleInfoClose());
+        el.addEventListener("focus", () => openInfoPopover(el));
+        el.addEventListener("blur", () => scheduleInfoClose());
+        el.addEventListener("click", (ev) => handleKalenderDagClick(el, ev));
+        return;
+      }
       el.addEventListener("mouseenter", () => openInfoPopover(el));
       el.addEventListener("mouseleave", scheduleInfoClose);
       el.addEventListener("focus", () => openInfoPopover(el));
       el.addEventListener("blur", scheduleInfoClose);
       el.addEventListener("click", (ev) => {
-        // Navigatieknoppen (‹ ›) en kalenderdagen: gewoon klikken.
+        // Navigatieknoppen (‹ ›) moeten gewoon klikken.
         if (el.classList.contains("title-step")) return;
-        if (el.dataset.infoTip === "kalender-dag") return;
         ev.preventDefault();
         ev.stopPropagation();
         const dlg = document.getElementById("info-popover");
@@ -2055,6 +2080,19 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeInfoPopover();
   });
+
+  document.addEventListener(
+    "click",
+    (e) => {
+      const dlg = document.getElementById("info-popover");
+      if (!dlg || dlg.hidden || !infoAnchor) return;
+      if (infoAnchor.dataset.infoTip !== "kalender-dag") return;
+      const t = e.target;
+      if (dlg.contains(t) || infoAnchor.contains(t)) return;
+      closeInfoPopover();
+    },
+    true
+  );
 
   window.addEventListener("popstate", () => {
     refresh();

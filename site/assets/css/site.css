@@ -683,6 +683,7 @@ button.button {
   margin-left: -0.14rem;
   border-radius: 50%;
   background: var(--gold);
+  pointer-events: none;
 }
 
 .day:hover {
@@ -935,6 +936,7 @@ button.button {
 
 .info-popover.is-day-preview {
   width: min(24rem, calc(100vw - 1.5rem));
+  z-index: 1100;
 }
 
 .info-popover.is-day-preview #info-popover-body {
