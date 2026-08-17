@@ -5,6 +5,7 @@ build:
   list: never
   render: always
 uitleg_stijl: lezingen-technisch
+git_date: 2026-08-16
 ---
 
 Deze pagina is de **technische spiegel** van `docs/specs/lezingen.md`. Wijzig die specificatie (regels + voorbeelden); daarna moet `scripts/lezingen.py` meekomen — pytest bewaakt dat.

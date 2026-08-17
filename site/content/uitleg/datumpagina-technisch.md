@@ -5,6 +5,7 @@ uitleg_stijl: datumpagina-technisch
 build:
   list: never
   render: always
+git_date: 2026-08-16
 ---
 
 Technische bijlage bij de [uitleg Datumpagina’s]({{% ref "/uitleg/datumpagina" %}}).

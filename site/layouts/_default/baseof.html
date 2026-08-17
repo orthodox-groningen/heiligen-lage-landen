@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.dataset.theme = t;
+        }
+      } catch (e) {}
+    })();
+  </script>
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ $css := resources.Get "css/site.css" | resources.Minify | resources.Fingerprint }}
@@ -12,15 +22,20 @@
   <a class="skip-link" href="#main">Naar inhoud</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="{{ "" | relURL }}">Heiligen van de Lage Landen</a>
-      <nav class="nav" aria-label="Hoofdnavigatie">
-        <a href="{{ "" | relURL }}">Vandaag</a>
-        <a href="{{ "kalender/" | relURL }}">Kalender</a>
-        <a href="{{ "lezingenrooster/" | relURL }}">Lezingen</a>
-        <a href="{{ "meneon/" | relURL }}">Meneon</a>
-        <a href="{{ "agenda/" | relURL }}">Agenda</a>
-        <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
-      </nav>
+      <a class="brand" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+      <div class="header-tools">
+        <nav class="nav" aria-label="Hoofdnavigatie">
+          <a href="{{ "kalender/" | relURL }}">Kalender</a>
+          <a href="{{ "lezingenrooster/" | relURL }}">Lezingenrooster</a>
+          <a href="{{ "meneon/" | relURL }}">Meneon</a>
+          <a href="{{ "agenda/" | relURL }}">Agenda</a>
+          <a href="{{ "uitleg/" | relURL }}">Help</a>
+        </nav>
+        <span class="theme-toggle" role="group" aria-label="Kleurthema">
+          <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true">Donker</button>
+          <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false">Licht</button>
+        </span>
+      </div>
     </div>
   </header>
   <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") }} main-wide{{ end }}">
@@ -32,6 +47,8 @@
     <div id="info-popover-body"></div>
     <p class="info-popover-meer" id="info-popover-meer" hidden></p>
   </div>
+  {{ $themeJs := resources.Get "js/theme.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $themeJs.RelPermalink }}" defer></script>
   {{ $js := resources.Get "js/calendar.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>

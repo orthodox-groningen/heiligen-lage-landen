@@ -2,6 +2,7 @@
 title: "Datumpagina’s"
 description: "Wat er op één burgerlijke dag in een bepaald jaar valt"
 uitleg_stijl: datumpagina
+git_date: 2026-08-17
 ---
 
 Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf
@@ -10,7 +11,7 @@ feesten, heiligen, dagen van de paascyclus en vasten die op die
 **burgerlijke** datum vallen — de datum zoals Nederland die noemt. De titel
 noemt ook de weekdag; is het vandaag, dan staat dat erbij.
 
-*Vandaag* in het menu is dezelfde weergave als een datumpagina, maar dan
+De startpagina (logo) is dezelfde weergave als een datumpagina, maar dan
 voor de huidige dag.
 
 Dat is iets anders dan het [Meneon]({{% ref "/uitleg/meneon" %}}). Het Meneon

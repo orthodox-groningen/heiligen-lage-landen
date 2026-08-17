@@ -2,6 +2,7 @@
 title: "Heilige of feest toevoegen of wijzigen"
 description: "YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"
 weight: 20
+git_date: 2026-08-16
 ---
 
 Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de

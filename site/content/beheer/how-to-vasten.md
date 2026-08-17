@@ -2,6 +2,7 @@
 title: "Vastenregels wijzigen"
 description: "Periodes in data/vasten, mengregel in data/regels/vasten.yaml, code moet mee"
 weight: 40
+git_date: 2026-08-16
 ---
 
 Er zijn **twee lagen**. Ze door elkaar halen is de meest voorkomende fout.

@@ -2,6 +2,7 @@
 title: "Weergavenamen wijzigen"
 description: "Namen in data/namen.yaml; ids en bestandsnamen blijven stabiel"
 weight: 30
+git_date: 2026-08-16
 ---
 
 De **getoonde naam** van een heilige, feest of vasten wijzigt u in

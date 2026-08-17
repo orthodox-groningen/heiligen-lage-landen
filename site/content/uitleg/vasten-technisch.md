@@ -6,6 +6,7 @@ uitleg_stijl: vasten-technisch
 build:
   list: never
   render: always
+git_date: 2026-08-16
 ---
 
 Dit is de technische bijlage bij de [vastenuitleg voor overleg]({{% ref "/uitleg/vasten" %}}).

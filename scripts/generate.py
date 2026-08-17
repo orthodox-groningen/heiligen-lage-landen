@@ -448,7 +448,7 @@ def ensure_hand_owned_indexes() -> None:
     specs = [
         {
             "path": CONTENT / "_index.md",
-            "title": "Heiligen van de Lage Landen",
+            "title": "Orthodoxe Kalender met Heiligen van de Lage Landen",
             "layout": None,
         },
         {
@@ -473,7 +473,7 @@ def ensure_hand_owned_indexes() -> None:
         },
         {
             "path": CONTENT / "uitleg" / "_index.md",
-            "title": "Uitleg",
+            "title": "Help",
             "layout": None,
         },
         {

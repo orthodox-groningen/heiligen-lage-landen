@@ -1,4 +1,4 @@
-# Heiligen van de Lage Landen
+# Orthodoxe Kalender met Heiligen van de Lage Landen
 
 Statische site met orthodoxe **vaste feesten** (jaarcyclus) en **heiligen van de Lage Landen**.
 MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus

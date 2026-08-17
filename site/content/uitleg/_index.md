@@ -1,5 +1,6 @@
 ---
-title: "Uitleg"
+title: "Help"
+git_date: 2026-08-16
 ---
 
 Deze pagina’s zijn voor wie de kalender *gebruikt*: thuis, in de parochie of

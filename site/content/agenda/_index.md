@@ -1,6 +1,7 @@
 ---
 title: "Agenda"
 layout: agenda
+git_date: 2026-08-16
 ---
 
 Hier zet u de kerkelijke kalender **op uw telefoon of computer**: in Google

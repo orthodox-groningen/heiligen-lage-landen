@@ -1,6 +1,7 @@
 ---
 title: "Voor beheerders"
-description: "Wat waar staat, wat u mag wijzigen, en waar generate.py overheen schrijft"
+description: "Wat staat waar, wat u mag wijzigen, en waar generate.py overheen schrijft"
+git_date: 2026-08-16
 ---
 
 Deze pagina is voor wie de kalender **in de git-repo bijhoudt**: YAML

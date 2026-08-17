@@ -2,6 +2,7 @@
 title: "Meneon"
 description: "De vaste jaarcyclus: wat er altijd op een kalenderdag hoort"
 uitleg_stijl: meneon
+git_date: 2026-08-16
 ---
 
 Het [Meneon]({{% ref "/meneon" %}}) is het overzicht van de **vaste

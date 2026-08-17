@@ -2,6 +2,7 @@
 title: "Feestdatum"
 description: "De naam van een feestdag in het kerkelijk jaar, in nieuw en oud dezelfde"
 uitleg_stijl: feestdatum
+git_date: 2026-08-16
 ---
 
 Een vast feest of een heilige heeft een **feestdatum**: de naam van die dag

@@ -2,6 +2,7 @@
 title: "Lezingenrooster wijzigen"
 description: "Gedeelde Moskou-lijst versus parochie-overrides; spec en tests"
 weight: 50
+git_date: 2026-08-16
 ---
 
 Het lezingenrooster toont **Apostel** en **Evangelie** van de dag

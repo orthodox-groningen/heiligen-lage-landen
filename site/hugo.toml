@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "nl"
-title = "Heiligen van de Lage Landen"
+title = "Orthodoxe Kalender met Heiligen van de Lage Landen"
 enableRobotsTXT = true
 canonifyURLs = true
 disableKinds = ["taxonomy", "term"]

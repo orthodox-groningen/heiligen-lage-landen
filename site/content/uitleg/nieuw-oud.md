@@ -2,6 +2,7 @@
 title: "Nieuwe en Oude kalender"
 description: "Welke kalender uw parochie volgt, en wat de knop Nieuw/Oud doet"
 uitleg_stijl: nieuw-oud
+git_date: 2026-08-16
 ---
 
 In de Orthodoxe Kerk vieren niet alle parochies de vaste feesten op dezelfde

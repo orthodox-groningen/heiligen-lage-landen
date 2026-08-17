@@ -14,6 +14,7 @@ alternatief:
   - "Filipsvasten"
   - "Kerstvasten"
   - "Adventsvasten"
+git_date: 2026-08-16
 ---
 
 **Periode:** 15 november – 24 december (zelfde dagnamen in nieuwe én oude kalender).
