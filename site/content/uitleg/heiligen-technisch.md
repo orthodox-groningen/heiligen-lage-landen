@@ -83,3 +83,20 @@ id_aliassen:
 
 Zie [docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
 Wikipedia en heiligen.net mogen aanvullen.
+
+## Icoon
+
+```yaml
+icoon:
+  bestand: iconen/willibrord.jpg   # onder site/static/
+  rechten: ok                      # alleen dan toont generate de afbeelding
+  licentie: "Publiek domein"       # of bv. CC0, CC BY-SA 4.0
+  bron: "Wikimedia Commons — File:…"
+```
+
+Alleen een **lokaal** bestand. `validate.py` weigert een URL in `bestand`
+(geen hotlink vanuit de browser). Zonder duidelijke licentie: het veld
+weglaten. Twintigste-eeuwse foto’s en recente iconen zijn meestal nog
+beschermd.
+
+How-to: [heiligen en feesten wijzigen]({{% ref "/beheer/how-to-heiligen-feesten" %}}).

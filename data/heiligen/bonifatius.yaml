@@ -20,6 +20,11 @@ periode: "~754"
 locaties:
   - Dokkum
   - Utrecht
+icoon:
+  bestand: iconen/bonifatius.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Bonifatius van Fulda (tg-uact-334).jpg"
 samenvatting: |
   Angelsaksische missionaris; aartsbisschop van Mainz; martelaar bij
   Dokkum. Feestdag 5 juni.

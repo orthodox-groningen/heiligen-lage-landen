@@ -262,3 +262,18 @@ Voor **heiligen** geldt `curated` alleen als:
 
 Feesten en vasten: `curated` blijft «nagekeken tekst met traceerbare
 bronnen» (bestaande referentieverplichting bij verhaal/samenvatting).
+
+## Icoon
+
+```yaml
+icoon:
+  bestand: iconen/willibrord.jpg   # relatief t.o.v. site/static/
+  rechten: ok                      # ok | onbekend | nee
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:…"
+```
+
+`rechten: ok` is verplicht om te tonen. `bestand` is een lokaal pad, geen
+`http(s)`-URL. `bron` en `licentie` zijn verplicht als `bestand` gezet is.
+`generate.py` zet het pad plus bijschrift op de entry-pagina. Ontbreekt
+een legaal bestand: veld weglaten.

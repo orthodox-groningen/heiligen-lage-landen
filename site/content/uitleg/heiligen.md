@@ -48,6 +48,10 @@ Pagina’s die nog niet nagekeken zijn, tonen alleen basisgegevens (naam,
 feestdag, korte aanduiding). Daar staat bij dat een onderbouwd verhaal
 nog volgt.
 
+Soms staat er een afbeelding bij. Alleen als we die met een duidelijke
+licentie lokaal mogen tonen; een plaatje elders op internet is daarvoor
+niet genoeg.
+
 ## Voor wie de site bijhoudt
 
 Velden, status `stub`/`curated` en hoe u een heilige toevoegt, staan op de

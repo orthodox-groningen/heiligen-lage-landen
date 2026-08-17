@@ -18,6 +18,11 @@ titels:
 periode: "7e eeuw"
 locaties:
   - Geel
+icoon:
+  bestand: iconen/dymphna.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Sv Dimfna Irska.jpg"
 samenvatting: |
   Ierse maagd-martelares, vereerd te Geel. Feestdag 15 mei.
 betekenis_lage_landen: |

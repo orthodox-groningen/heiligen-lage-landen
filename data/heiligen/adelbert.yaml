@@ -18,6 +18,11 @@ titels:
 periode: "740"
 locaties:
   - Egmond
+icoon:
+  bestand: iconen/adelbert.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Adelbert van Egmond.jpg"
 samenvatting: |
   Aartsdiaken en metgezel van Willibrord; begraven te Egmond. Feestdag
   25 juni.

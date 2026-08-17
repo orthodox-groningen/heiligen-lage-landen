@@ -71,6 +71,39 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert "Predikte onder de Friezen." in body
 
 
+def test_entry_page_icoon_alleen_bij_rechten_ok(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            icoon={
+                "bestand": "iconen/willibrord.jpg",
+                "rechten": "ok",
+                "bron": "Wikimedia Commons",
+                "licentie": "Publiek domein",
+            }
+        )
+    )
+    meta, _body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )
+    assert meta["icoon"] == "/iconen/willibrord.jpg"
+    assert meta["icoon_bron"] == "Wikimedia Commons"
+    assert meta["icoon_licentie"] == "Publiek domein"
+    write_entry_page(
+        _heilige(
+            id="zonder",
+            icoon={"bestand": "iconen/x.jpg", "rechten": "onbekend"},
+        )
+    )
+    meta2, _ = _split_hugo_markdown(
+        (content / "heiligen" / "zonder.md").read_text(encoding="utf-8")
+    )
+    assert "icoon" not in meta2
+
+
 def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

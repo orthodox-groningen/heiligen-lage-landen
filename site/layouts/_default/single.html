@@ -3,7 +3,14 @@
   <h1>{{ .Title }}</h1>
   {{ with .Params.icoon }}
     <figure class="icon-figure">
-      <img src="{{ . | relURL }}" alt="Icoon bij {{ $.Title }}" width="240" height="240" loading="lazy">
+      <img src="{{ . | relURL }}" alt="Afbeelding van {{ $.Title }}" width="240" height="240" loading="lazy">
+      {{ if or $.Params.icoon_bron $.Params.icoon_licentie }}
+      <figcaption>
+        {{- with $.Params.icoon_bron }}{{ . }}{{ end -}}
+        {{- if and $.Params.icoon_bron $.Params.icoon_licentie }} · {{ end -}}
+        {{- with $.Params.icoon_licentie }}{{ . }}{{ end -}}
+      </figcaption>
+      {{ end }}
     </figure>
   {{ end }}
   {{ .Content }}

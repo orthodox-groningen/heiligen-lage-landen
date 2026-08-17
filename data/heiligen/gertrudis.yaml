@@ -21,6 +21,11 @@ titels:
 periode: "659"
 locaties:
   - Nijvel
+icoon:
+  bestand: iconen/gertrudis.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Gertrudis van Nijvel.jpg"
 samenvatting: |
   Dochter van Iduberga; leidde het klooster van Nijvel. Feestdag 17 maart.
 betekenis_lage_landen: |

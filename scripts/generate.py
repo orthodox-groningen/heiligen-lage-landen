@@ -239,6 +239,10 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     icoon = entry.get("icoon") or {}
     if icoon.get("bestand") and icoon.get("rechten") == "ok":
         fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
+        if str(icoon.get("bron") or "").strip():
+            fm.append(f"icoon_bron: {yaml_quote(str(icoon['bron']).strip())}")
+        if str(icoon.get("licentie") or "").strip():
+            fm.append(f"icoon_licentie: {yaml_quote(str(icoon['licentie']).strip())}")
     aliases = entry.get("id_aliassen") or []
     if aliases:
         fm.append("aliases:")

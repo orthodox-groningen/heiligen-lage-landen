@@ -16,6 +16,6 @@ Open werk volgens het verbeterplan. Vink af per afgeronde wijziging.
 - [x] Kalenderranden: voor-/nafeesten van de twaalf, synaxisdagen, Pokrov,
       teruggave Hemelvaart/Pinksteren; zondagen rond Kerst/Theofanie via
       `datum.weekdag_relatief`.
-- [ ] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
+- [x] Iconen: legale bestanden voor de curated kern (`rechten: ok`).
 - [ ] CI en parochie: pytest in `pages.yml`; Den Haag-default documenteren;
       `bronnen.yaml` opschonen.

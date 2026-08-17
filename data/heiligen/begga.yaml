@@ -23,6 +23,11 @@ periode: "693/694"
 locaties:
   - Andenne
   - Nijvel
+icoon:
+  bestand: iconen/begga.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Begga de landen.jpg"
 samenvatting: |
   Dochter van Iduberga en Pepijn van Landen; stichtte het klooster van
   Andenne. Feestdag 17 december.

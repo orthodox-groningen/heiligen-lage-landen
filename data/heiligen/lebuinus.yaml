@@ -26,6 +26,11 @@ titels:
 periode: "773/780"
 locaties:
   - Deventer
+icoon:
+  bestand: iconen/lebuinus.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:H. Lebuinus van Deventer Nederlandse heiligen (serietitel), RP-P-OB-62.084.jpg"
 samenvatting: |
   Angelsaksische priester; stichtte de kerk van Deventer. Feestdag
   12 november.

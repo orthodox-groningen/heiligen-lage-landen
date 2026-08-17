@@ -20,6 +20,11 @@ periode: "704/705"
 locaties:
   - Maastricht
   - Luik
+icoon:
+  bestand: iconen/lambertus.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:St-Lambert-Liège.jpg"
 samenvatting: |
   Bisschop van Maastricht; predikte in Brabant en Toxandrië; vermoord te
   Luik. Feestdag 17 september.

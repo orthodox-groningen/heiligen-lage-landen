@@ -152,6 +152,27 @@ Feesten: `curated` blijft nagekeken tekst met traceerbare bronnen.
 
 `validate.py` weigert een heilige die `curated` is zonder die lat.
 
+## Icoon
+
+Bestand onder `site/static/` (doorgaans `site/static/iconen/<id>.jpg`).
+Alleen tonen als `rechten: ok`, met `bron` en `licentie`. Geen URL als
+afbeeldingsbron: een plaatje op een andere site mag u niet zomaar in de
+browser laden (auteursrecht, kapotte links, hotlink-blokkades). Staat het
+legaal op Wikimedia Commons (publiek domein of CC met naamsvermelding),
+dan kopieert u het bestand naar `site/static/iconen/` en vermeldt u de
+Commons-pagina als `bron`.
+
+```yaml
+icoon:
+  bestand: iconen/willibrord.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Willibrord (Paris, BN Lat. 10510).jpg"
+```
+
+Ontbreekt een legaal bestand: laat `icoon` weg. «Icoon in parochie» hoort
+niet in `titels`.
+
 ## Dubbele ids samenvoegen
 
 Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude

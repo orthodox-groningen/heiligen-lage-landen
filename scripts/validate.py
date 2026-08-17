@@ -75,13 +75,25 @@ def collect_content_errors(entries: list[dict[str, Any]]) -> list[str]:
                 )
         icoon = entry.get("icoon") or {}
         if icoon.get("bestand"):
+            bestand = str(icoon["bestand"]).strip().replace("\\", "/")
+            if bestand.lower().startswith(("http://", "https://", "//")):
+                errors.append(
+                    f"{path}: icoon.bestand mag geen URL zijn; "
+                    "zet een lokaal bestand onder site/static/"
+                )
             if icoon.get("rechten") != "ok":
                 errors.append(
                     f"{path}: icoon.bestand gezet maar icoon.rechten is niet 'ok'"
                 )
-            icon_path = ROOT / "site" / "static" / icoon["bestand"]
+            if not str(icoon.get("bron") or "").strip():
+                errors.append(f"{path}: icoon.bron verplicht als bestand is gezet")
+            if not str(icoon.get("licentie") or "").strip():
+                errors.append(
+                    f"{path}: icoon.licentie verplicht als bestand is gezet"
+                )
+            icon_path = ROOT / "site" / "static" / bestand
             if not icon_path.is_file():
-                errors.append(f"{path}: icoonbestand ontbreekt: {icoon['bestand']}")
+                errors.append(f"{path}: icoonbestand ontbreekt: {bestand}")
 
         if entry.get("soort") == "heilige":
             sel = entry.get("selectie") or "nader-onderzoek"
