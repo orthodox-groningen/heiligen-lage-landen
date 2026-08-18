@@ -17,12 +17,30 @@ from ics import (  # noqa: E402
     day_title,
 )
 from kalender import julian_feast_to_civil_date  # noqa: E402
+from lezingen import build_lezingen_dagen_payload  # noqa: E402
 from load_entries import load_entries  # noqa: E402
 
-YEARS = [2025, 2026, 2027]
+YEARS = [2025, 2026]
 ALLES = frozenset({"heilige", "feest", "vasten"})
 VASTEN = frozenset({"vasten"})
 HEILIGEN = frozenset({"heilige"})
+
+_ENTRIES: list | None = None
+_PAYLOAD: dict | None = None
+
+
+def _entries():
+    global _ENTRIES
+    if _ENTRIES is None:
+        _ENTRIES = load_entries()
+    return _ENTRIES
+
+
+def _payload():
+    global _PAYLOAD
+    if _PAYLOAD is None:
+        _PAYLOAD = build_lezingen_dagen_payload(YEARS)
+    return _PAYLOAD
 
 
 def _unfold(text: str) -> str:
@@ -57,7 +75,7 @@ def parse_events(ics: str) -> dict[str, dict[str, str]]:
 
 
 def _build(kinds: frozenset[str], stijl: str = "nieuw", years: list[int] | None = None):
-    entries = load_entries()
+    entries = _entries()
     key = {
         ALLES: "alles",
         VASTEN: "vasten",
@@ -71,14 +89,18 @@ def _build(kinds: frozenset[str], stijl: str = "nieuw", years: list[int] | None 
         feed_key=key,
         kinds=kinds,
         years=years or YEARS,
+        lezingen_payload=_payload(),
     )
 
 
 def test_albericus_in_grote_vasten_is_een_dagregel() -> None:
     events = parse_events(_build(ALLES))
     ev = events["20260304"]
-    assert ev["summary"] == "Albericus van Utrecht · streng"
+    assert ev["summary"] == "2e woensdag van de Grote Vasten · streng"
     assert "Grote Vasten" in ev["description"]
+    assert "Heilige: Albericus van Utrecht" in ev["description"]
+    assert "Deze dag:" in ev["description"]
+    assert "Albericus van Utrecht:" in ev["description"]
     assert ev["url"].startswith(SITE_PUBLIC_URL)
     assert "jaar=2026" in ev["url"]
     assert "dag=03-04" in ev["url"]
@@ -91,7 +113,12 @@ def test_aankondiging_in_grote_vasten_heeft_vis() -> None:
 
 def test_willibrord_zonder_vastensuffix() -> None:
     events = parse_events(_build(ALLES))
-    assert events["20261107"]["summary"] == "Willibrord"
+    ev = events["20261107"]
+    assert ev["summary"] == "23e zaterdag na Pinksteren"
+    assert "Willibrord" in ev["description"]
+    assert "Apostel:" in ev["description"]
+    assert "Evangelie:" in ev["description"]
+    assert "debijbel.nl" in ev["description"]
 
 
 def test_pascha_een_balk_met_vastenvrij() -> None:
@@ -106,7 +133,8 @@ def test_synaxis_en_nafeest_een_titel() -> None:
     events = parse_events(_build(ALLES))
     ev = events["20260107"]
     assert ev["summary"] == "Synaxis van Johannes de Doper · wijn en olie"
-    assert "Nafeest van Theofanie" in ev["description"]
+    assert "Synaxis van Johannes de Doper:" in ev["description"]
+    assert not ev["summary"].startswith("Nafeest")
 
 
 def test_vasten_only_grote_vasten_en_lege_dinsdag() -> None:

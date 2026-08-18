@@ -12,8 +12,18 @@ HEILIGEN_LIST = ROOT / "site" / "layouts" / "heiligen" / "list.html"
 def test_titel_toont_toon() -> None:
     js = JS.read_text(encoding="utf-8")
     assert "function octoechosToon" in js
-    assert "(Toon ${p.toon})" in js
-    assert 'achtergrondLink("toon"' in js
+    assert "function dayToonHtml" in js
+    assert 'data-info-tip="toon"' in js
+    assert "afterHtml: dayToonHtml" in js
+    assert 'achtergrondUrl("toon")' in js
+    title_html_start = js.index("function dayTitleHtml")
+    title_html = js[title_html_start : js.index("function dayToonHtml")]
+    assert "Toon" not in title_html
+    assert "p.today" in title_html
+    nav = js[js.index("function titleNavHtml") : js.index("function updateHeading")]
+    assert "${opts.titleHtml}" in nav
+    assert "(opts.afterHtml || \"\")" in nav
+    assert nav.index("${opts.titleHtml}") < nav.index("›")
 
 
 def test_lijsticonen_in_meneon_en_heiligenoverzicht() -> None:

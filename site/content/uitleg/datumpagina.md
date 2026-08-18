@@ -9,9 +9,10 @@ Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf
 *Vandaag* met de pijltjes. U krijgt dan **die dag in dat jaar** te zien:
 feesten, heiligen, dagen van de paascyclus en vasten die op die
 **burgerlijke** datum vallen — de datum zoals Nederland die noemt. De titel
-is de weekdag, de datum en de [toon van de week]({{% ref "/uitleg/toon" %}})
-(Toon 1 tot 8). Is het vandaag, dan staat *(vandaag)* erbij, vóór de pijl
-naar de volgende dag.
+tussen de pijlen is de weekdag, de datum, en *(vandaag)* als het vandaag
+is. Rechts van de pijl naar de volgende dag staat de
+[toon van de week]({{% ref "/uitleg/toon" %}}) (Toon 1 tot 8), met een
+eigen korte uitleg.
 
 De startpagina (logo) is dezelfde weergave als een datumpagina, maar dan
 voor de huidige dag.

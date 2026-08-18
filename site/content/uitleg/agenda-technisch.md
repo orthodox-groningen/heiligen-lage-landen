@@ -49,8 +49,16 @@ verdwijnen uit het abonnement).
 
 Eén hele-dag-afspraak per burgerlijke dag die in de subset iets toont.
 `SUMMARY` volgt `day_title` in `scripts/ics.py` (spiegel `icsDayTitle` in
-`calendar.js`). Vastenlabels komen uit `mix_vastenniveau` in
+`calendar.js`): dagtype-feest, anders `daglabel` uit `lezingen-dagen.json`
+als feesten in de feed zitten, anders heiligen, anders alleen het
+vastenlabel. Vastenlabels komen uit `mix_vastenniveau` in
 `scripts/vasten.py`. `URL` wijst naar de datumpagina.
+
+`DESCRIPTION` volgt de datumpagina-box: vastenregel, overige dagtype-feesten
+(`Ook:`), Apostel/Evangelie met dezelfde Bijbel-deeplinks als de site
+(`debijbel.nl`, HSV), heiligen, daarna `Deze dag:` plus permalinks van
+feest en heilige. Geen wiki-tekst, geen vertaalkeuze, geen Nieuw/Oud in
+het event.
 
 - **nieuw:** vaste feesten op de feestdatum (burgerlijk = dagnaam);
   paascyclus op de berekende Orthodoxe datum.

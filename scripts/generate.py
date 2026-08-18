@@ -889,7 +889,7 @@ def write_plaatsen_json() -> None:
     )
 
 
-def write_lezingen_json() -> None:
+def write_lezingen_json() -> dict[str, Any]:
     """Precompute feestoverride-lezingen voor ICS-jaarvenster (nieuw + oud)."""
     years = list(occurrence_years())
     payload = build_lezingen_dagen_payload(years)
@@ -897,6 +897,7 @@ def write_lezingen_json() -> None:
         STATIC_DATA / "lezingen-dagen.json",
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
     )
+    return payload
 
 
 def write_entries_json(entries: list[dict[str, Any]]) -> None:
@@ -1022,10 +1023,13 @@ def write_entries_json(entries: list[dict[str, Any]]) -> None:
 
 
 
-def write_ics(entries: list[dict[str, Any]]) -> None:
+def write_ics(
+    entries: list[dict[str, Any]],
+    lezingen_payload: dict[str, Any] | None = None,
+) -> None:
     from ics import write_ics as _write_ics
 
-    _write_ics(entries)
+    _write_ics(entries, lezingen_payload=lezingen_payload)
 
 
 def clean_generated() -> None:
@@ -1071,8 +1075,8 @@ def main() -> int:
     write_entries_json(entries)
     write_plaatsen_json()
     write_beheer_selectie(entries)
-    write_lezingen_json()
-    write_ics(entries)
+    lez = write_lezingen_json()
+    write_ics(entries, lez)
     print(f"Gegenereerd: {len(entries)} entries.")
     return 0
 

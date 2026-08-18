@@ -262,6 +262,11 @@ h2 {
   gap: 0.9rem;
 }
 
+.title-toon {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .page-title-row {
   display: flex;
   flex-wrap: wrap;
