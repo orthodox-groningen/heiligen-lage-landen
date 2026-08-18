@@ -44,6 +44,7 @@ op de site. Zie [Feestdatum (technisch)]({{% ref "/uitleg/feestdatum-technisch" 
 
 ## Agenda-feeds
 
-Bij stijl `oud` vallen ICS-afspraken op de burgerlijke vierdatum. In de titel
-staat de Juliaanse feestdatum tussen haakjes. Wekelijks vasten blijft op de
-burgerlijke weekdag. Zie [Agenda (technisch)]({{% ref "/uitleg/agenda-technisch" %}}).
+Bij stijl `oud` vallen ICS-afspraken op de burgerlijke vierdatum. De
+Juliaanse feestdatum staat in de beschrijving van de afspraak, niet in de
+titel. Wekelijks vasten blijft op de burgerlijke weekdag. Zie
+[Agenda (technisch)]({{% ref "/uitleg/agenda-technisch" %}}).

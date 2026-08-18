@@ -5,7 +5,7 @@ uitleg_stijl: agenda-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-16
+git_date: 2026-08-18
 ---
 
 Technische bijlage bij de [uitleg Agenda]({{% ref "/uitleg/agenda" %}}).
@@ -14,19 +14,21 @@ How-to: [site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %}}).
 
 ## Feeds
 
-`scripts/generate.py` schrijft `site/static/ics/<sleutel>-<stijl>.ics`.
-Die bestanden worden bij elke generate **gewist en opnieuw gezet**. Niet
-met de hand redigeren.
+`scripts/ics.py` (aanroep vanuit `scripts/generate.py`) schrijft
+`site/static/ics/<sleutel>-<stijl>.ics`. Die bestanden worden bij elke
+generate **gewist en opnieuw gezet**. Niet met de hand redigeren.
+Bestandsnamen blijven gelijk; de inhoud is **dag-centrisch** (één `VEVENT`
+per burgerlijke dag).
 
-| Sleutel | Inhoud |
-| --- | --- |
-| `alles` | heiligen + feesten + vasten |
-| `heiligen` | alleen heiligen |
-| `feesten` | vaste feesten + paascyclus |
-| `vasten` | vastenperiodes + wekelijks |
-| `heiligen-feesten` | zonder vasten |
-| `heiligen-vasten` | zonder feesten |
-| `feesten-vasten` | zonder heiligen |
+| Sleutel            | Inhoud                      |
+| ------------------ | --------------------------- |
+| `alles`            | heiligen + feesten + vasten |
+| `heiligen`         | alleen heiligen             |
+| `feesten`          | vaste feesten + paascyclus  |
+| `vasten`           | vastenperiodes + wekelijks  |
+| `heiligen-feesten` | zonder vasten               |
+| `heiligen-vasten`  | zonder feesten              |
+| `feesten-vasten`   | zonder heiligen             |
 
 `stijl` is `nieuw` of `oud`. De agendapagina bouwt **één** knop uit de
 keuzes van de bezoeker (categorieën + stijl + downloaden/abonneren). Er is
@@ -34,18 +36,32 @@ geen lijst van alle feeds op de pagina. UI:
 `site/layouts/_default/agenda.html` en `calendar.js`.
 
 - **Abonneren:** de knop kopieert de HTTPS-URL van het gekozen `.ics`-bestand
-  naar het klembord; how-to’s op de pagina zeggen waar die URL geplakt wordt.
+  naar het klembord; Apple krijgt extra een `webcal:`-link. How-to’s op de
+  pagina zeggen waar die URL geplakt wordt.
 - **Downloaden:** dezelfde URL met `download`-attribuut.
 
+`X-WR-CALNAME` is kort, bijvoorbeeld `Orthodox · Lage Landen (nieuw)`.
+`UID` is `uuid5` van `{sleutel}:{stijl}:{datum}`. Wie al geabonneerd is,
+ziet bij de volgende verversing nieuwe UIDs (oude per-entry-afspraken
+verdwijnen uit het abonnement).
+
 ## Gedrag
+
+Eén hele-dag-afspraak per burgerlijke dag die in de subset iets toont.
+`SUMMARY` volgt `day_title` in `scripts/ics.py` (spiegel `icsDayTitle` in
+`calendar.js`). Vastenlabels komen uit `mix_vastenniveau` in
+`scripts/vasten.py`. `URL` wijst naar de datumpagina.
 
 - **nieuw:** vaste feesten op de feestdatum (burgerlijk = dagnaam);
   paascyclus op de berekende Orthodoxe datum.
 - **oud:** vaste feesten op Juliaanse feestdatum → burgerlijke vierdatum;
-  paascyclus ongewijzigd; titel bevat de Juliaanse dagnaam.
+  paascyclus ongewijzigd; Juliaanse dagnaam in de `DESCRIPTION`, niet in
+  de titel.
 - Wekelijks vasten: burgerlijke weekdag, in beide stijlen. Onderdrukking
   in vastenperiodes en vastenvrije weken: zelfde regel als op de
-  datumpagina (`context_entries` in `build_ics`).
+  datumpagina.
+
+`X-PUBLISHED-TTL:P1D`. `TRANSP:TRANSPARENT`. Geen `VALARM`.
 
 Bereik: huidig jaar −2 … +25 (`ICS_YEAR_BACK` / `ICS_YEAR_FORWARD`).
 

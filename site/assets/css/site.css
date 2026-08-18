@@ -710,6 +710,70 @@ h2 {
   margin: 0 0 0.85rem;
 }
 
+.agenda-voorbeeld {
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.15rem 1.15rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.agenda-voorbeeld h2 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 0 0 0.45rem;
+}
+
+.agenda-voorbeeld-week {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0.85rem;
+}
+
+.agenda-voorbeeld-week li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.agenda-voorbeeld-week li:first-child {
+  border-top: 0;
+}
+
+.agenda-voorbeeld-dag {
+  color: var(--gold-soft);
+  font-size: 0.92rem;
+}
+
+.agenda-voorbeeld-titel {
+  font-weight: 600;
+}
+
+.agenda-knoppen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.agenda-howto details {
+  margin: 0.65rem 0;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--bg-elev);
+}
+
+.agenda-howto summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.agenda-howto details ol {
+  margin: 0.65rem 0 0.2rem;
+}
+
 .ics-url-row {
   margin: 0.85rem 0 0;
 }
