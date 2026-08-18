@@ -1489,10 +1489,10 @@
       .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
     if (!saints.length) {
       return (
-        `<p class="muted today-geen-heilige">Geen heilige van de Lage Landen op deze dag. ` +
+        `<p class="muted today-geen-heilige">` +
         achtergrondLink(
           "heiligen",
-          "Waarom niet iedere heilige hier staat"
+          "Geen feest/gedachtenis van een Heilige van de Lage Landen"
         ) +
         `</p>`
       );
