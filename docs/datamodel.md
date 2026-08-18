@@ -102,7 +102,8 @@ onderdrukt_wekelijks_vasten: true   # wo/vr niet apart tonen (impliciet bij nive
 restcategorie. Het verdwijnt als die dag al in een **vastenperiode** valt
 (Ontslapen, Geboorte, Apostolisch, Grote Vasten, Grote Week) of in een
 vastenvrije periode (`vastenniveau: vrij`). Een named periode *is* het vasten
-van die dag; vrijdagvasten niet nog eens apart.
+van die dag; vrijdagvasten niet nog eens apart. ICS zet dat als **één
+dagregel** (titel met niveau), niet als losse woensdagvasten naast de periode.
 
 Twee geneste periodes overlappen in de huidige data niet (Grote Vasten eindigt
 vóór de Grote Week).

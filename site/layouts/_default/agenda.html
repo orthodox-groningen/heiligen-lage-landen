@@ -6,7 +6,10 @@
   <ol class="agenda-stappen">
     <li>
       <h2>Wat wilt u in uw agenda?</h2>
-      <p>U mag één, twee of alle drie aanvinken.</p>
+      <p>
+        U mag één, twee of alle drie aanvinken. Heiligen zijn die van de
+        <strong>Lage Landen</strong>, niet alle heiligen van de Kerk.
+      </p>
       <div class="filter-bar" role="group" aria-label="Soort dagen">
         <label class="chip"><input type="checkbox" name="ics-show" value="heilige" checked> Heiligen</label>
         <label class="chip"><input type="checkbox" name="ics-show" value="feest" checked> Feesten</label>
@@ -26,6 +29,7 @@
     </li>
     <li>
       <h2>Downloaden of abonneren?</h2>
+      <p>Abonneren blijft vanzelf bijgewerkt. Dat is wat de meeste mensen willen.</p>
       <div class="filter-bar" role="group" aria-label="Downloaden of abonneren">
         <label class="chip"><input type="radio" name="ics-modus" value="abonneren" checked> Abonneren (blijft bijgewerkt)</label>
         <label class="chip"><input type="radio" name="ics-modus" value="downloaden"> Downloaden (eenmalig bestand)</label>
@@ -33,11 +37,22 @@
     </li>
   </ol>
 
+  <div class="agenda-voorbeeld" id="ics-voorbeeld">
+    <h2>Zo ziet een week eruit in uw agenda</h2>
+    <p class="hint">De titel is wat u in de maandweergave ziet. Tik op een dag voor meer.</p>
+    <ol class="agenda-voorbeeld-week" id="ics-voorbeeld-week"></ol>
+    <p class="hint" id="ics-tip-apart">
+      Eén agenda krijgt één kleur in uw app. Wilt u vasten een eigen kleur geven,
+      vink dan alleen Vasten aan, abonneer, en herhaal voor Feesten of Heiligen.
+    </p>
+  </div>
+
   <div class="agenda-actie">
     <p class="agenda-samenvatting" id="ics-samenvatting"></p>
-    <p>
+    <p class="agenda-knoppen">
       <a class="button" id="ics-download" hidden href="#">Download de kalender</a>
       <button type="button" class="button" id="ics-copy" hidden>Kopieer de agenda-link</button>
+      <a class="button button-secondary" id="ics-webcal" hidden href="#">Open in Apple Agenda</a>
     </p>
     <p class="hint" id="ics-status" aria-live="polite"></p>
     <p class="ics-url-row" id="ics-url-row" hidden>
@@ -50,46 +65,59 @@
     <h2>Abonneren: wat u met de knop doet</h2>
     <p>
       Druk op <strong>Kopieer de agenda-link</strong>. Daarna plakt u die link
-      in de agenda-app. Kies hieronder uw app.
+      in de agenda-app. Op Apple kunt u ook <strong>Open in Apple Agenda</strong>
+      gebruiken. Kies hieronder uw app.
     </p>
 
-    <h3>Google Calendar (computer)</h3>
-    <ol>
-      <li>Druk op de knop hierboven (de link staat nu op het klembord).</li>
-      <li>Open <a href="https://calendar.google.com">Google Calendar</a> in de browser.</li>
-      <li>Klik op het tandwiel → <strong>Instellingen</strong>.</li>
-      <li>Kies <strong>Agenda toevoegen</strong> → <strong>Via URL</strong>.</li>
-      <li>Plak de link en bevestig.</li>
-    </ol>
+    <details>
+      <summary>Google Calendar (computer)</summary>
+      <ol>
+        <li>Druk op de knop hierboven (de link staat nu op het klembord).</li>
+        <li>Open <a href="https://calendar.google.com">Google Calendar</a> in de browser.</li>
+        <li>Klik op het tandwiel → <strong>Instellingen</strong>.</li>
+        <li>Kies <strong>Agenda toevoegen</strong> → <strong>Via URL</strong>.</li>
+        <li>Plak de link en bevestig.</li>
+      </ol>
+    </details>
 
-    <h3>iPhone, iPad of Mac (Apple Agenda)</h3>
-    <ol>
-      <li>Druk op de knop hierboven.</li>
-      <li>
-        Op de iPhone of iPad: <strong>Instellingen</strong> →
-        <strong>Agenda</strong> → <strong>Agenda-accounts</strong> →
-        <strong>Account toevoegen</strong> → <strong>Andere</strong> →
-        <strong>Voeg een agenda-abonnement toe</strong>. Plak de link.
-      </li>
-      <li>
-        Op de Mac: open Agenda → <strong>Archief</strong> →
-        <strong>Nieuw agenda-abonnement</strong>. Plak de link.
-      </li>
-    </ol>
+    <details>
+      <summary>iPhone, iPad of Mac (Apple Agenda)</summary>
+      <ol>
+        <li>
+          Het eenvoudigst: druk op <strong>Open in Apple Agenda</strong>.
+          Bevestig het abonnement.
+        </li>
+        <li>
+          Of kopieer de link. Op de iPhone of iPad:
+          <strong>Instellingen</strong> →
+          <strong>Agenda</strong> → <strong>Agenda-accounts</strong> →
+          <strong>Account toevoegen</strong> → <strong>Andere</strong> →
+          <strong>Voeg een agenda-abonnement toe</strong>. Plak de link.
+        </li>
+        <li>
+          Op de Mac: open Agenda → <strong>Archief</strong> →
+          <strong>Nieuw agenda-abonnement</strong>. Plak de link.
+        </li>
+      </ol>
+    </details>
 
-    <h3>Outlook (computer)</h3>
-    <ol>
-      <li>Druk op de knop hierboven.</li>
-      <li>Open Outlook op het web of in de app.</li>
-      <li>Ga naar het toevoegen van een agenda <strong>via internet</strong> of <strong>via URL</strong>.</li>
-      <li>Plak de link. (De exacte namen van de menu’s verschillen per versie.)</li>
-    </ol>
+    <details>
+      <summary>Outlook (computer)</summary>
+      <ol>
+        <li>Druk op de knop hierboven.</li>
+        <li>Open Outlook op het web of in de app.</li>
+        <li>Ga naar het toevoegen van een agenda <strong>via internet</strong> of <strong>via URL</strong>.</li>
+        <li>Plak de link. (De exacte namen van de menu’s verschillen per versie.)</li>
+      </ol>
+    </details>
 
-    <h3>Android</h3>
-    <ol>
-      <li>De Google-agenda-app op de telefoon kan een URL-abonnement vaak niet zelf starten.</li>
-      <li>Voer de stappen voor <strong>Google Calendar (computer)</strong> uit. Op de telefoon verschijnt dezelfde agenda als u daar hetzelfde Google-account gebruikt.</li>
-    </ol>
+    <details>
+      <summary>Android</summary>
+      <ol>
+        <li>De Google-agenda-app op de telefoon kan een URL-abonnement vaak niet zelf starten.</li>
+        <li>Voer de stappen voor <strong>Google Calendar (computer)</strong> uit. Op de telefoon verschijnt dezelfde agenda als u daar hetzelfde Google-account gebruikt.</li>
+      </ol>
+    </details>
   </section>
 
   <section class="agenda-howto" id="ics-howto-downloaden" hidden>

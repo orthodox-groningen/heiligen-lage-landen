@@ -180,5 +180,8 @@ def test_agenda_pagina_heeft_geen_lijst_vaste_feeds() -> None:
     assert 'name="ics-modus"' in layout
     assert "Kopieer de agenda-link" in layout
     assert "Download de kalender" in layout
+    assert "ics-voorbeeld-week" in layout
+    assert "Open in Apple Agenda" in layout
+    assert "function icsDayTitle" in js
     assert "ics-all-links" not in js
     assert "heiligen-feesten-nieuw" not in js

@@ -2159,6 +2159,137 @@
   }
 
   /* ---- Agenda ICS ---- */
+  function icsStyleToJs(stijl) {
+    return stijl === "oud" ? "juliaans" : "gregoriaans";
+  }
+
+  function isRandFeest(entry) {
+    const id = (entry && entry.id) || "";
+    return (
+      id.startsWith("voorfeest-") ||
+      id.startsWith("nafeest-") ||
+      id.startsWith("synaxis-") ||
+      id.startsWith("teruggave-")
+    );
+  }
+
+  function feastWeight(entry) {
+    const id = (entry && entry.id) || "";
+    const naam = entryNaam(entry);
+    if (id === "pascha") return [0, naam];
+    if (
+      id.startsWith("grote-") ||
+      id === "palmzondag" ||
+      id === "theofanie" ||
+      id === "kerst"
+    ) {
+      return [1, naam];
+    }
+    return [2, naam];
+  }
+
+  function pickOneFeast(list) {
+    return list.slice().sort((a, b) => {
+      const [wa, na] = feastWeight(a);
+      const [wb, nb] = feastWeight(b);
+      if (wa !== wb) return wa - wb;
+      return na.localeCompare(nb, "nl");
+    })[0];
+  }
+
+  function icsKopEntries(dayEntries) {
+    const feesten = (dayEntries || []).filter((e) => e.soort === "feest");
+    const heiligen = (dayEntries || []).filter((e) => e.soort === "heilige");
+    const named = feesten.filter((e) => !isRandFeest(e) && !isPeriodEntry(e));
+    const periodFeasts = feesten.filter(
+      (e) => !isRandFeest(e) && isPeriodEntry(e)
+    );
+    const rand = feesten.filter(isRandFeest);
+    if (named.length) return [pickOneFeast(named)];
+    if (periodFeasts.length) return [pickOneFeast(periodFeasts)];
+    if (heiligen.length) {
+      return heiligen
+        .slice()
+        .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
+    }
+    if (rand.length) {
+      const synaxis = rand.filter((e) => (e.id || "").startsWith("synaxis-"));
+      const pool = synaxis.length ? synaxis : rand;
+      return [pickOneFeast(pool)];
+    }
+    return [];
+  }
+
+  function vastenBronNaam(vasten, matched) {
+    if (vasten && vasten.periode) return entryNaam(vasten.periode);
+    const weekly = (matched || []).filter(isWeeklyEntry);
+    if (weekly.length) return entryNaam(weekly[0]);
+    const t = (vasten && vasten.tekst) || "";
+    const i = t.indexOf(" — ");
+    if (i >= 0) return t.slice(i + 3).split(",")[0].trim();
+    return "";
+  }
+
+  /** Spiegel van scripts/ics.py day_title (Python is normatief). */
+  function icsDayTitle(dayEntries, shows, weekday, mmdd) {
+    const kinds = new Set(shows || []);
+    const visible = (dayEntries || []).filter(
+      (e) => kinds.has(e.soort) && (e.soort === "heilige" || e.soort === "feest")
+    );
+    const vasten = mixVastenniveau(dayEntries, weekday, mmdd);
+    const showVasten = kinds.has("vasten") && vasten;
+    const kop = icsKopEntries(visible);
+    const headline = kop.map(entryNaam).join(", ");
+    if (!headline && !showVasten) return null;
+    if (!showVasten) return headline || null;
+    const label = VASTEN_LABELS[vasten.niveau] || vasten.niveau;
+    if (headline) return `${headline} · ${label}`;
+    const bron = vastenBronNaam(vasten, dayEntries);
+    return bron ? `${label} · ${bron}` : label;
+  }
+
+  function startOfIsoWeek(d) {
+    const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const wd = x.getDay() || 7;
+    x.setDate(x.getDate() - (wd - 1));
+    return x;
+  }
+
+  function renderAgendaVoorbeeld(shows, stijl) {
+    const list = document.getElementById("ics-voorbeeld-week");
+    if (!list) return;
+    if (!shows.length) {
+      list.innerHTML =
+        "<li class=\"muted\">Kies minstens één soort dag.</li>";
+      return;
+    }
+    const style = icsStyleToJs(stijl);
+    const start = startOfIsoWeek(new Date());
+    const days = ["ma", "di", "wo", "do", "vr", "za", "zo"];
+    const items = [];
+    for (let i = 0; i < 7; i++) {
+      const d = addDays(start, i);
+      const year = d.getFullYear();
+      const mmdd = mmddFromDate(d);
+      const matched = entriesOnMmdd(calendarEntries, mmdd, style, year);
+      const weekday = isoWeekdayFromMmdd(mmdd, year);
+      const title = icsDayTitle(matched, shows, weekday, mmdd);
+      const dag = `${days[i]} ${d.getDate()} ${MONTHS[d.getMonth() + 1]}`;
+      const tekst = title
+        ? escapeHtml(title)
+        : "<span class=\"muted\">niets op deze dag</span>";
+      items.push(
+        `<li><span class="agenda-voorbeeld-dag">${escapeHtml(dag)}</span>` +
+          `<span class="agenda-voorbeeld-titel">${tekst}</span></li>`
+      );
+    }
+    list.innerHTML = items.join("");
+  }
+
+  function webcalUrl(httpsUrl) {
+    return httpsUrl.replace(/^https:/i, "webcal:");
+  }
+
   function icsFilename() {
     const shows = checkedShows("ics-show");
     const stijl =
@@ -2255,7 +2386,10 @@
     const urlInput = document.getElementById("ics-url");
     const howtoAbo = document.getElementById("ics-howto-abonneren");
     const howtoDl = document.getElementById("ics-howto-downloaden");
+    const webcal = document.getElementById("ics-webcal");
     const klaar = Boolean(file);
+
+    renderAgendaVoorbeeld(shows, stijl);
 
     if (samenvatting) {
       samenvatting.textContent = agendaSamenvatting(
@@ -2296,12 +2430,25 @@
         copyBtn.textContent = "Kopieer de agenda-link";
       }
     }
+    if (webcal) {
+      const toonWebcal = klaar && modus === "abonneren";
+      setHidden(webcal, !toonWebcal);
+      if (toonWebcal) {
+        webcal.href = webcalUrl(url);
+        webcal.classList.remove("is-disabled");
+      } else {
+        webcal.removeAttribute("href");
+      }
+    }
     if (!klaar) {
       if (download) {
         setHidden(download, true);
       }
       if (copyBtn) {
         setHidden(copyBtn, true);
+      }
+      if (webcal) {
+        setHidden(webcal, true);
       }
     }
   }
