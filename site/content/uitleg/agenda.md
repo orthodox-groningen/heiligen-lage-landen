@@ -34,8 +34,9 @@ alleen Vasten aan, abonneer, en herhaal voor Feesten of Heiligen.
 
 Elke dag is **één** afspraak. De titel is het liturgische nieuws van die
 dag, met het vasten als kort label als u vasten hebt aangevinkt (*streng*,
-*wijn en olie*, *vis*, *vastenvrij*). Tik op de dag voor de rest (andere
-namen, een korte toelichting, een link naar deze site).
+*wijn en olie*, *vis*, *vastenvrij*). Tik op de dag voor dezelfde inhoud
+als op de datumpagina: vastenregel, andere namen, Apostel en Evangelie,
+heiligen, en gerichte links.
 
 - Bij **nieuw** vallen de afspraken op de dag zoals Nederland die noemt
   (Kerst op 25 december).

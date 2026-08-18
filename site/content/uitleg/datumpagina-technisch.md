@@ -47,9 +47,12 @@ Op de burgerlijke datum van dat jaar, in deze volgorde:
    lijst, met `icoon` uit `entries.json` als dat veld gezet is. Zonder
    heilige: geen kop, wel `today-geen-heilige` met link naar uitleg/heiligen.
 
-De titel toont de Slavische toon van de week (`octoechosToon` in
-`calendar.js`, zelfde formule als `octoechos_toon` in `scripts/kalender.py`).
-Zie [Toon van de week (technisch)]({{% ref "/uitleg/toon-technisch" %}}).
+De datum tussen de pijlen (`dayTitleHtml`) heeft de popup over de
+burgerlijke dag; *(vandaag)* hoort daarbij. De toon staat ná de pijl naar
+de volgende dag (`dayToonHtml`, `data-info-tip="toon"`). Formule:
+`octoechosToon` in `calendar.js`, zelfde als `octoechos_toon` in
+`scripts/kalender.py`. Zie
+[Toon van de week (technisch)]({{% ref "/uitleg/toon-technisch" %}}).
 
 Brondata voor (1) en (4): vaste feesten en heiligen op feestdatum (Nieuw)
 of burgerlijke vierdatum (Oud); paascyclus op de berekende datum; vastenperiodes

@@ -5,7 +5,7 @@ uitleg_stijl: toon
 git_date: 2026-08-17
 ---
 
-Op de [datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat in de titel
+Op de [datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat naast de datum
 **Toon 1** tot **Toon 8**. Dat is de toon van de week in de Slavische
 praktijk (Moskou): de acht wekelijkse zangtonen van de Octoechos.
 

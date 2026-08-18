@@ -229,6 +229,14 @@ def occurrences_by_date(
     return by_date
 
 
+def is_day_type_feest(entry: dict[str, Any]) -> bool:
+    if entry.get("soort") != "feest":
+        return False
+    if is_weekly_entry(entry) or is_period_entry(entry):
+        return False
+    return True
+
+
 def _feast_weight(entry: dict[str, Any]) -> tuple[int, str]:
     eid = str(entry.get("id") or "")
     if eid == "pascha":
@@ -242,30 +250,28 @@ def _pick_one_feast(feesten: list[dict[str, Any]]) -> dict[str, Any]:
     return min(feesten, key=_feast_weight)
 
 
-def kop_entries(day_entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Items die in de SUMMARY-kop horen (heiligen/feesten, geen vasten)."""
-    feesten = [e for e in day_entries if e.get("soort") == "feest"]
-    heiligen = [e for e in day_entries if e.get("soort") == "heilige"]
-    named = [
-        e
-        for e in feesten
-        if not is_rand_feest(e) and not is_period_entry(e)
-    ]
-    period_feasts = [
-        e for e in feesten if not is_rand_feest(e) and is_period_entry(e)
-    ]
+def kop_feesten(day_entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Dagtype-feesten voor de SUMMARY (geen periodes, geen vasten)."""
+    feesten = [e for e in day_entries if is_day_type_feest(e)]
+    named = [e for e in feesten if not is_rand_feest(e)]
     rand = [e for e in feesten if is_rand_feest(e)]
     if named:
         return [_pick_one_feast(named)]
-    if period_feasts:
-        return [_pick_one_feast(period_feasts)]
-    if heiligen:
-        return sorted(heiligen, key=lambda e: _naam(e).casefold())
     if rand:
         synaxis = [e for e in rand if str(e.get("id") or "").startswith("synaxis-")]
         pool = synaxis or rand
         return [_pick_one_feast(pool)]
     return []
+
+
+def kop_heiligen(day_entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    heiligen = [e for e in day_entries if e.get("soort") == "heilige"]
+    return sorted(heiligen, key=lambda e: _naam(e).casefold())
+
+
+def kop_entries(day_entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Terug compat: feest wint, anders heiligen (zonder daglabel)."""
+    return kop_feesten(day_entries) or kop_heiligen(day_entries)
 
 
 def kop_titel(items: list[dict[str, Any]]) -> str:
@@ -301,6 +307,48 @@ def vasten_bron_naam(
     return ""
 
 
+def _lezingen_for_civil(
+    payload: dict[str, Any] | None,
+    civil: date,
+    stijl: str,
+) -> dict[str, Any] | None:
+    if not payload:
+        return None
+    if stijl == "oud":
+        jy, jm, jd = gregorian_to_julian_calendar(civil)
+        key_year, key_mmdd = jy, format_mmdd(jm, jd)
+    else:
+        key_year, key_mmdd = civil.year, mmdd_from_date(civil)
+    bucket = (payload.get(stijl) or {}).get(str(key_year)) or {}
+    found = bucket.get(key_mmdd)
+    return found if isinstance(found, dict) else None
+
+
+def _entry_public_url(entry: dict[str, Any]) -> str:
+    from generate import entry_permalink
+
+    return f"{SITE_PUBLIC_URL}{entry_permalink(entry)}"
+
+
+def _ref_line(label: str, refs: list[Any] | None) -> str | None:
+    from bijbel import debijbel_url
+
+    bits: list[str] = []
+    for item in refs or []:
+        ref = ""
+        if isinstance(item, dict):
+            ref = str(item.get("ref") or "")
+        else:
+            ref = str(getattr(item, "ref", "") or "")
+        if not ref:
+            continue
+        url = debijbel_url(ref)
+        bits.append(f"{ref} ({url})" if url else ref)
+    if not bits:
+        return None
+    return f"{label}: " + "; ".join(bits)
+
+
 def day_title(
     day_entries: list[dict[str, Any]],
     *,
@@ -308,6 +356,7 @@ def day_title(
     civil: date,
     stijl: str = "nieuw",
     indicatie: VastenIndicatie | None | object = ...,
+    lezingen: dict[str, Any] | None = None,
 ) -> str | None:
     """SUMMARY voor één dag, of None als de feed die dag overslaat."""
     visible = [
@@ -322,10 +371,15 @@ def day_title(
             _mix_mmdd(civil, stijl),
         )
     show_vasten = "vasten" in kinds and indicatie is not None
-    kop = kop_entries(visible)
-    if not kop and not show_vasten:
-        return None
+    kop = kop_feesten(visible)
     headline = kop_titel(kop)
+    if not headline and "feest" in kinds and lezingen and lezingen.get("daglabel"):
+        headline = str(lezingen["daglabel"])
+    if not headline:
+        kop = kop_heiligen(visible)
+        headline = kop_titel(kop)
+    if not headline and not show_vasten:
+        return None
     if not show_vasten:
         return headline or None
     assert isinstance(indicatie, VastenIndicatie)
@@ -336,17 +390,6 @@ def day_title(
     if bron:
         return f"{label} · {bron}"
     return label
-
-
-def _short_samenvatting(text: str) -> str:
-    text = (text or "").strip()
-    if not text:
-        return ""
-    para = text.split("\n\n")[0].replace("\n", " ").strip()
-    if len(para) > 280:
-        cut = para[:277].rsplit(" ", 1)[0]
-        return cut + "…"
-    return para
 
 
 def _juliaans_regel(entry: dict[str, Any], stijl: str) -> str | None:
@@ -368,6 +411,7 @@ def day_description(
     stijl: str,
     indicatie: VastenIndicatie | None,
     kop: list[dict[str, Any]],
+    lezingen: dict[str, Any] | None = None,
 ) -> str:
     parts: list[str] = []
     if "vasten" in kinds and indicatie is not None:
@@ -378,18 +422,47 @@ def day_description(
         if e.get("soort") in kinds and e.get("soort") in {"heilige", "feest"}
     ]
     kop_ids = {e.get("id") for e in kop}
-    rest = [e for e in visible if e.get("id") not in kop_ids]
+    rest = [
+        e
+        for e in visible
+        if e.get("id") not in kop_ids and is_day_type_feest(e)
+    ]
     if rest:
         rest_sorted = sorted(rest, key=lambda e: _naam(e).casefold())
         parts.append("Ook: " + ", ".join(_naam(e) for e in rest_sorted))
     if kop:
-        sam = _short_samenvatting(str(kop[0].get("samenvatting") or ""))
-        if sam:
-            parts.append(sam)
         jul = _juliaans_regel(kop[0], stijl)
         if jul:
             parts.append(jul)
-    parts.append(f"Meer: {datum_pagina_url(civil)}")
+    if lezingen and lezingen.get("status") == "gevonden":
+        apostel = _ref_line("Apostel", lezingen.get("apostel"))
+        evangelie = _ref_line("Evangelie", lezingen.get("evangelie"))
+        if apostel:
+            parts.append(apostel)
+        if evangelie:
+            parts.append(evangelie)
+    elif lezingen and lezingen.get("status") == "geen_liturgie":
+        parts.append("Geen liturgie met Apostel/Evangelie van de dag.")
+    heiligen = [
+        e
+        for e in day_entries
+        if e.get("soort") == "heilige" and "heilige" in kinds
+    ]
+    if heiligen:
+        heiligen = sorted(heiligen, key=lambda e: _naam(e).casefold())
+        label = "Heilige" if len(heiligen) == 1 else "Heiligen"
+        parts.append(label + ": " + ", ".join(_naam(e) for e in heiligen))
+    parts.append(f"Deze dag: {datum_pagina_url(civil)}")
+    linked: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    for e in list(kop) + heiligen:
+        eid = str(e.get("id") or "")
+        if not eid or eid in seen_ids:
+            continue
+        seen_ids.add(eid)
+        linked.append(e)
+    for e in linked:
+        parts.append(f"{_naam(e)}: {_entry_public_url(e)}")
     return "\n".join(parts)
 
 
@@ -402,12 +475,17 @@ def build_ics(
     feed_key: str = "alles",
     kinds: frozenset[str] | None = None,
     years: Iterable[int] | None = None,
+    lezingen_payload: dict[str, Any] | None = None,
 ) -> str:
     """Bouw ICS: één hele-dag-afspraak per burgerlijke dag in de subset."""
     if kinds is None:
         kinds = frozenset(e["soort"] for e in entries)
     context = context_entries if context_entries is not None else entries
     year_list = list(years) if years is not None else _occurrence_years()
+    if lezingen_payload is None:
+        from lezingen import build_lezingen_dagen_payload
+
+        lezingen_payload = build_lezingen_dagen_payload(year_list)
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     grouped = occurrences_by_date(context, stijl, year_list)
     lines = [
@@ -426,21 +504,29 @@ def build_ics(
         indicatie = mix_vastenniveau(
             day_entries, civil.isoweekday(), mix_mmdd
         )
+        lez = _lezingen_for_civil(lezingen_payload, civil, stijl)
+        visible = [
+            e
+            for e in day_entries
+            if e.get("soort") in kinds and e.get("soort") in {"heilige", "feest"}
+        ]
+        feest_kop = kop_feesten(visible)
+        if feest_kop:
+            kop = feest_kop
+        elif "feest" in kinds and lez and lez.get("daglabel"):
+            kop = []
+        else:
+            kop = kop_heiligen(visible)
         summary = day_title(
             day_entries,
             kinds=kinds,
             civil=civil,
             stijl=stijl,
             indicatie=indicatie,
+            lezingen=lez,
         )
         if not summary:
             continue
-        visible = [
-            e
-            for e in day_entries
-            if e.get("soort") in kinds and e.get("soort") in {"heilige", "feest"}
-        ]
-        kop = kop_entries(visible)
         description = day_description(
             day_entries,
             kinds=kinds,
@@ -448,6 +534,7 @@ def build_ics(
             stijl=stijl,
             indicatie=indicatie,
             kop=kop,
+            lezingen=lez,
         )
         url = datum_pagina_url(civil)
         uid_key = f"{feed_key}:{stijl}:{civil.isoformat()}"
@@ -471,10 +558,18 @@ def build_ics(
     return "\r\n".join(_fold(line) for line in lines) + "\r\n"
 
 
-def write_ics(entries: list[dict[str, Any]]) -> None:
+def write_ics(
+    entries: list[dict[str, Any]],
+    lezingen_payload: dict[str, Any] | None = None,
+) -> None:
     from generate import STATIC_ICS, write_text
 
     STATIC_ICS.mkdir(parents=True, exist_ok=True)
+    if lezingen_payload is None:
+        from lezingen import build_lezingen_dagen_payload
+        from generate import occurrence_years
+
+        lezingen_payload = build_lezingen_dagen_payload(list(occurrence_years()))
     for kinds in ICS_COMBOS:
         key = subset_key(kinds)
         assert key
@@ -490,5 +585,6 @@ def write_ics(entries: list[dict[str, Any]]) -> None:
                     context_entries=entries,
                     feed_key=key,
                     kinds=kinds,
+                    lezingen_payload=lezingen_payload,
                 ),
             )

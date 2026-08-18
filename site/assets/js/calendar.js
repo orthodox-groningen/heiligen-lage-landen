@@ -770,13 +770,21 @@
 
   function dayTitleText(view, style) {
     const p = dayTitleParts(view, style);
-    return `${p.weekday}, ${p.datePart} (Toon ${p.toon})${p.today}`;
+    return `${p.weekday}, ${p.datePart}${p.today} (Toon ${p.toon})`;
   }
 
   function dayTitleHtml(view, style) {
     const p = dayTitleParts(view, style);
-    const toonLink = achtergrondLink("toon", `Toon ${p.toon}`);
-    return `${escapeHtml(p.weekday)}, ${escapeHtml(p.datePart)} (${toonLink})${p.today}`;
+    return `${escapeHtml(p.weekday)}, ${escapeHtml(p.datePart)}${escapeHtml(p.today)}`;
+  }
+
+  function dayToonHtml(view, style) {
+    const p = dayTitleParts(view, style);
+    return (
+      `<span class="title-toon">(` +
+      `<a class="text-link" href="${achtergrondUrl("toon")}" ` +
+      `data-achtergrond="toon" data-info-tip="toon">Toon ${p.toon}</a>)</span>`
+    );
   }
 
   function titleNavHtml(opts) {
@@ -811,7 +819,8 @@
       `data-info-unit="${unit}">${opts.titleHtml}</span>` +
       `<button type="button" class="title-step" data-${opts.deltaAttr}="1" ` +
       `aria-label="${opts.nextLabel}"${nextDis} ` +
-      `data-info-tip="nav" data-info-title="${nextTitle}" data-info-body="${nextBody}">›</button>`
+      `data-info-tip="nav" data-info-title="${nextTitle}" data-info-body="${nextBody}">›</button>` +
+      (opts.afterHtml || "")
     );
   }
 
@@ -821,6 +830,7 @@
     const view = getViewDate(style);
     const navHtml = titleNavHtml({
       titleHtml: dayTitleHtml(view, style),
+      afterHtml: dayToonHtml(view, style),
       prevLabel: "Vorige dag",
       nextLabel: "Volgende dag",
       deltaAttr: "day-delta",
@@ -1165,6 +1175,18 @@
         body,
         meer
       );
+      return;
+    }
+    if (kind === "toon") {
+      title.textContent = "Toon van de week";
+      body.innerHTML =
+        `<p>De acht wekelijkse zangtonen van de Octoechos, in de Slavische ` +
+        `praktijk (Moskou). Toon 1 begint op Thomaszondag; in de Lichte Week ` +
+        `toont de kalender eveneens Toon 1.</p>`;
+      if (meer) {
+        meer.hidden = false;
+        meer.innerHTML = achtergrondLink("toon", "Meer over de toon");
+      }
       return;
     }
     if (kind === "titel") {
@@ -2197,27 +2219,24 @@
     })[0];
   }
 
-  function icsKopEntries(dayEntries) {
-    const feesten = (dayEntries || []).filter((e) => e.soort === "feest");
-    const heiligen = (dayEntries || []).filter((e) => e.soort === "heilige");
-    const named = feesten.filter((e) => !isRandFeest(e) && !isPeriodEntry(e));
-    const periodFeasts = feesten.filter(
-      (e) => !isRandFeest(e) && isPeriodEntry(e)
-    );
+  function icsKopFeesten(dayEntries) {
+    const feesten = (dayEntries || []).filter(isDayTypeFeast);
+    const named = feesten.filter((e) => !isRandFeest(e));
     const rand = feesten.filter(isRandFeest);
     if (named.length) return [pickOneFeast(named)];
-    if (periodFeasts.length) return [pickOneFeast(periodFeasts)];
-    if (heiligen.length) {
-      return heiligen
-        .slice()
-        .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
-    }
     if (rand.length) {
       const synaxis = rand.filter((e) => (e.id || "").startsWith("synaxis-"));
       const pool = synaxis.length ? synaxis : rand;
       return [pickOneFeast(pool)];
     }
     return [];
+  }
+
+  function icsKopHeiligen(dayEntries) {
+    return (dayEntries || [])
+      .filter((e) => e.soort === "heilige")
+      .slice()
+      .sort((a, b) => entryNaam(a).localeCompare(entryNaam(b), "nl"));
   }
 
   function vastenBronNaam(vasten, matched) {
@@ -2231,15 +2250,23 @@
   }
 
   /** Spiegel van scripts/ics.py day_title (Python is normatief). */
-  function icsDayTitle(dayEntries, shows, weekday, mmdd) {
+  function icsDayTitle(dayEntries, shows, weekday, mmdd, year, style) {
     const kinds = new Set(shows || []);
     const visible = (dayEntries || []).filter(
       (e) => kinds.has(e.soort) && (e.soort === "heilige" || e.soort === "feest")
     );
     const vasten = mixVastenniveau(dayEntries, weekday, mmdd);
     const showVasten = kinds.has("vasten") && vasten;
-    const kop = icsKopEntries(visible);
-    const headline = kop.map(entryNaam).join(", ");
+    let kop = icsKopFeesten(visible);
+    let headline = kop.map(entryNaam).join(", ");
+    if (!headline && kinds.has("feest") && year && style && mmdd) {
+      const lez = lezingenForDay(year, mmdd, style);
+      if (lez && lez.daglabel) headline = lez.daglabel;
+    }
+    if (!headline) {
+      kop = icsKopHeiligen(visible);
+      headline = kop.map(entryNaam).join(", ");
+    }
     if (!headline && !showVasten) return null;
     if (!showVasten) return headline || null;
     const label = VASTEN_LABELS[vasten.niveau] || vasten.niveau;
@@ -2273,7 +2300,7 @@
       const mmdd = mmddFromDate(d);
       const matched = entriesOnMmdd(calendarEntries, mmdd, style, year);
       const weekday = isoWeekdayFromMmdd(mmdd, year);
-      const title = icsDayTitle(matched, shows, weekday, mmdd);
+      const title = icsDayTitle(matched, shows, weekday, mmdd, year, style);
       const dag = `${days[i]} ${d.getDate()} ${MONTHS[d.getMonth() + 1]}`;
       const tekst = title
         ? escapeHtml(title)
@@ -2512,10 +2539,11 @@
       try {
         await loadLezingenIndex();
         initRooster(style);
-        // Herteken vandaag/datum als lezingen nu beschikbaar zijn.
+        // Herteken vandaag/datum en agendavoorbeeld als lezingen nu beschikbaar zijn.
         if (document.getElementById("today-entries")) {
           renderToday(entries, style);
         }
+        initAgenda();
       } catch (lezErr) {
         console.error(lezErr);
         const roost = document.getElementById("rooster-tables");
