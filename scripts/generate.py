@@ -45,9 +45,9 @@ CONTENT = SITE / "content"
 STATIC_DATA = SITE / "static" / "data"
 STATIC_ICS = SITE / "static" / "ics"
 
-# Live site / ICS: huidig jaar −2 … +25.
+# Live site / ICS: huidig jaar −2 … +5.
 ICS_YEAR_BACK = 2
-ICS_YEAR_FORWARD = 25
+ICS_YEAR_FORWARD = 5
 
 MONTH_NAMES_NL = [
     "",
