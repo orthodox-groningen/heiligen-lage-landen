@@ -4,8 +4,8 @@ Statische site met orthodoxe **vaste feesten** (jaarcyclus) en **heiligen van de
 MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus
 (huidig jaar −2 … +25 in site/ICS).
 
-- Productie: https://orthodox-groningen.github.io/heiligen-lage-landen/
-- Preview (niet-`main`): https://orthodox-groningen.github.io/heiligen-lage-landen/preview/
+- Productie: https://orthodox-groningen.github.io/orthodoxe-kalender-lage-landen/
+- Preview (niet-`main`): https://orthodox-groningen.github.io/orthodoxe-kalender-lage-landen/preview/
 
 ## Wat zit erin
 
@@ -25,7 +25,7 @@ de pagina **Uitleg** (voor wie de kalender gebruikt) en **Voor beheerders**
 ## Lokaal bouwen
 
 ```cmd
-cd /d C:\Git\orthodox-groningen\heiligen-lage-landen
+cd /d C:\Git\orthodox-groningen\orthodoxe-kalender-lage-landen
 python -m pip install -r requirements.txt
 python scripts\validate.py
 python scripts\generate.py --clean
@@ -37,7 +37,7 @@ hugo --source site --destination generated\site --minify --baseURL / --buildDraf
 Of met serve (na generate):
 
 ```cmd
-cd /d C:\Git\orthodox-groningen\heiligen-lage-landen
+cd /d C:\Git\orthodox-groningen\orthodoxe-kalender-lage-landen
 scripts\serve.cmd
 ```
 

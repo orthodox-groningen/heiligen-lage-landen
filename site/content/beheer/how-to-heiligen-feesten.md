@@ -9,7 +9,7 @@ Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de
 site ziet, zijn een afdruk. Wijzig de YAML; laat `site/content/heiligen/`
 en `site/content/feesten/` met rust.
 
-Datamodel: [docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
+Datamodel: [docs/datamodel.md](https://github.com/orthodox-groningen/orthodoxe-kalender-lage-landen/blob/main/docs/datamodel.md).
 Schema: `schemas/entry.schema.json`. Publiceren:
 [site bouwen]({{% ref "/beheer/how-to-publiceren" %}}).
 
@@ -135,7 +135,7 @@ op de referentie in de entry, niet alleen in de catalogus.
 
 Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen" %}}).
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
-[docs/datamodel.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/datamodel.md).
+[docs/datamodel.md](https://github.com/orthodox-groningen/orthodoxe-kalender-lage-landen/blob/main/docs/datamodel.md).
 
 ```yaml
 betekenis_lage_landen: |
@@ -147,7 +147,7 @@ selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
-- Beslissingslog: [docs/inventaris.md](https://github.com/orthodox-groningen/heiligen-lage-landen/blob/main/docs/inventaris.md)
+- Beslissingslog: [docs/inventaris.md](https://github.com/orthodox-groningen/orthodoxe-kalender-lage-landen/blob/main/docs/inventaris.md)
   (geen vaste aantallen). Live overzicht:
   [Selectie heiligen]({{% ref "/beheer/selectie" %}}).
 - `betekenis_lage_landen` is een **apart** stuk, niet hetzelfde als

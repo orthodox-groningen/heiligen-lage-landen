@@ -24,7 +24,7 @@ from vasten import (
     mix_vastenniveau,
 )
 
-SITE_PUBLIC_URL = "https://orthodox-groningen.github.io/heiligen-lage-landen"
+SITE_PUBLIC_URL = "https://orthodox-groningen.github.io/orthodoxe-kalender-lage-landen"
 
 SUBSET_KEYS = {
     frozenset({"heilige", "feest", "vasten"}): "alles",
@@ -471,7 +471,7 @@ def build_ics(
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//orthodox-groningen//heiligen-lage-landen//NL",
+        "PRODID:-//orthodox-groningen//orthodoxe-kalender-lage-landen//NL",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         f"X-WR-CALNAME:{_ics_escape(cal_name)}",

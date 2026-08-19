@@ -1,6 +1,6 @@
 # Lezingen van de dag (Apostel en Evangelie)
 
-Normatieve specificatie voor [heiligen-lage-landen](https://github.com/orthodox-groningen/heiligen-lage-landen).
+Normatieve specificatie voor [orthodoxe-kalender-lage-landen](https://github.com/orthodox-groningen/orthodoxe-kalender-lage-landen).
 Wijzigingen hier zijn bindend voor `scripts/lezingen.py`. Publieke pagina’s:
 
 - **Clerus:** `/uitleg/lezingen/` — regels in gewone taal (geen YAML).

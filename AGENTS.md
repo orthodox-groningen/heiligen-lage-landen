@@ -1,4 +1,4 @@
-# AGENTS.md — heiligen-lage-landen
+# AGENTS.md — orthodoxe-kalender-lage-landen
 
 Orthodoxe heiligen- en feestkalender (statische Hugo-site) voor
 [orthodox-groningen](https://github.com/orthodox-groningen).
@@ -9,7 +9,7 @@ Terminologie: [bron/docs/specs/terminologie.md](https://github.com/orthodox-gron
 ## Commando's
 
 ```cmd
-cd /d C:\Git\orthodox-groningen\heiligen-lage-landen
+cd /d C:\Git\orthodox-groningen\orthodoxe-kalender-lage-landen
 python -m pip install -r requirements.txt
 python -m pytest -q
 python scripts\validate.py
