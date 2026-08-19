@@ -1,15 +1,15 @@
 # AGENTS.md — orthodoxe-kalender-lage-landen
 
 Orthodoxe heiligen- en feestkalender (statische Hugo-site) voor
-[orthodox-groningen](https://github.com/orthodox-groningen).
+[orthodox-ronl](https://github.com/orthodox-ronl).
 
-Org-context: [bron/AGENTS.md](https://github.com/orthodox-groningen/bron/blob/main/AGENTS.md).
-Terminologie: [bron/docs/specs/terminologie.md](https://github.com/orthodox-groningen/bron/blob/main/docs/specs/terminologie.md).
+Org-context: [bron/AGENTS.md](https://github.com/orthodox-ronl/bron/blob/main/AGENTS.md).
+Terminologie: [bron/docs/specs/terminologie.md](https://github.com/orthodox-ronl/bron/blob/main/docs/specs/terminologie.md).
 
 ## Commando's
 
 ```cmd
-cd /d C:\Git\orthodox-groningen\orthodoxe-kalender-lage-landen
+cd /d C:\Git\orthodox-ronl\orthodoxe-kalender-lage-landen
 python -m pip install -r requirements.txt
 python -m pytest -q
 python scripts\validate.py

@@ -8,7 +8,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-LEGACY = Path(r"C:\Git\orthodox-groningen\heiligen\heiligen_lage_landen_vsn_0.yaml")
+LEGACY = Path(r"C:\Git\orthodox-ronl\heiligen\heiligen_lage_landen_vsn_0.yaml")
 OUT = ROOT / "data" / "heiligen"
 
 MONTHS = {

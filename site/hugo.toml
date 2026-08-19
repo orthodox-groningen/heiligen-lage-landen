@@ -7,8 +7,8 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "Orthodoxe vaste feesten en heiligen van de Lage Landen — kalender, verhalen en ICS-abonnement."
-  github = "https://github.com/orthodox-groningen/orthodoxe-kalender-lage-landen"
-  org = "https://github.com/orthodox-groningen"
+  github = "https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen"
+  org = "https://github.com/orthodox-ronl"
 
 [markup]
   [markup.goldmark]
