@@ -34,9 +34,9 @@ alleen Vasten aan, abonneer, en herhaal voor Feesten of Heiligen.
 
 Elke dag is **één** afspraak. De titel is het liturgische nieuws van die
 dag, met het vasten als kort label als u vasten hebt aangevinkt (*streng*,
-*wijn en olie*, *vis*, *vastenvrij*). Tik op de dag voor dezelfde inhoud
-als op de datumpagina: vastenregel, andere namen, Apostel en Evangelie,
-heiligen, en gerichte links.
+*wijn en olie*, *vis*, *vastenvrij*). Tik op de dag voor vastenregel,
+andere namen, Apostel en Evangelie (zonder website-links) en heiligen.
+Onderaan staat *Meer:* met de datumpagina.
 
 - Bij **nieuw** vallen de afspraken op de dag zoals Nederland die noemt
   (Kerst op 25 december).
@@ -46,9 +46,13 @@ heiligen, en gerichte links.
 - Woensdag- en vrijdagvasten volgen de gewone week: het is de woensdag of
   vrijdag van de burgerlijke week, in beide standen.
 
-Wie al geabonneerd was, krijgt bij de volgende verversing de nieuwe
-dagregels in plaats van de oude, losse namen. Wie een bestand heeft
-gedownload, moet opnieuw importeren.
+Wie al geabonneerd was **vóór** de overstap op dagregels: Google Calendar
+houdt de oude, losse afspraken vaak vast (andere id’s). Verwijder dat
+abonnement en voeg dezelfde link opnieuw toe. Daarna is het één balk per
+dag. Wie een bestand heeft gedownload, moet opnieuw importeren.
+
+Latere tekstwijzigingen in dezelfde feed (titel, beschrijving) komen na
+Google’s verversing vanzelf binnen — vaak uren, soms tot een dag.
 
 Het is een hulpmiddel. De lokale praktijk en de zegen van de priester gaan
 altijd voor.

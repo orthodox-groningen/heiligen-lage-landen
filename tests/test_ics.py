@@ -11,10 +11,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from ics import (  # noqa: E402
+    ICS_COMBOS,
     SITE_PUBLIC_URL,
     build_ics,
     calendar_name,
     day_title,
+    subset_key,
 )
 from kalender import julian_feast_to_civil_date  # noqa: E402
 from lezingen import build_lezingen_dagen_payload  # noqa: E402
@@ -99,8 +101,8 @@ def test_albericus_in_grote_vasten_is_een_dagregel() -> None:
     assert ev["summary"] == "2e woensdag van de Grote Vasten · streng"
     assert "Grote Vasten" in ev["description"]
     assert "Heilige: Albericus van Utrecht" in ev["description"]
-    assert "Deze dag:" in ev["description"]
-    assert "Albericus van Utrecht:" in ev["description"]
+    assert ev["description"].split("\n")[-1].startswith("Meer:")
+    assert "debijbel.nl" not in ev["description"]
     assert ev["url"].startswith(SITE_PUBLIC_URL)
     assert "jaar=2026" in ev["url"]
     assert "dag=03-04" in ev["url"]
@@ -118,7 +120,8 @@ def test_willibrord_zonder_vastensuffix() -> None:
     assert "Willibrord" in ev["description"]
     assert "Apostel:" in ev["description"]
     assert "Evangelie:" in ev["description"]
-    assert "debijbel.nl" in ev["description"]
+    assert "debijbel.nl" not in ev["description"]
+    assert ev["description"].split("\n")[-1].startswith("Meer:")
 
 
 def test_pascha_een_balk_met_vastenvrij() -> None:
@@ -133,8 +136,8 @@ def test_synaxis_en_nafeest_een_titel() -> None:
     events = parse_events(_build(ALLES))
     ev = events["20260107"]
     assert ev["summary"] == "Synaxis van Johannes de Doper · wijn en olie"
-    assert "Synaxis van Johannes de Doper:" in ev["description"]
     assert not ev["summary"].startswith("Nafeest")
+    assert ev["description"].split("\n")[-1].startswith("Meer:")
 
 
 def test_vasten_only_grote_vasten_en_lege_dinsdag() -> None:
@@ -160,8 +163,7 @@ def test_oud_kerst_op_zeven_januari_zonder_juliaans_in_titel() -> None:
     assert "Juliaans" in ev["description"]
 
 
-def test_een_event_per_dag() -> None:
-    ics = _build(ALLES)
+def _assert_een_event_per_dag(ics: str) -> None:
     starts = []
     for line in _unfold(ics).split("\n"):
         if line.startswith("DTSTART"):
@@ -169,6 +171,34 @@ def test_een_event_per_dag() -> None:
     counts = Counter(starts)
     assert counts, "verwacht minstens één afspraak"
     assert max(counts.values()) == 1
+
+
+def test_een_event_per_dag() -> None:
+    _assert_een_event_per_dag(_build(ALLES))
+
+
+def test_een_event_per_dag_oud() -> None:
+    _assert_een_event_per_dag(_build(ALLES, stijl="oud"))
+
+
+def test_alle_feeds_een_event_per_dag() -> None:
+    entries = _entries()
+    payload = _payload()
+    for kinds in ICS_COMBOS:
+        key = subset_key(kinds)
+        assert key
+        for stijl in ("nieuw", "oud"):
+            ics = build_ics(
+                entries,
+                cal_name=calendar_name(key, stijl),
+                stijl=stijl,
+                context_entries=entries,
+                feed_key=key,
+                kinds=kinds,
+                years=YEARS,
+                lezingen_payload=payload,
+            )
+            _assert_een_event_per_dag(ics)
 
 
 def test_calname_en_ttl_en_url() -> None:

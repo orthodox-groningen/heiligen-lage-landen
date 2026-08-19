@@ -54,11 +54,10 @@ als feesten in de feed zitten, anders heiligen, anders alleen het
 vastenlabel. Vastenlabels komen uit `mix_vastenniveau` in
 `scripts/vasten.py`. `URL` wijst naar de datumpagina.
 
-`DESCRIPTION` volgt de datumpagina-box: vastenregel, overige dagtype-feesten
-(`Ook:`), Apostel/Evangelie met dezelfde Bijbel-deeplinks als de site
-(`debijbel.nl`, HSV), heiligen, daarna `Deze dag:` plus permalinks van
-feest en heilige. Geen wiki-tekst, geen vertaalkeuze, geen Nieuw/Oud in
-het event.
+`DESCRIPTION` volgt de datumpagina-box zonder website-links in de regels:
+vastenregel, overige dagtype-feesten (`Ook:`), Apostel/Evangelie als
+verwijzingstekst, heiligen, laatste regel `Meer:` naar de datumpagina.
+Geen wiki-tekst, geen vertaalkeuze, geen Bijbel-deeplinks in het event.
 
 - **nieuw:** vaste feesten op de feestdatum (burgerlijk = dagnaam);
   paascyclus op de berekende Orthodoxe datum.

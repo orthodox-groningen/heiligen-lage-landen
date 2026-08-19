@@ -324,15 +324,7 @@ def _lezingen_for_civil(
     return found if isinstance(found, dict) else None
 
 
-def _entry_public_url(entry: dict[str, Any]) -> str:
-    from generate import entry_permalink
-
-    return f"{SITE_PUBLIC_URL}{entry_permalink(entry)}"
-
-
 def _ref_line(label: str, refs: list[Any] | None) -> str | None:
-    from bijbel import debijbel_url
-
     bits: list[str] = []
     for item in refs or []:
         ref = ""
@@ -340,10 +332,8 @@ def _ref_line(label: str, refs: list[Any] | None) -> str | None:
             ref = str(item.get("ref") or "")
         else:
             ref = str(getattr(item, "ref", "") or "")
-        if not ref:
-            continue
-        url = debijbel_url(ref)
-        bits.append(f"{ref} ({url})" if url else ref)
+        if ref:
+            bits.append(ref)
     if not bits:
         return None
     return f"{label}: " + "; ".join(bits)
@@ -452,17 +442,7 @@ def day_description(
         heiligen = sorted(heiligen, key=lambda e: _naam(e).casefold())
         label = "Heilige" if len(heiligen) == 1 else "Heiligen"
         parts.append(label + ": " + ", ".join(_naam(e) for e in heiligen))
-    parts.append(f"Deze dag: {datum_pagina_url(civil)}")
-    linked: list[dict[str, Any]] = []
-    seen_ids: set[str] = set()
-    for e in list(kop) + heiligen:
-        eid = str(e.get("id") or "")
-        if not eid or eid in seen_ids:
-            continue
-        seen_ids.add(eid)
-        linked.append(e)
-    for e in linked:
-        parts.append(f"{_naam(e)}: {_entry_public_url(e)}")
+    parts.append(f"Meer: {datum_pagina_url(civil)}")
     return "\n".join(parts)
 
 
