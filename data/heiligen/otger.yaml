@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: odilienberg
   toelichting: "Sint Odiliënberg"
+icoon:
+  bestand: iconen/otger.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:St Odiliënberg 3 Doppelstatuen.jpg"
 samenvatting: |
   Diaken en geloofsverkondiger; met Wiro en Plechelm stichter van het
   klooster te Odiliënberg. Feestdag 15 juli.

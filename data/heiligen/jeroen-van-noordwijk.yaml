@@ -9,6 +9,10 @@ namen:
   primair: Jeroen van Noordwijk
   alternatief:
   - Jeroen
+  - Hiëron
+  - Iero
+  - Jero
+  - Jeron
 datum:
   waarde: "08-17"
   stijl: gregoriaans
@@ -17,6 +21,11 @@ titels:
 periode: "857"
 locaties:
   - noordwijk
+icoon:
+  bestand: iconen/jeroen-van-noordwijk.jpg
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Saint Jeron. Engraving by C. Visscher after P. Soutman, 1650 Wellcome V0032328.jpg"
 samenvatting: |
   Priester-martelaar van Noordwijk, volgens de overlevering door Noormannen
   gedood. Feestdag 17 augustus.

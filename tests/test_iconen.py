@@ -33,11 +33,10 @@ MET_ICOON = {
     "rumold",
     "johannes-van-shanghai",
     "sophrony-van-essex",
-}
-
-ZONDER_LEGAAL_BESTAND = {
     "otger",
 }
+
+ZONDER_LEGAAL_BESTAND: set[str] = set()
 
 
 def test_schema_verbiedt_url_als_bestand() -> None:

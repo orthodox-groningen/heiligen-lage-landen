@@ -23,6 +23,11 @@ locaties:
 rustplaats:
   plaats: stavelot
   toelichting: "Remaclusschrijn, Sint-Sebastiaanskerk"
+icoon:
+  bestand: iconen/remaclus.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Devotieprent van de heilige Remaclus van Stavelot, asset C1OcKdbDLYZSMpi6TMkhc9lA.tif"
 samenvatting: |
   Frankische kloosterstichter; bisschop van Maastricht; stichter van
   Stavelot-Malmedy. Feestdag 3 september.

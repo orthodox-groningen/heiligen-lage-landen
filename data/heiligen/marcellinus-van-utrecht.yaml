@@ -21,6 +21,11 @@ titels:
 periode: "8e eeuw"
 locaties:
   - utrecht
+icoon:
+  bestand: iconen/marcellinus-van-utrecht.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Heilige Marcellinus van Deventer Prelaten en bisschoppen van Utrecht (serietitel), RP-P-BI-1493.jpg"
 samenvatting: |
   Leerling van Gregorius van Utrecht; werkte met Lebuïnus in Overijssel.
   Feestdag 14 juli.

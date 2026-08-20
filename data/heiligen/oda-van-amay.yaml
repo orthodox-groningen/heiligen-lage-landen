@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: amay
   toelichting: "Collegiale Sint-Joris-en-Sint-Oda; Chrodoara-sarcofaag"
+icoon:
+  bestand: iconen/oda-van-amay.jpg
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Sainte Ode d'Amay (Jean Del Cour, c 1680), KIK-IRPA b028727.jpg"
 samenvatting: |
   Merovingische edelvrouw (Chrodoara); vereerd te Amay bij Hoei.
   Feestdag 23 oktober.

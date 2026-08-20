@@ -21,6 +21,11 @@ titels:
 periode: "~772"
 locaties:
   - temse
+icoon:
+  bestand: iconen/amalberga-van-temse.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Saint Amalberga.jpg"
 samenvatting: |
   Lotharingse edelvrouw; kloosterlinge te Munsterbilzen, gesticht en
   begraven te Temse (~772). Feestdag 10 juli; attribuut: steur.

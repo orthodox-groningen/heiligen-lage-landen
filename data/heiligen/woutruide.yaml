@@ -24,6 +24,11 @@ locaties:
 rustplaats:
   plaats: bergen
   toelichting: "Sint-Waltrudiskerk (collegiale Ste-Waudru)"
+icoon:
+  bestand: iconen/woutruide.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:De heilige Waldetrudis van Mons, objectno PK.OPB.0070.013.jpg"
 samenvatting: |
   Stichteres van het klooster waaruit Bergen (Mons) groeide; zuster van
   Aldegonda. Feestdag 9 april.
