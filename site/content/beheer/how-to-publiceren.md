@@ -29,7 +29,7 @@ verwacht vastenniveau is meestal: YAML-voorbeeld aangepast, code nog niet.
   `vasten-technisch.md`, `site/static/data/entries.json`,
   `site/static/data/plaatsen.json`, `site/static/ics/*.ics`.
 - **Laat staan (body):** `site/content/_index.md`, `kalender/_index.md`,
-  `meneon/_index.md`, `datum/_index.md`, `agenda/_index.md`,
+  `synaxarion/_index.md`, `datum/_index.md`, `agenda/_index.md`,
   `uitleg/_index.md`, en de overige uitleg-markdown (behalve vasten*).
 - **Corrigeert alleen layout** op die handmatige indexes als die ontbreekt
   of afwijkt.

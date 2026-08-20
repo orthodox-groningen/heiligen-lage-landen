@@ -60,7 +60,7 @@ kalender.
 - **Nieuw:** Besnijdenis op 1 januari; Kerst op 25 december.
 - **Oud:** dezelfde feesten later op de burgerlijke kalender — Besnijdenis op
   14 januari, Kerst op 7 januari.
-- In het [Meneon]({{% ref "/uitleg/meneon" %}}) blijft de feestdatum de
+- In het [Synaxarion]({{% ref "/uitleg/synaxarion" %}}) blijft de feestdatum de
   liturgische dagnaam (Kerst is altijd 25 december).
 
 Weet u niet welke kalender uw parochie volgt: vraag het aan de priester.

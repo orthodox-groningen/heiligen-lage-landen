@@ -225,6 +225,26 @@ Ontbreekt een legaal bestand: laat `icoon` weg. «Icoon in parochie» hoort
 niet in `titels`. Bron beoordelen (stap beeldmateriaal):
 [Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}}).
 
+**Feesten — prioriteit (selectiever dan heiligen)**
+
+| Prioriteit | Wat | Icoon? |
+| --- | --- | --- |
+| Hoog | Grootfeesten en kernfeesten met vaste iconografie (Pascha, Kerst, Theofanie, Transfiguratie, …) | Eigen traditioneel feesticoon (PD/CC) |
+| Midden | Themamatige zondagen (Orthodoxie, Palmzondag, …) | Alleen als er een duidelijk thema-icoon is |
+| Laag | Voorfeest / nafeest / teruggave | Liever **zelfde bestand** als het hoofdfest, of weglaten |
+| Laagste | Weken, vastenperiodes, abstracte periodes (boterweek, vastenvrije week, …) | Meestal **weglaten** (geen portret) |
+
+Gedeeld bestand (zoals bij Monulphus/Gondulphus):
+
+```yaml
+# data/feesten/voorfeest-kerst.yaml
+icoon:
+  bestand: iconen/kerst.jpg   # zelfde als kerst
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian nativity icon.jpg"
+```
+
 ## Dubbele ids samenvoegen
 
 Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
@@ -251,5 +271,5 @@ python scripts/generate.py
 python -m pytest -q
 ```
 
-Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
+Daarna de entry op de site: Synaxarion (vaste dag), datumpagina (dit jaar),
 eventueel ICS. Klopt de naam niet, dan eerst `namen:` in het entry-YAML.

@@ -97,7 +97,7 @@ id_aliassen:
 - `id_aliassen`: oude ids, patroon `[a-z0-9_-]+`, niet het eigen id, niet
   een nog levend entry-id, uniek over de catalogus. Wordt Hugo `aliases`.
 - Zet de oude naam(en) ook onder `namen.alternatief`, anders
-  vindt zoeken ze niet (Meneon en heiligenindex).
+  vindt zoeken ze niet (Synaxarion en heiligenindex).
 
 ## Referenties
 

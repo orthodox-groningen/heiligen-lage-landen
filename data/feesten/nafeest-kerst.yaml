@@ -13,6 +13,11 @@ datum:
   van: "12-26"
   tot: "12-31"
   stijl: juliaans
+icoon:
+  bestand: iconen/kerst.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian nativity icon.jpg"
 samenvatting: |
   Nafeest van Kerst tot en met de teruggave op 31 december.
 verhaal: |

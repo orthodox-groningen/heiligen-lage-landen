@@ -14,6 +14,11 @@ namen:
 datum:
   waarde: "08-06"
   stijl: juliaans
+icoon:
+  bestand: iconen/transfiguratie.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:16th-century unknown painters - Icon of the Transfiguration - WGA23501.jpg"
 samenvatting: |
   Christus toont Zijn goddelijke heerlijkheid aan Petrus, Jakobus en Johannes.
 verhaal: |

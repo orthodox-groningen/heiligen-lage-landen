@@ -15,7 +15,7 @@ Het [overzicht van heiligen]({{% ref "/heiligen" %}}) is de ingang op
 plaats of streek — Utrecht, Vlaanderen, Friesland — en de plaatsen op een kaart
 zien. Streken staan cursief in de lijst, zodat u ze van steden en dorpen
 kunt onderscheiden. Heiligen met een icoon op deze site tonen dat icoon klein in de
-lijst. Het [Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
+lijst. Het [Synaxarion]({{% ref "/uitleg/synaxarion" %}}) is de ingang op **datum**.
 
 ## Wie staat erin?
 
@@ -64,7 +64,7 @@ fout: er kunnen wel een feest, vasten of lezingen zijn.
 
 Sommige heiligen zijn onder meerdere namen bekend (Lebuinus en Lubuinus,
 Alberik en Albericus). Dat is **één heilige**, één pagina. Alle namen
-blijven vindbaar: in het [Meneon]({{% ref "/uitleg/meneon" %}}) en in het
+blijven vindbaar: in het [Synaxarion]({{% ref "/uitleg/synaxarion" %}}) en in het
 overzicht van heiligen.
 
 ## Wat u op een pagina leest

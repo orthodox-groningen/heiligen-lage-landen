@@ -612,9 +612,9 @@ def ensure_hand_owned_indexes() -> None:
             "layout": "kalender",
         },
         {
-            "path": CONTENT / "meneon" / "_index.md",
-            "title": "Meneon",
-            "layout": "meneon",
+            "path": CONTENT / "synaxarion" / "_index.md",
+            "title": "Synaxarion",
+            "layout": "synaxarion",
         },
         {
             "path": CONTENT / "datum" / "_index.md",
@@ -689,9 +689,9 @@ ACHTERGROND_TOPICS: list[dict[str, str]] = [
         "description": "Wat er op één burgerlijke dag in een bepaald jaar valt",
     },
     {
-        "id": "meneon",
-        "title": "Meneon",
-        "description": "De vaste jaarcyclus: wat er altijd op een kalenderdag hoort",
+        "id": "synaxarion",
+        "title": "Synaxarion",
+        "description": "De vaste jaarcyclus: heiligen en feesten die altijd op een kalenderdag horen",
     },
     {
         "id": "heiligen",

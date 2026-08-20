@@ -46,14 +46,14 @@ committen. Zie [site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %
 <table class="beheer-tabel beheer-tabel-aanraken">
 <thead><tr><th>U wijzigt</th><th>Effect op de site</th></tr></thead>
 <tbody>
-<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam (<code>namen.primair</code> / <code>alternatief</code>), datum, verhaal, <code>betekenis_lage_landen</code>, referenties, <code>selectie</code>, <code>locaties</code> (plaats-ids), <code>rustplaats</code>, vastenniveau van die entry. Entry-pagina, Meneon, jaarkalender, datumpagina, kaart en ICS volgen na <code>generate.py</code>.</td></tr>
+<tr><td><code>data/heiligen/*.yaml</code>, <code>data/feesten/*.yaml</code></td><td>Naam (<code>namen.primair</code> / <code>alternatief</code>), datum, verhaal, <code>betekenis_lage_landen</code>, referenties, <code>selectie</code>, <code>locaties</code> (plaats-ids), <code>rustplaats</code>, vastenniveau van die entry. Entry-pagina, Synaxarion, jaarkalender, datumpagina, kaart en ICS volgen na <code>generate.py</code>.</td></tr>
 <tr><td><code>data/vasten/*.yaml</code></td><td>Wanneer een periode loopt, of wo/vr wekelijks is, welk seizoensniveau de periode heeft. De <em>mengregel</em> (wat er op een dag getoond wordt) zit niet hier, maar in <code>data/regels/vasten.yaml</code> plus code.</td></tr>
 <tr><td><code>data/plaatsen.yaml</code></td><td>Plaatsnamen, coördinaten, streek. Kaart en zoeken op het heiligenoverzicht.</td></tr>
 <tr><td><code>data/bronnen/bronnen.yaml</code></td><td>Metadata bij <code>bron_id</code>. De locator (<code>url</code> / ISBN / …) hoort óók op de referentie in de entry.</td></tr>
 <tr><td><code>data/regels/vasten.yaml</code></td><td>Cleruspagina, technische vastenpagina, en de voorbeelden die pytest toetst. Wijzigt u een verwacht niveau, dan moeten <code>scripts/vasten.py</code> en <code>calendar.js</code> mee — anders falen de tests.</td></tr>
 <tr><td><code>data/lezingen/</code></td><td>Welke Apostel en welk Evangelie de site op een dag toont, inclusief parochie-afwijkingen. Zie de how-to lezingen.</td></tr>
 <tr><td><code>site/content/uitleg/*.md</code> (niet vasten*)</td><td>Gebruikersuitleg. Technische bijlagen: bestanden <code>*-technisch.md</code>.</td></tr>
-<tr><td><code>site/content/_index.md</code>, <code>kalender/</code>, <code>meneon/</code>, <code>datum/</code>, <code>agenda/</code>, <code>uitleg/_index.md</code></td><td>Handmatige sectiepagina’s: de <em>body</em> blijft bij genereren staan. Ontbrekende <code>layout</code> wordt wel gecorrigeerd.</td></tr>
+<tr><td><code>site/content/_index.md</code>, <code>kalender/</code>, <code>synaxarion/</code>, <code>datum/</code>, <code>agenda/</code>, <code>uitleg/_index.md</code></td><td>Handmatige sectiepagina’s: de <em>body</em> blijft bij genereren staan. Ontbrekende <code>layout</code> wordt wel gecorrigeerd.</td></tr>
 <tr><td><code>site/static/iconen/</code></td><td>Afbeeldingen bij heiligen/feesten. Alleen met <code>icoon.rechten: ok</code> in YAML; geen hotlinks.</td></tr>
 <tr><td><code>site/layouts/</code>, <code>site/assets/</code></td><td>Uiterlijk en gedrag in de browser. Vastenmenging in JS moet gelijk blijven aan <code>scripts/vasten.py</code>.</td></tr>
 </tbody>

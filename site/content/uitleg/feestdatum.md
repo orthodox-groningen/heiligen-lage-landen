@@ -29,7 +29,7 @@ Niet elke liturgische dag heeft zo’n vaste feestdatum.
   of 6 januari. Ze hebben geen vaste feestdatum, maar ook geen Pascha-anker.
 
 Op de [jaarkalender]({{% ref "/kalender" %}}) ziet u de burgerlijke dag van
-de viering. In het [Meneon]({{% ref "/uitleg/meneon" %}}) ziet u de
+de viering. In het [Synaxarion]({{% ref "/uitleg/synaxarion" %}}) ziet u de
 feestdatum zelf.
 
 ## Voor wie de site bijhoudt

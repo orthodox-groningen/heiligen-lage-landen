@@ -1584,7 +1584,7 @@
     const trigger = document.getElementById(`${prefix}-weergave-trigger`);
     const overlay = document.getElementById(`${prefix}-weergave-overlay`);
     if (!panel) return;
-    ["rooster", "meneon"].forEach((other) => {
+    ["rooster", "synaxarion"].forEach((other) => {
       if (other !== prefix) closeWeergavePanel(other);
     });
     panel.hidden = false;
@@ -1627,7 +1627,7 @@
 
   function closeAllWeergavePanels() {
     closeWeergavePanel("rooster");
-    closeWeergavePanel("meneon");
+    closeWeergavePanel("synaxarion");
   }
 
   function renderRooster(style) {
@@ -1950,7 +1950,7 @@
     });
   }
 
-  /* ---- Meneon ---- */
+  /* ---- Synaxarion ---- */
   let browseMode = "maand";
   let activeLetter = "A";
   let activeMonth = "01";
@@ -2008,11 +2008,11 @@
     return Boolean(entry.feestdatum && entry.feestdatum.startsWith(mm + "-"));
   }
 
-  function getMeneonDag() {
+  function getSynaxarionDag() {
     return parseDagParam(new URLSearchParams(window.location.search).get("dag"));
   }
 
-  function setMeneonDag(mmdd) {
+  function setSynaxarionDag(mmdd) {
     const url = new URL(window.location.href);
     if (mmdd) url.searchParams.set("dag", mmdd);
     else url.searchParams.delete("dag");
@@ -2034,7 +2034,7 @@
     );
   }
 
-  function meneonTableHtml(rows) {
+  function synaxarionTableHtml(rows) {
     if (!rows.length) {
       return "<p>Geen vaste feesten, heiligen of vasten voor deze selectie.</p>";
     }
@@ -2062,7 +2062,7 @@
             const href = assetUrl(String(entry.url || "").replace(/^\//, ""));
             const dateCell =
               i === 0
-                ? `<td${span > 1 ? ` rowspan="${span}"` : ""} class="meneon-date-cell">${group.whenHtml}</td>`
+                ? `<td${span > 1 ? ` rowspan="${span}"` : ""} class="synaxarion-date-cell">${group.whenHtml}</td>`
                 : "";
             return (
               `<tr>` +
@@ -2076,7 +2076,7 @@
       })
       .join("");
     return (
-      `<table class="meneon-table">` +
+      `<table class="synaxarion-table">` +
       `<thead><tr>` +
       `<th scope="col">Datum</th>` +
       `<th scope="col">Naam</th>` +
@@ -2085,7 +2085,7 @@
     );
   }
 
-  function meneonWeergaveSummary() {
+  function synaxarionWeergaveSummary() {
     const shows = checkedShows("show");
     const parts = [];
     if (shows.includes("heilige")) parts.push("heiligen");
@@ -2097,37 +2097,37 @@
     return text;
   }
 
-  function updateMeneonWeergaveSummary() {
-    const summary = document.getElementById("meneon-weergave-summary");
-    if (summary) summary.textContent = meneonWeergaveSummary();
+  function updateSynaxarionWeergaveSummary() {
+    const summary = document.getElementById("synaxarion-weergave-summary");
+    if (summary) summary.textContent = synaxarionWeergaveSummary();
   }
 
-  function renderMeneonDay(entries, mmdd) {
-    const dayRoot = document.getElementById("meneon-day");
-    const browse = document.getElementById("meneon-browse");
-    const heading = document.getElementById("meneon-heading");
-    const nav = document.getElementById("meneon-day-nav");
-    const list = document.getElementById("meneon-day-entries");
+  function renderSynaxarionDay(entries, mmdd) {
+    const dayRoot = document.getElementById("synaxarion-day");
+    const browse = document.getElementById("synaxarion-browse");
+    const heading = document.getElementById("synaxarion-heading");
+    const nav = document.getElementById("synaxarion-day-nav");
+    const list = document.getElementById("synaxarion-day-entries");
     if (!dayRoot || !list) return;
     if (browse) browse.hidden = true;
     dayRoot.hidden = false;
     if (heading) heading.textContent = label(mmdd);
-    closeWeergavePanel("meneon");
+    closeWeergavePanel("synaxarion");
     const prev = shiftMmdd(mmdd, -1);
     const next = shiftMmdd(mmdd, 1);
     const thisYear = clampYear(new Date().getFullYear());
     const datumHref = daySurfaceHref(thisYear, mmdd, getStyle());
     if (nav) {
       nav.innerHTML =
-        `<a href="${pageUrl("meneon/", {})}">← Meneon</a> · ` +
-        `<button type="button" class="text-link" data-meneon-delta="-1">vorige dag</button> · ` +
-        `<button type="button" class="text-link" data-meneon-delta="1">volgende dag</button> · ` +
+        `<a href="${pageUrl("synaxarion/", {})}">← Synaxarion</a> · ` +
+        `<button type="button" class="text-link" data-synaxarion-delta="-1">vorige dag</button> · ` +
+        `<button type="button" class="text-link" data-synaxarion-delta="1">volgende dag</button> · ` +
         `<a href="${datumHref}">Deze dag in ${thisYear}</a>`;
-      nav.querySelectorAll("[data-meneon-delta]").forEach((btn) => {
+      nav.querySelectorAll("[data-synaxarion-delta]").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
           ev.preventDefault();
-          const delta = Number(btn.dataset.meneonDelta);
-          setMeneonDag(delta < 0 ? prev : next);
+          const delta = Number(btn.dataset.synaxarionDelta);
+          setSynaxarionDag(delta < 0 ? prev : next);
         });
       });
     }
@@ -2149,7 +2149,7 @@
         "</p>";
       } else {
       const whenHtml = escapeHtml(label(mmdd));
-      list.innerHTML = meneonTableHtml(
+      list.innerHTML = synaxarionTableHtml(
         matched.map((entry) => ({ whenHtml, whenKey: mmdd, entry }))
       );
     }
@@ -2159,20 +2159,20 @@
     document.title = `${label(mmdd)} · ${site}`;
   }
 
-  function renderMeneonBrowse(entries) {
-    const dayRoot = document.getElementById("meneon-day");
-    const browse = document.getElementById("meneon-browse");
-    const heading = document.getElementById("meneon-heading");
-    const list = document.getElementById("meneon-list");
-    const hint = document.getElementById("meneon-hint");
+  function renderSynaxarionBrowse(entries) {
+    const dayRoot = document.getElementById("synaxarion-day");
+    const browse = document.getElementById("synaxarion-browse");
+    const heading = document.getElementById("synaxarion-heading");
+    const list = document.getElementById("synaxarion-list");
+    const hint = document.getElementById("synaxarion-hint");
     const letterNav = document.getElementById("letter-nav");
     const monthNav = document.getElementById("month-nav");
     if (!list) return;
     if (dayRoot) dayRoot.hidden = true;
     if (browse) browse.hidden = false;
-    if (heading) heading.textContent = "Meneon";
-    wireWeergavePanel("meneon");
-    updateMeneonWeergaveSummary();
+    if (heading) heading.textContent = "Synaxarion";
+    wireWeergavePanel("synaxarion");
+    updateSynaxarionWeergaveSummary();
 
     const shows = checkedShows("show");
     const filtered = filterEntries(entries, shows)
@@ -2189,7 +2189,7 @@
       letterNav.querySelectorAll(".letter-btn").forEach((btn) => {
         btn.onclick = () => {
           activeLetter = btn.dataset.letter;
-          renderMeneonBrowse(entries);
+          renderSynaxarionBrowse(entries);
         };
       });
     }
@@ -2208,7 +2208,7 @@
       monthNav.querySelectorAll(".letter-btn").forEach((btn) => {
         btn.onclick = () => {
           activeMonth = btn.dataset.month;
-          renderMeneonBrowse(entries);
+          renderSynaxarionBrowse(entries);
         };
       });
     }
@@ -2222,7 +2222,7 @@
             a.naam.localeCompare(b.naam, "nl")
         );
       if (hint) hint.textContent = `Zoekresultaten: ${subset.length} item(s).`;
-      list.innerHTML = meneonTableHtml(
+      list.innerHTML = synaxarionTableHtml(
         subset.map((entry) => ({
           whenHtml: escapeHtml(entryWhenLabel(entry)),
           whenKey: entryFixedSortKey(entry) + "\0" + entryWhenLabel(entry),
@@ -2243,7 +2243,7 @@
       if (hint) {
         hint.textContent = `Letter ${activeLetter}: ${subset.length} item(s).`;
       }
-      list.innerHTML = meneonTableHtml(
+      list.innerHTML = synaxarionTableHtml(
         subset.map((entry) => ({
           whenHtml: escapeHtml(entryWhenLabel(entry)),
           whenKey: entryFixedSortKey(entry) + "\0" + entryWhenLabel(entry),
@@ -2264,7 +2264,7 @@
       if (!dayEntries.length) continue;
       count += dayEntries.length;
       const whenHtml =
-        `<a href="${pageUrl("meneon/", { dag: mmdd })}">${label(mmdd)}</a>`;
+        `<a href="${pageUrl("synaxarion/", { dag: mmdd })}">${label(mmdd)}</a>`;
       dayEntries.forEach((entry) => {
         rows.push({ whenHtml, whenKey: mmdd, entry });
       });
@@ -2273,47 +2273,47 @@
       hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]}: ${count} item(s).`;
     }
     list.innerHTML = rows.length
-      ? meneonTableHtml(rows)
+      ? synaxarionTableHtml(rows)
       : "<p>Geen vaste dagen in deze maand.</p>";
   }
 
-  function renderMeneon(entries) {
-    if (!document.querySelector("[data-meneon]")) return;
-    const dag = getMeneonDag();
-    if (dag) renderMeneonDay(entries, dag);
-    else renderMeneonBrowse(entries);
+  function renderSynaxarion(entries) {
+    if (!document.querySelector("[data-synaxarion]")) return;
+    const dag = getSynaxarionDag();
+    if (dag) renderSynaxarionDay(entries, dag);
+    else renderSynaxarionBrowse(entries);
   }
 
-  function initMeneon(entries) {
-    const root = document.querySelector("[data-meneon]");
+  function initSynaxarion(entries) {
+    const root = document.querySelector("[data-synaxarion]");
     if (!root) return;
-    if (root.dataset.boundMeneon !== "1") {
-      root.dataset.boundMeneon = "1";
+    if (root.dataset.boundSynaxarion !== "1") {
+      root.dataset.boundSynaxarion = "1";
       document.querySelectorAll(".browse-mode .style-btn").forEach((btn) => {
         btn.onclick = () => {
           browseMode = btn.dataset.browse;
           document.querySelectorAll(".browse-mode .style-btn").forEach((b) => {
             b.setAttribute("aria-pressed", b === btn ? "true" : "false");
           });
-          renderMeneonBrowse(entries);
+          renderSynaxarionBrowse(entries);
         };
       });
       document.querySelectorAll('input[name="show"]').forEach((el) => {
         el.addEventListener("change", () => {
-          updateMeneonWeergaveSummary();
-          renderMeneon(entries);
+          updateSynaxarionWeergaveSummary();
+          renderSynaxarion(entries);
         });
       });
-      const search = document.getElementById("meneon-search");
+      const search = document.getElementById("synaxarion-search");
       if (search) {
         search.addEventListener("input", () => {
           searchQuery = (search.value || "").trim().toLocaleLowerCase("nl");
-          updateMeneonWeergaveSummary();
-          renderMeneonBrowse(entries);
+          updateSynaxarionWeergaveSummary();
+          renderSynaxarionBrowse(entries);
         });
       }
     }
-    renderMeneon(entries);
+    renderSynaxarion(entries);
   }
 
   /* ---- Agenda ICS ---- */
@@ -2670,7 +2670,7 @@
       viewYear = clampYear(viewYear);
       renderToday(entries, style);
       renderYearGrid(entries, style);
-      initMeneon(entries);
+      initSynaxarion(entries);
       initAgenda();
       try {
         await loadLezingenIndex();

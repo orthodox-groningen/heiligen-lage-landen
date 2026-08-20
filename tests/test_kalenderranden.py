@@ -43,7 +43,7 @@ PAAS = {
     "teruggave-pinksteren": (55, None),
 }
 
-NIET_IN_MENEON_ALS_VASTE_DAG = (
+NIET_IN_SYNAXARION_ALS_VASTE_DAG = (
     "zondag-voorvaderen",
     "zondag-vaderen-voor-kerst",
     "zondag-na-kerst",
@@ -58,7 +58,7 @@ def test_kalenderrand_bestanden_bestaan() -> None:
 
 def test_zondagen_rond_kerst_zijn_weekdag_relatief() -> None:
     by_id = {e["id"]: e for e in load_entries()}
-    for eid in NIET_IN_MENEON_ALS_VASTE_DAG:
+    for eid in NIET_IN_SYNAXARION_ALS_VASTE_DAG:
         assert by_id[eid]["datum_norm"]["vorm"] == "weekdag_relatief"
     datamodel = (ROOT / "docs" / "datamodel.md").read_text(encoding="utf-8")
     assert "weekdag_relatief" in datamodel

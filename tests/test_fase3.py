@@ -26,29 +26,29 @@ def test_titel_toont_toon() -> None:
     assert nav.index("${opts.titleHtml}") < nav.index("›")
 
 
-def test_lijsticonen_in_meneon_en_heiligenoverzicht() -> None:
+def test_lijsticonen_in_synaxarion_en_heiligenoverzicht() -> None:
     js = JS.read_text(encoding="utf-8")
     assert "class=\"list-icoon\"" in js or "class='list-icoon'" in js
-    assert "meneon-table" in js
-    assert "function meneonTableHtml" in js
+    assert "synaxarion-table" in js
+    assert "function synaxarionTableHtml" in js
     html = HEILIGEN_LIST.read_text(encoding="utf-8")
     assert "list-icoon" in html
     assert ".Params.icoon" in html
 
 
-def test_rooster_en_meneon_hebben_weergave_paneel() -> None:
+def test_rooster_en_synaxarion_hebben_weergave_paneel() -> None:
     rooster = (
         ROOT / "site" / "layouts" / "_default" / "lezingenrooster.html"
     ).read_text(encoding="utf-8")
-    meneon = (
-        ROOT / "site" / "layouts" / "_default" / "meneon.html"
+    synaxarion = (
+        ROOT / "site" / "layouts" / "_default" / "synaxarion.html"
     ).read_text(encoding="utf-8")
     assert "rooster-title-nav" not in rooster
     assert 'id="rooster-heading"' in rooster
     assert "weergave-trigger" in rooster
     assert "rooster-action-bar" in rooster
-    assert "weergave-trigger" in meneon
-    assert "meneon-action-bar" in meneon
+    assert "weergave-trigger" in synaxarion
+    assert "synaxarion-action-bar" in synaxarion
     js = JS.read_text(encoding="utf-8")
     assert "function wireWeergavePanel" in js
     assert "function closeAllWeergavePanels" in js
