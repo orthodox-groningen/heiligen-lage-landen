@@ -13,7 +13,7 @@ Voor overleg met de clerus: [Lezingen van de dag]({{% ref "/uitleg/lezingen" %}}
 
 ---
 
-Normatieve specificatie voor [orthodoxe-kalender-lage-landen](https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen).
+Normatieve specificatie voor [kalender](https://github.com/orthodox-ronl/kalender).
 Wijzigingen hier zijn bindend voor `scripts/lezingen.py`. Publieke pagina’s:
 
 - **Clerus:** `/uitleg/lezingen/` — regels in gewone taal (geen YAML).

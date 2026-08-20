@@ -9,7 +9,7 @@ Heeft u een vraag, een correctie, of ontbreekt iemand die volgens de
 kalender hoort? U kunt dat het best als **GitHub-issue** doorgeven. Dan
 blijft de melding bij de catalogus staan en kan iemand haar afhandelen.
 
-Open een [nieuw issue](https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen/issues/new/choose)
+Open een [nieuw issue](https://github.com/orthodox-ronl/kalender/issues/new/choose)
 en kies het formulier dat past:
 
 - **Heilige voorstellen** — iemand die volgens de criteria ontbreekt

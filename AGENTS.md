@@ -1,4 +1,4 @@
-# AGENTS.md — orthodoxe-kalender-lage-landen
+# AGENTS.md — kalender
 
 Orthodoxe heiligen- en feestkalender (statische Hugo-site) voor
 [orthodox-ronl](https://github.com/orthodox-ronl).
@@ -9,7 +9,7 @@ Terminologie: [bron/docs/specs/terminologie.md](https://github.com/orthodox-ronl
 ## Commando's
 
 ```cmd
-cd /d C:\Git\orthodox-ronl\orthodoxe-kalender-lage-landen
+cd /d C:\Git\orthodox-ronl\kalender
 python -m pip install -r requirements.txt
 python -m pytest -q
 python scripts\validate.py

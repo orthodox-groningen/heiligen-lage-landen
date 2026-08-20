@@ -10,7 +10,7 @@ git_date: 2026-08-17
 
 Technische bijlage bij de [uitleg Heiligen]({{% ref "/uitleg/heiligen" %}}).
 
-Normatief datamodel: [docs/datamodel.md](https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen/blob/main/docs/datamodel.md).
+Normatief datamodel: [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
 Schema: `schemas/entry.schema.json`. How-to:
 [heiligen en feesten wijzigen]({{% ref "/beheer/how-to-heiligen-feesten" %}}).
 Validatie: `python scripts/validate.py`.
@@ -36,7 +36,7 @@ selectie_toelichting: "Kort waarom, voor beheerders."
   expliciet besluit.
 
 Beslissingslog (geen catalogusdump):
-[docs/inventaris.md](https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen/blob/main/docs/inventaris.md).
+[docs/inventaris.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md).
 `selectie` staat per heilige in YAML; overzicht `/beheer/selectie/`.
 
 ## Betekenis voor de Lage Landen
@@ -88,7 +88,7 @@ id_aliassen:
 
 ## Referenties
 
-Zie [docs/datamodel.md](https://github.com/orthodox-ronl/orthodoxe-kalender-lage-landen/blob/main/docs/datamodel.md).
+Zie [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
 Wikipedia en heiligen.net mogen aanvullen.
 
 ## Plaatsen en rustplaats
