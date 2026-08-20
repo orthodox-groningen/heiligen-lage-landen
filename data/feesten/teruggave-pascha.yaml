@@ -15,6 +15,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 38
+icoon:
+  bestand: iconen/pascha.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian Resurrection icon.jpg"
 samenvatting: |
   Laatste dag van de Pascha-viering vóór Hemelvaart.
 verhaal: |

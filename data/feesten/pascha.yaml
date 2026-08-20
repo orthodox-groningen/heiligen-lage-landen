@@ -19,6 +19,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 0
+icoon:
+  bestand: iconen/pascha.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian Resurrection icon.jpg"
 samenvatting: |
   Feest van de Opstanding; middelpunt van het kerkelijk jaar.
 verhaal: |

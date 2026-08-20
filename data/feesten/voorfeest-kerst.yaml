@@ -12,6 +12,11 @@ datum:
   van: "12-20"
   tot: "12-24"
   stijl: juliaans
+icoon:
+  bestand: iconen/kerst.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian nativity icon.jpg"
 samenvatting: |
   Voorfeest van Kerst, 20–24 december, in het Geboortevasten.
 verhaal: |
