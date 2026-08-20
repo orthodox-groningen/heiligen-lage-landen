@@ -24,6 +24,11 @@ locaties:
 rustplaats:
   plaats: utrecht
   toelichting: "Sint-Salvatorkerk (Oudmunster; verdwenen)"
+icoon:
+  bestand: iconen/frederich.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Frederik van Utrecht.jpg"
 samenvatting: |
   Bisschop van Utrecht; predikte in het noorden van het bisdom;
   volgens de legende vermoord te Utrecht. Feestdag 18 juli.

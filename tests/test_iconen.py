@@ -31,12 +31,12 @@ MET_ICOON = {
     "monulphus",
     "gondulphus",
     "rumold",
+    "johannes-van-shanghai",
+    "sophrony-van-essex",
 }
 
 ZONDER_LEGAAL_BESTAND = {
     "otger",
-    "johannes-van-shanghai",
-    "sophrony-van-essex",
 }
 
 

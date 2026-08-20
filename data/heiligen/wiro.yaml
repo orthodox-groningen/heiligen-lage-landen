@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: odilienberg
   toelichting: "Basiliek van de HH. Wiro, Plechelmus en Otgerus"
+icoon:
+  bestand: iconen/wiro.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:St Odiliënberg 3 Doppelstatuen new.jpg"
 samenvatting: |
   Ierse (of Schotse) missionaris; stichtte met Plechelmus en Otger het
   klooster te Sint Odiliënberg. Feestdag 11 mei (Roermond).

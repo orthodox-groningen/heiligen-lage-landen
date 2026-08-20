@@ -18,6 +18,11 @@ titels:
   - Archimandriet
   - Stichter van het klooster van Johannes de Doper in Essex
 periode: "1896–1993"
+icoon:
+  bestand: iconen/sophrony-van-essex.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Eldersophrony.jpg"
 locaties:
   - gent
   - asten

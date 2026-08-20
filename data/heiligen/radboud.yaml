@@ -15,6 +15,11 @@ datum:
 titels:
   - Bisschop van Utrecht
 periode: "917"
+icoon:
+  bestand: iconen/radboud.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Radboud broerenkerk zwolle.jpg"
 locaties:
   - utrecht
 samenvatting: |

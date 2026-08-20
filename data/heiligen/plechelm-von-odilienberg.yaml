@@ -20,6 +20,11 @@ datum:
 titels:
   - Bisschop, geloofsverkondiger aan de Nederrijn
 periode: "† 732 (?)"
+icoon:
+  bestand: iconen/plechelm-von-odilienberg.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Zegel Plechelmuskapittel anno 1244.jpg"
 locaties:
   - odilienberg
 samenvatting: |

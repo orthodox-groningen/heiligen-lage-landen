@@ -16,6 +16,11 @@ datum:
 titels:
   - Maagd & martelares
 periode: "~640"
+icoon:
+  bestand: iconen/alena-van-dilbeek.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Alena van Dilbeek (tg-uact-793).jpg"
 locaties:
   - dilbeek
 samenvatting: |

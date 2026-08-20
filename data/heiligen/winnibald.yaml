@@ -16,6 +16,11 @@ datum:
 titels:
   - Abt van Heidenheim
 periode: "701–761"
+icoon:
+  bestand: iconen/winnibald.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Wunibald Pontifikale Gundekarianum 11. Jahrhundert.jpg"
 locaties:
   - heidenheim
 samenvatting: |

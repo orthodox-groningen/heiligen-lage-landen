@@ -21,6 +21,11 @@ titels:
   - Bisschop van Maastricht en Luik
   - Apostel van de Ardennen
 periode: "ca. 655–727"
+icoon:
+  bestand: iconen/hubertus-van-maastricht.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Hubertus van Luik (tg-uact-341).jpg"
 locaties:
   - maastricht
   - luik

@@ -18,6 +18,11 @@ datum:
 titels:
   - Patroonheilige van Lier
 periode: "ca. 710–775"
+icoon:
+  bestand: iconen/gommar.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Gummarus van Lier (tg-uact-1080).jpg"
 locaties:
   - lier
 samenvatting: |

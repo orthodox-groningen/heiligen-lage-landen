@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: susteren
   toelichting: "Kopreliek in Sint-Amelberga (Susteren); overig Utrecht"
+icoon:
+  bestand: iconen/gregorius-van-utrecht.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:Reliquienbueste Gregor von Utrecht.jpeg"
 samenvatting: |
   Leerling van Bonifatius; abt van Sint-Maarten en beheerder van het
   bisdom Utrecht. Feestdag 25 augustus.

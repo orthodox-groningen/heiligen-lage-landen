@@ -19,6 +19,11 @@ titels:
   - Abt
   - Geloofsverkondiger in Kennemerland
 periode: "ca. 7e/8e eeuw"
+icoon:
+  bestand: iconen/engelmund.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Beeld van Engelmundus boven de hoofdingang van de Engelmunduskerk in Driehuis. NL-HlmNHA 54050106.JPG"
 locaties:
   - velsen
 samenvatting: |

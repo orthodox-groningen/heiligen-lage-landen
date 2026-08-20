@@ -13,6 +13,11 @@ datum:
   waarde: "11-28"
   stijl: gregoriaans
 periode: "726"
+icoon:
+  bestand: iconen/oda-van-de-peel.png
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Sint Oda van St. Oedenrode.png"
 locaties:
   - sint-oedenrode
 samenvatting: |

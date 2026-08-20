@@ -18,6 +18,11 @@ datum:
 titels:
   - Maagd-martelares van Rhenen
 periode: "† 451 (legende)"
+icoon:
+  bestand: iconen/cunera.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:Sculpture of St. Cunera van Rhenen in Kleve, Germany.jpg"
 locaties:
   - rhenen
 samenvatting: |

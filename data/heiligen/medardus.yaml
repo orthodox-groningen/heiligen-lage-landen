@@ -16,6 +16,11 @@ datum:
 titels:
   - Bisschop van Noyon
 periode: "ca. 456–560"
+icoon:
+  bestand: iconen/medardus.jpg
+  rechten: ok
+  licentie: "CC BY-SA 2.5"
+  bron: "Wikimedia Commons — File:Saint medard a saint medard d eyrans.jpg"
 locaties:
   - noyon
 samenvatting: |

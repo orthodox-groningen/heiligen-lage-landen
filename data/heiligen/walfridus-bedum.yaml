@@ -14,6 +14,11 @@ datum:
   stijl: gregoriaans
 locaties:
   - bedum
+icoon:
+  bestand: iconen/walfridus-bedum.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Walfridus - kist.jpg"
 samenvatting: |
   Plaatselijke martelaar, vereerd te Bedum. Feestdag 22 juni.
 betekenis_lage_landen: |

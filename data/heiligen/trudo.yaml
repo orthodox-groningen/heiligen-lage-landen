@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: sint-truiden
   toelichting: "Onze-Lieve-Vrouwekerk (schrijn)"
+icoon:
+  bestand: iconen/trudo.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Saint Trudon.jpg"
 samenvatting: |
   Frankische edelman uit Haspengouw; stichter van de abdij waaruit
   Sint-Truiden groeide. Feestdag 23 november.

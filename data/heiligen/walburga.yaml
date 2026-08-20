@@ -16,6 +16,11 @@ datum:
 titels:
   - Abdis van Heidenheim
 periode: "~710–779"
+icoon:
+  bestand: iconen/walburga.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:WalbKont1.JPG"
 locaties:
   - heidenheim
 samenvatting: |

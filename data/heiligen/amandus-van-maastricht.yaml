@@ -25,6 +25,11 @@ titels:
   - Missiebisschop
   - Bisschop van Maastricht
 periode: "~600–~675"
+icoon:
+  bestand: iconen/amandus-van-maastricht.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Amandus van Maastricht (tg-uact-802).jpg"
 locaties:
   - maastricht
   - elno

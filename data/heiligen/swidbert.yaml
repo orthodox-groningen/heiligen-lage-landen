@@ -25,6 +25,11 @@ locaties:
 rustplaats:
   plaats: kaiserswerth
   toelichting: "Stiftskirche Kaiserswerth"
+icoon:
+  bestand: iconen/swidbert.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Suitbertus.jpg"
 samenvatting: |
   Angelsaksische metgezel van Willibrord; predikte in Friesland; stichtte
   Kaiserswerth. Feestdag 1 maart.
