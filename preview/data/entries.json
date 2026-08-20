@@ -555,7 +555,8 @@
     "naam": "Gertrudis",
     "alternatief": [
       "Gertrudis van Nijvel",
-      "Geertrui"
+      "Geertrui",
+      "Gertrud von Nivelles"
     ],
     "titels": [
       "Abdis van Nijvel"
@@ -668,21 +669,23 @@
     "vorm": "dag",
     "naam": "Ludger",
     "alternatief": [
-      "Liudger"
+      "Liudger",
+      "Liudger van Münster",
+      "Ludgerus"
     ],
     "titels": [
       "Bisschop van Münster"
     ],
-    "samenvatting": "Heilige van de Lage Landen: Ludger. Bisschop van Münster.",
+    "samenvatting": "Geboren bij Utrecht; predikte onder de Friezen en Saksen; eerste bisschop\nvan Münster. Feestdag 26 maart.",
     "url": "/heiligen/ludger/",
     "lage_landen": true,
-    "bronlaag": "encyclopedie",
+    "bronlaag": "nagekeken",
     "observances": [
       "heilige"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
-    "betekenis_lage_landen": "",
+    "icoon": "iconen/ludger.jpg",
+    "betekenis_lage_landen": "Ludger (Liudger) werd rond 742 bij Utrecht geboren en volgde onderwijs\nonder Gregorius van Utrecht. Hij predikte in Friesland (onder meer na de\ndood van Bonifatius), stichtte kloosters en werd in 805 eerste bisschop\nvan Münster. Zijn Friese wortels en missiewerk verbinden de Utrechtse\nschool met de kerstening van het noorden; daarom hoort hij in deze\nkalender, ook al lag zijn bisschopszetel in Westfalen.",
     "locaties": [
       "utrecht",
       "frisia"
@@ -1059,7 +1062,8 @@
     "naam": "Bonifatius",
     "alternatief": [
       "Bonifacius",
-      "Wynfrith"
+      "Wynfrith",
+      "Wynfreth"
     ],
     "titels": [
       "Aartsbisschop",
@@ -1074,7 +1078,7 @@
     ],
     "onderdrukt_wekelijks_vasten": false,
     "icoon": "iconen/bonifatius.jpg",
-    "betekenis_lage_landen": "Bonifatius (Wynfrith) werkte met en na Willibrord in Frisia en Utrecht,\nhervormde de Frankische kerk en stierf op 5 juni 754 bij Dokkum, met\ntientallen metgezellen, tijdens een vormseltocht onder de Friezen. Dat\nmartelaarschap op Friese grond is het keerpunt van de noordelijke\nmissie: Utrecht bleef, de Friese heidenen kregen een bloedgetuige.\nOrthodoxWiki en het Heiligenlexikon bevestigen die lijn.",
+    "betekenis_lage_landen": "Bonifatius (Wynfrith) werkte met en na Willibrord in Friesland en Utrecht,\nhervormde de Frankische kerk en stierf op 5 juni 754 bij Dokkum, met\ntientallen metgezellen, tijdens een vormseltocht onder de Friezen. Dat\nmartelaarschap op Friese grond is het keerpunt van de noordelijke\nmissie: Utrecht bleef, de Friese heidenen kregen een bloedgetuige.\nOrthodoxWiki en het Heiligenlexikon bevestigen die lijn.",
     "locaties": [
       "dokkum",
       "utrecht",
@@ -2538,7 +2542,10 @@
     "cyclus": "jaar",
     "vorm": "dag",
     "naam": "Willibrord",
-    "alternatief": [],
+    "alternatief": [
+      "Willibrordus",
+      "Clemens Willibrord"
+    ],
     "titels": [
       "Apostel van de Friezen",
       "Aartsbisschop van Utrecht"
