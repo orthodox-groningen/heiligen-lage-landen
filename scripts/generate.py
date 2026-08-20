@@ -428,7 +428,7 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             body.append("")
     betekenis = (entry.get("betekenis_lage_landen") or "").strip()
     if betekenis:
-        body.append("## Waarom in deze kalender")
+        body.append("## Betekenis voor de Lage Landen")
         body.append("")
         body.append(betekenis)
         body.append("")

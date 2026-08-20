@@ -1,22 +1,60 @@
 id: trudo
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - sint-truiden
 selectie: voldoet
 selectie_toelichting: "Sint-Truiden."
 namen:
   primair: Trudo
+  alternatief:
+  - Sint-Trudo
+  - Trudo van Sint-Truiden
 datum:
-  waarde: 11-23
+  waarde: "11-23"
   stijl: gregoriaans
 titels:
-- Abt, stichter abdij St. Truiden
-periode: '693'
-samenvatting: 'Heilige van de Lage Landen: Trudo. Abt, stichter abdij St. Truiden.'
+  - Abt
+  - Stichter van de abdij van Sint-Truiden
+periode: "~628–693"
+locaties:
+  - sint-truiden
+rustplaats:
+  plaats: sint-truiden
+  toelichting: "Onze-Lieve-Vrouwekerk (schrijn)"
+samenvatting: |
+  Frankische edelman uit Haspengouw; stichter van de abdij waaruit
+  Sint-Truiden groeide. Feestdag 23 november.
+betekenis_lage_landen: |
+  Trudo is de naamgever van Sint-Truiden: op zijn landgoed Zerkingen
+  (Haspengouw) bouwde hij kerk en klooster, gewijd onder Theodardus.
+  Remaclus zond hem naar Metz voor opleiding; zo verbindt hij de
+  Maastrichtse missielijn met een blijvende stedelijke en abdijcultus in
+  Belgisch Limburg.
+verhaal: |
+  Trudo werd rond 628 in Haspengouw geboren uit Frankische adel. Remaclus
+  stuurde hem naar Metz; Clodulf wijdde hem tot priester (655). Terug in
+  zijn streek predikte hij en stichtte hij rond 657–660 een kerk en
+  klooster aan de Cicindria — de kern van de latere abdij en stad
+  Sint-Truiden. Hij stierf vermoedelijk op 23 november 693 en werd bij
+  zijn kerk begraven. Vitae vanaf Donatus (achtste eeuw) schrijven
+  wonderen toe, waaronder het kinderverhaal van het vernielde kerkje.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Trudo von Sarchinium"
+    url: "https://www.heiligenlexikon.de/BiographienT/Trudo_von_Sarchinium.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Haspengouw, opleiding via Remaclus in Metz, stichting
+      Sint-Truiden, sterfjaar rond 695.
   - label: "Wikipedia (NL) — Trudo"
     url: "https://nl.wikipedia.org/wiki/Trudo"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, mirakels en band met de stad
+      Sint-Truiden.
+  - label: "heiligen.net — Trudo van St-Truiden"
+    url: "https://www.heiligen.net/heiligen/11/23/11-23-0695-trudo.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte Nederlandse vita met Remaclus, Metz, stichting en cultus.

@@ -1,11 +1,8 @@
 id: engelmund
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - velsen
-  - frisia
 selectie: voldoet
 selectie_toelichting: "Velsen / Holland."
 namen:
@@ -13,17 +10,49 @@ namen:
   alternatief:
   - Engelmundus
   - Engelmundus van Velsen
+  - Engelmond
+  - Ingelmundus
 datum:
-  waarde: 06-21
+  waarde: "06-21"
   stijl: gregoriaans
 titels:
-- Abt, geloofsverkondiger in Holland
-periode: ~680
-samenvatting: 'Heilige van de Lage Landen: Engelmund. Abt, geloofsverkondiger in Holland.'
+  - Abt
+  - Geloofsverkondiger in Kennemerland
+periode: "ca. 7e/8e eeuw"
+locaties:
+  - velsen
+samenvatting: |
+  Abt en missionaris, vereerd te Velsen (Kennemerland); metgezel van
+  Willibrord volgens de overlevering. Feestdag 21 juni.
+betekenis_lage_landen: |
+  Engelmund is de schutspatroon van Velsen. De overlevering plaatst hem
+  bij Willibrords missie in Kennemerland; contemporaine bronnen ontbreken,
+  maar de lokale cultus (kerken in Velsen-Zuid, Driehuis, IJmuiden;
+  relieken in Haarlem) is reëel. Daarmee hoort hij bij de vroegste
+  Hollandse heiligenverering rond één concrete plaats: Velsen.
+verhaal: |
+  Volgens de traditie in Engeland geboren (Friese afkomst), benedictijner
+  abt en medewerker van Willibrord. Hij predikte in Kennemerland en
+  werd te Velsen begraven; een bronlegende hoort bij die cultus.
+  Gedenkdag 21 juni (elders ook 20 juni). Lexikon en heiligen.net
+  plaatsen zijn werk nadrukkelijk te Velsen.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Engelmund"
+    url: "https://www.heiligenlexikon.de/BiographienE/Engelmund.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte lexikonvita: abt/missionaris in Kennemerland, begraven te
+      Velsen bij een door Willibrord gestichte kerk.
   - label: "Wikipedia (NL) — Engelmundus"
     url: "https://nl.wikipedia.org/wiki/Engelmundus"
-    geraadpleegd: "2026-08-16"
-  - label: "heiligen.net — Engelmundus"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht; geen contemporaine bronnen; cultus en
+      kerken te Velsen.
+  - label: "heiligen.net — Engelmundus van Velzen"
     url: "https://www.heiligen.net/heiligen/06/21/06-21-0739-engelmundus.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte pagina: metgezel van Willibrord, prediking in
+      Kennemerland, kerk van Velsen.

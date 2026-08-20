@@ -1,25 +1,57 @@
 id: ultan
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - fosses
 selectie: voldoet
 selectie_toelichting: "Fosses (met Foillan)."
 namen:
   primair: Ultan
+  alternatief:
+  - Ultan van Fosses
+  - Ultain
 datum:
-  waarde: 05-01
+  waarde: "05-01"
   stijl: gregoriaans
 titels:
-- Stichter van Fosse
-periode: '680'
-samenvatting: 'Heilige van de Lage Landen: Ultan. Stichter van Fosse.'
+  - Abt van Fosses
+periode: "~610–686"
+locaties:
+  - fosses
+samenvatting: |
+  Ierse monnik; broer van Fursey en Foillan; abt van Fosses bij Namen.
+  Feestdag 1 mei.
+betekenis_lage_landen: |
+  Ultan hoort bij de Ierse kring rond Gertrudis van Nijvel: met Foillan
+  kwam hij naar Fosses (Fosses-la-Ville), stichting op land van Itta en
+  Gertrudis. Na Foillans dood werd Ultan abt. Zo verbindt hij de
+  Angelsaksisch-Ierse missie met monastiek leven in het huidige Wallonië
+  — dezelfde regio als Begga en Gertrudis.
+verhaal: |
+  Ultan, zoon van Fintan en Gelgès, was broer van Fursey en Foillan. Hij
+  was monnik te Cnobheresburg (Burgh Castle) in Oost-Anglië, later
+  kluizenaar met Fursey. Rond 651 vluchtten Foillan en Ultan voor Penda
+  naar het vasteland; Gertrudis en Itta namen hen op. Foillan stichtte
+  Fosses; na diens moord (655/656) volgde Ultan als abt. Hij werkte ook
+  te Péronne; traditioneel sterft hij rond 686. Feestdag 1 mei (heiligen.net
+  noemt ook 2 mei).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Ultan von Fosses"
+    url: "https://www.heiligenlexikon.de/BiographienU/Ultan_von_Fosses.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Ierse broers, Oost-Anglië, Fosses en Péronne, abtschap
+      na Foillan.
   - label: "Wikipedia (EN) — Ultan"
     url: "https://en.wikipedia.org/wiki/Saint_Ultan"
-    geraadpleegd: "2026-08-16"
-  - label: "heiligen.net — Ultan"
-    url: "https://www.heiligen.net/heiligen/05/02/05-02-0686-ultan.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalig overzicht naar Beda en de Nivelles-notitie: missie,
+      vlucht naar Fosses, feestdag 1 mei.
+  - label: "heiligen.net — Ultan van Fosses"
+    url: "https://heiligen.net/heiligen/05/02/05-02-0686-ultan.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte Nederlandse pagina: broer van Foillan en Fursey, abt van
+      Fosses rond 655.

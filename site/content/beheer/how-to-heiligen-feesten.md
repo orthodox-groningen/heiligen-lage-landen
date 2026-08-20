@@ -158,7 +158,7 @@ Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
 
-Pagina-opbouw (na de infobox): feestdag-link → **Waarom in deze kalender**
+Pagina-opbouw (na de infobox): feestdag-link → **Betekenis voor de Lage Landen**
 (`betekenis_lage_landen`) → samenvatting → verhaal → verder lezen →
 **Over de bronnen** → (alleen bij nader/kandidaat) selectieparagraaf.
 
@@ -239,7 +239,7 @@ id_aliassen:
 `id_aliassen` mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
-`betekenis_lage_landen` onder **Waarom in deze kalender**. Selectie
+`betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
 staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}); bij
 `nader-onderzoek` / `kandidaat-schrappen` ook kort onderaan de publieke pagina.
 

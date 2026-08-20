@@ -59,7 +59,7 @@ betekenis_lage_landen: |
 
 Verplicht bij `bronlaag: nagekeken` voor `soort: heilige`. Als het veld
 gezet is, gelden dezelfde referentie-eisen als bij `verhaal` /
-`samenvatting`. `generate.py` zet het onder **Waarom in deze kalender**
+`samenvatting`. `generate.py` zet het onder **Betekenis voor de Lage Landen**
 (vóór samenvatting/verhaal) en in `entries.json` (veld
 `betekenis_lage_landen`, alleen heiligen).
 

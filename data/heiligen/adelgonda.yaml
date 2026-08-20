@@ -1,10 +1,8 @@
 id: adelgonda
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maubeuge
 selectie: nader-onderzoek
 selectie_toelichting: "Stichteres van Maubeuge; historisch Henegouwen, nu Frankrijk."
 namen:
@@ -14,17 +12,46 @@ namen:
   - Aldegondis
   - Aldegonda
   - Aldegundis
+  - Adelgondis van Maubeuge
 datum:
-  waarde: 01-30
+  waarde: "01-30"
   stijl: gregoriaans
 titels:
-- Stichteres van Maubeuge
-periode: '680'
-samenvatting: 'Heilige van de Lage Landen: Adelgonda. Stichteres van Maubeuge.'
+  - Stichteres van Maubeuge
+periode: "~630–684"
+locaties:
+  - maubeuge
+samenvatting: |
+  Frankische edelvrouw uit Henegouwen; stichteres en abdis van Maubeuge.
+  Feestdag 30 januari. Cultus ook in Vlaanderen (o.a. Alken, As).
+betekenis_lage_landen: |
+  Adelgonda (Aldegonda) behoort tot de Merovingische heiligenfamilie van
+  Henegouwen (ouders Walbertus en Bertilia; zuster Waltrudis). Maubeuge lag
+  in historisch Henegouwen, nu in Frankrijk; relieken en patroonaten leven
+  wel in Vlaanderen voort. Of dat genoeg is voor vaste selectie, vraagt
+  nader onderzoek.
+verhaal: |
+  Om een opgelegd huwelijk te vermijden vluchtte zij en ontving volgens de
+  overlevering de sluier van Amandus. Zij stichtte (of leidde) het klooster
+  te Maubeuge aan de Samber en stierf er op 30 januari 684, traditioneel
+  aan kanker. Wonderverhalen (Samber-oversteek, kaars, duif met sluier)
+  horen bij de latere vitae. Cultus verspreidde zich in België, Noord-
+  Frankrijk en langs de Rijn.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Aldegundis von Maubeuge"
+    url: "https://www.heiligenlexikon.de/BiographienA/Aldegundis_von_Maubeuge.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: familie, Maubeuge, sluier van Amandus, relieken en
+      Rijnlandse cultus.
   - label: "Wikipedia (NL) — Aldegonda van Maubeuge"
     url: "https://nl.wikipedia.org/wiki/Aldegonda_van_Maubeuge"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht met iconografie en Vlaamse verering.
   - label: "heiligen.net — Aldegondis"
     url: "https://www.heiligen.net/heiligen/01/30/01-30-0684-aldegondis.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreide hagiografie van de Henegouwse familieheilige.

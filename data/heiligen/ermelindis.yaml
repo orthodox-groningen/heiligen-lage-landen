@@ -1,24 +1,55 @@
 id: ermelindis
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - meldert
 selectie: voldoet
 selectie_toelichting: "Brabant (Meldert)."
 namen:
   primair: Ermelindis
   alternatief:
   - Ermelindis van Meldert
+  - Hermelindis
+  - Ermelindis van Brabant
 datum:
-  waarde: 10-29
+  waarde: "10-29"
   stijl: gregoriaans
 titels:
-- Heremiet
-periode: 6e eeuw
-samenvatting: 'Heilige van de Lage Landen: Ermelindis. Heremiet.'
+  - Kluizenares
+periode: "6e eeuw"
+locaties:
+  - meldert
+samenvatting: |
+  Kluizenares te Meldert (Brabant); weigerde huwelijk en leefde als
+  heremiet. Feestdag 29 oktober.
+betekenis_lage_landen: |
+  Ermelindis is een Brabantse kluizenares met cultuscentrum te Meldert
+  (bij Hoegaarden/Tienen). Haar vita is legendair, maar de lokale
+  bedevaart en kapellen (onder meer Lovenjoel) maken haar tot een
+  vaste heilige van Vlaams-Brabant — typisch voor de heiligenkalender
+  van de Lage Landen.
+verhaal: |
+  Van adellijke komaf (soms gekoppeld aan Pepijn van Landen). Zij
+  weigerde huwelijk, leefde eerst bij Bevekom, vluchtte na een
+  waarschuwing naar Meldert en stierf daar als kluizenares (traditie:
+  ca. 47 jaar). Engelen zouden haar hebben begraven; later ontstond
+  een kapel bij lichtwonderen op haar graf. Feestdag 29 oktober.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Ermelindis von Meldert"
+    url: "https://www.heiligenlexikon.de/BiographienE/Ermelindis_von_Meldert.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: kluizenares van Lovenjoel/Meldert, gedenkdag
+      29 oktober.
   - label: "Wikipedia (NL) — Ermelindis van Meldert"
     url: "https://nl.wikipedia.org/wiki/Ermelindis_van_Meldert"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalige legende: Bevekom, vlucht naar Meldert, cultus.
+  - label: "heiligen.net — Ermelindis van Meldert"
+    url: "https://www.heiligen.net/heiligen/10/29/10-29-0594-ermelindis.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreide hagiografie met vluchtlegende en ontstaan van de
+      bedevaart te Meldert.

@@ -3,8 +3,6 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - mesen
 selectie: kandidaat-schrappen
 selectie_toelichting: "Gestorven 1079; westerse cultus na het schisma, geen orthodoxe bijdrage aan NL/BE."
 namen:
@@ -13,14 +11,42 @@ namen:
   - Adela van Ieper
   - Adela van Mesen
   - Adela van Messines
+  - Adelheid van Frankrijk
 datum:
-  waarde: 09-08
+  waarde: "09-08"
   stijl: gregoriaans
 titels:
-- Weduwe & kloosterlinge
-periode: '1079'
-samenvatting: 'Heilige van de Lage Landen: Adela van Vlaanderen. Weduwe & kloosterlinge.'
+  - Weduwe & kloosterlinge
+periode: "~1010–1079"
+locaties:
+  - mesen
+samenvatting: |
+  Franse koningsdochter, gravin van Vlaanderen en stichteres van de abdij
+  van Mesen; daar later kloosterlinge. Feestdag 8 september.
+betekenis_lage_landen: |
+  Adela stichtte en bewoonde de abdij van Mesen (West-Vlaanderen) en werkte
+  mee aan kapittels en abdijen in het graafschap. De band met de Lage Landen
+  is geografisch en dynastisch duidelijk, maar haar dood (1079) en cultus
+  vallen na 1054; voor een orthodoxe kalender is de bijdrage dus zwak —
+  vandaar kandidaat-schrappen.
+verhaal: |
+  Dochter van Robert II van Frankrijk; huwde Boudewijn V van Vlaanderen.
+  Zij steunde kerkhervorming en stichtingen (o.a. Mesen 1057, Ename 1063).
+  Na Boudewijns dood (1067) ontving zij in Rome de sluier en trok zich terug
+  in Mesen, waar zij in 1079 stierf en begraven werd. Cultus als zalige;
+  gedenkteken in de crypte van Mesen.
+over_bronnen: |
+  Alleen encyclopedische/hagiografische pagina’s; geen pre-schisma
+  orthodoxe vita of oosterse cultus.
 referenties:
   - label: "Wikipedia (NL) — Adela van Mesen"
     url: "https://nl.wikipedia.org/wiki/Adela_van_Mesen"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Biografie als gravin, stichtingen en kloosterleven te Mesen;
+      feestdag 8 september.
+  - label: "heiligen.net — Adela van Vlaanderen"
+    url: "https://www.heiligen.net/heiligen/09/08/09-08-1079-adela-vlaanderen.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte vita: huwelijk, abdij Mesen, Rome en zaligverklaringstraditie.

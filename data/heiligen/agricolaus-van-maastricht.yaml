@@ -3,25 +3,54 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
 selectie: nader-onderzoek
 selectie_toelichting: "Tweede bisschop van Maastricht; of de vroege bisschoppenlijst historisch is, is onzeker."
 namen:
   primair: Agricolaus van Maastricht
+  alternatief:
+  - Agricola
+  - Agricolaus
+  - Agricola van Maastricht
 datum:
-  waarde: 02-05
+  waarde: "02-05"
   stijl: gregoriaans
   extra:
-  - waarde: 05-15
-    toelichting: 15 mei (met alle heilige bisschoppen van Maastricht)
-  - waarde: 07-18
-    toelichting: 18 juli (sterfdag volgens de legende)
+    - waarde: "05-15"
+      toelichting: 15 mei (met alle heilige bisschoppen van Maastricht)
+    - waarde: "07-18"
+      toelichting: 18 juli (sterfdag volgens de legende)
 titels:
-- Tweede bisschop
-periode: 401(?)
-samenvatting: 'Heilige van de Lage Landen: Agricolaus van Maastricht. Tweede bisschop.'
+  - Tweede bisschop van Maastricht
+periode: "401(?)"
+locaties:
+  - maastricht
+samenvatting: |
+  Traditioneel tweede bisschop van Maastricht na Servatius. Historisch
+  vrijwel onbekend; feestdag 5 februari.
+betekenis_lage_landen: |
+  Agricolaus staat op de traditionele Maastrichter bisschoppenlijst als
+  opvolger van Servatius. De band met Maastricht is dus liturgisch en
+  genealogisch, maar historisch niets met zekerheid bekend — vandaar
+  nader-onderzoek.
+verhaal: |
+  Middeleeuwse legenden laten hem kanunnik te Tongeren zijn, Servatius’
+  grafkapel herstellen en na dertien jaar bisschopschap sterven op
+  18 juli 401, begraven te Hoei. Heriger van Lobbes plaatste hem later
+  (zesde eeuw); dat botst met de rest van de lijst. Feitelijk is hij een
+  naam op een onzekere catalogus.
+over_bronnen: |
+  Geen zelfstandige Wikipedia-biografie; alleen lijsten en hagiografische
+  samenvattingen.
 referenties:
+  - label: "heiligen.net — Agricolaus van Maastricht"
+    url: "https://www.heiligen.net/heiligen/02/05/02-05-0401-agricolaus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Legende versus historische leemte; feestdagen 5 februari, 15 mei,
+      18 juli.
   - label: "Wikipedia (NL) — Lijst van bisschoppen van Maastricht"
     url: "https://nl.wikipedia.org/wiki/Lijst_van_bisschoppen_van_Maastricht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Plaats op de traditionele bisschoppenlijst; context bij Servatius
+      en latere zetelverplaatsing.

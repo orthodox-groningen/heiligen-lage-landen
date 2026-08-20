@@ -34,7 +34,7 @@ Gebruik dit als beslisboom. Details en voorbeelden staan in de how-to’s.
 | --- | --- | --- |
 | `namen.primair` / `alternatief` | Je de getoonde titel of zoekaliassen wijzigt | Je alleen het id wilt “mooier” maken (id blijft stabiel) |
 | `samenvatting` | Eén alinea “wie is dit” | Lange vita (dat is `verhaal`) |
-| `betekenis_lage_landen` | Je specifiek de band met NL/BE/LUX uitlegt (kop: Waarom in deze kalender) | Algemene heiligenvita zonder LL-band |
+| `betekenis_lage_landen` | Je specifiek de band met NL/BE/LUX uitlegt (kop: Betekenis voor de Lage Landen) | Algemene heiligenvita zonder LL-band |
 | `verhaal` | Je een leesbaar verhaal hebt met referentie | Ongestaafde AI-tekst zonder bron |
 | `selectie` | Heilige: scoort tegen de criteria | Feest/vasten (niet van toepassing) |
 | `selectie_toelichting` | Korte reden voor beheer (+ fallback publiek) | Lange essay (gebruik `_publiek`) |

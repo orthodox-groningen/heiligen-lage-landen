@@ -1,10 +1,8 @@
 id: egbert-van-rathmelsigi
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - rath-melsigi
 selectie: nader-onderzoek
 selectie_toelichting: >-
   Zelf niet in de Lage Landen; leidde te Rath Melsigi missionarissen op
@@ -21,15 +19,60 @@ selectie_toelichting_publiek: |
   te gaan verzamelen.
 namen:
   primair: Egbert van Rathmelsigi
+  alternatief:
+  - Egbert van Rath Melsigi
+  - Egbert van Iona
+  - Egbert van Northumbrië
+  - Ecgberht
+  - Egbertus
 datum:
-  waarde: 12-23
+  waarde: "12-23"
   stijl: gregoriaans
-periode: '729'
-samenvatting: 'Heilige van de Lage Landen: Egbert van Rathmelsigi.'
+titels:
+  - Abt van Rath Melsigi
+  - Missionaris-inspirator
+periode: "639–729"
+locaties:
+  - rath-melsigi
+samenvatting: |
+  Angelsaksische abt te Rath Melsigi; zond missionarissen naar Friesland
+  (o.a. Willibrord), ging zelf niet mee. Feestdag vaak 24 april.
+betekenis_lage_landen: |
+  Egbert bleef in Ierland, maar Rath Melsigi werd onder hem kweekschool
+  voor de Friese missie. Hij zond Wigbert, later Willibrord en anderen.
+  Titus Brandsma noemde die rol instrumenteel voor de kerstening van de
+  Lage Landen. De band is reëel maar indirect — daarom nader-onderzoek,
+  geen actieve jacht op vergelijkbare heiligen.
+verhaal: |
+  Circa 639 in Northumbrië geboren; na ziekte te Rath Melsigi beloofde
+  hij nooit naar Brittannië terug te keren. Hij wilde zelf naar de
+  Friezen, maar storm en visioenen hielden hem tegen; Wigbert predikte
+  twee jaar tevergeefs. Rond 690 zond hij Willibrord en gezellen. Later
+  bracht hij te Iona de Romeinse paaspraktijk in. Overleden op Pasen
+  729 te Iona.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Egbert von Irland"
+    url: "https://www.heiligenlexikon.de/BiographienE/Egbert_von_Irland.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Rathmelsigi, uitzending van Wigbert en Willibrord
+      naar Friesland, Iona en dood 729.
   - label: "Wikipedia (NL) — Egbert van Rathmelsigi"
     url: "https://nl.wikipedia.org/wiki/Egbert_van_Rathmelsigi"
-    geraadpleegd: "2026-08-16"
-  - label: "Titus Brandsma — De kalender van de Nederlandse heiligen (1921)"
-    locator: "Egbert van Rathmelsigi; instrumentele rol bij missie naar Frisia"
     geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht naar Beda: plan voor Friese missie,
+      leerlingen, Iona; gedenkdag 24 april.
+  - label: "heiligen.net — Egbert van Iona"
+    url: "https://www.heiligen.net/heiligen/04/24/04-24-0729-egbert.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreide hagiografie met Beda-citaten over Rathmelsigi,
+      stormlegende en uitzending van Willibrord.
+  - label: "Titus Brandsma — De kalender van de Nederlandse heiligen (1921)"
+    locator: "Egbert van Rathmelsigi; instrumentele rol bij missie naar Friesland"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Brandsma noemt Egberts rol bij de uitzending van missionarissen
+      instrumenteel voor de kerstening van de Lage Landen (indirecte band).

@@ -68,19 +68,18 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert meta["aliases"] == ["/heiligen/oud-id/"]
     assert "selectie" not in meta
     assert "niet op de publieke pagina" not in body
-    assert "## Waarom in deze kalender" in body
+    assert "## Betekenis voor de Lage Landen" in body
     assert "Predikte onder de Friezen." in body
     assert "## Over de plaats in deze kalender" not in body
     assert "nagekeken aan een lexikon" not in body
     # Bronnoot ná inhoud, onder kop Over de bronnen
     assert "## Over de bronnen" in body
-    assert body.index("## Waarom in deze kalender") < body.index("## Over de bronnen")
+    assert body.index("## Betekenis voor de Lage Landen") < body.index("## Over de bronnen")
     assert body.index("## Verder lezen en kijken") < body.index("## Over de bronnen")
     assert "open naslagwerken" in body
     assert body.index("## Over de bronnen") < body.index("open naslagwerken")
     assert "## Verder lezen en kijken" in body
     assert "## Referenties" not in body
-    assert "## Betekenis voor de Lage Landen" not in body
     assert "Meneon:" not in body
 
 
@@ -246,7 +245,7 @@ def test_entry_page_selectie_na_verhaal(
     body = _split_hugo_markdown(
         (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
     )[1]
-    assert body.index("## Waarom in deze kalender") < body.index("## Verhaal")
+    assert body.index("## Betekenis voor de Lage Landen") < body.index("## Verhaal")
     assert body.index("## Verhaal") < body.index("## Verder lezen en kijken")
     assert body.index("## Verder lezen en kijken") < body.index(
         "## Over de plaats in deze kalender"

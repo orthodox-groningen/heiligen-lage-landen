@@ -1,29 +1,59 @@
 id: plechelm-von-odilienberg
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - odilienberg
 selectie: voldoet
-selectie_toelichting: "Odiliënberg / Nederrijn."
+selectie_toelichting: "Odiliënberg met Wiro en Otger; cultus Oldenzaal."
 namen:
   primair: Plechelm von Odilienberg
   alternatief:
   - Plechelmus
   - Plechelm
+  - Pleghelm
 datum:
-  waarde: 07-15
+  waarde: "07-15"
   stijl: gregoriaans
   extra:
-  - waarde: 05-04
-    toelichting: 4 mei
+  - waarde: "05-04"
+    toelichting: 4 mei (translatio)
 titels:
-- Bisschop, geloofsverkondiger aan de Nederrijn
-periode: '713'
-samenvatting: 'Heilige van de Lage Landen: Plechelm von Odilienberg. Bisschop, geloofsverkondiger
-  aan de Nederrijn.'
+  - Bisschop, geloofsverkondiger aan de Nederrijn
+periode: "† 732 (?)"
+locaties:
+  - odilienberg
+samenvatting: |
+  Angelsaksische missionaris; klooster Berg (Odiliënberg) met Wiro en
+  Otger. Feestdag 15 juli.
+betekenis_lage_landen: |
+  Plechelm (Plechelmus) hoort bij de Maas–Nederrijn-missie: met Wiro en
+  Otger stichtte hij ca. 700 het klooster op de Sint-Petrusberg
+  (Odiliënberg). Relieken gingen via Utrecht naar Oldenzaal (954), waar
+  de Sint-Plechelmusbasiliek zijn hoofdcentrum werd. Zo verbindt hij
+  Limburg met Twente binnen één Lage-Landen-cultus.
+verhaal: |
+  Plechelm kwam uit Northumbrië (of Ierland volgens latere traditie) en
+  trok met Wiro en Otger naar het continent. Pepijn van Herstal schonk
+  hun Berg bij Roermond; daar bouwden zij een klooster. Hij stierf op
+  15 juli 732 (?). Bisschop Balderik verhief de relieken; in 954 gingen
+  delen naar Oldenzaal. De vita is laat (tiende eeuw); koppeling aan
+  Willibrord is secundair. Feestdag 15 juli; translatio 4 mei.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Plechelm von Odilienberg"
+    url: "https://www.heiligenlexikon.de/BiographienP/Plechelm.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Wiro/Otger, Odiliënberg, Oldenzaal; feestdag 15 juli
+      en translatio 4 mei.
   - label: "Wikipedia (NL) — Plechelmus"
     url: "https://nl.wikipedia.org/wiki/Plechelmus"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van Odiliënberg, Balderik en Oldenzaalse
+      cultus.
+  - label: "Wikipedia (EN) — Plechelm"
+    url: "https://en.wikipedia.org/wiki/Plechelm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige pagina met missiechronologie en feestdag 15 juli.

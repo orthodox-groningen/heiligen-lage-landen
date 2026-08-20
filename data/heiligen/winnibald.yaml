@@ -1,10 +1,8 @@
 id: winnibald
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - heidenheim
 selectie: kandidaat-schrappen
 selectie_toelichting: "Heidenheim / Engeland; geen aantoonbaar werk in de Lage Landen."
 namen:
@@ -13,17 +11,46 @@ namen:
   - Wunibald
   - Winebald
 datum:
-  waarde: 12-18
+  waarde: "12-18"
   stijl: gregoriaans
 titels:
-- Abt en missionaris van Engeland en Heidenheim (Duitsland)
-periode: '761'
-samenvatting: 'Heilige van de Lage Landen: Winnibald. Abt en missionaris van Engeland
-  en Heidenheim (Duitsland).'
+  - Abt van Heidenheim
+periode: "701–761"
+locaties:
+  - heidenheim
+samenvatting: |
+  Angelsaksische abt van Heidenheim; broer van Willibald en Walburga.
+  Feestdag 18 december.
+betekenis_lage_landen: |
+  Winnibald (Wunibald) werkte onder Bonifatius in Thüringen, Beieren en
+  Mainz en stichtte Heidenheim in het bisdom Eichstätt. Er is geen
+  aantoonbaar missiewerk in de Lage Landen; de band loopt vooral via de
+  Bonifatius-familie (Engeland/Germanië). Daarom kandidaat-schrappen,
+  parallel aan Walburga.
+verhaal: |
+  Geboren in 701 in Wessex als zoon van Richard en Wunna, pelgrimeerde
+  Winnibald met vader en broer naar Rome (720), werd er monnik en keerde
+  later terug. Bonifatius riep hem in 738 naar Germanië en wijdde hem tot
+  priester. Hij werkte in Thüringen, het Beierse Frankenland en Mainz, en
+  stichtte in 751/752 het klooster Heidenheim, waar hij abt was. Hij
+  stierf op 18 december 761; zus Walburga leidde daarna het
+  vrouwenklooster. Vita door Hugeburg van Heidenheim (eind achtste eeuw).
 referenties:
-  - label: "Wikipedia (NL) — Winnibald"
-    url: "https://nl.wikipedia.org/wiki/Winnibald"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Wunibald von Heidenheim"
+    url: "https://www.heiligenlexikon.de/BiographienW/Wunibald_von_Heidenheim.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Rome, Bonifatius, Thüringen/Mainz, stichting Heidenheim,
+      sterfjaar 761.
   - label: "Wikipedia (NL) — Wunibald"
     url: "https://nl.wikipedia.org/wiki/Wunibald"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven en familie (Willibald, Walburga).
+  - label: "heiligen.net — Winnibald van Heidenheim"
+    url: "https://www.heiligen.net/heiligen/12/18/12-18-0761-winnibald.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte Nederlandse schets: pelgrimstocht, Bonifatius, abtschap
+      Heidenheim, feestdagen.

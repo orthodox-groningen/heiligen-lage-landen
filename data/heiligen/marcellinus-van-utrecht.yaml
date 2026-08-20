@@ -1,20 +1,60 @@
 id: marcellinus-van-utrecht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
-selectie_toelichting: "Utrecht."
+selectie_toelichting: "Utrechtse school; missie Deventer/Twente met Lebuïnus."
 namen:
   primair: Marcellinus van Utrecht
+  alternatief:
+  - Marchelm
+  - Marchelmus
+  - Markhelm
+  - Marcellinus van Deventer
 datum:
-  waarde: 07-14
+  waarde: "07-14"
   stijl: gregoriaans
-periode: 8e eeuw
-samenvatting: 'Heilige van de Lage Landen: Marcellinus van Utrecht.'
+titels:
+  - Priester
+  - Geloofsverkondiger bij Deventer
+periode: "8e eeuw"
+locaties:
+  - utrecht
+samenvatting: |
+  Leerling van Gregorius van Utrecht; werkte met Lebuïnus in Overijssel.
+  Feestdag 14 juli.
+betekenis_lage_landen: |
+  Marcellinus (Marchelm/Markhelm) is de brug tussen de Utrechtse school
+  en de IJssel/Twente-missie: met Lebuïnus predikte hij rond Deventer,
+  Oldenzaal en Coevorden. Relieken rusten bij Lebuïnus in Deventer. Zo
+  hoort hij bij de kerstening van het oosten van de noordelijke Lage
+  Landen, ook al blijft zijn biografie fragmentarisch.
+verhaal: |
+  De Angelsaks Marcellinus kwam via Rome in contact met Gregorius van
+  Utrecht en studeerde aan diens school. Hij predikte eerst onder de
+  Friezen, daarna met Lebuïnus in Overijssel en Drenthe; Oldenzaal en
+  Coevorden worden met hem verbonden. Later was hij custos van de
+  Salvator te Utrecht. Hij stierf eind achtste eeuw (traditie: Oldenzaal);
+  gebeente naar Deventer. Een aan hem toegeschreven Suitbertus-vita is
+  een late vervalsing.
 referenties:
-  - bron_id: eir3app
-    locator: "Interne notities; nader te specificeren in curated entries."
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Markhelm"
+    url: "https://www.heiligenlexikon.de/BiographienM/Markhelm.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte lexikonnotitie: leerling van Willibrord/Gregorius, missie
+      Deventer; feestdag 14 juli.
+  - label: "Wikipedia (NL) — Marcellinus van Deventer"
+    url: "https://nl.wikipedia.org/wiki/Marcellinus_van_Deventer"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van Utrechtse opleiding, Twente/Drenthe
+      en Deventerse relieken.
+  - label: "Titus Brandsma — Marcellinus (Katholieke Encyclopaedie)"
+    url: "https://www.titusbrandsmateksten.nl/marcellinus/"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Encyclopedische notitie (1937): apostel van Twente/Drenthe,
+      feestdag en Suitbertus-pseudo-vita.

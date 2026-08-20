@@ -1,12 +1,8 @@
 id: eligius
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - doornik
-  - noyon
-  - vlaanderen
 selectie: voldoet
 selectie_toelichting: "Bisdom Noyon-Doornik; prediking in Vlaanderen."
 namen:
@@ -14,14 +10,53 @@ namen:
   alternatief:
   - Eloi
   - Elooi
+  - Eloy
+  - Éloi
+  - Sint-Elooi
 datum:
-  waarde: 12-01
+  waarde: "12-01"
   stijl: gregoriaans
 titels:
-- Bisschop van Noyon
-periode: '660'
-samenvatting: 'Heilige van de Lage Landen: Eligius. Bisschop van Noyon.'
+  - Bisschop van Noyon-Doornik
+  - Apostel van Vlaanderen
+periode: "ca. 588–660"
+locaties:
+  - doornik
+  - noyon
+  - vlaanderen
+samenvatting: |
+  Edelsmid en raadsman van Dagobert; bisschop van Noyon-Doornik;
+  missie in Vlaanderen. Feestdag 1 december.
+betekenis_lage_landen: |
+  Als bisschop van Noyon-Doornik predikte Eligius onder Vlamingen,
+  Morinen en Menapiërs en verder in Brabant/Antwerpen. Hij geldt als
+  «apostel van Vlaanderen»: zijn bisdom en cultus (paardenzegeningen,
+  smidsgilden) lopen dwars door Noord-Frankrijk en België. Zonder hem
+  mist de vroegmiddeleeuwse kerk van Vlaanderen een kernfiguur.
+verhaal: |
+  Geboren te Chaptelat bij Limoges; goudsmid en muntmeester aan het
+  hof van Chlotarius II en Dagobert I. Stichtte Solignac (632) en
+  schonk veel aan armen en slaven. Na 639 priester; vanaf 641 bisschop
+  van Noyon-Doornik. Vita door vriend Audoënus (Ouen). Overleden
+  1 december 660 te Noyon. Patroon van smeden en metaalbewerkers;
+  bekende legende van de afneembare paardenvoet.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Eligius von Noyon"
+    url: "https://www.heiligenlexikon.de/BiographienE/Eligius.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: hofcarrière, Solignac, bisschop Noyon, missie in
+      Vlaanderen, cultus en attributen.
   - label: "Wikipedia (NL) — Eligius"
     url: "https://nl.wikipedia.org/wiki/Eligius"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Breed Nederlandstalig overzicht van leven, bisdom Noyon-Doornik
+      en Vlaamse cultus.
+  - label: "heiligen.net — Eligius van Noyon"
+    url: "https://www.heiligen.net/heiligen/12/01/12-01-0660-eligius.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografie met legenden, patronaten en Vlaamse processies
+      (warme/koude Elooi).

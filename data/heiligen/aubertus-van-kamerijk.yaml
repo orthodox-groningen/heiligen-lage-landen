@@ -1,10 +1,8 @@
 id: aubertus-van-kamerijk
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - kamerijk
 selectie: nader-onderzoek
 selectie_toelichting: "Bisschop van Kamerijk; zetel nu in Frankrijk, bisdom reikte tot Henegouwen."
 namen:
@@ -12,14 +10,50 @@ namen:
   alternatief:
   - Autbertus van Kamerijk
   - Autbertus
+  - Aubert van Cambrai
+  - Authbertus
 datum:
-  waarde: 12-15
+  waarde: "12-15"
   stijl: gregoriaans
 titels:
-- Bisschop
-periode: '668'
-samenvatting: 'Heilige van de Lage Landen: Aubertus van Kamerijk. Bisschop.'
+  - Bisschop van Atrecht en Kamerijk
+periode: "ca. 600–669"
+locaties:
+  - kamerijk
+samenvatting: |
+  Bisschop van Atrecht-Kamerijk; stichter van kloosters in de regio
+  (onder meer Sint-Vaast, Lobbes). Feestdag in Gent 15 december.
+betekenis_lage_landen: |
+  Aubertus (Autbertus) bestierde het bisdom Atrecht-Kamerijk, dat tot
+  in Henegouwen reikte. Hij stimuleerde missie en kloosterstichtingen
+  (Sint-Vaast te Atrecht, Lobbes, Wallers, Crespin) die de vroegmiddeleeuwse
+  kerk in het zuiden van de Lage Landen vormden. De zetel ligt nu in
+  Frankrijk; de band met Vlaanderen/Henegouwen blijft. Daarom
+  nader-onderzoek, geen automatische selectie.
+verhaal: |
+  Omstreeks 600 geboren, verwant aan Dagobert I; volgens de overlevering
+  monnik in de kring van Luxeuil. Rond 633 bisschop van Atrecht en
+  Kamerijk. Hij werkte samen met Eligius en gaf Landelinus opdracht tot
+  kloosterstichtingen. Legende: tijdens hongersnood bakte hij brood en
+  liet een ezel het in de stad brengen — vandaar patroon van bakkers.
+  Overleden te Kamerijk op 13 december 669(?); herdenking in Gent op
+  15 december.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Autbert von Cambrai"
+    url: "https://www.heiligenlexikon.de/BiographienA/Autbert_von_Cambrai.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Luxeuil-kring, bisschop Atrecht-Kamerijk, kloosters
+      (Sint-Vaast, Lobbes e.a.), broodlegende en cultus.
   - label: "Wikipedia (NL) — Autbertus van Kamerijk"
     url: "https://nl.wikipedia.org/wiki/Autbertus_van_Kamerijk"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht; feestdag 13 december, in bisdom Gent
+      15 december; rol bij kloosterstichtingen.
+  - label: "heiligen.net — Autbertus van Cambrai"
+    url: "https://heiligen.net/heiligen/12/13/12-13-0669-autbertus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte Nederlandse vita; bakkerspatroon en Vlaamse cultus.

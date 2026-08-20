@@ -32,7 +32,7 @@ en [namen]({{% ref "/beheer/how-to-namen" %}}).
 ### 3. Handeling
 
 - Wat deed hij/zij *hier* dat opname in deze kalender rechtvaardigt?
-- → Voedt `betekenis_lage_landen` (paginakop **Waarom in deze kalender**).
+- → Voedt `betekenis_lage_landen` (paginakop **Betekenis voor de Lage Landen**).
 
 ### 4. Inhoud voor de lezer
 

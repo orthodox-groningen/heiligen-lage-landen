@@ -1,23 +1,62 @@
 id: remaclus
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
-  - stavelot
 selectie: voldoet
 selectie_toelichting: "Maastricht / Stavelot."
 namen:
   primair: Remaclus
+  alternatief:
+  - Remakel
+  - Remaclus van Stavelot
 datum:
-  waarde: 09-03
+  waarde: "09-03"
   stijl: gregoriaans
 titels:
-- Bisschop van Maastricht
-periode: '667'
-samenvatting: 'Heilige van de Lage Landen: Remaclus. Bisschop van Maastricht.'
+  - Bisschop van Maastricht
+  - Stichter van Stavelot
+periode: "~600–673"
+locaties:
+  - maastricht
+  - stavelot
+rustplaats:
+  plaats: stavelot
+  toelichting: "Remaclusschrijn, Sint-Sebastiaanskerk"
+samenvatting: |
+  Frankische kloosterstichter; bisschop van Maastricht; stichter van
+  Stavelot-Malmedy. Feestdag 3 september.
+betekenis_lage_landen: |
+  Remaclus verbindt de Maasstreek met de Ardennen: als bisschop van
+  Maastricht (na Amandus) en als stichter van Stavelot (en Malmedy)
+  onder Sigibert III. Leerlingen als Theodardus, Trudo en Hadelinus
+  zetten die lijn voort. Zijn cultus en schrijn in Stavelot horen bij de
+  vroegmiddeleeuwse kerk van de zuidelijke Lage Landen.
+verhaal: |
+  Remaclus (Remakel) werd rond 600 in Aquitanië geboren, monnik te Luxeuil
+  en eerste abt van Solignac (632). Rond 647/648 stichtte hij in de
+  Ardennen Malmedy en Stavelot; kort daarna werd hij bisschop van
+  Maastricht. Later legde hij het bisschopsambt neer om zich aan zijn
+  stichtingen te wijden. Hij stierf te Stavelot (tussen circa 671 en 675);
+  elevatie van relieken in 680. Het dertiende-eeuwse Remaclusschrijn staat
+  in de Sint-Sebastiaanskerk te Stavelot.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Remaclus von Stablo"
+    url: "https://www.heiligenlexikon.de/BiographienR/Remaclus.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Luxeuil, Solignac, Stavelot-Malmedy, bisschop van
+      Maastricht, sterfjaar rond 671.
   - label: "Wikipedia (NL) — Remaclus"
     url: "https://nl.wikipedia.org/wiki/Remaclus"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Maastricht, Stavelot en
+      cultus/schrijn.
+  - label: "heiligen.net — Remaclus van Stavelot"
+    url: "https://heiligen.net/heiligen/09/03/09-03-0675-remaclus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte Nederlandse vita met stichtingen, leerlingen en
+      Maastrichtse bisschoppelijke lijn.

@@ -1,12 +1,10 @@
 id: iduberga
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - nijvel
 selectie: voldoet
-selectie_toelichting: "Nijvel."
+selectie_toelichting: "Stichteres van Nijvel; moeder van Gertrudis en Begga."
 namen:
   primair: Iduberga
   alternatief:
@@ -15,17 +13,49 @@ namen:
   - Ida van Nijvel
   - Itta van Nijvel
 datum:
-  waarde: 05-08
+  waarde: "05-08"
   stijl: gregoriaans
 titels:
-- Stichteres van Nijvel, moeder van H. Bavo, Begga en Gertrudis
-periode: '652'
-samenvatting: 'Heilige van de Lage Landen: Iduberga. Stichteres van Nijvel, moeder
-  van H. Bavo, Begga en Gertrudis.'
+  - Stichteres van Nijvel
+periode: "ca. 592–652"
+locaties:
+  - nijvel
+rustplaats:
+  plaats: nijvel
+  toelichting: "Abdij van Nijvel"
+samenvatting: |
+  Echtgenote van Pepijn van Landen; stichtte de abdij van Nijvel.
+  Feestdag 8 mei.
+betekenis_lage_landen: |
+  Iduberga (Itta) legde met Nijvel (ca. 640/649, raad van Amandus) het
+  huis-klooster van de Pippiniden. Haar dochters Gertrudis (Nijvel) en
+  Begga (Andenne) zetten die lijn voort; Fosses-la-Ville diende Ierse
+  missiebroeders. Zonder haar is de Brabantse kloostergeschiedenis van
+  de zevende eeuw niet te vertellen.
+verhaal: |
+  Iduberga trouwde met Pepijn van Landen; kinderen waren onder meer
+  Grimoald, Begga en Gertrudis. Na Pepijns dood (640) stichtte zij Nijvel
+  en leefde er als non; zij liet boeken en relieken uit Rome en «van
+  overzee» komen. Ook Fosses (Ierse monniken Foillan/Ultan) wordt haar
+  toegeschreven. Zij stierf op 8 mei 652; Gertrudis leidde Nijvel verder.
+  Bavo als zoon/dochter van Iduberga is een gangbare catalogustraditie,
+  genealogisch niet onomstreden.
 referenties:
-  - label: "Wikipedia (NL) — Iduberga"
-    url: "https://nl.wikipedia.org/wiki/Iduberga"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Iduberga von Nivelles"
+    url: "https://www.heiligenlexikon.de/BiographienI/Itta_von_Nivelles.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Pepijn, Nijvel en Fosses, Gertrudis/Begga; feestdag
+      8 mei.
   - label: "Wikipedia (NL) — Ida van Nijvel"
     url: "https://nl.wikipedia.org/wiki/Ida_van_Nijvel"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht (Iduberga/Itta) van stichting Nijvel en
+      familie.
+  - label: "Wikipedia (DE) — Iduberga"
+    url: "https://de.wikipedia.org/wiki/Iduberga"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Duitstalig overzicht van Nijvel, Fosses en genealogie Pepijniden.

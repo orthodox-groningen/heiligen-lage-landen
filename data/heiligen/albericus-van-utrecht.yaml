@@ -1,10 +1,10 @@
 id: albericus-van-utrecht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
 selectie: voldoet
-selectie_toelichting: "Bisschop van Utrecht."
+selectie_toelichting: "Bisschop van Utrecht; vestigde de zetel als vaste organisatie."
 id_aliassen:
   - alberik
 namen:
@@ -16,25 +16,52 @@ namen:
   - Alberik
   - Albericus
 datum:
-  waarde: 03-04
+  waarde: "03-04"
   stijl: gregoriaans
   extra:
-    - waarde: 08-21
+    - waarde: "08-21"
       toelichting: 21 augustus
-    - waarde: 11-08
+    - waarde: "11-08"
       toelichting: 8 november (met alle heilige bisschoppen van Utrecht)
-    - waarde: 11-14
-      toelichting: 14 november
-    - waarde: 11-27
+    - waarde: "11-14"
+      toelichting: 14 november (gangbare gedenkdag)
+    - waarde: "11-27"
       toelichting: 27 november
 titels:
   - Vierde bisschop van Utrecht
+periode: "~776–784"
 locaties:
   - utrecht
-periode: "784"
+  - susteren
 samenvatting: |
-  Heilige van de Lage Landen: Albericus van Utrecht. Vierde bisschop van Utrecht.
+  Neef en opvolger van Gregorius van Utrecht; vierde bisschop (ca. 776–784).
+  Met hem werd Utrecht een vaste bisschopszetel. Meerdere gedenkdagen.
+betekenis_lage_landen: |
+  Albericus maakte van Utrecht een gevestigd bisdom na de missietijd van
+  Willibrord en Gregorius. Hij steunde Ludgers werk in Friesland en wordt
+  traditioneel in Susteren begraven — kernfiguur van de Utrechtse kerk in
+  de Lage Landen.
+verhaal: |
+  Benedictijn, eerder abt van Sint-Maarten te Keulen; volgde zijn oom
+  Gregorius op als bestuurder van Utrecht. Omstreeks 777 in Keulen tot
+  bisschop gewijd; contacten met het hof van Karel de Grote en Alcuinus.
+  Hij stierf in 784. Relieken worden in de Sint-Amelbergakerk te Susteren
+  bewaard. Gedenkdagen wisselen (o.a. 14 november, 4 maart).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Alberich I. von Utrecht"
+    url: "https://www.heiligenlexikon.de/BiographienA/Alberich_von_Utrecht.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: opvolging van Gregorius, wijding, Friesland/Ludger,
+      graf te Susteren.
   - label: "Wikipedia (NL) — Alberik I van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Alberik_I_van_Utrecht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Kort overzicht van episcopaat 776–784 en Susteren.
+  - label: "heiligen.net — Albericus van Utrecht"
+    url: "https://www.heiligen.net/heiligen/11/14/11-14-0784-albericus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografie met feestdagen en discussie over afkomst en begrafenis.

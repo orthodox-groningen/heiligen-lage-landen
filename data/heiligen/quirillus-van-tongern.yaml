@@ -1,24 +1,56 @@
 id: quirillus-van-tongern
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - tongeren
 selectie: nader-onderzoek
 selectie_toelichting: "Vroege bisschop van Tongeren; of hij historisch is, is onzeker."
 namen:
   primair: Quirillus van Tongern
   alternatief:
   - Quirillus
+  - Quirillus van Maastricht
 datum:
-  waarde: 04-30
+  waarde: "04-30"
   stijl: gregoriaans
 titels:
-- Bisschop van Tongeren
-periode: ~520 of ~489
-samenvatting: 'Heilige van de Lage Landen: Quirillus van Tongern. Bisschop van Tongeren.'
+  - Bisschop van Tongeren
+periode: "~520 of ~489"
+locaties:
+  - tongeren
+samenvatting: |
+  Traditionele bisschop op de vroege Tongeren-/Maastrichtlijst; historisch
+  nauwelijks vast te stellen. Feestdag 30 april.
+betekenis_lage_landen: |
+  Quirillus hoort bij de middeleeuwse reeks «heilige bisschoppen» van
+  Tongeren-Maastricht. Die lijst is grotendeels apocrief: na Servatius is
+  er pas vanaf Falco enige zekerheid. Quirillus blijft dus een grensgeval —
+  cultus en naam op de lokale lijst, geen harde vita — en vraagt nader
+  onderzoek voordat hij als stevige LL-heilige telt.
+verhaal: |
+  Op de traditionele Maastrichtse bisschoppenlijst volgt Quirillus op
+  Sulpitius (rond 480–520). Het Heiligenlexikon en heiligen.net vermelden
+  sterfjaren rond 489 of 520; over zijn leven is verder niets bekend.
+  Sommige historici opperen verwarring met Quirinus van Neuss (zelfde
+  feestdag). Een late legende maakt hem zoon van een graaf van Namen en
+  veertig jaar bisschop; dat is hagiografische vulling, geen bronbewijs.
 referenties:
-  - label: "Wikipedia (NL) — Quirillus"
-    url: "https://nl.wikipedia.org/wiki/Quirillus"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Quirillus von Tongern"
+    url: "https://www.heiligenlexikon.de/BiographienQ/Quirillus_von_Tongern.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte lexikonnota: bisschop van Tongeren, onzekere datering (~489 of
+      520), feestdag 30 april.
+  - label: "heiligen.net — Quirillus van Maastricht"
+    url: "https://www.heiligen.net/heiligen/04/30/04-30-0520-quirillus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse schets: opvolger van Sulpitius, gebrek aan historische
+      gegevens, hypothese Quirinus van Neuss, late legende.
+  - label: "Wikipedia (NL) — Lijst van bisschoppen van Maastricht"
+    url: "https://nl.wikipedia.org/wiki/Lijst_van_bisschoppen_van_Maastricht"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Plaatst Quirillus op de traditionele lijst (480–520) en legt uit dat
+      die lijst grotendeels apocrief is.

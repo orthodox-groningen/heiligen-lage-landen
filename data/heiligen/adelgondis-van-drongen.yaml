@@ -3,25 +3,48 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - drongen
 selectie: voldoet
-selectie_toelichting: "Drongen."
+selectie_toelichting: "Lokale heilige van Drongen bij Gent; cultus in de Sint-Gerulfuskerk."
 namen:
   primair: Adelgondis van Drongen
   alternatief:
+  - Aldegundis van Drongen
   - Aldegundis
+  - Adelgondis
 datum:
-  waarde: 01-26
+  waarde: "01-26"
   stijl: gregoriaans
   extra:
-  - waarde: 06-20
-    toelichting: 20 juni
+    - waarde: "06-20"
+      toelichting: 20 juni (huidige feestdag; vermoedelijk genezingsdag)
 titels:
-- Kloosterlinge
-periode: ~650
-samenvatting: 'Heilige van de Lage Landen: Adelgondis van Drongen. Kloosterlinge.'
+  - Kloosterlinge
+periode: "~650"
+locaties:
+  - drongen
+samenvatting: |
+  Legendarische kloosterlinge van Drongen bij Gent; blind geboren dochter
+  van Basinus. Feestdagen 26 januari en 20 juni.
+betekenis_lage_landen: |
+  Adelgondis is een lokale Gentse/Vlaamse heilige: haar verhaal speelt in
+  Drongen aan de Leie, in de tijd van Amandus’ prediking. Glasramen in de
+  Sint-Gerulfuskerk houden de cultus levend. Niet te verwarren met
+  Aldegonda van Maubeuge.
+verhaal: |
+  Volgens de overlevering was zij blind geboren als enig kind van koning
+  Basinus. Op het feest van Johannes de Doper reed zij naar de door haar
+  vader gestichte kerk aan de Leie en werd ziende; elders keerde de
+  blindheid terug tot zij zich voorgoed aan de kerk verbond. Zij schonk
+  haar bezit weg en stierf als heilige (~650). Vroeger herdacht op
+  26 januari; nu vaak op 20 juni. Niet historisch hard te maken, wel lokaal
+  verankerd.
+over_bronnen: |
+  Geen Wikipedia-pagina; vita vooral via heiligen.net en lokale traditie
+  te Drongen.
 referenties:
-  - bron_id: eir3app
-    locator: "Interne notities; nader te specificeren in curated entries."
-    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Adelgondis van Drongen"
+    url: "https://www.heiligen.net/heiligen/06/20/06-20-0650-adelgondis.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Legende van genezing, kloosterleven en band met Basinus; feestdagen
+      26 januari / 20 juni.

@@ -3,25 +3,48 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - temse
 selectie: voldoet
-selectie_toelichting: "Temse."
+selectie_toelichting: "Patrones van Temse; sterke Vlaamse cultus (Wegom, Mater)."
 namen:
   primair: Amalberga van Temse
   alternatief:
   - Amalberga
+  - Amelberga
+  - Amalia
+  - Amalberga van Munsterbilzen
+  - Amelberga van Temse
 datum:
-  waarde: 07-10
+  waarde: "07-10"
   stijl: gregoriaans
 titels:
-- Maagd
-periode: '772'
-samenvatting: 'Heilige van de Lage Landen: Amalberga van Temse. Maagd.'
+  - Maagd
+periode: "~772"
+locaties:
+  - temse
+samenvatting: |
+  Lotharingse edelvrouw; kloosterlinge te Munsterbilzen, gesticht en
+  begraven te Temse (~772). Feestdag 10 juli; attribuut: steur.
+betekenis_lage_landen: |
+  Temse aan de Schelde eert haar als patrones (Wegom-bedevaart);
+  relieken gingen naar de Sint-Pietersabdij te Gent. Vita en wonderen
+  (steur, ganzen te Mater) verankeren haar stevig in Vlaanderen —
+  onderscheiden van Amalberga van Susteren en van Maubeuge.
+verhaal: |
+  Opgevoed door tante Landrada te Munsterbilzen; weigerde volgens de
+  legende een vorstelijk huwelijk (Karel). Rond 770 stichtte zij de
+  Onze-Lieve-Vrouwekerk te Temse. Wonderverhalen: reuzenvis/steur op
+  Schelde en Zenne, redding van akkers. Relieken later naar Gent.
+  Vroege vita door Radboud van Utrecht; 11e-eeuwse bewerking door
+  Goscelin.
 referenties:
   - label: "Wikipedia (NL) — Amalberga van Temse"
     url: "https://nl.wikipedia.org/wiki/Amalberga_van_Temse"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Leven, cultus (Wegom, Mater), vita-traditie en steur-iconografie.
   - label: "heiligen.net — Amalberga"
     url: "https://www.heiligen.net/heiligen/07/10/07-10-0772-amalberga.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografie met wonderen, patronaten en verwarring met Amalberga
+      van Maubeuge.
