@@ -221,8 +221,10 @@ icoon:
   bron: "Wikimedia Commons — File:Willibrord (Paris, BN Lat. 10510).jpg"
 ```
 
-Ontbreekt een legaal bestand: laat `icoon` weg. «Icoon in parochie» hoort
-niet in `titels`. Bron beoordelen (stap beeldmateriaal):
+Ontbreekt een legaal bestand: laat `icoon` weg. Dat geldt ook voor
+obscure lokale heiligen zonder duidelijk PD/CC-portret (geen verkeerde
+persoon, geen hedendaags synaxarion-CDN). «Icoon in parochie» hoort niet
+in `titels`. Bron beoordelen (stap beeldmateriaal):
 [Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}}).
 
 **Feesten — prioriteit (selectiever dan heiligen)**

@@ -14,6 +14,11 @@ namen:
 datum:
   waarde: "02-02"
   stijl: juliaans
+icoon:
+  bestand: iconen/ontmoeting-in-de-tempel.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Presentation of Jesus at the Temple icon, Lebanon (1763).jpg"
 samenvatting: |
   Christus wordt in de tempel gebracht; Simeon en Anna begroeten Hem.
 verhaal: |

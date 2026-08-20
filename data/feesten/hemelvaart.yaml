@@ -15,6 +15,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 39
+icoon:
+  bestand: iconen/hemelvaart.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian, Novgorod - The Ascension of Christ - P19w23 - Isabella Stewart Gardner Museum.jpg"
 samenvatting: |
   Veertig dagen na Pascha; Christus’ hemelvaart.
 verhaal: |

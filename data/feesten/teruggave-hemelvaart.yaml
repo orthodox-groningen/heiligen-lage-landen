@@ -14,6 +14,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 47
+icoon:
+  bestand: iconen/hemelvaart.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian, Novgorod - The Ascension of Christ - P19w23 - Isabella Stewart Gardner Museum.jpg"
 samenvatting: |
   Laatste dag van de Hemelvaart-viering, vrijdag vóór Pinksteren.
 verhaal: |

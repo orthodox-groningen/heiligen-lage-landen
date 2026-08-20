@@ -10,6 +10,11 @@ namen:
 datum:
   waarde: "03-24"
   stijl: juliaans
+icoon:
+  bestand: iconen/aankondiging.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Annunciation Icon Sinai 12th century.jpg"
 samenvatting: |
   Dag vóór de Aankondiging (25 maart).
 verhaal: |

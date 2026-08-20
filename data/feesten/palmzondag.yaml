@@ -18,6 +18,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: -7
+icoon:
+  bestand: iconen/palmzondag.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Palm Sunday icon (Lebanon).jpg"
 samenvatting: |
   Christus’ intocht in Jeruzalem; begin van de Heilige Week.
 verhaal: |

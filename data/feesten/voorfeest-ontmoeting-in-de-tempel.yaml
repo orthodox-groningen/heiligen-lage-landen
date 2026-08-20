@@ -11,6 +11,11 @@ namen:
 datum:
   waarde: "02-01"
   stijl: juliaans
+icoon:
+  bestand: iconen/ontmoeting-in-de-tempel.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Presentation of Jesus at the Temple icon, Lebanon (1763).jpg"
 samenvatting: |
   Dag vóór de Ontmoeting in de Tempel (2 februari).
 verhaal: |

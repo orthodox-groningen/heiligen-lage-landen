@@ -17,6 +17,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: -42
+icoon:
+  bestand: iconen/zondag-orthodoxie.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Triumph orthodoxy.jpg"
 samenvatting: |
   Herstel van de iconenverering; eerste vastenzondag.
 verhaal: |

@@ -14,6 +14,11 @@ namen:
 datum:
   waarde: "03-25"
   stijl: juliaans
+icoon:
+  bestand: iconen/aankondiging.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Annunciation Icon Sinai 12th century.jpg"
 samenvatting: |
   De aartsengel Gabriël kondigt de geboorte van Christus aan Maria aan.
 verhaal: |

@@ -15,6 +15,11 @@ namen:
 datum:
   waarde: "09-14"
   stijl: juliaans
+icoon:
+  bestand: iconen/kruisverheffing.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Exaltation of the Cross - Palekh icon (19 c, priv.coll).jpg"
 samenvatting: |
   Verheffing van het Heilig Kruis.
 verhaal: |

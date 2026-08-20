@@ -15,6 +15,11 @@ datum:
     anker: pascha
     van_offset_dagen: 40
     tot_offset_dagen: 47
+icoon:
+  bestand: iconen/hemelvaart.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Russian, Novgorod - The Ascension of Christ - P19w23 - Isabella Stewart Gardner Museum.jpg"
 samenvatting: |
   Van de dag na Hemelvaart tot en met de teruggave (vrijdag vóór Pinksteren).
 verhaal: |

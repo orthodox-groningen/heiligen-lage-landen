@@ -15,6 +15,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 55
+icoon:
+  bestand: iconen/pinksteren.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Icon of Pentecost (18th c., Russia. Priv.coll.).jpg"
 samenvatting: |
   Laatste dag van het Pinksternafeest, zaterdag vóór Allerheiligen.
 verhaal: |
