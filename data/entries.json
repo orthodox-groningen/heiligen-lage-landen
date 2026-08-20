@@ -1858,7 +1858,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/transfiguratie.jpg",
     "vastenniveau": "vis",
     "feestdatum": "08-06",
     "feestdatum_juliaans": null,
@@ -3197,7 +3197,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/kerst.jpg",
     "van": "12-20",
     "tot": "12-24",
     "feestdatum": "12-20"
@@ -3287,7 +3287,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": true,
-    "icoon": null,
+    "icoon": "iconen/kerst.jpg",
     "vastenniveau": "vrij",
     "feestdatum": "12-25",
     "feestdatum_juliaans": null,
@@ -3544,7 +3544,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": true,
-    "icoon": null,
+    "icoon": "iconen/kerst.jpg",
     "vastenniveau": "vrij",
     "van": "12-26",
     "tot": "12-31",
@@ -4776,7 +4776,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/pascha.jpg",
     "offset_dagen": 0,
     "feestdatum": null,
     "occurrences": {
@@ -5121,7 +5121,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/pascha.jpg",
     "offset_dagen": 38,
     "feestdatum": null,
     "occurrences": {
