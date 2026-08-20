@@ -42,7 +42,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/theofanie.jpg",
     "van": "01-02",
     "tot": "01-05",
     "feestdatum": "01-02"
@@ -69,7 +69,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": true,
-    "icoon": null,
+    "icoon": "iconen/theofanie.jpg",
     "vastenniveau": "vrij",
     "feestdatum": "01-06",
     "feestdatum_juliaans": null,
@@ -171,7 +171,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/theofanie.jpg",
     "van": "01-07",
     "tot": "01-14",
     "feestdatum": "01-07"
@@ -316,7 +316,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontmoeting-in-de-tempel.jpg",
     "feestdatum": "02-01",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -342,7 +342,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontmoeting-in-de-tempel.jpg",
     "vastenniveau": "wijn_olie",
     "feestdatum": "02-02",
     "feestdatum_juliaans": null,
@@ -367,7 +367,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontmoeting-in-de-tempel.jpg",
     "van": "02-03",
     "tot": "02-09",
     "feestdatum": "02-03"
@@ -656,7 +656,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/aankondiging.jpg",
     "feestdatum": "03-24",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -682,7 +682,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/aankondiging.jpg",
     "vastenniveau": "vis",
     "feestdatum": "03-25",
     "feestdatum_juliaans": null,
@@ -1832,7 +1832,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/transfiguratie.jpg",
     "feestdatum": "08-05",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1883,7 +1883,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/transfiguratie.jpg",
     "van": "08-07",
     "tot": "08-13",
     "feestdatum": "08-07"
@@ -1906,7 +1906,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontslapen-moeder-gods.jpg",
     "feestdatum": "08-14",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1965,7 +1965,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontslapen-moeder-gods.jpg",
     "feestdatum": "08-15",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -1989,7 +1989,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/ontslapen-moeder-gods.jpg",
     "van": "08-16",
     "tot": "08-23",
     "feestdatum": "08-16"
@@ -2198,7 +2198,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/geboorte-moeder-gods.jpg",
     "feestdatum": "09-07",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2254,7 +2254,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/geboorte-moeder-gods.jpg",
     "vastenniveau": "vis",
     "feestdatum": "09-08",
     "feestdatum_juliaans": null,
@@ -2279,7 +2279,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/geboorte-moeder-gods.jpg",
     "van": "09-09",
     "tot": "09-12",
     "feestdatum": "09-09"
@@ -2336,7 +2336,7 @@
       "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/kruisverheffing.jpg",
     "vastenniveau": "streng",
     "feestdatum": "09-13",
     "feestdatum_juliaans": null,
@@ -2362,7 +2362,7 @@
       "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/kruisverheffing.jpg",
     "vastenniveau": "streng",
     "feestdatum": "09-14",
     "feestdatum_juliaans": null,
@@ -2387,7 +2387,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/kruisverheffing.jpg",
     "van": "09-15",
     "tot": "09-21",
     "feestdatum": "09-15"
@@ -2481,7 +2481,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/pokrov.jpg",
     "vastenniveau": "vis",
     "feestdatum": "10-01",
     "feestdatum_juliaans": null,
@@ -2799,7 +2799,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/tempelgang-moeder-gods.jpg",
     "feestdatum": "11-20",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
@@ -2857,7 +2857,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/tempelgang-moeder-gods.jpg",
     "vastenniveau": "vis",
     "feestdatum": "11-21",
     "feestdatum_juliaans": null,
@@ -2882,7 +2882,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/tempelgang-moeder-gods.jpg",
     "van": "11-22",
     "tot": "11-25",
     "feestdatum": "11-22"
@@ -4080,7 +4080,7 @@
       "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/zondag-orthodoxie.jpg",
     "offset_dagen": -42,
     "feestdatum": null,
     "occurrences": {
@@ -4349,7 +4349,7 @@
       "vasten"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/palmzondag.jpg",
     "vastenniveau": "vis",
     "offset_dagen": -7,
     "feestdatum": null,
@@ -5164,7 +5164,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/hemelvaart.jpg",
     "offset_dagen": 39,
     "feestdatum": null,
     "occurrences": {
@@ -5206,7 +5206,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/hemelvaart.jpg",
     "van_offset_dagen": 40,
     "tot_offset_dagen": 47,
     "feestdatum": null,
@@ -5306,7 +5306,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/hemelvaart.jpg",
     "offset_dagen": 47,
     "feestdatum": null,
     "occurrences": {
@@ -5394,7 +5394,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/pinksteren.jpg",
     "offset_dagen": 49,
     "feestdatum": null,
     "occurrences": {
@@ -5540,7 +5540,7 @@
       "feest"
     ],
     "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
+    "icoon": "iconen/pinksteren.jpg",
     "offset_dagen": 55,
     "feestdatum": null,
     "occurrences": {
