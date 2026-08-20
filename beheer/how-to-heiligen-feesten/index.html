@@ -1,4 +1,4 @@
-<!doctype html><html lang=nl data-theme=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>(function(){try{var e=localStorage.getItem("site-theme");(e==="light"||e==="dark")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><title>Heilige of feest toevoegen of wijzigen · Orthodoxe Kalender met Heiligen van de Lage Landen</title><meta name=description content="YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"><link rel=stylesheet href=https://orthodox-ronl.github.io/kalender/css/site.min.24d74afe89a152d957e6adb94457db93a89c29fe7ec9bc230e2eef08dadc67db.css></head><body data-base=https://orthodox-ronl.github.io/kalender/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-ronl.github.io/kalender/ data-info-tip=site title="Wat staat er op deze site">Orthodoxe Kalender met Heiligen van de Lage Landen</a><div class=header-tools><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-ronl.github.io/kalender/kalender/>Kalender</a>
+<!doctype html><html lang=nl data-theme=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>(function(){try{var e=localStorage.getItem("site-theme");(e==="light"||e==="dark")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><title>Heilige of feest toevoegen of wijzigen · Orthodoxe Kalender met Heiligen van de Lage Landen</title><meta name=description content="YAML onder data/, namen in het entry-bestand; nooit de gegenereerde markdown"><link rel=stylesheet href=https://orthodox-ronl.github.io/kalender/css/site.min.d66d5b5f8ffdde98be6583785635aa5ae56a70ad8cb8ac199a3f3e316415f31b.css></head><body data-base=https://orthodox-ronl.github.io/kalender/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-ronl.github.io/kalender/ data-info-tip=site title="Wat staat er op deze site">Orthodoxe Kalender met Heiligen van de Lage Landen</a><div class=header-tools><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-ronl.github.io/kalender/kalender/>Kalender</a>
 <a href=https://orthodox-ronl.github.io/kalender/lezingenrooster/>Lezingenrooster</a>
 <a href=https://orthodox-ronl.github.io/kalender/meneon/>Meneon</a>
 <a href=https://orthodox-ronl.github.io/kalender/heiligen/>Heiligen</a>
@@ -7,11 +7,13 @@
 <button type=button class=theme-btn data-theme-set=light aria-pressed=false>Licht</button></span></div></div></header><main id=main class="wrap main main-wide"><article class="page beheer-page"><h1>Heilige of feest toevoegen of wijzigen</h1><p>Heiligen en feesten bestaan als <strong>bron</strong> in YAML. De pagina’s die u op de
 site ziet, zijn een afdruk. Wijzig de YAML; laat <code>site/content/heiligen/</code>
 en <code>site/content/feesten/</code> met rust.</p><p>Datamodel: <a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md>docs/datamodel.md</a>.
-Schema: <code>schemas/entry.schema.json</code>. Publiceren:
+Schema’s (velden + auteursrichtlijnen):
+<a href=https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md>schemas/README.md</a>.
+Schema entry: <code>schemas/entry.schema.json</code>. Publiceren:
 <a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-publiceren/>site bouwen</a>.</p><h2 id=nieuw-id>Nieuw id</h2><ol><li>Kies een id: alleen <code>a-z</code>, <code>0-9</code>, <code>_</code> en <code>-</code>, beginnend met een letter
 of cijfer. Voorbeeld: <code>willibrord</code>, <code>ontslapen-moeder-gods</code>.</li><li>Dat id is de <strong>bestandsnaam</strong> zonder <code>.yaml</code> en blijft stabiel. Wijzig
-later liever de getoonde naam dan het id.</li><li>Zet de canonieke naam in <code>data/namen.yaml</code> onder <code>entries.&lt;id></code> (primair,
-optioneel <code>alternatief</code>). Zie <a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>. Voor een verhaal, samenvatting of
+later liever de getoonde naam dan het id.</li><li>Zet <code>namen.primair</code> (en optioneel <code>alternatief</code>) in hetzelfde YAML-bestand.
+Zie <a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-namen/>namen wijzigen</a>.</li></ol><h2 id=bestand>Bestand</h2><ul><li>Heilige: <code>data/heiligen/&lt;id>.yaml</code> met <code>soort: heilige</code></li><li>Feest: <code>data/feesten/&lt;id>.yaml</code> met <code>soort: feest</code></li></ul><p>Minimaal: <code>id</code>, <code>soort</code>, <code>datum</code>, <code>namen.primair</code>. Voor een verhaal, samenvatting of
 <code>betekenis_lage_landen</code> is minstens één <strong>referentie</strong> verplicht, met een
 locator: <code>url</code>, of <code>isbn</code>, of <code>locator</code>.</p><h3 id=vaste-dag>Vaste dag</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>willibrord</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>soort</span>: <span style=color:#ae81ff>heilige</span>
@@ -28,7 +30,10 @@ locator: <code>url</code>, of <code>isbn</code>, of <code>locator</code>.</p><h3
 </span></span><span style=display:flex><span><span style=color:#f92672>rustplaats</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>plaats</span>: <span style=color:#ae81ff>echternach</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>toelichting</span>: <span style=color:#e6db74>&#34;Abdij van Echternach&#34;</span>
-</span></span></code></pre></div><p><code>rustplaats</code> is alleen waar het lichaam traditioneel rust. Geen relieken.</p><h3 id=paascyclus>Paascyclus</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>paascyclus</span>
+</span></span></code></pre></div><p>Zet bij voorkeur <strong>concrete plaatsen</strong>. Een <strong>streek</strong>-id (<code>frisia</code>,
+<code>vlaanderen</code>) alleen als aanvulling, of als er geen betere plek bekend is.
+De weergavenaam van een streek is herkenbaar Nederlands (<code>Friesland</code>);
+historische vormen (<code>Frisia</code>) staan in <code>alternatief</code> en blijven zoekbaar.</p><p><code>rustplaats</code> is alleen waar het lichaam traditioneel rust. Geen relieken.</p><h3 id=paascyclus>Paascyclus</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>cyclus</span>: <span style=color:#ae81ff>paascyclus</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>datum</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>paascyclus</span>:
 </span></span><span style=display:flex><span>    <span style=color:#f92672>anker</span>: <span style=color:#ae81ff>pascha</span>
@@ -45,31 +50,46 @@ zoals het Apostelvasten.</p><p>Voorfeest, nafeest en synaxis rond de twaalf zijn
 </span></span><span style=display:flex><span>    <span style=color:#f92672>welke</span>: <span style=color:#ae81ff>1</span>             <span style=color:#75715e># 1 = dichtstbijzijnde, 2 = de volgende</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>richting: voor       # of</span>: <span style=color:#ae81ff>na</span>
 </span></span></code></pre></div><p>Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
-18 december. Zie <code>docs/datamodel.md</code>.</p><h2 id=namen-in-het-entry-bestand>Namen in het entry-bestand</h2><p>U <em>mag</em> <code>namen.primair</code> in de YAML zetten. Bij laden <strong>wint</strong>
-<code>data/namen.yaml</code>. Zet nieuwe namen dus daar, anders lijkt de YAML-naam te
-werken tot iemand <code>namen.yaml</code> aanvult.</p><h2 id=vasten-op-een-feest>Vasten op een feest</h2><p>Optioneel:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>vis       </span> <span style=color:#75715e># streng | wijn_olie | vis | lichter | vrij</span>
+18 december. Zie <code>docs/datamodel.md</code>.</p><h2 id=namen>Namen</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>namen</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>primair</span>: <span style=color:#ae81ff>Willibrord</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>alternatief</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>Willibrordus</span>
+</span></span></code></pre></div><p><code>primair</code> is verplicht in het entry-bestand. Zoekaliassen en andere
+spellingen horen onder <code>alternatief</code>. Zie
+<a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-namen/>namen wijzigen</a>.</p><h2 id=vasten-op-een-feest>Vasten op een feest</h2><p>Optioneel:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>vastenniveau</span>: <span style=color:#ae81ff>vis       </span> <span style=color:#75715e># streng | wijn_olie | vis | lichter | vrij</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>observances</span>: [<span style=color:#ae81ff>feest, vasten]</span>
 </span></span></code></pre></div><p><code>vastenniveau</code> op een feest <strong>versoepelt</strong> in een periode, of legt vasten
 op buiten een periode als <code>observances</code> vasten bevat (Kruisverheffing,
 Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
-<a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-vasten/>vastenregels</a>.</p><h2 id=referenties>Referenties</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>referenties</span>:
+<a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-vasten/>vastenregels</a>.</p><h2 id=referenties>Referenties</h2><p>Bij het lezen van een bron: checklist
+<a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-bron-beoordelen/>Bron beoordelen</a>
+(aliassen, plaatsen, <code>inhoud</code>, icoon).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>referenties</span>:
 </span></span><span style=display:flex><span>  - <span style=color:#f92672>bron_id</span>: <span style=color:#ae81ff>oca-calendar</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>url</span>: <span style=color:#e6db74>&#34;https://www.oca.org/saints/lives&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>geraadpleegd</span>: <span style=color:#e6db74>&#34;2026-08-16&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>inhoud</span>: <span style=color:#e6db74>&#34;Korte vita en feestdag in de OCA-kalender.&#34;</span>
 </span></span><span style=display:flex><span>  - <span style=color:#f92672>label</span>: <span style=color:#e6db74>&#34;Handboek X&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>isbn</span>: <span style=color:#e6db74>&#34;978-…&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>pagina</span>: <span style=color:#e6db74>&#34;120–124&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>geraadpleegd</span>: <span style=color:#e6db74>&#34;2026-08-16&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>inhoud</span>: <span style=color:#e6db74>&#34;Hoofdstuk over de missie in Frisia.&#34;</span>
 </span></span></code></pre></div><p><code>bron_id</code> wijst naar <code>data/bronnen/bronnen.yaml</code>. De locator hoort <strong>ook</strong>
-op de referentie in de entry, niet alleen in de catalogus.</p><h2 id=heiligen-selectie-betekenis-bronlaag>Heiligen: selectie, betekenis, bronlaag</h2><p>Criteria in gewone taal: <a href=https://orthodox-ronl.github.io/kalender/uitleg/heiligen/>Heiligen van de Lage Landen</a>.
+op de referentie in de entry, niet alleen in de catalogus. Sectiekop op de
+pagina: <strong>Verder lezen en kijken</strong>.</p><h2 id=heiligen-selectie-betekenis-bronlaag>Heiligen: selectie, betekenis, bronlaag</h2><p>Criteria in gewone taal: <a href=https://orthodox-ronl.github.io/kalender/uitleg/heiligen/>Heiligen van de Lage Landen</a>.
 Velden: <a href=https://orthodox-ronl.github.io/kalender/uitleg/heiligen-technisch/>technisch</a> en
-<a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lage_landen</span>: |<span style=color:#e6db74>
+<a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><p>Pagina-opbouw (na de infobox): feestdag-link → <strong>Betekenis voor de Lage Landen</strong>
+(<code>betekenis_lage_landen</code>) → samenvatting → verhaal → verder lezen →
+<strong>Over de bronnen</strong> → (alleen bij nader/kandidaat) selectieparagraaf.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lage_landen</span>: |<span style=color:#e6db74>
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  Wat deze heilige voor het christendom of de Orthodoxie
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  in de Lage Landen betekende.</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>selectie</span>: <span style=color:#ae81ff>voldoet         </span> <span style=color:#75715e># of nader-onderzoek | kandidaat-schrappen</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>selectie_toelichting</span>: <span style=color:#e6db74>&#34;…&#34;</span>  <span style=color:#75715e># optioneel; niet op de publieke pagina</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selectie_toelichting</span>: <span style=color:#e6db74>&#34;…&#34;</span>  <span style=color:#75715e># beheer; bij nader/kandidaat ook fallback publiek</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>selectie_toelichting_publiek</span>: <span style=color:#e6db74>&#34;…&#34;</span>  <span style=color:#75715e># optioneel; lezersversie</span>
 </span></span></code></pre></div><ul><li>Ontbreekt <code>selectie</code>: behandel als <code>nader-onderzoek</code>. Zet het veld als u
-een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li>Beslissingslog: <a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md>docs/inventaris.md</a>
+een heilige toetst. <code>kandidaat-schrappen</code> verwijdert niets.</li><li>Bij <code>nader-onderzoek</code> / <code>kandidaat-schrappen</code> verschijnt onderaan
+<strong>Over de plaats in deze kalender</strong> (<code>_publiek</code>, anders <code>selectie_toelichting</code>).</li><li>Extra top-level YAML-velden mogen (notities/experimenten); ze komen niet
+op de site tot generate/UI ze kent. Zie
+<a href=https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md>schemas/README.md</a>.</li><li>Beslissingslog: <a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md>docs/inventaris.md</a>
 (geen vaste aantallen). Live overzicht:
 <a href=https://orthodox-ronl.github.io/kalender/beheer/selectie/>Selectie heiligen</a>.</li><li><code>betekenis_lage_landen</code> is een <strong>apart</strong> stuk, niet hetzelfde als
 <code>verhaal</code> of <code>samenvatting</code>.</li></ul><p><code>bronlaag: encyclopedie</code> — tekst volgt Wikipedia/heiligen.net; zelfde
@@ -78,30 +98,29 @@ pagina-opbouw als nagekeken.
 (die twee mogen aanvullen; OrthodoxWiki telt wél).</li></ol><p>Feesten: <code>nagekeken</code> blijft nagekeken tekst met traceerbare bronnen.</p><p><code>validate.py</code> weigert een heilige die <code>nagekeken</code> is zonder die lat.</p><h2 id=icoon>Icoon</h2><p>Bestand onder <code>site/static/</code> (doorgaans <code>site/static/iconen/&lt;id>.jpg</code>).
 Alleen tonen als <code>rechten: ok</code>, met <code>bron</code> en <code>licentie</code>. Geen URL als
 afbeeldingsbron: een plaatje op een andere site mag u niet zomaar in de
-browser laden (auteursrecht, kapotte links, hotlink-blokkades). Staat het
-legaal op Wikimedia Commons (publiek domein of CC met naamsvermelding),
-dan kopieert u het bestand naar <code>site/static/iconen/</code> en vermeldt u de
-Commons-pagina als <code>bron</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>icoon</span>:
+browser laden (auteursrecht, kapotte links, hotlink-blokkades).</p><p><strong>Commons-checklist</strong></p><ol><li>Zoek op <a href=https://commons.wikimedia.org/>Wikimedia Commons</a> (naam +
+heilige / icon).</li><li>Open de <strong>File:</strong>-pagina; lees licentie en attribuutvereisten.</li><li>Toegestaan voor ons: publiek domein, CC0, of CC-BY / CC-BY-SA met
+naamsvermelding in <code>bron</code> / <code>licentie</code>.</li><li>Download het bestand; bewaar onder <code>site/static/iconen/&lt;id>.…</code>.</li><li>Zet in YAML <code>rechten: ok</code> en verwijs naar de File-pagina als <code>bron</code>.</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>icoon</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>bestand</span>: <span style=color:#ae81ff>iconen/willibrord.jpg</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>rechten</span>: <span style=color:#ae81ff>ok</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>licentie</span>: <span style=color:#e6db74>&#34;Publiek domein&#34;</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>bron</span>: <span style=color:#e6db74>&#34;Wikimedia Commons — File:Willibrord (Paris, BN Lat. 10510).jpg&#34;</span>
 </span></span></code></pre></div><p>Ontbreekt een legaal bestand: laat <code>icoon</code> weg. «Icoon in parochie» hoort
-niet in <code>titels</code>.</p><h2 id=dubbele-ids-samenvoegen>Dubbele ids samenvoegen</h2><p>Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
-ids in <code>id_aliassen</code> en de oude namen in <code>data/namen.yaml</code> onder
-<code>alternatief</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>lebuinus</span>
+niet in <code>titels</code>. Bron beoordelen (stap beeldmateriaal):
+<a href=https://orthodox-ronl.github.io/kalender/beheer/how-to-bron-beoordelen/>Bron beoordelen</a>.</p><h2 id=dubbele-ids-samenvoegen>Dubbele ids samenvoegen</h2><p>Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
+ids in <code>id_aliassen</code> en de oude namen onder <code>namen.alternatief</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>id</span>: <span style=color:#ae81ff>lebuinus</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>id_aliassen</span>:
 </span></span><span style=display:flex><span>  - <span style=color:#ae81ff>lubuinus</span>
 </span></span></code></pre></div><p><code>id_aliassen</code> mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. <code>generate.py</code> zet oude ids om in Hugo-aliases en schrijft
 <code>betekenis_lage_landen</code> onder <strong>Betekenis voor de Lage Landen</strong>. Selectie
-staat op <a href=https://orthodox-ronl.github.io/kalender/beheer/selectie/>Selectie heiligen</a>, niet op de
-publieke pagina.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
+staat op <a href=https://orthodox-ronl.github.io/kalender/beheer/selectie/>Selectie heiligen</a>; bij
+<code>nader-onderzoek</code> / <code>kandidaat-schrappen</code> ook kort onderaan de publieke pagina.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
 </span></span><span style=display:flex><span>python scripts/generate.py
 </span></span><span style=display:flex><span>python -m pytest -q
 </span></span></code></pre></div><p>Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
-eventueel ICS. Klopt de naam niet, dan eerst <code>namen.yaml</code>.</p><p class="hint uitleg-nav"><a href=https://orthodox-ronl.github.io/kalender/beheer/>Voor beheerders</a>
+eventueel ICS. Klopt de naam niet, dan eerst <code>namen:</code> in het entry-YAML.</p><p class="hint uitleg-nav"><a href=https://orthodox-ronl.github.io/kalender/beheer/>Voor beheerders</a>
 ·
 <a href=https://orthodox-ronl.github.io/kalender/uitleg/>Uitleg voor gebruikers</a></p></article></main><footer class=site-footer><div class="wrap footer-inner"><p><a href=https://github.com/orthodox-ronl/kalender>GitHub</a>
 ·
@@ -109,4 +128,4 @@ eventueel ICS. Klopt de naam niet, dan eerst <code>namen.yaml</code>.</p><p clas
 ·
 <a href=https://orthodox-ronl.github.io/kalender/uitleg/reactie/>Reactie</a>
 ·
-<a href=https://orthodox-ronl.github.io/kalender/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-20</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-ronl.github.io/kalender/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-ronl.github.io/kalender/js/calendar.min.ed263ca2f898e7c75d4b60f5fb8fe53be91f0e24c8d8df68bd166e5eb368a979.js defer></script></body></html>
+<a href=https://orthodox-ronl.github.io/kalender/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-20</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-ronl.github.io/kalender/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-ronl.github.io/kalender/js/calendar.min.ba7cd751ecfa8718f927a4d5efe74faba199b9307c5c89a7455de4ee2de5211f.js defer></script></body></html>
