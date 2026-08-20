@@ -49,7 +49,8 @@ Dit wijzigt **wanneer** iets loopt en welk seizoensniveau de periode heeft.
 Het wijzigt niet de weekendversoepeling, het weekschema in het Apostelen-
 en Geboortevasten, of «een feest versoepelt alleen». Dat is laag 2.
 
-Ook namen van periodes: [namen.yaml]({{% ref "/beheer/how-to-namen" %}}).
+Ook namen van periodes: [weergavenamen]({{% ref "/beheer/how-to-namen" %}})
+(`namen:` in het vasten-YAML).
 
 ## 2. De mengregel (wat er op de dag staat)
 

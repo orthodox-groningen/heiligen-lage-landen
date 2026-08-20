@@ -30,26 +30,6 @@ alternatief:
 - 2029: 4 juni – 28 juni
 - 2030: 24 juni – 28 juni
 - 2031: 9 juni – 28 juni
-- 2032: 28 juni – 28 juni
-- 2033: 20 juni – 28 juni
-- 2034: 5 juni – 28 juni
-- 2035: 25 juni – 28 juni
-- 2036: 16 juni – 28 juni
-- 2037: 1 juni – 28 juni
-- 2038: 21 juni – 28 juni
-- 2039: 13 juni – 28 juni
-- 2040: _geen dagen_ (begin na einddatum)
-- 2041: 17 juni – 28 juni
-- 2042: 9 juni – 28 juni
-- 2043: _geen dagen_ (begin na einddatum)
-- 2044: 20 juni – 28 juni
-- 2045: 5 juni – 28 juni
-- 2046: 25 juni – 28 juni
-- 2047: 17 juni – 28 juni
-- 2048: 1 juni – 28 juni
-- 2049: 21 juni – 28 juni
-- 2050: 13 juni – 28 juni
-- 2051: _geen dagen_ (begin na einddatum)
 
 **Vastenniveau (indicatief):** lichter.
 

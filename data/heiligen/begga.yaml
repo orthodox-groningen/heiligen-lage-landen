@@ -8,9 +8,9 @@ selectie_toelichting: "Dochter van Iduberga; stichting Andenne."
 namen:
   primair: Begga
   alternatief:
-    - Begga van Andenne
-    - Begga van Landen
-    - Begga van Herstal
+  - Begga van Andenne
+  - Begga van Landen
+  - Begga van Herstal
 datum:
   waarde: "12-17"
   stijl: gregoriaans

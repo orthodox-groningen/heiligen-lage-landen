@@ -24,10 +24,15 @@ Post-schisma-onderzoek (17 augustus 2026):
   van kerk of klooster). Niet alleen doorreis.
 - **Nader onderzoek:** werk vooral in historische Nederlanden die nu in
   Frankrijk liggen; of de persoon is te legendarisch om de toets hard te
-  maken; of de band met de Lage Landen is vooral later bisdom/cultus.
+  maken; of de band met de Lage Landen is vooral later bisdom/cultus; of
+  de invloed is **indirect** (bijv. opleiding van missionarissen) — deur
+  open, geen actieve verzameling.
 - **Kandidaat-schrappen:** niet in de Lage Landen geweest; werk elders
   (Boven-Rijn, Heidenheim); of na het schisma westers, zonder orthodoxe
   bijdrage aan NL/BE.
+
+Op de heiligenpagina verschijnt bij *nader onderzoek* en
+*kandidaat-schrappen* een paragraaf **Over de plaats in deze kalender**.
 
 Post-schisma: alleen Orthodox vereerd **én** bijgedragen aan de Orthodoxie
 in NL/BE. Een kerk of parochie die naar iemand is genoemd, of een
@@ -117,6 +122,7 @@ staat niet hier. Live: `/beheer/selectie/`.
 | `medardus` | Noyon (Picardië); band vooral via later bisdom of cultus |
 | `quirillus-van-tongern` | Vroege bisschop van Tongeren; of hij historisch is, is onzeker |
 | `winnocus` | Wormhout; historisch Vlaanderen, nu Frankrijk |
+| `egbert-van-rathmelsigi` | Indirecte invloed via opleiding missie (Rath Melsigi); zelf niet hier |
 
 ### Kandidaat-schrappen
 
@@ -125,7 +131,6 @@ Niet verwijderen tot een uitdrukkelijk besluit.
 | Id | Toelichting |
 | --- | --- |
 | `adela-van-vlaanderen` | Gestorven 1079; westerse cultus na het schisma |
-| `egbert-van-rathmelsigi` | Ierland; zelf niet in de Lage Landen |
 | `fridolin` | Boven-Rijn (Säckingen) |
 | `walburga` | Abdis van Heidenheim |
 | `winnibald` | Heidenheim / Engeland |

@@ -3,6 +3,13 @@ soort: feest
 bronlaag: nagekeken
 cyclus: paascyclus
 lage_landen: false
+namen:
+  primair: Boterweek
+  alternatief:
+  - Kaasweek
+  - Zuivelweek
+  - Maslenitsa
+  - Tyrofagie
 vastenniveau: lichter
 onderdrukt_wekelijks_vasten: true
 observances:

@@ -6,9 +6,9 @@ lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Bedum."
 namen:
-  primair: "Walfridus (Bedum)"
+  primair: Walfridus (Bedum)
   alternatief:
-    - Walfridus
+  - Walfridus
 datum:
   waarde: "06-22"
   stijl: gregoriaans

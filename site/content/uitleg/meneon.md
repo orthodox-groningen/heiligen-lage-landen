@@ -25,7 +25,9 @@ van Kerst of Theofanie afhangen. Die horen bij een *bepaald jaar*. Daarvoor
 opent u een [datumpagina]({{% ref "/uitleg/datumpagina" %}}).
 
 U kunt zoeken op naam, ook op andere namen die dezelfde heilige of hetzelfde
-feest heeft. Bladeren kan per maand of op alfabet. Heiligen met een icoon
+feest heeft. De titel die u ziet, is de gewone aanduiding op deze site;
+andere spellingen of plaatsnamen waarmee u zoekt, hoeven niet in die titel
+te staan. Bladeren kan per maand of op alfabet. Heiligen met een icoon
 op deze site tonen dat icoon klein in de lijst.
 
 De feestdatum in het Meneon is de liturgische dagnaam. Of uw parochie die dag

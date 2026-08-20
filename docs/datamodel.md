@@ -43,21 +43,18 @@ datum:
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
 kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
 
-## Namen (één plek wijzigen)
+## Namen
 
-Canonieke weergavenamen staan in **`data/namen.yaml`**:
+Canonieke weergavenamen staan **in het entry-YAML** als `namen.primair`
+en optioneel `namen.alternatief`. Conventie:
+`site/content/beheer/how-to-namen.md`.
 
-- `entries.<id>.primair` / `alternatief` — wint bij laden over `namen:` in
-  individuele YAML-bestanden
-- `labels.<id>` — termen zonder eigen entry (bijv. Vleesvaarwel als label)
-
-Ids (bestandsnamen) blijven stabiel; wijzig alleen de getoonde namen in
-`namen.yaml`.
+Ids (bestandsnamen) blijven stabiel; wijzig de getoonde naam, niet het id.
 
 Eén persoon is één bestand. Andere spellingen en historische namen horen
-in `alternatief` (via `namen.yaml`). Na een merge van twee ids blijft het
-canonieke id de bestandsnaam; de oude id(s) komen in `id_aliassen` (voor
-oude URL’s) én als naam in `alternatief` (zoeken en index).
+in `alternatief`. Na een merge van twee ids blijft het canonieke id de
+bestandsnaam; de oude id(s) komen in `id_aliassen` (voor oude URL’s) én
+als naam in `alternatief` (zoeken en index).
 
 ## Vasten
 
@@ -285,10 +282,12 @@ rustplaats:
 ```
 
 `soort: plaats` krijgt een marker als minstens één heilige die id in
-`locaties` heeft. `soort: streek` (Vlaanderen, Frisia) is vooral voor
+`locaties` heeft. `soort: streek` (Vlaanderen, Friesland) is vooral voor
 zoeken; een marker alleen als een heilige die streek-id zelf in
-`locaties` heeft. Optioneel `streek:` op een plaats koppelt zoeken
-(«Vlaanderen» vindt Drongen). Geen relieken- of bedevaartenlijst.
+`locaties` heeft. Op een heilige: liever concrete plaatsen; streek-ids
+alleen als aanvulling of bij gebrek aan een betere plek. Optioneel
+`streek:` op een plaats koppelt zoeken («Vlaanderen» vindt Drongen).
+Geen relieken- of bedevaartenlijst.
 
 ## Icoon
 

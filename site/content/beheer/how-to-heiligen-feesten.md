@@ -1,6 +1,6 @@
 ---
 title: "Heilige of feest toevoegen of wijzigen"
-description: "YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"
+description: "YAML onder data/, namen in het entry-bestand; nooit de gegenereerde markdown"
 weight: 20
 git_date: 2026-08-17
 ---
@@ -10,7 +10,9 @@ site ziet, zijn een afdruk. Wijzig de YAML; laat `site/content/heiligen/`
 en `site/content/feesten/` met rust.
 
 Datamodel: [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
-Schema: `schemas/entry.schema.json`. Publiceren:
+Schema’s (velden + auteursrichtlijnen):
+[schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
+Schema entry: `schemas/entry.schema.json`. Publiceren:
 [site bouwen]({{% ref "/beheer/how-to-publiceren" %}}).
 
 ## Nieuw id
@@ -19,15 +21,15 @@ Schema: `schemas/entry.schema.json`. Publiceren:
    of cijfer. Voorbeeld: `willibrord`, `ontslapen-moeder-gods`.
 2. Dat id is de **bestandsnaam** zonder `.yaml` en blijft stabiel. Wijzig
    later liever de getoonde naam dan het id.
-3. Zet de canonieke naam in `data/namen.yaml` onder `entries.<id>` (primair,
-   optioneel `alternatief`). Zie [namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
+3. Zet `namen.primair` (en optioneel `alternatief`) in hetzelfde YAML-bestand.
+   Zie [namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
 
 ## Bestand
 
 - Heilige: `data/heiligen/<id>.yaml` met `soort: heilige`
 - Feest: `data/feesten/<id>.yaml` met `soort: feest`
 
-Minimaal: `id`, `soort`, `datum`. Voor een verhaal, samenvatting of
+Minimaal: `id`, `soort`, `datum`, `namen.primair`. Voor een verhaal, samenvatting of
 `betekenis_lage_landen` is minstens één **referentie** verplicht, met een
 locator: `url`, of `isbn`, of `locator`.
 
@@ -57,6 +59,11 @@ rustplaats:
   plaats: echternach
   toelichting: "Abdij van Echternach"
 ```
+
+Zet bij voorkeur **concrete plaatsen**. Een **streek**-id (`frisia`,
+`vlaanderen`) alleen als aanvulling, of als er geen betere plek bekend is.
+De weergavenaam van een streek is herkenbaar Nederlands (`Friesland`);
+historische vormen (`Frisia`) staan in `alternatief` en blijven zoekbaar.
 
 `rustplaats` is alleen waar het lichaam traditioneel rust. Geen relieken.
 
@@ -95,11 +102,18 @@ datum:
 Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
 18 december. Zie `docs/datamodel.md`.
 
-## Namen in het entry-bestand
+## Namen
 
-U *mag* `namen.primair` in de YAML zetten. Bij laden **wint**
-`data/namen.yaml`. Zet nieuwe namen dus daar, anders lijkt de YAML-naam te
-werken tot iemand `namen.yaml` aanvult.
+```yaml
+namen:
+  primair: Willibrord
+  alternatief:
+  - Willibrordus
+```
+
+`primair` is verplicht in het entry-bestand. Zoekaliassen en andere
+spellingen horen onder `alternatief`. Zie
+[namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
 
 ## Vasten op een feest
 
@@ -142,11 +156,17 @@ betekenis_lage_landen: |
   Wat deze heilige voor het christendom of de Orthodoxie
   in de Lage Landen betekende.
 selectie: voldoet          # of nader-onderzoek | kandidaat-schrappen
-selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
+selectie_toelichting: "…"  # beheer; bij nader/kandidaat ook fallback publiek
+selectie_toelichting_publiek: "…"  # optioneel; lezersversie
 ```
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
+- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt op de pagina
+  **Over de plaats in deze kalender** (`_publiek`, anders `selectie_toelichting`).
+- Extra top-level YAML-velden mogen (notities/experimenten); ze komen niet
+  op de site tot generate/UI ze kent. Zie
+  [schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
 - Beslissingslog: [docs/inventaris.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md)
   (geen vaste aantallen). Live overzicht:
   [Selectie heiligen]({{% ref "/beheer/selectie" %}}).
@@ -189,8 +209,7 @@ niet in `titels`.
 ## Dubbele ids samenvoegen
 
 Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
-ids in `id_aliassen` en de oude namen in `data/namen.yaml` onder
-`alternatief`:
+ids in `id_aliassen` en de oude namen onder `namen.alternatief`:
 
 ```yaml
 id: lebuinus
@@ -202,8 +221,8 @@ id_aliassen:
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
 `betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
-staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}), niet op de
-publieke pagina.
+staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}); bij
+`nader-onderzoek` / `kandidaat-schrappen` ook kort op de publieke pagina.
 
 ## Controleren
 
@@ -214,4 +233,4 @@ python -m pytest -q
 ```
 
 Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
-eventueel ICS. Klopt de naam niet, dan eerst `namen.yaml`.
+eventueel ICS. Klopt de naam niet, dan eerst `namen:` in het entry-YAML.

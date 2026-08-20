@@ -4,10 +4,10 @@ bronlaag: nagekeken
 cyclus: paascyclus
 lage_landen: false
 namen:
-  primair: "Allerzielen-zaterdag (vóór Pinksteren)"
+  primair: Allerzielen-zaterdag (vóór Pinksteren)
   alternatief:
   - Allerzielen-zaterdag
-  - "Zaterdag van de zielen (vóór Pinksteren)"
+  - Zaterdag van de zielen (vóór Pinksteren)
 observances:
   - feest
 datum:

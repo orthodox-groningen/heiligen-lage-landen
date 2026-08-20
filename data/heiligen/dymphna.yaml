@@ -8,8 +8,8 @@ selectie_toelichting: "Geel."
 namen:
   primair: Dymphna
   alternatief:
-    - Dimpna
-    - Dymphna van Geel
+  - Dimpna
+  - Dymphna van Geel
 datum:
   waarde: "05-15"
   stijl: gregoriaans

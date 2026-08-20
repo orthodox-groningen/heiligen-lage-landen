@@ -5,11 +5,11 @@ cyclus: jaar
 lage_landen: false
 vastenniveau: lichter
 namen:
-  primair: "Geboortevasten"
+  primair: Geboortevasten
   alternatief:
-    - "Filipsvasten"
-    - "Kerstvasten"
-    - "Adventsvasten"
+  - Filipsvasten
+  - Kerstvasten
+  - Adventsvasten
 observances:
   - vasten
 datum:

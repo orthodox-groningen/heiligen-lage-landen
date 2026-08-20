@@ -8,8 +8,8 @@ selectie_toelichting: "Gent."
 namen:
   primair: Bavo
   alternatief:
-    - Bavo van Gent
-    - Allowin
+  - Bavo van Gent
+  - Allowin
 datum:
   waarde: "10-01"
   stijl: gregoriaans

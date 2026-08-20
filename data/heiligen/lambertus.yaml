@@ -8,8 +8,8 @@ selectie_toelichting: "Bisschop van Maastricht; martelaar te Luik."
 namen:
   primair: Lambertus
   alternatief:
-    - Lambertus van Maastricht
-    - Lambert
+  - Lambertus van Maastricht
+  - Lambert
 datum:
   waarde: "09-17"
   stijl: gregoriaans

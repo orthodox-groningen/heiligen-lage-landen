@@ -14,7 +14,6 @@ HEILIGEN = ROOT / "data" / "heiligen"
 
 KANDIDAAT = {
     "adela-van-vlaanderen",
-    "egbert-van-rathmelsigi",
     "fridolin",
     "walburga",
     "winnibald",
@@ -23,6 +22,7 @@ NADER = {
     "adelgonda",
     "agricolaus-van-maastricht",
     "aubertus-van-kamerijk",
+    "egbert-van-rathmelsigi",
     "folciunus",
     "medardus",
     "quirillus-van-tongern",
@@ -53,7 +53,10 @@ def test_selectie_groepen_kloppen() -> None:
     assert "johannes-van-shanghai" in voldoet
     assert "sophrony-van-essex" in voldoet
     assert by_id["willibrord"]["selectie_toelichting"]
-    assert "Ierland" in by_id["egbert-van-rathmelsigi"]["selectie_toelichting"]
+    assert "indirect" in by_id["egbert-van-rathmelsigi"]["selectie_toelichting"].lower() or (
+        "Indirecte" in by_id["egbert-van-rathmelsigi"]["selectie_toelichting"]
+    )
+    assert by_id["egbert-van-rathmelsigi"]["selectie"] == "nader-onderzoek"
 
 
 def test_inventaris_geen_vaste_catalogustelling() -> None:

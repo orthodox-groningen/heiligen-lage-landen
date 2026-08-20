@@ -8,9 +8,9 @@ selectie_toelichting: "Bisschop van Maastricht; cultus samen met Monulphus."
 namen:
   primair: Gondulphus
   alternatief:
-    - Gondulf
-    - Gondulphus van Maastricht
-    - Betulphus
+  - Gondulf
+  - Gondulphus van Maastricht
+  - Betulphus
 datum:
   waarde: "07-16"
   stijl: gregoriaans

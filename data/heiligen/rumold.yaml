@@ -8,10 +8,10 @@ selectie_toelichting: "Patroon van Mechelen; prediking en martelaarschap in Vlaa
 namen:
   primair: Rumold
   alternatief:
-    - Rumoldus
-    - Rombout
-    - Rumbold
-    - Rumold van Mechelen
+  - Rumoldus
+  - Rombout
+  - Rumbold
+  - Rumold van Mechelen
 datum:
   waarde: "06-24"
   stijl: gregoriaans

@@ -4,11 +4,12 @@ bronlaag: nagekeken
 cyclus: paascyclus
 lage_landen: false
 namen:
-  primair: "Vergevingszondag"
+  primair: Vergevingszondag
   alternatief:
   - Zuivelvaarwel
   - Zondag van de verdrijving uit het paradijs
-  - Vergevingszondag
+  - Kaasvaarwel
+  - Cheesefare
 observances:
   - feest
 datum:

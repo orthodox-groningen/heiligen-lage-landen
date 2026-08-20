@@ -10,10 +10,10 @@ id_aliassen:
 namen:
   primair: Lebuinus
   alternatief:
-    - Lebuin
-    - Lebuïnus
-    - Lubuinus
-    - Liafwin
+  - Lebuin
+  - Lebuïnus
+  - Lubuinus
+  - Liafwin
 datum:
   waarde: "11-12"
   stijl: gregoriaans

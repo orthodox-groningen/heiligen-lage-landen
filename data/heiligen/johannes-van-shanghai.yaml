@@ -8,9 +8,9 @@ selectie_toelichting: "Bisschop van West-Europa; Nederlandse missie, klooster De
 namen:
   primair: Johannes van Shanghai
   alternatief:
-    - Johannes Maximovitsj
-    - Johannes van Shanghai en San Francisco
-    - Johannes de Wonderdoener
+  - Johannes Maximovitsj
+  - Johannes van Shanghai en San Francisco
+  - Johannes de Wonderdoener
 datum:
   waarde: "07-02"
   stijl: gregoriaans

@@ -8,10 +8,10 @@ selectie_toelichting: "Eerste bevestigde bisschop van Tongeren; graf in Maastric
 namen:
   primair: Servatius
   alternatief:
-    - Servatius van Maastricht
-    - Servatius van Tongeren
-    - Sint Servaas
-    - Aravatius
+  - Servatius van Maastricht
+  - Servatius van Tongeren
+  - Sint Servaas
+  - Aravatius
 datum:
   waarde: "05-13"
   stijl: gregoriaans

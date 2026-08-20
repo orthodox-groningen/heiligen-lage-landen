@@ -10,11 +10,11 @@ id_aliassen:
 namen:
   primair: Albericus van Utrecht
   alternatief:
-    - Albricus
-    - Alberik I van Utrecht
-    - Alberik van Utrecht
-    - Alberik
-    - Albericus
+  - Albricus
+  - Alberik I van Utrecht
+  - Alberik van Utrecht
+  - Alberik
+  - Albericus
 datum:
   waarde: 03-04
   stijl: gregoriaans

@@ -8,8 +8,8 @@ selectie_toelichting: "Egmond; metgezel van Willibrord."
 namen:
   primair: Adelbert
   alternatief:
-    - Adelbert van Egmond
-    - Adalbert van Egmond
+  - Adelbert van Egmond
+  - Adalbert van Egmond
 datum:
   waarde: "06-25"
   stijl: gregoriaans

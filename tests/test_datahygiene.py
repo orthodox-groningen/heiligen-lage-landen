@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from load_entries import load_entries, load_namen_catalogus  # noqa: E402
+from load_entries import load_entries  # noqa: E402
 from validate import collect_content_errors  # noqa: E402
 
 HEILIGEN = ROOT / "data" / "heiligen"
@@ -28,12 +28,13 @@ def test_dubbele_ids_zijn_samengevoegd() -> None:
     assert "Alberik" in alts_alb
 
 
-def test_namen_catalogus_heeft_geen_oude_ids() -> None:
-    catalogus = load_namen_catalogus()
-    assert "lubuinus" not in catalogus
-    assert "alberik" not in catalogus
-    assert "Lubuinus" in catalogus["lebuinus"]["alternatief"]
-    assert "Alberik" in catalogus["albericus-van-utrecht"]["alternatief"]
+def test_namen_staan_in_entry_niet_in_catalogusbestand() -> None:
+    assert not (ROOT / "data" / "namen.yaml").exists()
+    by_id = {e["id"]: e for e in load_entries()}
+    assert "Lubuinus" in by_id["lebuinus"]["namen"]["alternatief"]
+    assert "Alberik" in by_id["albericus-van-utrecht"]["namen"]["alternatief"]
+    assert "Vleesvaarwel" in by_id["zondag-laatste-oordeel"]["namen"]["alternatief"]
+    assert "Zuivelvaarwel" in by_id["vergevingszondag"]["namen"]["alternatief"]
 
 
 def test_titels_zonder_engels_en_zonder_icoon_in_parochie() -> None:

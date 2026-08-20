@@ -9,6 +9,9 @@ selectie: voldoet
 selectie_toelichting: "Missie onder de Friezen."
 namen:
   primair: Wulfram
+  alternatief:
+  - Wulfran
+  - Wulfram van Sens
 datum:
   waarde: 03-20
   stijl: gregoriaans

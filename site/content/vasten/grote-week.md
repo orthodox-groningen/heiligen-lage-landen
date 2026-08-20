@@ -29,26 +29,6 @@ alternatief:
 - 2029: 2 april – 7 april
 - 2030: 22 april – 27 april
 - 2031: 7 april – 12 april
-- 2032: 26 april – 1 mei
-- 2033: 18 april – 23 april
-- 2034: 3 april – 8 april
-- 2035: 23 april – 28 april
-- 2036: 14 april – 19 april
-- 2037: 30 maart – 4 april
-- 2038: 19 april – 24 april
-- 2039: 11 april – 16 april
-- 2040: 30 april – 5 mei
-- 2041: 15 april – 20 april
-- 2042: 7 april – 12 april
-- 2043: 27 april – 2 mei
-- 2044: 18 april – 23 april
-- 2045: 3 april – 8 april
-- 2046: 23 april – 28 april
-- 2047: 15 april – 20 april
-- 2048: 30 maart – 4 april
-- 2049: 19 april – 24 april
-- 2050: 11 april – 16 april
-- 2051: 1 mei – 6 mei
 
 **Vastenniveau (indicatief):** streng.
 

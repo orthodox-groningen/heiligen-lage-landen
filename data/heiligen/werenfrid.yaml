@@ -8,9 +8,9 @@ selectie_toelichting: "Westervoort / Friesland."
 namen:
   primair: Werenfrid
   alternatief:
-    - Werenfried van Elst
-    - Werenfridus
-    - Werenfried
+  - Werenfried van Elst
+  - Werenfridus
+  - Werenfried
 datum:
   waarde: "08-14"
   stijl: gregoriaans

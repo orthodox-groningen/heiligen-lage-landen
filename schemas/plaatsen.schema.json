@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orthodox-ronl.github.io/kalender/schemas/plaatsen.schema.json",
+  "title": "Plaatsenregister (data/plaatsen.yaml)",
+  "description": "Lijst onder sleutel plaatsen. soort plaats = marker bij gebruik; streek = zoeken/marker alleen als de heilige de streek-id noemt. Weergavenaam herkenbaar Nederlands; Latijn/historisch in alternatief. Extra velden per plaats toegestaan.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["plaatsen"],
+  "properties": {
+    "plaatsen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "naam", "lat", "lon"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$",
+            "description": "Stabiel id; gebruik dit in locaties: op een heilige."
+          },
+          "naam": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Getoonde naam (Friesland, niet Frisia)."
+          },
+          "alternatief": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "description": "Zoekaliassen (Frisia, Flanders, …)."
+          },
+          "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+          "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+          "soort": {
+            "type": "string",
+            "enum": ["plaats", "streek"],
+            "default": "plaats",
+            "description": "plaats = stad/dorp/kloosterlocatie; streek = regio."
+          },
+          "streek": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$",
+            "description": "Optioneel: id van de streek waaronder deze plaats valt."
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,8 +8,8 @@ selectie_toelichting: "Missie in Frisia; martelaarschap bij Dokkum."
 namen:
   primair: Bonifatius
   alternatief:
-    - Bonifacius
-    - Wynfrith
+  - Bonifacius
+  - Wynfrith
 datum:
   waarde: "06-05"
   stijl: gregoriaans

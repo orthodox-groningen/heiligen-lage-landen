@@ -8,7 +8,7 @@ selectie_toelichting: "Bisschop van Utrecht."
 namen:
   primair: Radboud
   alternatief:
-    - Radboud van Utrecht
+  - Radboud van Utrecht
 datum:
   waarde: "11-29"
   stijl: gregoriaans

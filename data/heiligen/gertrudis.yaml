@@ -8,8 +8,8 @@ selectie_toelichting: "Abdis van Nijvel."
 namen:
   primair: Gertrudis
   alternatief:
-    - Gertrudis van Nijvel
-    - Geertrui
+  - Gertrudis van Nijvel
+  - Geertrui
 datum:
   waarde: "03-17"
   stijl: gregoriaans

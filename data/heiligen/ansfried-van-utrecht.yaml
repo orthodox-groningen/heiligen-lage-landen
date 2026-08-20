@@ -8,11 +8,10 @@ locaties:
 selectie: voldoet
 selectie_toelichting: "Bisschop van Utrecht."
 namen:
-  primair: "Ansfried (van Utrecht)"
+  primair: Ansfried van Utrecht
   alternatief:
   - Ansfried van Leuven
   - Ansfried
-  - Ansfried van Utrecht
 datum:
   waarde: 05-03
   stijl: gregoriaans

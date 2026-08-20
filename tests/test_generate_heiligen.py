@@ -70,9 +70,64 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert "niet op de publieke pagina" not in body
     assert "## Betekenis voor de Lage Landen" in body
     assert "Predikte onder de Friezen." in body
+    assert "## Over de plaats in deze kalender" not in body
     assert "nagekeken aan een lexikon" not in body
     assert "open naslagwerken" in body
+
+
+def test_entry_page_selectie_paragraaf_bij_nader_onderzoek(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="nader-onderzoek",
+            selectie_toelichting="Korte beheerzin.",
+            selectie_toelichting_publiek="Uitleg voor bezoekers over het grensgeval.",
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    meta, body = _split_hugo_markdown(text)
     assert "selectie" not in meta
+    assert "## Over de plaats in deze kalender" in body
+    assert "nog niet uitgemaakt" in body
+    assert "Uitleg voor bezoekers over het grensgeval." in body
+    assert "Korte beheerzin." not in body
+
+
+def test_entry_page_selectie_fallback_toelichting(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="kandidaat-schrappen",
+            selectie_toelichting="Alleen cultus, geen werk hier.",
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    body = _split_hugo_markdown(text)[1]
+    assert "## Over de plaats in deze kalender" in body
+    assert "ter discussie" in body
+    assert "Alleen cultus, geen werk hier." in body
+
+
+def test_entry_page_extra_yaml_veld_breekt_niet(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="voldoet",
+            onderzoek_notitie="Mag in YAML staan zonder render.",
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    assert "onderzoek_notitie" not in text
+    assert "Mag in YAML staan" not in text
 
 
 def test_entry_page_plaatsen_als_namen_en_rustplaats(
@@ -93,6 +148,10 @@ def test_entry_page_plaatsen_als_namen_en_rustplaats(
     meta, body = _split_hugo_markdown(text)
     assert meta["locaties"] == ["Utrecht", "Drongen"]
     assert meta["locatie_ids"] == ["utrecht", "drongen"]
+    assert meta["locatie_items"] == [
+        {"id": "utrecht", "naam": "Utrecht", "soort": "plaats"},
+        {"id": "drongen", "naam": "Drongen", "soort": "plaats"},
+    ]
     assert "utrecht" not in meta["locaties"]
     assert "Utrecht" in meta["locatie_zoek"]
     assert "Vlaanderen" in meta["locatie_zoek"]

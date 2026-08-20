@@ -54,5 +54,5 @@ pytest- en generate-stappen.
 
 Tekst «even snel» aanpassen op een heiligenpagina onder
 `site/content/heiligen/`. Die pagina is een afdruk. Bij de volgende generate
-is de wijziging weg. Zet de tekst in `data/heiligen/<id>.yaml` (en de naam
-in `data/namen.yaml`).
+is de wijziging weg. Zet de tekst in `data/heiligen/<id>.yaml` (inclusief
+`namen:`).

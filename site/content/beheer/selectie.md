@@ -21,7 +21,7 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Amalberga van Susteren](/heiligen/amalberga-van-susteren/) (`data/heiligen/amalberga-van-susteren.yaml`) — Abdis van Susteren.
 - [Amalberga van Temse](/heiligen/amalberga-van-temse/) (`data/heiligen/amalberga-van-temse.yaml`) — Temse.
 - [Amandus van Maastricht](/heiligen/amandus-van-maastricht/) (`data/heiligen/amandus-van-maastricht.yaml`) — Maastricht en Elno bij Doornik.
-- [Ansfried (van Utrecht)](/heiligen/ansfried-van-utrecht/) (`data/heiligen/ansfried-van-utrecht.yaml`) — Bisschop van Utrecht.
+- [Ansfried van Utrecht](/heiligen/ansfried-van-utrecht/) (`data/heiligen/ansfried-van-utrecht.yaml`) — Bisschop van Utrecht.
 - [Bavo](/heiligen/bavo/) (`data/heiligen/bavo.yaml`) — Gent.
 - [Begga](/heiligen/begga/) (`data/heiligen/begga.yaml`) — Dochter van Iduberga; stichting Andenne.
 - [Bernulphus](/heiligen/bernulphus/) (`data/heiligen/bernulphus.yaml`) — Bisschop van Utrecht; sterfjaar 1054, westers episcopaat in de Lage Landen.
@@ -72,20 +72,20 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Woutruide](/heiligen/woutruide/) (`data/heiligen/woutruide.yaml`) — Bergen (Waudru).
 - [Wulfram](/heiligen/wulfram/) (`data/heiligen/wulfram.yaml`) — Missie onder de Friezen.
 
-## Nader onderzoek (7)
+## Nader onderzoek (8)
 
 - [Adelgonda](/heiligen/adelgonda/) (`data/heiligen/adelgonda.yaml`) — Stichteres van Maubeuge; historisch Henegouwen, nu Frankrijk.
 - [Agricolaus van Maastricht](/heiligen/agricolaus-van-maastricht/) (`data/heiligen/agricolaus-van-maastricht.yaml`) — Tweede bisschop van Maastricht; of de vroege bisschoppenlijst historisch is, is onzeker.
 - [Aubertus van Kamerijk](/heiligen/aubertus-van-kamerijk/) (`data/heiligen/aubertus-van-kamerijk.yaml`) — Bisschop van Kamerijk; zetel nu in Frankrijk, bisdom reikte tot Henegouwen.
+- [Egbert van Rathmelsigi](/heiligen/egbert-van-rathmelsigi/) (`data/heiligen/egbert-van-rathmelsigi.yaml`) — Zelf niet in de Lage Landen; leidde te Rath Melsigi missionarissen op (o.a. Willibrord). Indirecte invloed — deur open, geen actieve jacht.
 - [Folciunus](/heiligen/folciunus/) (`data/heiligen/folciunus.yaml`) — Folquinus van Terwaan; bisdom nu in Frankrijk, gestorven te Ekelsbeke.
 - [Medardus](/heiligen/medardus/) (`data/heiligen/medardus.yaml`) — Bisschop van Noyon (Picardië); band met de Lage Landen vooral via later bisdom of cultus.
 - [Quirillus van Tongern](/heiligen/quirillus-van-tongern/) (`data/heiligen/quirillus-van-tongern.yaml`) — Vroege bisschop van Tongeren; of hij historisch is, is onzeker.
 - [Winnocus](/heiligen/winnocus/) (`data/heiligen/winnocus.yaml`) — Abt van Wormhout; historisch Vlaanderen, nu Frankrijk.
 
-## Kandidaat om te schrappen (5)
+## Kandidaat om te schrappen (4)
 
 - [Adela van Vlaanderen](/heiligen/adela-van-vlaanderen/) (`data/heiligen/adela-van-vlaanderen.yaml`) — Gestorven 1079; westerse cultus na het schisma, geen orthodoxe bijdrage aan NL/BE.
-- [Egbert van Rathmelsigi](/heiligen/egbert-van-rathmelsigi/) (`data/heiligen/egbert-van-rathmelsigi.yaml`) — Rath Melsigi (Ierland); zond missionarissen naar Frisia, zelf niet in de Lage Landen.
 - [Fridolin](/heiligen/fridolin/) (`data/heiligen/fridolin.yaml`) — Verlichter van de Boven-Rijn (Säckingen); geen aantoonbaar werk in de Lage Landen.
 - [Walburga](/heiligen/walburga/) (`data/heiligen/walburga.yaml`) — Abdis van Heidenheim; cultus elders is geen werk in de Lage Landen.
 - [Winnibald](/heiligen/winnibald/) (`data/heiligen/winnibald.yaml`) — Heidenheim / Engeland; geen aantoonbaar werk in de Lage Landen.

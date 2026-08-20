@@ -29,9 +29,30 @@ def test_titel_toont_toon() -> None:
 def test_lijsticonen_in_meneon_en_heiligenoverzicht() -> None:
     js = JS.read_text(encoding="utf-8")
     assert "class=\"list-icoon\"" in js or "class='list-icoon'" in js
+    assert "meneon-table" in js
+    assert "function meneonTableHtml" in js
     html = HEILIGEN_LIST.read_text(encoding="utf-8")
     assert "list-icoon" in html
     assert ".Params.icoon" in html
+
+
+def test_rooster_en_meneon_hebben_weergave_paneel() -> None:
+    rooster = (
+        ROOT / "site" / "layouts" / "_default" / "lezingenrooster.html"
+    ).read_text(encoding="utf-8")
+    meneon = (
+        ROOT / "site" / "layouts" / "_default" / "meneon.html"
+    ).read_text(encoding="utf-8")
+    assert "rooster-title-nav" not in rooster
+    assert 'id="rooster-heading"' in rooster
+    assert "weergave-trigger" in rooster
+    assert "rooster-action-bar" in rooster
+    assert "weergave-trigger" in meneon
+    assert "meneon-action-bar" in meneon
+    js = JS.read_text(encoding="utf-8")
+    assert "function wireWeergavePanel" in js
+    assert "function closeAllWeergavePanels" in js
+    assert "rooster-title-nav" not in js
 
 
 def test_jaarkalender_popover_zonder_iconen() -> None:

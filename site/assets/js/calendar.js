@@ -1560,30 +1560,110 @@
     }
   }
 
+  function isNarrowViewport() {
+    return window.matchMedia("(max-width: 40rem)").matches;
+  }
+
+  function closeWeergavePanel(prefix) {
+    const panel = document.getElementById(`${prefix}-weergave-panel`);
+    const trigger = document.getElementById(`${prefix}-weergave-trigger`);
+    const overlay = document.getElementById(`${prefix}-weergave-overlay`);
+    if (panel) {
+      panel.hidden = true;
+      panel.classList.remove("is-sheet");
+    }
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+    if (overlay) {
+      overlay.hidden = true;
+      overlay.classList.remove("is-open");
+    }
+  }
+
+  function openWeergavePanel(prefix) {
+    const panel = document.getElementById(`${prefix}-weergave-panel`);
+    const trigger = document.getElementById(`${prefix}-weergave-trigger`);
+    const overlay = document.getElementById(`${prefix}-weergave-overlay`);
+    if (!panel) return;
+    ["rooster", "meneon"].forEach((other) => {
+      if (other !== prefix) closeWeergavePanel(other);
+    });
+    panel.hidden = false;
+    if (isNarrowViewport()) {
+      panel.classList.add("is-sheet");
+      if (overlay) {
+        overlay.hidden = false;
+        overlay.classList.add("is-open");
+      }
+    } else {
+      panel.classList.remove("is-sheet");
+      if (overlay) {
+        overlay.hidden = true;
+        overlay.classList.remove("is-open");
+      }
+    }
+    if (trigger) trigger.setAttribute("aria-expanded", "true");
+  }
+
+  function toggleWeergavePanel(prefix) {
+    const panel = document.getElementById(`${prefix}-weergave-panel`);
+    if (!panel || panel.hidden) openWeergavePanel(prefix);
+    else closeWeergavePanel(prefix);
+  }
+
+  function wireWeergavePanel(prefix) {
+    const trigger = document.getElementById(`${prefix}-weergave-trigger`);
+    const panel = document.getElementById(`${prefix}-weergave-panel`);
+    const overlay = document.getElementById(`${prefix}-weergave-overlay`);
+    if (!trigger || !panel || trigger.dataset.boundWeergave === "1") return;
+    trigger.dataset.boundWeergave = "1";
+    trigger.addEventListener("click", () => toggleWeergavePanel(prefix));
+    panel.querySelectorAll("[data-weergave-close]").forEach((btn) => {
+      btn.addEventListener("click", () => closeWeergavePanel(prefix));
+    });
+    if (overlay) {
+      overlay.addEventListener("click", () => closeWeergavePanel(prefix));
+    }
+  }
+
+  function closeAllWeergavePanels() {
+    closeWeergavePanel("rooster");
+    closeWeergavePanel("meneon");
+  }
+
   function renderRooster(style) {
     const root = document.getElementById("rooster-tables");
-    const nav = document.getElementById("rooster-title-nav");
-    if (!root || !nav) return;
+    const actionBar = document.getElementById("rooster-action-bar");
+    const panelBody = document.getElementById("rooster-weergave-body");
+    const summary = document.getElementById("rooster-weergave-summary");
+    const heading = document.getElementById("rooster-heading");
+    if (!root || !actionBar) return;
+
+    if (heading) heading.textContent = "Lezingenrooster";
+    wireWeergavePanel("rooster");
 
     const stil = style === "juliaans" ? "oud" : "nieuw";
     const monthNum = parseInt(roosterMonth, 10);
     const monthName = MONTHS[monthNum];
-    const titleBase = nav.dataset.title || "Lezingenrooster";
 
-    fillPageTitleRow(
-      nav,
-      titleNavHtml({
-        titleHtml: `${titleBase}: ${monthName} ${viewYear}`,
-        prevLabel: "Vorige maand",
-        nextLabel: "Volgende maand",
-        deltaAttr: "month-delta",
-        unit: "maand",
-        prevDisabled: false,
-        nextDisabled: false,
-      })
-    );
-    const freshNav = document.getElementById("rooster-title-nav");
-    if (freshNav) wireRoosterMonthSteps(freshNav);
+    actionBar.innerHTML =
+      `<button type="button" class="title-step" data-month-delta="-1" ` +
+      `aria-label="Vorige maand">‹</button>` +
+      `<span class="action-bar-label">${monthName} ${viewYear}</span>` +
+      `<button type="button" class="title-step" data-month-delta="1" ` +
+      `aria-label="Volgende maand">›</button>`;
+    wireRoosterMonthSteps(actionBar);
+
+    if (summary) summary.textContent = bibleTranslation();
+    if (panelBody) {
+      panelBody.innerHTML = bijbelVertalingSelectHtml();
+      wireBijbelVertaling(panelBody);
+      panelBody.querySelectorAll("select.bijbel-vertaling").forEach((sel) => {
+        sel.addEventListener("change", () => {
+          const sum = document.getElementById("rooster-weergave-summary");
+          if (sum) sum.textContent = bibleTranslation();
+        });
+      });
+    }
 
     const daysInMonth = new Date(viewYear, monthNum, 0).getDate();
     let html =
@@ -1598,8 +1678,6 @@
     for (let day = 1; day <= daysInMonth; day++) {
       const civilMmdd =
         String(monthNum).padStart(2, "0") + "-" + String(day).padStart(2, "0");
-      // Index-sleutel: Nieuw = burgerlijke MM-DD; Oud = Juliaanse dagnaam
-      // die op die burgerlijke dag valt.
       let keyMmdd = civilMmdd;
       let keyYear = viewYear;
       if (style === "juliaans") {
@@ -1633,9 +1711,8 @@
     html += `</tbody></table></div>`;
     root.innerHTML =
       rows > 0
-        ? bijbelVertalingSelectHtml() + html
+        ? html
         : `<p class="muted">Geen lezingengegevens voor ${monthName} ${viewYear}.</p>`;
-    wireBijbelVertaling(root);
   }
 
   function wireRoosterMonthSteps(root) {
@@ -1943,17 +2020,86 @@
     refresh();
   }
 
-  function entryRowHtml(e, when) {
-    const kind = kindLabel(e);
-    const meta = when ? `${when} · ${kind}` : kind;
-    const thumb = e.icoon
-      ? `<img class="list-icoon" src="${assetUrl(String(e.icoon).replace(/^\//, ""))}" alt="" width="28" height="28">`
-      : "";
+  function entryWhenLabel(e) {
+    if (e.van && e.tot) return `${label(e.van)} – ${label(e.tot)}`;
+    if (e.feestdatum) return label(e.feestdatum);
+    return "—";
+  }
+
+  function entryThumbHtml(e) {
+    if (!e.icoon) return "";
     return (
-      `<li>` +
-      `<span class="entry-list-hoofd">${thumb}<a href="${assetUrl(e.url.replace(/^\//, ""))}">${e.naam}</a></span>` +
-      ` <span class="meta">${meta}</span></li>`
+      `<img class="list-icoon" src="${assetUrl(String(e.icoon).replace(/^\//, ""))}" ` +
+      `alt="" width="28" height="28">`
     );
+  }
+
+  function meneonTableHtml(rows) {
+    if (!rows.length) {
+      return "<p>Geen vaste feesten, heiligen of vasten voor deze selectie.</p>";
+    }
+    // Groepeer opeenvolgende rijen met dezelfde datumlabel → één cel met rowspan.
+    const groups = [];
+    for (const row of rows) {
+      const key = row.whenKey != null ? row.whenKey : row.whenHtml;
+      const last = groups[groups.length - 1];
+      if (last && last.key === key) {
+        last.entries.push(row.entry);
+      } else {
+        groups.push({
+          key,
+          whenHtml: row.whenHtml,
+          entries: [row.entry],
+        });
+      }
+    }
+    const body = groups
+      .map((group) => {
+        const span = group.entries.length;
+        return group.entries
+          .map((entry, i) => {
+            const thumb = entryThumbHtml(entry);
+            const href = assetUrl(String(entry.url || "").replace(/^\//, ""));
+            const dateCell =
+              i === 0
+                ? `<td${span > 1 ? ` rowspan="${span}"` : ""} class="meneon-date-cell">${group.whenHtml}</td>`
+                : "";
+            return (
+              `<tr>` +
+              dateCell +
+              `<td>${thumb}<a href="${href}">${escapeHtml(entry.naam)}</a></td>` +
+              `<td>${escapeHtml(kindLabel(entry))}</td>` +
+              `</tr>`
+            );
+          })
+          .join("");
+      })
+      .join("");
+    return (
+      `<table class="meneon-table">` +
+      `<thead><tr>` +
+      `<th scope="col">Datum</th>` +
+      `<th scope="col">Naam</th>` +
+      `<th scope="col">Soort</th>` +
+      `</tr></thead><tbody>${body}</tbody></table>`
+    );
+  }
+
+  function meneonWeergaveSummary() {
+    const shows = checkedShows("show");
+    const parts = [];
+    if (shows.includes("heilige")) parts.push("heiligen");
+    if (shows.includes("feest")) parts.push("feesten");
+    if (shows.includes("vasten")) parts.push("vasten");
+    let text = parts.length ? parts.join("+") : "niets";
+    if (searchQuery) text += " · zoek";
+    else text += browseMode === "letter" ? " · alfabet" : " · maanden";
+    return text;
+  }
+
+  function updateMeneonWeergaveSummary() {
+    const summary = document.getElementById("meneon-weergave-summary");
+    if (summary) summary.textContent = meneonWeergaveSummary();
   }
 
   function renderMeneonDay(entries, mmdd) {
@@ -1966,6 +2112,7 @@
     if (browse) browse.hidden = true;
     dayRoot.hidden = false;
     if (heading) heading.textContent = label(mmdd);
+    closeWeergavePanel("meneon");
     const prev = shiftMmdd(mmdd, -1);
     const next = shiftMmdd(mmdd, 1);
     const thisYear = clampYear(new Date().getFullYear());
@@ -1994,23 +2141,17 @@
       );
     if (!matched.length) {
       list.innerHTML =
-        "<p>Geen vaste feesten, heiligen of vasten op deze kalenderdag. " +
+        `<p class="muted today-geen-heilige">` +
         achtergrondLink(
           "heiligen",
-          "Waarom niet iedere heilige hier staat"
+          "(Geen feest/gedachtenis van een Heilige van de Lage Landen)"
         ) +
         "</p>";
-    } else {
-      list.innerHTML =
-        '<ul class="entry-list">' +
-        matched
-          .map((e) => {
-            let when = "";
-            if (e.van && e.tot) when = `${label(e.van)} – ${label(e.tot)}`;
-            return entryRowHtml(e, when);
-          })
-          .join("") +
-        "</ul>";
+      } else {
+      const whenHtml = escapeHtml(label(mmdd));
+      list.innerHTML = meneonTableHtml(
+        matched.map((entry) => ({ whenHtml, whenKey: mmdd, entry }))
+      );
     }
     const site = document.title.includes(" · ")
       ? document.title.slice(document.title.lastIndexOf(" · ") + 3)
@@ -2030,6 +2171,8 @@
     if (dayRoot) dayRoot.hidden = true;
     if (browse) browse.hidden = false;
     if (heading) heading.textContent = "Meneon";
+    wireWeergavePanel("meneon");
+    updateMeneonWeergaveSummary();
 
     const shows = checkedShows("show");
     const filtered = filterEntries(entries, shows)
@@ -2075,48 +2218,44 @@
         .slice()
         .sort(
           (a, b) =>
-            a.naam.localeCompare(b.naam, "nl") ||
-            entryFixedSortKey(a).localeCompare(entryFixedSortKey(b))
+            entryFixedSortKey(a).localeCompare(entryFixedSortKey(b)) ||
+            a.naam.localeCompare(b.naam, "nl")
         );
       if (hint) hint.textContent = `Zoekresultaten: ${subset.length} item(s).`;
-      list.innerHTML =
-        '<ul class="entry-list">' +
-        subset
-          .map((e) => {
-            let when = "—";
-            if (e.van && e.tot) when = `${label(e.van)} – ${label(e.tot)}`;
-            else if (e.feestdatum) when = label(e.feestdatum);
-            return entryRowHtml(e, when);
-          })
-          .join("") +
-        "</ul>";
+      list.innerHTML = meneonTableHtml(
+        subset.map((entry) => ({
+          whenHtml: escapeHtml(entryWhenLabel(entry)),
+          whenKey: entryFixedSortKey(entry) + "\0" + entryWhenLabel(entry),
+          entry,
+        }))
+      );
       return;
     }
 
     if (browseMode === "letter") {
       const subset = filtered
         .filter((e) => firstLetter(e.naam) === activeLetter)
-        .sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
+        .sort(
+          (a, b) =>
+            entryFixedSortKey(a).localeCompare(entryFixedSortKey(b)) ||
+            a.naam.localeCompare(b.naam, "nl")
+        );
       if (hint) {
         hint.textContent = `Letter ${activeLetter}: ${subset.length} item(s).`;
       }
-      list.innerHTML =
-        '<ul class="entry-list">' +
-        subset
-          .map((e) => {
-            let when = "—";
-            if (e.van && e.tot) when = `${label(e.van)} – ${label(e.tot)}`;
-            else if (e.feestdatum) when = label(e.feestdatum);
-            return entryRowHtml(e, when);
-          })
-          .join("") +
-        "</ul>";
+      list.innerHTML = meneonTableHtml(
+        subset.map((entry) => ({
+          whenHtml: escapeHtml(entryWhenLabel(entry)),
+          whenKey: entryFixedSortKey(entry) + "\0" + entryWhenLabel(entry),
+          entry,
+        }))
+      );
       return;
     }
 
     const daysInMonth = new Date(2024, parseInt(activeMonth, 10), 0).getDate();
     let count = 0;
-    let html = "";
+    const rows = [];
     for (let day = 1; day <= daysInMonth; day++) {
       const mmdd = activeMonth + "-" + String(day).padStart(2, "0");
       const dayEntries = filtered
@@ -2124,22 +2263,18 @@
         .sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
       if (!dayEntries.length) continue;
       count += dayEntries.length;
-      html +=
-        `<h2 class="meneon-day-group"><a href="${pageUrl("meneon/", { dag: mmdd })}">${label(mmdd)}</a></h2>` +
-        '<ul class="entry-list">' +
-        dayEntries
-          .map((e) => {
-            let when = "";
-            if (e.van && e.tot) when = `${label(e.van)} – ${label(e.tot)}`;
-            return entryRowHtml(e, when);
-          })
-          .join("") +
-        "</ul>";
+      const whenHtml =
+        `<a href="${pageUrl("meneon/", { dag: mmdd })}">${label(mmdd)}</a>`;
+      dayEntries.forEach((entry) => {
+        rows.push({ whenHtml, whenKey: mmdd, entry });
+      });
     }
     if (hint) {
       hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]}: ${count} item(s).`;
     }
-    list.innerHTML = html || "<p>Geen vaste dagen in deze maand.</p>";
+    list.innerHTML = rows.length
+      ? meneonTableHtml(rows)
+      : "<p>Geen vaste dagen in deze maand.</p>";
   }
 
   function renderMeneon(entries) {
@@ -2164,12 +2299,16 @@
         };
       });
       document.querySelectorAll('input[name="show"]').forEach((el) => {
-        el.addEventListener("change", () => renderMeneon(entries));
+        el.addEventListener("change", () => {
+          updateMeneonWeergaveSummary();
+          renderMeneon(entries);
+        });
       });
       const search = document.getElementById("meneon-search");
       if (search) {
         search.addEventListener("input", () => {
           searchQuery = (search.value || "").trim().toLocaleLowerCase("nl");
+          updateMeneonWeergaveSummary();
           renderMeneonBrowse(entries);
         });
       }
@@ -2567,7 +2706,10 @@
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeInfoPopover();
+    if (e.key === "Escape") {
+      closeInfoPopover();
+      closeAllWeergavePanels();
+    }
   });
 
   window.addEventListener("popstate", () => {

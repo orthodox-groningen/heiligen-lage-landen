@@ -5,8 +5,20 @@ cyclus: jaar
 lage_landen: true
 locaties:
   - rath-melsigi
-selectie: kandidaat-schrappen
-selectie_toelichting: "Rath Melsigi (Ierland); zond missionarissen naar Frisia, zelf niet in de Lage Landen."
+selectie: nader-onderzoek
+selectie_toelichting: >-
+  Zelf niet in de Lage Landen; leidde te Rath Melsigi missionarissen op
+  (o.a. Willibrord). Indirecte invloed — deur open, geen actieve jacht.
+selectie_toelichting_publiek: |
+  Egbert bleef in Ierland (Rath Melsigi) en kwam zelf niet naar de Friese
+  of Nederlandse missie. Wel leidde en spoorde hij missionarissen aan die
+  wél hier werkten — waaronder Willibrord. Titus Brandsma noemde die
+  rol instrumenteel voor de kerstening van de Lage Landen.
+
+  Strikt genomen voldoet hij niet aan «zelf hier geweest én hier iets
+  gedaan». Omdat de invloed reëel maar **indirect** is, houden we hem
+  als grensgeval: de deur blijft open, zonder dit soort heiligen actief
+  te gaan verzamelen.
 namen:
   primair: Egbert van Rathmelsigi
 datum:
@@ -18,3 +30,6 @@ referenties:
   - label: "Wikipedia (NL) — Egbert van Rathmelsigi"
     url: "https://nl.wikipedia.org/wiki/Egbert_van_Rathmelsigi"
     geraadpleegd: "2026-08-16"
+  - label: "Titus Brandsma — De kalender van de Nederlandse heiligen (1921)"
+    locator: "Egbert van Rathmelsigi; instrumentele rol bij missie naar Frisia"
+    geraadpleegd: "2026-08-20"

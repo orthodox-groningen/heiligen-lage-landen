@@ -14,54 +14,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = REPO_ROOT / "data"
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 ENTRY_SUBDIRS = ("feesten", "heiligen", "vasten")
-NAMEN_PATH = DATA_ROOT / "namen.yaml"
 
 
 def load_yaml(path: Path) -> Any:
     return yaml.safe_load(path.read_text(encoding="utf-8"))
-
-
-def load_namen_catalogus() -> dict[str, dict[str, Any]]:
-    """Canonieke namen uit data/namen.yaml (entries + labels).
-
-    ``entries`` wint bij laden over namen in individuele YAML-bestanden.
-    """
-    if not NAMEN_PATH.is_file():
-        return {}
-    raw = load_yaml(NAMEN_PATH) or {}
-    entries = raw.get("entries") or {}
-    if not isinstance(entries, dict):
-        raise ValueError(f"{NAMEN_PATH}: 'entries' moet een mapping zijn")
-    out: dict[str, dict[str, Any]] = {}
-    for eid, val in entries.items():
-        if not isinstance(val, dict) or not val.get("primair"):
-            raise ValueError(f"{NAMEN_PATH}: entries.{eid}: primair ontbreekt")
-        item = {"primair": str(val["primair"]).strip()}
-        alts = val.get("alternatief") or []
-        if alts:
-            item["alternatief"] = [str(a).strip() for a in alts if str(a).strip()]
-        out[str(eid)] = item
-    return out
-
-
-def load_namen_labels() -> dict[str, dict[str, Any]]:
-    """Vrije labels (Boterweek e.d.) zonder eigen entry-bestand."""
-    if not NAMEN_PATH.is_file():
-        return {}
-    raw = load_yaml(NAMEN_PATH) or {}
-    labels = raw.get("labels") or {}
-    if not isinstance(labels, dict):
-        raise ValueError(f"{NAMEN_PATH}: 'labels' moet een mapping zijn")
-    out: dict[str, dict[str, Any]] = {}
-    for lid, val in labels.items():
-        if not isinstance(val, dict) or not val.get("primair"):
-            raise ValueError(f"{NAMEN_PATH}: labels.{lid}: primair ontbreekt")
-        item = {"primair": str(val["primair"]).strip()}
-        alts = val.get("alternatief") or []
-        if alts:
-            item["alternatief"] = [str(a).strip() for a in alts if str(a).strip()]
-        out[str(lid)] = item
-    return out
 
 
 def load_bronnen() -> dict[str, dict[str, Any]]:
@@ -125,7 +81,6 @@ def normalize_entry(
     path: Path,
     raw: dict[str, Any],
     bronnen: dict[str, dict[str, Any]],
-    namen_catalogus: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     entry = dict(raw)
     entry_id = entry.get("id") or path.stem
@@ -341,20 +296,16 @@ def normalize_entry(
         entry["onderdrukt_wekelijks_vasten"] = True
     entry["source_path"] = str(path.relative_to(REPO_ROOT)).replace("\\", "/")
 
-    file_namen = dict(entry.get("namen") or {})
-    catalog = (namen_catalogus or {}).get(entry_id)
-    if catalog:
-        entry["namen"] = {
-            "primair": catalog["primair"],
-            "alternatief": list(catalog.get("alternatief") or []),
-        }
-    else:
-        entry["namen"] = file_namen
-    if "primair" not in entry["namen"]:
-        raise ValueError(
-            f"{path}: namen.primair ontbreekt "
-            f"(zet in het YAML-bestand of in data/namen.yaml)"
-        )
+    namen = dict(entry.get("namen") or {})
+    primair = str(namen.get("primair") or "").strip()
+    if not primair:
+        raise ValueError(f"{path}: namen.primair ontbreekt")
+    alts = [
+        str(a).strip()
+        for a in (namen.get("alternatief") or [])
+        if str(a).strip() and str(a).strip().casefold() != primair.casefold()
+    ]
+    entry["namen"] = {"primair": primair, "alternatief": alts}
     return entry
 
 
@@ -380,9 +331,8 @@ def _sort_key(entry: dict[str, Any]) -> tuple:
 
 def load_entries() -> list[dict[str, Any]]:
     bronnen = load_bronnen()
-    namen_catalogus = load_namen_catalogus()
     entries = [
-        normalize_entry(path, raw, bronnen, namen_catalogus)
+        normalize_entry(path, raw, bronnen)
         for path, raw in load_raw_entries()
     ]
     ids = [e["id"] for e in entries]

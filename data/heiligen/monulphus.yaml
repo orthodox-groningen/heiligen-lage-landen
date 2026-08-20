@@ -8,9 +8,9 @@ selectie_toelichting: "Bisschop van Maastricht; stenen kerk boven het graf van S
 namen:
   primair: Monulphus
   alternatief:
-    - Monulf
-    - Monulph
-    - Monulphus van Maastricht
+  - Monulf
+  - Monulph
+  - Monulphus van Maastricht
 datum:
   waarde: "07-16"
   stijl: gregoriaans

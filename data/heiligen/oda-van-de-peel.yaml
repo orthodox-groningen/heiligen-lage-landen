@@ -8,7 +8,7 @@ selectie_toelichting: "Peel."
 namen:
   primair: Oda van de Peel
   alternatief:
-    - Oda van Brabant
+  - Oda van Brabant
 datum:
   waarde: "11-28"
   stijl: gregoriaans

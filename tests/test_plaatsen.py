@@ -20,6 +20,8 @@ def test_plaatsen_unieke_ids_en_coordinaten() -> None:
     assert "vlaanderen" in plaatsen
     assert plaatsen["vlaanderen"]["soort"] == "streek"
     assert plaatsen["frisia"]["soort"] == "streek"
+    assert plaatsen["frisia"]["naam"] == "Friesland"
+    assert "Frisia" in (plaatsen["frisia"].get("alternatief") or [])
     assert plaatsen["utrecht"]["soort"] == "plaats"
     for rec in plaatsen.values():
         assert -90 <= rec["lat"] <= 90
