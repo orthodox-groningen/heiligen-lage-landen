@@ -17,6 +17,11 @@ datum:
   paascyclus:
     anker: pascha
     offset_dagen: 49
+icoon:
+  bestand: iconen/pinksteren.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Icon of Pentecost (18th c., Russia. Priv.coll.).jpg"
 samenvatting: |
   Vijftig dagen na Pascha; gave van de Heilige Geest.
 verhaal: |

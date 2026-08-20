@@ -12,6 +12,11 @@ datum:
   van: "02-03"
   tot: "02-09"
   stijl: juliaans
+icoon:
+  bestand: iconen/ontmoeting-in-de-tempel.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Presentation of Jesus at the Temple icon, Lebanon (1763).jpg"
 samenvatting: |
   Nafeest tot en met de teruggave op 9 februari (volle jaarcyclus).
 verhaal: |
