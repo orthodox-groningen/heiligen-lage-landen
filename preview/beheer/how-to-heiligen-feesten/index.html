@@ -77,7 +77,7 @@ Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
 op de referentie in de entry, niet alleen in de catalogus. Sectiekop op de
 pagina: <strong>Verder lezen en kijken</strong>.</p><h2 id=heiligen-selectie-betekenis-bronlaag>Heiligen: selectie, betekenis, bronlaag</h2><p>Criteria in gewone taal: <a href=https://orthodox-ronl.github.io/kalender/preview/uitleg/heiligen/>Heiligen van de Lage Landen</a>.
 Velden: <a href=https://orthodox-ronl.github.io/kalender/preview/uitleg/heiligen-technisch/>technisch</a> en
-<a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><p>Pagina-opbouw (na de infobox): feestdag-link → <strong>Waarom in deze kalender</strong>
+<a href=https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md>docs/datamodel.md</a>.</p><p>Pagina-opbouw (na de infobox): feestdag-link → <strong>Betekenis voor de Lage Landen</strong>
 (<code>betekenis_lage_landen</code>) → samenvatting → verhaal → verder lezen →
 <strong>Over de bronnen</strong> → (alleen bij nader/kandidaat) selectieparagraaf.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>betekenis_lage_landen</span>: |<span style=color:#e6db74>
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  Wat deze heilige voor het christendom of de Orthodoxie
@@ -114,7 +114,7 @@ ids in <code>id_aliassen</code> en de oude namen onder <code>namen.alternatief</
 </span></span></code></pre></div><p><code>id_aliassen</code> mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. <code>generate.py</code> zet oude ids om in Hugo-aliases en schrijft
-<code>betekenis_lage_landen</code> onder <strong>Waarom in deze kalender</strong>. Selectie
+<code>betekenis_lage_landen</code> onder <strong>Betekenis voor de Lage Landen</strong>. Selectie
 staat op <a href=https://orthodox-ronl.github.io/kalender/preview/beheer/selectie/>Selectie heiligen</a>; bij
 <code>nader-onderzoek</code> / <code>kandidaat-schrappen</code> ook kort onderaan de publieke pagina.</p><h2 id=controleren>Controleren</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>python scripts/validate.py
 </span></span><span style=display:flex><span>python scripts/generate.py
