@@ -62,7 +62,7 @@ datum:
 ```
 
 `weekday_relative_date` in `scripts/kalender.py`. Stand Oud: anker is de
-Juliaanse feestdatum van dat jaar. Niet in het Meneon.
+Juliaanse feestdatum van dat jaar. Niet in het Synaxarion.
 
 ## Ids
 

@@ -62,5 +62,5 @@ week is.
 Effectief vastenniveau: `scripts/vasten.py` / dezelfde mengregel in
 `calendar.js`. Zie [Vasten (technisch)]({{% ref "/uitleg/vasten-technisch" %}}).
 
-Het Meneon filtert op feestdatum zonder jaar; zie
-[Meneon (technisch)]({{% ref "/uitleg/meneon-technisch" %}}).
+Het Synaxarion filtert op feestdatum zonder jaar; zie
+[Synaxarion (technisch)]({{% ref "/uitleg/synaxarion-technisch" %}}).

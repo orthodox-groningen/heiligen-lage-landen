@@ -271,5 +271,5 @@ python scripts/generate.py
 python -m pytest -q
 ```
 
-Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
+Daarna de entry op de site: Synaxarion (vaste dag), datumpagina (dit jaar),
 eventueel ICS. Klopt de naam niet, dan eerst `namen:` in het entry-YAML.

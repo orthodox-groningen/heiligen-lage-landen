@@ -28,7 +28,7 @@
           {{/* absURL: relURL "kalender/" botst met Pages-base /kalender/ + canonifyURLs */}}
           <a href="{{ "kalender/" | absURL }}">Kalender</a>
           <a href="{{ "lezingenrooster/" | relURL }}">Lezingenrooster</a>
-          <a href="{{ "meneon/" | relURL }}">Meneon</a>
+          <a href="{{ "synaxarion/" | relURL }}">Synaxarion</a>
           <a href="{{ "heiligen/" | relURL }}">Heiligen</a>
           <a href="{{ "agenda/" | relURL }}">Agenda</a>
           <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
@@ -40,7 +40,7 @@
       </div>
     </div>
   </header>
-  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "meneon") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") (eq .Section "heiligen") }} main-wide{{ end }}">
+  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "synaxarion") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") (eq .Section "heiligen") }} main-wide{{ end }}">
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

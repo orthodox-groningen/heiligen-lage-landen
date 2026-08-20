@@ -80,7 +80,7 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert body.index("## Over de bronnen") < body.index("open naslagwerken")
     assert "## Verder lezen en kijken" in body
     assert "## Referenties" not in body
-    assert "Meneon:" not in body
+    assert "Synaxarion:" not in body
 
 
 def test_entry_page_selectie_paragraaf_bij_nader_onderzoek(
@@ -252,7 +252,7 @@ def test_entry_page_selectie_na_verhaal(
     )
 
 
-def test_entry_page_feestdag_link_en_geen_meneon_voet(
+def test_entry_page_feestdag_link_en_geen_synaxarion_voet(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     content = tmp_path / "content"
@@ -263,8 +263,8 @@ def test_entry_page_feestdag_link_en_geen_meneon_voet(
     )
     assert meta["feestdatum"] == "11-07"
     assert "**Feestdag:** [7 november](/datum/?dag=11-07)" in body
-    assert "Meneon:" not in body
-    assert "/meneon/" not in body
+    assert "Synaxarion:" not in body
+    assert "/synaxarion/" not in body
 
 
 def test_entry_page_over_bronnen_toelichting(

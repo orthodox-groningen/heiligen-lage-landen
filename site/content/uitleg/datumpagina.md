@@ -17,7 +17,7 @@ eigen korte uitleg.
 De startpagina (logo) is dezelfde weergave als een datumpagina, maar dan
 voor de huidige dag.
 
-Dat is iets anders dan het [Meneon]({{% ref "/uitleg/meneon" %}}). Het Meneon
+Dat is iets anders dan het [Synaxarion]({{% ref "/uitleg/synaxarion" %}}). Het Synaxarion
 zegt: wat hoort *altijd* bij 15 augustus? Een datumpagina zegt: wat valt er
 op 15 augustus **in 2026** (of welk jaar u ook kiest)?
 

@@ -81,10 +81,10 @@ datum:
 # of hybride: van_offset_dagen + datum.tot (MM-DD), bv. Apostelvasten
 ```
 
-Pagina’s onder `/vasten/{id}/`; zichtbaar in meneon/agenda/kalender met
+Pagina’s onder `/vasten/{id}/`; zichtbaar in synaxarion/agenda/kalender met
 aan/uit-filters. ICS: `vasten-*.ics` en combinaties met heiligen/feesten.
 
-Het **Meneon** (`/meneon/`, optioneel `?dag=MM-DD`) toont alleen de vaste
+Het **Synaxarion** (`/synaxarion/`, optioneel `?dag=MM-DD`) toont alleen de vaste
 jaarcyclus. Een **datumpagina** (`/datum/?jaar=2026&dag=08-15`) toont wat er
 op die dag in dat jaar valt, inclusief paascyclus en wekelijks vasten.
 
@@ -190,7 +190,7 @@ In deze kalender:
 - `zondag-na-kerst` — zondag ná Kerst
 - `zondag-na-theofanie` — zondag ná Theofanie
 
-Die dagen staan **niet** in het Meneon (geen vaste MM-DD); wel op
+Die dagen staan **niet** in het Synaxarion (geen vaste MM-DD); wel op
 jaarkalender, datumpagina en ICS. Functie: `weekday_relative_date` in
 `scripts/kalender.py`.
 

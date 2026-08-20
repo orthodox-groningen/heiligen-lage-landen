@@ -7,7 +7,7 @@ git_date: 2026-08-20
 
 De **getoonde naam** van een heilige, feest of vasten staat in het
 entry-bestand zelf: `namen.primair` en optioneel `namen.alternatief`.
-Het **id** (bestandsnaam van de YAML) blijft gelijk. Zoeken in het Meneon
+Het **id** (bestandsnaam van de YAML) blijft gelijk. Zoeken in het Synaxarion
 gebruikt ook de alternatieve namen.
 
 How-to entries: [heilige of feest]({{% ref "/beheer/how-to-heiligen-feesten" %}}).
@@ -84,7 +84,7 @@ Na wijzigen:
 python scripts/generate.py
 ```
 
-Overal waar de naam staat (pagina, Meneon, kalender, ICS-titel) volgt de
+Overal waar de naam staat (pagina, Synaxarion, kalender, ICS-titel) volgt de
 nieuwe primaire naam. Oude ICS-abonnees zien de nieuwe titel na de
 volgende publicatie.
 
