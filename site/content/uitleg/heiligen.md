@@ -2,7 +2,7 @@
 title: "Heiligen van de Lage Landen"
 description: "Wie in deze kalender staat, hoe stevig de tekst is, en waarom een dag zonder heilige kan"
 uitleg_stijl: heiligen
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Deze kalender verzamelt **heiligen die bij de Lage Landen horen**, naast de

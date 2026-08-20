@@ -133,6 +133,17 @@ def bronlaag_note_md(entry: dict[str, Any]) -> str:
     return BRONLAAG_ENCYCLOPEDIE
 
 
+def over_bronnen_md(entry: dict[str, Any]) -> str:
+    """Sectie met optionele toelichting + bronlaag-noot."""
+    delen: list[str] = ["## Over de bronnen", ""]
+    extra = (entry.get("over_bronnen") or "").strip()
+    if extra:
+        delen.append(extra)
+        delen.append("")
+    delen.append(bronlaag_note_md(entry))
+    delen.append("")
+    return "\n".join(delen)
+
 def selectie_note_md(entry: dict[str, Any]) -> str:
     """Publieke paragraaf bij nader-onderzoek / kandidaat-schrappen."""
     if entry.get("soort") != "heilige":
@@ -189,13 +200,16 @@ def iter_civil_days(start: date, end: date):
 
 def render_refs_md(refs: list[dict[str, Any]]) -> str:
     if not refs:
-        return "_Nog geen referenties._\n"
+        return "_Nog geen bronnen._\n"
     lines = []
     for ref in refs:
         label = ref.get("label") or "Bron"
         url = ref.get("url")
         geraadpleegd = ref.get("geraadpleegd")
-        opmerking = ref.get("opmerking")
+        inhoud = (ref.get("inhoud") or "").strip()
+        opmerking = (ref.get("opmerking") or "").strip()
+        # Publiek: inhoud; anders fallback opmerking (oudere data).
+        lezerstekst = inhoud or opmerking
         if url:
             line = f"- [{label}]({url})"
         elif ref.get("isbn"):
@@ -210,8 +224,8 @@ def render_refs_md(refs: list[dict[str, Any]]) -> str:
         extras = []
         if geraadpleegd:
             extras.append(f"geraadpleegd {geraadpleegd}")
-        if opmerking:
-            extras.append(opmerking)
+        if lezerstekst:
+            extras.append(lezerstekst)
         if extras:
             line += f" — {'; '.join(extras)}"
         lines.append(line)
@@ -321,6 +335,12 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         fm.append(f"rustplaats_plaats: {yaml_quote(rp_naam)}")
         if rust.get("toelichting"):
             fm.append(f"rustplaats_toelichting: {yaml_quote(rust['toelichting'])}")
+    if entry.get("periode"):
+        fm.append(f"periode: {yaml_quote(str(entry['periode']).strip())}")
+    if entry.get("vastenniveau"):
+        fm.append(f"vastenniveau: {entry['vastenniveau']}")
+    if entry.get("onderdrukt_wekelijks_vasten"):
+        fm.append("onderdrukt_wekelijks_vasten: true")
     icoon = entry.get("icoon") or {}
     if icoon.get("bestand") and icoon.get("rechten") == "ok":
         fm.append(f"icoon: {yaml_quote('/' + icoon['bestand'].lstrip('/'))}")
@@ -337,35 +357,11 @@ def write_entry_page(entry: dict[str, Any]) -> None:
     fm.append("---")
 
     body: list[str] = []
-    if entry.get("titels"):
-        body.append("*" + " · ".join(entry["titels"]) + "*")
-        body.append("")
 
-    weeknamen = {
-        1: "maandag",
-        2: "dinsdag",
-        3: "woensdag",
-        4: "donderdag",
-        5: "vrijdag",
-        6: "zaterdag",
-        7: "zondag",
-    }
-    if vorm == "weekdagen":
-        namen = ", ".join(weeknamen[d] for d in dn["weekdagen"])
-        body.append(f"**Wekelijks:** elke {namen}.")
-        body.append("")
-    elif entry.get("cyclus") == "paascyclus" and vorm in {"periode", "periode_hybride"}:
+    # Kerngegevens (titel, datum, plaatsen, icoon, …) staan in de Hugo-infobox.
+    # Hier alleen toelichting die niet compact in de box past (jaarlijsten e.d.).
+    if entry.get("cyclus") == "paascyclus" and vorm in {"periode", "periode_hybride"}:
         van_o = dn["van_offset_dagen"]
-        body.append(
-            f"**Paascyclus-periode:** vanaf {van_o:+d} dagen t.o.v. Orthodox Pascha"
-        )
-        if vorm == "periode":
-            body.append(f" tot en met {dn['tot_offset_dagen']:+d} dagen.")
-        else:
-            body.append(
-                f" tot en met {mmdd_label(dn['tot_mmdd'])} (vaste einddatum)."
-            )
-        body.append("")
         body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
         body.append("")
         for y in occurrence_years():
@@ -385,12 +381,6 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         body.append("")
     elif entry.get("cyclus") == "paascyclus":
         offset = dn["paascyclus_offset"]
-        sign = "+" if offset >= 0 else ""
-        body.append(
-            f"**Paascyclus:** {sign}{offset} dagen t.o.v. Orthodox Pascha "
-            "(zelfde wereldlijke datum voor alle Orthodoxe kerken)."
-        )
-        body.append("")
         body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
         body.append("")
         for y in occurrence_years():
@@ -401,24 +391,9 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 f"(Juliaans {jd} {MONTH_NAMES_NL[jm]})"
             )
         body.append("")
-    elif vorm == "periode" and dn.get("van") and dn.get("tot"):
-        body.append(
-            f"**Periode:** {mmdd_label(dn['van'])} – {mmdd_label(dn['tot'])} "
-            "(zelfde dagnamen in nieuwe én oude kalender)."
-        )
-        body.append("")
     elif vorm == "weekdag_relatief":
-        wd = weeknamen[dn["weekdag"]]
-        welke = int(dn["welke"])
-        if welke == 1:
-            welke_nl = wd
-        else:
-            welke_nl = f"{welke}e {wd}"
-        richting_nl = "vóór" if dn["richting"] == "voor" else "na"
         body.append(
-            f"**{welke_nl.capitalize()} {richting_nl} "
-            f"{mmdd_label(dn['anker'])}** "
-            "(geen vaste feestdatum; hangt af van de weekdag van het anker)."
+            "Geen vaste feestdatum; hangt af van de weekdag van het anker."
         )
         body.append("")
         body.append("**Komende jaren (nieuwe kalender, wereldlijk):**")
@@ -438,87 +413,41 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             else:
                 body.append(f"- {y}: {label}")
         body.append("")
-    else:
-        assert feestdatum
+    elif vorm == "dag" and feestdatum:
         body.append(
-            f"**Feestdag:** {mmdd_label(feestdatum)} "
-            # f"(zelfde datum in de nieuwe/Gregoriaanse én de oude/Juliaanse kalender)"
+            f"**Feestdag:** [{mmdd_label(feestdatum)}](/datum/?dag={feestdatum})"
         )
+        body.append("")
         if dn.get("gregoriaans") or dn.get("juliaans"):
             parts = []
             if dn.get("gregoriaans"):
                 parts.append(f"Gregoriaans {mmdd_label(dn['gregoriaans'])}")
             if dn.get("juliaans"):
                 parts.append(f"Juliaans {mmdd_label(dn['juliaans'])}")
-            body.append("")
             body.append("**Expliciete notatie:** " + "; ".join(parts))
+            body.append("")
+    betekenis = (entry.get("betekenis_lage_landen") or "").strip()
+    if betekenis:
+        body.append("## Waarom in deze kalender")
         body.append("")
-    if entry.get("vastenniveau"):
-        niveau_labels = {
-            "streng": "streng",
-            "wijn_olie": "wijn en olie",
-            "vis": "vis toegestaan (typikon)",
-            "lichter": "lichter",
-            "vrij": "vastenvrij",
-        }
-        body.append(
-            f"**Vastenniveau (indicatief):** "
-            f"{niveau_labels.get(entry['vastenniveau'], entry['vastenniveau'])}."
-        )
-        body.append("")
-    if entry.get("onderdrukt_wekelijks_vasten"):
-        body.append(
-            "**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode."
-        )
-        body.append("")
-    if loc_ids:
-        links = [
-            f"[{locatie_namen([pid], plaatsen)[0]}](/heiligen/?plaats={pid})"
-            for pid in loc_ids
-        ]
-        body.append("**Plaatsen:** " + "; ".join(links))
-        body.append("")
-    rust = entry.get("rustplaats")
-    if rust and rust.get("plaats"):
-        rp_naam = locatie_namen([rust["plaats"]], plaatsen)[0]
-        toel = (rust.get("toelichting") or "").strip()
-        if toel:
-            body.append(f"**Rustplaats:** {toel} ({rp_naam}).")
-        else:
-            body.append(f"**Rustplaats:** {rp_naam}.")
-        body.append("")
-    if entry.get("periode"):
-        body.append(f"**Periode:** {entry['periode']}")
-        body.append("")
-    body.append(bronlaag_note_md(entry))
-    body.append("")
-    selectie_blok = selectie_note_md(entry)
-    if selectie_blok:
-        body.append(selectie_blok)
+        body.append(betekenis)
         body.append("")
     if entry.get("samenvatting"):
         body.append(entry["samenvatting"].strip())
-        body.append("")
-    betekenis = (entry.get("betekenis_lage_landen") or "").strip()
-    if betekenis:
-        body.append("## Betekenis voor de Lage Landen")
-        body.append("")
-        body.append(betekenis)
         body.append("")
     if entry.get("verhaal"):
         body.append("## Verhaal")
         body.append("")
         body.append(entry["verhaal"].strip())
         body.append("")
-    body.append("## Referenties")
+    body.append("## Verder lezen en kijken")
     body.append("")
     body.append(render_refs_md(entry.get("referenties") or []))
     body.append("")
-    if feestdatum and vorm == "dag":
-        body.append(
-            f"[Meneon: {mmdd_label(feestdatum)}](/meneon/?dag={feestdatum}) · "
-            f"[Deze dag dit jaar](/datum/?dag={feestdatum})"
-        )
+    body.append(over_bronnen_md(entry))
+    selectie_blok = selectie_note_md(entry)
+    if selectie_blok:
+        body.append(selectie_blok)
         body.append("")
     write_text(CONTENT / kind / f"{entry['id']}.md", "\n".join(fm + ["", *body]))
 

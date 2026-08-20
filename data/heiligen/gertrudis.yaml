@@ -10,6 +10,7 @@ namen:
   alternatief:
   - Gertrudis van Nijvel
   - Geertrui
+  - Gertrud von Nivelles
 datum:
   waarde: "03-17"
   stijl: gregoriaans
@@ -54,7 +55,12 @@ referenties:
   - bron_id: hlex
     label: "Heiligenlexikon — Gertrud von Nivelles"
     url: "https://www.heiligenlexikon.de/BiographienG/Gertrud_von_Nivelles.htm"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita over Nijvel, Iduberga/Begga-banden en discussie over
+      titel «abdis»; feestdag 17 maart.
   - label: "Wikipedia (NL) — Gertrudis van Nijvel"
     url: "https://nl.wikipedia.org/wiki/Gertrudis_van_Nijvel"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, abdij Nijvel en latere cultus.

@@ -25,7 +25,7 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Bavo](/heiligen/bavo/) (`data/heiligen/bavo.yaml`) — Gent.
 - [Begga](/heiligen/begga/) (`data/heiligen/begga.yaml`) — Dochter van Iduberga; stichting Andenne.
 - [Bernulphus](/heiligen/bernulphus/) (`data/heiligen/bernulphus.yaml`) — Bisschop van Utrecht; sterfjaar 1054, westers episcopaat in de Lage Landen.
-- [Bonifatius](/heiligen/bonifatius/) (`data/heiligen/bonifatius.yaml`) — Missie in Frisia; martelaarschap bij Dokkum.
+- [Bonifatius](/heiligen/bonifatius/) (`data/heiligen/bonifatius.yaml`) — Missie in Friesland; martelaarschap bij Dokkum.
 - [Cunera](/heiligen/cunera/) (`data/heiligen/cunera.yaml`) — Rhenen.
 - [Domitianus](/heiligen/domitianus/) (`data/heiligen/domitianus.yaml`) — Bisschop van Maastricht.
 - [Dymphna](/heiligen/dymphna/) (`data/heiligen/dymphna.yaml`) — Geel.
@@ -47,7 +47,7 @@ Wijzig het veld in `data/heiligen/`; deze pagina niet redigeren.
 - [Johannes van Shanghai](/heiligen/johannes-van-shanghai/) (`data/heiligen/johannes-van-shanghai.yaml`) — Bisschop van West-Europa; Nederlandse missie, klooster Den Haag, bisdom 1965.
 - [Lambertus](/heiligen/lambertus/) (`data/heiligen/lambertus.yaml`) — Bisschop van Maastricht; martelaar te Luik.
 - [Lebuinus](/heiligen/lebuinus/) (`data/heiligen/lebuinus.yaml`) — Deventer / Friesland.
-- [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`) — Geboren bij Utrecht; missie in Frisia.
+- [Ludger](/heiligen/ludger/) (`data/heiligen/ludger.yaml`) — Geboren bij Utrecht; missie in Friesland.
 - [Marcellinus van Utrecht](/heiligen/marcellinus-van-utrecht/) (`data/heiligen/marcellinus-van-utrecht.yaml`) — Utrecht.
 - [Monulphus](/heiligen/monulphus/) (`data/heiligen/monulphus.yaml`) — Bisschop van Maastricht; stenen kerk boven het graf van Servatius.
 - [Oda van Amay](/heiligen/oda-van-amay/) (`data/heiligen/oda-van-amay.yaml`) — Amay.

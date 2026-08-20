@@ -5,7 +5,7 @@ uitleg_stijl: feestdatum-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Technische bijlage bij de [uitleg Feestdatum]({{% ref "/uitleg/feestdatum" %}}).

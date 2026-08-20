@@ -2,7 +2,7 @@
 title: "Site bouwen en publiceren"
 description: "Valideren, genereren, tests, en wat de build overschrijft"
 weight: 10
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Korte reeks voordat u een wijziging in de data of de uitleg publiceert.

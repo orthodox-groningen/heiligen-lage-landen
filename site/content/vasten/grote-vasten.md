@@ -15,10 +15,9 @@ alternatief:
   - "Grote Veertig Dagen"
   - "Heilige Vasten"
   - "Tessarakostí"
+vastenniveau: streng
+onderdrukt_wekelijks_vasten: true
 ---
-
-**Paascyclus-periode:** vanaf -48 dagen t.o.v. Orthodox Pascha
- tot en met -8 dagen.
 
 **Komende jaren (wereldlijk / Gregoriaans):**
 
@@ -31,12 +30,6 @@ alternatief:
 - 2030: 11 maart – 20 april
 - 2031: 24 februari – 5 april
 
-**Vastenniveau (indicatief):** streng.
-
-**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
-
-> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
-
 Van Schone Maandag tot en met Lazarus-zaterdag (veertigdagen); daarna volgt de Grote Week.
 
 ## Verhaal
@@ -47,9 +40,13 @@ het klassieke schema volgen: geen vlees, geen zuivel/eieren; meestal geen vis;
 wijn en olie vaak op zaterdag en zondag. Vis klassiek o.a. op Aankondiging en
 Palmzondag. Parochiepraktijk en economia wijken hiervan af.
 
-## Referenties
+## Verder lezen en kijken
 
 - [OrthodoxWiki — Great Lent](https://orthodoxwiki.org/Great_Lent) — geraadpleegd 2026-08-16
 - [OrthodoxWiki — Fasting](https://orthodoxwiki.org/Fasting) — geraadpleegd 2026-08-16
 - [OCA — Great Lent](https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/great-lent) — geraadpleegd 2026-08-16
 
+
+## Over de bronnen
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.

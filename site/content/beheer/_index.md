@@ -1,7 +1,7 @@
 ---
 title: "Voor beheerders"
 description: "Wat staat waar, wat u mag wijzigen, en waar generate.py overheen schrijft"
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Deze pagina is voor wie de kalender **in de git-repo bijhoudt**: YAML
@@ -88,6 +88,7 @@ in die map verdwijnen bij `--clean`.
 
 - [Site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %}}) — valideren, genereren, tests, wat CI doet
 - [Heilige of feest toevoegen of wijzigen]({{% ref "/beheer/how-to-heiligen-feesten" %}})
+- [Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}}) — checklist aliassen, plaatsen, `inhoud`, iconen
 - [Weergavenamen wijzigen]({{% ref "/beheer/how-to-namen" %}})
 - [Vastenregels wijzigen]({{% ref "/beheer/how-to-vasten" %}})
 - [Lezingenrooster wijzigen]({{% ref "/beheer/how-to-lezingen" %}})

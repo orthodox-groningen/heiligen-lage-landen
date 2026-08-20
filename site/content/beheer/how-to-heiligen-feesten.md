@@ -2,7 +2,7 @@
 title: "Heilige of feest toevoegen of wijzigen"
 description: "YAML onder data/, namen in het entry-bestand; nooit de gegenereerde markdown"
 weight: 20
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de
@@ -131,25 +131,36 @@ Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
 
 ## Referenties
 
+Bij het lezen van een bron: checklist
+[Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}})
+(aliassen, plaatsen, `inhoud`, icoon).
+
 ```yaml
 referenties:
   - bron_id: oca-calendar
     url: "https://www.oca.org/saints/lives"
     geraadpleegd: "2026-08-16"
+    inhoud: "Korte vita en feestdag in de OCA-kalender."
   - label: "Handboek X"
     isbn: "978-…"
     pagina: "120–124"
     geraadpleegd: "2026-08-16"
+    inhoud: "Hoofdstuk over de missie in Frisia."
 ```
 
 `bron_id` wijst naar `data/bronnen/bronnen.yaml`. De locator hoort **ook**
-op de referentie in de entry, niet alleen in de catalogus.
+op de referentie in de entry, niet alleen in de catalogus. Sectiekop op de
+pagina: **Verder lezen en kijken**.
 
 ## Heiligen: selectie, betekenis, bronlaag
 
 Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen" %}}).
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
+
+Pagina-opbouw (na de infobox): feestdag-link → **Waarom in deze kalender**
+(`betekenis_lage_landen`) → samenvatting → verhaal → verder lezen →
+**Over de bronnen** → (alleen bij nader/kandidaat) selectieparagraaf.
 
 ```yaml
 betekenis_lage_landen: |
@@ -162,7 +173,7 @@ selectie_toelichting_publiek: "…"  # optioneel; lezersversie
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
-- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt op de pagina
+- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt onderaan
   **Over de plaats in deze kalender** (`_publiek`, anders `selectie_toelichting`).
 - Extra top-level YAML-velden mogen (notities/experimenten); ze komen niet
   op de site tot generate/UI ze kent. Zie
@@ -190,10 +201,17 @@ Feesten: `nagekeken` blijft nagekeken tekst met traceerbare bronnen.
 Bestand onder `site/static/` (doorgaans `site/static/iconen/<id>.jpg`).
 Alleen tonen als `rechten: ok`, met `bron` en `licentie`. Geen URL als
 afbeeldingsbron: een plaatje op een andere site mag u niet zomaar in de
-browser laden (auteursrecht, kapotte links, hotlink-blokkades). Staat het
-legaal op Wikimedia Commons (publiek domein of CC met naamsvermelding),
-dan kopieert u het bestand naar `site/static/iconen/` en vermeldt u de
-Commons-pagina als `bron`.
+browser laden (auteursrecht, kapotte links, hotlink-blokkades).
+
+**Commons-checklist**
+
+1. Zoek op [Wikimedia Commons](https://commons.wikimedia.org/) (naam +
+   heilige / icon).
+2. Open de **File:**-pagina; lees licentie en attribuutvereisten.
+3. Toegestaan voor ons: publiek domein, CC0, of CC-BY / CC-BY-SA met
+   naamsvermelding in `bron` / `licentie`.
+4. Download het bestand; bewaar onder `site/static/iconen/<id>.…`.
+5. Zet in YAML `rechten: ok` en verwijs naar de File-pagina als `bron`.
 
 ```yaml
 icoon:
@@ -204,7 +222,8 @@ icoon:
 ```
 
 Ontbreekt een legaal bestand: laat `icoon` weg. «Icoon in parochie» hoort
-niet in `titels`.
+niet in `titels`. Bron beoordelen (stap beeldmateriaal):
+[Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}}).
 
 ## Dubbele ids samenvoegen
 
@@ -220,9 +239,9 @@ id_aliassen:
 `id_aliassen` mag het eigen id niet herhalen en geen id dat nog als
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
-`betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
+`betekenis_lage_landen` onder **Waarom in deze kalender**. Selectie
 staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}); bij
-`nader-onderzoek` / `kandidaat-schrappen` ook kort op de publieke pagina.
+`nader-onderzoek` / `kandidaat-schrappen` ook kort onderaan de publieke pagina.
 
 ## Controleren
 

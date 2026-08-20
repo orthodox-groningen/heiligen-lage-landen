@@ -7,6 +7,9 @@ selectie: voldoet
 selectie_toelichting: "Apostel van de Friezen; aartsbisschop van Utrecht."
 namen:
   primair: Willibrord
+  alternatief:
+  - Willibrordus
+  - Clemens Willibrord
 datum:
   waarde: "11-07"
   stijl: gregoriaans
@@ -40,10 +43,10 @@ betekenis_lage_landen: |
 verhaal: |
   Willibrord werd circa 658 in Northumbrië geboren, trad in te Ripon en
   verbleef twaalf jaar in Ierland (Rath Melsigi) voordat hij in 690 naar
-  Frisia ging. In 695 wijdde paus Sergius I hem in Rome tot aartsbisschop
+  Friesland ging. In 695 wijdde paus Sergius I hem in Rome tot aartsbisschop
   van de Friezen. Hij stichtte kerken en kloosters, waaronder Utrecht en
   Echternach. Hij ontsliep op 7 november 739 te Echternach.
-
+over_bronnen: |
   Alcuinus schreef zijn vita in de achtste eeuw. OrthodoxWiki volgt die
   hoofdlijn; details van individuele stichtingen (onder meer de exacte
   omvang van het Utrechtse territorium) blijven in de vakliteratuur in
@@ -51,10 +54,18 @@ verhaal: |
 referenties:
   - label: "OrthodoxWiki — Willibrord"
     url: "https://orthodoxwiki.org/Willibrord"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte orthodoxe vita: missie vanuit Rath Melsigi, wijding in Rome,
+      Utrecht en Echternach; feestdag 7 november.
   - label: "Wikipedia (NL) — Willibrord"
     url: "https://nl.wikipedia.org/wiki/Willibrord"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, missie en cultus; handig voor
+      plaatsen en jaartallen naast de lexikonbronnen.
   - label: "heiligen.net — Willibrord"
     url: "https://www.heiligen.net/heiligen/11/07/11-07-0739-willibrord.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte heiligenpagina met feestdag en korte levensschets.

@@ -1,6 +1,6 @@
 ---
 title: "Orthodoxe Kalender met Heiligen van de Lage Landen"
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 <!-- Deze kalender toont vasten, lezingen, feesten en heiligen van de Lage Landen.

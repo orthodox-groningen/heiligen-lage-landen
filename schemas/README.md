@@ -34,13 +34,15 @@ Gebruik dit als beslisboom. Details en voorbeelden staan in de how-to’s.
 | --- | --- | --- |
 | `namen.primair` / `alternatief` | Je de getoonde titel of zoekaliassen wijzigt | Je alleen het id wilt “mooier” maken (id blijft stabiel) |
 | `samenvatting` | Eén alinea “wie is dit” | Lange vita (dat is `verhaal`) |
-| `betekenis_lage_landen` | Je specifiek de band met NL/BE/LUX uitlegt | Algemene heiligenvita zonder LL-band |
+| `betekenis_lage_landen` | Je specifiek de band met NL/BE/LUX uitlegt (kop: Waarom in deze kalender) | Algemene heiligenvita zonder LL-band |
 | `verhaal` | Je een leesbaar verhaal hebt met referentie | Ongestaafde AI-tekst zonder bron |
 | `selectie` | Heilige: scoort tegen de criteria | Feest/vasten (niet van toepassing) |
 | `selectie_toelichting` | Korte reden voor beheer (+ fallback publiek) | Lange essay (gebruik `_publiek`) |
 | `selectie_toelichting_publiek` | Bezoekers meer context nodig hebben dan de korte zin | Status `voldoet` (wordt niet getoond) |
 | `locaties` | Concrete plaats-ids; streek alleen als aanvulling | Vrije tekst, bedevaarten, “heel Europa” |
 | `rustplaats` | Traditionele rustplaats van het lichaam | Reliekenverspreiding |
+| `referenties[].inhoud` | Je de lezer vertelt wat die bron biedt | Alleen een kale URL zonder nut |
+| `over_bronnen` | Je bronkeuze of vita-discussie toelicht (onder «Over de bronnen») | Herhaling van de hele vita |
 | `referenties` | Elke inhoudelijke claim die je toevoegt | Lege “bronnen” zonder locator |
 | `bronlaag` | `nagekeken` na lexikon/vita; anders `encyclopedie` | “Voelt betrouwbaar” zonder bron |
 | Extra top-level veld | Notitie/experiment dat de site nog niet toont | Iets dat wél op de site moet (dan eerst schema + generate) |

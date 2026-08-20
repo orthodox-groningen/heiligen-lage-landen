@@ -2,7 +2,7 @@
 title: "Kleuren in de jaarkalender"
 description: "Wat de kleuren op de jaarkalender betekenen"
 uitleg_stijl: kleuren
-git_date: 2026-08-16
+git_date: 2026-08-17
 ---
 
 Op de [jaarkalender]({{% ref "/kalender" %}}) heeft elke dag een kleur. Die

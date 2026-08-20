@@ -68,11 +68,20 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert meta["aliases"] == ["/heiligen/oud-id/"]
     assert "selectie" not in meta
     assert "niet op de publieke pagina" not in body
-    assert "## Betekenis voor de Lage Landen" in body
+    assert "## Waarom in deze kalender" in body
     assert "Predikte onder de Friezen." in body
     assert "## Over de plaats in deze kalender" not in body
     assert "nagekeken aan een lexikon" not in body
+    # Bronnoot ná inhoud, onder kop Over de bronnen
+    assert "## Over de bronnen" in body
+    assert body.index("## Waarom in deze kalender") < body.index("## Over de bronnen")
+    assert body.index("## Verder lezen en kijken") < body.index("## Over de bronnen")
     assert "open naslagwerken" in body
+    assert body.index("## Over de bronnen") < body.index("open naslagwerken")
+    assert "## Verder lezen en kijken" in body
+    assert "## Referenties" not in body
+    assert "## Betekenis voor de Lage Landen" not in body
+    assert "Meneon:" not in body
 
 
 def test_entry_page_selectie_paragraaf_bij_nader_onderzoek(
@@ -94,6 +103,9 @@ def test_entry_page_selectie_paragraaf_bij_nader_onderzoek(
     assert "nog niet uitgemaakt" in body
     assert "Uitleg voor bezoekers over het grensgeval." in body
     assert "Korte beheerzin." not in body
+    assert body.index("## Verder lezen en kijken") < body.index(
+        "## Over de plaats in deze kalender"
+    )
 
 
 def test_entry_page_selectie_fallback_toelichting(
@@ -155,8 +167,124 @@ def test_entry_page_plaatsen_als_namen_en_rustplaats(
     assert "utrecht" not in meta["locaties"]
     assert "Utrecht" in meta["locatie_zoek"]
     assert "Vlaanderen" in meta["locatie_zoek"]
-    assert "[Utrecht](/heiligen/?plaats=utrecht)" in body
-    assert "Abdij van Echternach (Echternach)" in body
+    assert meta["rustplaats_plaats"] == "Echternach"
+    assert meta["rustplaats_toelichting"] == "Abdij van Echternach"
+    # Plaatsen/rustplaats horen in de Hugo-infobox (front matter), niet in de body.
+    assert "**Plaatsen:**" not in body
+    assert "**Rustplaats:**" not in body
+    assert "[7 november](/datum/?dag=11-07)" in body or "**Feestdag:**" in body
+
+
+def test_entry_page_infobox_velden_in_front_matter(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="voldoet",
+            titels=["Apostel van de Friezen"],
+            periode="658–739",
+            vastenniveau="vis",
+            onderdrukt_wekelijks_vasten=True,
+        )
+    )
+    text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    meta, body = _split_hugo_markdown(text)
+    assert meta["titels"] == ["Apostel van de Friezen"]
+    assert meta["periode"] == "658–739"
+    assert meta["vastenniveau"] == "vis"
+    assert meta["onderdrukt_wekelijks_vasten"] is True
+    assert meta["feestdatum"] == "11-07"
+    assert "*Apostel van de Friezen*" not in body
+    assert "**Periode:**" not in body
+    assert "**Vastenniveau" not in body
+
+
+def test_entry_page_referentie_inhoud_wint_van_opmerking(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="voldoet",
+            betekenis_lage_landen="Werkte hier.",
+            referenties=[
+                {
+                    "label": "Lexikon",
+                    "url": "https://example.org/lex",
+                    "geraadpleegd": "2026-08-20",
+                    "inhoud": "Lexikonvita over de Friese missie.",
+                    "opmerking": "interne notitie niet tonen",
+                }
+            ],
+        )
+    )
+    body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )[1]
+    assert "## Verder lezen en kijken" in body
+    assert "Lexikonvita over de Friese missie." in body
+    assert "interne notitie niet tonen" not in body
+    assert "geraadpleegd 2026-08-20" in body
+
+
+def test_entry_page_selectie_na_verhaal(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="nader-onderzoek",
+            selectie_toelichting="Grensgeval.",
+            betekenis_lage_landen="Indirecte rol.",
+            verhaal="Korte vita.",
+        )
+    )
+    body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )[1]
+    assert body.index("## Waarom in deze kalender") < body.index("## Verhaal")
+    assert body.index("## Verhaal") < body.index("## Verder lezen en kijken")
+    assert body.index("## Verder lezen en kijken") < body.index(
+        "## Over de plaats in deze kalender"
+    )
+
+
+def test_entry_page_feestdag_link_en_geen_meneon_voet(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(_heilige(selectie="voldoet"))
+    meta, body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )
+    assert meta["feestdatum"] == "11-07"
+    assert "**Feestdag:** [7 november](/datum/?dag=11-07)" in body
+    assert "Meneon:" not in body
+    assert "/meneon/" not in body
+
+
+def test_entry_page_over_bronnen_toelichting(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="voldoet",
+            over_bronnen="De vita van X is de hoofdbron.",
+        )
+    )
+    body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )[1]
+    assert "## Over de bronnen" in body
+    assert "De vita van X is de hoofdbron." in body
+    assert body.index("De vita van X is de hoofdbron.") < body.index("**Bron:**")
 
 
 def test_entry_page_nagekeken_bronzin(

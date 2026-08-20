@@ -2,7 +2,7 @@
 title: "Agenda"
 description: "De kerkelijke kalender op uw telefoon of computer: kiezen, downloaden of abonneren"
 uitleg_stijl: agenda
-git_date: 2026-08-18
+git_date: 2026-08-19
 ---
 
 De pagina [Agenda]({{% ref "/agenda" %}}) is bedoeld om de kerkelijke

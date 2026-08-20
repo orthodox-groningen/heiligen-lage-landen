@@ -5,7 +5,7 @@ uitleg_stijl: heiligen-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Technische bijlage bij de [uitleg Heiligen]({{% ref "/uitleg/heiligen" %}}).
@@ -59,9 +59,9 @@ betekenis_lage_landen: |
 
 Verplicht bij `bronlaag: nagekeken` voor `soort: heilige`. Als het veld
 gezet is, gelden dezelfde referentie-eisen als bij `verhaal` /
-`samenvatting`. `generate.py` zet het onder het kopje **Betekenis voor de
-Lage Landen** en in `entries.json` (veld `betekenis_lage_landen`, alleen
-heiligen).
+`samenvatting`. `generate.py` zet het onder **Waarom in deze kalender**
+(vóór samenvatting/verhaal) en in `entries.json` (veld
+`betekenis_lage_landen`, alleen heiligen).
 
 ## Bronlaag
 

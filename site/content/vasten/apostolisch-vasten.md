@@ -15,10 +15,9 @@ alternatief:
   - "Apostelenvasten"
   - "Petrus-en-Paulusvasten"
   - "Vasten der Apostelen"
+vastenniveau: lichter
+onderdrukt_wekelijks_vasten: true
 ---
-
-**Paascyclus-periode:** vanaf +57 dagen t.o.v. Orthodox Pascha
- tot en met 28 juni (vaste einddatum).
 
 **Komende jaren (wereldlijk / Gregoriaans):**
 
@@ -31,12 +30,6 @@ alternatief:
 - 2030: 24 juni – 28 juni
 - 2031: 9 juni – 28 juni
 
-**Vastenniveau (indicatief):** lichter.
-
-**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
-
-> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
-
 Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).
 
 ## Verhaal
@@ -47,8 +40,12 @@ Petrus en Paulus (29 juni). De lengte wisselt met Pascha: soms kort, soms lang.
 De strengheid is doorgaans lichter dan de Grote Vasten, maar woensdag/vrijdag
 blijven streng; details (vis, olie, wijn) volgen typikon en lokale praktijk.
 
-## Referenties
+## Verder lezen en kijken
 
 - [Wikipedia (EN) — Apostles' Fast](https://en.wikipedia.org/wiki/Apostles%27_Fast) — geraadpleegd 2026-08-16
 - [OrthodoxWiki — Fasting](https://orthodoxwiki.org/Fasting) — geraadpleegd 2026-08-16
 
+
+## Over de bronnen
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.

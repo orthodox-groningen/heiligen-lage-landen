@@ -198,6 +198,10 @@
       "type": "string",
       "description": "Apart stuk: wat deze heilige voor het christendom of de Orthodoxie in de Lage Landen betekende. Herbruikbaar buiten de heiligenpagina."
     },
+    "over_bronnen": {
+      "type": "string",
+      "description": "Optionele toelichting onder «Over de bronnen» (vóór de bronlaag-noot)."
+    },
     "selectie": {
       "type": "string",
       "enum": ["voldoet", "nader-onderzoek", "kandidaat-schrappen"],
@@ -233,7 +237,14 @@
             "type": "string",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
           },
-          "opmerking": { "type": "string" },
+          "inhoud": {
+            "type": "string",
+            "description": "Voor de lezer: wat je in deze bron leest of ziet (1–3 zinnen)."
+          },
+          "opmerking": {
+            "type": "string",
+            "description": "Interne notitie; publiek alleen als fallback als inhoud ontbreekt."
+          },
           "isbn": { "type": "string", "minLength": 1 },
           "pagina": { "type": "string", "minLength": 1 },
           "locator": {
