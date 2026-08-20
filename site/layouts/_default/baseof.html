@@ -25,7 +25,8 @@
       <a class="brand" href="{{ "" | relURL }}" data-info-tip="site" title="Wat staat er op deze site">{{ .Site.Title }}</a>
       <div class="header-tools">
         <nav class="nav" aria-label="Hoofdnavigatie">
-          <a href="{{ "kalender/" | relURL }}">Kalender</a>
+          {{/* absURL: relURL "kalender/" botst met Pages-base /kalender/ + canonifyURLs */}}
+          <a href="{{ "kalender/" | absURL }}">Kalender</a>
           <a href="{{ "lezingenrooster/" | relURL }}">Lezingenrooster</a>
           <a href="{{ "meneon/" | relURL }}">Meneon</a>
           <a href="{{ "heiligen/" | relURL }}">Heiligen</a>

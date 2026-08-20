@@ -21,6 +21,9 @@ def test_nav_heeft_heiligen_en_uitleg() -> None:
     assert 'href="{{ "heiligen/" | relURL }}">Heiligen</a>' in html
     assert ">Uitleg</a>" in html
     assert ">Help</a>" not in html
+    # relURL "kalender/" + canonifyURLs botst met Pages-base /kalender/
+    assert 'href="{{ "kalender/" | absURL }}">Kalender</a>' in html
+    assert 'href="{{ "kalender/" | relURL }}">Kalender</a>' not in html
 
 
 def test_homepage_verwijst_naar_uitleg_heiligen() -> None:

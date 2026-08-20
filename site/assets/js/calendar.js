@@ -892,30 +892,28 @@
     title.textContent = nieuwOudTitle(style);
 
     if (unit === "jaar") {
+      // Raster is altijd burgerlijk; inhoud hangt van Nieuw/Oud af.
       body.innerHTML =
-        style === "juliaans"
-          ? `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
-            `Daarop staan vaste feesten op hun wereldlijke vierdatum ` +
-            `(Besnijdenis op 14 januari). ` +
-            `Pascha blijft op dezelfde wereldlijke dag.</p>`
-          : `<p>U ziet het wereldlijke jaar ${viewYear}. ` +
-            `Daarop vallen vaste feesten op hun feestdatum ` +
-            `(Besnijdenis op 1 januari). ` +
-            `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+        `<p>Deze jaarkalender toont burgerlijke datums — zoals op een ` +
+        `Nederlandse agenda (1&nbsp;januari is nieuwjaarsdag). Wat er op een ` +
+        `dag staat, hangt af van uw keuze Nieuw of Oud: met Nieuw valt Kerst ` +
+        `op 25&nbsp;december, met Oud op 7&nbsp;januari.</p>`;
       fillNieuwOudMeer(meer);
       return;
     }
 
     if (unit === "maand") {
       const monthName = MONTHS[parseInt(roosterMonth, 10)] || "";
+      const waar =
+        monthName != null && monthName !== ""
+          ? `In ${monthName} ${viewYear}`
+          : "In deze maand";
       body.innerHTML =
         style === "juliaans"
-          ? `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
-            `Het rooster volgt de oude kalender: vaste dagen op hun ` +
-            `wereldlijke vierdatum. Pascha blijft ongewijzigd.</p>`
-          : `<p>U ziet ${monthName} ${viewYear} in wereldlijke datums. ` +
-            `Het rooster volgt de nieuwe kalender: vaste dagen op hun ` +
-            `feestdatum. Pascha blijft ongewijzigd.</p>`;
+          ? `<p>${waar} ziet u burgerlijke datums. De inhoud van elke dag ` +
+            `volgt de <strong>oude</strong> (Juliaanse) kalender.</p>`
+          : `<p>${waar} ziet u burgerlijke datums. De inhoud van elke dag ` +
+            `volgt de <strong>nieuwe</strong> (Gregoriaanse) kalender.</p>`;
       fillNieuwOudMeer(meer);
       return;
     }
@@ -926,21 +924,20 @@
       civilToLiturgical(view.year, view.mmdd)
     );
     const dayPhrase = isViewToday(style)
-      ? `Vandaag is het wereldlijk ${label(view.mmdd)}`
-      : `Deze dag is wereldlijk ${label(view.mmdd)} ${view.year}`;
+      ? `Vandaag is het burgerlijk ${label(view.mmdd)}`
+      : `Deze dag is burgerlijk ${label(view.mmdd)} ${view.year}`;
     if (style === "juliaans") {
       body.innerHTML =
-        `<p>${dayPhrase}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
-        `Vaste feesten staan op hun wereldlijke vierdatum ` +
-        `(Besnijdenis op 14 januari). ` +
-        `Pascha blijft op dezelfde wereldlijke dag.</p>`;
+        `<p>${dayPhrase}. Volgens de oude telling is dat ` +
+        `${label(julianOnView)}.</p>` +
+        `<p>We tonen hier wat die dag volgens de <strong>oude</strong> ` +
+        `(Juliaanse) kalender wordt gevast, gelezen en gevierd.</p>`;
     } else {
       body.innerHTML =
         `<p>${dayPhrase}. ` +
-        `Volgens de Juliaanse telling is dat ${label(julianOnView)}. ` +
-        `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
-        `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+        `(Volgens de oude telling is dat ${label(julianOnView)}.)</p>` +
+        `<p>We tonen hier wat die dag volgens de <strong>nieuwe</strong> ` +
+        `(Gregoriaanse) kalender wordt gevast, gelezen en gevierd.</p>`;
     }
     fillNieuwOudMeer(meer);
   }
@@ -1180,9 +1177,9 @@
     if (kind === "toon") {
       title.textContent = "Toon van de week";
       body.innerHTML =
-        `<p>De acht wekelijkse zangtonen van de Octoechos, in de Slavische ` +
-        `praktijk (Moskou). Toon 1 begint op Thomaszondag; in de Lichte Week ` +
-        `toont de kalender eveneens Toon 1.</p>`;
+        `<p>Naast de datum staat de toon van de week (1 tot 8) voor de ` +
+        `Slavische zangpraktijk. Dat helpt bij de Octoechos; het typikon ` +
+        `van uw parochie blijft leidend.</p>`;
       if (meer) {
         meer.hidden = false;
         meer.innerHTML = achtergrondLink("toon", "Meer over de toon");
@@ -1196,13 +1193,13 @@
     if (kind === "site") {
       title.textContent = "Orthodoxe kalender";
       body.innerHTML =
-        `<p>Deze site is een praktisch hulpmiddel voor orthodoxe gelovigen ` +
-        `in de Lage Landen — vooral in de Russische traditie — met bijzondere ` +
-        `aandacht voor heiligen die hier hoorden. ` +
-        `<a class="text-link" href="${assetUrl("uitleg/")}">Meer uitleg</a>.</p>`;
+        `<p>Praktisch hulpmiddel voor orthodoxe gelovigen in de Lage Landen ` +
+        `(vooral de Russische traditie). Gedachtenissen beperken zich tot ` +
+        `de Heiligen van de Lage Landen.</p>`;
       if (meer) {
-        meer.hidden = true;
-        meer.innerHTML = "";
+        meer.hidden = false;
+        meer.innerHTML =
+          `<a class="text-link" href="${assetUrl("uitleg/")}">Meer uitleg</a>`;
       }
       return;
     }
@@ -1219,7 +1216,7 @@
       return;
     }
     if (kind === "nieuw-oud") {
-      // Knop «?» naast Nieuw/Oud: algemene uitleg, geankerd op vandaag.
+      // Knop «?» naast Nieuw/Oud: situatief, geankerd op vandaag.
       const style = getStyle();
       const civilToday = civilTodayMmdd();
       const now = new Date();
@@ -1229,16 +1226,16 @@
       title.textContent = nieuwOudTitle(style);
       if (style === "juliaans") {
         body.innerHTML =
-          `<p>Wereldlijk is het ${label(civilToday)}. ` +
-          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
-          `Vaste feesten staan op hun wereldlijke vierdatum (Besnijdenis op 14 januari). ` +
-          `Pascha blijft op dezelfde wereldlijke dag.</p>`;
+          `<p>U heeft de <strong>oude</strong> (Juliaanse) kalender gekozen. ` +
+          `Volgens die telling is het vandaag ${label(julianToday)}. ` +
+          `Wat u op deze pagina ziet, hoort bij die oude telling — zoals ` +
+          `veel Orthodoxe parochies en kloosters die volgen.</p>`;
       } else {
         body.innerHTML =
-          `<p>Wereldlijk is het ${label(civilToday)}. ` +
-          `Volgens de Juliaanse telling is dat ${label(julianToday)}. ` +
-          `Vaste feesten vallen op hun feestdatum (Besnijdenis op 1 januari). ` +
-          `Pascha is dezelfde wereldlijke dag als bij Oud.</p>`;
+          `<p>U heeft de <strong>nieuwe</strong> (Gregoriaanse) kalender ` +
+          `gekozen. Die valt samen met de burgerlijke datum; vandaag is het ` +
+          `${label(civilToday)}. Wat u hier ziet, hoort bij die nieuwe ` +
+          `telling.</p>`;
       }
       fillNieuwOudMeer(meer);
       return;
@@ -1492,7 +1489,7 @@
         `<p class="muted today-geen-heilige">` +
         achtergrondLink(
           "heiligen",
-          "Geen feest/gedachtenis van een Heilige van de Lage Landen"
+          "(Geen feest/gedachtenis van een Heilige van de Lage Landen)"
         ) +
         `</p>`
       );
