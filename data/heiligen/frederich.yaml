@@ -1,10 +1,8 @@
 id: frederich
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
 selectie_toelichting: "Bisschop van Utrecht."
 namen:
@@ -12,14 +10,57 @@ namen:
   alternatief:
   - Frederik van Utrecht
   - Frederik
+  - Fredericus
+  - Frideric
 datum:
-  waarde: 07-18
+  waarde: "07-18"
   stijl: gregoriaans
 titels:
-- Bisschop van Utrecht
-periode: 9e eeuw
-samenvatting: 'Heilige van de Lage Landen: Frederich. Bisschop van Utrecht.'
+  - Bisschop van Utrecht
+  - Martelaar
+periode: "ca. 780–838"
+locaties:
+  - utrecht
+rustplaats:
+  plaats: utrecht
+  toelichting: "Sint-Salvatorkerk (Oudmunster; verdwenen)"
+icoon:
+  bestand: iconen/frederich.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Frederik van Utrecht.jpg"
+samenvatting: |
+  Bisschop van Utrecht; predikte in het noorden van het bisdom;
+  volgens de legende vermoord te Utrecht. Feestdag 18 juli.
+betekenis_lage_landen: |
+  Frederik was bisschop van Utrecht in de Karolingische tijd (ca.
+  815–838). Hij predikte onder meer op Walcheren en, met Odulphus,
+  in het noorden. Zijn martelaarslegende en graf in de Salvatorkerk
+  maken hem tot een vaste Utrechtse heilige van vóór het schisma —
+  kern van de noordelijke Lage Landen.
+verhaal: |
+  Uit Friese adel; opgeleid te Utrecht onder Ricfried. Als bisschop
+  bekend om geleerdheid (band met Hrabanus Maurus; synode Mainz 829).
+  De Passio Friderici (11e eeuw) vertelt moord na de mis, toegeschreven
+  aan keizerin Judith of aan tegenstanders van de kerstening op
+  Walcheren — historisch omstreden. Overleden ca. 18 juli 834–838;
+  begraven in de Salvatorkerk. Patroon tegen doofheid.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Friedrich von Utrecht"
+    url: "https://www.heiligenlexikon.de/BiographienF/Friedrich_von_Utrecht.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Friese herkomst, bisschop Utrecht, missie,
+      martelaarslegende en graf in de Salvatorkerk.
   - label: "Wikipedia (NL) — Frederik van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Frederik_van_Utrecht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Passio en discussie over
+      de moordmotieven.
+  - label: "heiligen.net — Frederik van Utrecht"
+    url: "https://www.heiligen.net/heiligen/07/18/07-18-0838-frederik.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografie met legende over Judith/Walcheren en cultusnotities.

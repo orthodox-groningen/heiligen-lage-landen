@@ -1,10 +1,8 @@
 id: woutruide
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - bergen
 selectie: voldoet
 selectie_toelichting: "Bergen (Waudru)."
 namen:
@@ -12,14 +10,58 @@ namen:
   alternatief:
   - Waldetrudis
   - Waudru
+  - Waltrudis
+  - Waltraud
 datum:
-  waarde: 04-09
+  waarde: "04-09"
   stijl: gregoriaans
 titels:
-- Stichteres van een klooster
-periode: '688'
-samenvatting: 'Heilige van de Lage Landen: Woutruide. Stichteres van een klooster.'
+  - Stichteres van Bergen
+  - Abdis
+periode: "~612–688"
+locaties:
+  - bergen
+rustplaats:
+  plaats: bergen
+  toelichting: "Sint-Waltrudiskerk (collegiale Ste-Waudru)"
+icoon:
+  bestand: iconen/woutruide.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:De heilige Waldetrudis van Mons, objectno PK.OPB.0070.013.jpg"
+samenvatting: |
+  Stichteres van het klooster waaruit Bergen (Mons) groeide; zuster van
+  Aldegonda. Feestdag 9 april.
+betekenis_lage_landen: |
+  Woutruide (Waudru/Waldetrudis) is de stadsheilige van Bergen: haar
+  klooster op de heuvel Castrilocus werd de kern van Mons. Samen met
+  zuster Aldegonda (Maubeuge) en echtgenoot Vincentius Madelgarius
+  (Hautmont) hoort zij bij de Merovingische heiligenfamilie van
+  Henegouwen — een wortel van het christendom in de zuidelijke Lage
+  Landen. Ook Herentals eert haar als patrones.
+verhaal: |
+  Geboren te Cousolre (rond 612) als dochter van Waldebert en Bertilia,
+  gehuwd met Madelgarius (Vincentius); vier kinderen die als heiligen
+  worden vereerd. Na wederzijdse kloosterkeuze stichtte zij een
+  gemeenschap te Castrilocus (Mons) en werd eerste abdis. Zij stierf op
+  9 april circa 688; heiligverklaring/cultus formeel in 1039. Relieken in
+  de gotische collegiale Ste-Waudru; de Ducasse van Mons eert haar
+  jaarlijks.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Waltraud von Mons"
+    url: "https://www.heiligenlexikon.de/BiographienW/Waltraud_Waudru.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: familie, stichting Mons, cultus en Ducasse/Doudou.
   - label: "Wikipedia (NL) — Waldetrudis"
     url: "https://nl.wikipedia.org/wiki/Waldetrudis"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht: Cousolre, Madelgarius, Bergen, Herentals.
+  - label: "heiligen.net — Waltrudis van Mons"
+    url: "https://heiligen.net/heiligen/04/09/04-09-0688-waltrudis.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse vita met namenreeks (Woutruide/Waudru), kinderen en
+      kloosterstichting.

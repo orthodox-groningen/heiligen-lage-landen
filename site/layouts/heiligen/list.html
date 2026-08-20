@@ -25,11 +25,20 @@
             {{ end }}
           </span>
         </span>
-        {{ with .Params.locaties }}
-          <span class="meta">{{ delimit . ", " }}</span>
+        {{ with .Params.locatie_items }}
+          <span class="meta">
+            {{- range $i, $item := . -}}
+              {{- if $i }}, {{ end -}}
+              <span{{- if eq $item.soort "streek" }} class="meta-streek"{{- end -}}>{{ $item.naam }}</span>
+            {{- end -}}
+          </span>
+        {{ else }}
+          {{ with .Params.locaties }}
+            <span class="meta">{{ delimit . ", " }}</span>
+          {{ end }}
         {{ end }}
         {{ with .Params.feestdatum }}
-          <span class="meta">{{ . }}</span>
+          <span class="meta">{{ partial "feestdatum-kort.html" . }}</span>
         {{ end }}
       </li>
     {{ end }}

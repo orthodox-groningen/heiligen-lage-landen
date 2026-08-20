@@ -8,11 +8,16 @@ selectie_toelichting: "Peel."
 namen:
   primair: Oda van de Peel
   alternatief:
-    - Oda van Brabant
+  - Oda van Brabant
 datum:
   waarde: "11-28"
   stijl: gregoriaans
 periode: "726"
+icoon:
+  bestand: iconen/oda-van-de-peel.png
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Sint Oda van St. Oedenrode.png"
 locaties:
   - sint-oedenrode
 samenvatting: |
@@ -35,3 +40,6 @@ referenties:
   - label: "Wikipedia (NL) — Oda van Brabant"
     url: "https://nl.wikipedia.org/wiki/Oda_van_Brabant"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van de late vita, kluizenaarschap in de
+      Peel en de cultus te Sint-Oedenrode.

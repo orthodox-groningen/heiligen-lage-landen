@@ -1,22 +1,63 @@
 id: foillan
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - fosses
 selectie: voldoet
 selectie_toelichting: "Fosses."
 namen:
   primair: Foillan
+  alternatief:
+  - Foillanus
+  - Feuillen
+  - Follianus
+  - Pholien
 datum:
-  waarde: 10-31
+  waarde: "10-31"
   stijl: gregoriaans
 titels:
-- Ierse monnik, martelaar
-periode: '655'
-samenvatting: 'Heilige van de Lage Landen: Foillan. Ierse monnik, martelaar.'
+  - Ierse monnik
+  - Martelaar
+  - Abt van Fosses
+periode: "ca. 600–655"
+icoon:
+  bestand: iconen/foillan.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Foillan.jpg"
+locaties:
+  - fosses
+samenvatting: |
+  Ierse monnik; leraar te Nijvel; abt van Fosses; vermoord in het
+  Kolenwoud. Feestdag 31 oktober.
+betekenis_lage_landen: |
+  Foillan werkte in het Pepijnse milieu te Nijvel (Gertrudis) en werd
+  abt van het door haar gestichte klooster Fosses (Namen). Zijn
+  martelaarschap bij Le Rœulx en cultus te Fosses-la-Ville maken hem
+  tot een Ierse missieheilige van het Maas-Sambergegebied — kern van
+  de zuidelijke Lage Landen.
+verhaal: |
+  Broer van Furseüs en Ultanus. Na East Anglia naar het continent;
+  ontvangst door Clovis II; leraar te Nijvel. Gertrudis stelde hem
+  ca. 652 tot abt van Fosses. Op 31 oktober 655/656 door rovers
+  vermoord bij Le Rœulx. Cultus in Wallonië, Kamerijk en Aken
+  (Sint-Foillankerk). Broer Ultanus volgde hem op te Fosses.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Foillan von Fosses"
+    url: "https://www.heiligenlexikon.de/BiographienF/Foillan.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Ierse afkomst, Nijvel/Fosses, martelaarschap bij
+      Le Roeulx, cultus in Wallonië en Aken.
   - label: "Wikipedia (NL) — Foillan"
     url: "https://nl.wikipedia.org/wiki/Foillan"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Fosses en kerken gewijd aan
+      Foillan.
+  - label: "Wikipedia (EN) — Foillan"
+    url: "https://en.wikipedia.org/wiki/Foillan"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige pagina over de Ierse missionaris en martelaar.

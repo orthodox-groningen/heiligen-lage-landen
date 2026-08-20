@@ -1,22 +1,68 @@
 id: oda-van-amay
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - amay
 selectie: voldoet
-selectie_toelichting: "Amay."
+selectie_toelichting: "Amay bij Hoei; Chrodoara-sarcofaag."
 namen:
   primair: Oda van Amay
+  alternatief:
+  - Chrodoara
+  - Chrodoara van Amay
+  - Ode van Amay
 datum:
-  waarde: 10-23
+  waarde: "10-23"
   stijl: gregoriaans
 titels:
-- Stichteres van kerken
-periode: '723'
-samenvatting: 'Heilige van de Lage Landen: Oda van Amay. Stichteres van kerken.'
+  - Stichteres van kerken
+periode: "vóór 634"
+locaties:
+  - amay
+rustplaats:
+  plaats: amay
+  toelichting: "Collegiale Sint-Joris-en-Sint-Oda; Chrodoara-sarcofaag"
+icoon:
+  bestand: iconen/oda-van-amay.jpg
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Sainte Ode d'Amay (Jean Del Cour, c 1680), KIK-IRPA b028727.jpg"
+samenvatting: |
+  Merovingische edelvrouw (Chrodoara); vereerd te Amay bij Hoei.
+  Feestdag 23 oktober.
+betekenis_lage_landen: |
+  Oda/Chrodoara is de stichtster-heilige van Amay (Maasland, bij Hoei):
+  de sarcofaaginscriptie noemt haar edelvrouw die uit eigen middelen
+  heiligdommen stichtte. Dat maakt haar een concrete Merovingische
+  heilige van het Luikse Maasdal, niet een late Brabantse legende.
+verhaal: |
+  Chrodoara (later Oda genoemd) leefde als Frankische edelvrouw en werd
+  vóór 634 in de Sint-Joriskerk van Amay begraven (testament van neef
+  Adalgisel Grimo). In 1977 vond men onder het koor haar Merovingische
+  sarcofaag met opschrift Sancta Chrodoara. Of zij abdis was, blijft
+  onzeker (staf op het deksel). Elevatio door bisschop Floribertus
+  bekrachtigde de cultus. Het Heiligenlexikon verwart Amay soms met
+  Hamage bij Douai; de Amay-sarcofaag bij Hoei is leidend.
+over_bronnen: |
+  Prefereren: NL-Wikipedia en de Amay-sarcofaagdocumentatie. Lexikon
+  gebruiken voor feestdag/naam, niet voor de Hamage-localisatie.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Oda von Amay"
+    url: "https://www.heiligenlexikon.de/BiographienO/Oda_von_Amay.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonnotitie (Chrodoara, feestdag 23 oktober); geografische
+      Hamage-identificatie hier niet gevolgd.
   - label: "Wikipedia (NL) — Oda van Amay"
     url: "https://nl.wikipedia.org/wiki/Oda_van_Amay"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van Chrodoara, Amay bij Hoei en
+      sarcofaagvondst 1977.
+  - label: "KIK — Sarcofaag van de heilige Chrodoara"
+    url: "https://www.kikirpa.be/nl/erfgoedobjecten/sarcofaag-van-heilige-chrodoara"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Erfgoedfiche over de Merovingische sarcofaag in de collegiale van
+      Amay.

@@ -1,28 +1,68 @@
 id: ludger
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
-  - frisia
 selectie: voldoet
-selectie_toelichting: "Geboren bij Utrecht; missie in Frisia."
+selectie_toelichting: "Geboren bij Utrecht; missie in Friesland."
 namen:
   primair: Ludger
   alternatief:
   - Liudger
+  - Liudger van Münster
+  - Ludgerus
 datum:
-  waarde: 03-26
+  waarde: "03-26"
   stijl: gregoriaans
 titels:
-- Bisschop van Münster
-periode: '809'
-samenvatting: 'Heilige van de Lage Landen: Ludger. Bisschop van Münster.'
+  - Bisschop van Münster
+periode: "742–809"
+locaties:
+  - utrecht
+  - frisia
+icoon:
+  bestand: iconen/ludger.jpg
+  rechten: ok
+  licentie: "Publiek domein"
+  bron: "Wikimedia Commons — File:Saintliudger.jpg"
+samenvatting: |
+  Geboren bij Utrecht; predikte onder de Friezen en Saksen; eerste bisschop
+  van Münster. Feestdag 26 maart.
+betekenis_lage_landen: |
+  Ludger (Liudger) werd rond 742 bij Utrecht geboren en volgde onderwijs
+  onder Gregorius van Utrecht. Hij predikte in Friesland (onder meer na de
+  dood van Bonifatius), stichtte kloosters en werd in 805 eerste bisschop
+  van Münster. Zijn Friese wortels en missiewerk verbinden de Utrechtse
+  school met de kerstening van het noorden; daarom hoort hij in deze
+  kalender, ook al lag zijn bisschopszetel in Westfalen.
+verhaal: |
+  Als kind van Friese ouders bij Zuilen (bij Utrecht) ging Ludger in de
+  leer bij Gregorius van Utrecht en studeerde later in York bij Alcuinus.
+  Hij werkte in Friesland en Saksen, stichtte Werden en Deventer-achtige
+  missieposten in de overlevering, en werd in 805 bisschop van Münster.
+  Hij stierf op 26 maart 809 te Billerbeck; zijn cultus leeft in Münster
+  en in de noordelijke Lage Landen via de Utrechtse herkomst.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Liudger"
+    url: "https://www.heiligenlexikon.de/BiographienL/Liudger.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: geboorte bij Utrecht, opleiding bij Gregorius,
+      Friese/Saksische missie, Münster en Werden.
   - label: "Wikipedia (NL) — Ludger"
     url: "https://nl.wikipedia.org/wiki/Ludger"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, plaatsen (Zuilen, Utrecht,
+      Friesland) en feestdag.
   - label: "heiligen.net — Ludger"
     url: "https://www.heiligen.net/heiligen/03/26/03-26-0809-ludger.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte heiligenpagina met feestdag en levensschets.
+  - label: "Wikipedia (EN) — Ludger"
+    url: "https://en.wikipedia.org/wiki/Ludger"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige pagina (Saint Liudger) met chronologie en literatuur.

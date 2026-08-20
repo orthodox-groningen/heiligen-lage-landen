@@ -1,33 +1,69 @@
 id: amandus-van-maastricht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
-  - elno
-  - doornik
 selectie: voldoet
-selectie_toelichting: "Maastricht en Elno bij Doornik."
+selectie_toelichting: "Missiebisschop in Vlaanderen; korte tijd bisschop van Maastricht; Elno bij Doornik."
 namen:
   primair: Amandus van Maastricht
   alternatief:
   - Amandus
   - Amand
+  - Amandus van Gent
+  - Amandus van Elnone
+  - Sint-Amand
 datum:
-  waarde: 02-06
+  waarde: "02-06"
   stijl: gregoriaans
   extra:
-  - waarde: 02-13
-    toelichting: 13 februari
-  - waarde: 05-15
-    toelichting: 15 mei
+    - waarde: "02-13"
+      toelichting: 13 februari
+    - waarde: "05-15"
+      toelichting: 15 mei (met heilige bisschoppen van Maastricht)
 titels:
-- Apostel van Maastricht (17e Bisschop van Maastricht)
-periode: ~675 (of 684?)
-samenvatting: 'Heilige van de Lage Landen: Amandus van Maastricht. Apostel van Maastricht
-  (17e Bisschop van Maastricht).'
+  - Missiebisschop
+  - Bisschop van Maastricht
+periode: "~600–~675"
+icoon:
+  bestand: iconen/amandus-van-maastricht.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Amandus van Maastricht (tg-uact-802).jpg"
+locaties:
+  - maastricht
+  - elno
+  - doornik
+samenvatting: |
+  Apostel van Vlaanderen: kerstening langs de Schelde, stichter van Gentse
+  abdijen en Elno; kort bisschop van Maastricht. Feestdag 6 februari.
+betekenis_lage_landen: |
+  Amandus is een van de centrale Merovingische missionarissen van de
+  Lage Landen: Gent (Sint-Pieters, Sint-Baafs), Elno (Saint-Amand-les-
+  Eaux bij Doornik) en enkele jaren de Maastrichter zetel. Zijn werk
+  vormde de kerkelijke kaart van Vlaanderen en het Maasland vóór de
+  Angelsaksische missie.
+verhaal: |
+  Geboren bij Nantes (~600), monnik en kluizenaar, tot missiebisschop
+  gewijd. Predikte in Vlaanderen, stichtte kloosters te Gent en Elno.
+  Door Dagobert tijdelijk verbannen na kritiek; later kort bisschop van
+  Maastricht (~647–650), daarna weer zwervend. Stierf te Elno (~675/684).
+  Vroege vita; uitzonderlijk goed gedocumenteerd voor de zevende eeuw.
 referenties:
-  - label: "Wikipedia (NL) — Amandus"
-    url: "https://nl.wikipedia.org/wiki/Amandus"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Amandus von Maastricht"
+    url: "https://www.heiligenlexikon.de/BiographienA/Amandus_von_Maastricht.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Gent, Elnon, Maastricht, testament en attributen.
+  - label: "Wikipedia (NL) — Amandus (heilige)"
+    url: "https://nl.wikipedia.org/wiki/Amandus_(heilige)"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreid Nederlandstalig overzicht van missie, bronnen en
+      nalatenschap.
+  - label: "heiligen.net — Amandus van Maastricht"
+    url: "https://www.heiligen.net/heiligen/02/06/02-06-0675-amandus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografie met Maastricht-episode en Elno.

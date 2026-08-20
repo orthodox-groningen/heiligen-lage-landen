@@ -1,25 +1,71 @@
 id: wulfram
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - frisia
 selectie: voldoet
 selectie_toelichting: "Missie onder de Friezen."
 namen:
   primair: Wulfram
+  alternatief:
+  - Wulfran
+  - Wulfram van Sens
+  - Wolfram van Sens
 datum:
-  waarde: 03-20
+  waarde: "03-20"
   stijl: gregoriaans
 titels:
-- Missionaris
-periode: '703'
-samenvatting: 'Heilige van de Lage Landen: Wulfram. Missionaris.'
+  - Missionaris
+  - Bisschop van Sens
+periode: "~640–703"
+locaties:
+  - frisia
+icoon:
+  bestand: iconen/wulfram.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:H. Wolframus van Sens Nederlandse heiligen (serietitel), RP-P-OB-62.078.jpg"
+samenvatting: |
+  Frankische bisschop van Sens; missionaris in Friesland naast Willibrord.
+  Feestdag 20 maart.
+betekenis_lage_landen: |
+  Wulfram predikte in Friesland na de Frankische herovering van het
+  Utrechtse rivierengebied (na 695). Hij meldde zich bij Willibrord en
+  werkte vooral rond Medemblik, aan het hof van Radboud. De bekende
+  dooplegende — Radboud die afziet omdat hij zijn voorouders niet wil
+  missen — en verhalen over redding van offerkinderen horen bij die
+  Friese missie. Zo staat hij naast Willibrord in de kerstening van
+  Friesland, ook al stierf hij te Fontenelle.
+verhaal: |
+  Wulfram (Wolfram) werd midden zevende eeuw geboren bij Fontainebleau
+  (Milly-la-Forêt), monnik te Fontenelle, en was kort aartsbisschop van
+  Sens (circa 692–695) voordat hij het ambt neerlegde. Vanuit Fontenelle
+  ging hij met monniken naar Friesland: eerst Utrecht/Willibrord, dan
+  dieper het Friese gebied in. Vitae (Jonas van Fontenelle e.a.)
+  beschrijven doopsels, strijd tegen mensenoffers en Radbouds afwijzing
+  van de doop. Hij keerde terug naar Fontenelle; sterfjaar 703 of later
+  (soms 720). Relieken later te Abbeville (Saint-Vulfran).
+over_bronnen: |
+  Jaartallen en wonderverhalen lopen uiteen tussen vita en latere
+  overlevering; de Friese missie naast Willibrord is de kerndraad die
+  lexikon en Nederlandse naslag delen.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Wolfram von Sens"
+    url: "https://www.heiligenlexikon.de/BiographienW/Wolfram.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Sens, Fontenelle, Friese missie met Willibrord,
+      Radboud, Abbeville.
   - label: "Wikipedia (NL) — Wulfram"
     url: "https://nl.wikipedia.org/wiki/Wulfram"
-    geraadpleegd: "2026-08-16"
-  - label: "heiligen.net — Wulfram"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreid Nederlandstalig overzicht van leven, Friesland/Medemblik
+      en de Radboud-dooplegende.
+  - label: "heiligen.net — Wulfram van Sens"
     url: "https://www.heiligen.net/heiligen/03/20/03-20-0720-wulfram.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse vita met Willibrord, Radboud, offerlegenden en cultus
+      Abbeville.

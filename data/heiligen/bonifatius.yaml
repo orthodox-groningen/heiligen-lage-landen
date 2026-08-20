@@ -4,12 +4,13 @@ bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
 selectie: voldoet
-selectie_toelichting: "Missie in Frisia; martelaarschap bij Dokkum."
+selectie_toelichting: "Missie in Friesland; martelaarschap bij Dokkum."
 namen:
   primair: Bonifatius
   alternatief:
-    - Bonifacius
-    - Wynfrith
+  - Bonifacius
+  - Wynfrith
+  - Wynfreth
 datum:
   waarde: "06-05"
   stijl: gregoriaans
@@ -30,7 +31,7 @@ samenvatting: |
   Angelsaksische missionaris; aartsbisschop van Mainz; martelaar bij
   Dokkum. Feestdag 5 juni.
 betekenis_lage_landen: |
-  Bonifatius (Wynfrith) werkte met en na Willibrord in Frisia en Utrecht,
+  Bonifatius (Wynfrith) werkte met en na Willibrord in Friesland en Utrecht,
   hervormde de Frankische kerk en stierf op 5 juni 754 bij Dokkum, met
   tientallen metgezellen, tijdens een vormseltocht onder de Friezen. Dat
   martelaarschap op Friese grond is het keerpunt van de noordelijke
@@ -41,24 +42,35 @@ verhaal: |
   hij in 716 en opnieuw in 718 naar het vasteland. Paus Gregorius II gaf
   hem de naam Bonifatius. Hij werkte in Hessen, Thüringen en Beieren,
   werd in 722 bisschop, later aartsbisschop van Mainz, en kroonde Pepijn
-  de Korte. Tegen het einde van zijn leven keerde hij naar Frisia terug.
+  de Korte. Tegen het einde van zijn leven keerde hij naar Friesland terug.
   Bij Dokkum werd hij met zijn gevolg vermoord. Zijn relieken rusten in
   Fulda; Dokkum blijft de Nederlandse martelaarsplaats.
-
+over_bronnen: |
   De vita van Willibald van Mainz (achtste eeuw) is de hoofdbron; latere
   wonderverhalen (onder meer de eik van Geismar) horen bij de Duitse
   missie, niet bij Dokkum.
 referenties:
   - label: "OrthodoxWiki — Boniface"
     url: "https://orthodoxwiki.org/Boniface"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Orthodoxe samenvatting van missie en martelaarschap; Engelse
+      spelling Boniface.
   - bron_id: hlex
     label: "Heiligenlexikon — Bonifatius"
     url: "https://www.heiligenlexikon.de/BiographienB/Bonifatius.html"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita met Friesland, Dokkum en verwijzingen naar Willibald van
+      Mainz; steviger dan encyclopediepagina’s.
   - label: "Wikipedia (NL) — Bonifatius (heilige)"
     url: "https://nl.wikipedia.org/wiki/Bonifatius_(heilige)"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Breed Nederlandstalig overzicht; handig voor context rond Utrecht
+      en Dokkum.
   - label: "heiligen.net — Bonifatius"
     url: "https://www.heiligen.net/heiligen/06/05/06-05-0754-bonifatius.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte feestdagpagina met levensschets en cultusnotities.

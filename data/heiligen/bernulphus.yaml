@@ -1,22 +1,70 @@
 id: bernulphus
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
 selectie_toelichting: "Bisschop van Utrecht; sterfjaar 1054, westers episcopaat in de Lage Landen."
 namen:
   primair: Bernulphus
+  alternatief:
+  - Bernold
+  - Bernoldus
+  - Bernulf
+  - Bernulfus
+  - Benno
 datum:
-  waarde: 07-24
+  waarde: "07-24"
   stijl: gregoriaans
 titels:
-- Bisschop van Utrecht
-periode: '1054'
-samenvatting: 'Heilige van de Lage Landen: Bernulphus. Bisschop van Utrecht.'
+  - Bisschop van Utrecht
+periode: "† 1054"
+locaties:
+  - utrecht
+rustplaats:
+  plaats: utrecht
+  toelichting: "Pieterskerk"
+icoon:
+  bestand: iconen/bernulphus.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Bishop Bernold on old wall painting in the Pieterskerk in Utrecht.jpg"
+samenvatting: |
+  Bisschop van Utrecht (1027–1054); bouwde stiftskerken en versterkte
+  het wereldlijk gezag van het bisdom. Feestdag 19/24 juli (tradities
+  verschillen).
+betekenis_lage_landen: |
+  Bernulphus (Bernold) was rijksbisschop van Utrecht onder Koenraad II
+  en Hendrik III. Onder hem groeide het Oversticht (Hamaland, Salland,
+  Drenthe, Deventer). Hij stichtte of herbouwde Pieterskerk, Janskerk
+  en Paulusabdij in Utrecht en de Lebuïnuskerk in Deventer. Daarmee
+  hoort hij tot de kern van de middeleeuwse Utrechtse kerk — westers
+  episcopaat in de Lage Landen, maar lokaal onmisbaar.
+verhaal: |
+  Over herkomst bestaat weinig zekerheid; legendes verbinden hem met
+  Oosterbeek. Rond 1027 tot bisschop benoemd. Hij bleef loyaal aan het
+  keizerhuis en ontving graafschappen en goederen. Hij gold als
+  kerkenbouwer: Pieterskerk en Janskerk te Utrecht, Lebuïnuskerk te
+  Deventer. Overleden 19 juli 1054; begraven in de Pieterskerk. Het
+  19e-eeuwse Sint-Bernulphusgilde koos hem tot patroon van kerkelijke
+  kunst.
 referenties:
-  - label: "Wikipedia (NL) — Bernulphus"
-    url: "https://nl.wikipedia.org/wiki/Bernulphus"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Bernulf von Utrecht"
+    url: "https://www.heiligenlexikon.de/BiographienB/Bernulf_von_Utrecht.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: bisschop vanaf ca. 1027, band met Hendrik III,
+      Pieterskerk/Janskerk/Paulusabdij, Lebuïnuskerk Deventer.
+  - label: "Wikipedia (NL) — Bernold"
+    url: "https://nl.wikipedia.org/wiki/Bernold"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van episcopaat, Oversticht en cultus;
+      naamdag 19 juli.
+  - label: "heiligen.net — Bernulfus van Utrecht"
+    url: "https://www.heiligen.net/heiligen/07/19/07-19-1054-bernulfus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte vita met legende over Oosterbeek en notities over
+      kerkbouw en graf in de Pieterskerk.

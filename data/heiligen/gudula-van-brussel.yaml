@@ -1,29 +1,63 @@
 id: gudula-van-brussel
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - brussel
 selectie: voldoet
-selectie_toelichting: "Brussel."
+selectie_toelichting: "Patrones van Brussel; Moorsel–Brussel-cultus."
 namen:
   primair: Gudula van Brussel
   alternatief:
   - Goedele
   - Sint-Goedele
   - Gudula
+  - Goedele van Moorsel
 datum:
-  waarde: 01-08
+  waarde: "01-08"
   stijl: gregoriaans
 titels:
-- Maagd
-periode: '659'
-samenvatting: 'Heilige van de Lage Landen: Gudula van Brussel. Maagd.'
+  - Maagd
+  - Patrones van Brussel
+periode: "ca. 650–712"
+icoon:
+  bestand: iconen/gudula-van-brussel.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:Statue of Saint Gudula.jpg"
+locaties:
+  - brussel
+samenvatting: |
+  Brabantse maagd; patrones van Brussel (Sint-Michiel en Sint-Goedele).
+  Feestdag 8 januari.
+betekenis_lage_landen: |
+  Goedele/Gudula is de stadsheilige van Brussel: haar relieken kwamen via
+  Moorsel naar de burchtkapel en in 1047 naar de Michaelskerk, sindsdien
+  Sint-Michiel en Sint-Goedele. Opvoeding in Nijvel (Gertrudis) en leven
+  rond Moorsel/Hamme verbinden haar met de Pippiniden-kloostercultuur van
+  Brabant.
+verhaal: |
+  Gudula (Goedele) werd omstreeks 650 geboren; de overlevering noemt
+  Amalberga en Witger als ouders en Gertrudis van Nijvel als peettante.
+  Zij leefde als boetelinge bij Moorsel/Hamme. Bekend is het
+  lantaarnwonder: de duivel dooft haar licht, een engel steekt het weer
+  aan. Zij stierf rond 712 (traditie: 8 januari). Reliekentranslaties
+  (o.a. 979, 1047) vestigden de Brusselse cultus; een schedelreliek
+  berust in Eibingen.
 referenties:
-  - label: "Wikipedia (NL) — Sint-Goedele"
-    url: "https://nl.wikipedia.org/wiki/Sint-Goedele"
-    geraadpleegd: "2026-08-16"
+  - bron_id: hlex
+    label: "Heiligenlexikon — Gudula von Brüssel"
+    url: "https://www.heiligenlexikon.de/BiographienG/Gudula_Gudrun.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Nijvel, Moorsel, lantaarnlegende, Brusselse translaties;
+      feestdag 8 januari.
+  - label: "Wikipedia (NL) — Goedele van Brussel"
+    url: "https://nl.wikipedia.org/wiki/Goedele_van_Brussel"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Moorsel–Brussel en kathedraal.
   - label: "heiligen.net — Goedele"
     url: "https://www.heiligen.net/heiligen/01/08/01-08-0712-goedele.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte heiligenpagina met feestdag en levensschets.

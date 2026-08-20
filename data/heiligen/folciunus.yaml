@@ -3,26 +3,52 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - terwaan
 selectie: nader-onderzoek
 selectie_toelichting: "Folquinus van Terwaan; bisdom nu in Frankrijk, gestorven te Ekelsbeke."
 namen:
   primair: Folciunus
   alternatief:
+  - Folquinus van Terwaan
   - Folcuin
   - Folcwin
+  - Folkwin
+  - Folquin
 datum:
-  waarde: 12-14
+  waarde: "12-14"
   stijl: gregoriaans
 titels:
-- Bisschop van Tervas
-periode: '855'
-samenvatting: 'Heilige van de Lage Landen: Folciunus. Bisschop van Tervas.'
+  - Bisschop van Terwaan
+periode: "† 855"
+locaties:
+  - terwaan
+samenvatting: |
+  Bisschop van Terwaan (vanaf 816/817); verbonden met Sint-Bertinus.
+  Overleden te Ekelsbeke. Feestdag 14 december.
+betekenis_lage_landen: |
+  Folciunus (Folquinus) bestuurde het bisdom Terwaan, dat tot in
+  Vlaanderen reikte, en was nauw verbonden met de Sint-Bertinusabdij
+  te Sint-Omaars. Hij stierf te Ekelsbeke (Frans-Vlaanderen). De zetel
+  ligt nu in Frankrijk; de Vlaamse band blijft. Daarom nader-onderzoek.
+verhaal: |
+  Omstreeks 817 tot bisschop van Terwaan gewijd. Hij herstelde
+  relieken van Audomarus, nam deel aan synoden en gold als zorgzaam
+  voor armen en pelgrims. Overleden 14 of 15 december 855 te
+  Ekelsbeke; begraven te Sint-Bertinus. Elevatie 928. Vita door
+  achterneef Folcuin van Lobbes.
 referenties:
-  - label: "Wikipedia (NL) — Folcuin"
-    url: "https://nl.wikipedia.org/wiki/Folcuin"
-    geraadpleegd: "2026-08-16"
-  - label: "Wikipedia (EN) — Folcuin"
+  - label: "Wikipedia (NL) — Folquinus van Terwaan"
+    url: "https://nl.wikipedia.org/wiki/Folquinus_van_Terwaan"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalige vita: episcopaat, relieken van Audomarus,
+      dood te Ekelsbeke, heiligverklaring 928.
+  - label: "Wikipedia (EN) — Folcwin"
     url: "https://en.wikipedia.org/wiki/Folcwin"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalig overzicht met synoden, Sint-Bertinus en cultus.
+  - label: "Wikipedia (FR) — Folquin de Thérouanne"
+    url: "https://fr.wikipedia.org/wiki/Folquin_de_Th%C3%A9rouanne"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Franstalige pagina over de bisschop van Thérouanne.

@@ -8,8 +8,8 @@ selectie_toelichting: "Metgezel van Wiro en Plechelm; stichting Odiliënberg."
 namen:
   primair: Otger
   alternatief:
-    - Otgerus
-    - Otger van Odiliënberg
+  - Otgerus
+  - Otger van Odiliënberg
 datum:
   waarde: "07-15"
   stijl: gregoriaans
@@ -22,6 +22,11 @@ locaties:
 rustplaats:
   plaats: odilienberg
   toelichting: "Sint Odiliënberg"
+icoon:
+  bestand: iconen/otger.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:St Odiliënberg 3 Doppelstatuen.jpg"
 samenvatting: |
   Diaken en geloofsverkondiger; met Wiro en Plechelm stichter van het
   klooster te Odiliënberg. Feestdag 15 juli.
@@ -48,6 +53,12 @@ referenties:
     label: "Heiligenlexikon — Otger von Sint Odiliënberg"
     url: "https://www.heiligenlexikon.de/BiographienO/Otger.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: diaken met Wiro en Plechelm, stichting Odiliënberg en
+      feestdag 15 juli.
   - label: "Wikipedia (NL) — Basiliek van de H.H. Wiro, Plechelmus en Otgerus"
     url: "https://nl.wikipedia.org/wiki/Basiliek_van_de_H.H._Wiro,_Plechelmus_en_Otgerus"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Pagina over de basiliek te Sint Odiliënberg en de lokale cultus van
+      het missiedrietal.

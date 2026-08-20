@@ -2,7 +2,7 @@
 title: "Datumpagina’s"
 description: "Wat er op één burgerlijke dag in een bepaald jaar valt"
 uitleg_stijl: datumpagina
-git_date: 2026-08-17
+git_date: 2026-08-18
 ---
 
 Klik op de [jaarkalender]({{% ref "/kalender" %}}) op een dag, of blader vanaf

@@ -7,7 +7,7 @@
       <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ with .Params.feestdatum }}
-          <span class="meta">{{ . }}</span>
+          <span class="meta">{{ partial "feestdatum-kort.html" . }}</span>
         {{ end }}
       </li>
     {{ end }}

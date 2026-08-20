@@ -8,8 +8,8 @@ selectie_toelichting: "Bisschop van Maastricht; martelaar te Luik."
 namen:
   primair: Lambertus
   alternatief:
-    - Lambertus van Maastricht
-    - Lambert
+  - Lambertus van Maastricht
+  - Lambert
 datum:
   waarde: "09-17"
   stijl: gregoriaans
@@ -56,9 +56,16 @@ referenties:
     label: "Heiligenlexikon — Lambert von Maastricht"
     url: "https://www.heiligenlexikon.de/BiographienL/Lambert_von_Maastricht.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: episcopaat te Maastricht, missie in Toxandrië,
+      marteldood te Luik en reliekengeschiedenis.
   - label: "Wikipedia (NL) — Lambertus van Maastricht"
     url: "https://nl.wikipedia.org/wiki/Lambertus_van_Maastricht"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Luikse cultus en feestdag.
   - label: "heiligen.net — Lambertus"
     url: "https://www.heiligen.net/heiligen/09/17/09-17-0705-lambertus.php"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Korte heiligenpagina met feestdag 17 september en levensschets.

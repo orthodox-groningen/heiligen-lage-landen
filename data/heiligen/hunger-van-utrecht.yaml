@@ -1,25 +1,56 @@
 id: hunger-van-utrecht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
-selectie_toelichting: "Bisschop van Utrecht."
+selectie_toelichting: "Bisschop van Utrecht in de Vikingtijd."
 namen:
   primair: Hunger van Utrecht
   alternatief:
   - Hunger
+  - Hungerus Frisus
 datum:
-  waarde: 12-22
+  waarde: "12-22"
   stijl: gregoriaans
-periode: '866'
-samenvatting: 'Heilige van de Lage Landen: Hunger van Utrecht.'
+titels:
+  - Bisschop van Utrecht
+periode: "ca. 800–866"
+locaties:
+  - utrecht
+samenvatting: |
+  Bisschop van Utrecht (ca. 854–866) tijdens Noormanneninvallen.
+  Feestdag 22 december.
+betekenis_lage_landen: |
+  Hunger (Hungerus Frisus) stond de Utrechtse kerk voor in een crisis:
+  Vikingen bedreigden Dorestad/Utrecht; de clerus week uit naar
+  Sint-Odiliënberg (858) en later Prüm en Deventer. Als bisschop uit
+  Friesland belichaamt hij de Friese–Utrechtse band in de negende eeuw.
+  Zijn standpunt in de huwelijkszaak van Lotharius II toont moreel
+  gezag naast de vluchtgeschiedenis.
+verhaal: |
+  Hunger werd rond 800 in Friesland geboren en was kanunnik te Utrecht
+  toen hij ca. 854 bisschop werd (Craft weigerde vanwege de Noormannen).
+  Eerst was er vrede met Rorik van Dorestad; later vluchtte de clerus naar
+  Odiliënberg. Hij keerde tijdelijk terug, verbleef ook in Prüm en
+  Deventer, en stierf op 22 december 866 (traditie: Prüm). Paus Nicolaas I
+  prees zijn verzet tegen de echtscheiding van Lotharius II.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Hungerus Frisus"
+    url: "https://www.heiligenlexikon.de/BiographienH/Hungerus_Frisus.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte lexikonnotitie: Friese herkomst, bisschop van Utrecht,
+      sterfdatum 22 december 866.
   - label: "Wikipedia (NL) — Hunger van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Hunger_van_Utrecht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van Vikingvlucht, Odiliënberg/Prüm/Deventer
+      en opvolging.
   - label: "heiligen.net — Hunger"
     url: "https://www.heiligen.net/heiligen/12/22/12-22-0866-hunger.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreidere levensschets inclusief Lotharius-huwelijkskwestie.

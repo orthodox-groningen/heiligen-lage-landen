@@ -2,7 +2,7 @@
 title: "Toon van de week"
 description: "De acht wekelijkse zangtonen, gerekend vanaf Thomaszondag"
 uitleg_stijl: toon
-git_date: 2026-08-17
+git_date: 2026-08-18
 ---
 
 Op de [datumpagina]({{% ref "/uitleg/datumpagina" %}}) staat naast de datum

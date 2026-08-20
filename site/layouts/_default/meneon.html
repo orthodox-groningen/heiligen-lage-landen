@@ -4,32 +4,58 @@
   {{ .Content }}
 
   <div id="meneon-day" hidden>
-    <p class="hint" id="meneon-day-nav"></p>
-    <div id="meneon-day-entries">Laden…</div>
+    <div class="page-toolbar">
+      <div class="page-action-bar" id="meneon-day-nav" aria-label="Dag"></div>
+    </div>
+    <div id="meneon-day-entries" class="table-wrap">Laden…</div>
   </div>
 
   <div id="meneon-browse">
-    <div class="filter-bar" role="group" aria-label="Toon">
-      <label class="chip"><input type="checkbox" name="show" value="heilige" checked> Heiligen</label>
-      <label class="chip"><input type="checkbox" name="show" value="feest" checked> Feesten</label>
-      <label class="chip"><input type="checkbox" name="show" value="vasten" checked> Vasten</label>
+    <div class="page-toolbar">
+      <div class="page-action-bar" id="meneon-action-bar" aria-label="Bladeren">
+        <nav class="letter-nav" id="letter-nav" hidden aria-label="Letters"></nav>
+        <nav class="month-nav" id="month-nav" aria-label="Maanden"></nav>
+      </div>
+      <button
+        type="button"
+        class="weergave-trigger"
+        id="meneon-weergave-trigger"
+        aria-expanded="false"
+        aria-controls="meneon-weergave-panel"
+      >
+        Weergave<span class="weergave-trigger-summary" id="meneon-weergave-summary"></span>
+      </button>
     </div>
 
-    <p class="filter-bar">
-      <label class="search-label" for="meneon-search">Zoeken (ook alternatieve namen)</label>
-      <input type="search" id="meneon-search" class="search-input" placeholder="bijv. Ludger, Ontslapen…" autocomplete="off">
-    </p>
-
-    <div class="browse-mode" role="group" aria-label="Bladeren">
-      <button type="button" class="style-btn" data-browse="maand" aria-pressed="true">Maanden</button>
-      <button type="button" class="style-btn" data-browse="letter" aria-pressed="false">Alfabet</button>
+    <div class="weergave-overlay" id="meneon-weergave-overlay" hidden></div>
+    <div
+      class="weergave-panel"
+      id="meneon-weergave-panel"
+      role="dialog"
+      aria-labelledby="meneon-weergave-title"
+      hidden
+    >
+      <div class="weergave-panel-head">
+        <h2 id="meneon-weergave-title">Weergave</h2>
+        <button type="button" class="weergave-panel-close" data-weergave-close>Klaar</button>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Toon">
+        <label class="chip"><input type="checkbox" name="show" value="heilige" checked> Heiligen</label>
+        <label class="chip"><input type="checkbox" name="show" value="feest" checked> Feesten</label>
+        <label class="chip"><input type="checkbox" name="show" value="vasten" checked> Vasten</label>
+      </div>
+      <p class="filter-bar">
+        <label class="search-label" for="meneon-search">Zoeken (ook alternatieve namen)</label>
+        <input type="search" id="meneon-search" class="search-input" placeholder="bijv. Ludger, Ontslapen…" autocomplete="off">
+      </p>
+      <div class="browse-mode" role="group" aria-label="Bladeren op">
+        <button type="button" class="style-btn" data-browse="maand" aria-pressed="true">Maanden</button>
+        <button type="button" class="style-btn" data-browse="letter" aria-pressed="false">Alfabet</button>
+      </div>
     </div>
-
-    <nav class="letter-nav" id="letter-nav" hidden aria-label="Letters"></nav>
-    <nav class="month-nav" id="month-nav" aria-label="Maanden"></nav>
 
     <p class="hint" id="meneon-hint"></p>
-    <div id="meneon-list"></div>
+    <div id="meneon-list" class="table-wrap"></div>
   </div>
 </section>
 {{ end }}

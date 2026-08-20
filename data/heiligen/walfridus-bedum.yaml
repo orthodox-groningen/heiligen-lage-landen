@@ -6,14 +6,19 @@ lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Bedum."
 namen:
-  primair: "Walfridus (Bedum)"
+  primair: Walfridus (Bedum)
   alternatief:
-    - Walfridus
+  - Walfridus
 datum:
   waarde: "06-22"
   stijl: gregoriaans
 locaties:
   - bedum
+icoon:
+  bestand: iconen/walfridus-bedum.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Walfridus - kist.jpg"
 samenvatting: |
   Plaatselijke martelaar, vereerd te Bedum. Feestdag 22 juni.
 betekenis_lage_landen: |
@@ -32,3 +37,6 @@ referenties:
   - label: "Wikipedia (NL) — Walfridus"
     url: "https://nl.wikipedia.org/wiki/Walfridus"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van de Bedumse martelaarstraditie,
+      plaatselijke cultus en feestdag.

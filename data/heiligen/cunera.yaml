@@ -1,36 +1,61 @@
 id: cunera
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
 selectie: voldoet
 selectie_toelichting: "Rhenen."
 namen:
   primair: Cunera
+  alternatief:
+  - Kunera
+  - Cunera van Rhenen
+  - Kennera
+  - Sint Kunera
 datum:
   waarde: "06-12"
   stijl: gregoriaans
 titels:
   - Maagd-martelares van Rhenen
-periode: "451"
+periode: "† 451 (legende)"
+icoon:
+  bestand: iconen/cunera.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:Sculpture of St. Cunera van Rhenen in Kleve, Germany.jpg"
 locaties:
   - rhenen
 samenvatting: |
-  Maagd-martelares, vereerd te Rhenen. Feestdag 12 juni.
+  Maagd-martelares, vereerd te Rhenen; middeleeuwse Ursula-legende.
+  Feestdag 12 juni.
 betekenis_lage_landen: |
-  Cunera is de heilige van Rhenen. De late legende (Ursula-cyclus: een
-  maagd die te Rhenen achterbleef en door haar gastvrouw werd gewurgd)
-  is niet historisch hard te maken; het jaartal 451 hoort bij die cyclus.
-  De middeleeuwse cultus te Rhenen — relieken, kerktoren, stadsheilige —
-  is wel een feit van de Utrechtse heiligenverering. Primaire vita-edities
-  zijn hier niet geraadpleegd.
+  Cunera is de stadsheilige van Rhenen. De late legende (Ursula-cyclus:
+  een maagd die te Rhenen achterbleef en werd gewurgd) is historisch
+  niet hard te maken. De middeleeuwse cultus — relieken, Cunerakerk en
+  -toren, paardenmarkt — is wel een feit van de Utrechtse
+  heiligenverering. Daarom hoort zij in deze kalender.
 verhaal: |
   De overlevering voegt Cunera in bij de elfduizend maagden van Ursula:
-  ziek achtergelaten te Rhenen, gewurgd door de jaloerse vrouw van haar
-  gastheer. Dat is middeleeuwse legende. De lokale verering in de
-  Cunerakerk is de historische kern. Tot een lexikon- of oorkondetoets
-  volgt dit Wikipedia.
+  door de Friese koning Radboud naar Rhenen gebracht, gewurgd door diens
+  jaloerse vrouw. Dat is middeleeuwse legende. Historisch is de lokale
+  verering: de vroegere Petruskerk werd Cunerakerk; broederschap sinds
+  1392; de wurgdoek (koptisch weefsel) berust in Museum Catharijneconvent.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Kunera von Rhenen"
+    url: "https://www.heiligenlexikon.de/BiographienK/Kunera_von_Rhenen.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Ursula-gezellin, Rhenen-cultus, mogelijke link met
+      Kennera van Schotland; feestdag 12 juni.
   - label: "Wikipedia (NL) — Cunera"
     url: "https://nl.wikipedia.org/wiki/Cunera"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van legende, Cunerakerk en
+      reliekengeschiedenis.
+  - label: "heiligen.net — Cunera van Rhenen"
+    url: "https://heiligen.net/heiligen/06/12/06-12-0454-cunera.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreide Nederlandse legendevita; cultusplaatsen en wurgdoek.

@@ -1,26 +1,61 @@
 id: acharius-van-doornik
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - doornik
-  - noyon
 selectie: voldoet
-selectie_toelichting: "Bisschop van Doornik."
+selectie_toelichting: "Bisschop van Doornik-Noyon; steunde de missie in het Belgische Merovingische gebied."
 namen:
   primair: Acharius van Doornik
   alternatief:
   - Achaire
   - Acharius
+  - Acarius
+  - Acharius van Noyon
 datum:
-  waarde: 11-27
+  waarde: "11-27"
   stijl: gregoriaans
 titels:
-- Bisschop
-periode: ~640
-samenvatting: 'Heilige van de Lage Landen: Acharius van Doornik. Bisschop.'
+  - Bisschop van Noyon-Doornik
+periode: "~639"
+icoon:
+  bestand: iconen/acharius-van-doornik.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Haspres (Nord, Fr) église, buste Saint Achaire.JPG"
+locaties:
+  - doornik
+  - noyon
+samenvatting: |
+  Monnik van Luxeuil; bisschop van het samengevoegde bisdom Noyon-Doornik.
+  Bevorderde de christelijke missie in het huidige België. Feestdag 27 november.
+betekenis_lage_landen: |
+  Acharius bestuurde Doornik (Tournai) en Noyon en steunde Amandus’ werk in
+  het Belgische Merovingische rijk. Via hem kwam ook het bisdom Terwaan tot
+  stand, met Omaars als eerste bisschop. Zo hoort hij bij de vroegste
+  bisschoppelijke organisatie van de zuidelijke Lage Landen.
+verhaal: |
+  Acharius kwam uit de school van Columbanus en was monnik te Luxeuil onder
+  Eustasius. Rond 621–627 werd hij bisschop van Noyon-Doornik. Hij had aanzien
+  bij koning Dagobert I, steunde Amandus (maar kon diens verbanning niet
+  verhinderen) en verkrijgde in 636 de oprichting van het bisdom Terwaan.
+  Hij stierf omstreeks 27 november 639; Eligius volgde hem op. Cultus volgde
+  spoedig na zijn dood.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Acharius von Noyon"
+    url: "https://www.heiligenlexikon.de/BiographienA/Acharius_von_Noyon.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Luxeuil, Noyon-Tournai, steun aan Amandus en Audomar
+      (Omaars) van Terwaan.
   - label: "Wikipedia (NL) — Acharius"
     url: "https://nl.wikipedia.org/wiki/Acharius"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Kort Nederlandstalig overzicht van bisdom, missie en feestdag.
+  - label: "heiligen.net — Acharius van Doornik"
+    url: "https://www.heiligen.net/heiligen/11/27/11-27-0640-acharius.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Hagiografische schets: Luxeuil, Clichy, opvolging door Eligius.

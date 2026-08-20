@@ -8,9 +8,9 @@ selectie_toelichting: "Kanunnik van Utrecht; missie in Friesland (Stavoren)."
 namen:
   primair: Odulphus
   alternatief:
-    - Odulf
-    - Odulfus
-    - Odulphus van Utrecht
+  - Odulf
+  - Odulfus
+  - Odulphus van Utrecht
 datum:
   waarde: "06-12"
   stijl: gregoriaans
@@ -59,6 +59,11 @@ referenties:
     label: "Heiligenlexikon — Odulf von Utrecht"
     url: "https://www.heiligenlexikon.de/BiographienO/Odulf.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: Oirschot, Utrechtse kanunnik, missie te Stavoren in
+      Friesland en relieken.
   - label: "Wikipedia (NL) — Odulfus"
     url: "https://nl.wikipedia.org/wiki/Odulfus"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Stavoren, Utrecht en feestdag.

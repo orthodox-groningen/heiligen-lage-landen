@@ -1,25 +1,64 @@
 id: wiro
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - odilienberg
 selectie: voldoet
 selectie_toelichting: "Limburg / Odiliënberg."
 namen:
   primair: Wiro
   alternatief:
   - Wiro van Roermond
+  - Wiro van Odiliënberg
 datum:
-  waarde: 05-11
+  waarde: "05-11"
   stijl: gregoriaans
 titels:
-- Ierse missionaris, bisschop in Limburg, Nederland
-periode: '710'
-samenvatting: 'Heilige van de Lage Landen: Wiro. Ierse missionaris, bisschop in Limburg,
-  Nederland.'
+  - Missionaris
+  - Bisschop
+periode: "~710"
+locaties:
+  - odilienberg
+rustplaats:
+  plaats: odilienberg
+  toelichting: "Basiliek van de HH. Wiro, Plechelmus en Otgerus"
+icoon:
+  bestand: iconen/wiro.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:St Odiliënberg 3 Doppelstatuen new.jpg"
+samenvatting: |
+  Ierse (of Schotse) missionaris; stichtte met Plechelmus en Otger het
+  klooster te Sint Odiliënberg. Feestdag 11 mei (Roermond).
+betekenis_lage_landen: |
+  Wiro is de stichterheilige van Sint Odiliënberg bij Roermond: met
+  Plechelmus en Otger bouwde hij op land van Pepijn van Herstal een
+  Sint-Pietersklooster. De Maas-Limburgse cultus (basiliek, Roermond,
+  vroeger ook Utrecht) maakt hem een vaste heilige van de noordelijke
+  Lage Landen, ondanks legendaire vita-details.
+verhaal: |
+  De oudste vita (vermoedelijk negende eeuw) noemt Wiro uit Scotia
+  (Ierland). Rond 700 predikte hij met Plechelmus en Otger in Maas- en
+  Rijnstreek en stichtte het klooster te Berg (nu Sint Odiliënberg).
+  Verbinding met Willibrord is later toegevoegd. Hij stierf in de achtste
+  eeuw; grafvondst bij kerkbouw in 1881. Algemeen feest 8 mei; in
+  Roermond 11 mei (deze kalender volgt die lokale datum).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Wiro von Roermond"
+    url: "https://www.heiligenlexikon.de/BiographienW/Wiro.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonnota: Odiliënberg, Pepijn, legendarische vita, feestdagen
+      8 en 11 mei.
   - label: "Wikipedia (NL) — Wiro van Roermond"
     url: "https://nl.wikipedia.org/wiki/Wiro_van_Roermond"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte Nederlandse pagina: Scotia, Odiliënberg, Plechelmus en Otger.
+  - label: "heiligen.net — Wiro van Roermond"
+    url: "https://heiligen.net/heiligen/05/08/05-08-0710-wiro.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgebreidere Nederlandse vita: stichting, Pepijn, cultus Utrecht
+      en Roermond.

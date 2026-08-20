@@ -1,5 +1,6 @@
 baseURL = "/"
 languageCode = "nl"
+defaultContentLanguage = "nl"
 title = "Orthodoxe Kalender met Heiligen van de Lage Landen"
 enableRobotsTXT = true
 canonifyURLs = true

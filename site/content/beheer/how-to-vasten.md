@@ -2,7 +2,7 @@
 title: "Vastenregels wijzigen"
 description: "Periodes in data/vasten, mengregel in data/regels/vasten.yaml, code moet mee"
 weight: 40
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Er zijn **twee lagen**. Ze door elkaar halen is de meest voorkomende fout.
@@ -49,7 +49,8 @@ Dit wijzigt **wanneer** iets loopt en welk seizoensniveau de periode heeft.
 Het wijzigt niet de weekendversoepeling, het weekschema in het Apostelen-
 en Geboortevasten, of «een feest versoepelt alleen». Dat is laag 2.
 
-Ook namen van periodes: [namen.yaml]({{% ref "/beheer/how-to-namen" %}}).
+Ook namen van periodes: [weergavenamen]({{% ref "/beheer/how-to-namen" %}})
+(`namen:` in het vasten-YAML).
 
 ## 2. De mengregel (wat er op de dag staat)
 

@@ -1,30 +1,66 @@
 id: hubertus-van-maastricht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
-  - luik
 selectie: voldoet
-selectie_toelichting: "Maastricht / Luik."
+selectie_toelichting: "Laatste bisschop van Maastricht; eerste van Luik."
 namen:
   primair: Hubertus van Maastricht
   alternatief:
   - Hubertus van Luik
   - Hubertus
+  - Hubertus van Tongeren-Maastricht
 datum:
-  waarde: 05-30
+  waarde: "05-30"
   stijl: gregoriaans
   extra:
-  - waarde: 11-03
-    toelichting: 3 november
-periode: '727'
-samenvatting: 'Heilige van de Lage Landen: Hubertus van Maastricht.'
+  - waarde: "11-03"
+    toelichting: 3 november (gedachtenis / translatio-traditie)
+titels:
+  - Bisschop van Maastricht en Luik
+  - Apostel van de Ardennen
+periode: "ca. 655–727"
+icoon:
+  bestand: iconen/hubertus-van-maastricht.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Hubertus van Luik (tg-uact-341).jpg"
+locaties:
+  - maastricht
+  - luik
+samenvatting: |
+  Leerling van Lambertus; verplaatste de zetel van Maastricht naar Luik.
+  Sterfdag 30 mei; ook 3 november herdacht.
+betekenis_lage_landen: |
+  Hubertus is de schakel tussen Maastricht en Luik: hij droeg Lambertus’
+  gebeente over en vestigde de bisschopstoel te Luik (ca. 717/718). Zijn
+  missie in Brabant en de Ardennen verklaart de vele Hubertuskerken in
+  Zuid-Nederland en België. De jachtlegende (hert met kruis) is laat
+  (vanaf ca. 15e eeuw) en mag de historische bisschop niet vervangen.
+verhaal: |
+  Hubertus (ca. 655–727) was leerling van Lambertus van Maastricht. Na
+  diens moord volgde hij hem op en verplaatste zetel en cultus naar
+  Luik. Hij predikte in de Ardennen en Brabant en stierf op 30 mei 727
+  (traditie: Tervuren). In 825 gingen relieken naar Andage (Saint-Hubert).
+  De bekering tijdens de jacht is een middeleeuwse overdracht van de
+  Eustachius-legende, niet een vroegbron.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Hubertus von Lüttich"
+    url: "https://www.heiligenlexikon.de/BiographienH/Hubertus_von_Luettich.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Maastricht–Luik, Ardennenmissie, data 30 mei / 3
+      november; jachtattribuut als latere iconografie.
   - label: "Wikipedia (NL) — Hubertus van Luik"
     url: "https://nl.wikipedia.org/wiki/Hubertus_van_Luik"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van zetelverplaatsing, cultus en late
+      jachtlegende.
   - label: "heiligen.net — Hubertus"
     url: "https://www.heiligen.net/heiligen/11/03/11-03-0727-hubertus.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte heiligenpagina gericht op de novembergedachtenis.

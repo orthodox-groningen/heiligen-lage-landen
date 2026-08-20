@@ -8,8 +8,8 @@ selectie_toelichting: "Egmond; metgezel van Willibrord."
 namen:
   primair: Adelbert
   alternatief:
-    - Adelbert van Egmond
-    - Adalbert van Egmond
+  - Adelbert van Egmond
+  - Adalbert van Egmond
 datum:
   waarde: "06-25"
   stijl: gregoriaans
@@ -49,6 +49,11 @@ referenties:
     label: "Heiligenlexikon — Adelbert van Egmond"
     url: "https://www.heiligenlexikon.de/BiographienA/Adalbert_von_Egmond.html"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Lexikonvita: metgezel van Willibrord, prediking en graf te Egmond,
+      en de latere abdijcultus.
   - label: "Wikipedia (NL) — Adelbert van Egmond"
     url: "https://nl.wikipedia.org/wiki/Adelbert_van_Egmond"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Egmondse verering en feestdag.

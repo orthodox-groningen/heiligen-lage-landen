@@ -8,8 +8,8 @@ selectie_toelichting: "Gent."
 namen:
   primair: Bavo
   alternatief:
-    - Bavo van Gent
-    - Allowin
+  - Bavo van Gent
+  - Allowin
 datum:
   waarde: "10-01"
   stijl: gregoriaans
@@ -18,6 +18,11 @@ locaties:
 rustplaats:
   plaats: gent
   toelichting: "Sint-Baafskathedraal"
+icoon:
+  bestand: iconen/bavo.jpg
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Saint Bavo. Engraving by J. Matham. Wellcome V0031689.jpg"
 samenvatting: |
   Edelman die kluizenaar werd bij de abdij van Sint-Baafs te Gent.
   Feestdag 1 oktober.
@@ -37,4 +42,12 @@ verhaal: |
 referenties:
   - label: "Wikipedia (NL) — Bavo van Gent"
     url: "https://nl.wikipedia.org/wiki/Bavo_van_Gent"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van Allowins bekering, kluizenaarschap bij
+      Gent en de band met de Sint-Baafskathedraal.
+  - label: "heiligen.net — Bavo"
+    url: "https://www.heiligen.net/heiligen/10/01/10-01-0654-bavo.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte feestdagpagina met levensschets (1 oktober).

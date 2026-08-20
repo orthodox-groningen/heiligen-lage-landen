@@ -13,13 +13,8 @@ weekdagen:
 alternatief:
   - "Vasten op vrijdag"
   - "Vrijdag (wekelijks vasten)"
+vastenniveau: wijn_olie
 ---
-
-**Wekelijks:** elke vrijdag.
-
-**Vastenniveau (indicatief):** wijn en olie.
-
-> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Wekelijks vasten op vrijdag, ter herinnering aan het Kruis van Christus.
 
@@ -31,8 +26,12 @@ vlees en geen zuivel/eieren; strengere praktijk sluit ook vis, wijn en olie uit,
 behalve op feestdagen waarop de typikon versoepelt. Gezondheid, werk en lokale
 gewoonte bepalen mede hoe streng een gelovige dit houdt.
 
-## Referenties
+## Verder lezen en kijken
 
 - [OrthodoxWiki — Fasting](https://orthodoxwiki.org/Fasting) — geraadpleegd 2026-08-16
 - [OCA — The Orthodox Faith: Fasting](https://www.oca.org/orthodoxy/the-orthodox-faith/spirituality/prayer-fasting-and-almsgiving/fasting) — geraadpleegd 2026-08-16
 
+
+## Over de bronnen
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.

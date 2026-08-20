@@ -1,24 +1,61 @@
 id: odrada
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - balen
 selectie: voldoet
-selectie_toelichting: "Balen."
+selectie_toelichting: "Balen/Scheps en Alem; Kempen–Maas-cultus."
 namen:
   primair: Odrada
   alternatief:
   - Odrada van Alem
+  - Odrada van Balen
 datum:
-  waarde: 11-05
+  waarde: "11-05"
   stijl: gregoriaans
 titels:
-- Maagd van Balen
-periode: 8e eeuw
-samenvatting: 'Heilige van de Lage Landen: Odrada. Maagd van Balen.'
+  - Maagd van Balen
+periode: "8e eeuw (?)"
+locaties:
+  - balen
+icoon:
+  bestand: iconen/odrada.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:Heilige Odrada, Balen.jpg"
+samenvatting: |
+  Maagd uit Scheps bij Balen; begraven te Alem volgens de legende.
+  Feestdag 5 november.
+betekenis_lage_landen: |
+  Odrada verbindt de Antwerpse Kempen (Balen/Scheps, Millegem) met
+  Alem aan de Maas: kapittelcultus vanaf de elfde eeuw, vita 1304,
+  relieken tot in Balen. Zij is een lokale heilige van beide zijden van
+  de huidige grens — precies het type Lage-Landen-cultus van deze
+  kalender.
+verhaal: |
+  De Vita Odrade (1304) tekent Odrada als adellijk meisje te Scheps bij
+  Balen dat zich aan God wijdde. Bekend zijn het paardenwonder op weg
+  naar de kerkwijding in Millegem en de begrafenis: ossen brachten haar
+  lichaam naar Alem, waar een kerk verrezen. Zij stierf jong (traditie:
+  achtste eeuw). Historische kern is dun; de cultus (Alem, Sint-Truiden,
+  Balen) is wel degelijk. Feestdag 5 november (ook 3 november in Den
+  Bosch).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Odrada von Baelen"
+    url: "https://www.heiligenlexikon.de/BiographienO/Odrada_von_Baelen.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Scheps/Balen, Millegem-legende, begrafenis Alem;
+      feestdag november.
   - label: "Wikipedia (NL) — Odrada van Alem"
     url: "https://nl.wikipedia.org/wiki/Odrada_van_Alem"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van legende, Alem/Balen-cultus en
+      patronaten.
+  - label: "Digitaal Vrouwenlexicon — Odrada van Alem"
+    url: "https://resources.huygens.knaw.nl/vrouwenlexicon/lemmata/data/odrada"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Wetenschappelijke lemma’s over vita 1304, verering en iconografie.

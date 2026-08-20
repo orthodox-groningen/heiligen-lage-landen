@@ -1,0 +1,26 @@
+{{/*
+  Weergave van feestdatum MM-DD als "d mmm" (bijv. 7 nov).
+  Gebruik: {{ partial "feestdatum-kort.html" .Params.feestdatum }}
+*/}}
+{{- $mmdd := . -}}
+{{- if and $mmdd (findRE `^\d{2}-\d{2}$` $mmdd) -}}
+  {{- $mm := substr $mmdd 0 2 -}}
+  {{- $dd := substr $mmdd 3 2 -}}
+  {{- $maanden := dict
+    "01" "jan" "02" "feb" "03" "mrt" "04" "apr" "05" "mei" "06" "jun"
+    "07" "jul" "08" "aug" "09" "sep" "10" "okt" "11" "nov" "12" "dec"
+  -}}
+  {{- $maand := index $maanden $mm -}}
+  {{- if $maand -}}
+    {{- /* Dag zonder leidende nul (Hugo int faalt op "09"). */ -}}
+    {{- $dag := $dd -}}
+    {{- if hasPrefix $dd "0" -}}
+      {{- $dag = substr $dd 1 -}}
+    {{- end -}}
+    {{- $dag }} {{ $maand -}}
+  {{- else -}}
+    {{- $mmdd -}}
+  {{- end -}}
+{{- else -}}
+  {{- $mmdd -}}
+{{- end -}}

@@ -5,7 +5,7 @@ uitleg_stijl: heiligen-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Technische bijlage bij de [uitleg Heiligen]({{% ref "/uitleg/heiligen" %}}).
@@ -24,20 +24,30 @@ Zie de gebruikerspagina voor de formulering in gewone taal. In YAML:
 
 ```yaml
 selectie: voldoet   # voldoet | nader-onderzoek | kandidaat-schrappen
-selectie_toelichting: "Kort waarom, voor beheerders."
+selectie_toelichting: "Kort waarom (beheer; fallback op de pagina)."
+selectie_toelichting_publiek: |
+  Optioneel: leesbare uitleg op de heiligenpagina.
 ```
 
 - Ontbreekt `selectie` bij een heilige: behandel als `nader-onderzoek`
   (`scripts/load_entries.py`).
-- `selectie` en `selectie_toelichting` horen **niet** op de publieke
-  heiligenpagina. Overzicht voor beheerders: `/beheer/selectie/`
-  (gegenereerd; live telling).
+- Bij `nader-onderzoek` of `kandidaat-schrappen` schrijft `generate.py`
+  een paragraaf **Over de plaats in deze kalender** (publiek). Gebruik
+  `selectie_toelichting_publiek` als die afwijkt van de korte beheerzin.
+- `selectie` zelf komt **niet** in de Hugo-front matter (geen filterveld
+  voor bezoekers).
+- Overzicht voor beheerders: `/beheer/selectie/` (gegenereerd; live telling).
 - `kandidaat-schrappen` verwijdert niets; dat is een markering tot een
   expliciet besluit.
+- **Indirecte invloed** (deur open, niet actief verzamelen): typisch
+  `nader-onderzoek`, met uitleg op de pagina. Zie gebruikersuitleg.
 
 Beslissingslog (geen catalogusdump):
 [docs/inventaris.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md).
 `selectie` staat per heilige in YAML; overzicht `/beheer/selectie/`.
+
+Onbekende YAML-velden op een entry zijn toegestaan (experimenten/notities);
+zie [schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
 
 ## Betekenis voor de Lage Landen
 
@@ -49,9 +59,9 @@ betekenis_lage_landen: |
 
 Verplicht bij `bronlaag: nagekeken` voor `soort: heilige`. Als het veld
 gezet is, gelden dezelfde referentie-eisen als bij `verhaal` /
-`samenvatting`. `generate.py` zet het onder het kopje **Betekenis voor de
-Lage Landen** en in `entries.json` (veld `betekenis_lage_landen`, alleen
-heiligen).
+`samenvatting`. `generate.py` zet het onder **Betekenis voor de Lage Landen**
+(vóór samenvatting/verhaal) en in `entries.json` (veld
+`betekenis_lage_landen`, alleen heiligen).
 
 ## Bronlaag
 
@@ -72,7 +82,10 @@ Verouderd: `status: stub` / `status: curated` (vervangen door bronlaag).
 
 ## Eén persoon, één id
 
-Canonieke weergavenamen: `data/namen.yaml` (`primair` + `alternatief`).
+Canonieke weergavenamen: `namen.primair` + `namen.alternatief` in het
+entry-YAML. Conventie voor wat in `primair` hoort (roepnaam vs.
+`van {plaats}`, feesten, geen haakjes):
+[Weergavenamen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
 Na samenvoegen van dubbele bestanden:
 
 ```yaml
@@ -83,7 +96,7 @@ id_aliassen:
 
 - `id_aliassen`: oude ids, patroon `[a-z0-9_-]+`, niet het eigen id, niet
   een nog levend entry-id, uniek over de catalogus. Wordt Hugo `aliases`.
-- Zet de oude naam(en) ook in `namen.yaml` onder `alternatief`, anders
+- Zet de oude naam(en) ook onder `namen.alternatief`, anders
   vindt zoeken ze niet (Meneon en heiligenindex).
 
 ## Referenties
@@ -105,8 +118,9 @@ rustplaats:
 Plaats-ids staan in `data/plaatsen.yaml` (naam, coördinaten, optioneel
 `streek` en `alternatief`). Een `soort: plaats` krijgt een marker als
 minstens één heilige die id in `locaties` heeft. Een `soort: streek`
-alleen als een heilige die streek-id zelf noemt. Relieken en bedevaarten
-horen niet in dit veld.
+alleen als een heilige die streek-id zelf noemt. Op een heilige: liever
+concrete plaatsen; streek-ids alleen als aanvulling of bij gebrek aan
+een betere plek. Relieken en bedevaarten horen niet in dit veld.
 
 `generate.py` schrijft `site/static/data/plaatsen.json` en zet
 plaatsnamen plus zoektekst op de heiligenpagina.

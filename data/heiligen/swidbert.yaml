@@ -1,27 +1,69 @@
 id: swidbert
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - kaiserswerth
-  - frisia
 selectie: voldoet
-selectie_toelichting: "Missie met Willibrord in Frisia; later Kaiserswerth."
+selectie_toelichting: "Missie met Willibrord in Friesland; later Kaiserswerth."
 namen:
   primair: Swidbert
   alternatief:
   - Suitbertus
   - Suitbert
   - Swidbertus
+  - Suïtbertus
 datum:
-  waarde: 03-01
+  waarde: "03-01"
   stijl: gregoriaans
 titels:
-- Monastieke stichter aan de Rijn
-periode: '713'
-samenvatting: 'Heilige van de Lage Landen: Swidbert. Monastieke stichter aan de Rijn.'
+  - Missiebisschop
+  - Stichter van Kaiserswerth
+periode: "~647–713"
+locaties:
+  - kaiserswerth
+  - frisia
+rustplaats:
+  plaats: kaiserswerth
+  toelichting: "Stiftskirche Kaiserswerth"
+icoon:
+  bestand: iconen/swidbert.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Suitbertus.jpg"
+samenvatting: |
+  Angelsaksische metgezel van Willibrord; predikte in Friesland; stichtte
+  Kaiserswerth. Feestdag 1 maart.
+betekenis_lage_landen: |
+  Swidbert (Suitbertus) behoorde tot de elf missionarissen die in 690 met
+  Willibrord naar Friesland kwamen. Hij werd tot missiebisschop gewijd,
+  werkte onder meer bij de Bructeren, en stichtte met steun van Pepijn en
+  Plectrudis het klooster op de Rijn-eilandjes dat Kaiserswerth werd. Zijn
+  Friese start verbindt hem met de Utrechtse missiekring, ook al ligt zijn
+  grafklooster aan de Nederrijn.
+verhaal: |
+  Beda is de hoofdbron. Swidbert trok rond 690 met Willibrord naar
+  Friesland; tijdens Willibrords Rome-reis werd hij in Mercia door Wilfrid
+  tot bisschop gewijd. Na prediking bij de Bructeren (verstoord door
+  Saksische invallen) vestigde hij zich op een Rijn-eiland bij het huidige
+  Düsseldorf: Swidbertswerth, later Kaiserswerth. Hij stierf daar op
+  1 maart 713; zijn schrijn staat in de stiftskerk.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Suitbert von Kaiserswerth"
+    url: "https://www.heiligenlexikon.de/BiographienS/Suitbert.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita naar Beda: Friese missie met Willibrord, Bructeren,
+      stichting Kaiserswerth, sterfjaar 713.
   - label: "Wikipedia (NL) — Suitbertus"
     url: "https://nl.wikipedia.org/wiki/Suitbertus"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, wijding en Kaiserswerth;
+      vermeldt ook latere cultus in de Betuwe.
+  - label: "heiligen.net — Switbert van Kaiserswerth"
+    url: "https://heiligen.net/heiligen/03/01/03-01-0713-switbert.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte Nederlandse schets: metgezel van Willibrord, Rijnklooster,
+      feestdag 1 maart.

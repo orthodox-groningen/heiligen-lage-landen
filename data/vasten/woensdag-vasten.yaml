@@ -5,10 +5,10 @@ cyclus: wekelijks
 lage_landen: false
 vastenniveau: wijn_olie
 namen:
-  primair: "Woensdagvasten"
+  primair: Woensdagvasten
   alternatief:
-    - "Vasten op woensdag"
-    - "Woensdag (wekelijks vasten)"
+  - Vasten op woensdag
+  - Woensdag (wekelijks vasten)
 observances:
   - vasten
 datum:

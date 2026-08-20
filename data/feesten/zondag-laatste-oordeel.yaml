@@ -4,11 +4,12 @@ bronlaag: nagekeken
 cyclus: paascyclus
 lage_landen: false
 namen:
-  primair: "Zondag van het Laatste Oordeel (Vleesvaarwel)"
+  primair: Zondag van het Laatste Oordeel (Vleesvaarwel)
   alternatief:
   - Vleesvaarwelzondag
   - Zondag van het Laatste Oordeel
   - Vleesvaarwel
+  - Meatfare
 observances:
   - feest
 datum:

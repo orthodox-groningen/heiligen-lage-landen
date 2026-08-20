@@ -5,7 +5,7 @@ uitleg_stijl: meneon-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Technische bijlage bij de [uitleg Meneon]({{% ref "/uitleg/meneon" %}}).
@@ -29,10 +29,10 @@ Het Meneon toont entries met een vaste plaats in het jaar:
 - niet `cyclus: paascyclus`
 - niet `cyclus: wekelijks`
 
-Zoeken loopt over `namen.primair` en `namen.alternatief` (na toepassing van
-`data/namen.yaml`).
+Zoeken loopt over `namen.primair` en `namen.alternatief` uit het
+entry-YAML.
 
-In de Meneon-lijst toont `entryRowHtml` een klein icoon als `entries.json`
+In de Meneon-tabel toont `meneonTableHtml` een klein icoon als `entries.json`
 `icoon` heeft. De jaarkalender-popover (`fillKalenderDagPopover`) toont
 geen iconen.
 

@@ -1,7 +1,7 @@
 ---
 title: "Reactie geven"
 description: "Vraag, correctie of een ontbrekende heilige doorgeven"
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Heeft u een vraag, een correctie, of ontbreekt iemand die volgens de

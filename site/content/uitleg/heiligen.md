@@ -2,7 +2,7 @@
 title: "Heiligen van de Lage Landen"
 description: "Wie in deze kalender staat, hoe stevig de tekst is, en waarom een dag zonder heilige kan"
 uitleg_stijl: heiligen
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Deze kalender verzamelt **heiligen die bij de Lage Landen horen**, naast de
@@ -12,8 +12,9 @@ kunt verwachten, en waarom een dag soms **geen heilige** toont.
 
 Het [overzicht van heiligen]({{% ref "/heiligen" %}}) is de ingang op
 **persoon** (zoeken, belang, verhaal, datum). U kunt daar ook zoeken op
-plaats of streek — Utrecht, Vlaanderen — en de plaatsen op een kaart
-zien. Heiligen met een icoon op deze site tonen dat icoon klein in de
+plaats of streek — Utrecht, Vlaanderen, Friesland — en de plaatsen op een kaart
+zien. Streken staan cursief in de lijst, zodat u ze van steden en dorpen
+kunt onderscheiden. Heiligen met een icoon op deze site tonen dat icoon klein in de
 lijst. Het [Meneon]({{% ref "/uitleg/meneon" %}}) is de ingang op **datum**.
 
 ## Wie staat erin?
@@ -32,6 +33,12 @@ Iemand hoort in deze lijst als minstens één van beide geldt:
 De huidige lijst is een start. Wie er al in staat, schrappen we niet
 zomaar. Blijkt later dat iemand niet aan deze maatstaf voldoet, dan merken
 we dat intern aan; verwijderen gebeurt alleen na een uitdrukkelijk besluit.
+Op die pagina’s staat dan een korte uitleg **Over de plaats in deze
+kalender**.
+
+**Indirecte invloed** (bijvoorbeeld iemand die missionarissen opleidde
+maar zelf niet hier predikte) kan als grensgeval blijven staan. We zoeken
+zulke heiligen niet actief op; de deur blijft open tot er een besluit is.
 
 Ontbreekt iemand die wél voldoet, dan hoort die erbij. Dat vullen we
 geleidelijk aan. Zie [Reactie geven]({{% ref "/uitleg/reactie" %}}).

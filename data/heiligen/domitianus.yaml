@@ -1,24 +1,61 @@
 id: domitianus
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
 selectie: voldoet
 selectie_toelichting: "Bisschop van Maastricht."
 namen:
   primair: Domitianus
   alternatief:
   - Domitianus van Hoei
+  - Domitianus van Maastricht
+  - Domitianus van Tongeren
+  - Domitien de Huy
 datum:
-  waarde: 05-07
+  waarde: "05-07"
   stijl: gregoriaans
 titels:
-- Bisschop van Maastricht
-periode: '560'
-samenvatting: 'Heilige van de Lage Landen: Domitianus. Bisschop van Maastricht.'
+  - Bisschop van Maastricht
+periode: "† ca. 560"
+locaties:
+  - maastricht
+icoon:
+  bestand: iconen/domitianus.jpg
+  rechten: ok
+  licentie: "CC BY 4.0"
+  bron: "Wikimedia Commons — File:Coffret des reliques de la châsse de Saint Domitien (KIK-IRPA x000991).jpg"
+samenvatting: |
+  Bisschop van Tongeren-Maastricht; historisch bevestigd op concilies
+  (535, 549). Cultus te Hoei. Feestdag 7 mei.
+betekenis_lage_landen: |
+  Domitianus hoort tot de vroegste historisch greepbare bisschoppen van
+  de Maasstreek. Hij ondertekende als bisschop van Tongeren te Maastricht
+  (Clermont 535) en als bisschop van Tongeren (Orléans 549). Zijn graf-
+  en cultuscentrum lag te Hoei; Maastricht bewaart een vingerreliek.
+  Zo verbindt hij Tongeren, Maastricht en het latere Luikse bisdom.
+verhaal: |
+  Heriger van Lobbes (eind 10e eeuw) noemt hem tijdgenoot van Childebert I.
+  Concilie-acta bevestigen zijn aanwezigheid in 535 en 549. Hij liet boven
+  Servatius’ graf een kerk bouwen (voorloper Sint-Servaas). Latere vitae
+  voegen wonderen toe. Relieken te Hoei werden middeleeuws verheven.
+  Feestdag 7 mei.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Domitian von Maastricht"
+    url: "https://www.heiligenlexikon.de/BiographienD/Domitian.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Tongeren-Maastricht, synodes 535/549, Servatiuskerk,
+      rustplaats Hoei.
   - label: "Wikipedia (NL) — Domitianus van Hoei"
     url: "https://nl.wikipedia.org/wiki/Domitianus_van_Hoei"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Overzicht van concilie-ondertekeningen, Heriger, vitae en cultus
+      te Hoei/Maastricht.
+  - label: "heiligen.net — Domitianus van Maastricht"
+    url: "https://heiligen.net/heiligen/05/07/05-07-0549-domitianus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse pagina met synodehandtekeningen en late legendevita.

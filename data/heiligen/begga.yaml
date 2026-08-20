@@ -8,9 +8,9 @@ selectie_toelichting: "Dochter van Iduberga; stichting Andenne."
 namen:
   primair: Begga
   alternatief:
-    - Begga van Andenne
-    - Begga van Landen
-    - Begga van Herstal
+  - Begga van Andenne
+  - Begga van Landen
+  - Begga van Herstal
 datum:
   waarde: "12-17"
   stijl: gregoriaans
@@ -60,6 +60,12 @@ referenties:
     label: "Heiligenlexikon — Begga"
     url: "https://www.heiligenlexikon.de/BiographienB/Begga.htm"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: Pippinidische afkomst, stichting van Andenne, feestdagen
+      en kritische notities bij de late vita.
   - label: "Wikipedia (NL) — Begga van Herstal"
     url: "https://nl.wikipedia.org/wiki/Begga"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Nederlandstalig overzicht van familie, Andenne en middeleeuwse
+      verering.

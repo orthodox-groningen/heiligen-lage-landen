@@ -8,10 +8,10 @@ selectie_toelichting: "Eerste bevestigde bisschop van Tongeren; graf in Maastric
 namen:
   primair: Servatius
   alternatief:
-    - Servatius van Maastricht
-    - Servatius van Tongeren
-    - Sint Servaas
-    - Aravatius
+  - Servatius van Maastricht
+  - Servatius van Tongeren
+  - Sint Servaas
+  - Aravatius
 datum:
   waarde: "05-13"
   stijl: gregoriaans
@@ -66,10 +66,19 @@ referenties:
   - bron_id: hlex
     label: "Heiligenlexikon — Servatius von Tongern"
     url: "https://www.heiligenlexikon.de/BiographienS/Servatius.htm"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Duitstalige lexikonvita: Tongeren/Maastricht, discussie over datering
+      en wat legende is versus vroege bronnen (Gregorius van Tours).
   - label: "Wikipedia (NL) — Servatius van Maastricht"
     url: "https://nl.wikipedia.org/wiki/Servatius_van_Maastricht"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, basiliek en Heiligdomsvaart;
+      handig voor lokale cultus.
   - label: "Wikipedia (EN) — Servatius of Tongeren"
     url: "https://en.wikipedia.org/wiki/Servatius_of_Tongeren"
-    geraadpleegd: "2026-08-17"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige pagina met synoden, Aravatius-identificatie en
+      literatuurverwijzingen.

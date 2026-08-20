@@ -20,7 +20,7 @@ Preview lokaal: `scripts\serve.cmd`.
 
 ## Architectuur
 
-- Brondata: `data/` (YAML)
+- Brondata: `data/` (YAML); veldrichtlijnen: `schemas/` (+ `schemas/README.md`)
 - Validatie/generatie: `scripts/`
 - Site: `site/` (Hugo)
 - Uitleg: `site/content/uitleg/` (gebruikers) + `*-technisch.md` (niet in het overzicht)

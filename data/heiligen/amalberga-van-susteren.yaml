@@ -1,29 +1,63 @@
 id: amalberga-van-susteren
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - susteren
 selectie: voldoet
-selectie_toelichting: "Abdis van Susteren."
+selectie_toelichting: "Abdis van Susteren; relieken in de Sint-Amelbergabasiliek."
 namen:
   primair: Amalberga van Susteren
   alternatief:
   - Amelberg
   - Amelberga
   - Amalberga
+  - Alma
+  - Amelberga van Susteren
 datum:
-  waarde: 11-21
+  waarde: "11-21"
   stijl: gregoriaans
   extra:
-  - waarde: 11-27
-    toelichting: 27 november
+    - waarde: "11-27"
+      toelichting: 27 november
 titels:
-- Abdis
-periode: 9e eeuw
-samenvatting: 'Heilige van de Lage Landen: Amalberga van Susteren. Abdis.'
+  - Abdis van Susteren
+periode: "9e eeuw (~900)"
+locaties:
+  - susteren
+icoon:
+  bestand: iconen/amalberga-van-susteren.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:2024 RMO, Het jaar 1000, Amelberga-schrijn Susteren (1).jpg"
+samenvatting: |
+  Eerste abdis van het vrouwenklooster te Susteren; † omstreeks 900.
+  Feestdag 21 (en 27) november.
+betekenis_lage_landen: |
+  Susteren (Limburg) bewaart haar graf in de romaans-basilicale
+  Sint-Amelbergakerk, samen met andere Utrechtse/Limburgse heiligen.
+  De abdij gaat terug op Willibrords schenking (714); Amalberga staat
+  voor de vroegmiddeleeuwse kloostercultus in Nederlands Limburg.
+verhaal: |
+  Benedictines en eerste abdis na de herstichting van Susteren (traditie:
+  onder koning Zwentibold; opvoeding van diens dochters Benedicta en
+  Cecilia). Niet te verwarren met Amalberga van Temse of van Maubeuge.
+  Relieken en cultus zijn sinds middeleeuwen aan de abdijkerk verbonden;
+  zevenjaarlijkse heiligdomsvaart.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Amalberga von Susteren"
+    url: "https://www.heiligenlexikon.de/BiographienA/Amalberga_Alma.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: abdis, Zwentibold-traditie, reliekeninventaris en
+      basiliek.
   - label: "heiligen.net — Amalberga"
     url: "https://www.heiligen.net/heiligen/11/21/11-21-0900-amalberga.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte pagina: abdis van Susteren, feestdagen, bedevaartsoord.
+  - label: "Wikipedia (EN) — Amelberga of Susteren"
+    url: "https://en.wikipedia.org/wiki/Amelberga_of_Susteren"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelse samenvatting met verwijzing naar Digitaal Vrouwenlexicon.

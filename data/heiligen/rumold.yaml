@@ -8,10 +8,10 @@ selectie_toelichting: "Patroon van Mechelen; prediking en martelaarschap in Vlaa
 namen:
   primair: Rumold
   alternatief:
-    - Rumoldus
-    - Rombout
-    - Rumbold
-    - Rumold van Mechelen
+  - Rumoldus
+  - Rombout
+  - Rumbold
+  - Rumold van Mechelen
 datum:
   waarde: "06-24"
   stijl: gregoriaans
@@ -59,9 +59,17 @@ referenties:
   - label: "Van Eck, Xander. The high altar of the archiepiscopal cathedral of Mechelen (Simiolus 38, 2015)"
     url: "https://www.researchgate.net/publication/309121137_The_high_Altar_of_the_archiepiscopal_cathedral_of_Mechelen_St_Rumbold_s_grand_reliquary_and_tomb"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Kunsthistorisch artikel over altaar, reliekschrijn en graf van
+      Rumold in de Mechelse kathedraal; ook over reliekonderzoek.
   - label: "Wikipedia (NL) — Rumoldus van Mechelen"
     url: "https://nl.wikipedia.org/wiki/Rumoldus"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Nederlandstalig overzicht van vita-overlevering, Mechelse cultus en
+      feestdagen.
   - label: "Wikipedia (DE) — Rumold von Mecheln"
     url: "https://de.wikipedia.org/wiki/Rumold_von_Mecheln"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Duitstalige pagina met vita-tradities, datering en literatuur.

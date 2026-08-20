@@ -3,8 +3,9 @@
   "$id": "https://orthodox-ronl.github.io/kalender/schemas/entry.schema.json",
   "title": "Heiligenkalender entry",
   "type": "object",
-  "additionalProperties": false,
-  "required": ["id", "soort", "datum"],
+  "additionalProperties": true,
+  "description": "Entry (heilige/feest/vasten). Onbekende top-level velden zijn toegestaan voor notities en experimenten; generate.py en de site negeren die. Bekende velden blijven genormeerd.",
+  "required": ["id", "soort", "datum", "namen"],
   "properties": {
     "id": {
       "type": "string",
@@ -18,7 +19,7 @@
       "type": "object",
       "additionalProperties": false,
       "required": ["primair"],
-      "description": "Optioneel als de id in data/namen.yaml staat (die wint bij laden).",
+      "description": "Canonieke weergavenaam en zoekaliassen in dit entry-bestand.",
       "properties": {
         "primair": { "type": "string", "minLength": 1 },
         "alternatief": {
@@ -197,14 +198,22 @@
       "type": "string",
       "description": "Apart stuk: wat deze heilige voor het christendom of de Orthodoxie in de Lage Landen betekende. Herbruikbaar buiten de heiligenpagina."
     },
+    "over_bronnen": {
+      "type": "string",
+      "description": "Optionele toelichting onder «Over de bronnen» (vóór de bronlaag-noot)."
+    },
     "selectie": {
       "type": "string",
       "enum": ["voldoet", "nader-onderzoek", "kandidaat-schrappen"],
-      "description": "Toetsing aan de selectiecriteria (heiligen). Ontbreekt: behandel als nader-onderzoek. Niet op de publieke heiligenpagina."
+      "description": "Toetsing aan de selectiecriteria (heiligen). Ontbreekt: behandel als nader-onderzoek. Bij nader-onderzoek of kandidaat-schrappen verschijnt een paragraaf op de publieke heiligenpagina."
     },
     "selectie_toelichting": {
       "type": "string",
-      "description": "Korte toelichting bij selectie, alleen voor beheerders."
+      "description": "Korte toelichting bij selectie (beheer + fallback voor de publieke paragraaf)."
+    },
+    "selectie_toelichting_publiek": {
+      "type": "string",
+      "description": "Optioneel: leesbare toelichting op de heiligenpagina. Ontbreekt: selectie_toelichting. Alleen getoond bij nader-onderzoek of kandidaat-schrappen."
     },
     "id_aliassen": {
       "type": "array",
@@ -228,7 +237,14 @@
             "type": "string",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
           },
-          "opmerking": { "type": "string" },
+          "inhoud": {
+            "type": "string",
+            "description": "Voor de lezer: wat je in deze bron leest of ziet (1–3 zinnen)."
+          },
+          "opmerking": {
+            "type": "string",
+            "description": "Interne notitie; publiek alleen als fallback als inhoud ontbreekt."
+          },
           "isbn": { "type": "string", "minLength": 1 },
           "pagina": { "type": "string", "minLength": 1 },
           "locator": {

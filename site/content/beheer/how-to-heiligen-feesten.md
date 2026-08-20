@@ -1,8 +1,8 @@
 ---
 title: "Heilige of feest toevoegen of wijzigen"
-description: "YAML onder data/, namen.yaml, referenties; nooit de gegenereerde markdown"
+description: "YAML onder data/, namen in het entry-bestand; nooit de gegenereerde markdown"
 weight: 20
-git_date: 2026-08-17
+git_date: 2026-08-20
 ---
 
 Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de
@@ -10,7 +10,9 @@ site ziet, zijn een afdruk. Wijzig de YAML; laat `site/content/heiligen/`
 en `site/content/feesten/` met rust.
 
 Datamodel: [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
-Schema: `schemas/entry.schema.json`. Publiceren:
+Schema’s (velden + auteursrichtlijnen):
+[schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
+Schema entry: `schemas/entry.schema.json`. Publiceren:
 [site bouwen]({{% ref "/beheer/how-to-publiceren" %}}).
 
 ## Nieuw id
@@ -19,15 +21,15 @@ Schema: `schemas/entry.schema.json`. Publiceren:
    of cijfer. Voorbeeld: `willibrord`, `ontslapen-moeder-gods`.
 2. Dat id is de **bestandsnaam** zonder `.yaml` en blijft stabiel. Wijzig
    later liever de getoonde naam dan het id.
-3. Zet de canonieke naam in `data/namen.yaml` onder `entries.<id>` (primair,
-   optioneel `alternatief`). Zie [namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
+3. Zet `namen.primair` (en optioneel `alternatief`) in hetzelfde YAML-bestand.
+   Zie [namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
 
 ## Bestand
 
 - Heilige: `data/heiligen/<id>.yaml` met `soort: heilige`
 - Feest: `data/feesten/<id>.yaml` met `soort: feest`
 
-Minimaal: `id`, `soort`, `datum`. Voor een verhaal, samenvatting of
+Minimaal: `id`, `soort`, `datum`, `namen.primair`. Voor een verhaal, samenvatting of
 `betekenis_lage_landen` is minstens één **referentie** verplicht, met een
 locator: `url`, of `isbn`, of `locator`.
 
@@ -57,6 +59,11 @@ rustplaats:
   plaats: echternach
   toelichting: "Abdij van Echternach"
 ```
+
+Zet bij voorkeur **concrete plaatsen**. Een **streek**-id (`frisia`,
+`vlaanderen`) alleen als aanvulling, of als er geen betere plek bekend is.
+De weergavenaam van een streek is herkenbaar Nederlands (`Friesland`);
+historische vormen (`Frisia`) staan in `alternatief` en blijven zoekbaar.
 
 `rustplaats` is alleen waar het lichaam traditioneel rust. Geen relieken.
 
@@ -95,11 +102,18 @@ datum:
 Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
 18 december. Zie `docs/datamodel.md`.
 
-## Namen in het entry-bestand
+## Namen
 
-U *mag* `namen.primair` in de YAML zetten. Bij laden **wint**
-`data/namen.yaml`. Zet nieuwe namen dus daar, anders lijkt de YAML-naam te
-werken tot iemand `namen.yaml` aanvult.
+```yaml
+namen:
+  primair: Willibrord
+  alternatief:
+  - Willibrordus
+```
+
+`primair` is verplicht in het entry-bestand. Zoekaliassen en andere
+spellingen horen onder `alternatief`. Zie
+[namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).
 
 ## Vasten op een feest
 
@@ -117,19 +131,26 @@ Onthoofding). De mengregel zelf wijzigt u niet hier. Zie
 
 ## Referenties
 
+Bij het lezen van een bron: checklist
+[Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}})
+(aliassen, plaatsen, `inhoud`, icoon).
+
 ```yaml
 referenties:
   - bron_id: oca-calendar
     url: "https://www.oca.org/saints/lives"
     geraadpleegd: "2026-08-16"
+    inhoud: "Korte vita en feestdag in de OCA-kalender."
   - label: "Handboek X"
     isbn: "978-…"
     pagina: "120–124"
     geraadpleegd: "2026-08-16"
+    inhoud: "Hoofdstuk over de missie in Frisia."
 ```
 
 `bron_id` wijst naar `data/bronnen/bronnen.yaml`. De locator hoort **ook**
-op de referentie in de entry, niet alleen in de catalogus.
+op de referentie in de entry, niet alleen in de catalogus. Sectiekop op de
+pagina: **Verder lezen en kijken**.
 
 ## Heiligen: selectie, betekenis, bronlaag
 
@@ -137,16 +158,26 @@ Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
 
+Pagina-opbouw (na de infobox): feestdag-link → **Betekenis voor de Lage Landen**
+(`betekenis_lage_landen`) → samenvatting → verhaal → verder lezen →
+**Over de bronnen** → (alleen bij nader/kandidaat) selectieparagraaf.
+
 ```yaml
 betekenis_lage_landen: |
   Wat deze heilige voor het christendom of de Orthodoxie
   in de Lage Landen betekende.
 selectie: voldoet          # of nader-onderzoek | kandidaat-schrappen
-selectie_toelichting: "…"  # optioneel; niet op de publieke pagina
+selectie_toelichting: "…"  # beheer; bij nader/kandidaat ook fallback publiek
+selectie_toelichting_publiek: "…"  # optioneel; lezersversie
 ```
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
+- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt onderaan
+  **Over de plaats in deze kalender** (`_publiek`, anders `selectie_toelichting`).
+- Extra top-level YAML-velden mogen (notities/experimenten); ze komen niet
+  op de site tot generate/UI ze kent. Zie
+  [schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
 - Beslissingslog: [docs/inventaris.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/inventaris.md)
   (geen vaste aantallen). Live overzicht:
   [Selectie heiligen]({{% ref "/beheer/selectie" %}}).
@@ -170,10 +201,17 @@ Feesten: `nagekeken` blijft nagekeken tekst met traceerbare bronnen.
 Bestand onder `site/static/` (doorgaans `site/static/iconen/<id>.jpg`).
 Alleen tonen als `rechten: ok`, met `bron` en `licentie`. Geen URL als
 afbeeldingsbron: een plaatje op een andere site mag u niet zomaar in de
-browser laden (auteursrecht, kapotte links, hotlink-blokkades). Staat het
-legaal op Wikimedia Commons (publiek domein of CC met naamsvermelding),
-dan kopieert u het bestand naar `site/static/iconen/` en vermeldt u de
-Commons-pagina als `bron`.
+browser laden (auteursrecht, kapotte links, hotlink-blokkades).
+
+**Commons-checklist**
+
+1. Zoek op [Wikimedia Commons](https://commons.wikimedia.org/) (naam +
+   heilige / icon).
+2. Open de **File:**-pagina; lees licentie en attribuutvereisten.
+3. Toegestaan voor ons: publiek domein, CC0, of CC-BY / CC-BY-SA met
+   naamsvermelding in `bron` / `licentie`.
+4. Download het bestand; bewaar onder `site/static/iconen/<id>.…`.
+5. Zet in YAML `rechten: ok` en verwijs naar de File-pagina als `bron`.
 
 ```yaml
 icoon:
@@ -184,13 +222,13 @@ icoon:
 ```
 
 Ontbreekt een legaal bestand: laat `icoon` weg. «Icoon in parochie» hoort
-niet in `titels`.
+niet in `titels`. Bron beoordelen (stap beeldmateriaal):
+[Bron beoordelen]({{% ref "/beheer/how-to-bron-beoordelen" %}}).
 
 ## Dubbele ids samenvoegen
 
 Eén persoon = één bestand. Houd het canonieke id (bestandsnaam). Zet oude
-ids in `id_aliassen` en de oude namen in `data/namen.yaml` onder
-`alternatief`:
+ids in `id_aliassen` en de oude namen onder `namen.alternatief`:
 
 ```yaml
 id: lebuinus
@@ -202,8 +240,8 @@ id_aliassen:
 apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
 `betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
-staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}), niet op de
-publieke pagina.
+staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}); bij
+`nader-onderzoek` / `kandidaat-schrappen` ook kort onderaan de publieke pagina.
 
 ## Controleren
 
@@ -214,4 +252,4 @@ python -m pytest -q
 ```
 
 Daarna de entry op de site: Meneon (vaste dag), datumpagina (dit jaar),
-eventueel ICS. Klopt de naam niet, dan eerst `namen.yaml`.
+eventueel ICS. Klopt de naam niet, dan eerst `namen:` in het entry-YAML.

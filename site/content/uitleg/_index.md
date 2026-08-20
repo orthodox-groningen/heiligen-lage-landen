@@ -1,6 +1,6 @@
 ---
 title: "Uitleg"
-git_date: 2026-08-17
+git_date: 2026-08-18
 ---
 
 Deze site is een **praktische orthodoxe kalender** voor Nederland en België.

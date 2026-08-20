@@ -43,21 +43,18 @@ datum:
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
 kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
 
-## Namen (één plek wijzigen)
+## Namen
 
-Canonieke weergavenamen staan in **`data/namen.yaml`**:
+Canonieke weergavenamen staan **in het entry-YAML** als `namen.primair`
+en optioneel `namen.alternatief`. Conventie:
+`site/content/beheer/how-to-namen.md`.
 
-- `entries.<id>.primair` / `alternatief` — wint bij laden over `namen:` in
-  individuele YAML-bestanden
-- `labels.<id>` — termen zonder eigen entry (bijv. Vleesvaarwel als label)
-
-Ids (bestandsnamen) blijven stabiel; wijzig alleen de getoonde namen in
-`namen.yaml`.
+Ids (bestandsnamen) blijven stabiel; wijzig de getoonde naam, niet het id.
 
 Eén persoon is één bestand. Andere spellingen en historische namen horen
-in `alternatief` (via `namen.yaml`). Na een merge van twee ids blijft het
-canonieke id de bestandsnaam; de oude id(s) komen in `id_aliassen` (voor
-oude URL’s) én als naam in `alternatief` (zoeken en index).
+in `alternatief`. Na een merge van twee ids blijft het canonieke id de
+bestandsnaam; de oude id(s) komen in `id_aliassen` (voor oude URL’s) én
+als naam in `alternatief` (zoeken en index).
 
 ## Vasten
 
@@ -207,17 +204,18 @@ betekenis_lage_landen: |
   Apart stuk: wat deze heilige voor het christendom of de Orthodoxie
   in de Lage Landen betekende.
 selectie: voldoet            # of: nader-onderzoek | kandidaat-schrappen
-selectie_toelichting: "…"    # optioneel; niet op de publieke pagina
+selectie_toelichting: "…"    # beheer; bij nader/kandidaat ook fallback publiek
+selectie_toelichting_publiek: "…"  # optioneel; lezersversie
 id_aliassen: [lubuinus]      # oude ids na een merge
 ```
 
 - **`betekenis_lage_landen`** — verplicht bij `bronlaag: nagekeken` voor
   `soort: heilige`. Zelfde referentieverplichting als verhaal/samenvatting.
-  Eigen kop op de heiligenpagina (**Betekenis voor de Lage Landen**); ook in
-  `site/static/data/entries.json` (alleen bij heiligen).
+  Op de heiligenpagina als **Betekenis voor de Lage Landen** (vóór samenvatting/
+  verhaal); ook in `site/static/data/entries.json` (alleen bij heiligen).
 - **`selectie`** — toetsing aan de criteria. Ontbreekt bij een heilige:
   behandel als `nader-onderzoek`. Waarden: `voldoet`, `nader-onderzoek`,
-  `kandidaat-schrappen`. Verschijnt niet op de publieke heiligenpagina.
+  `kandidaat-schrappen`. Bij de laatste twee: paragraaf onderaan de pagina.
 - **`id_aliassen`** — oude `[a-z0-9_-]+` ids; niet gelijk aan het eigen id
   en niet gelijk aan een ander levend entry-id. `generate.py` zet Hugo
   `aliases` (`/heiligen/<oud-id>/`).
@@ -239,17 +237,27 @@ Elke referentie heeft `bron_id` en/of `label`, plus een **raadpleegbare locator*
 - `isbn` (+ optioneel `pagina`), of
 - `locator` — vrije tekst (archief, app, signatuur, …)
 
+Optioneel:
+
+- `geraadpleegd` — `YYYY-MM-DD`
+- `inhoud` — 1–3 zinnen voor de lezer: wat je in deze bron leest of ziet
+- `opmerking` — interne notitie; publiek alleen als `inhoud` ontbreekt
+
 ```yaml
 referenties:
   - bron_id: oca-calendar
     url: "https://www.oca.org/saints/lives"
     geraadpleegd: "2026-08-16"
+    inhoud: "Korte vita en feestdag in de OCA-kalender."
   - label: "Handboek X"
     isbn: "978-…"
     pagina: "120–124"
     geraadpleegd: "2026-08-16"
+    inhoud: "Hoofdstuk over de missie in Frisia."
 ```
 
+Sectiekop op de pagina: **Verder lezen en kijken**. Checklist bij bronnen:
+`/beheer/how-to-bron-beoordelen/`.
 `bron_id` verwijst naar `data/bronnen/bronnen.yaml` (naam/metadata); de locator
 hoort **ook** op de referentie zelf te staan.
 
@@ -285,10 +293,12 @@ rustplaats:
 ```
 
 `soort: plaats` krijgt een marker als minstens één heilige die id in
-`locaties` heeft. `soort: streek` (Vlaanderen, Frisia) is vooral voor
+`locaties` heeft. `soort: streek` (Vlaanderen, Friesland) is vooral voor
 zoeken; een marker alleen als een heilige die streek-id zelf in
-`locaties` heeft. Optioneel `streek:` op een plaats koppelt zoeken
-(«Vlaanderen» vindt Drongen). Geen relieken- of bedevaartenlijst.
+`locaties` heeft. Op een heilige: liever concrete plaatsen; streek-ids
+alleen als aanvulling of bij gebrek aan een betere plek. Optioneel
+`streek:` op een plaats koppelt zoeken («Vlaanderen» vindt Drongen).
+Geen relieken- of bedevaartenlijst.
 
 ## Icoon
 

@@ -1,0 +1,144 @@
+{{/*
+  Wikipedia-achtige infobox voor heilige / feest / vasten.
+  Velden uit front matter (generate.py ← YAML).
+  Hugo dict: alleen stringsleutels (geen integers).
+*/}}
+{{- $p := .Params -}}
+{{- $weeknamen := dict "1" "maandag" "2" "dinsdag" "3" "woensdag" "4" "donderdag" "5" "vrijdag" "6" "zaterdag" "7" "zondag" -}}
+{{- $heeftDatum := or $p.feestdatum (and $p.van $p.tot) $p.weekdagen $p.paascyclus_offset (isset $p "van_offset_dagen") $p.anker -}}
+{{- $heeftBox := or $p.icoon $p.titels $p.alternatief $heeftDatum $p.periode $p.locatie_items $p.rustplaats_plaats $p.vastenniveau $p.onderdrukt_wekelijks_vasten -}}
+{{- if $heeftBox -}}
+<aside class="infobox" aria-label="Kerngegevens">
+  <div class="infobox-header">{{ .Title }}</div>
+  {{- with $p.icoon }}
+  <figure class="infobox-figure">
+    <img src="{{ . | relURL }}" alt="Afbeelding van {{ $.Title }}" width="220" height="220" loading="lazy">
+    {{- if or $p.icoon_bron $p.icoon_licentie }}
+    <figcaption>
+      {{- with $p.icoon_bron }}{{ . }}{{ end -}}
+      {{- if and $p.icoon_bron $p.icoon_licentie }} · {{ end -}}
+      {{- with $p.icoon_licentie }}{{ . }}{{ end -}}
+    </figcaption>
+    {{- end }}
+  </figure>
+  {{- end }}
+  <table class="infobox-table">
+    <tbody>
+      {{- with $p.titels }}
+      <tr>
+        <th scope="row">Titel</th>
+        <td>{{ delimit . " · " }}</td>
+      </tr>
+      {{- end }}
+      {{- with $p.alternatief }}
+      <tr>
+        <th scope="row">Ook</th>
+        <td>{{ delimit . ", " }}</td>
+      </tr>
+      {{- end }}
+      {{- if eq $p.soort "feest" }}
+      <tr>
+        <th scope="row">Soort</th>
+        <td>Feest</td>
+      </tr>
+      {{- else if eq $p.soort "vasten" }}
+      <tr>
+        <th scope="row">Soort</th>
+        <td>Vasten</td>
+      </tr>
+      {{- end }}
+      {{- if $p.feestdatum }}
+      <tr>
+        <th scope="row">Feestdag</th>
+        <td><a href="{{ printf "/datum/?dag=%s" $p.feestdatum | relURL }}">{{ partial "feestdatum-kort.html" $p.feestdatum }}</a></td>
+      </tr>
+      {{- else if and $p.van $p.tot }}
+      <tr>
+        <th scope="row">Periode</th>
+        <td>{{ partial "feestdatum-kort.html" $p.van }} – {{ partial "feestdatum-kort.html" $p.tot }}</td>
+      </tr>
+      {{- else if $p.weekdagen }}
+      {{- $namen := slice -}}
+      {{- range $p.weekdagen -}}
+        {{- $namen = $namen | append (index $weeknamen (printf "%d" .)) -}}
+      {{- end }}
+      <tr>
+        <th scope="row">Wekelijks</th>
+        <td>elke {{ delimit $namen ", " }}</td>
+      </tr>
+      {{- else if isset $p "paascyclus_offset" }}
+      <tr>
+        <th scope="row">Paascyclus</th>
+        <td>
+          {{- $o := $p.paascyclus_offset -}}
+          {{- if ge $o 0 }}+{{ end }}{{ $o }} dagen t.o.v. Orthodox Pascha
+        </td>
+      </tr>
+      {{- else if isset $p "van_offset_dagen" }}
+      <tr>
+        <th scope="row">Paascyclus</th>
+        <td>
+          {{- $vo := $p.van_offset_dagen -}}
+          vanaf {{ if ge $vo 0 }}+{{ end }}{{ $vo }}
+          {{- if isset $p "tot_offset_dagen" }}
+            {{- $to := $p.tot_offset_dagen -}}
+            tot {{ if ge $to 0 }}+{{ end }}{{ $to }} dagen t.o.v. Pascha
+          {{- else if $p.tot }}
+            tot {{ partial "feestdatum-kort.html" $p.tot }}
+          {{- end }}
+        </td>
+      </tr>
+      {{- else if and $p.anker $p.weekdag }}
+      {{- $wd := index $weeknamen (printf "%d" $p.weekdag) -}}
+      {{- $welke := default 1 $p.welke -}}
+      {{- $richting := cond (eq $p.richting "voor") "vóór" "na" -}}
+      <tr>
+        <th scope="row">Datum</th>
+        <td>
+          {{- if eq $welke 1 }}{{ $wd }}{{ else }}{{ $welke }}e {{ $wd }}{{ end }}
+          {{ $richting }} {{ partial "feestdatum-kort.html" $p.anker }}
+        </td>
+      </tr>
+      {{- end }}
+      {{- with $p.periode }}
+      <tr>
+        <th scope="row">Leefde</th>
+        <td>{{ . }}</td>
+      </tr>
+      {{- end }}
+      {{- with $p.locatie_items }}
+      <tr>
+        <th scope="row">Plaatsen</th>
+        <td>
+          {{- range $i, $item := . -}}
+            {{- if $i }}; {{ end -}}
+            <a href="{{ printf "/heiligen/?plaats=%s" $item.id | relURL }}">{{- if eq $item.soort "streek" }}<em>{{ $item.naam }}</em>{{ else }}{{ $item.naam }}{{ end -}}</a>
+          {{- end -}}
+        </td>
+      </tr>
+      {{- end }}
+      {{- with $p.rustplaats_plaats }}
+      <tr>
+        <th scope="row">Rustplaats</th>
+        <td>
+          {{- with $p.rustplaats_toelichting }}{{ . }} ({{ $p.rustplaats_plaats }}){{ else }}{{ . }}{{ end -}}
+        </td>
+      </tr>
+      {{- end }}
+      {{- with $p.vastenniveau }}
+      {{- $labels := dict "streng" "streng" "wijn_olie" "wijn en olie" "vis" "vis" "lichter" "lichter" "vrij" "vastenvrij" -}}
+      <tr>
+        <th scope="row">Vasten</th>
+        <td>{{ index $labels . | default . }}</td>
+      </tr>
+      {{- end }}
+      {{- if $p.onderdrukt_wekelijks_vasten }}
+      <tr>
+        <th scope="row">Wo/vr</th>
+        <td>niet in deze periode</td>
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</aside>
+{{- end -}}

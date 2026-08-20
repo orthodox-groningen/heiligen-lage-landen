@@ -1,26 +1,60 @@
 id: gommar
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - lier
 selectie: voldoet
-selectie_toelichting: "Lier."
+selectie_toelichting: "Patroon van Lier; kluizenaar Nivesdonck."
 namen:
   primair: Gommar
   alternatief:
   - Gommarus van Lier
   - Gommarus
   - Gummarus
+  - Guntmar
 datum:
-  waarde: 10-11
+  waarde: "10-11"
   stijl: gregoriaans
 titels:
-- Patroonheilige van Lier
-periode: '775'
-samenvatting: 'Heilige van de Lage Landen: Gommar. Patroonheilige van Lier.'
+  - Patroonheilige van Lier
+periode: "ca. 710–775"
+icoon:
+  bestand: iconen/gommar.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Gummarus van Lier (tg-uact-1080).jpg"
+locaties:
+  - lier
+samenvatting: |
+  Edelman en kluizenaar; stadspatroon van Lier. Feestdag 11 oktober.
+betekenis_lage_landen: |
+  Gommar (Gummarus) is de stadsheilige van Lier: rond zijn kluizenarij
+  Nivesdonck groeide de stad. De cultus (verheffing ca. 815, kapittel,
+  processie) maakt hem een vaste Brabantse heilige van de Lage Landen,
+  los van de late en legendarische details van zijn huwelijksvita.
+verhaal: |
+  Volgens de overlevering kwam Gommar uit Emblem bij Lier en diende aan
+  het hof van Pepijn de Korte. Na een moeilijk huwelijk (Grimmara) trok
+  hij zich terug als kluizenaar te Nivesdonck — het latere Lier — en
+  stichtte er met Rumold van Mechelen een Petruskerk. De geschreven vita
+  is laat (elfde eeuw); chronologische spanning met Rumold blijft
+  bestaan. Hij stierf rond 775; feestdag 11 oktober.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Guntmar von Nivesdonck"
+    url: "https://www.heiligenlexikon.de/BiographienG/Guntmar_von_Nivesdonck.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Emblem, hofdienst, kluizenarij Nivesdonck/Lier,
+      Rumold-traditie; feestdag 11 oktober.
   - label: "Wikipedia (NL) — Gommarus van Lier"
     url: "https://nl.wikipedia.org/wiki/Gommarus_van_Lier"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Lierse cultus en patronaat.
+  - label: "Wikipedia (EN) — Gummarus"
+    url: "https://en.wikipedia.org/wiki/Gummarus"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige pagina met chronologie, wondertraditie en discussie
+      over tijdgenootschap met Rumold.

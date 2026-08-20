@@ -8,9 +8,9 @@ selectie_toelichting: "Westervoort / Friesland."
 namen:
   primair: Werenfrid
   alternatief:
-    - Werenfried van Elst
-    - Werenfridus
-    - Werenfried
+  - Werenfried van Elst
+  - Werenfridus
+  - Werenfried
 datum:
   waarde: "08-14"
   stijl: gregoriaans
@@ -22,6 +22,11 @@ locaties:
   - westervoort
   - elst
 periode: "~760"
+icoon:
+  bestand: iconen/werenfrid.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Heilige Werenfridus van Elst Prelaten en bisschoppen van Utrecht (serietitel), RP-P-BI-1494.jpg"
 samenvatting: |
   Angelsaksische priester in het gevolg van Willibrord; vereerd te Elst
   en Westervoort. Feestdag 14 augustus.
@@ -40,6 +45,11 @@ referenties:
   - label: "Wikipedia (NL) — Werenfried van Elst"
     url: "https://nl.wikipedia.org/wiki/Werenfried_van_Elst"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van missie in Friesland en de Betuwe,
+      cultus te Elst/Westervoort en feestdag.
   - label: "heiligen.net — Werenfridus"
     url: "https://www.heiligen.net/heiligen/08/14/08-14-0760-werenfridus.php"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Korte heiligenpagina met feestdag 14 augustus en levensschets.

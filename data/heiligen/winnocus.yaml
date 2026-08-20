@@ -1,24 +1,63 @@
 id: winnocus
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - wormhout
 selectie: nader-onderzoek
 selectie_toelichting: "Abt van Wormhout; historisch Vlaanderen, nu Frankrijk."
 namen:
   primair: Winnocus
   alternatief:
   - Winnoc
+  - Winok
+  - Winoc
 datum:
-  waarde: 11-06
+  waarde: "11-06"
   stijl: gregoriaans
 titels:
-- Abt
-periode: '716'
-samenvatting: 'Heilige van de Lage Landen: Winnocus. Abt.'
+  - Abt van Wormhout
+periode: "~640–717"
+locaties:
+  - wormhout
+icoon:
+  bestand: iconen/winnocus.jpg
+  rechten: ok
+  licentie: "CC BY-SA 2.0"
+  bron: "Wikimedia Commons — File:Sculpture de Saint-Winoc Eglise Saint-Martin de Bergues.jpg"
+samenvatting: |
+  Bretonse of Welshe monnik; prior/abt van Wormhout; cultus in
+  Winoksbergen (Bergues). Feestdag 6 november.
+betekenis_lage_landen: |
+  Winnocus werkte in historisch Vlaanderen: monnik onder Bertinus te
+  Sithiu (Saint-Omer), daarna stichter/leider van de cel te Wormhout —
+  missiepost voor de streek. Relieken gingen later naar Bergues
+  (Winoksbergen). Het gebied ligt nu in Frankrijk; of dat de
+  selectiegrens «Lage Landen» nog haalt, vraagt nader onderzoek — de
+  historische Vlaamse context is wel reëel.
+verhaal: |
+  Winnoc (rond 640–716/717) kwam met gezellen naar Vlaanderen, trad in
+  te Sithiu onder Bertinus en werd naar Wormhout gezonden om een
+  afhankelijke stichting te leiden. Legenden vertellen van een handmolen
+  die vanzelf maalde terwijl hij bad (patroon van molenaars). Hij stierf
+  op 6 november; in 899 gingen relieken naar Bergues, waar later de abdij
+  Saint-Winnoc ontstond. Vitae vanaf de negende eeuw (Bertin).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Winnoc von Wormhout"
+    url: "https://www.heiligenlexikon.de/BiographienW/Winnoc_von_Wormhout.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Sithiu/Bertinus, Wormhout, molenlegende, translatio
+      naar Bergues.
   - label: "Wikipedia (EN) — Winnoc"
     url: "https://en.wikipedia.org/wiki/Saint_Winnoc"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalig overzicht van leven, cultus en feestdagen (6 november,
+      translatio 18 september).
+  - label: "heiligen.net — Winok van Winoksbergen"
+    url: "https://www.heiligen.net/heiligen/11/06/11-06-0717-winok.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse schets: Wormhout, molenaarspatronaat, Bergues
+      (Winoksbergen).

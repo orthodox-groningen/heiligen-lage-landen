@@ -1,24 +1,60 @@
 id: medardus
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - noyon
 selectie: nader-onderzoek
-selectie_toelichting: "Bisschop van Noyon (Picardië); band met de Lage Landen vooral via later bisdom of cultus."
+selectie_toelichting: "Bisschop van Noyon/Doornik; band met de Lage Landen via Doornik en latere cultus."
 namen:
   primair: Medardus
   alternatief:
   - Medardus van Noyon
+  - Médard
 datum:
-  waarde: 06-08
+  waarde: "06-08"
   stijl: gregoriaans
 titels:
-- Bisschop van Noyon
-periode: '560'
-samenvatting: 'Heilige van de Lage Landen: Medardus. Bisschop van Noyon.'
+  - Bisschop van Noyon
+periode: "ca. 456–560"
+icoon:
+  bestand: iconen/medardus.jpg
+  rechten: ok
+  licentie: "CC BY-SA 2.5"
+  bron: "Wikimedia Commons — File:Saint medard a saint medard d eyrans.jpg"
+locaties:
+  - noyon
+samenvatting: |
+  Bisschop van Vermand/Noyon en Doornik; vroegvereerd in Vlaanderen.
+  Feestdag 8 juni.
+betekenis_lage_landen: |
+  Medardus’ zetel Noyon ligt in Picardië, maar hij werd ook bisschop van
+  Doornik en wordt verbonden met missie onder de Vlamingen. Zijn cultus
+  trok vroeg naar Vlaanderen en het Rijnland. De selectie blijft
+  nader-onderzoek: wel Merovingische band met het zuiden van de Lage
+  Landen, geen kernheilige van NL/BE zoals Nijvel of Utrecht.
+verhaal: |
+  Medardus, geboren te Salency, werd ca. 531 bisschop van Vermand en
+  verplaatste de zetel naar Noyon. Kort daarna kreeg hij ook Doornik.
+  Hij gold als raadsman van Chlotarius I; zijn lichaam kwam naar Soissons
+  (Saint-Médard). De vita (toegeschreven aan Venantius Fortunatus) en
+  volkswijsheid (weer op 8 juni) versterkten zijn populariteit. Relieken
+  en patronaten (boeren, wijn) leven tot in Duitsland en Nederland
+  (o.a. Wessem).
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Medardus von Noyon"
+    url: "https://www.heiligenlexikon.de/BiographienM/Medardus.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Noyon en Doornik, Vlaamse cultus, Soissons; feestdag
+      8 juni.
   - label: "Wikipedia (NL) — Medardus van Noyon"
     url: "https://nl.wikipedia.org/wiki/Medardus_van_Noyon"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Doornik en latere verering.
+  - label: "heiligen.net — Medard"
+    url: "https://www.heiligen.net/heiligen/06/08/06-08-0560-medard.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte heiligenpagina met wondertraditie en weerspreuken.

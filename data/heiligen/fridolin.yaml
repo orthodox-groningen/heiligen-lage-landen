@@ -1,24 +1,61 @@
 id: fridolin
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - saeckingen
 selectie: kandidaat-schrappen
 selectie_toelichting: "Verlichter van de Boven-Rijn (Säckingen); geen aantoonbaar werk in de Lage Landen."
 namen:
   primair: Fridolin
   alternatief:
   - Fridolin van Säckingen
+  - Fridolin von Säckingen
 datum:
-  waarde: 03-06
+  waarde: "03-06"
   stijl: gregoriaans
 titels:
-- Abt, verlichter van de Boven-Rijn
-periode: '538'
-samenvatting: 'Heilige van de Lage Landen: Fridolin. Abt, verlichter van de Boven-Rijn.'
+  - Abt, verlichter van de Boven-Rijn
+periode: "538 (?)"
+locaties:
+  - saeckingen
+icoon:
+  bestand: iconen/fridolin.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:Fridolinsmuenster Bad Saeckingen Fridolin und Urso.jpg"
+samenvatting: |
+  Ierse of Frankische missionaris; stichtte het klooster op de Rijn-eiland
+  Säckingen. Feestdag 6 maart.
+betekenis_lage_landen: |
+  Fridolin hoort in oudere catalogi van «heiligen van de Lage Landen», maar
+  zijn werk lag aan de Boven-Rijn (Säckingen, Glarus, Elzas). Er is geen
+  aantoonbare missie of cultuskern in het huidige NL/BE/LUX. Daarom blijft
+  de selectie kandidaat-schrappen: nuttig als contrast, niet als kernthema
+  van deze kalender.
+verhaal: |
+  De middeleeuwse vita (Balther van Säckingen, ca. 970) tekent Fridolin als
+  Ierse edele die via Poitiers (Hilarius) naar Alemannië trok en op het
+  Rijneiland Säckingen een dubbelklooster stichtte. Historici plaatsen de
+  historische kern eerder in de zevende eeuw dan bij het traditionele
+  sterfjaar 538. Bekend is het latere Urso-wonder (schenking van Glarus).
+  Relieken en cultus leven in Bad Säckingen en het Zwitserse kanton Glarus;
+  een band met de Lage Landen ontbreekt.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Fridolin von Säckingen"
+    url: "https://www.heiligenlexikon.de/BiographienF/Fridolin_von_Saeckingen.htm"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Poitiers–Säckingen, discussie over Ierse herkomst versus
+      Poitou, cultus Glarus/Säckingen; feestdag 6 maart.
   - label: "Wikipedia (NL) — Fridolin van Säckingen"
     url: "https://nl.wikipedia.org/wiki/Fridolin_van_S%C3%A4ckingen"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van legende, stichting Säckingen en
+      feestdag.
+  - label: "heiligen.net — Fridolin"
+    url: "https://www.heiligen.net/heiligen/03/06/03-06-0600-fridolin.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Compacte heiligenpagina met wonderverhalen (o.a. Urso) en patronaten.

@@ -8,9 +8,9 @@ selectie_toelichting: "Bisschop van Maastricht; stenen kerk boven het graf van S
 namen:
   primair: Monulphus
   alternatief:
-    - Monulf
-    - Monulph
-    - Monulphus van Maastricht
+  - Monulf
+  - Monulph
+  - Monulphus van Maastricht
 datum:
   waarde: "07-16"
   stijl: gregoriaans
@@ -55,9 +55,18 @@ referenties:
     label: "Heiligenlexikon — Monulf von Maastricht"
     url: "https://www.heiligenlexikon.de/BiographienM/Monulf_von_Maastricht.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: stenen kerk boven het graf van Servatius, Maastrichtse
+      cultus en feestdag met Gondulphus.
   - label: "Heiligenlexikon (Catholic Encyclopedia) — Gondulphus"
     url: "https://www.heiligenlexikon.de/CatholicEncyclopedia/Gondulf.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Encyclopedietekst over Monulphus en Gondulphus als paar, inclusief
+      de vraag of het één of twee personen zijn.
   - label: "Wikipedia (EN) — Monulph"
     url: "https://en.wikipedia.org/wiki/Monulph"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Engelstalig overzicht van episcopaat, Servaaskerk en middeleeuwse
+      verering.

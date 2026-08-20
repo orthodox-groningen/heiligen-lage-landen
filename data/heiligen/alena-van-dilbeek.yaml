@@ -3,22 +3,54 @@ soort: heilige
 bronlaag: encyclopedie
 cyclus: jaar
 lage_landen: true
-locaties:
-  - dilbeek
 selectie: voldoet
-selectie_toelichting: "Martelares van Dilbeek."
+selectie_toelichting: "Martelares van Dilbeek; lokale Brabantse cultus."
 namen:
   primair: Alena van Dilbeek
   alternatief:
   - Alena
+  - Alena van Vorst
 datum:
-  waarde: 06-17
+  waarde: "06-17"
   stijl: gregoriaans
 titels:
-- Maagd & Martelares
-periode: ~640
-samenvatting: 'Heilige van de Lage Landen: Alena van Dilbeek. Maagd & Martelares.'
+  - Maagd & martelares
+periode: "~640"
+icoon:
+  bestand: iconen/alena-van-dilbeek.jpg
+  rechten: ok
+  licentie: "CC0"
+  bron: "Wikimedia Commons — File:Alena van Dilbeek (tg-uact-793).jpg"
+locaties:
+  - dilbeek
+samenvatting: |
+  Zevende-eeuwse martelares uit Dilbeek; patrones van de gemeente.
+  Feestdag 17 juni (ook 16/18/24 juni in Brabantse traditie).
+betekenis_lage_landen: |
+  Alena is een typisch Brabantse lokale heilige: Dilbeek, Vorst en de
+  Affligemse elevatie van 1193 verbinden haar cultus vast aan Vlaams-
+  Brabant. De vita is laat en legendarisch, maar de plaatselijke band
+  met de Lage Landen is onbetwist.
+verhaal: |
+  Volgens de middeleeuwse legende (opgeschreven eeuwen later) was zij
+  dochter van de heidense heer Levold. Zij liet zich dopen (traditie:
+  door of in de tijd van Amandus) en bezocht heimelijk de kerk te Vorst.
+  Dienaren van haar vader rukten haar arm af toen zij zich vastgreep;
+  zij stierf. Haar vader bekeerde zich later. Elevatie van de relieken
+  te Affligem in 1193. Modern onderzoek betwijfelt de authenticiteit van
+  de Vorstse relieken.
+over_bronnen: |
+  Vita is 12e/13e-eeuws; geen contemporaine bron. Wel encyclopedie en
+  heiligen.net.
 referenties:
   - label: "Wikipedia (NL) — Alena (heilige)"
     url: "https://nl.wikipedia.org/wiki/Alena_(heilige)"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Legende, elevatie 1193, Dilbeek/Vorst en kritische noot over
+      reliekenonderzoek.
+  - label: "heiligen.net — Alena van Dilbeek"
+    url: "https://www.heiligen.net/heiligen/06/17/06-17-0640-alena-dilbeek.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Uitgewerkte hagiografie met Amandus-episode en martelaarschap.

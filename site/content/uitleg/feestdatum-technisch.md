@@ -5,7 +5,7 @@ uitleg_stijl: feestdatum-technisch
 build:
   list: never
   render: always
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Technische bijlage bij de [uitleg Feestdatum]({{% ref "/uitleg/feestdatum" %}}).
@@ -66,6 +66,6 @@ Juliaanse feestdatum van dat jaar. Niet in het Meneon.
 
 ## Ids
 
-Bestandsnaam = `id` = `[a-z0-9_-]+`. Weergavenamen staan bij voorkeur in
-`data/namen.yaml`, niet alleen in het entry-bestand. Zie
+Bestandsnaam = `id` = `[a-z0-9_-]+`. Weergavenamen staan in het
+entry-bestand (`namen.primair` / `alternatief`). Zie
 [namen wijzigen]({{% ref "/beheer/how-to-namen" %}}).

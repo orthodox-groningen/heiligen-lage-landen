@@ -8,13 +8,18 @@ selectie_toelichting: "Bisschop van Utrecht."
 namen:
   primair: Radboud
   alternatief:
-    - Radboud van Utrecht
+  - Radboud van Utrecht
 datum:
   waarde: "11-29"
   stijl: gregoriaans
 titels:
   - Bisschop van Utrecht
 periode: "917"
+icoon:
+  bestand: iconen/radboud.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Radboud broerenkerk zwolle.jpg"
 locaties:
   - utrecht
 samenvatting: |
@@ -38,6 +43,11 @@ referenties:
   - label: "Wikipedia (NL) — Radboud van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Radboud_van_Utrecht"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van episcopaat (899–917), hagiografisch
+      werk en feestdag.
   - label: "heiligen.net — Radboud"
     url: "https://www.heiligen.net/heiligen/11/29/11-29-0917-radboud.php"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Korte heiligenpagina met feestdag 29 november en levensschets.

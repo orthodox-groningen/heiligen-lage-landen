@@ -1,7 +1,7 @@
 ---
 title: "Jaarkalender"
 layout: kalender
-git_date: 2026-08-16
+git_date: 2026-08-17
 ---
 
 <!-- Blader door de vaste feestdagen per maand. -->

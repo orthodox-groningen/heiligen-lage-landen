@@ -1,10 +1,8 @@
 id: theodaard-van-maastricht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - maastricht
 selectie: voldoet
 selectie_toelichting: "Maastricht."
 namen:
@@ -15,16 +13,57 @@ namen:
   - Theodard van Maastricht
   - Theodard
 datum:
-  waarde: 09-10
+  waarde: "09-10"
   stijl: gregoriaans
 titels:
-- Bisschop
-periode: '668'
-samenvatting: 'Heilige van de Lage Landen: Theodaard van Maastricht. Bisschop.'
+  - Bisschop van Maastricht
+  - Martelaar
+periode: "~618–670"
+icoon:
+  bestand: iconen/theodaard-van-maastricht.jpg
+  rechten: ok
+  licentie: "CC BY-SA 4.0"
+  bron: "Wikimedia Commons — File:2014 Liège, Cathédral St-Paul, saints du diocèse (06a) (Saint-Théodarde).jpg"
+locaties:
+  - maastricht
+samenvatting: |
+  Leerling van Remaclus; bisschop van Maastricht; vermoord op reis naar
+  de koning. Feestdag 10 september.
+betekenis_lage_landen: |
+  Theodaard (Theodardus) staat in de Maaslijn tussen Remaclus en Lambertus:
+  abt te Stavelot, daarna bisschop van Tongeren-Maastricht. Zijn martelaarschap
+  (klacht over plundering van het bisdom) en de latere overbrenging van
+  relieken naar Luik door Lambertus verankeren hem in de vroege kerk van
+  de Maasstreek; Maastricht bewaart nog een moderne reliekhouder.
+verhaal: |
+  Volgens de overlevering uit Aquitanië, leerling van Remaclus te Solignac
+  en abt van Stavelot-Malmedy, werd Theodaard bisschop van Maastricht na
+  Remaclus’ afstand. Op weg naar koning Childerik II (klacht over
+  onderdrukking door Frankische edelen) werd hij in het Bienwald bij Speyer
+  vermoord (668/670). Lambertus liet hem naar Luik overbrengen. Hij wordt
+  vaak afgebeeld met een zwaard door het hoofd; feestdag 10 september.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Theodard von Tongern-Maastricht"
+    url: "https://www.heiligenlexikon.de/BiographienT/Theodard_von_Tongern-Maastricht.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: bisschop, martelaarschap in het Bienwald, overbrenging
+      door Lambertus, relieken en cultusplaatsen.
   - label: "Wikipedia (NL) — Theodardus"
     url: "https://nl.wikipedia.org/wiki/Theodardus"
-    geraadpleegd: "2026-08-16"
-  - label: "Wikipedia (EN) — Theodardus van Maastricht"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht: Remaclus, Maastricht, Speyer, reliek in
+      de Sint-Servaasbasiliek.
+  - label: "heiligen.net — Theodardus van Maastricht"
+    url: "https://www.heiligen.net/heiligen/09/10/09-10-0670-theodardus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandse vita met Aquitanië, Stavelot, martelaarschap en
+      opvolging door Lambertus.
+  - label: "Wikipedia (EN) — Theodard of Maastricht"
     url: "https://en.wikipedia.org/wiki/Theodard_of_Maastricht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Engelstalige parallelpagina met chronologie en literatuurverwijzingen.

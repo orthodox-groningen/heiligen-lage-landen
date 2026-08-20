@@ -1,22 +1,47 @@
 id: alubertus-van-utrecht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
-selectie_toelichting: "Wijbisschop van Utrecht."
+selectie_toelichting: "Wijbisschop van Utrecht; steunde Gregorius bij de Friese missie."
 namen:
   primair: Alubertus van Utrecht
+  alternatief:
+  - Alubert
+  - Alubertus
 datum:
-  waarde: 08-25
+  waarde: "08-25"
   stijl: gregoriaans
 titels:
-- Wijbisschop
-periode: <777
-samenvatting: 'Heilige van de Lage Landen: Alubertus van Utrecht. Wijbisschop.'
+  - Wijbisschop van Utrecht
+periode: "<777"
+locaties:
+  - utrecht
+  - frisia
+samenvatting: |
+  Angelsaksische wijbisschop naast Gregorius van Utrecht vanaf 767;
+  werkzaam in Friesland. Feestdag 25 augustus.
+betekenis_lage_landen: |
+  Alubertus vulde als gewijde bisschop de leemte op toen Gregorius Utrecht
+  als priester-abt bestuurde. Hij kwam uit Northumbria, werkte in
+  Friesland en nam Ludger mee naar York voor diens diakenwijding — een
+  schakel in de Utrechtse/Friese missie van de Lage Landen.
+verhaal: |
+  Volgens Altfrids Ludger-vita kwam Alubertus uit Engeland om Gregorius te
+  helpen. Hij wilde in eigen land gewijd worden; te York ontving hij de
+  bisschopswijding (767) en Ludger werd er diaken. Terug in Friesland bleef
+  hij bij Gregorius. Sterfjaar en -dag zijn onbekend; men neemt aan vóór
+  Gregorius († ca. 775). Feestdag 25 augustus (vooravond van Gregorius).
 referenties:
-  - bron_id: eir3app
-    locator: "Interne notities; nader te specificeren in curated entries."
-    geraadpleegd: "2026-08-16"
+  - label: "heiligen.net — Alubertus van Utrecht"
+    url: "https://www.heiligen.net/heiligen/08/25/08-25-0777-alubertus.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Korte pagina: Angelsaksische wijbisschop vanaf 767, † vóór 777.
+  - label: "DBNL — Alubertus (NNBW)"
+    url: "https://www.dbnl.org/tekst/molh003nieu04_01/molh003nieu04_01_0069.php"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonartikel op basis van Altfrid: York-wijding, Friesland,
+      verwerping van identificatie met aartsbisschop Ælberht.

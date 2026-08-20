@@ -1,7 +1,7 @@
 ---
 title: "Lezingen van de dag"
 description: "Apostel en Evangelie: welke lezing wanneer, volgens Moskou (ROCOR bij twijfel)"
-git_date: 2026-08-16
+git_date: 2026-08-17
 ---
 
 Op *Vandaag*, de datumpagina en het [lezingenrooster]({{% ref "/lezingenrooster" %}})

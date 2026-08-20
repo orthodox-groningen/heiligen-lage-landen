@@ -8,9 +8,9 @@ selectie_toelichting: "Liturgie in Gent (14 september 1980); geestelijke raad aa
 namen:
   primair: Sophrony van Essex
   alternatief:
-    - Sophrony Sacharov
-    - Sophrony de Athoniet
-    - Sofrony
+  - Sophrony Sacharov
+  - Sophrony de Athoniet
+  - Sofrony
 datum:
   waarde: "07-11"
   stijl: gregoriaans
@@ -18,6 +18,11 @@ titels:
   - Archimandriet
   - Stichter van het klooster van Johannes de Doper in Essex
 periode: "1896–1993"
+icoon:
+  bestand: iconen/sophrony-van-essex.jpg
+  rechten: ok
+  licentie: "Public domain"
+  bron: "Wikimedia Commons — File:Eldersophrony.jpg"
 locaties:
   - gent
   - asten
@@ -54,9 +59,18 @@ referenties:
   - label: "OrthodoxWiki — Sophrony (Sakharov)"
     url: "https://orthodoxwiki.org/Sophrony_(Sakharov)"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Orthodoxe biografie: Athos, Silouan, klooster in Essex en
+      verheerlijking.
   - label: "Orthodox Aartsbisdom van België — 50 jaar parochie Gent"
     url: "https://orthodoxia.be/nl/2022/11/29/de-viering-van-50-jaar-orthodoxe-parochie-in-gent/"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Jubileumbericht met vermelding van Sophrony’s liturgie in Gent
+      (14 september 1980).
   - label: "Orthodox Klooster in de Peel — interview Moeder Maria"
     url: "https://orthodoxasten.nl/bezoek/"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Interview waarin Moeder Maria haar ontmoeting met Sophrony in Essex
+      en diens raad over een zelfstandig klooster beschrijft.

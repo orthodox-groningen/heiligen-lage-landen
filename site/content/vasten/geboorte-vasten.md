@@ -14,15 +14,9 @@ alternatief:
   - "Filipsvasten"
   - "Kerstvasten"
   - "Adventsvasten"
+vastenniveau: lichter
+onderdrukt_wekelijks_vasten: true
 ---
-
-**Periode:** 15 november – 24 december (zelfde dagnamen in nieuwe én oude kalender).
-
-**Vastenniveau (indicatief):** lichter.
-
-**Wekelijks vasten:** woensdag- en vrijdagvasten gelden niet in deze periode.
-
-> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.
 
 Vasten van 15 november tot Kerstavond (24 december), ter voorbereiding op Kerstfeest.
 
@@ -34,8 +28,12 @@ begint) loopt van 15 november tot 24 december. Vaak is de eerste periode milder
 zelf is de onthouding traditioneel streng tot na de liturgie. “Advent” is een
 westers woord; in orthodox jargon zijn Geboortevasten of Filipsvasten gebruikelijker.
 
-## Referenties
+## Verder lezen en kijken
 
 - [Wikipedia (EN) — Nativity Fast](https://en.wikipedia.org/wiki/Nativity_Fast) — geraadpleegd 2026-08-16
 - [OrthodoxWiki — Geboorte van Christus](https://orthodoxwiki.org/Nativity) — geraadpleegd 2026-08-16
 
+
+## Over de bronnen
+
+> **Bron:** Deze tekst is nagekeken aan een lexikon, vita of vergelijkbare bron. Wikipedia en heiligen.net mogen aanvullen.

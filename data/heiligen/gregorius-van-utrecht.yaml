@@ -1,25 +1,63 @@
 id: gregorius-van-utrecht
 soort: heilige
-bronlaag: encyclopedie
+bronlaag: nagekeken
 cyclus: jaar
 lage_landen: true
-locaties:
-  - utrecht
 selectie: voldoet
-selectie_toelichting: "Utrecht; leerling van Bonifatius."
+selectie_toelichting: "Abt en beheerder van Utrecht; leerling van Bonifatius."
 namen:
   primair: Gregorius van Utrecht
   alternatief:
   - Gregorius
+  - Gregorius van Pfalzel
 datum:
-  waarde: 08-25
+  waarde: "08-25"
   stijl: gregoriaans
-periode: '775'
-samenvatting: 'Heilige van de Lage Landen: Gregorius van Utrecht.'
+titels:
+  - Abt van Utrecht
+periode: "ca. 707–775"
+locaties:
+  - utrecht
+  - susteren
+rustplaats:
+  plaats: susteren
+  toelichting: "Kopreliek in Sint-Amelberga (Susteren); overig Utrecht"
+icoon:
+  bestand: iconen/gregorius-van-utrecht.jpg
+  rechten: ok
+  licentie: "CC BY-SA 3.0"
+  bron: "Wikimedia Commons — File:Reliquienbueste Gregor von Utrecht.jpeg"
+samenvatting: |
+  Leerling van Bonifatius; abt van Sint-Maarten en beheerder van het
+  bisdom Utrecht. Feestdag 25 augustus.
+betekenis_lage_landen: |
+  Gregorius maakte de Utrechtse school tot missiecentrum voor Friezen,
+  Saksen en anderen; uit die school kwam onder meer Ludger. Na de dood
+  van Bonifatius en Eoban (754) bestuurde hij het bisdom zonder
+  bisschopswijding. Zijn vita door Ludger verbindt de Pippiniden-missie
+  met de kerk van de noordelijke Lage Landen.
+verhaal: |
+  Gregorius stamde uit Frankische adel rond Trier/Pfalzel en sloot zich
+  als jongeling bij Bonifatius aan (Hessen, Thüringen, Rome 737/738).
+  Omstreeks 747 werd hij abt van Sint-Maarten in Utrecht. Na 754
+  leidde hij de Friese missie en het bisdom; bisschop was formeel de
+  Angelsaks Alubert. Hij stierf op 25 augustus 775 (of 776). Ludger
+  schreef zijn levensbeschrijving; een kopreliek rust in Susteren.
 referenties:
+  - bron_id: hlex
+    label: "Heiligenlexikon — Gregor von Utrecht"
+    url: "https://www.heiligenlexikon.de/BiographienG/Gregor_von_Pfalzel.html"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Lexikonvita: Bonifatius, abdijschool Utrecht, bestuur zonder
+      bisschopswijding, Ludger als leerling; feestdag 25 augustus.
   - label: "Wikipedia (NL) — Gregorius van Utrecht"
     url: "https://nl.wikipedia.org/wiki/Gregorius_van_Utrecht"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Nederlandstalig overzicht van leven, Utrechtse school en cultus.
   - label: "heiligen.net — Gregorius"
     url: "https://www.heiligen.net/heiligen/08/25/08-25-0775-gregorius.php"
-    geraadpleegd: "2026-08-16"
+    geraadpleegd: "2026-08-20"
+    inhoud: >
+      Levensschets gebaseerd op de vita door Ludger.

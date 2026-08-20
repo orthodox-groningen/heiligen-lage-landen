@@ -2,7 +2,7 @@
 title: "Site bouwen en publiceren"
 description: "Valideren, genereren, tests, en wat de build overschrijft"
 weight: 10
-git_date: 2026-08-16
+git_date: 2026-08-20
 ---
 
 Korte reeks voordat u een wijziging in de data of de uitleg publiceert.
@@ -54,5 +54,5 @@ pytest- en generate-stappen.
 
 Tekst «even snel» aanpassen op een heiligenpagina onder
 `site/content/heiligen/`. Die pagina is een afdruk. Bij de volgende generate
-is de wijziging weg. Zet de tekst in `data/heiligen/<id>.yaml` (en de naam
-in `data/namen.yaml`).
+is de wijziging weg. Zet de tekst in `data/heiligen/<id>.yaml` (inclusief
+`namen:`).

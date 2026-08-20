@@ -10,10 +10,10 @@ id_aliassen:
 namen:
   primair: Lebuinus
   alternatief:
-    - Lebuin
-    - Lebuïnus
-    - Lubuinus
-    - Liafwin
+  - Lebuin
+  - Lebuïnus
+  - Lubuinus
+  - Liafwin
 datum:
   waarde: "11-12"
   stijl: gregoriaans
@@ -63,6 +63,12 @@ referenties:
     label: "Heiligenlexikon — Lebuin von Deventer"
     url: "https://www.heiligenlexikon.de/BiographienL/Lebuin_Liafwin_Livinus.html"
     geraadpleegd: "2026-08-17"
+    inhoud: >
+      Lexikonvita: Angelsaksische herkomst, stichting Deventer, Marklô en
+      de vraag of hij dezelfde is als Livinus.
   - label: "Wikipedia (NL) — Lebuïnus"
     url: "https://nl.wikipedia.org/wiki/Lebu%C3%AFnus"
     geraadpleegd: "2026-08-16"
+    inhoud: >
+      Nederlandstalig overzicht van missie in de IJsselstreek, Deventer
+      en feestdagen.

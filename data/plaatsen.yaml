@@ -2,6 +2,11 @@
 # Ids: [a-z0-9_-]+. Coördinaten bij benadering (WGS84).
 # soort: plaats (marker als een heilige deze id in locaties heeft) of
 # streek (zoeken; marker alleen als een heilige de streek-id zelf noemt).
+#
+# Op een heilige: zet bij voorkeur concrete plaats-ids. Een streek-id
+# (frisia, vlaanderen) alleen als aanvulling of als er geen betere plek is.
+# Weergavenaam van de streek is herkenbaar Nederlands (Friesland, niet Frisia);
+# historische/Latijnse vormen horen in alternatief.
 
 plaatsen:
   - id: vlaanderen
@@ -11,8 +16,8 @@ plaatsen:
     lon: 3.72
     soort: streek
   - id: frisia
-    naam: Frisia
-    alternatief: [Friesland, Friezen]
+    naam: Friesland
+    alternatief: [Frisia, Friezen]
     lat: 53.20
     lon: 5.80
     soort: streek
