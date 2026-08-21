@@ -28,11 +28,18 @@ Drie lagen, niet door elkaar:
 
 1. **Gebeurtenis** — bestaande `verhaal` (kort, bron)
 2. **Plaats in het jaar** — de kalender doet dit al
-3. **Betekenis** — nieuw veld `betekenis` (1–3 alinea’s; orthodox, weinig
-   jargon; geen preek). Zelfde `bronlaag` als de rest van de pagina.
+3. **Betekenis** — veld `betekenis` (1–3 alinea’s: geheim plus leiding
+   van de Kerk; orthodox, weinig jargon; geen preek). Kerkvaders en
+   dienstboek primair. Zelfde `bronlaag` als de rest van de pagina.
 
-Eerst alleen de twaalf grootfeesten; één voorbeeld uitschrijven (Theofanie
-of Transfiguratie) voordat de rest volgt.
+De twaalf grootfeesten, **Pascha**, Lazarus-zaterdag, de Grote
+Week-dagen, de kernfeesten, de Triodion-zondagen (Zacheüs tot Maria
+van Egypte, plus Schone Maandag), Thomas tot de Blinde,
+Midden-Pinksterfeest, de concilie- en voorvaderzondagen en de
+Allerzielen-zaterdagen hebben nu `betekenis`. Voorfeest, nafeest,
+synaxis, weken, Boterweek en overige kalenderranden: nog niet.
+Bronnen:
+[`docs/onderzoek/feest-betekenis-bronnen.md`](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
 ## Parochiepatronen
 
@@ -45,4 +52,6 @@ Lage-Landen-heiligen), duidelijk gemerkt, met link naar de parochiesite.
 Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
-**Volgende na de huidige contractpunten:** betekenis van feesten (hierboven).
+**Volgende:** troparia/kondaken (eerst datamodel/voorbeeldpagina);
+eventueel betekenis op kalenderranden alleen als dat geen duplicaat
+van het hoofdfest wordt.

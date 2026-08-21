@@ -56,7 +56,9 @@ datum:
 ```
 
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
-kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
+kerken delen die datum. ICS en `entries.json` gebruiken **huidig jaar −2 … +5**.
+De tabel «Komende jaren» op een feest- of vastenpagina is korter: het
+lopende jaar en de vier daarop.
 
 ## Namen
 
@@ -215,6 +217,49 @@ Zie `docs/specs/lezingen.md`.
 
 Functie: `weekday_relative_date` in `scripts/kalender.py`.
 
+## Feesten: betekenis
+
+Optioneel veld `betekenis` (1–3 alinea’s): het **geheim** van het feest
+(wat het zegt over de weg naar God) plus kernachtig wat de Kerk die dag
+**van de gelovige vraagt** (houding, wijding, waarom van het vasten).
+Niet hetzelfde als `verhaal` (gebeurtenis) of de feestdatum (plaats in
+het jaar). Geen tweede vastentabel: `vastenniveau` in de infobox is de
+regel. Weinig jargon; geen preek. Zelfde bronlaag en
+referentieverplichting als verhaal/samenvatting.
+
+**Bronnen (schrijven en `referenties`):** eerst een ontvangen
+kerkvader (of de vader in de dienst, zoals Chrysostomos’ paaspreek);
+dan dienstboek, oecumenische canon, typikon voor de tafel. Hopko
+(*The Orthodox Faith*) is brug, niet de last. Johannes van Shanghai en
+Sophrony van Essex alleen als naspraak van die vaders — niet als
+enige bron, en niet om hun band met de Lage Landen in `betekenis` uit
+te spreken (dat is `betekenis_lage_landen` op hun heiligenpagina).
+OrthodoxWiki is vingerwijzing. Zie
+[`docs/onderzoek/feest-betekenis-bronnen.md`](onderzoek/feest-betekenis-bronnen.md).
+
+Op de feestpagina als **Betekenis**, ná het verhaal. Nu: de twaalf
+grootfeesten, Pascha, Lazarus-zaterdag en de Grote Week-dagen, de
+genoemde kernfeesten, de Triodion-zondagen (Zacheüs tot Maria van
+Egypte, plus Schone Maandag), Thomas tot de Blinde, en
+Midden-Pinksterfeest, de concilie- en voorvaderzondagen, en de
+Allerzielen-zaterdagen (vóór Vleesvaarwel en vóór Pinksteren). Geen
+`betekenis` op voorfeest, nafeest, synaxis, weken of Boterweek.
+
+Optioneel `goedkeuring`: lijst van personen of organisaties die de
+**betekenistekst** hebben goedgekeurd. Ontbreekt of leeg: de kop
+Betekenis opent een popover: ontleend aan de (voorkeur)
+«Orthodoxe geloof»-referentie, plus dat we nog toets zoeken. Gevuld: de
+popover noemt wie goedkeurde, met optionele organisatie, datum en opmerking.
+Dit is niet hetzelfde als `bronlaag: nagekeken` (traceerbare bronnen).
+
+```yaml
+goedkeuring:
+  - naam: "A. N."
+    organisatie: "parochie X"   # optioneel
+    datum: "2026-08-21"         # optioneel, YYYY-MM-DD
+    opmerking: "…"              # optioneel, voor de lezer
+```
+
 ## Heiligen: selectie en betekenis
 
 Selectiecriteria (wie in de lijst hoort) staan op `/uitleg/heiligen/`;
@@ -247,12 +292,13 @@ voor een later, expliciet besluit.
 
 Werklijst (beslissingen, geen catalogustelling): [`docs/inventaris.md`](inventaris.md).
 `selectie` staat per heilige in YAML; gegenereerd overzicht `/beheer/selectie/`.
-Later (niet gebouwd): [`site/content/beheer/ideeen.md`](../site/content/beheer/ideeen.md).
+Ideeën (troparia, betekenis op andere feestdagen, parochiepatronen):
+[`site/content/beheer/ideeen.md`](../site/content/beheer/ideeen.md).
 
 ## Referenties
 
-Verhaal, samenvatting of `betekenis_lage_landen` mag alleen als er minstens
-één referentie is.
+Verhaal, samenvatting, `betekenis` (feest) of `betekenis_lage_landen`
+mag alleen als er minstens één referentie is.
 Elke referentie heeft `bron_id` en/of `label`, plus een **raadpleegbare locator**:
 
 - `url` — bij voorkeur, of
@@ -298,7 +344,7 @@ Voor **heiligen** geldt `nagekeken` alleen als:
    heiligen.net is (die twee mogen aanvullen).
 
 Feesten en vasten: `nagekeken` blijft «nagekeken tekst met traceerbare
-bronnen» (bestaande referentieverplichting bij verhaal/samenvatting).
+bronnen» (referentieverplichting bij verhaal/samenvatting/`betekenis`).
 
 Verouderd: `status: stub` / `status: curated`.
 

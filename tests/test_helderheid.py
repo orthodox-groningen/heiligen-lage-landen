@@ -28,6 +28,18 @@ def test_nav_heeft_heiligen_en_uitleg() -> None:
     # relURL "kalender/" + canonifyURLs botst met Pages-base /kalender/
     assert 'href="{{ "kalender/" | absURL }}">Kalender</a>' in html
     assert 'href="{{ "kalender/" | relURL }}">Kalender</a>' not in html
+    assert "brand-mark" in html
+    assert "images/favicon-32x32.png" in html
+    assert 'data-home=' in html
+
+
+def test_site_intro_popover_tekst() -> None:
+    js = (SITE / "assets" / "js" / "calendar.js").read_text(encoding="utf-8")
+    assert "site-intro-gezien" in js
+    assert "van huis uit orthodox" in js
+    assert "betekenis-goedkeuring" in js
+    assert "maybeShowSiteIntro" in js
+    assert "ontleend aan" in js
 
 
 def test_homepage_verwijst_naar_uitleg_heiligen() -> None:

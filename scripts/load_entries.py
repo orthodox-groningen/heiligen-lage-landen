@@ -242,6 +242,32 @@ def normalize_entry(
     entry["betekenis_lage_landen"] = (
         str(betekenis).strip() if betekenis is not None else ""
     )
+    betekenis_feest = entry.get("betekenis")
+    entry["betekenis"] = (
+        str(betekenis_feest).strip() if betekenis_feest is not None else ""
+    )
+    raw_goed = entry.get("goedkeuring") or []
+    if raw_goed and not isinstance(raw_goed, list):
+        raise ValueError(f"{path}: goedkeuring moet een lijst zijn")
+    goed: list[dict[str, str]] = []
+    for i, item in enumerate(raw_goed):
+        if not isinstance(item, dict):
+            raise ValueError(f"{path}: goedkeuring[{i}] moet een mapping zijn")
+        naam = str(item.get("naam") or "").strip()
+        if not naam:
+            raise ValueError(f"{path}: goedkeuring[{i}].naam ontbreekt")
+        rec: dict[str, str] = {"naam": naam}
+        org = str(item.get("organisatie") or "").strip()
+        if org:
+            rec["organisatie"] = org
+        opm = str(item.get("opmerking") or "").strip()
+        if opm:
+            rec["opmerking"] = opm
+        dat = str(item.get("datum") or "").strip()
+        if dat:
+            rec["datum"] = dat
+        goed.append(rec)
+    entry["goedkeuring"] = goed
     aliases = entry.get("id_aliassen") or []
     if not isinstance(aliases, list):
         raise ValueError(f"{path}: id_aliassen moet een lijst zijn")

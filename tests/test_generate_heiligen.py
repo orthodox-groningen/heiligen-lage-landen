@@ -6,6 +6,8 @@ import json
 import sys
 from pathlib import Path
 
+from datetime import date
+
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,7 +15,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from generate import (  # noqa: E402
     CONTENT,
+    ICS_YEAR_BACK,
+    ICS_YEAR_FORWARD,
+    KOMENDE_JAREN_AANTAL,
     _split_hugo_markdown,
+    betekenis_bron_labels,
+    komende_jaren,
+    occurrence_years,
     render_beheer_selectie,
     write_beheer_selectie,
     write_entries_json,
@@ -380,12 +388,15 @@ def test_entries_json_heeft_betekenis_alleen_bij_heiligen(
         "source_path": "data/feesten/kerst.yaml",
         "observances": ["feest"],
         "betekenis_lage_landen": "",
+        "betekenis": "Wat dit feest zegt.",
     }
     write_entries_json([heilige, feest])
     payload = json.loads((static / "entries.json").read_text(encoding="utf-8"))
     by_id = {item["id"]: item for item in payload}
     assert by_id["voorbeeld"]["betekenis_lage_landen"] == "Voor de Lage Landen."
     assert "betekenis_lage_landen" not in by_id["kerst"]
+    assert "betekenis" not in by_id["kerst"]
+    assert "betekenis" not in by_id["kerst"]
     assert "selectie" not in by_id["voorbeeld"]
     assert by_id["voorbeeld"]["bronlaag"] == "encyclopedie"
     assert by_id["voorbeeld"]["locaties"] == ["utrecht"]
@@ -483,6 +494,264 @@ def test_betekenis_lage_landen_zonder_selectietokens() -> None:
         text = entry.get("betekenis_lage_landen") or ""
         for tok in tokens:
             assert tok not in text, f"{entry['id']}: {tok}"
+
+
+def _feest(**overrides):
+    entry = _heilige(
+        id="theofanie",
+        soort="feest",
+        lage_landen=False,
+        source_path="data/feesten/theofanie.yaml",
+        observances=["feest"],
+        betekenis_lage_landen="",
+        selectie="",
+    )
+    entry["namen"] = {
+        "primair": "Theofanie (Doop des Heren)",
+        "alternatief": [],
+    }
+    entry["datum_norm"] = {
+        "feestdatum": "01-06",
+        "vorm": "dag",
+        "stijl": "juliaans",
+    }
+    entry.update(overrides)
+    return entry
+
+
+def test_komende_jaren_is_vijf_vanaf_huidig(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FrozenDate(date):
+        @classmethod
+        def today(cls) -> date:
+            return date(2026, 8, 21)
+
+    monkeypatch.setattr("generate.date", FrozenDate)
+    assert KOMENDE_JAREN_AANTAL == 5
+    assert list(komende_jaren()) == [2026, 2027, 2028, 2029, 2030]
+    occ = list(occurrence_years())
+    assert occ[0] == 2026 - ICS_YEAR_BACK
+    assert occ[-1] == 2026 + ICS_YEAR_FORWARD
+    assert len(occ) == ICS_YEAR_BACK + ICS_YEAR_FORWARD + 1
+    assert occ != list(komende_jaren())
+
+
+def test_paascyclus_feest_komende_jaren_tabel(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    monkeypatch.setattr("generate.komende_jaren", lambda today=None: range(2026, 2031))
+    write_entry_page(
+        _feest(
+            id="pinksteren",
+            cyclus="paascyclus",
+            datum_norm={
+                "feestdatum": None,
+                "vorm": "dag",
+                "stijl": "gregoriaans",
+                "paascyclus_offset": 49,
+            },
+        )
+    )
+    text = (content / "feesten" / "pinksteren.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert 'class="komende-jaren"' in body
+    assert "<th>Jaar</th>" in body
+    assert "<th>Wereldlijk</th>" in body
+    assert "<th>Juliaans</th>" in body
+    assert "<td>2026</td>" in body
+    assert "<td>2030</td>" in body
+    assert "<td>2024</td>" not in body
+    assert "<td>2031</td>" not in body
+    assert "- 2026:" not in body
+    assert "31 mei" in body
+    assert body.count("<tr>") == 6  # kop + 5 jaren
+
+
+def test_paascyclus_periode_komende_jaren_tabel(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    monkeypatch.setattr("generate.komende_jaren", lambda today=None: range(2026, 2031))
+    write_entry_page(
+        _feest(
+            id="grote-vasten",
+            soort="vasten",
+            cyclus="paascyclus",
+            observances=["vasten"],
+            datum_norm={
+                "feestdatum": None,
+                "vorm": "periode",
+                "stijl": "gregoriaans",
+                "paascyclus_offset": -48,
+                "van_offset_dagen": -48,
+                "tot_offset_dagen": -8,
+            },
+        )
+    )
+    text = (content / "vasten" / "grote-vasten.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert "<th>Van</th>" in body
+    assert "<th>Tot</th>" in body
+    assert "<td>2026</td>" in body
+    assert "<td>2031</td>" not in body
+
+
+def test_feest_pagina_betekenis_na_verhaal(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _feest(
+            samenvatting="Openbaring van de Heilige Drie-eenheid.",
+            verhaal="Bij de doop in de Jordaan.",
+            betekenis="In de doop deelt de mens in ditzelfde geheim.",
+            referenties=[
+                {
+                    "label": "OrthodoxWiki — Theofanie",
+                    "url": "https://orthodoxwiki.org/Theophany",
+                },
+                {
+                    "label": "OCA — Het Orthodoxe geloof: Theofanie",
+                    "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/epiphany",
+                },
+            ],
+        )
+    )
+    text = (content / "feesten" / "theofanie.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert 'data-info-tip="betekenis-goedkeuring"' in body
+    assert "data-betekenis-bronnen=" in body
+    start = body.index("data-betekenis-bronnen=")
+    end = body.index("title=", start)
+    attr = body[start:end]
+    assert "Het Orthodoxe geloof: Theofanie" in attr
+    assert "OrthodoxWiki" not in attr
+    assert "Betekenis" in body
+    assert "In de doop deelt de mens in ditzelfde geheim." in body
+    assert "## Betekenis voor de Lage Landen" not in body
+    assert body.index("## Verhaal") < body.index("betekenis-goedkeuring")
+    assert body.index("betekenis-goedkeuring") < body.index(
+        "## Verder lezen en kijken"
+    )
+    write_entry_page(_feest(id="transfiguratie", betekenis=""))
+    text2 = (content / "feesten" / "transfiguratie.md").read_text(encoding="utf-8")
+    _, body2 = _split_hugo_markdown(text2)
+    assert "betekenis-goedkeuring" not in body2
+
+
+def test_feest_betekenis_kop_heeft_goedkeuring_in_attr(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _feest(
+            betekenis="In de doop deelt de mens in ditzelfde geheim.",
+            goedkeuring=[
+                {
+                    "naam": "A. N.",
+                    "organisatie": "parochie X",
+                    "datum": "2026-08-21",
+                    "opmerking": "Akkoord.",
+                }
+            ],
+        )
+    )
+    text = (content / "feesten" / "theofanie.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert 'data-info-tip="betekenis-goedkeuring"' in body
+    assert "A. N." in body
+    assert "parochie X" in body
+    assert "Akkoord." in body
+
+
+def test_betekenis_bron_labels_kiest_orthodoxe_geloof() -> None:
+    labels = betekenis_bron_labels(
+        {
+            "referenties": [
+                {"label": "OrthodoxWiki — X", "url": "https://orthodoxwiki.org/X"},
+                {
+                    "label": "OCA — Het Orthodoxe geloof: X",
+                    "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/x",
+                },
+            ]
+        }
+    )
+    assert labels == ["OCA — Het Orthodoxe geloof: X"]
+    fallback = betekenis_bron_labels(
+        {"referenties": [{"label": "OrthodoxWiki — X"}]}
+    )
+    assert fallback == ["OrthodoxWiki — X"]
+
+
+def test_grootfeesten_en_pascha_hebben_betekenis() -> None:
+    expected = {
+        "geboorte-moeder-gods",
+        "kruisverheffing",
+        "tempelgang-moeder-gods",
+        "kerst",
+        "theofanie",
+        "ontmoeting-in-de-tempel",
+        "aankondiging",
+        "palmzondag",
+        "pascha",
+        "hemelvaart",
+        "pinksteren",
+        "transfiguratie",
+        "ontslapen-moeder-gods",
+        "lazarus-zaterdag",
+        "grote-maandag",
+        "grote-dinsdag",
+        "grote-woensdag",
+        "grote-donderdag",
+        "grote-vrijdag",
+        "grote-zaterdag",
+        "allerheiligen-zondag",
+        "geestesmaandag",
+        "pokrov",
+        "petrus-en-paulus",
+        "geboorte-johannes-doper",
+        "onthoofding-johannes-doper",
+        "besnijdenis-des-heren",
+        "begin-kerkelijk-jaar",
+        "zacheus-zondag",
+        "zondag-tollenaar-en-farizeeer",
+        "zondag-verloren-zoon",
+        "zondag-laatste-oordeel",
+        "vergevingszondag",
+        "schone-maandag",
+        "zondag-orthodoxie",
+        "zondag-gregorius-palamas",
+        "zondag-kruisverering",
+        "zondag-johannes-klimacus",
+        "zondag-maria-van-egypte",
+        "thomaszondag",
+        "zondag-mirredraagsters",
+        "zondag-verlamde",
+        "zondag-samaritaanse",
+        "zondag-blinde",
+        "midden-pinksterfeest",
+        "zondag-vaderen-eerste-concilie",
+        "zondag-vaderen-zevende-concilie",
+        "zondag-voorvaderen",
+        "zondag-vaderen-voor-kerst",
+        "zaterdag-allerzielen-vleesmijding",
+        "allerzielen-zaterdag-pinksteren",
+    }
+    feesten = [e for e in load_entries() if e.get("soort") == "feest"]
+    met = {e["id"] for e in feesten if (e.get("betekenis") or "").strip()}
+    assert met == expected
+    by_id = {e["id"]: e for e in feesten}
+    assert "Jordaan" in by_id["theofanie"]["betekenis"]
+    assert "doop" in by_id["theofanie"]["betekenis"].lower()
+    for sid in expected:
+        text = by_id[sid]["betekenis"]
+        paras = [p for p in text.split("\n\n") if p.strip()]
+        assert 1 <= len(paras) <= 3, sid
+        assert by_id[sid].get("referenties"), sid
 
 
 def test_write_plaatsen_json(

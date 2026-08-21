@@ -25,18 +25,44 @@ body.
 
 ## Datumtoelichting in de body
 
-**Wel:** bij paascyclus of weekdag-relatief: komende jaren (wereldlijk),
-zodat de infobox niet overloopt — de jaartallen zijn het huidige jaar en de
-daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
-(zelfde dag als de infobox; zie [Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})).
+**Wel:** bij paascyclus of weekdag-relatief: een **tabel** «Komende
+jaren» (wereldlijk), zodat de infobox niet overloopt. Vijf rijen: het
+**lopende burgerlijke jaar** en de vier daarop. Kolommen bij één dag:
+Jaar, Wereldlijk, Juliaans. Bij een periode (vasten of feestdagenreeks):
+Jaar, Van, Tot. Geen opsomming met copypaste-jaren van het ICS-venster.
 
-**Niet:** een tweede, afwijkende canonieke datum.
+**Niet:** een tweede, afwijkende canonieke datum; meer of minder dan
+die vijf jaren; het ICS-bereik (huidig −2 … +5) op deze pagina.
+
+Bij vaste dag: **Feestdag:** in de body mag (zelfde dag als de infobox;
+zie [Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})).
 
 ## Betekenis
 
-**Niet (nu):** een apart betekenis-veld. Feestpagina’s zijn kalenderfeit
-(wat/wanneer) plus verhaal. Catechetische «wat dit feest zegt» en troparia/kondaken: zie
-[Ideeën]({{% ref "/beheer/ideeen" %}}) (nog niet bouwen).
+**Wel:** 1–3 alinea’s ná het verhaal: het geheim van het feest én
+kernachtig wat de Kerk die dag van de gelovige vraagt (houding,
+wijding, waarom van het vasten — geen tweede vastentabel). Orthodox,
+weinig jargon, geen preek. Alleen als YAML `betekenis` heeft. Nu: de
+twaalf grootfeesten, Pascha, Lazarus-zaterdag en Grote Week-dagen, de
+kernfeesten Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus,
+Johannes (geboorte en onthoofding), Besnijdenis, begin kerkelijk jaar,
+de Triodion-zondagen (Zacheüs tot Maria van Egypte, plus Schone
+Maandag), Thomas tot de Blinde, Midden-Pinksterfeest, de concilie- en
+voorvaderzondagen, en de Allerzielen-zaterdagen.
+Bronnen: kerkvaders
+en dienstboek eerst; Hopko als brug; Johannes van Shanghai of Sophrony
+alleen als naspraak, niet als enige bron. Zelfde bronlaag als de rest
+van de pagina. De kop
+**Betekenis** heeft een popover: ontbreekt `goedkeuring`, dan dat de
+tekst is ontleend aan de genoemde bron(nen) en dat we nog iemand
+zoeken die van huis uit orthodox is om haar te toetsen; anders wie
+goedkeurde (en eventuele opmerking).
+
+**Niet:** herhaling van het verhaal; preek; troparion/kondakion;
+«Betekenis voor de Lage Landen» (feesten hebben dat niet). Geen
+apart betekenis-stuk op voorfeest, nafeest, synaxis, weken of Boterweek.
+Troparia: [Ideeën]({{% ref "/beheer/ideeen" %}}).
+Verwar `goedkeuring` niet met `bronlaag`.
 
 ## Samenvatting en verhaal
 

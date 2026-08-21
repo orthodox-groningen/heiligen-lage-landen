@@ -102,6 +102,48 @@ def test_betekenis_zonder_referenties_faalt() -> None:
     assert any("referenties ontbreken" in e for e in errors)
 
 
+def test_feest_betekenis_zonder_referenties_faalt() -> None:
+    errors = collect_content_errors(
+        [
+            {
+                "id": "theofanie",
+                "soort": "feest",
+                "bronlaag": "nagekeken",
+                "source_path": "data/feesten/theofanie.yaml",
+                "referenties": [],
+                "id_aliassen": [],
+                "betekenis_lage_landen": "",
+                "betekenis": "In de doop deelt de mens in ditzelfde geheim.",
+            }
+        ]
+    )
+    assert any("referenties ontbreken" in e for e in errors)
+
+
+def test_goedkeuring_alleen_op_feest() -> None:
+    errors = collect_content_errors(
+        [_heilige(goedkeuring=[{"naam": "A. N."}])]
+    )
+    assert any("alleen voor feesten" in e for e in errors)
+
+
+def test_goedkeuring_naam_verplicht_en_datum_iso() -> None:
+    feest = {
+        "id": "theofanie",
+        "soort": "feest",
+        "bronlaag": "nagekeken",
+        "source_path": "data/feesten/theofanie.yaml",
+        "referenties": [{"label": "x", "url": "https://example.org"}],
+        "id_aliassen": [],
+        "betekenis_lage_landen": "",
+        "betekenis": "x",
+        "goedkeuring": [{"naam": "", "datum": "21-08-2026"}],
+    }
+    errors = collect_content_errors([feest])
+    assert any("naam ontbreekt" in e for e in errors)
+    assert any("YYYY-MM-DD" in e for e in errors)
+
+
 def test_id_alias_niet_eigen_id_en_niet_levend() -> None:
     a = _heilige(id="lebuinus", id_aliassen=["lebuinus"])
     b = _heilige(

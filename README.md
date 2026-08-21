@@ -2,7 +2,7 @@
 
 Statische site met orthodoxe **vaste feesten** (jaarcyclus) en **heiligen van de Lage Landen**.
 MVP: vaste feesten + heiligen van de Lage Landen + Orthodoxe paascyclus
-(huidig jaar −2 … +25 in site/ICS).
+(ICS: huidig jaar −2 … +5).
 
 - Productie: https://orthodox-ronl.github.io/kalender/
 - Preview (niet-`main`): https://orthodox-ronl.github.io/kalender/preview/

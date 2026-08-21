@@ -70,6 +70,8 @@ Geen wiki-tekst, geen vertaalkeuze, geen Bijbel-deeplinks in het event.
 
 `X-PUBLISHED-TTL:P1D`. `TRANSP:TRANSPARENT`. Geen `VALARM`.
 
-Bereik: huidig jaar −2 … +25 (`ICS_YEAR_BACK` / `ICS_YEAR_FORWARD`).
+Bereik: huidig jaar −2 … +5 (`ICS_YEAR_BACK` / `ICS_YEAR_FORWARD`).
+De vijfjaren-tabel op een feestdagpagina is een ander venster (lopend
+jaar … +4).
 
 `site/content/agenda/_index.md` is handmatig (body blijft staan).

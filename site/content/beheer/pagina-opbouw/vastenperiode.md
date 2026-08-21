@@ -27,12 +27,13 @@ clerus-uitleg van alle regels (die hoort op
 
 ## Komende jaren (body, indien paascyclus)
 
-**Wel:** wereldlijke datums voor het bereik van deze site, als de
-periode meeschuift met Pascha. Ook hier: onder 'komende jaren' verstaan
-we 5 jaren, waarvan de eeste het huidige jaar is.
+**Wel:** wereldlijke datums in een **tabel** (Jaar, Van, Tot) als de
+periode meeschuift met Pascha. Vijf rijen: het lopende jaar en de vier
+daarop.
 
 **Niet:** Juliaanse computus-uitleg op de entry; voorbeelden die de
-uitleg-vastenpagina al draagt.
+uitleg-vastenpagina al draagt; het ICS-venster (huidig −2 … +5) als
+lijst van acht jaren.
 
 ## Samenvatting, verhaal, bronnen
 
