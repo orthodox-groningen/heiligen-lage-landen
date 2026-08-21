@@ -186,16 +186,34 @@ overrides:
 Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
 `paascyclus_offset_in` (met optioneel `stijl: oud`), en
 `weekdag_relatief` (`anker`, `weekdag`, `welke`, `richting`) voor de
-zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of een
-ander anker als vaste offset: vooralsnog via `mmdd` of `weekdag_relatief`;
-een apart `theofanie_offset`-veld is niet nodig zolang `anker: "01-06"`
-volstaat.
+zaterdag of zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of
+een ander anker als vaste offset: vooralsnog via `mmdd` of
+`weekdag_relatief`; een apart `theofanie_offset`-veld is niet nodig zolang
+`anker: "01-06"` volstaat. Match loopt over ankerjaar − 1, 0 en + 1
+(zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).
 
 **Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
 ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
 en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
 geen gegokte combinatielezing.
+
+**Lezingendagen zonder eigen feestdienst** (geen stichira/canon, géén
+`soort: feest`-entries, alleen overrides via `weekdag_relatief`,
+`prioriteit` 90):
+
+| Anker | Dagen |
+| --- | --- |
+| 14 sept. | zaterdag/zondag vóór en ná Kruisverheffing |
+| 6 jan. | zaterdag/zondag vóór Theofanie; zaterdag ná Theofanie |
+| 25 dec. | zaterdag vóór Kerst |
+
+Bij samenval wint het grootfeest (Theofanie, Kerst, Besnijdenis, synaxis,
+Geboorte Moeder Gods, Kruisverheffing zelf). De zondag ná Kruisverheffing
+is tevens het anker van de Lucaanse sprong (R3). Perikopen volgen Moskou
+(Azbyka); een parochieboekje is checklist, geen bron om de gedeelde lijst
+te herschrijven. Wijkt een boekje in verzen af (bijv. zaterdag ná
+Kruisverheffing, Onthoofding, zaterdag vóór Theofanie), dan blijft Moskou.
 
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Orthodox klooster Johannes de

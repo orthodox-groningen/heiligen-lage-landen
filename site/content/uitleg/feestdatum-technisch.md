@@ -62,7 +62,9 @@ datum:
 ```
 
 `weekday_relative_date` in `scripts/kalender.py`. Stand Oud: anker is de
-Juliaanse feestdatum van dat jaar. Niet in het Synaxarion.
+Juliaanse feestdatum van dat jaar. Niet in het Synaxarion. Zaterdag/zondag
+rond Kruisverheffing en Theofanie, en zaterdag vóór Kerst: alleen
+lezingenoverrides, geen feest-YAML.
 
 ## Ids
 

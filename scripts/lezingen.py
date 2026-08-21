@@ -70,6 +70,9 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "grote-zaterdag": "Heilige grote zaterdag",
     "besnijdenis-des-heren": "Besnijdenis des Heren",
     "theofanie": "Theofanie",
+    "zaterdag-voor-theofanie": "Zaterdag vóór Theofanie",
+    "zondag-voor-theofanie": "Zondag vóór Theofanie",
+    "zaterdag-na-theofanie": "Zaterdag na Theofanie",
     "ontmoeting-in-de-tempel": "Ontmoeting in de tempel",
     "aankondiging": "Aankondiging",
     "geboorte-johannes-doper": "Geboorte van Johannes de Doper",
@@ -79,6 +82,10 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "onthoofding-johannes-doper": "Onthoofding van Johannes de Doper",
     "geboorte-moeder-gods": "Geboorte van de Moeder Gods",
     "kruisverheffing": "Kruisverheffing",
+    "zaterdag-voor-kruisverheffing": "Zaterdag vóór Kruisverheffing",
+    "zondag-voor-kruisverheffing": "Zondag vóór Kruisverheffing",
+    "zaterdag-na-kruisverheffing": "Zaterdag na Kruisverheffing",
+    "zondag-na-kruisverheffing": "Zondag na Kruisverheffing",
     "tempelgang-moeder-gods": "Tempelgang van de Moeder Gods",
     "kerst": "Kerst",
     "synaxis-moeder-gods": "Synaxis van de Moeder Gods",
@@ -86,6 +93,7 @@ OVERRIDE_NAMEN: dict[str, str] = {
     "pokrov": "Pokrov",
     "synaxis-gabriel": "Synaxis van de aartsengel Gabriël",
     "zondag-voorvaderen": "Zondag van de Voorvaderen",
+    "zaterdag-voor-kerst": "Zaterdag vóór Kerst",
     "zondag-vaderen-voor-kerst": "Zondag van de heilige Vaderen (vóór Kerst)",
     "zondag-na-kerst": "Zondag na Kerst",
     "zondag-na-theofanie": "Zondag na Theofanie",
@@ -695,7 +703,9 @@ def _override_matches(
         civil = _civil_date(jaar, mmdd, stijl)
         rel_stijl = "oud" if stijl == "oud" else "nieuw"
         # Zondag ná Kerst kan op 1 januari vallen (ankerjaar − 1).
-        for y in (jaar, jaar - 1):
+        # Zaterdag/zondag vóór Theofanie kan in december van het vorige
+        # burgerlijke jaar vallen (ankerjaar + 1 t.o.v. die decemberdag).
+        for y in (jaar - 1, jaar, jaar + 1):
             want = weekday_relative_date(
                 y,
                 str(rel["anker"]),

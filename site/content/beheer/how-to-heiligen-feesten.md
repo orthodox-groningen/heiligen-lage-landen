@@ -112,7 +112,11 @@ datum:
 ```
 
 Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
-18 december. Zie `docs/datamodel.md`.
+18 december. Zie `docs/datamodel.md`. Zaterdag/zondag rond
+Kruisverheffing en Theofanie, en zaterdag vóór Kerst, gebruiken dezelfde
+`weekdag_relatief`-vorm, maar alleen in de lezingenlijst — geen
+feest-YAML. Zie
+[lezingen wijzigen]({{% ref "/beheer/how-to-lezingen" %}}).
 
 ## Namen
 

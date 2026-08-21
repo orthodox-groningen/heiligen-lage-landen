@@ -173,16 +173,34 @@ overrides:
 Matchvelden (zelfde als gedeeld): `mmdd`, `paascyclus_offset`,
 `paascyclus_offset_in` (met optioneel `stijl: oud`), en
 `weekdag_relatief` (`anker`, `weekdag`, `welke`, `richting`) voor de
-zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of een
-ander anker als vaste offset: vooralsnog via `mmdd` of `weekdag_relatief`;
-een apart `theofanie_offset`-veld is niet nodig zolang `anker: "01-06"`
-volstaat.
+zaterdag of zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of
+een ander anker als vaste offset: vooralsnog via `mmdd` of
+`weekdag_relatief`; een apart `theofanie_offset`-veld is niet nodig zolang
+`anker: "01-06"` volstaat. Match loopt over ankerjaar − 1, 0 en + 1
+(zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).
 
 **Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
 ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
 en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
 geen gegokte combinatielezing.
+
+**Lezingendagen zonder eigen feestdienst** (geen stichira/canon, géén
+`soort: feest`-entries, alleen overrides via `weekdag_relatief`,
+`prioriteit` 90):
+
+| Anker | Dagen |
+| --- | --- |
+| 14 sept. | zaterdag/zondag vóór en ná Kruisverheffing |
+| 6 jan. | zaterdag/zondag vóór Theofanie; zaterdag ná Theofanie |
+| 25 dec. | zaterdag vóór Kerst |
+
+Bij samenval wint het grootfeest (Theofanie, Kerst, Besnijdenis, synaxis,
+Geboorte Moeder Gods, Kruisverheffing zelf). De zondag ná Kruisverheffing
+is tevens het anker van de Lucaanse sprong (R3). Perikopen volgen Moskou
+(Azbyka); een parochieboekje is checklist, geen bron om de gedeelde lijst
+te herschrijven. Wijkt een boekje in verzen af (bijv. zaterdag ná
+Kruisverheffing, Onthoofding, zaterdag vóór Theofanie), dan blijft Moskou.
 
 Voorbeeldbestand (niet actief tenzij gekozen): `data/lezingen/parochies/voorbeeld.yaml`.
 Actief in deze repo: `parochie: den-haag` (Orthodox klooster Johannes de
@@ -536,4 +554,164 @@ bron:
   label: "OCA / Azbyka — Zondag vóór Kerst"
   url: "https://www.oca.org/saints/lives/2024/12/22/103536-sunday-before-the-nativity-of-our-lord"
   geraadpleegd: "2026-08-17"
+```
+
+```lezingen-voorbeeld
+id: zaterdag-voor-kruisverheffing-2026
+status: implemented
+jaar: 2026
+mmdd: "09-12"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "1 Kor. 2:6-9"
+  evangelie:
+    - ref: "Matt. 10:37-11:1"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Zaterdag vóór Kruisverheffing"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zondag-voor-kruisverheffing-2026
+status: implemented
+jaar: 2026
+mmdd: "09-13"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Gal. 6:11-18"
+  evangelie:
+    - ref: "Joh. 3:13-17"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Zondag vóór Kruisverheffing"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zaterdag-na-kruisverheffing-2026
+status: implemented
+jaar: 2026
+mmdd: "09-19"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "1 Kor. 1:26-29"
+  evangelie:
+    - ref: "Joh. 8:21-30"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Zaterdag na Kruisverheffing"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zondag-na-kruisverheffing-2026
+status: implemented
+jaar: 2026
+mmdd: "09-20"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Gal. 2:16-20"
+  evangelie:
+    - ref: "Mark. 8:34-9:1"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Zondag na Kruisverheffing"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zaterdag-voor-theofanie-2026
+status: implemented
+jaar: 2026
+mmdd: "01-03"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "1 Tim. 3:14-4:5"
+  evangelie:
+    - ref: "Matt. 3:1-11"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka — Zaterdag vóór Theofanie"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zondag-voor-theofanie-2026
+status: implemented
+jaar: 2026
+mmdd: "01-04"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "2 Tim. 4:5-8"
+  evangelie:
+    - ref: "Mark. 1:1-8"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka — Zondag vóór Theofanie"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zaterdag-na-theofanie-2026
+status: implemented
+jaar: 2026
+mmdd: "01-10"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Ef. 6:10-17"
+  evangelie:
+    - ref: "Matt. 4:1-11"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka — Zaterdag na Theofanie"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zaterdag-voor-kerst-2026
+status: implemented
+jaar: 2026
+mmdd: "12-19"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Gal. 3:8-12"
+  evangelie:
+    - ref: "Luc. 13:18-29"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka — Zaterdag vóór Kerst"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
 ```

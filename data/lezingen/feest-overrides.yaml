@@ -1,5 +1,5 @@
 # Feestoverrides voor liturgische Apostel/Evangelie-lezingen (Moskou / Slavisch).
-# Match: paascyclus_offset of mmdd (feestdatum-dagnaam).
+# Match: paascyclus_offset, mmdd (feestdatum-dagnaam), of weekdag_relatief.
 # Bronbasis: Azbyka ukazatel’ + MP-kalender; ROCOR bij twijfel.
 
 overrides:
@@ -266,6 +266,59 @@ overrides:
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
+  # Lezingendagen (geen eigen feestdienst). prioriteit 90: grootfeest wint
+  # (Theofanie zelf; Besnijdenis 1 jan.; synaxis Johannes 7 jan.).
+  - id: zaterdag-voor-theofanie
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "01-06"
+        weekdag: 6
+        welke: 1
+        richting: voor
+    rang: groot
+    apostel: [{ ref: "1 Tim. 3:14-4:5" }]
+    evangelie: [{ ref: "Matt. 3:1-11" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — Zaterdag vóór Theofanie"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
+  - id: zondag-voor-theofanie
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "01-06"
+        weekdag: 7
+        welke: 1
+        richting: voor
+    rang: groot
+    apostel: [{ ref: "2 Tim. 4:5-8" }]
+    evangelie: [{ ref: "Mark. 1:1-8" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — Zondag vóór Theofanie"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
+  - id: zaterdag-na-theofanie
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "01-06"
+        weekdag: 6
+        welke: 1
+        richting: na
+    rang: groot
+    apostel: [{ ref: "Ef. 6:10-17" }]
+    evangelie: [{ ref: "Matt. 4:1-11" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — Zaterdag na Theofanie"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
   - id: ontmoeting-in-de-tempel
     match: { mmdd: "02-02" }
     apostel: [{ ref: "Heb. 7:7-17" }]
@@ -441,6 +494,76 @@ overrides:
       url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
       geraadpleegd: "2026-08-16"
 
+  # Lezingendagen (geen eigen feestdienst). prioriteit 90: grootfeest wint
+  # (Geboorte Moeder Gods 8 sept.; Kruisverheffing zelf op za/zo).
+  - id: zaterdag-voor-kruisverheffing
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "09-14"
+        weekdag: 6
+        welke: 1
+        richting: voor
+    rang: groot
+    apostel: [{ ref: "1 Kor. 2:6-9" }]
+    evangelie: [{ ref: "Matt. 10:37-11:1" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka / OCA — Zaterdag vóór Kruisverheffing"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
+  - id: zondag-voor-kruisverheffing
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "09-14"
+        weekdag: 7
+        welke: 1
+        richting: voor
+    rang: groot
+    apostel: [{ ref: "Gal. 6:11-18" }]
+    evangelie: [{ ref: "Joh. 3:13-17" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka / OCA — Zondag vóór Kruisverheffing"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
+  - id: zaterdag-na-kruisverheffing
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "09-14"
+        weekdag: 6
+        welke: 1
+        richting: na
+    rang: groot
+    apostel: [{ ref: "1 Kor. 1:26-29" }]
+    evangelie: [{ ref: "Joh. 8:21-30" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka / OCA — Zaterdag na Kruisverheffing"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
+  - id: zondag-na-kruisverheffing
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "09-14"
+        weekdag: 7
+        welke: 1
+        richting: na
+    rang: groot
+    apostel: [{ ref: "Gal. 2:16-20" }]
+    evangelie: [{ ref: "Mark. 8:34-9:1" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka / OCA — Zondag na Kruisverheffing"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
+
   - id: tempelgang-moeder-gods
     match: { mmdd: "11-21" }
     apostel: [{ ref: "Heb. 9:1-7" }]
@@ -510,6 +633,23 @@ overrides:
       label: "OCA / Azbyka — Zondag van de Voorvaderen"
       url: "https://www.oca.org/saints/lives/2024/12/15/103535-sunday-of-the-forefathers"
       geraadpleegd: "2026-08-17"
+
+  - id: zaterdag-voor-kerst
+    prioriteit: 90
+    match:
+      weekdag_relatief:
+        anker: "12-25"
+        weekdag: 6
+        welke: 1
+        richting: voor
+    rang: groot
+    apostel: [{ ref: "Gal. 3:8-12" }]
+    evangelie: [{ ref: "Luc. 13:18-29" }]
+    regels: [R2]
+    bron:
+      label: "Azbyka — Zaterdag vóór Kerst"
+      url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+      geraadpleegd: "2026-08-21"
 
   - id: zondag-vaderen-voor-kerst
     match:

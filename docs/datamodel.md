@@ -198,16 +198,21 @@ Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
 18 december, niet Kerst zelf. In de stand Oud is het anker de Juliaanse
 feestdatum; de burgerlijke vierdatum schuift mee.
 
-In deze kalender:
+In deze kalender als **feest-entries** (jaarkalender, datumpagina, ICS;
+niet in het Synaxarion):
 
 - `zondag-voorvaderen` — 2e zondag vóór Kerst
 - `zondag-vaderen-voor-kerst` — zondag direct vóór Kerst
 - `zondag-na-kerst` — zondag ná Kerst
 - `zondag-na-theofanie` — zondag ná Theofanie
 
-Die dagen staan **niet** in het Synaxarion (geen vaste MM-DD); wel op
-jaarkalender, datumpagina en ICS. Functie: `weekday_relative_date` in
-`scripts/kalender.py`.
+Zaterdag/zondag rond Kruisverheffing, Theofanie (vóór; zaterdag ná) en
+zaterdag vóór Kerst zijn **alleen lezingendagen** (eigen Apostel/Evangelie,
+geen eigen feestdienst): `weekdag_relatief` in
+`data/lezingen/feest-overrides.yaml`, geen YAML onder `data/feesten/`.
+Zie `docs/specs/lezingen.md`.
+
+Functie: `weekday_relative_date` in `scripts/kalender.py`.
 
 ## Heiligen: selectie en betekenis
 
