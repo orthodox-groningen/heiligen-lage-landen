@@ -631,6 +631,23 @@ def test_grootfeesten_en_pascha_hebben_betekenis() -> None:
         "onthoofding-johannes-doper",
         "besnijdenis-des-heren",
         "begin-kerkelijk-jaar",
+        "zacheus-zondag",
+        "zondag-tollenaar-en-farizeeer",
+        "zondag-verloren-zoon",
+        "zondag-laatste-oordeel",
+        "vergevingszondag",
+        "schone-maandag",
+        "zondag-orthodoxie",
+        "zondag-gregorius-palamas",
+        "zondag-kruisverering",
+        "zondag-johannes-klimacus",
+        "zondag-maria-van-egypte",
+        "thomaszondag",
+        "zondag-mirredraagsters",
+        "zondag-verlamde",
+        "zondag-samaritaanse",
+        "zondag-blinde",
+        "midden-pinksterfeest",
     }
     feesten = [e for e in load_entries() if e.get("soort") == "feest"]
     met = {e["id"] for e in feesten if (e.get("betekenis") or "").strip()}

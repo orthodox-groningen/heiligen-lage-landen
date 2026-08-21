@@ -33,11 +33,11 @@ Drie lagen, niet door elkaar:
    dienstboek primair. Zelfde `bronlaag` als de rest van de pagina.
 
 De twaalf grootfeesten, **Pascha**, Lazarus-zaterdag, de Grote
-Week-dagen en de kernfeesten (Allerheiligen, Geestesmaandag, Pokrov,
-Petrus en Paulus, Johannes’ geboorte en onthoofding, Besnijdenis,
-begin kerkelijk jaar) hebben nu `betekenis`. Voorfeest, nafeest,
-synaxis, weken, Triodion-zondagen en de zondagen van Thomas tot de
-Blinde: nog niet.
+Week-dagen, de kernfeesten, de Triodion-zondagen (Zacheüs tot Maria
+van Egypte, plus Schone Maandag), Thomas tot de Blinde en
+Midden-Pinksterfeest hebben nu `betekenis`. Voorfeest, nafeest,
+synaxis, weken, Boterweek, concilie- en voorvaderzondagen,
+Allerzielen-zaterdagen: nog niet.
 Bronnen:
 [`docs/onderzoek/feest-betekenis-bronnen.md`](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
@@ -53,4 +53,5 @@ Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
 **Volgende:** troparia/kondaken; daarna eventueel betekenis op
-Triodion-zondagen en de zondagen van Thomas tot de Blinde.
+concilie- en voorvaderzondagen, Allerzielen-zaterdagen, Boterweek
+en kalenderranden.

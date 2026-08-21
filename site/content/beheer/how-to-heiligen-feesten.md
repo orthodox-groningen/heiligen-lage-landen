@@ -236,9 +236,11 @@ alleen als zij dezelfde vader naspreken — niet als enige bron, en niet
 om hun band met de Lage Landen in deze tekst te noemen. Locators en
 volgorde: [bronnennota](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
-Voorbeeld: Theofanie. Grootfeesten, Pascha, Heilige Week-dagen en de
-kernfeesten in de bronnennota hebben het veld.
-Voorfeest, nafeest, synaxis en weken niet. Contract:
+Voorbeeld: Theofanie. Grootfeesten, Pascha, Heilige Week-dagen, de
+kernfeesten, de Triodion-zondagen en Thomas tot de Blinde (plus
+Midden-Pinksterfeest) in de bronnennota hebben het veld.
+Voorfeest, nafeest, synaxis, weken, Boterweek, concilie- en
+voorvaderzondagen niet. Contract:
 [Feest]({{% ref "/beheer/pagina-opbouw/feest" %}}).
 
 ```yaml

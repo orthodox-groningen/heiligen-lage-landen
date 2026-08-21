@@ -236,11 +236,11 @@ OrthodoxWiki is vingerwijzing. Zie
 [`docs/onderzoek/feest-betekenis-bronnen.md`](onderzoek/feest-betekenis-bronnen.md).
 
 Op de feestpagina als **Betekenis**, ná het verhaal. Nu: de twaalf
-grootfeesten, Pascha, Lazarus-zaterdag en de Grote Week-dagen, plus
-Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus, geboorte en
-onthoofding van Johannes de Doper, Besnijdenis des Heren, begin van
-het kerkelijk jaar. Geen `betekenis` op voorfeest, nafeest, synaxis
-of weken.
+grootfeesten, Pascha, Lazarus-zaterdag en de Grote Week-dagen, de
+genoemde kernfeesten, de Triodion-zondagen (Zacheüs tot Maria van
+Egypte, plus Schone Maandag), Thomas tot de Blinde, en
+Midden-Pinksterfeest. Geen `betekenis` op voorfeest, nafeest, synaxis,
+weken, Boterweek, concilie- of voorvaderzondagen, of Allerzielen-zaterdagen.
 
 Optioneel `goedkeuring`: lijst van personen of organisaties die de
 **betekenistekst** hebben goedgekeurd. Ontbreekt of leeg: de kop

@@ -38,9 +38,11 @@ daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
 kernachtig wat de Kerk die dag van de gelovige vraagt (houding,
 wijding, waarom van het vasten — geen tweede vastentabel). Orthodox,
 weinig jargon, geen preek. Alleen als YAML `betekenis` heeft. Nu: de
-twaalf grootfeesten, Pascha, Lazarus-zaterdag en Grote Week-dagen, en
-de kernfeesten Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus,
-Johannes (geboorte en onthoofding), Besnijdenis, begin kerkelijk jaar.
+twaalf grootfeesten, Pascha, Lazarus-zaterdag en Grote Week-dagen, de
+kernfeesten Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus,
+Johannes (geboorte en onthoofding), Besnijdenis, begin kerkelijk jaar,
+de Triodion-zondagen (Zacheüs tot Maria van Egypte, plus Schone
+Maandag), Thomas tot de Blinde, en Midden-Pinksterfeest.
 Bronnen: kerkvaders
 en dienstboek eerst; Hopko als brug; Johannes van Shanghai of Sophrony
 alleen als naspraak, niet als enige bron. Zelfde bronlaag als de rest
@@ -52,7 +54,8 @@ goedkeurde (en eventuele opmerking).
 
 **Niet:** herhaling van het verhaal; preek; troparion/kondakion;
 «Betekenis voor de Lage Landen» (feesten hebben dat niet). Geen
-apart betekenis-stuk op voorfeest, nafeest, synaxis of weken.
+apart betekenis-stuk op voorfeest, nafeest, synaxis, weken, Boterweek,
+concilie- of voorvaderzondagen, of Allerzielen-zaterdagen.
 Troparia: [Ideeën]({{% ref "/beheer/ideeen" %}}).
 Verwar `goedkeuring` niet met `bronlaag`.
 

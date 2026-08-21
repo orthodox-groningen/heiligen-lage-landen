@@ -5,8 +5,8 @@ duplicaat van
 [`bron/docs/specs/terminologie.md`](https://github.com/orthodox-ronl/bron/blob/main/docs/specs/terminologie.md).
 Datamodel: [`docs/datamodel.md`](../datamodel.md).
 
-**Datum:** 21 augustus 2026. Tweede ronde dezelfde dag: Heilige Week en
-kernfeesten.
+**Datum:** 21 augustus 2026. Derde ronde dezelfde dag: Triodion-zondagen
+en Pentekostarion (Thomas tot de Blinde, Midden-Pinksterfeest).
 
 ## Rangorde
 
@@ -177,9 +177,86 @@ Geen `betekenis` (generator toont dat veld alleen bij `soort: feest`).
 
 - Primair: OCA-synaxarion (Luc. 4, indictie). Geen aparte Cappadocische jaarpreek gevonden.
 
+## Derde ronde (Triodion-zondagen en Pentekostarion)
+
+Verhaal tot de perikoop; `betekenis` twee alinea’s. `goedkeuring` leeg.
+
+### Zacheüs (`zacheus-zondag`)
+
+- Primair: Cyrillus van Alexandrië, preek 127 op Lucas (Luc. 19).
+- Brug: Hopko, Great Lent; dienstboek via OrthodoxWiki Triodion.
+
+### Tollenaar en Farizeeër (`zondag-tollenaar-en-farizeeer`)
+
+- Primair: Cyrillus van Alexandrië, preek 120 op Lucas (Luc. 18:9–14).
+- Opening van het Triodion; deze week vastenvrij (Hopko).
+
+### Verloren zoon (`zondag-verloren-zoon`)
+
+- Primair: Cyrillus van Alexandrië, preek 107 op Lucas (Luc. 15).
+
+### Laatste Oordeel (`zondag-laatste-oordeel`)
+
+- Primair: Chrysostomos, homilie 79 op Matteüs (Matt. 25).
+
+### Vergevingszondag (`vergevingszondag`)
+
+- Primair: Chrysostomos, homilie 19 op Matteüs (Onze Vader: vergeef ons).
+- Brug: Hopko Great Lent (paradijs; wederzijdse vergeving).
+
+### Schone Maandag (`schone-maandag`)
+
+- Primair: Chrysostomos, homilie 20 op Matteüs (wanneer gij vast).
+- Brug: Hopko, Lenten Fasting. Vasten is middel.
+
+### Orthodoxie (`zondag-orthodoxie`)
+
+- Primair: Johannes van Damascus, *Uiteenzetting van het orthodoxe geloof* IV (beelden).
+
+### Gregorius Palamas (`zondag-gregorius-palamas`)
+
+- Primair: Palamas, *De triaden* (CWS, ISBN). OCA-leven-URL’s op 14 november leiden naar andere heiligen; niet gebruikt.
+
+### Kruisverering (`zondag-kruisverering`)
+
+- Primair: Cyrillus van Jeruzalem, catechese 13 (zelfde last als Kruisverheffing).
+
+### Johannes Klimacus (`zondag-johannes-klimacus`)
+
+- Primair: *De Ladder* (CWS, ISBN).
+
+### Maria van Egypte (`zondag-maria-van-egypte`)
+
+- Primair: Sophronius van Jeruzalem, vita (Fordham Sourcebook); OCA-synaxarion 1 april klopt.
+
+### Thomaszondag (`thomaszondag`)
+
+- Primair: Chrysostomos, homilie 87 op Johannes (Joh. 20).
+
+### Mirredraagsters (`zondag-mirredraagsters`)
+
+- Primair: Chrysostomos, homilie 86 op Johannes (Maria bij het graf). Homilie 89 op Matteüs is de wacht bij het graf, niet de vrouwen.
+
+### Verlamde (`zondag-verlamde`)
+
+- Primair: Chrysostomos, homilie 36 op Johannes (Betesda).
+
+### Samaritaanse (`zondag-samaritaanse`)
+
+- Primair: Chrysostomos, homilie 32 op Johannes (Joh. 4:13–24). Homilie 31 is Johannes 3, niet de put.
+
+### Midden-Pinksterfeest (`midden-pinksterfeest`)
+
+- Primair: Chrysostomos, homilie 51 op Johannes (Joh. 7:37: wie dorst heeft). Homilie 50 is 7:25 (midden in het feest), niet de dorst-roep.
+
+### Blinde (`zondag-blinde`)
+
+- Primair: Chrysostomos, homilie 56 op Johannes (Joh. 9).
+
 ## Bewust niet
 
 - Paisios, Nektarios, Porfyrios als bron van feestdagleiding.
 - «Heilige van de Lage Landen» in de betekenistekst.
 - Troparion als pagina-onderdeel (zie `site/content/beheer/ideeen.md`).
-- Voorfeest, nafeest, synaxis, weken; Triodion-zondagen; Thomas t/m Blinde.
+- Voorfeest, nafeest, synaxis, weken; Boterweek; concilie- en
+  voorvaderzondagen; Allerzielen-zaterdagen; kalenderranden.
