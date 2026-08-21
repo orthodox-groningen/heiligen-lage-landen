@@ -2522,6 +2522,84 @@
     "feestdatum_gregoriaans": null
   },
   {
+    "id": "zondag-vaderen-zevende-concilie",
+    "soort": "feest",
+    "cyclus": "jaar",
+    "vorm": "weekdag_relatief",
+    "naam": "Zondag van de heilige Vaderen van het Zevende Concilie",
+    "alternatief": [
+      "Zondag van de Vaderen van Nicea II",
+      "Zondag ná 10 oktober"
+    ],
+    "titels": [],
+    "samenvatting": "Eerste zondag ná 10 oktober (11–17 oktober): de Vaderen van het\nZevende Oecumenische Concilie (Nicea 787), die de iconenverering\nherstelden.",
+    "url": "/feesten/zondag-vaderen-zevende-concilie/",
+    "lage_landen": false,
+    "bronlaag": "nagekeken",
+    "observances": [
+      "feest"
+    ],
+    "onderdrukt_wekelijks_vasten": false,
+    "icoon": null,
+    "anker": "10-10",
+    "weekdag": 7,
+    "welke": 1,
+    "richting": "na",
+    "feestdatum": null,
+    "occurrences": {
+      "2024": [
+        "10-13"
+      ],
+      "2025": [
+        "10-12"
+      ],
+      "2026": [
+        "10-11"
+      ],
+      "2027": [
+        "10-17"
+      ],
+      "2028": [
+        "10-15"
+      ],
+      "2029": [
+        "10-14"
+      ],
+      "2030": [
+        "10-13"
+      ],
+      "2031": [
+        "10-12"
+      ]
+    },
+    "occurrences_oud": {
+      "2024": [
+        "10-27"
+      ],
+      "2025": [
+        "10-26"
+      ],
+      "2026": [
+        "10-25"
+      ],
+      "2027": [
+        "10-24"
+      ],
+      "2028": [
+        "10-29"
+      ],
+      "2029": [
+        "10-28"
+      ],
+      "2030": [
+        "10-27"
+      ],
+      "2031": [
+        "10-26"
+      ]
+    }
+  },
+  {
     "id": "gommar",
     "soort": "heilige",
     "cyclus": "jaar",

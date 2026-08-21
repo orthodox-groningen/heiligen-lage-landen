@@ -63,10 +63,12 @@ een ander anker als vaste offset: vooralsnog via <code>mmdd</code> of
 <code>weekdag_relatief</code>; een apart <code>theofanie_offset</code>-veld is niet nodig zolang
 <code>anker: "01-06"</code> volstaat. Match loopt over ankerjaar − 1, 0 en + 1
 (zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).</p><p><strong>Zondagen rond Kerst</strong> (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
-ná Kerst; zondag ná Theofanie): gemodelleerd als <code>datum.weekdag_relatief</code>
-en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
+ná Kerst; zondag ná Theofanie) en <strong>zondag ná 10 oktober</strong> (Vaderen van
+het Zevende Concilie): gemodelleerd als <code>datum.weekdag_relatief</code> en als
+lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (<code>prioriteit</code> 90 vs 100);
-geen gegokte combinatielezing.</p><p><strong>Lezingendagen zonder eigen feestdienst</strong> (geen stichira/canon, géén
+geen gegokte combinatielezing. <strong>1 september</strong> (begin kerkelijk jaar) is
+een vaste feestdatum (<code>mmdd: "09-01"</code>).</p><p><strong>Lezingendagen zonder eigen feestdienst</strong> (geen stichira/canon, géén
 <code>soort: feest</code>-entries, alleen overrides via <code>weekdag_relatief</code>,
 <code>prioriteit</code> 90):</p><table><thead><tr><th>Anker</th><th>Dagen</th></tr></thead><tbody><tr><td>14 sept.</td><td>zaterdag/zondag vóór en ná Kruisverheffing</td></tr><tr><td>6 jan.</td><td>zaterdag/zondag vóór Theofanie; zaterdag ná Theofanie</td></tr><tr><td>25 dec.</td><td>zaterdag vóór Kerst</td></tr></tbody></table><p>Bij samenval wint het grootfeest (Theofanie, Kerst, Besnijdenis, synaxis,
 Geboorte Moeder Gods, Kruisverheffing zelf). De zondag ná Kruisverheffing
