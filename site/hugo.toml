@@ -10,6 +10,7 @@ disableKinds = ["taxonomy", "term"]
   description = "Orthodoxe vaste feesten en heiligen van de Lage Landen — kalender, verhalen en ICS-abonnement."
   github = "https://github.com/orthodox-ronl/kalender"
   org = "https://github.com/orthodox-ronl"
+  feedback_email = "orthodoxronl@duck.com"
 
 [markup]
   [markup.goldmark]

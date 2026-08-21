@@ -1,0 +1,90 @@
+{{ $email := site.Params.feedback_email }}
+<form class="reactie-form" id="reactie-form" data-email="{{ $email }}" novalidate>
+  <p>
+    Stuur uw bericht naar
+    <a href="mailto:{{ $email }}">{{ $email }}</a>
+    (geen account nodig). Het formulier hieronder opent uw e-mailprogramma
+    met het bericht al ingevuld.
+  </p>
+
+  <p class="reactie-field">
+    <label for="reactie-soort">Soort</label>
+    <select id="reactie-soort" name="soort">
+      <option value="vraag" selected>Vraag of opmerking</option>
+      <option value="correctie">Correctie</option>
+      <option value="heilige">Heilige voorstellen</option>
+      <option value="anders">Iets anders</option>
+    </select>
+  </p>
+
+  <fieldset class="reactie-set" data-soort="vraag">
+    <legend>Vraag of opmerking</legend>
+    <p class="reactie-field">
+      <label for="reactie-over">Waarover</label>
+      <select id="reactie-over" name="over">
+        <option>Kalender of datum</option>
+        <option>Heiligen of feesten</option>
+        <option>Lezingen</option>
+        <option>Vasten</option>
+        <option>Uitleg</option>
+        <option>Anders</option>
+      </select>
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-bericht">Uw vraag of opmerking</label>
+      <textarea id="reactie-bericht" name="bericht" rows="6" required></textarea>
+    </p>
+  </fieldset>
+
+  <fieldset class="reactie-set" data-soort="correctie" hidden>
+    <legend>Correctie</legend>
+    <p class="reactie-field">
+      <label for="reactie-waar">Waar (pagina, heilige, feest, datum)</label>
+      <input id="reactie-waar" name="waar" type="text" placeholder="Bijvoorbeeld Willibrord of 7 november">
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-wat">Wat klopt niet, en wat zou het wel moeten zijn?</label>
+      <textarea id="reactie-wat" name="wat" rows="5"></textarea>
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-bron-correctie">Bron (als u die hebt)</label>
+      <textarea id="reactie-bron-correctie" name="bron" rows="3"></textarea>
+    </p>
+  </fieldset>
+
+  <fieldset class="reactie-set" data-soort="heilige" hidden>
+    <legend>Heilige voorstellen</legend>
+    <p class="hint">Wie erin hoort, staat op de uitleg over heiligen. Patroon van een parochie is op zich niet genoeg.</p>
+    <p class="reactie-field">
+      <label for="reactie-naam">Naam</label>
+      <input id="reactie-naam" name="naam" type="text" placeholder="Bijvoorbeeld Jeroen van Noordwijk">
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-feestdag">Feestdag (als u die weet)</label>
+      <input id="reactie-feestdag" name="feestdag" type="text" placeholder="Bijvoorbeeld 17 augustus">
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-waarom">Waarom hoort deze heilige in de kalender?</label>
+      <textarea id="reactie-waarom" name="waarom" rows="4"></textarea>
+    </p>
+    <p class="reactie-field">
+      <label for="reactie-bronnen">Bronnen</label>
+      <textarea id="reactie-bronnen" name="bronnen" rows="3"></textarea>
+    </p>
+  </fieldset>
+
+  <fieldset class="reactie-set" data-soort="anders" hidden>
+    <legend>Iets anders</legend>
+    <p class="reactie-field">
+      <label for="reactie-anders">Uw bericht</label>
+      <textarea id="reactie-anders" name="anders" rows="6"></textarea>
+    </p>
+  </fieldset>
+
+  <p>
+    <button type="submit" class="button">Open e-mail</button>
+  </p>
+  <p class="hint" id="reactie-status" hidden></p>
+</form>
+{{ $js := resources.Get "js/reactie.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
