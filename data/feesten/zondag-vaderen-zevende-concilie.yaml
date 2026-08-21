@@ -1,0 +1,33 @@
+id: zondag-vaderen-zevende-concilie
+soort: feest
+bronlaag: nagekeken
+cyclus: jaar
+lage_landen: false
+namen:
+  primair: Zondag van de heilige Vaderen van het Zevende Concilie
+  alternatief:
+  - Zondag van de Vaderen van Nicea II
+  - Zondag ná 10 oktober
+datum:
+  stijl: juliaans
+  weekdag_relatief:
+    anker: "10-10"
+    weekdag: 7
+    welke: 1
+    richting: na
+samenvatting: |
+  Eerste zondag ná 10 oktober (11–17 oktober): de Vaderen van het
+  Zevende Oecumenische Concilie (Nicea 787), die de iconenverering
+  herstelden.
+verhaal: |
+  Deze zondag valt strikt ná 10 oktober, dus tussen 11 en 17 oktober.
+  Als 10 oktober zelf zondag is, is het 17 oktober. De lezingen
+  (Titus 3, Hebreeën 13, Johannes 17) gedenken de vaderen die het
+  geloof van de Kerk over de heilige beelden beleden.
+referenties:
+  - label: "OrthodoxWiki — Zevende Oecumenische Concilie"
+    url: "https://orthodoxwiki.org/Seventh_Ecumenical_Council"
+    geraadpleegd: "2026-08-21"
+  - label: "OCA — Holy Fathers of the Seventh Ecumenical Council"
+    url: "https://www.oca.org/saints/lives/2024/10/13/204538-commemoration-of-the-holy-fathers-of-the-seventh-ecumenical-council"
+    geraadpleegd: "2026-08-21"

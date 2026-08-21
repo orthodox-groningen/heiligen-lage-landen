@@ -99,7 +99,9 @@ lezingen. Valt zo’n zaterdag of zondag samen met een groot feest
 (bijvoorbeeld de Geboorte van de Moeder Gods op 8 september, de
 Besnijdenis op 1 januari, of het feest zelf), dan gaat dat feest voor.
 De zondag ná Kruisverheffing is ook het anker van de Lucaanse sprong
-hieronder.
+hieronder. Op **1 september** (begin van het kerkelijk jaar) en op de
+**zondag ná 10 oktober** (Vaderen van het Zevende Concilie, Nicea 787)
+gelden eveneens eigen Apostel en Evangelie.
 
 ### 3. Doorlopende weekreeks
 

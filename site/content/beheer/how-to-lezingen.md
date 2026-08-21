@@ -86,7 +86,9 @@ als de spec dat vraagt — pytest bewaakt die blokken.
 Zaterdag/zondag vóór en ná Kruisverheffing, zaterdag/zondag vóór
 Theofanie, zaterdag ná Theofanie en zaterdag vóór Kerst horen in die
 gedeelde lijst (`weekdag_relatief`). Dat zijn lezingendagen, geen
-feest-YAML onder `data/feesten/`.
+feest-YAML onder `data/feesten/`. **1 september** (`mmdd`) en de
+**zondag ná 10 oktober** (`weekdag_relatief` plus feest-YAML, zoals de
+zondagen rond Kerst) horen er ook in.
 
 Een parochieboekje (bijv. de Den Haag-index) is een **checklist** tegen
 Moskou, geen bron om de gedeelde lijst te kopiëren. Wijkt het boekje in

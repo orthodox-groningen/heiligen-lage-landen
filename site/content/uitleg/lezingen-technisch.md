@@ -193,10 +193,12 @@ een ander anker als vaste offset: vooralsnog via `mmdd` of
 (zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).
 
 **Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
-ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
-en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
+ná Kerst; zondag ná Theofanie) en **zondag ná 10 oktober** (Vaderen van
+het Zevende Concilie): gemodelleerd als `datum.weekdag_relatief` en als
+lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
-geen gegokte combinatielezing.
+geen gegokte combinatielezing. **1 september** (begin kerkelijk jaar) is
+een vaste feestdatum (`mmdd: "09-01"`).
 
 **Lezingendagen zonder eigen feestdienst** (geen stichira/canon, géén
 `soort: feest`-entries, alleen overrides via `weekdag_relatief`,

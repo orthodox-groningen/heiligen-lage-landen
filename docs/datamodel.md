@@ -205,6 +205,7 @@ niet in het Synaxarion):
 - `zondag-vaderen-voor-kerst` — zondag direct vóór Kerst
 - `zondag-na-kerst` — zondag ná Kerst
 - `zondag-na-theofanie` — zondag ná Theofanie
+- `zondag-vaderen-zevende-concilie` — zondag ná 10 oktober (Vaderen van Nicea II)
 
 Zaterdag/zondag rond Kruisverheffing, Theofanie (vóór; zaterdag ná) en
 zaterdag vóór Kerst zijn **alleen lezingendagen** (eigen Apostel/Evangelie,

@@ -180,10 +180,12 @@ een ander anker als vaste offset: vooralsnog via `mmdd` of
 (zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).
 
 **Zondagen rond Kerst** (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
-ná Kerst; zondag ná Theofanie): gemodelleerd als `datum.weekdag_relatief`
-en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
+ná Kerst; zondag ná Theofanie) en **zondag ná 10 oktober** (Vaderen van
+het Zevende Concilie): gemodelleerd als `datum.weekdag_relatief` en als
+lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (`prioriteit` 90 vs 100);
-geen gegokte combinatielezing.
+geen gegokte combinatielezing. **1 september** (begin kerkelijk jaar) is
+een vaste feestdatum (`mmdd: "09-01"`).
 
 **Lezingendagen zonder eigen feestdienst** (geen stichira/canon, géén
 `soort: feest`-entries, alleen overrides via `weekdag_relatief`,
@@ -712,6 +714,47 @@ verwacht:
     - R5
 bron:
   label: "Azbyka — Zaterdag vóór Kerst"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: begin-kerkelijk-jaar-2026
+status: implemented
+jaar: 2026
+mmdd: "09-01"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "1 Tim. 2:1-7"
+  evangelie:
+    - ref: "Luc. 4:16-22"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Begin kerkelijk jaar (indictie)"
+  url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
+  geraadpleegd: "2026-08-21"
+```
+
+```lezingen-voorbeeld
+id: zondag-vaderen-zevende-concilie-2026
+status: implemented
+jaar: 2026
+mmdd: "10-11"
+stijl: nieuw
+verwacht:
+  apostel:
+    - ref: "Tit. 3:8-15"
+    - ref: "Heb. 13:7-16"
+  evangelie:
+    - ref: "Joh. 17:1-13"
+  regels:
+    - R2
+    - R5
+bron:
+  label: "Azbyka / OCA — Vaderen van het 7e Oecumenische Concilie"
   url: "https://azbyka.ru/days/p-ukazatel-evangelskih-i-apostolskih-chtenij-na-kazhdyj-den-goda"
   geraadpleegd: "2026-08-21"
 ```

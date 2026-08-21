@@ -115,7 +115,8 @@ Strikt vóór/ná het anker: als 25 december zondag is, is «zondag vóór»
 18 december. Zie `docs/datamodel.md`. Zaterdag/zondag rond
 Kruisverheffing en Theofanie, en zaterdag vóór Kerst, gebruiken dezelfde
 `weekdag_relatief`-vorm, maar alleen in de lezingenlijst — geen
-feest-YAML. Zie
+feest-YAML. De zondag ná 10 oktober (Vaderen van het Zevende Concilie)
+is wél een feest-entry, net als de zondagen rond Kerst. Zie
 [lezingen wijzigen]({{% ref "/beheer/how-to-lezingen" %}}).
 
 ## Namen

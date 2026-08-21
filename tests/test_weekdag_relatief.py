@@ -57,6 +57,10 @@ def test_entries_weekdag_relatief() -> None:
     vad = by_id["zondag-vaderen-voor-kerst"]["datum_norm"]
     assert vad["welke"] == 1
     assert by_id["zondag-na-theofanie"]["datum_norm"]["anker"] == "01-06"
+    z7 = by_id["zondag-vaderen-zevende-concilie"]["datum_norm"]
+    assert z7["vorm"] == "weekdag_relatief"
+    assert z7["anker"] == "10-10"
+    assert z7["richting"] == "na"
 
 
 def test_lezingen_zondagen_voor_kerst_2026() -> None:
@@ -205,3 +209,31 @@ def test_zaterdag_voor_kerst_2026() -> None:
     assert r.override_id == "zaterdag-voor-kerst"
     assert [a.ref for a in r.apostel] == ["Gal. 3:8-12"]
     assert [e.ref for e in r.evangelie] == ["Luc. 13:18-29"]
+
+
+def test_begin_kerkelijk_jaar_2026() -> None:
+    r = resolve_lezingen(2026, "09-01", "nieuw")
+    assert r.override_id == "begin-kerkelijk-jaar"
+    assert [a.ref for a in r.apostel] == ["1 Tim. 2:1-7"]
+    assert [e.ref for e in r.evangelie] == ["Luc. 4:16-22"]
+
+
+def test_zondag_vaderen_zevende_concilie() -> None:
+    # 10 oktober 2026 is zaterdag → zondag ná = 11 oktober.
+    assert date(2026, 10, 10).isoweekday() == 6
+    assert weekday_relative_date(
+        2026, "10-10", 7, 1, "na", stijl="nieuw"
+    ) == date(2026, 10, 11)
+    r = resolve_lezingen(2026, "10-11", "nieuw")
+    assert r.override_id == "zondag-vaderen-zevende-concilie"
+    assert [a.ref for a in r.apostel] == ["Tit. 3:8-15", "Heb. 13:7-16"]
+    assert [e.ref for e in r.evangelie] == ["Joh. 17:1-13"]
+    # Als 10 oktober zelf zondag is: strikt ná = 17 oktober.
+    assert date(2021, 10, 10).isoweekday() == 7
+    assert weekday_relative_date(
+        2021, "10-10", 7, 1, "na", stijl="nieuw"
+    ) == date(2021, 10, 17)
+    assert (
+        resolve_lezingen(2021, "10-17", "nieuw").override_id
+        == "zondag-vaderen-zevende-concilie"
+    )
