@@ -47,10 +47,5 @@ Lage-Landen-heiligen), duidelijk gemerkt, met link naar de parochiesite.
 Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
-## Overig (niet vergeten)
-
-- E-mailadres op [Reactie geven]({{% ref "/uitleg/reactie" %}}) (nu alleen
-  GitHub).
-
 **Volgende:** troparia/kondaken; daarna eventueel betekenis op Heilige
 Week en andere kernfeesten.

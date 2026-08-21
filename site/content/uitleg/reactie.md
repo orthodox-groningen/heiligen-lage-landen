@@ -1,23 +1,18 @@
 ---
 title: "Reactie geven"
 description: "Vraag, correctie of een ontbrekende heilige doorgeven"
-git_date: 2026-08-20
+git_date: 2026-08-21
 ---
 
 Heeft u een vraag, een correctie, of ontbreekt iemand die volgens de
 [uitleg over heiligen]({{% ref "/uitleg/heiligen" %}}) wél in deze
-kalender hoort? U kunt dat het best als **GitHub-issue** doorgeven. Dan
-blijft de melding bij de catalogus staan en kan iemand haar afhandelen.
+kalender hoort? Stuur dat per **e-mail**. Daarvoor is geen account nodig.
 
-Open een [nieuw issue](https://github.com/orthodox-ronl/kalender/issues/new/choose)
-en kies het formulier dat past:
+{{< reactie-form >}}
 
-- **Heilige voorstellen** — iemand die volgens de criteria ontbreekt
-- **Correctie** — datum, naam, verhaal of bron
-- **Vraag of opmerking** — de rest
-
-U hebt een (gratis) GitHub-account nodig. Wie dat niet wil, kan later
-ook per e-mail reageren; dat adres zetten we hier als het er is.
+Wie al een GitHub-account heeft, kan in plaats daarvan een
+[issue](https://github.com/orthodox-ronl/kalender/issues/new/choose)
+openen (heilige voorstellen, correctie, of vraag).
 
 Technische wijzigingen in YAML of code horen bij
 [Voor beheerders]({{% ref "/beheer" %}}), niet hier.

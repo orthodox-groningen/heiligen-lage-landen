@@ -78,10 +78,20 @@ def test_issue_templates_bestaan() -> None:
     assert "Uw vraag of opmerking" in vraag
 
 
-def test_reactie_pagina_wijst_naar_github() -> None:
+def test_reactie_pagina_wijst_naar_email() -> None:
+    hugo = (SITE / "hugo.toml").read_text(encoding="utf-8")
     text = (CONTENT / "uitleg" / "reactie.md").read_text(encoding="utf-8")
+    form = (SITE / "layouts" / "shortcodes" / "reactie-form.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'feedback_email = "orthodoxronl@duck.com"' in hugo
+    assert "reactie-form" in text
+    assert "e-mail" in text.lower()
     assert "issues/new/choose" in text
-    assert "Heilige voorstellen" in text
+    assert "data-email" in form
+    assert "mailto:" in form
+    assert 'value="anders"' in form
+    assert "Iets anders" in form
 
 
 def test_uitleg_heiligen_noemt_parochiepatronen() -> None:
