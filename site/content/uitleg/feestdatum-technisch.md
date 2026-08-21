@@ -46,7 +46,7 @@ datum:
     offset_dagen: 0        # t.o.v. Orthodox Pascha (negatief = vóór)
 ```
 
-Bereik in generatie en ICS: huidig jaar −2 … +25. Functies:
+Bereik in generatie en ICS: huidig jaar −2 … +5. Functies:
 `pascha_offset_date` in `scripts/kalender.py`.
 
 ## Weekdag t.o.v. een feestdatum

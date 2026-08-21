@@ -566,6 +566,34 @@ h2 {
 
 .table-wrap {
   overflow-x: auto;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.entry-body .komende-jaren {
+  width: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.entry-body .komende-jaren th,
+.entry-body .komende-jaren td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.35rem 1.1rem 0.35rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--muted) 35%, transparent);
+  white-space: nowrap;
+}
+
+.entry-body .komende-jaren th {
+  font-weight: 600;
+  color: var(--gold-soft);
+  border-bottom-width: 2px;
+}
+
+.entry-body .komende-jaren td:first-child,
+.entry-body .komende-jaren th:first-child {
+  font-variant-numeric: tabular-nums;
+  padding-right: 1.5rem;
 }
 
 .rooster-table td:nth-child(3),

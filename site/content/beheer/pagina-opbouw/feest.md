@@ -25,12 +25,17 @@ body.
 
 ## Datumtoelichting in de body
 
-**Wel:** bij paascyclus of weekdag-relatief: komende jaren (wereldlijk),
-zodat de infobox niet overloopt — de jaartallen zijn het huidige jaar en de
-daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
-(zelfde dag als de infobox; zie [Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})).
+**Wel:** bij paascyclus of weekdag-relatief: een **tabel** «Komende
+jaren» (wereldlijk), zodat de infobox niet overloopt. Vijf rijen: het
+**lopende burgerlijke jaar** en de vier daarop. Kolommen bij één dag:
+Jaar, Wereldlijk, Juliaans. Bij een periode (vasten of feestdagenreeks):
+Jaar, Van, Tot. Geen opsomming met copypaste-jaren van het ICS-venster.
 
-**Niet:** een tweede, afwijkende canonieke datum.
+**Niet:** een tweede, afwijkende canonieke datum; meer of minder dan
+die vijf jaren; het ICS-bereik (huidig −2 … +5) op deze pagina.
+
+Bij vaste dag: **Feestdag:** in de body mag (zelfde dag als de infobox;
+zie [Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})).
 
 ## Betekenis
 

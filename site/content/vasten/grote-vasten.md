@@ -21,14 +21,18 @@ onderdrukt_wekelijks_vasten: true
 
 **Komende jaren (wereldlijk / Gregoriaans):**
 
-- 2024: 18 maart – 27 april
-- 2025: 3 maart – 12 april
-- 2026: 23 februari – 4 april
-- 2027: 15 maart – 24 april
-- 2028: 28 februari – 8 april
-- 2029: 19 februari – 31 maart
-- 2030: 11 maart – 20 april
-- 2031: 24 februari – 5 april
+<div class="table-wrap">
+<table class="komende-jaren">
+<thead><tr><th>Jaar</th><th>Van</th><th>Tot</th></tr></thead>
+<tbody>
+<tr><td>2026</td><td>23 februari</td><td>4 april</td></tr>
+<tr><td>2027</td><td>15 maart</td><td>24 april</td></tr>
+<tr><td>2028</td><td>28 februari</td><td>8 april</td></tr>
+<tr><td>2029</td><td>19 februari</td><td>31 maart</td></tr>
+<tr><td>2030</td><td>11 maart</td><td>20 april</td></tr>
+</tbody>
+</table>
+</div>
 
 Van Schone Maandag tot en met Lazarus-zaterdag (veertigdagen); daarna volgt de Grote Week.
 

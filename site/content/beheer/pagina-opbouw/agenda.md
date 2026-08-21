@@ -46,7 +46,8 @@ titellogica.
 ## Actie en how-to per app
 
 **Wel:** knop die meeverandert; stappen voor Google, Apple, Outlook,
-Android; één abonnement = één kleur.
+Android; één abonnement = één kleur. Het ICS-venster is huidig jaar −2
+… +5 (niet de vijfjaren-tabel op een feestdagpagina).
 
 **Niet:** interne feed-bestandsnamen als primaire UI (die horen op de
 technische bijlage).

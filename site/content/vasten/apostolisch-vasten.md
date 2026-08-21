@@ -21,14 +21,18 @@ onderdrukt_wekelijks_vasten: true
 
 **Komende jaren (wereldlijk / Gregoriaans):**
 
-- 2024: _geen dagen_ (begin na einddatum)
-- 2025: 16 juni – 28 juni
-- 2026: 8 juni – 28 juni
-- 2027: 28 juni – 28 juni
-- 2028: 12 juni – 28 juni
-- 2029: 4 juni – 28 juni
-- 2030: 24 juni – 28 juni
-- 2031: 9 juni – 28 juni
+<div class="table-wrap">
+<table class="komende-jaren">
+<thead><tr><th>Jaar</th><th>Van</th><th>Tot</th></tr></thead>
+<tbody>
+<tr><td>2026</td><td>8 juni</td><td>28 juni</td></tr>
+<tr><td>2027</td><td>28 juni</td><td>28 juni</td></tr>
+<tr><td>2028</td><td>12 juni</td><td>28 juni</td></tr>
+<tr><td>2029</td><td>4 juni</td><td>28 juni</td></tr>
+<tr><td>2030</td><td>24 juni</td><td>28 juni</td></tr>
+</tbody>
+</table>
+</div>
 
 Van de maandag na Allerheiligen tot de vooravond van Petrus en Paulus (29 juni).
 

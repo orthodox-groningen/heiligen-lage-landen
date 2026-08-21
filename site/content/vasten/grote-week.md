@@ -20,14 +20,18 @@ onderdrukt_wekelijks_vasten: true
 
 **Komende jaren (wereldlijk / Gregoriaans):**
 
-- 2024: 29 april – 4 mei
-- 2025: 14 april – 19 april
-- 2026: 6 april – 11 april
-- 2027: 26 april – 1 mei
-- 2028: 10 april – 15 april
-- 2029: 2 april – 7 april
-- 2030: 22 april – 27 april
-- 2031: 7 april – 12 april
+<div class="table-wrap">
+<table class="komende-jaren">
+<thead><tr><th>Jaar</th><th>Van</th><th>Tot</th></tr></thead>
+<tbody>
+<tr><td>2026</td><td>6 april</td><td>11 april</td></tr>
+<tr><td>2027</td><td>26 april</td><td>1 mei</td></tr>
+<tr><td>2028</td><td>10 april</td><td>15 april</td></tr>
+<tr><td>2029</td><td>2 april</td><td>7 april</td></tr>
+<tr><td>2030</td><td>22 april</td><td>27 april</td></tr>
+</tbody>
+</table>
+</div>
 
 Grote Maandag tot en met Grote Zaterdag: met Christus naar Jeruzalem.
 

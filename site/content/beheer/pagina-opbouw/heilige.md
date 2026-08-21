@@ -35,7 +35,8 @@ verspreide relieken).
 leesvolgorde.
 
 **Wel:** dezelfde canonieke dag als in de infobox; bij geen vaste dag:
-komende jaren of de anker-uitleg. Extra gedenkdagen (orthodox bekend)
+dezelfde vijfjaren-tabel als op een feest (lopend jaar plus vier). Extra
+gedenkdagen (orthodox bekend)
 als **Andere gedenkdagen**, niet als tweede canonieke Feestdag.
 
 **Niet:** een andere canonieke datum dan in de infobox; een katholieke

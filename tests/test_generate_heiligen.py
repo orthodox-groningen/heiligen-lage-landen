@@ -6,6 +6,8 @@ import json
 import sys
 from pathlib import Path
 
+from datetime import date
+
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,8 +15,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from generate import (  # noqa: E402
     CONTENT,
+    ICS_YEAR_BACK,
+    ICS_YEAR_FORWARD,
+    KOMENDE_JAREN_AANTAL,
     _split_hugo_markdown,
     betekenis_bron_labels,
+    komende_jaren,
+    occurrence_years,
     render_beheer_selectie,
     write_beheer_selectie,
     write_entries_json,
@@ -510,6 +517,85 @@ def _feest(**overrides):
     }
     entry.update(overrides)
     return entry
+
+
+def test_komende_jaren_is_vijf_vanaf_huidig(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FrozenDate(date):
+        @classmethod
+        def today(cls) -> date:
+            return date(2026, 8, 21)
+
+    monkeypatch.setattr("generate.date", FrozenDate)
+    assert KOMENDE_JAREN_AANTAL == 5
+    assert list(komende_jaren()) == [2026, 2027, 2028, 2029, 2030]
+    occ = list(occurrence_years())
+    assert occ[0] == 2026 - ICS_YEAR_BACK
+    assert occ[-1] == 2026 + ICS_YEAR_FORWARD
+    assert len(occ) == ICS_YEAR_BACK + ICS_YEAR_FORWARD + 1
+    assert occ != list(komende_jaren())
+
+
+def test_paascyclus_feest_komende_jaren_tabel(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    monkeypatch.setattr("generate.komende_jaren", lambda today=None: range(2026, 2031))
+    write_entry_page(
+        _feest(
+            id="pinksteren",
+            cyclus="paascyclus",
+            datum_norm={
+                "feestdatum": None,
+                "vorm": "dag",
+                "stijl": "gregoriaans",
+                "paascyclus_offset": 49,
+            },
+        )
+    )
+    text = (content / "feesten" / "pinksteren.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert 'class="komende-jaren"' in body
+    assert "<th>Jaar</th>" in body
+    assert "<th>Wereldlijk</th>" in body
+    assert "<th>Juliaans</th>" in body
+    assert "<td>2026</td>" in body
+    assert "<td>2030</td>" in body
+    assert "<td>2024</td>" not in body
+    assert "<td>2031</td>" not in body
+    assert "- 2026:" not in body
+    assert "31 mei" in body
+    assert body.count("<tr>") == 6  # kop + 5 jaren
+
+
+def test_paascyclus_periode_komende_jaren_tabel(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    monkeypatch.setattr("generate.komende_jaren", lambda today=None: range(2026, 2031))
+    write_entry_page(
+        _feest(
+            id="grote-vasten",
+            soort="vasten",
+            cyclus="paascyclus",
+            observances=["vasten"],
+            datum_norm={
+                "feestdatum": None,
+                "vorm": "periode",
+                "stijl": "gregoriaans",
+                "paascyclus_offset": -48,
+                "van_offset_dagen": -48,
+                "tot_offset_dagen": -8,
+            },
+        )
+    )
+    text = (content / "vasten" / "grote-vasten.md").read_text(encoding="utf-8")
+    _, body = _split_hugo_markdown(text)
+    assert "<th>Van</th>" in body
+    assert "<th>Tot</th>" in body
+    assert "<td>2026</td>" in body
+    assert "<td>2031</td>" not in body
 
 
 def test_feest_pagina_betekenis_na_verhaal(

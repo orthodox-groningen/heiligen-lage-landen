@@ -619,7 +619,7 @@
 
   let yearBounds = {
     min: new Date().getFullYear() - 2,
-    max: new Date().getFullYear() + 25,
+    max: new Date().getFullYear() + 5,
   };
 
   function yearBoundsFromEntries(entries) {
@@ -639,7 +639,7 @@
     const now = new Date().getFullYear();
     return {
       min: Number.isFinite(min) ? min : now - 2,
-      max: Number.isFinite(max) ? max : now + 25,
+      max: Number.isFinite(max) ? max : now + 5,
     };
   }
 
