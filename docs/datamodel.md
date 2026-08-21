@@ -235,9 +235,12 @@ te spreken (dat is `betekenis_lage_landen` op hun heiligenpagina).
 OrthodoxWiki is vingerwijzing. Zie
 [`docs/onderzoek/feest-betekenis-bronnen.md`](onderzoek/feest-betekenis-bronnen.md).
 
-Op de feestpagina als **Betekenis**, ná het verhaal. Eerst de twaalf
-grootfeesten en Pascha (feest der feesten). Geen `betekenis` op
-voorfeest, nafeest, synaxis of weken.
+Op de feestpagina als **Betekenis**, ná het verhaal. Nu: de twaalf
+grootfeesten, Pascha, Lazarus-zaterdag en de Grote Week-dagen, plus
+Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus, geboorte en
+onthoofding van Johannes de Doper, Besnijdenis des Heren, begin van
+het kerkelijk jaar. Geen `betekenis` op voorfeest, nafeest, synaxis
+of weken.
 
 Optioneel `goedkeuring`: lijst van personen of organisaties die de
 **betekenistekst** hebben goedgekeurd. Ontbreekt of leeg: de kop

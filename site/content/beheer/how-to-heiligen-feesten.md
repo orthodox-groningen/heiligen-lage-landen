@@ -236,7 +236,8 @@ alleen als zij dezelfde vader naspreken — niet als enige bron, en niet
 om hun band met de Lage Landen in deze tekst te noemen. Locators en
 volgorde: [bronnennota](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
-Voorbeeld: Theofanie. De twaalf grootfeesten en Pascha hebben het veld.
+Voorbeeld: Theofanie. Grootfeesten, Pascha, Heilige Week-dagen en de
+kernfeesten in de bronnennota hebben het veld.
 Voorfeest, nafeest, synaxis en weken niet. Contract:
 [Feest]({{% ref "/beheer/pagina-opbouw/feest" %}}).
 

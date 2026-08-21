@@ -196,7 +196,7 @@
     "verhaal": { "type": "string" },
     "betekenis": {
       "type": "string",
-      "description": "Feest: 1–3 alinea’s geheim (weg naar God) plus wat de Kerk die dag vraagt. Niet hetzelfde als verhaal. Twaalf grootfeesten en Pascha. Vaders/dienstboek primair. Niet voor heiligen (die hebben betekenis_lage_landen)."
+      "description": "Feest: 1–3 alinea’s geheim plus wat de Kerk die dag vraagt. Niet hetzelfde als verhaal. Grootfeesten, Pascha, Heilige Week-dagen en genoemde kernfeesten. Vaders/dienstboek primair. Niet voor heiligen (die hebben betekenis_lage_landen)."
     },
     "goedkeuring": {
       "type": "array",

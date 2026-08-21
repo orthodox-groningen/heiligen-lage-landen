@@ -1,11 +1,12 @@
-# Bronnen voor `betekenis` van grootfeesten en Pascha
+# Bronnen voor `betekenis` van feesten
 
-Onderzoeksnotitie bij het veld `betekenis` (twaalf grootfeesten en
-Pascha). Geen canonieke spec, geen duplicaat van
+Onderzoeksnotitie bij het veld `betekenis`. Geen canonieke spec, geen
+duplicaat van
 [`bron/docs/specs/terminologie.md`](https://github.com/orthodox-ronl/bron/blob/main/docs/specs/terminologie.md).
 Datamodel: [`docs/datamodel.md`](../datamodel.md).
 
-**Datum:** 21 augustus 2026.
+**Datum:** 21 augustus 2026. Tweede ronde dezelfde dag: Heilige Week en
+kernfeesten.
 
 ## Rangorde
 
@@ -104,8 +105,81 @@ Geen `betekenis` (generator toont dat veld alleen bij `soort: feest`).
 `verhaal` volgt Chrysostomos’ paaspreek (tafel) en Hopko Holy Week
 (mee naar Jeruzalem). Vasten is middel, geen telos.
 
+## Tweede ronde (Heilige Week-dagen en kernfeesten)
+
+### Lazarus-zaterdag (`lazarus-zaterdag`)
+
+- Primair: Chrysostomos, homilie 62 op Johannes (Joh. 11).
+- Brug: Hopko, Lazarus Saturday and Palm Sunday.
+
+### Grote Maandag (`grote-maandag`)
+
+- Primair: Hopko Holy Week (metten: mee naar Jeruzalem; Bruidegom; vijgenboom).
+- Chrysostomos, homilie 67 op Matteüs (tempel/vijgenboom-kring).
+
+### Grote Dinsdag (`grote-dinsdag`)
+
+- Primair: Chrysostomos, homilie 78 op Matteüs (tien maagden).
+
+### Grote Woensdag (`grote-woensdag`)
+
+- Primair: Chrysostomos, homilie 80 op Matteüs (zalving, Judas).
+- Heilige Zalving niet als plicht van díe dag.
+
+### Grote Donderdag (`grote-donderdag`)
+
+- Primair: Chrysostomos, homilie 82 op Matteüs (Avondmaal).
+
+### Grote Vrijdag (`grote-vrijdag`)
+
+- Primair: Chrysostomos, homilie 87 op Matteüs (kruisiging).
+- Brug: Hopko Holy Friday.
+
+### Grote Zaterdag (`grote-zaterdag`)
+
+- Primair: Hopko Holy Saturday (nederdaling; «ween niet over Mij»).
+- Chrysostomos’ paaspreek: de hel nam een lichaam en vond God.
+
+### Allerheiligen-zondag (`allerheiligen-zondag`)
+
+- Primair: Chrysostomos, homilie 28 op Hebreeën (heiligen van Heb. 11).
+- Apostolisch vasten: vanaf de maandag ná deze zondag, niet op Geestesmaandag.
+
+### Geestesmaandag (`geestesmaandag`)
+
+- Primair: Basilius, *Over de Heilige Geest*.
+- Verhaal gecorrigeerd: Apostolisch vasten begint niet deze dag.
+
+### Pokrov (`pokrov`)
+
+- Geen klassieke feesthomilie van de grote vaders; synaxarion (OCA-leven) is de last.
+- Geen kaarsen/omophorion als magie.
+
+### Petrus en Paulus (`petrus-en-paulus`)
+
+- Primair: Chrysostomos, homilie 3 op 1 Korintiërs (geen partijen om Petrus of Paulus).
+
+### Geboorte van Johannes (`geboorte-johannes-doper`)
+
+- Primair: Chrysostomos, homilie 10 op Matteüs (de Voorloper).
+
+### Onthoofding van Johannes (`onthoofding-johannes-doper`)
+
+- Primair: Chrysostomos, homilie 48 op Matteüs (Herodes, de schotel).
+- Leiding: vastendag (`vastenniveau: streng`).
+
+### Besnijdenis des Heren (`besnijdenis-des-heren`)
+
+- Primair: Athanasius, *De incarnatione*; OCA-synaxarion (Wet, naam, doop).
+- Hopko Church Year-pagina voor dit feest ontbreekt (404).
+
+### Begin kerkelijk jaar (`begin-kerkelijk-jaar`)
+
+- Primair: OCA-synaxarion (Luc. 4, indictie). Geen aparte Cappadocische jaarpreek gevonden.
+
 ## Bewust niet
 
 - Paisios, Nektarios, Porfyrios als bron van feestdagleiding.
 - «Heilige van de Lage Landen» in de betekenistekst.
 - Troparion als pagina-onderdeel (zie `site/content/beheer/ideeen.md`).
+- Voorfeest, nafeest, synaxis, weken; Triodion-zondagen; Thomas t/m Blinde.

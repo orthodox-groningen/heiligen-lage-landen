@@ -616,6 +616,21 @@ def test_grootfeesten_en_pascha_hebben_betekenis() -> None:
         "pinksteren",
         "transfiguratie",
         "ontslapen-moeder-gods",
+        "lazarus-zaterdag",
+        "grote-maandag",
+        "grote-dinsdag",
+        "grote-woensdag",
+        "grote-donderdag",
+        "grote-vrijdag",
+        "grote-zaterdag",
+        "allerheiligen-zondag",
+        "geestesmaandag",
+        "pokrov",
+        "petrus-en-paulus",
+        "geboorte-johannes-doper",
+        "onthoofding-johannes-doper",
+        "besnijdenis-des-heren",
+        "begin-kerkelijk-jaar",
     }
     feesten = [e for e in load_entries() if e.get("soort") == "feest"]
     met = {e["id"] for e in feesten if (e.get("betekenis") or "").strip()}

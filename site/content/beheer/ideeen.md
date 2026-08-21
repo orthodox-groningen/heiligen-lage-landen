@@ -32,9 +32,13 @@ Drie lagen, niet door elkaar:
    van de Kerk; orthodox, weinig jargon; geen preek). Kerkvaders en
    dienstboek primair. Zelfde `bronlaag` als de rest van de pagina.
 
-De twaalf grootfeesten **en Pascha** hebben nu `betekenis`. Voorfeest,
-nafeest, synaxis, Heilige Week-dagen en Triodion-zondagen: nog niet;
-die herhalen het grootfeest of vragen een eigen, latere ronde. Bronnen:
+De twaalf grootfeesten, **Pascha**, Lazarus-zaterdag, de Grote
+Week-dagen en de kernfeesten (Allerheiligen, Geestesmaandag, Pokrov,
+Petrus en Paulus, Johannes’ geboorte en onthoofding, Besnijdenis,
+begin kerkelijk jaar) hebben nu `betekenis`. Voorfeest, nafeest,
+synaxis, weken, Triodion-zondagen en de zondagen van Thomas tot de
+Blinde: nog niet.
+Bronnen:
 [`docs/onderzoek/feest-betekenis-bronnen.md`](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
 ## Parochiepatronen
@@ -48,5 +52,5 @@ Lage-Landen-heiligen), duidelijk gemerkt, met link naar de parochiesite.
 Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
-**Volgende:** troparia/kondaken; daarna eventueel betekenis op Heilige
-Week en andere kernfeesten.
+**Volgende:** troparia/kondaken; daarna eventueel betekenis op
+Triodion-zondagen en de zondagen van Thomas tot de Blinde.

@@ -38,7 +38,10 @@ daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
 kernachtig wat de Kerk die dag van de gelovige vraagt (houding,
 wijding, waarom van het vasten — geen tweede vastentabel). Orthodox,
 weinig jargon, geen preek. Alleen als YAML `betekenis` heeft. Nu: de
-twaalf grootfeesten en Pascha (feest der feesten). Bronnen: kerkvaders
+twaalf grootfeesten, Pascha, Lazarus-zaterdag en Grote Week-dagen, en
+de kernfeesten Allerheiligen, Geestesmaandag, Pokrov, Petrus en Paulus,
+Johannes (geboorte en onthoofding), Besnijdenis, begin kerkelijk jaar.
+Bronnen: kerkvaders
 en dienstboek eerst; Hopko als brug; Johannes van Shanghai of Sophrony
 alleen als naspraak, niet als enige bron. Zelfde bronlaag als de rest
 van de pagina. De kop
