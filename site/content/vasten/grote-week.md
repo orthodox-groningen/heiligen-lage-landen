@@ -29,19 +29,23 @@ onderdrukt_wekelijks_vasten: true
 - 2030: 22 april – 27 april
 - 2031: 7 april – 12 april
 
-Grote Maandag tot en met Grote Zaterdag: de strengste dagen vóór Pascha.
+Grote Maandag tot en met Grote Zaterdag: met Christus naar Jeruzalem.
 
 ## Verhaal
 
-De Grote Week (Heilige Week) volgt op Palmzondag. Liturgisch en ascese-matig
-is dit vaak strenger dan de veertigdagen: geen vlees of zuivel; wijn en olie
-doorgaans niet (behalve waar typikon versoepelt); Grote Vrijdag en Grote
-Zaterdag zijn bijzonder streng. Parochiepraktijk en economia kunnen afwijken.
+De Grote Week volgt op Palmzondag. De veertig dagen zijn vervuld: de
+Kerk gaat met de Heer naar Jeruzalem, niet om het lijden na te spelen,
+maar om met Hem te sterven en te leven. Vasten en nachtdiensten maken
+daar ruimte voor; ze zijn middel, geen doel. De paaspreek nodigt tot
+de tafel ook wie laat komt. De tafel is in deze dagen streng; parochie
+en economia kunnen verlichten — vraag het de priester.
 
 ## Verder lezen en kijken
 
+- [Chrysostomos — Paaspreek (in de nachtdienst)](https://www.oca.org/fs/sermons/the-paschal-sermon) — geraadpleegd 2026-08-21; De tafel is gereed; wie op het elfde uur komt, wordt niet beschaamd.
+- [OCA — Het Orthodoxe geloof: Heilige Week](https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/holy-week) — geraadpleegd 2026-08-21; De metten van Grote Maandag: met de Heer opgaan naar Jeruzalem.
+- [OCA — Het Orthodoxe geloof: vasten in de Grote Vasten](https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-church-year/lenten-fasting) — geraadpleegd 2026-08-21; Vasten als wacht en omkeer, niet als doel op zich.
 - [OrthodoxWiki — Holy Week](https://orthodoxwiki.org/Holy_Week) — geraadpleegd 2026-08-16
-- [OrthodoxWiki — Fasting](https://orthodoxwiki.org/Fasting) — geraadpleegd 2026-08-16
 
 
 ## Over de bronnen
