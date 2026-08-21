@@ -237,10 +237,10 @@ om hun band met de Lage Landen in deze tekst te noemen. Locators en
 volgorde: [bronnennota](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
 Voorbeeld: Theofanie. Grootfeesten, Pascha, Heilige Week-dagen, de
-kernfeesten, de Triodion-zondagen en Thomas tot de Blinde (plus
-Midden-Pinksterfeest) in de bronnennota hebben het veld.
-Voorfeest, nafeest, synaxis, weken, Boterweek, concilie- en
-voorvaderzondagen niet. Contract:
+kernfeesten, de Triodion-zondagen, Thomas tot de Blinde,
+Midden-Pinksterfeest, concilie- en voorvaderzondagen en Allerzielen
+in de bronnennota hebben het veld.
+Voorfeest, nafeest, synaxis, weken en Boterweek niet. Contract:
 [Feest]({{% ref "/beheer/pagina-opbouw/feest" %}}).
 
 ```yaml

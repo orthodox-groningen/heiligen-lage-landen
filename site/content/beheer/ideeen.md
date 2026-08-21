@@ -34,10 +34,10 @@ Drie lagen, niet door elkaar:
 
 De twaalf grootfeesten, **Pascha**, Lazarus-zaterdag, de Grote
 Week-dagen, de kernfeesten, de Triodion-zondagen (Zacheüs tot Maria
-van Egypte, plus Schone Maandag), Thomas tot de Blinde en
-Midden-Pinksterfeest hebben nu `betekenis`. Voorfeest, nafeest,
-synaxis, weken, Boterweek, concilie- en voorvaderzondagen,
-Allerzielen-zaterdagen: nog niet.
+van Egypte, plus Schone Maandag), Thomas tot de Blinde,
+Midden-Pinksterfeest, de concilie- en voorvaderzondagen en de
+Allerzielen-zaterdagen hebben nu `betekenis`. Voorfeest, nafeest,
+synaxis, weken, Boterweek en overige kalenderranden: nog niet.
 Bronnen:
 [`docs/onderzoek/feest-betekenis-bronnen.md`](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
@@ -52,6 +52,6 @@ Lage-Landen-heiligen), duidelijk gemerkt, met link naar de parochiesite.
 Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
-**Volgende:** troparia/kondaken; daarna eventueel betekenis op
-concilie- en voorvaderzondagen, Allerzielen-zaterdagen, Boterweek
-en kalenderranden.
+**Volgende:** troparia/kondaken (eerst datamodel/voorbeeldpagina);
+eventueel betekenis op kalenderranden alleen als dat geen duplicaat
+van het hoofdfest wordt.

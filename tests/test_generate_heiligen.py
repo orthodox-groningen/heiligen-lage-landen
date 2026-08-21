@@ -648,6 +648,12 @@ def test_grootfeesten_en_pascha_hebben_betekenis() -> None:
         "zondag-samaritaanse",
         "zondag-blinde",
         "midden-pinksterfeest",
+        "zondag-vaderen-eerste-concilie",
+        "zondag-vaderen-zevende-concilie",
+        "zondag-voorvaderen",
+        "zondag-vaderen-voor-kerst",
+        "zaterdag-allerzielen-vleesmijding",
+        "allerzielen-zaterdag-pinksteren",
     }
     feesten = [e for e in load_entries() if e.get("soort") == "feest"]
     met = {e["id"] for e in feesten if (e.get("betekenis") or "").strip()}

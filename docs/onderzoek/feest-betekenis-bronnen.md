@@ -5,8 +5,8 @@ duplicaat van
 [`bron/docs/specs/terminologie.md`](https://github.com/orthodox-ronl/bron/blob/main/docs/specs/terminologie.md).
 Datamodel: [`docs/datamodel.md`](../datamodel.md).
 
-**Datum:** 21 augustus 2026. Derde ronde dezelfde dag: Triodion-zondagen
-en Pentekostarion (Thomas tot de Blinde, Midden-Pinksterfeest).
+**Datum:** 21 augustus 2026. Vierde ronde dezelfde dag: concilie- en
+voorvaderzondagen, Allerzielen-zaterdagen.
 
 ## Rangorde
 
@@ -253,10 +253,39 @@ Verhaal tot de perikoop; `betekenis` twee alinea’s. `goedkeuring` leeg.
 
 - Primair: Chrysostomos, homilie 56 op Johannes (Joh. 9).
 
+## Vierde ronde (concilies, voorvaderen, Allerzielen)
+
+Zelfde vorm: kort verhaal, twee alinea’s `betekenis`. Geen randen.
+
+### Vaderen van Nicea I (`zondag-vaderen-eerste-concilie`)
+
+- Primair: Athanasius, *De decretis*.
+- Brug: Hopko, Niceens credo.
+
+### Vaderen van Nicea II (`zondag-vaderen-zevende-concilie`)
+
+- Primair: Johannes van Damascus, *Uiteenzetting* IV (beelden) — dezelfde last als Orthodoxiezondag.
+- OCA-synaxarion (id 70); de oude numerieke slug 204538 leidt niet naar deze pagina.
+
+### Voorvaderen (`zondag-voorvaderen`) en Vaderen vóór Kerst (`zondag-vaderen-voor-kerst`)
+
+- Primair: Chrysostomos, homilie 1 op Matteüs (geslachtslijst).
+- OCA: Forefathers id 80; zondag vóór Kerst id 81 (niet 103536, dat is Lucia).
+
+### Allerzielen vóór Vleesvaarwel (`zaterdag-allerzielen-vleesmijding`)
+
+- Primair: Chrysostomos, homilie 41 op 1 Korintiërs (opstanding).
+- OCA Meatfare Memorial Saturday (id 4).
+
+### Allerzielen vóór Pinksteren (`allerzielen-zaterdag-pinksteren`)
+
+- Primair: dezelfde homilie 41; Basilius *Over de Heilige Geest* als naspraak naar Pinksteren.
+- OCA Memorial Saturday (id 44).
+
 ## Bewust niet
 
 - Paisios, Nektarios, Porfyrios als bron van feestdagleiding.
 - «Heilige van de Lage Landen» in de betekenistekst.
 - Troparion als pagina-onderdeel (zie `site/content/beheer/ideeen.md`).
-- Voorfeest, nafeest, synaxis, weken; Boterweek; concilie- en
-  voorvaderzondagen; Allerzielen-zaterdagen; kalenderranden.
+- Voorfeest, nafeest, synaxis, weken, Boterweek; overige kalenderranden
+  (o.a. zondag na Kerst/Theofanie, Lichte Week, vastenvrije weken).

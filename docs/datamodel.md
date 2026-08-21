@@ -239,8 +239,9 @@ Op de feestpagina als **Betekenis**, ná het verhaal. Nu: de twaalf
 grootfeesten, Pascha, Lazarus-zaterdag en de Grote Week-dagen, de
 genoemde kernfeesten, de Triodion-zondagen (Zacheüs tot Maria van
 Egypte, plus Schone Maandag), Thomas tot de Blinde, en
-Midden-Pinksterfeest. Geen `betekenis` op voorfeest, nafeest, synaxis,
-weken, Boterweek, concilie- of voorvaderzondagen, of Allerzielen-zaterdagen.
+Midden-Pinksterfeest, de concilie- en voorvaderzondagen, en de
+Allerzielen-zaterdagen (vóór Vleesvaarwel en vóór Pinksteren). Geen
+`betekenis` op voorfeest, nafeest, synaxis, weken of Boterweek.
 
 Optioneel `goedkeuring`: lijst van personen of organisaties die de
 **betekenistekst** hebben goedgekeurd. Ontbreekt of leeg: de kop

@@ -196,7 +196,7 @@
     "verhaal": { "type": "string" },
     "betekenis": {
       "type": "string",
-      "description": "Feest: 1–3 alinea’s geheim plus wat de Kerk die dag vraagt. Niet hetzelfde als verhaal. Grootfeesten, Pascha, Heilige Week-dagen, genoemde kernfeesten, Triodion-zondagen, Thomas tot de Blinde, Midden-Pinksterfeest. Vaders/dienstboek primair. Niet voor heiligen (die hebben betekenis_lage_landen)."
+      "description": "Feest: 1–3 alinea’s geheim plus wat de Kerk die dag vraagt. Niet hetzelfde als verhaal. Grootfeesten t/m Allerzielen-zaterdagen (zie bronnennota). Vaders/dienstboek primair. Niet voor heiligen (die hebben betekenis_lage_landen)."
     },
     "goedkeuring": {
       "type": "array",
