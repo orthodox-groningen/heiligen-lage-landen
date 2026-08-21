@@ -28,7 +28,7 @@ offset-getallen; een tweede paginatitel onder de rij.
 
 **Wel:** **één** vastenlabel voor die dag (`vastenvrij`, `vis`,
 `streng`, …), met popover die concrete uitleg geeft en verwijzing naar
- uitgebreide uitleg. Bij een periode: de naam van die periode tussen haakjes,
+uitgebreide uitleg. Bij een periode: de naam van die periode tussen haakjes,
 als link. Knoppen Nieuw / Oud; korte hulp bij Nieuw/Oud in popover.
 
 **Niet:** twee vasten tegelijk (periode én wekelijks wo/vr); uitleg van

@@ -46,9 +46,11 @@ CONTENT = SITE / "content"
 STATIC_DATA = SITE / "static" / "data"
 STATIC_ICS = SITE / "static" / "ics"
 
-# Live site / ICS: huidig jaar −2 … +5.
+# ICS / entries.json: huidig jaar −2 … +5 (niet de tabel op de entry-pagina).
 ICS_YEAR_BACK = 2
 ICS_YEAR_FORWARD = 5
+# Body «Komende jaren»: huidig jaar en de vier daarop (vijf rijen).
+KOMENDE_JAREN_AANTAL = 5
 
 MONTH_NAMES_NL = [
     "",
@@ -85,6 +87,39 @@ def mmdd_label(mmdd: str) -> str:
 def occurrence_years(today: date | None = None) -> range:
     today = today or date.today()
     return range(today.year - ICS_YEAR_BACK, today.year + ICS_YEAR_FORWARD + 1)
+
+
+def komende_jaren(today: date | None = None) -> range:
+    """Vijf burgerlijke jaren: het lopende jaar en de vier daarop."""
+    today = today or date.today()
+    return range(today.year, today.year + KOMENDE_JAREN_AANTAL)
+
+
+def julian_dag_label(d: date) -> str:
+    _jy, jm, jd = gregorian_to_julian_calendar(d)
+    return f"{jd} {MONTH_NAMES_NL[jm]}"
+
+
+def komende_jaren_tabel_html(
+    headers: list[str], rows: list[list[str]]
+) -> list[str]:
+    """HTML-tabel voor de body; kolommen blijven onderling uitgelijnd."""
+    head = "".join(f"<th>{html_escape(h)}</th>" for h in headers)
+    body_rows = []
+    for row in rows:
+        cells = "".join(f"<td>{html_escape(c)}</td>" for c in row)
+        body_rows.append(f"<tr>{cells}</tr>")
+    return [
+        '<div class="table-wrap">',
+        '<table class="komende-jaren">',
+        f"<thead><tr>{head}</tr></thead>",
+        "<tbody>",
+        *body_rows,
+        "</tbody>",
+        "</table>",
+        "</div>",
+        "",
+    ]
 
 
 def _append_occ(bucket: dict[str, list[str]], d: date) -> None:
@@ -402,7 +437,8 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         van_o = dn["van_offset_dagen"]
         body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
         body.append("")
-        for y in occurrence_years():
+        rows: list[list[str]] = []
+        for y in komende_jaren():
             start = pascha_offset_date(y, van_o)
             if vorm == "periode":
                 end = pascha_offset_date(y, dn["tot_offset_dagen"])
@@ -410,25 +446,33 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 tm, td = parse_mmdd(dn["tot_mmdd"])
                 end = date(y, tm, td)
             if start > end:
-                body.append(f"- {y}: _geen dagen_ (begin na einddatum)")
+                rows.append([str(y), "geen dagen", "begin na einddatum"])
             else:
-                body.append(
-                    f"- {y}: {mmdd_label(mmdd_from_date(start))} – "
-                    f"{mmdd_label(mmdd_from_date(end))}"
+                rows.append(
+                    [
+                        str(y),
+                        mmdd_label(mmdd_from_date(start)),
+                        mmdd_label(mmdd_from_date(end)),
+                    ]
                 )
-        body.append("")
+        body.extend(komende_jaren_tabel_html(["Jaar", "Van", "Tot"], rows))
     elif entry.get("cyclus") == "paascyclus":
         offset = dn["paascyclus_offset"]
         body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
         body.append("")
-        for y in occurrence_years():
+        rows = []
+        for y in komende_jaren():
             d = pascha_offset_date(y, offset)
-            jy, jm, jd = gregorian_to_julian_calendar(d)
-            body.append(
-                f"- {y}: {mmdd_label(mmdd_from_date(d))} "
-                f"(Juliaans {jd} {MONTH_NAMES_NL[jm]})"
+            rows.append(
+                [
+                    str(y),
+                    mmdd_label(mmdd_from_date(d)),
+                    julian_dag_label(d),
+                ]
             )
-        body.append("")
+        body.extend(
+            komende_jaren_tabel_html(["Jaar", "Wereldlijk", "Juliaans"], rows)
+        )
     elif vorm == "weekdag_relatief":
         body.append(
             "Geen vaste feestdatum; hangt af van de weekdag van het anker."
@@ -436,7 +480,8 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         body.append("")
         body.append("**Komende jaren (nieuwe kalender, wereldlijk):**")
         body.append("")
-        for y in occurrence_years():
+        rows = []
+        for y in komende_jaren():
             d = weekday_relative_date(
                 y,
                 dn["anker"],
@@ -445,12 +490,13 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 dn["richting"],
                 stijl="nieuw",
             )
-            label = mmdd_label(mmdd_from_date(d))
+            wereldlijk = mmdd_label(mmdd_from_date(d))
             if d.year != y:
-                body.append(f"- {y}: {label} {d.year}")
-            else:
-                body.append(f"- {y}: {label}")
-        body.append("")
+                wereldlijk = f"{wereldlijk} {d.year}"
+            rows.append([str(y), wereldlijk, julian_dag_label(d)])
+        body.extend(
+            komende_jaren_tabel_html(["Jaar", "Wereldlijk", "Juliaans"], rows)
+        )
     elif vorm == "dag" and feestdatum:
         body.append(
             f"**Feestdag:** [{mmdd_label(feestdatum)}](/datum/?dag={feestdatum})"

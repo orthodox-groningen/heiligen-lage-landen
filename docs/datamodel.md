@@ -56,7 +56,9 @@ datum:
 ```
 
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
-kerken delen die datum. Generatie/ICS gebruiken het bereik **huidig jaar −2 … +25**.
+kerken delen die datum. ICS en `entries.json` gebruiken **huidig jaar −2 … +5**.
+De tabel «Komende jaren» op een feest- of vastenpagina is korter: het
+lopende jaar en de vier daarop.
 
 ## Namen
 

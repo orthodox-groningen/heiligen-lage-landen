@@ -22,8 +22,9 @@ zegt.
 **Wel:** keuzes die de tabel filteren of indelen (wat de live pagina
 aanbiedt). Korte samenvatting op de knop.
 
-**Niet:** YAML-paden; parochie-ids als primaire UI; uitleg van отступка
-op dit scherm (dat hoort op [Lezingen van de dag]({{% ref "/uitleg/lezingen" %}})).
+**Niet:** YAML-paden; parochie-ids als primaire UI; uitleg van de
+lectionarium-verschuiving (otstupka) op dit scherm (dat hoort op
+[Lezingen van de dag]({{% ref "/uitleg/lezingen" %}})).
 
 ## Tabellen
 

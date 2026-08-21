@@ -12,9 +12,9 @@ Kop, hoofdnavigatie en footer zijn sitebreed. De contracten hieronder
 gaan over het middenstuk van elke soort. Deze pagina’s staan **niet** in
 de hoofdnavigatie; de ingang is de footer → Voor beheerders.
 
-**Contract, geen echte inhoud** staat bovenaan elk skelet. Open punten
-staan als **Open besluit**: tot die keuze geen live wijziging vanwege
-dat slot.
+**Contract, geen echte inhoud** staat bovenaan elk skelet. Een open
+keuze (als die er is) staat als **Open besluit**: tot die keuze geen
+live wijziging vanwege dat slot.
 
 | Soort | Voor wie | Canonieke URL | Bron |
 | --- | --- | --- | --- |

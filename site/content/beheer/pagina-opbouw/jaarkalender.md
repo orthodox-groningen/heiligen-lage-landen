@@ -36,7 +36,9 @@ set kleuren op de kalender en op
 ## Maandraster
 
 **Wel:** twaalf maanden; dagen klikbaar naar de datumpagina van die
-burgerlijke dag; huidige maand herkenbaar.
+burgerlijke dag; huidige maand herkenbaar. Bladerjaren volgen de
+gegenereerde occurrences in `entries.json` (ICS-venster: huidig jaar
+−2 … +5).
 
 **Niet:** namen van alle universele heiligen in de cel; vastenregel in
 de cel (alleen kleur); beheer-notities.

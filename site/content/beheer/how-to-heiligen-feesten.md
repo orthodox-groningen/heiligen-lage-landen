@@ -181,7 +181,8 @@ Pagina-opbouw (na de infobox): zie het
 Huidige generatorvolgorde bij heiligen: feestdag-link → **Betekenis voor
 de Lage Landen** (`betekenis_lage_landen`) → samenvatting → verhaal →
 verder lezen → **Over de bronnen** → (alleen bij nader/kandidaat) uitklap
-**Plaats in deze kalender**. Bij feesten: feestdag (of komende jaren) →
+**Plaats in deze kalender**. Bij feesten: feestdag (of de vijfjaren-tabel
+komende jaren) →
 samenvatting → verhaal → **Betekenis** (`betekenis`, alleen als het veld
 er is) → verder lezen → **Over de bronnen**.
 
