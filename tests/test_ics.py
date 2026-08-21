@@ -104,8 +104,8 @@ def test_albericus_in_grote_vasten_is_een_dagregel() -> None:
     assert ev["description"].split("\n")[-1].startswith("Meer:")
     assert "debijbel.nl" not in ev["description"]
     assert ev["url"].startswith(SITE_PUBLIC_URL)
-    assert "jaar=2026" in ev["url"]
-    assert "dag=03-04" in ev["url"]
+    assert "datum=2026-03-04" in ev["url"]
+    assert "jaar=" not in ev["url"]
 
 
 def test_aankondiging_in_grote_vasten_heeft_vis() -> None:

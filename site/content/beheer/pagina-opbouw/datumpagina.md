@@ -1,0 +1,65 @@
+---
+title: "Datumpagina"
+description: "Contract: één burgerlijke dag in één jaar"
+git_date: 2026-08-21
+---
+
+**Contract, geen echte inhoud.** Voor wie: bezoeker. Canonieke URL:
+`/datum/?datum=2026-07-01` (burgerlijk `jjjj-mm-dd`). Optioneel
+`&stijl=juliaans`. Bron: handmatig
+[`site/content/datum/_index.md`]({{% ref "/datum" %}}) + JS. Zelfde
+weergave als de [startpagina]({{% ref "/beheer/pagina-opbouw/startpagina" %}}),
+maar voor een gekozen dag.
+
+Oude adressen `?jaar=` + `?dag=` blijven leesbaar en worden omgezet naar
+`?datum=`. Een feestdag-link zonder jaar (`?dag=MM-DD`) betekent: dat
+feest in het lopende burgerlijke jaar.
+
+## Titelrij
+
+**Wel:** weekdag, burgerlijke datum, jaar; «(vandaag)» als het vandaag
+is (met popover en korte uitleg over oude/nieuwe kalender en verwijzing naar uitgebreide uitleg); pijlen naar vorige/volgende dag; toon van de week (Toon 1–8) met
+korte uitleg in popover.
+
+**Niet:** feestdatum in plaats van de burgerlijke datum; interne
+offset-getallen; een tweede paginatitel onder de rij.
+
+## Balk: vasten + Nieuw/Oud
+
+**Wel:** **één** vastenlabel voor die dag (`vastenvrij`, `vis`,
+`streng`, …), met popover die concrete uitleg geeft en verwijzing naar
+ uitgebreide uitleg. Bij een periode: de naam van die periode tussen haakjes,
+als link. Knoppen Nieuw / Oud; korte hulp bij Nieuw/Oud in popover.
+
+**Niet:** twee vasten tegelijk (periode én wekelijks wo/vr); uitleg van
+het hele typikon op deze pagina; Pascha meeschuiven met Oud.
+
+## Dagtype
+
+**Wel:** wat voor liturgische dag het is (week na Pinksteren, zondag
+van het Triodion, of de naam van het feest). De feestdagnaam hier niet
+nog eens herhalen als die al het dagtype *is*.
+
+**Niet:** selectiestatus van heiligen; YAML-ids; een tweede samenvatting
+van het feestverhaal.
+
+## Apostel en Evangelie
+
+**Wel:** verwijzingen (boek en verzen) als links naar een
+Bijbelvertaling; keuze van vertaling; of een korte zin als er geen
+liturgie van dit type is. Bij tekst 'Apostel' en 'Evangelie' een
+popover met korte uitleg en verwijzing naar gedetailleerdere uitleg
+waar staat hoe de keuze tot stand is gekomen.
+
+**Niet:** de volle Bijbeltekst op deze site; lokale parochiepolitiek
+buiten de gekozen lezingenlijst.
+
+## Heiligen van de Lage Landen
+
+**Wel:** kop *Heilige van de dag* of *Heiligen van de dag* plus namen
+(link naar de heiligenpagina), klein icoon als we er een hebben. Zijn
+er geen Lage-Landen-heiligen: géén kop, wél een korte zin met link
+waarom de dag leeg kan zijn.
+
+**Niet:** universeel menologion; parochiepatronen (nog geen onderdeel);
+interne `selectie:`-waarden.

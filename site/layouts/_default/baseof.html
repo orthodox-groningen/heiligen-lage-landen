@@ -29,7 +29,14 @@
           <a href="{{ "kalender/" | absURL }}">Kalender</a>
           <a href="{{ "lezingenrooster/" | relURL }}">Lezingenrooster</a>
           <a href="{{ "synaxarion/" | relURL }}">Synaxarion</a>
-          <a href="{{ "heiligen/" | relURL }}">Heiligen</a>
+          <details class="nav-dropdown">
+            <summary>Overzichten</summary>
+            <div class="nav-dropdown-panel">
+              <a href="{{ "heiligen/" | relURL }}">Heiligen</a>
+              <a href="{{ "feesten/" | relURL }}">Feesten</a>
+              <a href="{{ "vasten/" | relURL }}">Vasten</a>
+            </div>
+          </details>
           <a href="{{ "agenda/" | relURL }}">Agenda</a>
           <a href="{{ "uitleg/" | relURL }}">Uitleg</a>
         </nav>
@@ -40,7 +47,7 @@
       </div>
     </div>
   </header>
-  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "synaxarion") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") (eq .Section "heiligen") }} main-wide{{ end }}">
+  <main id="main" class="wrap main{{ if or .IsHome (eq .Layout "kalender") (eq .Layout "lezingenrooster") (eq .Layout "agenda") (eq .Layout "synaxarion") (eq .Layout "datum") (eq .Section "uitleg") (eq .Section "beheer") (eq .Section "heiligen") (eq .Section "feesten") (eq .Section "vasten") }} main-wide{{ end }}">
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

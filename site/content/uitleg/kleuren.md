@@ -20,6 +20,7 @@ u beide ziet.
 <li><span class="swatch day-vasten"></span> vasten (een periode of woensdag/vrijdag)</li>
 <li><span class="swatch day-feest-vasten"></span> feest én vasten</li>
 <li><span class="swatch day-heilige-vasten"></span> heilige én vasten</li>
+<li><span class="swatch day-today"></span> vandaag</li>
 </ul>
 
 De kleur zegt niet *hoe streng* het vasten is. Dat staat op de dag zelf, als

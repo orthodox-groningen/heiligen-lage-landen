@@ -26,8 +26,11 @@ namen:
   - Ecgberht
   - Egbertus
 datum:
-  waarde: "12-23"
+  waarde: "04-24"
   stijl: gregoriaans
+  extra:
+    - waarde: "12-23"
+      toelichting: gedachtenis op de Orthodoxe kalender
 titels:
   - Abt van Rath Melsigi
   - Missionaris-inspirator
@@ -36,13 +39,13 @@ locaties:
   - rath-melsigi
 samenvatting: |
   Angelsaksische abt te Rath Melsigi; zond missionarissen naar Friesland
-  (o.a. Willibrord), ging zelf niet mee. Feestdag vaak 24 april.
+  (o.a. Willibrord), ging zelf niet mee. Overleden op Pasen 24 april 729.
+  Op de Orthodoxe kalender ook herdacht op 23 december.
 betekenis_lage_landen: |
   Egbert bleef in Ierland, maar Rath Melsigi werd onder hem kweekschool
   voor de Friese missie. Hij zond Wigbert, later Willibrord en anderen.
   Titus Brandsma noemde die rol instrumenteel voor de kerstening van de
-  Lage Landen. De band is reëel maar indirect — daarom nader-onderzoek,
-  geen actieve jacht op vergelijkbare heiligen.
+  Lage Landen. De band is reëel maar indirect.
 verhaal: |
   Circa 639 in Northumbrië geboren; na ziekte te Rath Melsigi beloofde
   hij nooit naar Brittannië terug te keren. Hij wilde zelf naar de

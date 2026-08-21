@@ -48,6 +48,7 @@ NIET_IN_SYNAXARION_ALS_VASTE_DAG = (
     "zondag-vaderen-voor-kerst",
     "zondag-na-kerst",
     "zondag-na-theofanie",
+    "zondag-vaderen-zevende-concilie",
 )
 
 

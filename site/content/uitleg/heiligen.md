@@ -31,10 +31,11 @@ Iemand hoort in deze lijst als minstens één van beide geldt:
   voorging en het kloosterleven in Asten mee vormgaf.
 
 De huidige lijst is een start. Wie er al in staat, schrappen we niet
-zomaar. Blijkt later dat iemand niet aan deze maatstaf voldoet, dan merken
-we dat intern aan; verwijderen gebeurt alleen na een uitdrukkelijk besluit.
-Op die pagina’s staat dan een korte uitleg **Over de plaats in deze
-kalender**.
+zomaar. Blijkt later dat iemand niet aan deze maatstaf voldoet, of is
+er twijfel, dan staat onderaan die pagina een **uitklap** *Plaats in
+deze kalender*: kort waarom, en een verwijzing naar deze uitleg.
+Verwijderen gebeurt alleen na een uitdrukkelijk besluit. Wie wél
+voldoet, krijgt dat blok niet.
 
 **Indirecte invloed** (bijvoorbeeld iemand die missionarissen opleidde
 maar zelf niet hier predikte) kan als grensgeval blijven staan. We zoeken
@@ -71,7 +72,9 @@ overzicht van heiligen.
 
 Elke heiligenpagina heeft dezelfde opbouw: naam, feestdag, plaatsen, waar
 het lichaam traditioneel rust als dat bekend is, een korte aanduiding,
-waar mogelijk betekenis en verhaal, en de bronnen.
+waar mogelijk betekenis en verhaal, en de bronnen. De feestdag is de
+**sterfdag** als er meerdere data zijn; andere dagen die ook in de
+Orthodoxe Kerk bekend zijn, staan erbij als extra gedenkdagen.
 
 Bovenaan staat hoe **stevig** die tekst is:
 

@@ -610,6 +610,12 @@
     return fallback;
   }
 
+  function parseDatumParam(raw) {
+    if (!raw || !/^(\d{4})-(\d{2})-(\d{2})$/.test(raw)) return null;
+    const m = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return { year: parseInt(m[1], 10), mmdd: m[2] + "-" + m[3] };
+  }
+
   let yearBounds = {
     min: new Date().getFullYear() - 2,
     max: new Date().getFullYear() + 25,
@@ -654,6 +660,10 @@
     const params = new URLSearchParams(window.location.search);
     const todayYear = new Date().getFullYear();
     const today = todayMmdd(style);
+    const parsed = parseDatumParam(params.get("datum"));
+    if (parsed) {
+      return { year: clampYear(parsed.year), mmdd: parsed.mmdd };
+    }
     let year = parseYearParam(params.get("jaar"), todayYear);
     year = clampYear(year);
     const mmdd = parseDagParam(params.get("dag")) || today;
@@ -673,7 +683,7 @@
       year === new Date().getFullYear() && mmdd === todayMmdd(style);
     const stijl = style === "juliaans" ? { stijl: style } : {};
     if (isToday) return pageUrl("", stijl);
-    return pageUrl("datum/", { jaar: year, dag: mmdd, ...stijl });
+    return pageUrl("datum/", { datum: year + "-" + mmdd, ...stijl });
   }
 
   /** Home = vandaag; andere dagen = /datum/. */
@@ -692,6 +702,16 @@
       return true;
     }
     return false;
+  }
+
+  function ensureCanonicalDatumUrl(style) {
+    if (!document.querySelector("[data-datum]")) return;
+    const view = getViewDate(style);
+    const want = new URL(daySurfaceHref(view.year, view.mmdd, style));
+    const here = new URL(window.location.href);
+    if (here.pathname !== want.pathname) return;
+    if (here.search === want.search) return;
+    window.history.replaceState({}, "", want);
   }
 
   function setViewDate(year, mmdd) {
@@ -1188,6 +1208,22 @@
     }
     if (kind === "titel") {
       fillTitelPopover(trigger, title, body, meer);
+      return;
+    }
+    if (kind === "heiligen-criterium") {
+      title.textContent = "Heiligen van de Lage Landen";
+      body.innerHTML =
+        `<p>Alleen heiligen die in de Lage Landen hebben gewerkt, of na het ` +
+        `schisma de Orthodoxie hier hebben opgebouwd. Niet iedere heilige ` +
+        `van de Kerk staat in deze kalender. Patroon van een parochie is ` +
+        `daarvoor niet genoeg.</p>`;
+      if (meer) {
+        meer.hidden = false;
+        meer.innerHTML = achtergrondLink(
+          "heiligen",
+          "Meer over wie erin staat"
+        );
+      }
       return;
     }
     if (kind === "site") {
@@ -1953,7 +1989,7 @@
   /* ---- Synaxarion ---- */
   let browseMode = "maand";
   let activeLetter = "A";
-  let activeMonth = "01";
+  let activeMonth = String(new Date().getMonth() + 1).padStart(2, "0");
   let searchQuery = "";
 
   function isFixedCycleEntry(entry) {
@@ -2211,6 +2247,10 @@
           renderSynaxarionBrowse(entries);
         };
       });
+      const pressed = monthNav.querySelector('[aria-pressed="true"]');
+      if (pressed && typeof pressed.scrollIntoView === "function") {
+        pressed.scrollIntoView({ inline: "center", block: "nearest" });
+      }
     }
 
     if (searchQuery) {
@@ -2221,7 +2261,10 @@
             entryFixedSortKey(a).localeCompare(entryFixedSortKey(b)) ||
             a.naam.localeCompare(b.naam, "nl")
         );
-      if (hint) hint.textContent = `Zoekresultaten: ${subset.length} item(s).`;
+      if (hint) {
+        hint.hidden = false;
+        hint.textContent = `Zoekresultaten: ${subset.length} item(s).`;
+      }
       list.innerHTML = synaxarionTableHtml(
         subset.map((entry) => ({
           whenHtml: escapeHtml(entryWhenLabel(entry)),
@@ -2241,6 +2284,7 @@
             a.naam.localeCompare(b.naam, "nl")
         );
       if (hint) {
+        hint.hidden = false;
         hint.textContent = `Letter ${activeLetter}: ${subset.length} item(s).`;
       }
       list.innerHTML = synaxarionTableHtml(
@@ -2254,7 +2298,6 @@
     }
 
     const daysInMonth = new Date(2024, parseInt(activeMonth, 10), 0).getDate();
-    let count = 0;
     const rows = [];
     for (let day = 1; day <= daysInMonth; day++) {
       const mmdd = activeMonth + "-" + String(day).padStart(2, "0");
@@ -2262,7 +2305,6 @@
         .filter((e) => fixedEntryOnMmdd(e, mmdd))
         .sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
       if (!dayEntries.length) continue;
-      count += dayEntries.length;
       const whenHtml =
         `<a href="${pageUrl("synaxarion/", { dag: mmdd })}">${label(mmdd)}</a>`;
       dayEntries.forEach((entry) => {
@@ -2270,7 +2312,8 @@
       });
     }
     if (hint) {
-      hint.textContent = `${MONTHS[parseInt(activeMonth, 10)]}: ${count} item(s).`;
+      hint.textContent = "";
+      hint.hidden = true;
     }
     list.innerHTML = rows.length
       ? synaxarionTableHtml(rows)
@@ -2662,6 +2705,7 @@
     const style = getStyle();
     setStyle(style);
     if (redirectDaySurfaceIfNeeded(style)) return;
+    ensureCanonicalDatumUrl(style);
     updateHeading(style);
     try {
       const entries = await loadEntries();

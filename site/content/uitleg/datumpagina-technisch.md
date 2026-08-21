@@ -12,12 +12,17 @@ Technische bijlage bij de [uitleg Datumpagina’s]({{% ref "/uitleg/datumpagina"
 
 ## Adres
 
-`/datum/?jaar=2026&dag=08-15`
+`/datum/?datum=2026-08-15`
 
-- `jaar` — burgerlijk jaar
-- `dag` — MM-DD op de burgerlijke kalender (niet de Juliaanse dagnaam)
+- `datum` — burgerlijk `jjjj-mm-dd`
+- `stijl` — alleen `juliaans` als de oude kalender aan staat
 
-Ontbreken de parameters, dan vult `site/assets/js/calendar.js` «vandaag».
+Oude adressen `?jaar=` + `?dag=` (MM-DD) blijven leesbaar; de pagina
+zet ze om naar `?datum=`. Alleen `?dag=MM-DD` (feestdag-link zonder
+jaar) betekent dat feest in het lopende burgerlijke jaar.
+
+Ontbreekt `datum`, dan vult `site/assets/js/calendar.js` «vandaag»
+(startpagina).
 De layout is `site/layouts/_default/datum.html`; de body van
 `site/content/datum/_index.md` blijft bij genereren staan (handmatig
 beheerd).

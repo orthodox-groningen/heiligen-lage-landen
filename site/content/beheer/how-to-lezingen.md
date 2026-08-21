@@ -2,7 +2,7 @@
 title: "Lezingenrooster wijzigen"
 description: "Gedeelde Moskou-lijst versus parochie-overrides; spec en tests"
 weight: 50
-git_date: 2026-08-17
+git_date: 2026-08-21
 ---
 
 Het lezingenrooster toont **Apostel** en **Evangelie** van de dag
@@ -83,12 +83,24 @@ veranderen, niet voor één parochie. Zet de override in
 `geraadpleegd`. Leg een concreet voorbeeld vast in `docs/specs/lezingen.md`
 als de spec dat vraagt — pytest bewaakt die blokken.
 
+Zaterdag/zondag vóór en ná Kruisverheffing, zaterdag/zondag vóór
+Theofanie, zaterdag ná Theofanie en zaterdag vóór Kerst horen in die
+gedeelde lijst (`weekdag_relatief`). Dat zijn lezingendagen, geen
+feest-YAML onder `data/feesten/`. **1 september** (`mmdd`) en de
+**zondag ná 10 oktober** (`weekdag_relatief` plus feest-YAML, zoals de
+zondagen rond Kerst) horen er ook in.
+
+Een parochieboekje (bijv. de Den Haag-index) is een **checklist** tegen
+Moskou, geen bron om de gedeelde lijst te kopiëren. Wijkt het boekje in
+verzen of in de heiligenkeuze af, dan blijft Moskou; een lokale
+uitzondering hoort in `parochies/<id>.yaml` na een uitdrukkelijk besluit.
+
 ## Wat u niet doet
 
 - De weekreeks «even» inkorten omdat een lokaal boekje een week overslaat
   — eerst de spec (Lucaanse sprong, отступка / преступка, Theofanie-отступка).
-- Een parochie-uitzondering in `feest-overrides.yaml` zetten. Die lijst is
-  gedeeld.
+- Een parochieboekje of lezingen-index in `feest-overrides.yaml` zetten.
+  Die lijst is gedeeld Moskou; het boekje toetst, het herschrijft niet.
 - Gegenereerde HTML of een handmatige kopie van het rooster in
   `site/content/` onderhouden als bron. Bron is YAML + spec.
 

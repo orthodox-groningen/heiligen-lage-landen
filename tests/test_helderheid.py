@@ -19,6 +19,10 @@ ISSUES = ROOT / ".github" / "ISSUE_TEMPLATE"
 def test_nav_heeft_heiligen_en_uitleg() -> None:
     html = (SITE / "layouts" / "_default" / "baseof.html").read_text(encoding="utf-8")
     assert 'href="{{ "heiligen/" | relURL }}">Heiligen</a>' in html
+    assert "Overzichten" in html
+    assert 'href="{{ "feesten/" | relURL }}">Feesten</a>' in html
+    assert 'href="{{ "vasten/" | relURL }}">Vasten</a>' in html
+    assert 'aria-label="Hoofdnavigatie"' in html
     assert ">Uitleg</a>" in html
     assert ">Help</a>" not in html
     # relURL "kalender/" + canonifyURLs botst met Pages-base /kalender/

@@ -48,6 +48,24 @@ HOW_TOS = (
     "how-to-lezingen",
 )
 
+PAGINA_OPBOUW_SLUGS = (
+    "startpagina",
+    "datumpagina",
+    "jaarkalender",
+    "lezingenrooster",
+    "synaxarion",
+    "heiligenoverzicht",
+    "heilige",
+    "feest",
+    "vastenperiode",
+    "overzichten-feesten-vasten",
+    "agenda",
+    "uitleg-overzicht",
+    "uitleg-onderwerp",
+    "uitleg-technisch",
+    "beheer",
+)
+
 
 def _meta_body(path: Path) -> tuple[dict, str]:
     return _split_hugo_markdown(path.read_text(encoding="utf-8"))
@@ -102,6 +120,69 @@ def test_beheer_home_onderscheidt_aanraken_en_overschrijven() -> None:
         assert f"/beheer/{slug}" in body
     assert "/beheer/selectie" in body
     assert "site/content/beheer/selectie.md" in body
+    assert "/beheer/pagina-opbouw" in body
+    assert "/beheer/ideeen" in body
+    assert "site/content/beheer/pagina-opbouw/" in body
+    assert "site/content/beheer/ideeen.md" in body
+    assert "## Hoe een pagina eruit moet zien" in body
+    assert "how-to" in body.lower()
+    _, _, rest = body.partition("## Hoe een pagina eruit moet zien")
+    contract, _, howtos = rest.partition("## How-to’s")
+    assert "contracten" in contract.lower()
+    assert "niet hoe u YAML" in contract or "niet hoe u YAML of code" in contract
+    assert "{{% ref \"/beheer/pagina-opbouw\" %}}" in contract
+    assert "{{% ref \"/beheer/how-to-publiceren\" %}}" in howtos
+    assert "pagina-opbouw" not in howtos
+    assert "{{% ref \"/beheer/ideeen\" %}}" in contract
+
+
+def test_pagina_opbouw_index_is_contract_geen_how_to() -> None:
+    path = BEHEER / "pagina-opbouw" / "_index.md"
+    assert path.is_file(), path
+    meta, body = _meta_body(path)
+    assert meta["title"] == "Pagina-opbouw"
+    assert "contracten" in body.lower()
+    assert "how-to" in body.lower()
+    assert "/beheer" in body
+    assert "hoofdnavigatie" in body.lower()
+    for slug in PAGINA_OPBOUW_SLUGS:
+        assert f"/beheer/pagina-opbouw/{slug}" in body, slug
+
+
+def test_pagina_opbouw_skeletten_bestaan_met_wel_niet() -> None:
+    banner = "**Contract, geen echte inhoud.**"
+    for slug in PAGINA_OPBOUW_SLUGS:
+        path = BEHEER / "pagina-opbouw" / f"{slug}.md"
+        assert path.is_file(), path
+        meta, body = _meta_body(path)
+        assert isinstance(meta.get("title"), str) and meta["title"].strip()
+        assert banner in body, slug
+        assert "**Wel:**" in body or "**Wel (" in body, slug
+        assert "**Niet:**" in body or "**Niet (" in body, slug
+
+
+def test_heilige_skelet_uitklap_selectie() -> None:
+    _meta, body = _meta_body(BEHEER / "pagina-opbouw" / "heilige.md")
+    assert "## Plaats in deze kalender" in body
+    assert "**Gesloten.**" in body
+    assert "`<details>`" in body or "<details>" in body
+    assert "voldoet" in body
+    assert "kandidaat-schrappen" in body
+    assert "/beheer/selectie" in body
+    assert "**Gesloten.**" in body
+    assert "Andere gedenkdagen" in body
+    assert "Voorstel (nog niet uitvoeren)" not in body
+
+
+def test_pagina_opbouw_niet_in_hoofdnav() -> None:
+    html = (ROOT / "site" / "layouts" / "_default" / "baseof.html").read_text(
+        encoding="utf-8"
+    )
+    start = html.index('aria-label="Hoofdnavigatie"')
+    end = html.index("</nav>", start)
+    nav = html[start:end]
+    assert "pagina-opbouw" not in nav
+    assert "beheer/" not in nav
 
 
 def test_how_tos_bestaan() -> None:
@@ -185,3 +266,65 @@ def test_agenda_pagina_heeft_geen_lijst_vaste_feeds() -> None:
     assert "function icsDayTitle" in js
     assert "ics-all-links" not in js
     assert "heiligen-feesten-nieuw" not in js
+
+
+def test_jaarkalender_en_uitleg_zelfde_legenda_swatches() -> None:
+    kal = (ROOT / "site" / "layouts" / "_default" / "kalender.html").read_text(
+        encoding="utf-8"
+    )
+    uitleg = (CONTENT / "uitleg" / "kleuren.md").read_text(encoding="utf-8")
+    css = (ROOT / "site" / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    for cls in (
+        "day-feest",
+        "day-heilige",
+        "day-beide",
+        "day-vasten",
+        "day-feest-vasten",
+        "day-heilige-vasten",
+        "day-today",
+    ):
+        assert cls in kal, cls
+        assert cls in uitleg, cls
+    assert ".kalender-page .legend.compact" in css
+    assert "display: none;" in css.split(".kalender-page .legend.compact")[1][:80]
+
+
+def test_generate_raakt_pagina_opbouw_niet() -> None:
+    src = (ROOT / "scripts" / "generate.py").read_text(encoding="utf-8")
+    assert "pagina-opbouw" not in src
+
+
+def test_datum_url_canoniek_jjjj_mm_dd() -> None:
+    js = (ROOT / "site" / "assets" / "js" / "calendar.js").read_text(encoding="utf-8")
+    assert 'params.get("datum")' in js
+    assert 'datum: year + "-" + mmdd' in js
+    assert 'pageUrl("datum/", { jaar: year, dag: mmdd' not in js
+
+
+def test_synaxarion_start_huidige_maand_zonder_itemtelling() -> None:
+    js = (ROOT / "site" / "assets" / "js" / "calendar.js").read_text(encoding="utf-8")
+    assert "getMonth() + 1" in js
+    assert 'activeMonth = "01"' not in js
+    assert ": ${count} item(s)." not in js
+
+
+def test_heiligenkaart_ctrl_zoom_en_nl_be() -> None:
+    js = (ROOT / "site" / "assets" / "js" / "heiligen-kaart.js").read_text(
+        encoding="utf-8"
+    )
+    assert "ctrlKey" in js
+    assert "[49.45, 2.4]" in js
+    assert "fitBounds(group.getBounds()" not in js
+
+
+def test_zoeklabel_zelfde_lettergrootte() -> None:
+    css = (ROOT / "site" / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert ".search-label" in css
+    assert "font-size: inherit" in css
+    assert "font-size: 0.9rem;\n  margin-bottom: 0.25rem;" not in css
+
+
+def test_startpagina_identiteit_via_popover() -> None:
+    _meta, body = _meta_body(BEHEER / "pagina-opbouw" / "startpagina.md")
+    assert "**Gesloten.**" in body
+    assert "HTML-commentaar blijft commentaar" in body

@@ -1,7 +1,7 @@
 ---
 title: "Lezingen van de dag"
 description: "Apostel en Evangelie: welke lezing wanneer, volgens Moskou (ROCOR bij twijfel)"
-git_date: 2026-08-17
+git_date: 2026-08-21
 ---
 
 Op *Vandaag*, de datumpagina en het [lezingenrooster]({{% ref "/lezingenrooster" %}})
@@ -89,6 +89,20 @@ Staat er voor die dag een bekende feestlezing (Pascha, Theofanie, Kerst, Palmzon
 en zo verder), dan geldt die. Zij **vervangt** de doorlopende lezing, tenzij
 regel 5 iets anders voorschrijft (bijvoorbeeld: op zondag beide lezen).
 
+**Zaterdag en zondag rond grootfeesten.** Op de zaterdag en de zondag
+vóór Kruisverheffing (14 september), en op de zaterdag en de zondag erna,
+gelden eigen Apostel- en Evangelielezingen over het Kruis. Hetzelfde
+geldt rond Theofanie (zaterdag en zondag vóór 6 januari; zaterdag erna)
+en de zaterdag vóór Kerst. Dat zijn geen extra feestdagen op de
+jaarkalender: ze hebben geen eigen feestdienst, alleen die speciale
+lezingen. Valt zo’n zaterdag of zondag samen met een groot feest
+(bijvoorbeeld de Geboorte van de Moeder Gods op 8 september, de
+Besnijdenis op 1 januari, of het feest zelf), dan gaat dat feest voor.
+De zondag ná Kruisverheffing is ook het anker van de Lucaanse sprong
+hieronder. Op **1 september** (begin van het kerkelijk jaar) en op de
+**zondag ná 10 oktober** (Vaderen van het Zevende Concilie, Nicea 787)
+gelden eveneens eigen Apostel en Evangelie.
+
 ### 3. Doorlopende weekreeks
 
 Buiten feestlezingen volgen Apostel en Evangelie de week na Pascha of na
@@ -166,7 +180,9 @@ de gedeelde regels.
 Op deze site is die lokale extra-lijst nu die van het Orthodoxe klooster van
 Johannes de Voorloper in Den Haag — bijvoorbeeld Silvester op 2 januari. Dat
 is niet de parochie Groningen. Een andere lokale lijst zetten we alleen na
-een uitdrukkelijk besluit. De technische bijlage beschrijft hoe die lijst
+een uitdrukkelijk besluit. Een gedrukt parochieboekje gebruiken we als
+checklist tegen de Moskouse regels, niet als iets om in zijn geheel over te
+nemen. De technische bijlage beschrijft hoe die lijst
 eruitziet; voor overleg met de clerus volstaat: datum (of relatie tot
 Pascha/Theofanie), gewenste lezingen, en of ze de doorlopende lezing
 vervangen of erbíj komen.

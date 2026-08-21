@@ -32,7 +32,8 @@ Post-schisma-onderzoek (17 augustus 2026):
   bijdrage aan NL/BE.
 
 Op de heiligenpagina verschijnt bij *nader onderzoek* en
-*kandidaat-schrappen* een paragraaf **Over de plaats in deze kalender**.
+*kandidaat-schrappen* een uitklap **Plaats in deze kalender**. Bij
+*voldoet* niets.
 
 Post-schisma: alleen Orthodox vereerd **én** bijgedragen aan de Orthodoxie
 in NL/BE. Een kerk of parochie die naar iemand is genoemd, of een

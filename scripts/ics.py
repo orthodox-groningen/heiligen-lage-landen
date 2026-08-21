@@ -68,7 +68,7 @@ def calendar_name(key: str, stijl: str) -> str:
 
 def datum_pagina_url(civil: date) -> str:
     dag = mmdd_from_date(civil)
-    return f"{SITE_PUBLIC_URL}/datum/?jaar={civil.year}&dag={quote(dag)}"
+    return f"{SITE_PUBLIC_URL}/datum/?datum={civil.year}-{quote(dag)}"
 
 
 def _ics_escape(text: str) -> str:
