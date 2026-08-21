@@ -475,6 +475,16 @@ def test_heiligen_list_layout_zoekt_alternatieve_namen() -> None:
     assert "unpkg.com" not in kaart
 
 
+def test_betekenis_lage_landen_zonder_selectietokens() -> None:
+    tokens = ("kandidaat-schrappen", "nader-onderzoek", "selectiegrens")
+    for entry in load_entries():
+        if entry.get("soort") != "heilige":
+            continue
+        text = entry.get("betekenis_lage_landen") or ""
+        for tok in tokens:
+            assert tok not in text, f"{entry['id']}: {tok}"
+
+
 def test_write_plaatsen_json(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
