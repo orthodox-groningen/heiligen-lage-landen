@@ -32,8 +32,12 @@ selectie_toelichting_publiek: |
 - Ontbreekt `selectie` bij een heilige: behandel als `nader-onderzoek`
   (`scripts/load_entries.py`).
 - Bij `nader-onderzoek` of `kandidaat-schrappen` schrijft `generate.py`
-  een paragraaf **Over de plaats in deze kalender** (publiek). Gebruik
+  onderaan een uitklap **Plaats in deze kalender** (`<details>`). Gebruik
   `selectie_toelichting_publiek` als die afwijkt van de korte beheerzin.
+  Bij `voldoet`: geen uitklap.
+- `datum.waarde` is de canonieke gedenkdag (sterfdag bij twijfel).
+  Orthodox bekende extra dagen: `datum.extra` → **Andere gedenkdagen**
+  op de pagina, niet in de infobox.
 - `selectie` zelf komt **niet** in de Hugo-front matter (geen filterveld
   voor bezoekers).
 - Overzicht voor beheerders: `/beheer/selectie/` (gegenereerd; live telling).

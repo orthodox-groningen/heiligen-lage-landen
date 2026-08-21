@@ -36,6 +36,10 @@ Gedefinieerd in `site/assets/css/site.css`, gezet door
 | `day-vasten` | alleen vasten |
 | `day-feest-vasten` | feest én vasten |
 | `day-heilige-vasten` | heilige én vasten |
+| `day-feest-heilige-vasten` | feest, heilige én vasten (op de kalender; niet in de compacte legenda) |
+
+«Vandaag» is geen observantie maar een markering (`day.is-today` / swatch
+`day-today`).
 
 Wekelijks wo/vr-vasten telt mee als vasten, tenzij een periode of
 `onderdrukt_wekelijks_vasten` het onderdrukt. Het **niveau** (streng, vis,

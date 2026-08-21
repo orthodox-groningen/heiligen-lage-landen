@@ -19,11 +19,28 @@
   const imagePath = new URL("vendor/leaflet/images/", base).href;
   L.Icon.Default.imagePath = imagePath;
 
+  const NL_BE = L.latLngBounds(
+    [49.45, 2.4],
+    [53.7, 7.25]
+  );
+
   const map = L.map(root, { scrollWheelZoom: false });
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18,
   }).addTo(map);
+  map.fitBounds(NL_BE);
+
+  map.getContainer().addEventListener(
+    "wheel",
+    (ev) => {
+      if (!ev.ctrlKey) return;
+      ev.preventDefault();
+      const delta = ev.deltaY > 0 ? -1 : 1;
+      map.setZoom(map.getZoom() + delta, { animate: false });
+    },
+    { passive: false }
+  );
 
   const markers = [];
   let lastFilter = { query: "", plaatsIds: null };
@@ -31,14 +48,21 @@
   function applyFilter() {
     const q = lastFilter.query || "";
     const ids = new Set(lastFilter.plaatsIds || []);
+    const visible = [];
     markers.forEach((item) => {
       const show = !q || ids.has(item.id);
       if (show) {
         if (!map.hasLayer(item.marker)) item.marker.addTo(map);
+        visible.push(item.marker);
       } else if (map.hasLayer(item.marker)) {
         map.removeLayer(item.marker);
       }
     });
+    if (q && visible.length) {
+      map.fitBounds(L.featureGroup(visible).getBounds().pad(0.2));
+    } else if (!q) {
+      map.fitBounds(NL_BE);
+    }
   }
 
   Promise.all([
@@ -78,16 +102,11 @@
         markers.push({ id: p.id, marker: marker, streek: isStreek });
       });
 
-      if (markers.length) {
-        const group = L.featureGroup(markers.map((m) => m.marker));
-        map.fitBounds(group.getBounds().pad(0.12));
-      } else {
-        map.setView([51.5, 5.0], 7);
-      }
+      map.fitBounds(NL_BE);
       applyFilter();
     })
     .catch(() => {
-      map.setView([51.5, 5.0], 7);
+      map.fitBounds(NL_BE);
     });
 
   document.addEventListener("heiligen-filter", (ev) => {

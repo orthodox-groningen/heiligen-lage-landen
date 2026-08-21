@@ -26,8 +26,11 @@ namen:
   - Ecgberht
   - Egbertus
 datum:
-  waarde: "12-23"
+  waarde: "04-24"
   stijl: gregoriaans
+  extra:
+    - waarde: "12-23"
+      toelichting: gedachtenis op de Orthodoxe kalender
 titels:
   - Abt van Rath Melsigi
   - Missionaris-inspirator
@@ -36,7 +39,8 @@ locaties:
   - rath-melsigi
 samenvatting: |
   Angelsaksische abt te Rath Melsigi; zond missionarissen naar Friesland
-  (o.a. Willibrord), ging zelf niet mee. Feestdag vaak 24 april.
+  (o.a. Willibrord), ging zelf niet mee. Overleden op Pasen 24 april 729.
+  Op de Orthodoxe kalender ook herdacht op 23 december.
 betekenis_lage_landen: |
   Egbert bleef in Ierland, maar Rath Melsigi werd onder hem kweekschool
   voor de Friese missie. Hij zond Wigbert, later Willibrord en anderen.

@@ -145,7 +145,7 @@ def over_bronnen_md(entry: dict[str, Any]) -> str:
     return "\n".join(delen)
 
 def selectie_note_md(entry: dict[str, Any]) -> str:
-    """Publieke paragraaf bij nader-onderzoek / kandidaat-schrappen."""
+    """Uitklap bij nader-onderzoek / kandidaat-schrappen; niets bij voldoet."""
     if entry.get("soort") != "heilige":
         return ""
     sel = str(entry.get("selectie") or "nader-onderzoek").strip()
@@ -158,23 +158,24 @@ def selectie_note_md(entry: dict[str, Any]) -> str:
     if not tekst:
         return ""
     if sel == "kandidaat-schrappen":
-        intro = (
-            "Deze heilige staat **ter discussie** in deze kalender: volgens de "
-            "huidige criteria hoort die waarschijnlijk niet bij de "
-            "[Heiligen van de Lage Landen](/uitleg/heiligen/). "
-            "Verwijderen gebeurt pas na een uitdrukkelijk besluit."
+        samenvatting = (
+            "Deze heilige voldoet waarschijnlijk niet aan de criteria "
+            "voor de Heiligen van de Lage Landen."
         )
     else:
-        intro = (
-            "Of deze heilige bij de "
-            "[Heiligen van de Lage Landen](/uitleg/heiligen/) hoort, is "
-            "**nog niet uitgemaakt**. De kalender houdt de deur open; we "
-            "zoeken dit soort grensgevallen niet actief op."
+        samenvatting = (
+            "Of deze heilige bij de Heiligen van de Lage Landen hoort, "
+            "is nog niet uitgemaakt. De kalender houdt de deur open; "
+            "zulke grensgevallen zoeken we niet actief op."
         )
     return (
-        "## Over de plaats in deze kalender\n\n"
-        f"{intro}\n\n"
-        f"{tekst}\n"
+        '<details class="selectie-details">\n'
+        "<summary>Plaats in deze kalender</summary>\n\n"
+        f"{samenvatting}\n\n"
+        f"{tekst}\n\n"
+        "Meer over de criteria en hoe we met twijfel omgaan: "
+        "[Heiligen van de Lage Landen](/uitleg/heiligen/).\n"
+        "</details>\n"
     )
 
 
@@ -426,6 +427,20 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 parts.append(f"Juliaans {mmdd_label(dn['juliaans'])}")
             body.append("**Expliciete notatie:** " + "; ".join(parts))
             body.append("")
+        extras = entry.get("datum_extra_norm") or []
+        extra_lines = []
+        for extra in extras:
+            fd = extra.get("feestdatum")
+            if not fd:
+                continue
+            toel = (extra.get("toelichting") or "").strip()
+            link = f"[{mmdd_label(fd)}](/datum/?dag={fd})"
+            extra_lines.append(f"- {link} — {toel}" if toel else f"- {link}")
+        if extra_lines:
+            body.append("**Andere gedenkdagen:**")
+            body.append("")
+            body.extend(extra_lines)
+            body.append("")
     betekenis = (entry.get("betekenis_lage_landen") or "").strip()
     if betekenis:
         body.append("## Betekenis voor de Lage Landen")
@@ -460,11 +475,10 @@ def write_generated_indexes() -> None:
 title: "Heiligen"
 ---
 
-Overzicht van heiligen van de Lage Landen in deze kalender.
+Overzicht van <span class="info-term" tabindex="0" data-info-tip="heiligen-criterium">heiligen van de Lage Landen in deze kalender</span>.
 Zoeken vindt ook andere namen van dezelfde heilige, en plaatsen
 (bijvoorbeeld Utrecht, Vlaanderen of Friesland). De kaart toont die
-plaatsen; streken staan cursief in de lijst. Niet iedere heilige van de
-Kerk staat hier; zie de [uitleg](/uitleg/heiligen/).
+plaatsen; streken staan cursief in de lijst.
 """,
     )
     write_text(

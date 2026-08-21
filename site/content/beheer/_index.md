@@ -1,7 +1,7 @@
 ---
 title: "Voor beheerders"
 description: "Wat staat waar, wat u mag wijzigen, en waar generate.py overheen schrijft"
-git_date: 2026-08-20
+git_date: 2026-08-21
 ---
 
 Deze pagina is voor wie de kalender **in de git-repo bijhoudt**: YAML
@@ -27,6 +27,8 @@ staan hieronder.
 | `data/lezingen/` | Lezingenrooster (gedeelde lijst, weekreeks, parochie) |
 | `docs/datamodel.md` | Datamodel (velden, cycli, referenties) |
 | `docs/inventaris.md` | Beslissingslog (criteria, post-schisma); live telling in `/beheer/selectie/` |
+| `site/content/beheer/pagina-opbouw/` | Contracten: wat er op elke paginasoort wel en niet hoort |
+| `site/content/beheer/ideeen.md` | Ideeën en latere uitbreidingen; nog niet bouwen |
 | `docs/onderzoek/` | Onderzoeksnotities (o.a. post-schisma-heiligen) |
 | `docs/specs/lezingen.md` | Normatieve lezingenspec (als die feature er is) |
 | `schemas/entry.schema.json` | Schema voor heilige/feest/vasten-YAML |
@@ -53,6 +55,8 @@ committen. Zie [site bouwen en publiceren]({{% ref "/beheer/how-to-publiceren" %
 <tr><td><code>data/regels/vasten.yaml</code></td><td>Cleruspagina, technische vastenpagina, en de voorbeelden die pytest toetst. Wijzigt u een verwacht niveau, dan moeten <code>scripts/vasten.py</code> en <code>calendar.js</code> mee — anders falen de tests.</td></tr>
 <tr><td><code>data/lezingen/</code></td><td>Welke Apostel en welk Evangelie de site op een dag toont, inclusief parochie-afwijkingen. Zie de how-to lezingen.</td></tr>
 <tr><td><code>site/content/uitleg/*.md</code> (niet vasten*)</td><td>Gebruikersuitleg. Technische bijlagen: bestanden <code>*-technisch.md</code>.</td></tr>
+<tr><td><code>site/content/beheer/pagina-opbouw/</code></td><td>Paginacontracten. Generate.py schrijft hier niet overheen.</td></tr>
+<tr><td><code>site/content/beheer/ideeen.md</code></td><td>Ideeënlijst; geen automatische bouw.</td></tr>
 <tr><td><code>site/content/_index.md</code>, <code>kalender/</code>, <code>synaxarion/</code>, <code>datum/</code>, <code>agenda/</code>, <code>uitleg/_index.md</code></td><td>Handmatige sectiepagina’s: de <em>body</em> blijft bij genereren staan. Ontbrekende <code>layout</code> wordt wel gecorrigeerd.</td></tr>
 <tr><td><code>site/static/iconen/</code></td><td>Afbeeldingen bij heiligen/feesten. Alleen met <code>icoon.rechten: ok</code> in YAML; geen hotlinks.</td></tr>
 <tr><td><code>site/layouts/</code>, <code>site/assets/</code></td><td>Uiterlijk en gedrag in de browser. Vastenmenging in JS moet gelijk blijven aan <code>scripts/vasten.py</code>.</td></tr>
@@ -83,6 +87,17 @@ gooit het weg.
 
 `site/content/datum/_index.md` zelf is wél handmatig. Alleen extra bestanden
 in die map verdwijnen bij `--clean`.
+
+## Hoe een pagina eruit moet zien
+
+Dit zijn **contracten**: per paginasoort wat er in elk blok wel en niet
+hoort. Zij zeggen niet hoe u YAML of code wijzigt — daarvoor blijven de
+how-to’s hieronder.
+
+[Pagina-opbouw]({{% ref "/beheer/pagina-opbouw" %}})
+
+Toekomstige uitbreidingen (één lijst, nog niet bouwen):
+[Ideeën]({{% ref "/beheer/ideeen" %}}).
 
 ## How-to’s
 

@@ -37,6 +37,7 @@ def _heilige(**overrides):
             "vorm": "dag",
             "stijl": "gregoriaans",
         },
+        "datum_extra_norm": [],
         "titels": [],
         "referenties": [],
         "id_aliassen": [],
@@ -71,6 +72,7 @@ def test_entry_page_heeft_betekenis_en_aliases(
     assert "## Betekenis voor de Lage Landen" in body
     assert "Predikte onder de Friezen." in body
     assert "## Over de plaats in deze kalender" not in body
+    assert "<details" not in body
     assert "nagekeken aan een lexikon" not in body
     # Bronnoot ná inhoud, onder kop Over de bronnen
     assert "## Over de bronnen" in body
@@ -98,13 +100,13 @@ def test_entry_page_selectie_paragraaf_bij_nader_onderzoek(
     text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
     meta, body = _split_hugo_markdown(text)
     assert "selectie" not in meta
-    assert "## Over de plaats in deze kalender" in body
+    assert "<details" in body
+    assert "<summary>Plaats in deze kalender</summary>" in body
+    assert "## Over de plaats in deze kalender" not in body
     assert "nog niet uitgemaakt" in body
     assert "Uitleg voor bezoekers over het grensgeval." in body
     assert "Korte beheerzin." not in body
-    assert body.index("## Verder lezen en kijken") < body.index(
-        "## Over de plaats in deze kalender"
-    )
+    assert body.index("## Verder lezen en kijken") < body.index("<details")
 
 
 def test_entry_page_selectie_fallback_toelichting(
@@ -120,8 +122,10 @@ def test_entry_page_selectie_fallback_toelichting(
     )
     text = (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
     body = _split_hugo_markdown(text)[1]
-    assert "## Over de plaats in deze kalender" in body
-    assert "ter discussie" in body
+    assert "<details" in body
+    assert "<summary>Plaats in deze kalender</summary>" in body
+    assert "## Over de plaats in deze kalender" not in body
+    assert "voldoet waarschijnlijk niet" in body
     assert "Alleen cultus, geen werk hier." in body
 
 
@@ -247,9 +251,7 @@ def test_entry_page_selectie_na_verhaal(
     )[1]
     assert body.index("## Betekenis voor de Lage Landen") < body.index("## Verhaal")
     assert body.index("## Verhaal") < body.index("## Verder lezen en kijken")
-    assert body.index("## Verder lezen en kijken") < body.index(
-        "## Over de plaats in deze kalender"
-    )
+    assert body.index("## Verder lezen en kijken") < body.index("<details")
 
 
 def test_entry_page_feestdag_link_en_geen_synaxarion_voet(
@@ -265,6 +267,31 @@ def test_entry_page_feestdag_link_en_geen_synaxarion_voet(
     assert "**Feestdag:** [7 november](/datum/?dag=11-07)" in body
     assert "Synaxarion:" not in body
     assert "/synaxarion/" not in body
+
+
+def test_entry_page_andere_gedenkdagen(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    content = tmp_path / "content"
+    monkeypatch.setattr("generate.CONTENT", content)
+    write_entry_page(
+        _heilige(
+            selectie="voldoet",
+            datum_extra_norm=[
+                {
+                    "feestdatum": "12-23",
+                    "toelichting": "gedachtenis op de Orthodoxe kalender",
+                }
+            ],
+        )
+    )
+    body = _split_hugo_markdown(
+        (content / "heiligen" / "voorbeeld.md").read_text(encoding="utf-8")
+    )[1]
+    assert "**Feestdag:** [7 november](/datum/?dag=11-07)" in body
+    assert "**Andere gedenkdagen:**" in body
+    assert "[23 december](/datum/?dag=12-23)" in body
+    assert "gedachtenis op de Orthodoxe kalender" in body
 
 
 def test_entry_page_over_bronnen_toelichting(

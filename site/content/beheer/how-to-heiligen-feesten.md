@@ -49,6 +49,18 @@ datum:
 `stijl` schakelt de site niet tussen Nieuw en Oud. Zie
 [Feestdatum (technisch)]({{% ref "/uitleg/feestdatum-technisch" %}}).
 
+Meerdere gedenkdagen: `datum.waarde` is de **sterfdag** (canoniek).
+Andere dagen alleen in `datum.extra` als ze in de Orthodoxe Kerk bekend
+zijn. Zie het [contract Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}}).
+
+```yaml
+datum:
+  waarde: "04-24"
+  extra:
+    - waarde: "12-23"
+      toelichting: gedachtenis op de Orthodoxe kalender
+```
+
 Plaatsen: ids uit `data/plaatsen.yaml`, geen vrije plaatsnamen.
 
 ```yaml
@@ -158,9 +170,13 @@ Criteria in gewone taal: [Heiligen van de Lage Landen]({{% ref "/uitleg/heiligen
 Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 [docs/datamodel.md](https://github.com/orthodox-ronl/kalender/blob/main/docs/datamodel.md).
 
-Pagina-opbouw (na de infobox): feestdag-link → **Betekenis voor de Lage Landen**
+Pagina-opbouw (na de infobox): zie het
+[contract Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})
+(en [Feest]({{% ref "/beheer/pagina-opbouw/feest" %}})).
+Huidige generatorvolgorde: feestdag-link → **Betekenis voor de Lage Landen**
 (`betekenis_lage_landen`) → samenvatting → verhaal → verder lezen →
-**Over de bronnen** → (alleen bij nader/kandidaat) selectieparagraaf.
+**Over de bronnen** → (alleen bij nader/kandidaat) uitklap **Plaats in
+deze kalender**.
 
 ```yaml
 betekenis_lage_landen: |
@@ -173,8 +189,10 @@ selectie_toelichting_publiek: "…"  # optioneel; lezersversie
 
 - Ontbreekt `selectie`: behandel als `nader-onderzoek`. Zet het veld als u
   een heilige toetst. `kandidaat-schrappen` verwijdert niets.
-- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt onderaan
-  **Over de plaats in deze kalender** (`_publiek`, anders `selectie_toelichting`).
+- Bij `nader-onderzoek` / `kandidaat-schrappen` verschijnt onderaan een
+  uitklap (`<details>`) **Plaats in deze kalender**: korte status, waarom,
+  link naar de uitleg-criteria. Bij `voldoet`: niets. Tekst:
+  `selectie_toelichting_publiek`, anders `selectie_toelichting`.
 - Extra top-level YAML-velden mogen (notities/experimenten); ze komen niet
   op de site tot generate/UI ze kent. Zie
   [schemas/README.md](https://github.com/orthodox-ronl/kalender/blob/main/schemas/README.md).
@@ -263,7 +281,8 @@ apart YAML-bestand bestaat. Verwijder het oude bestand in dezelfde
 wijziging. `generate.py` zet oude ids om in Hugo-aliases en schrijft
 `betekenis_lage_landen` onder **Betekenis voor de Lage Landen**. Selectie
 staat op [Selectie heiligen]({{% ref "/beheer/selectie" %}}); bij
-`nader-onderzoek` / `kandidaat-schrappen` ook kort onderaan de publieke pagina.
+`nader-onderzoek` / `kandidaat-schrappen` een uitklap onderaan de
+publieke pagina, niet bij `voldoet`.
 
 ## Controleren
 

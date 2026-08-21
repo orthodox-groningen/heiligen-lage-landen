@@ -24,6 +24,21 @@ Die dagnaam is gelijk in de nieuwe (Gregoriaanse) en oude (Juliaanse) kalender.
 `stijl` legt alleen vast hoe de beheerder de waarde bedoelde; er wordt géén
 automatische +13 op de feestdatum zelf toegepast.
 
+Bij een heilige met **meer gedenkdagen**: `datum.waarde` is canoniek de
+**sterfdag** (of, bij twijfel, die dag). Andere dagen alleen in
+`datum.extra` als ze **in de Orthodoxe Kerk bekend** zijn (niet een
+louter katholieke of lokale datum). Generate zet ze op de pagina onder
+**Andere gedenkdagen**; de infobox toont alleen de canonieke dag. Extra
+dagen komen niet automatisch op jaarkalender of Synaxarion.
+
+```yaml
+datum:
+  waarde: "04-24"            # sterfdag = canoniek
+  extra:
+    - waarde: "12-23"
+      toelichting: gedachtenis op de Orthodoxe kalender
+```
+
 De offset Gregoriaans−Juliaans is **jaarafhankelijk** (13 tot 2099, 14 vanaf 2100:
 `⌊Y/100⌋ − ⌊Y/400⌋ − 2`). Die offset zet vaste feesten op hun **wereldlijke
 vierdatum** in de stand Oud (jaarkalender, home, datumpagina, ICS “oud”).
@@ -85,7 +100,7 @@ Pagina’s onder `/vasten/{id}/`; zichtbaar in synaxarion/agenda/kalender met
 aan/uit-filters. ICS: `vasten-*.ics` en combinaties met heiligen/feesten.
 
 Het **Synaxarion** (`/synaxarion/`, optioneel `?dag=MM-DD`) toont alleen de vaste
-jaarcyclus. Een **datumpagina** (`/datum/?jaar=2026&dag=08-15`) toont wat er
+jaarcyclus. Een **datumpagina** (`/datum/?datum=2026-08-15`) toont wat er
 op die dag in dat jaar valt, inclusief paascyclus en wekelijks vasten.
 
 Optioneel op entries:
@@ -215,7 +230,8 @@ id_aliassen: [lubuinus]      # oude ids na een merge
   verhaal); ook in `site/static/data/entries.json` (alleen bij heiligen).
 - **`selectie`** — toetsing aan de criteria. Ontbreekt bij een heilige:
   behandel als `nader-onderzoek`. Waarden: `voldoet`, `nader-onderzoek`,
-  `kandidaat-schrappen`. Bij de laatste twee: paragraaf onderaan de pagina.
+  `kandidaat-schrappen`. Bij de laatste twee: uitklap onderaan de pagina
+  (`<details>`). Bij `voldoet`: niets.
 - **`id_aliassen`** — oude `[a-z0-9_-]+` ids; niet gelijk aan het eigen id
   en niet gelijk aan een ander levend entry-id. `generate.py` zet Hugo
   `aliases` (`/heiligen/<oud-id>/`).
@@ -225,7 +241,7 @@ voor een later, expliciet besluit.
 
 Werklijst (beslissingen, geen catalogustelling): [`docs/inventaris.md`](inventaris.md).
 `selectie` staat per heilige in YAML; gegenereerd overzicht `/beheer/selectie/`.
-Later (niet gebouwd): [`docs/voorstellen.md`](voorstellen.md).
+Later (niet gebouwd): [`site/content/beheer/ideeen.md`](../site/content/beheer/ideeen.md).
 
 ## Referenties
 

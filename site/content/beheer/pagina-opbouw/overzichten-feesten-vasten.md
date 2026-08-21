@@ -1,0 +1,26 @@
+---
+title: "Feesten- en vastenoverzicht"
+description: "Contract: de korte indexen /feesten/ en /vasten/"
+git_date: 2026-08-21
+---
+
+**Contract, geen echte inhoud.** Voor wie: bezoeker. Canonieke URL’s:
+`/feesten/`, `/vasten/` (heiligenoverzicht: `/heiligen/`). Bron:
+gegenereerde indexen. In de hoofdnavigatie onder **Overzichten**
+(uitklap: Heiligen, Feesten, Vasten; later eventueel meer).
+
+## Titel en inleiding
+
+**Wel:** korte aanduiding (vaste feesten van jaar- en paascyclus;
+vastenperiodes en wekelijkse vastendagen).
+
+**Niet:** de volledige clerus-uitleg; selectie van heiligen.
+
+## Lijst
+
+**Wel:** naam (link naar de detailpagina); feestdatum als die er is.
+Sortering zoals de layout nu doet.
+
+**Niet:** icoon verplicht; vita in de rij; paascyclus-dagen zonder
+feestdatum weglaten uit het feestenoverzicht (ze horen in de lijst,
+ook zonder MM-DD in de meta).
