@@ -20,6 +20,7 @@ from plaatsen import load_plaatsen  # noqa: E402
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 SELECTIE_WAARDEN = frozenset({"voldoet", "nader-onderzoek", "kandidaat-schrappen"})
 AANVULLENDE_BRON_IDS = frozenset({"wiki-heiligen", "hnet"})
+ISO_DATUM = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -64,14 +65,16 @@ def collect_content_errors(
     for entry in entries:
         path = entry["source_path"]
         betekenis = (entry.get("betekenis_lage_landen") or "").strip()
+        betekenis_feest = (entry.get("betekenis") or "").strip()
         text = (
             (entry.get("verhaal") or "").strip()
             or (entry.get("samenvatting") or "").strip()
             or betekenis
+            or betekenis_feest
         )
         if text and not entry.get("referenties"):
             errors.append(
-                f"{path}: verhaal/samenvatting/betekenis_lage_landen aanwezig "
+                f"{path}: verhaal/samenvatting/betekenis aanwezig "
                 "maar referenties ontbreken"
             )
         for i, ref in enumerate(entry.get("referenties") or []):
@@ -100,6 +103,21 @@ def collect_content_errors(
             icon_path = ROOT / "site" / "static" / bestand
             if not icon_path.is_file():
                 errors.append(f"{path}: icoonbestand ontbreekt: {bestand}")
+
+        goed = entry.get("goedkeuring") or []
+        if goed and entry.get("soort") != "feest":
+            errors.append(f"{path}: goedkeuring is alleen voor feesten")
+        for i, item in enumerate(goed):
+            if not isinstance(item, dict):
+                errors.append(f"{path}: goedkeuring[{i}] moet een mapping zijn")
+                continue
+            if not str(item.get("naam") or "").strip():
+                errors.append(f"{path}: goedkeuring[{i}]: naam ontbreekt")
+            dat = str(item.get("datum") or "").strip()
+            if dat and not ISO_DATUM.fullmatch(dat):
+                errors.append(
+                    f"{path}: goedkeuring[{i}].datum moet YYYY-MM-DD zijn"
+                )
 
         if entry.get("soort") == "heilige":
             sel = entry.get("selectie") or "nader-onderzoek"

@@ -31,8 +31,10 @@ Drie lagen, niet door elkaar:
 3. **Betekenis** — nieuw veld `betekenis` (1–3 alinea’s; orthodox, weinig
    jargon; geen preek). Zelfde `bronlaag` als de rest van de pagina.
 
-Eerst alleen de twaalf grootfeesten; één voorbeeld uitschrijven (Theofanie
-of Transfiguratie) voordat de rest volgt.
+Eerst alleen de twaalf grootfeesten **en Pascha** (feest der feesten,
+niet één van de twaalf). Die hebben nu `betekenis`. Voorfeest, nafeest,
+synaxis, Heilige Week-dagen en Triodion-zondagen: nog niet; die
+herhalen het grootfeest of vragen een eigen, latere ronde.
 
 ## Parochiepatronen
 
@@ -50,4 +52,5 @@ met `selectie: voldoet`.
 - E-mailadres op [Reactie geven]({{% ref "/uitleg/reactie" %}}) (nu alleen
   GitHub).
 
-**Volgende na de huidige contractpunten:** betekenis van feesten (hierboven).
+**Volgende:** troparia/kondaken; daarna eventueel betekenis op Heilige
+Week en andere kernfeesten.

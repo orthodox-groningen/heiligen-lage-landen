@@ -29,9 +29,9 @@ Schema entry: `schemas/entry.schema.json`. Publiceren:
 - Heilige: `data/heiligen/<id>.yaml` met `soort: heilige`
 - Feest: `data/feesten/<id>.yaml` met `soort: feest`
 
-Minimaal: `id`, `soort`, `datum`, `namen.primair`. Voor een verhaal, samenvatting of
-`betekenis_lage_landen` is minstens één **referentie** verplicht, met een
-locator: `url`, of `isbn`, of `locator`.
+Minimaal: `id`, `soort`, `datum`, `namen.primair`. Voor een verhaal, samenvatting,
+`betekenis` (feest) of `betekenis_lage_landen` is minstens één **referentie**
+verplicht, met een locator: `url`, of `isbn`, of `locator`.
 
 ### Vaste dag
 
@@ -178,10 +178,12 @@ Velden: [technisch]({{% ref "/uitleg/heiligen-technisch" %}}) en
 Pagina-opbouw (na de infobox): zie het
 [contract Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})
 (en [Feest]({{% ref "/beheer/pagina-opbouw/feest" %}})).
-Huidige generatorvolgorde: feestdag-link → **Betekenis voor de Lage Landen**
-(`betekenis_lage_landen`) → samenvatting → verhaal → verder lezen →
-**Over de bronnen** → (alleen bij nader/kandidaat) uitklap **Plaats in
-deze kalender**.
+Huidige generatorvolgorde bij heiligen: feestdag-link → **Betekenis voor
+de Lage Landen** (`betekenis_lage_landen`) → samenvatting → verhaal →
+verder lezen → **Over de bronnen** → (alleen bij nader/kandidaat) uitklap
+**Plaats in deze kalender**. Bij feesten: feestdag (of komende jaren) →
+samenvatting → verhaal → **Betekenis** (`betekenis`, alleen als het veld
+er is) → verder lezen → **Over de bronnen**.
 
 ```yaml
 betekenis_lage_landen: |
@@ -218,6 +220,33 @@ pagina-opbouw als nagekeken.
 Feesten: `nagekeken` blijft nagekeken tekst met traceerbare bronnen.
 
 `validate.py` weigert een heilige die `nagekeken` is zonder die lat.
+
+## Feesten: betekenis
+
+Optioneel veld `betekenis` (1–3 alinea’s): wat dit feest zegt over de
+weg naar God. Niet het verhaal (gebeurtenis) en niet de feestdatum.
+Weinig jargon; geen preek. Zelfde bronlaag als de rest van de pagina.
+Kop op de pagina: **Betekenis**, ná het verhaal.
+
+Voorbeeld: Theofanie. De twaalf grootfeesten en Pascha hebben het veld.
+Voorfeest, nafeest, synaxis en weken niet. Contract:
+[Feest]({{% ref "/beheer/pagina-opbouw/feest" %}}).
+
+```yaml
+betekenis: |
+  Wat dit feest zegt over de weg naar God (1–3 alinea’s).
+goedkeuring:
+  - naam: "A. N."
+    organisatie: "parochie X"
+    datum: "2026-08-21"
+    opmerking: "Kort voorbehoud of bevestiging."
+```
+
+`goedkeuring` is optioneel. Leeg of weggelaten: de kop **Betekenis**
+zegt in een popover dat de tekst is ontleend aan de
+«Orthodoxe geloof»-bron (anders de andere referenties) en dat we nog
+toets zoeken. Zet iemand pas in dit veld na een expliciete toets van
+díe betekenistekst. Niet hetzelfde als `bronlaag: nagekeken`.
 
 ## Icoon
 

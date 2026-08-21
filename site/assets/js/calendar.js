@@ -1,6 +1,7 @@
 (() => {
   const STORAGE_KEY = "kalender-stijl";
   const YEAR_KEY = "kalender-jaar";
+  const INTRO_KEY = "site-intro-gezien";
   const MONTHS = [
     "",
     "januari",
@@ -892,6 +893,8 @@
 
   let infoCloseTimer = null;
   let infoAnchor = null;
+  let introTimer = null;
+  let introActive = false;
 
   function nieuwOudTitle(style) {
     return style === "juliaans"
@@ -967,6 +970,16 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  function dutchEnList(items) {
+    const parts = (items || [])
+      .map((s) => escapeHtml(String(s || "").trim()))
+      .filter(Boolean);
+    if (parts.length === 0) return "";
+    if (parts.length === 1) return parts[0];
+    if (parts.length === 2) return `${parts[0]} en ${parts[1]}`;
+    return `${parts.slice(0, -1).join(", ")} en ${parts[parts.length - 1]}`;
   }
 
   /** Spiegel van scripts/bijbel.py — houd de boekcodes gelijk. */
@@ -1227,15 +1240,68 @@
       return;
     }
     if (kind === "site") {
-      title.textContent = "Orthodoxe kalender";
+      title.textContent = "Over deze kalender";
       body.innerHTML =
         `<p>Praktisch hulpmiddel voor orthodoxe gelovigen in de Lage Landen ` +
         `(vooral de Russische traditie). Gedachtenissen beperken zich tot ` +
-        `de Heiligen van de Lage Landen.</p>`;
+        `de Heiligen van de Lage Landen.</p>` +
+        `<p>De site is nog jong. Hij ziet er al bruikbaar uit, maar de ` +
+        `teksten zijn nog niet nagekeken door mensen die van huis uit ` +
+        `orthodox zijn. We zoeken die toets; tot die tijd is dit geen ` +
+        `officieel kerkelijk oordeel.</p>`;
       if (meer) {
         meer.hidden = false;
         meer.innerHTML =
           `<a class="text-link" href="${assetUrl("uitleg/")}">Meer uitleg</a>`;
+      }
+      return;
+    }
+    if (kind === "betekenis-goedkeuring") {
+      title.textContent = "Over deze betekenistekst";
+      let items = [];
+      try {
+        items = JSON.parse(trigger.dataset.goedkeuring || "[]");
+      } catch (_) {
+        items = [];
+      }
+      if (!Array.isArray(items) || items.length === 0) {
+        let bronnen = [];
+        try {
+          bronnen = JSON.parse(trigger.dataset.betekenisBronnen || "[]");
+        } catch (_) {
+          bronnen = [];
+        }
+        const bronZin = dutchEnList(bronnen);
+        if (bronZin) {
+          body.innerHTML =
+            `<p>Deze uitleg is ontleend aan ${bronZin}. We zoeken nog ` +
+            `iemand die van huis uit orthodox is om de tekst te toetsen.</p>`;
+        } else {
+          body.innerHTML =
+            `<p>We zoeken nog iemand die van huis uit orthodox is om deze ` +
+            `uitleg te toetsen.</p>`;
+        }
+      } else {
+        const lis = items.map((it) => {
+          const naam = escapeHtml(
+            String((it && it.naam) || "").trim() || "Onbekend"
+          );
+          const org = String((it && it.organisatie) || "").trim();
+          const opm = String((it && it.opmerking) || "").trim();
+          const dat = String((it && it.datum) || "").trim();
+          let line = `<strong>${naam}</strong>`;
+          if (org) line += ` (${escapeHtml(org)})`;
+          if (dat) line += ` — ${escapeHtml(dat)}`;
+          if (opm) line += `. ${escapeHtml(opm)}`;
+          return `<li>${line}</li>`;
+        });
+        body.innerHTML =
+          `<p>Deze uitleg is goedgekeurd door:</p>` +
+          `<ul>${lis.join("")}</ul>`;
+      }
+      if (meer) {
+        meer.hidden = true;
+        meer.innerHTML = "";
       }
       return;
     }
@@ -1304,9 +1370,18 @@
     dlg.style.top = `${top}px`;
   }
 
+  function cancelIntroTimer() {
+    if (introTimer) {
+      clearTimeout(introTimer);
+      introTimer = null;
+    }
+    introActive = false;
+  }
+
   function closeInfoPopover() {
     const dlg = document.getElementById("info-popover");
     if (!dlg) return;
+    cancelIntroTimer();
     dlg.hidden = true;
     dlg.classList.remove("is-day-preview");
     infoAnchor = null;
@@ -1320,6 +1395,7 @@
   }
 
   function scheduleInfoClose() {
+    if (introActive) return;
     cancelInfoClose();
     infoCloseTimer = setTimeout(closeInfoPopover, 180);
   }
@@ -1367,8 +1443,6 @@
       el.addEventListener("click", (ev) => {
         // Navigatieknoppen (‹ ›) moeten gewoon klikken.
         if (el.classList.contains("title-step")) return;
-        // Sitenaam: op desktop naar home; op aanraakscherm eerst de popup.
-        if (el.classList.contains("brand") && canHover()) return;
         ev.preventDefault();
         ev.stopPropagation();
         const dlg = document.getElementById("info-popover");
@@ -1382,9 +1456,46 @@
     const dlg = document.getElementById("info-popover");
     if (dlg && dlg.dataset.boundHover !== "1") {
       dlg.dataset.boundHover = "1";
-      dlg.addEventListener("mouseenter", cancelInfoClose);
+      dlg.addEventListener("mouseenter", () => {
+        cancelIntroTimer();
+        cancelInfoClose();
+      });
       dlg.addEventListener("mouseleave", scheduleInfoClose);
     }
+  }
+
+  function prefersReducedMotion() {
+    try {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function markIntroSeen() {
+    try {
+      localStorage.setItem(INTRO_KEY, "1");
+    } catch (_) {}
+  }
+
+  function maybeShowSiteIntro() {
+    if (!document.body || document.body.getAttribute("data-home") !== "true") {
+      return;
+    }
+    if (prefersReducedMotion()) return;
+    try {
+      if (localStorage.getItem(INTRO_KEY) === "1") return;
+    } catch (_) {}
+    const trigger = document.querySelector(".brand-mark[data-info-tip='site']");
+    if (!trigger) return;
+    introActive = true;
+    markIntroSeen();
+    openInfoPopover(trigger);
+    introTimer = setTimeout(() => {
+      introTimer = null;
+      introActive = false;
+      closeInfoPopover();
+    }, 8000);
   }
 
   function firstLetter(name) {
@@ -2743,6 +2854,16 @@
   }
 
   document.addEventListener("click", (e) => {
+    const dlg = document.getElementById("info-popover");
+    if (dlg && !dlg.hidden) {
+      const t = e.target;
+      if (
+        !dlg.contains(t) &&
+        !(t.closest && t.closest("[data-info-tip]"))
+      ) {
+        closeInfoPopover();
+      }
+    }
     const btn = e.target.closest && e.target.closest(".style-btn[data-style]");
     if (!btn) return;
     e.preventDefault();
@@ -2763,10 +2884,12 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
       wireInfoTips(document);
+      maybeShowSiteIntro();
       refresh();
     });
   } else {
     wireInfoTips(document);
+    maybeShowSiteIntro();
     refresh();
   }
 })();

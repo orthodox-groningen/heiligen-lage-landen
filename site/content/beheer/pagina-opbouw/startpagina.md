@@ -14,12 +14,17 @@ gelden hier ook. Extra, alleen hier:
 
 ## Sitenaam (kop)
 
-**Wel:** de sitenaam als link naar vandaag; info-tip (popover) over wat
-de site is. Terugkerende gebruikers gaan voor: geen identiteitszin op
-de startpagina zelf. Wie voor het eerst komt en nieuwsgierig is, komt
-de popover tegen.
+**Wel:** orthodox kruis (zelfde merkteken als de andere
+orthodox-ronl-sites) links van de sitenaam. De sitenaam is een link
+naar vandaag. Het kruis opent een popover: wat de site is, en dat ze
+nog jong is (teksten nog niet nagekeken door mensen die van huis uit
+orthodox zijn; die toets wordt gezocht). Eerste bezoek aan `/`: de
+popover gaat vanzelf open en sluit na klik of enkele seconden; daarna
+gedraagt het kruis zich als elke andere info-tip. Terugkerende
+gebruikers: geen identiteitszin in de body.
 
-**Niet:** een tweede navigatie; interne padnamen (`data/`, YAML).
+**Niet:** een tweede navigatie; interne padnamen (`data/`, YAML);
+«ras-orthodoxen» in de UI.
 
 ## Identiteitszin (body van `_index.md`)
 

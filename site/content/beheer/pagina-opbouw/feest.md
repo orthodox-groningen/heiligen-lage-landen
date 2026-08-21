@@ -34,9 +34,20 @@ daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
 
 ## Betekenis
 
-**Niet (nu):** een apart betekenis-veld. Feestpagina’s zijn kalenderfeit
-(wat/wanneer) plus verhaal. Catechetische «wat dit feest zegt» en troparia/kondaken: zie
-[Ideeën]({{% ref "/beheer/ideeen" %}}) (nog niet bouwen).
+**Wel:** 1–3 alinea’s ná het verhaal: wat dit feest zegt over de weg
+naar God. Orthodox, weinig jargon, geen preek. Alleen als YAML
+`betekenis` heeft. Nu: de twaalf grootfeesten en Pascha (feest der
+feesten). Zelfde bronlaag als de rest van de pagina. De kop
+**Betekenis** heeft een popover: ontbreekt `goedkeuring`, dan dat de
+tekst is ontleend aan de genoemde bron(nen) en dat we nog iemand
+zoeken die van huis uit orthodox is om haar te toetsen; anders wie
+goedkeurde (en eventuele opmerking).
+
+**Niet:** herhaling van het verhaal; preek; troparion/kondakion;
+«Betekenis voor de Lage Landen» (feesten hebben dat niet). Geen
+apart betekenis-stuk op voorfeest, nafeest, synaxis of weken.
+Troparia: [Ideeën]({{% ref "/beheer/ideeen" %}}).
+Verwar `goedkeuring` niet met `bronlaag`.
 
 ## Samenvatting en verhaal
 

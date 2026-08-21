@@ -7,6 +7,7 @@ import json
 import shutil
 import sys
 from datetime import date, timedelta
+from html import escape as html_escape
 from pathlib import Path
 from typing import Any
 
@@ -98,6 +99,42 @@ def _append_occ(bucket: dict[str, list[str]], d: date) -> None:
 def yaml_quote(value: str) -> str:
     escaped = value.replace("\\", "\\\\").replace('"', '\\"')
     return f'"{escaped}"'
+
+
+def betekenis_bron_labels(entry: dict[str, Any]) -> list[str]:
+    """Bronnen waar de betekenistekst op steunt (voorkeur: Orthodoxe geloof)."""
+    faith: list[str] = []
+    other: list[str] = []
+    for ref in entry.get("referenties") or []:
+        label = str(ref.get("label") or "").strip()
+        if not label:
+            continue
+        url = str(ref.get("url") or "").lower()
+        if "orthodoxe geloof" in label.lower() or "/the-orthodox-faith/" in url:
+            faith.append(label)
+        else:
+            other.append(label)
+    return faith or other
+
+
+def betekenis_heading_html(entry: dict[str, Any]) -> str:
+    """Kop Betekenis met popover over goedkeuring (of het ontbreken daarvan)."""
+    items = entry.get("goedkeuring") or []
+    payload = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+    attr = html_escape(payload, quote=True)
+    bronnen = json.dumps(
+        betekenis_bron_labels(entry),
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+    bron_attr = html_escape(bronnen, quote=True)
+    return (
+        '<h2><span class="info-term" tabindex="0" '
+        'data-info-tip="betekenis-goedkeuring" '
+        f'data-goedkeuring="{attr}" '
+        f'data-betekenis-bronnen="{bron_attr}" '
+        'title="Over deze betekenistekst">Betekenis</span></h2>'
+    )
 
 
 def write_text(path: Path, text: str) -> None:
@@ -455,6 +492,13 @@ def write_entry_page(entry: dict[str, Any]) -> None:
         body.append("")
         body.append(entry["verhaal"].strip())
         body.append("")
+    if entry.get("soort") == "feest":
+        betekenis_feest = (entry.get("betekenis") or "").strip()
+        if betekenis_feest:
+            body.append(betekenis_heading_html(entry))
+            body.append("")
+            body.append(betekenis_feest)
+            body.append("")
     body.append("## Verder lezen en kijken")
     body.append("")
     body.append(render_refs_md(entry.get("referenties") or []))

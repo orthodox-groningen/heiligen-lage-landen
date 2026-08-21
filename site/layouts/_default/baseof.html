@@ -15,14 +15,22 @@
   </script>
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | relURL }}">
+  <link rel="shortcut icon" href="{{ "images/favicon.ico" | relURL }}">
   {{ $css := resources.Get "css/site.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
-<body data-base="{{ "" | absURL }}">
+<body data-base="{{ "" | absURL }}" data-home="{{ if .IsHome }}true{{ else }}false{{ end }}">
   <a class="skip-link" href="#main">Naar inhoud</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="{{ "" | relURL }}" data-info-tip="site" title="Wat staat er op deze site">{{ .Site.Title }}</a>
+      <div class="brand-block">
+        <button type="button" class="brand-mark" data-info-tip="site" title="Over deze kalender" aria-label="Over deze kalender">
+          <img src="{{ "images/favicon-32x32.png" | relURL }}" width="32" height="32" alt="">
+        </button>
+        <a class="brand" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+      </div>
       <div class="header-tools">
         <nav class="nav" aria-label="Hoofdnavigatie">
           {{/* absURL: relURL "kalender/" botst met Pages-base /kalender/ + canonifyURLs */}}
