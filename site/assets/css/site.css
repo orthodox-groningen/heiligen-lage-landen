@@ -1998,6 +1998,54 @@ html[data-theme="light"] .vasten-badge-vrij {
   color: var(--muted);
 }
 
+.reactie-form {
+  margin: 1.25rem 0 1.75rem;
+  padding: 1rem 1.1rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--bg-elev);
+}
+
+.reactie-form fieldset {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.reactie-form legend {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.reactie-field {
+  margin: 0.65rem 0;
+}
+
+.reactie-field label {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gold-soft);
+  margin-bottom: 0.35rem;
+}
+
+.reactie-form input,
+.reactie-form select,
+.reactie-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.reactie-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
 @media (max-width: 640px) {
   .header-inner {
     align-items: flex-start;

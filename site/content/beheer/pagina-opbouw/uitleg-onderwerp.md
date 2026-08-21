@@ -32,8 +32,8 @@ pagina.
 
 Reactie geven heeft geen `*-technisch`; daar is de voet geen
 verplichting. Die pagina: hoe een vraag of correctie binnenkomt
-(GitHub-issues); geen beheer-how-to. E-mail «later» beloven zonder
-adres is een open punt, geen stille tekstschrapping hier.
+(e-mail via `params.feedback_email`; GitHub-issues optioneel); geen
+beheer-how-to.
 
 ## Navigatie onderaan
 

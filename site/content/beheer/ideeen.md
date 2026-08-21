@@ -45,9 +45,4 @@ Lage-Landen-heiligen), duidelijk gemerkt, met link naar de parochiesite.
 Pas als er een onderhouden lijst van parochiesites is. Geen vermenging
 met `selectie: voldoet`.
 
-## Overig (niet vergeten)
-
-- E-mailadres op [Reactie geven]({{% ref "/uitleg/reactie" %}}) (nu alleen
-  GitHub).
-
 **Volgende na de huidige contractpunten:** betekenis van feesten (hierboven).
