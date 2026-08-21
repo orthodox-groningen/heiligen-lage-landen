@@ -331,23 +331,40 @@
       "01-13": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-14": {
         "apostel": [
@@ -5263,23 +5280,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "1 Kor. 1:3-9"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:3-12"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "11e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 1:3-9"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:3-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -5465,23 +5499,40 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "1 Kor. 15:1-11"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:16-26"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "12e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 15:1-11"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:16-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
@@ -5601,25 +5652,42 @@
       "09-21": {
         "apostel": [
           {
-            "ref": "1 Kor. 2:6-9"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 2:6-9"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -7801,20 +7869,37 @@
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "26e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Gal. 3:8-12"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "12-22": {
         "apostel": [
@@ -8226,46 +8311,80 @@
       "01-04": {
         "apostel": [
           {
-            "ref": "Ef. 1:16-23"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:3-12"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "28e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 1:16-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:3-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-05": {
         "apostel": [
           {
-            "ref": "Kol. 1:12-18"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 18:23-35"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "28e zondag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:12-18"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 18:23-35"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -8414,24 +8533,41 @@
       "01-11": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-12": {
         "apostel": [
@@ -13385,23 +13521,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "1 Kor. 16:13-24"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 21:33-42"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 16:13-24"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 21:33-42"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -13528,23 +13681,40 @@
       "09-13": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:1-5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 23:1-12"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:1-5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 23:1-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-14": {
         "apostel": [
@@ -13692,44 +13862,78 @@
       "09-20": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:1-13"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:1-13"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-21": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:35-46"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:35-46"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -15890,25 +16094,42 @@
       "12-20": {
         "apostel": [
           {
-            "ref": "Ef. 1:16-23"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "28e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 1:16-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "12-21": {
         "apostel": [
@@ -16313,44 +16534,78 @@
       "01-03": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-04": {
         "apostel": [
           {
-            "ref": "Kol. 3:12-16"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:18-27"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 3:12-16"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:18-27"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-05": {
         "apostel": [
@@ -16494,23 +16749,40 @@
       "01-10": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-11": {
         "apostel": [
@@ -21605,44 +21877,78 @@
       "09-12": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:1-13"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:1-13"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-13": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:35-46"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:35-46"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-14": {
         "apostel": [
@@ -21769,44 +22075,78 @@
       "09-19": {
         "apostel": [
           {
-            "ref": "1 Kor. 10:23-28"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:34-44"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 10:23-28"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:34-44"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-20": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 25:14-30"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 25:14-30"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-21": {
         "apostel": [
@@ -23974,25 +24314,42 @@
       "12-19": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "12-20": {
         "apostel": [
@@ -24404,23 +24761,40 @@
       "01-03": {
         "apostel": [
           {
-            "ref": "1 Tim. 1:15-17"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:35-43"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tim. 1:15-17"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:35-43"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-04": {
         "apostel": [
@@ -24564,23 +24938,40 @@
       "01-09": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-10": {
         "apostel": [
@@ -29694,44 +30085,78 @@
       "09-11": {
         "apostel": [
           {
-            "ref": "1 Kor. 1:26-29"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "12e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 1:26-29"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-12": {
         "apostel": [
           {
-            "ref": "1 Kor. 15:1-11"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:16-26"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "12e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 15:1-11"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:16-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-13": {
         "apostel": [
@@ -29858,44 +30283,78 @@
       "09-18": {
         "apostel": [
           {
-            "ref": "1 Kor. 2:6-9"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:15-22"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 2:6-9"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:15-22"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-19": {
         "apostel": [
           {
-            "ref": "1 Kor. 16:13-24"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 21:33-42"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 16:13-24"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 21:33-42"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-20": {
         "apostel": [
@@ -32054,20 +32513,37 @@
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "26e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Gal. 3:8-12"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "12-19": {
         "apostel": [
@@ -32653,24 +33129,41 @@
       "01-08": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-09": {
         "apostel": [
@@ -37751,44 +38244,78 @@
       "09-09": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:1-5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 23:1-12"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:1-5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 23:1-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-10": {
         "apostel": [
           {
-            "ref": "2 Kor. 1:21-2:4"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:1-14"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 1:21-2:4"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:1-14"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-11": {
         "apostel": [
@@ -37915,44 +38442,78 @@
       "09-16": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:1-13"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:1-13"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-17": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:35-46"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:35-46"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-18": {
         "apostel": [
@@ -40171,24 +40732,41 @@
       "12-23": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans"
+          ]
+        }
       },
       "12-24": {
         "apostel": [
@@ -40371,41 +40949,58 @@
       "12-30": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
-          }
-        ],
-        "regels": [
-          "R3"
-        ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
-        "status": "gevonden",
-        "rang": null,
-        "modus": null
-      },
-      "12-31": {
-        "apostel": [
-          {
-            "ref": "Gal. 1:11-19"
-          }
-        ],
-        "evangelie": [
-          {
-            "ref": "Matt. 2:13-23"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
           "R2",
           "R5"
         ],
-        "override_id": "zondag-na-kerst",
-        "daglabel": "Zondag na Kerst",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
+        "status": "gevonden",
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
+      },
+      "12-31": {
+        "apostel": [
+          {
+            "ref": "2 Tim. 4:5-8"
+          }
+        ],
+        "evangelie": [
+          {
+            "ref": "Mark. 1:1-8"
+          }
+        ],
+        "regels": [
+          "R2",
+          "R5"
+        ],
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
         "toelichting": "R5 vervangen",
         "status": "gevonden",
         "rang": "groot",
@@ -40759,23 +41354,40 @@
       "01-13": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-14": {
         "apostel": [
@@ -45726,23 +46338,40 @@
       "09-09": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:35-46"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:35-46"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-10": {
         "apostel": [
@@ -45869,44 +46498,78 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "1 Kor. 10:23-28"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:34-44"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 10:23-28"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:34-44"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 25:14-30"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 25:14-30"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-17": {
         "apostel": [
@@ -48211,23 +48874,40 @@
       "12-22": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-23": {
         "apostel": [
@@ -48430,20 +49110,20 @@
       "12-30": {
         "apostel": [
           {
-            "ref": "Gal. 1:11-19"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 2:13-23"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
           "R2",
           "R5"
         ],
-        "override_id": "zondag-na-kerst",
-        "daglabel": "Zondag na Kerst",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
         "toelichting": "R5 vervangen",
         "status": "gevonden",
         "rang": "groot",
@@ -48616,23 +49296,40 @@
       "01-05": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -48797,23 +49494,40 @@
       "01-12": {
         "apostel": [
           {
-            "ref": "2 Tim. 2:11-19"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:2-8"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "33e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Tim. 2:11-19"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:2-8"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-13": {
         "apostel": [
@@ -53763,23 +54477,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "1 Kor. 1:26-29"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "12e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 1:26-29"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -53965,23 +54696,40 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "1 Kor. 16:13-24"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 21:33-42"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 16:13-24"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 21:33-42"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
@@ -54101,25 +54849,42 @@
       "09-21": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:1-5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:1-5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -56296,25 +57061,42 @@
       "12-21": {
         "apostel": [
           {
-            "ref": "Gal. 5:22-6:2"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "27e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Gal. 5:22-6:2"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "12-22": {
         "apostel": [
@@ -56726,46 +57508,80 @@
       "01-04": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-05": {
         "apostel": [
           {
-            "ref": "Kol. 3:4-11"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:16-26"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zondag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 3:4-11"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:16-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -56909,23 +57725,40 @@
       "01-11": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-12": {
         "apostel": [
@@ -61878,23 +62711,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "2 Kor. 1:21-2:4"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 22:1-14"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 1:21-2:4"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 22:1-14"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -62021,23 +62871,40 @@
       "09-13": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:1-13"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:1-13"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-14": {
         "apostel": [
@@ -62185,44 +63052,78 @@
       "09-20": {
         "apostel": [
           {
-            "ref": "1 Kor. 10:23-28"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:34-44"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 10:23-28"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:34-44"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-21": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 25:14-30"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 25:14-30"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -64383,25 +65284,42 @@
       "12-20": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "12-21": {
         "apostel": [
@@ -70066,25 +70984,42 @@
       "09-09": {
         "apostel": [
           {
-            "ref": "1 Kor. 16:13-24"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "13e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 16:13-24"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-10": {
         "apostel": [
@@ -70221,48 +71156,82 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:1-5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:1-5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
           {
-            "ref": "2 Kor. 1:21-2:4"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 1:21-2:4"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-17": {
         "apostel": [
@@ -72574,24 +73543,41 @@
       "12-22": {
         "apostel": [
           {
-            "ref": "Ef. 1:16-23"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:3-12"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "28e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 1:16-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:3-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "12-23": {
         "apostel": [
@@ -72801,20 +73787,20 @@
       "12-30": {
         "apostel": [
           {
-            "ref": "Gal. 1:11-19"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 2:13-23"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
           "R2",
           "R5"
         ],
-        "override_id": "zondag-na-kerst",
-        "daglabel": "Zondag na Kerst",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
         "toelichting": "R5 vervangen",
         "status": "gevonden",
         "rang": "groot",
@@ -72988,23 +73974,40 @@
       "01-05": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -73169,23 +74172,40 @@
       "01-12": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-13": {
         "apostel": [
@@ -78110,23 +79130,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:1-13"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:1-13"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -78324,25 +79361,42 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
@@ -78462,25 +79516,42 @@
       "09-21": {
         "apostel": [
           {
-            "ref": "1 Kor. 14:20-25"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 14:20-25"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -80647,23 +81718,40 @@
       "12-21": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-22": {
         "apostel": [
@@ -81052,44 +82140,78 @@
       "01-04": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-05": {
         "apostel": [
           {
-            "ref": "1 Tim. 4:9-15"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 19:1-10"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tim. 4:9-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 19:1-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -81233,23 +82355,40 @@
       "01-11": {
         "apostel": [
           {
-            "ref": "2 Tim. 2:11-19"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:2-8"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "33e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Tim. 2:11-19"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:2-8"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-12": {
         "apostel": [
@@ -86175,23 +87314,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 25:14-30"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 25:14-30"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -86328,25 +87484,42 @@
       "09-13": {
         "apostel": [
           {
-            "ref": "1 Kor. 14:20-25"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 14:20-25"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-14": {
         "apostel": [
@@ -86506,48 +87679,82 @@
       "09-20": {
         "apostel": [
           {
-            "ref": "1 Kor. 15:39-45"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "18e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 15:39-45"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-21": {
         "apostel": [
           {
-            "ref": "2 Kor. 9:6-11"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "18e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 9:6-11"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -88684,23 +89891,40 @@
       "12-20": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-21": {
         "apostel": [
@@ -89089,44 +90313,78 @@
       "01-03": {
         "apostel": [
           {
-            "ref": "2 Tim. 2:11-19"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:2-8"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "33e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Tim. 2:11-19"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:2-8"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-04": {
         "apostel": [
           {
-            "ref": "2 Tim. 3:10-15"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:10-14"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "33e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Tim. 3:10-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:10-14"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-05": {
         "apostel": [
@@ -89275,24 +90533,41 @@
       "01-10": {
         "apostel": [
           {
-            "ref": "Ef. 5:1-8"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 14:1-11"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-theofanie-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zaterdag na Pinksteren (Theofanie-otstupka)",
-        "toelichting": "R3+R3-theofanie-otstupka",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 5:1-8"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 14:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-theofanie-otstupka"
+          ]
+        }
       },
       "01-11": {
         "apostel": [
@@ -94419,48 +95694,82 @@
       "09-12": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:1-5"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:1-5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-13": {
         "apostel": [
           {
-            "ref": "2 Kor. 1:21-2:4"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 1:21-2:4"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-14": {
         "apostel": [
@@ -94597,48 +95906,82 @@
       "09-19": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-20": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-21": {
         "apostel": [
@@ -96806,24 +98149,41 @@
       "12-19": {
         "apostel": [
           {
-            "ref": "Ef. 1:16-23"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 19:3-12"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "28e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 1:16-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 19:3-12"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "12-20": {
         "apostel": [
@@ -97241,23 +98601,40 @@
       "01-03": {
         "apostel": [
           {
-            "ref": "Kol. 3:12-16"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:18-27"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "30e zondag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 3:12-16"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:18-27"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-04": {
         "apostel": [
@@ -97401,23 +98778,40 @@
       "01-09": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-10": {
         "apostel": [
@@ -102503,46 +103897,80 @@
       "09-10": {
         "apostel": [
           {
-            "ref": "1 Kor. 10:23-28"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 10:23-28"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans"
+          ]
+        }
       },
       "09-11": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:1-10"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:1-10"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans"
+          ]
+        }
       },
       "09-12": {
         "apostel": [
@@ -102674,46 +104102,80 @@
       "09-17": {
         "apostel": [
           {
-            "ref": "1 Kor. 14:20-25"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 14:20-25"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans"
+          ]
+        }
       },
       "09-18": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:16-7:1"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:16-7:1"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans"
+          ]
+        }
       },
       "09-19": {
         "apostel": [
@@ -104937,23 +106399,40 @@
       "12-24": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-25": {
         "apostel": [
@@ -105118,23 +106597,40 @@
       "12-31": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       }
     },
     "2029": {
@@ -110437,48 +111933,82 @@
       "09-09": {
         "apostel": [
           {
-            "ref": "1 Kor. 14:20-25"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 4:31-36"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 14:20-25"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 4:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-10": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:16-7:1"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:16-7:1"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-11": {
         "apostel": [
@@ -110615,48 +112145,82 @@
       "09-16": {
         "apostel": [
           {
-            "ref": "1 Kor. 15:39-45"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "18e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 15:39-45"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-17": {
         "apostel": [
           {
-            "ref": "2 Kor. 9:6-11"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "18e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 9:6-11"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-18": {
         "apostel": [
@@ -112933,23 +114497,40 @@
       "12-23": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-24": {
         "apostel": [
@@ -113131,41 +114712,58 @@
       "12-30": {
         "apostel": [
           {
-            "ref": "2 Tim. 2:11-19"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 18:2-8"
-          }
-        ],
-        "regels": [
-          "R3"
-        ],
-        "override_id": null,
-        "daglabel": "33e zaterdag na Pinksteren",
-        "toelichting": "R3",
-        "status": "gevonden",
-        "rang": null,
-        "modus": null
-      },
-      "12-31": {
-        "apostel": [
-          {
-            "ref": "Gal. 1:11-19"
-          }
-        ],
-        "evangelie": [
-          {
-            "ref": "Matt. 2:13-23"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
           "R2",
           "R5"
         ],
-        "override_id": "zondag-na-kerst",
-        "daglabel": "Zondag na Kerst",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
+        "status": "gevonden",
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Tim. 2:11-19"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 18:2-8"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
+      },
+      "12-31": {
+        "apostel": [
+          {
+            "ref": "2 Tim. 4:5-8"
+          }
+        ],
+        "evangelie": [
+          {
+            "ref": "Mark. 1:1-8"
+          }
+        ],
+        "regels": [
+          "R2",
+          "R5"
+        ],
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
         "toelichting": "R5 vervangen",
         "status": "gevonden",
         "rang": "groot",
@@ -113531,24 +115129,41 @@
       "01-13": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3",
-          "R3-theofanie-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren (Theofanie-otstupka)",
-        "toelichting": "R3+R3-theofanie-otstupka",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-theofanie-otstupka"
+          ]
+        }
       },
       "01-14": {
         "apostel": [
@@ -118526,25 +120141,42 @@
       "09-09": {
         "apostel": [
           {
-            "ref": "2 Kor. 1:21-2:4"
+            "ref": "Gal. 6:11-18"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Joh. 3:13-17"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "14e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-voor-kruisverheffing",
+        "daglabel": "Zondag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 1:21-2:4"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-10": {
         "apostel": [
@@ -118681,48 +120313,82 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "1 Kor. 4:17-5:5"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 4:17-5:5"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
           {
-            "ref": "2 Kor. 4:6-15"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 6:31-36"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-prestupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "15e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-prestupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 4:6-15"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 6:31-36"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-prestupka"
+          ]
+        }
       },
       "09-17": {
         "apostel": [
@@ -121034,24 +122700,41 @@
       "12-22": {
         "apostel": [
           {
-            "ref": "Ef. 2:11-13"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 20:29-34"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "29e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-otstupka",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Ef. 2:11-13"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 20:29-34"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-otstupka"
+          ]
+        }
       },
       "12-23": {
         "apostel": [
@@ -121255,20 +122938,20 @@
       "12-30": {
         "apostel": [
           {
-            "ref": "Gal. 1:11-19"
+            "ref": "2 Tim. 4:5-8"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 2:13-23"
+            "ref": "Mark. 1:1-8"
           }
         ],
         "regels": [
           "R2",
           "R5"
         ],
-        "override_id": "zondag-na-kerst",
-        "daglabel": "Zondag na Kerst",
+        "override_id": "zondag-voor-theofanie",
+        "daglabel": "Zondag vóór Theofanie",
         "toelichting": "R5 vervangen",
         "status": "gevonden",
         "rang": "groot",
@@ -121441,23 +123124,40 @@
       "01-05": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "1 Tim. 3:14-4:5"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Matt. 3:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-theofanie",
+        "daglabel": "Zaterdag vóór Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-06": {
         "apostel": [
@@ -121622,23 +123322,40 @@
       "01-12": {
         "apostel": [
           {
-            "ref": "1 Tess. 5:14-23"
+            "ref": "Ef. 6:10-17"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 17:3-10"
+            "ref": "Matt. 4:1-11"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "32e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-na-theofanie",
+        "daglabel": "Zaterdag na Theofanie",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Tess. 5:14-23"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 17:3-10"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "01-13": {
         "apostel": [
@@ -126564,23 +128281,40 @@
       "09-07": {
         "apostel": [
           {
-            "ref": "1 Kor. 10:23-28"
+            "ref": "1 Kor. 2:6-9"
           }
         ],
         "evangelie": [
           {
-            "ref": "Matt. 24:34-44"
+            "ref": "Matt. 10:37-11:1"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "16e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kruisverheffing",
+        "daglabel": "Zaterdag vóór Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 10:23-28"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Matt. 24:34-44"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "09-08": {
         "apostel": [
@@ -126778,25 +128512,42 @@
       "09-15": {
         "apostel": [
           {
-            "ref": "2 Kor. 6:16-7:1"
+            "ref": "Gal. 2:16-20"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:1-11"
+            "ref": "Mark. 8:34-9:1"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "17e zondag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zondag-na-kruisverheffing",
+        "daglabel": "Zondag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "2 Kor. 6:16-7:1"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:1-11"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-16": {
         "apostel": [
@@ -126916,25 +128667,42 @@
       "09-21": {
         "apostel": [
           {
-            "ref": "1 Kor. 15:39-45"
+            "ref": "1 Kor. 1:26-29"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 5:17-26"
+            "ref": "Joh. 8:21-30"
           }
         ],
         "regels": [
-          "R3",
-          "R3-lucaans",
-          "R3-otstupka"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "18e zaterdag na Pinksteren",
-        "toelichting": "R3+R3-lucaans+R3-otstupka",
+        "override_id": "zaterdag-na-kruisverheffing",
+        "daglabel": "Zaterdag na Kruisverheffing",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "1 Kor. 15:39-45"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 5:17-26"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3",
+            "R3-lucaans",
+            "R3-otstupka"
+          ]
+        }
       },
       "09-22": {
         "apostel": [
@@ -129087,23 +130855,40 @@
       "12-21": {
         "apostel": [
           {
-            "ref": "Kol. 1:3-6"
+            "ref": "Gal. 3:8-12"
           }
         ],
         "evangelie": [
           {
-            "ref": "Luc. 16:10-15"
+            "ref": "Luc. 13:18-29"
           }
         ],
         "regels": [
-          "R3"
+          "R2",
+          "R5"
         ],
-        "override_id": null,
-        "daglabel": "31e zaterdag na Pinksteren",
-        "toelichting": "R3",
+        "override_id": "zaterdag-voor-kerst",
+        "daglabel": "Zaterdag vóór Kerst",
+        "toelichting": "R5 vervangen",
         "status": "gevonden",
-        "rang": null,
-        "modus": null
+        "rang": "groot",
+        "modus": "vervangen",
+        "rijadovoe": {
+          "apostel": [
+            {
+              "ref": "Kol. 1:3-6"
+            }
+          ],
+          "evangelie": [
+            {
+              "ref": "Luc. 16:10-15"
+            }
+          ],
+          "status": "gevonden",
+          "regels": [
+            "R3"
+          ]
+        }
       },
       "12-22": {
         "apostel": [

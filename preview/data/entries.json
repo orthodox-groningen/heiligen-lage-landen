@@ -782,6 +782,40 @@
     "feestdatum_gregoriaans": null
   },
   {
+    "id": "egbert-van-rathmelsigi",
+    "soort": "heilige",
+    "cyclus": "jaar",
+    "vorm": "dag",
+    "naam": "Egbert van Rathmelsigi",
+    "alternatief": [
+      "Egbert van Rath Melsigi",
+      "Egbert van Iona",
+      "Egbert van Northumbrië",
+      "Ecgberht",
+      "Egbertus"
+    ],
+    "titels": [
+      "Abt van Rath Melsigi",
+      "Missionaris-inspirator"
+    ],
+    "samenvatting": "Angelsaksische abt te Rath Melsigi; zond missionarissen naar Friesland\n(o.a. Willibrord), ging zelf niet mee. Overleden op Pasen 24 april 729.\nOp de Orthodoxe kalender ook herdacht op 23 december.",
+    "url": "/heiligen/egbert-van-rathmelsigi/",
+    "lage_landen": true,
+    "bronlaag": "nagekeken",
+    "observances": [
+      "heilige"
+    ],
+    "onderdrukt_wekelijks_vasten": false,
+    "icoon": null,
+    "betekenis_lage_landen": "Egbert bleef in Ierland, maar Rath Melsigi werd onder hem kweekschool\nvoor de Friese missie. Hij zond Wigbert, later Willibrord en anderen.\nTitus Brandsma noemde die rol instrumenteel voor de kerstening van de\nLage Landen. De band is reëel maar indirect — daarom nader-onderzoek,\ngeen actieve jacht op vergelijkbare heiligen.",
+    "locaties": [
+      "rath-melsigi"
+    ],
+    "feestdatum": "04-24",
+    "feestdatum_juliaans": null,
+    "feestdatum_gregoriaans": null
+  },
+  {
     "id": "floribert",
     "soort": "heilige",
     "cyclus": "jaar",
@@ -3229,40 +3263,6 @@
       "utrecht"
     ],
     "feestdatum": "12-22",
-    "feestdatum_juliaans": null,
-    "feestdatum_gregoriaans": null
-  },
-  {
-    "id": "egbert-van-rathmelsigi",
-    "soort": "heilige",
-    "cyclus": "jaar",
-    "vorm": "dag",
-    "naam": "Egbert van Rathmelsigi",
-    "alternatief": [
-      "Egbert van Rath Melsigi",
-      "Egbert van Iona",
-      "Egbert van Northumbrië",
-      "Ecgberht",
-      "Egbertus"
-    ],
-    "titels": [
-      "Abt van Rath Melsigi",
-      "Missionaris-inspirator"
-    ],
-    "samenvatting": "Angelsaksische abt te Rath Melsigi; zond missionarissen naar Friesland\n(o.a. Willibrord), ging zelf niet mee. Feestdag vaak 24 april.",
-    "url": "/heiligen/egbert-van-rathmelsigi/",
-    "lage_landen": true,
-    "bronlaag": "nagekeken",
-    "observances": [
-      "heilige"
-    ],
-    "onderdrukt_wekelijks_vasten": false,
-    "icoon": null,
-    "betekenis_lage_landen": "Egbert bleef in Ierland, maar Rath Melsigi werd onder hem kweekschool\nvoor de Friese missie. Hij zond Wigbert, later Willibrord en anderen.\nTitus Brandsma noemde die rol instrumenteel voor de kerstening van de\nLage Landen. De band is reëel maar indirect — daarom nader-onderzoek,\ngeen actieve jacht op vergelijkbare heiligen.",
-    "locaties": [
-      "rath-melsigi"
-    ],
-    "feestdatum": "12-23",
     "feestdatum_juliaans": null,
     "feestdatum_gregoriaans": null
   },

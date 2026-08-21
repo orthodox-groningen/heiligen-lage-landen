@@ -1,8 +1,8 @@
-<!doctype html><html lang=nl data-theme=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>(function(){try{var e=localStorage.getItem("site-theme");(e==="light"||e==="dark")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><title>Lezingen van de dag (technisch) · Orthodoxe Kalender met Heiligen van de Lage Landen</title><meta name=description content="Normatieve specificatie: regels, bestanden en implementatiestatus"><link rel=stylesheet href=https://orthodox-ronl.github.io/kalender/preview/css/site.min.5fd89d265e6981900c380290ee8ec4794a0b619e20d15c9f7e21afa9a3935b18.css></head><body data-base=https://orthodox-ronl.github.io/kalender/preview/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-ronl.github.io/kalender/preview/ data-info-tip=site title="Wat staat er op deze site">Orthodoxe Kalender met Heiligen van de Lage Landen</a><div class=header-tools><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-ronl.github.io/kalender/preview/kalender/>Kalender</a>
+<!doctype html><html lang=nl data-theme=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>(function(){try{var e=localStorage.getItem("site-theme");(e==="light"||e==="dark")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><title>Lezingen van de dag (technisch) · Orthodoxe Kalender met Heiligen van de Lage Landen</title><meta name=description content="Normatieve specificatie: regels, bestanden en implementatiestatus"><link rel=stylesheet href=https://orthodox-ronl.github.io/kalender/preview/css/site.min.989a2886175ff76bb4dca1d4acd10bf917274c7d589bf4262649176c223280ed.css></head><body data-base=https://orthodox-ronl.github.io/kalender/preview/><a class=skip-link href=#main>Naar inhoud</a><header class=site-header><div class="wrap header-inner"><a class=brand href=https://orthodox-ronl.github.io/kalender/preview/ data-info-tip=site title="Wat staat er op deze site">Orthodoxe Kalender met Heiligen van de Lage Landen</a><div class=header-tools><nav class=nav aria-label=Hoofdnavigatie><a href=https://orthodox-ronl.github.io/kalender/preview/kalender/>Kalender</a>
 <a href=https://orthodox-ronl.github.io/kalender/preview/lezingenrooster/>Lezingenrooster</a>
-<a href=https://orthodox-ronl.github.io/kalender/preview/synaxarion/>Synaxarion</a>
-<a href=https://orthodox-ronl.github.io/kalender/preview/heiligen/>Heiligen</a>
-<a href=https://orthodox-ronl.github.io/kalender/preview/agenda/>Agenda</a>
+<a href=https://orthodox-ronl.github.io/kalender/preview/synaxarion/>Synaxarion</a><details class=nav-dropdown><summary>Overzichten</summary><div class=nav-dropdown-panel><a href=https://orthodox-ronl.github.io/kalender/preview/heiligen/>Heiligen</a>
+<a href=https://orthodox-ronl.github.io/kalender/preview/feesten/>Feesten</a>
+<a href=https://orthodox-ronl.github.io/kalender/preview/vasten/>Vasten</a></div></details><a href=https://orthodox-ronl.github.io/kalender/preview/agenda/>Agenda</a>
 <a href=https://orthodox-ronl.github.io/kalender/preview/uitleg/>Uitleg</a></nav><span class=theme-toggle role=group aria-label=Kleurthema><button type=button class=theme-btn data-theme-set=dark aria-pressed=true>Donker</button>
 <button type=button class=theme-btn data-theme-set=light aria-pressed=false>Licht</button></span></div></div></header><main id=main class="wrap main main-wide"><article class="page uitleg-page uitleg-lezingen-technisch"><h1>Lezingen van de dag (technisch)</h1><p>Deze pagina is de <strong>technische spiegel</strong> van <code>docs/specs/lezingen.md</code>. Wijzig die specificatie (regels + voorbeelden); daarna moet <code>scripts/lezingen.py</code> meekomen — pytest bewaakt dat.</p><p>Voor overleg met de clerus: <a href=https://orthodox-ronl.github.io/kalender/preview/uitleg/lezingen/>Lezingen van de dag</a>.</p><hr><p>Normatieve specificatie voor <a href=https://github.com/orthodox-ronl/kalender>kalender</a>.
 Wijzigingen hier zijn bindend voor <code>scripts/lezingen.py</code>. Publieke pagina’s:</p><ul><li><strong>Clerus:</strong> <code>/uitleg/lezingen/</code> — regels in gewone taal (geen YAML).</li><li><strong>Technisch:</strong> <code>/uitleg/lezingen-technisch/</code> — deze specificatie (spiegel);
@@ -58,14 +58,22 @@ drukwerk) en <code>geraadpleegd</code>-datum.</p><h2 id=verantwoording--bronnen>
 </span></span></code></pre></div><p>Matchvelden (zelfde als gedeeld): <code>mmdd</code>, <code>paascyclus_offset</code>,
 <code>paascyclus_offset_in</code> (met optioneel <code>stijl: oud</code>), en
 <code>weekdag_relatief</code> (<code>anker</code>, <code>weekdag</code>, <code>welke</code>, <code>richting</code>) voor de
-zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of een
-ander anker als vaste offset: vooralsnog via <code>mmdd</code> of <code>weekdag_relatief</code>;
-een apart <code>theofanie_offset</code>-veld is niet nodig zolang <code>anker: "01-06"</code>
-volstaat.</p><p><strong>Zondagen rond Kerst</strong> (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
+zaterdag of zondag vóór/ná een vaste feestdatum. Relatief t.o.v. Theofanie of
+een ander anker als vaste offset: vooralsnog via <code>mmdd</code> of
+<code>weekdag_relatief</code>; een apart <code>theofanie_offset</code>-veld is niet nodig zolang
+<code>anker: "01-06"</code> volstaat. Match loopt over ankerjaar − 1, 0 en + 1
+(zondag ná Kerst op 1 jan.; zaterdag/zondag vóór Theofanie in december).</p><p><strong>Zondagen rond Kerst</strong> (Voorvaderen; Heilige Vaderen vóór Kerst; zondag
 ná Kerst; zondag ná Theofanie): gemodelleerd als <code>datum.weekdag_relatief</code>
 en als lezingenoverride met hetzelfde matchveld. Bij samenval met een
 grootfeest (Besnijdenis, synaxis) wint dat feest (<code>prioriteit</code> 90 vs 100);
-geen gegokte combinatielezing.</p><p>Voorbeeldbestand (niet actief tenzij gekozen): <code>data/lezingen/parochies/voorbeeld.yaml</code>.
+geen gegokte combinatielezing.</p><p><strong>Lezingendagen zonder eigen feestdienst</strong> (geen stichira/canon, géén
+<code>soort: feest</code>-entries, alleen overrides via <code>weekdag_relatief</code>,
+<code>prioriteit</code> 90):</p><table><thead><tr><th>Anker</th><th>Dagen</th></tr></thead><tbody><tr><td>14 sept.</td><td>zaterdag/zondag vóór en ná Kruisverheffing</td></tr><tr><td>6 jan.</td><td>zaterdag/zondag vóór Theofanie; zaterdag ná Theofanie</td></tr><tr><td>25 dec.</td><td>zaterdag vóór Kerst</td></tr></tbody></table><p>Bij samenval wint het grootfeest (Theofanie, Kerst, Besnijdenis, synaxis,
+Geboorte Moeder Gods, Kruisverheffing zelf). De zondag ná Kruisverheffing
+is tevens het anker van de Lucaanse sprong (R3). Perikopen volgen Moskou
+(Azbyka); een parochieboekje is checklist, geen bron om de gedeelde lijst
+te herschrijven. Wijkt een boekje in verzen af (bijv. zaterdag ná
+Kruisverheffing, Onthoofding, zaterdag vóór Theofanie), dan blijft Moskou.</p><p>Voorbeeldbestand (niet actief tenzij gekozen): <code>data/lezingen/parochies/voorbeeld.yaml</code>.
 Actief in deze repo: <code>parochie: den-haag</code> (Orthodox klooster Johannes de
 Voorloper, Den Haag — niet Groningen). <code>parochies/groningen.yaml</code> staat
 klaar zonder overrides; omzetten is één regel in <code>config.yaml</code>. Niet
@@ -79,4 +87,4 @@ stilzwijgend wijzigen.</p><p class="hint uitleg-nav"><a href=https://orthodox-ro
 ·
 <a href=https://orthodox-ronl.github.io/kalender/preview/uitleg/reactie/>Reactie</a>
 ·
-<a href=https://orthodox-ronl.github.io/kalender/preview/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-20</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-ronl.github.io/kalender/preview/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-ronl.github.io/kalender/preview/js/calendar.min.6bde83a418c0d1254fbde982399e150c9ac02a921fbcc643603c142053c3cc1e.js defer></script></body></html>
+<a href=https://orthodox-ronl.github.io/kalender/preview/beheer/>Voor beheerders</a></p><div class=site-meta><p class=page-git-date>Bijgewerkt: 2026-08-21</p></div></div></footer><div id=info-popover class=info-popover hidden role=tooltip aria-labelledby=info-popover-title><h2 id=info-popover-title>Info</h2><div id=info-popover-body></div><p class=info-popover-meer id=info-popover-meer hidden></p></div><script src=https://orthodox-ronl.github.io/kalender/preview/js/theme.min.c1fe5ae25747007cb4583b109c4a5a753a403b55e279fca61593f5517714515c.js defer></script><script src=https://orthodox-ronl.github.io/kalender/preview/js/calendar.min.359de1c3388113574883bc00622bbae9598c9924bca5c26ab3297162681cc2f7.js defer></script></body></html>
