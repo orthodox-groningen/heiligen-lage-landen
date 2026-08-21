@@ -217,10 +217,23 @@ Functie: `weekday_relative_date` in `scripts/kalender.py`.
 
 ## Feesten: betekenis
 
-Optioneel veld `betekenis` (1–3 alinea’s): wat dit feest zegt over de
-weg naar God. Niet hetzelfde als `verhaal` (gebeurtenis) of de
-feestdatum (plaats in het jaar). Weinig jargon; geen preek. Zelfde
-bronlaag en referentieverplichting als verhaal/samenvatting.
+Optioneel veld `betekenis` (1–3 alinea’s): het **geheim** van het feest
+(wat het zegt over de weg naar God) plus kernachtig wat de Kerk die dag
+**van de gelovige vraagt** (houding, wijding, waarom van het vasten).
+Niet hetzelfde als `verhaal` (gebeurtenis) of de feestdatum (plaats in
+het jaar). Geen tweede vastentabel: `vastenniveau` in de infobox is de
+regel. Weinig jargon; geen preek. Zelfde bronlaag en
+referentieverplichting als verhaal/samenvatting.
+
+**Bronnen (schrijven en `referenties`):** eerst een ontvangen
+kerkvader (of de vader in de dienst, zoals Chrysostomos’ paaspreek);
+dan dienstboek, oecumenische canon, typikon voor de tafel. Hopko
+(*The Orthodox Faith*) is brug, niet de last. Johannes van Shanghai en
+Sophrony van Essex alleen als naspraak van die vaders — niet als
+enige bron, en niet om hun band met de Lage Landen in `betekenis` uit
+te spreken (dat is `betekenis_lage_landen` op hun heiligenpagina).
+OrthodoxWiki is vingerwijzing. Zie
+[`docs/onderzoek/feest-betekenis-bronnen.md`](onderzoek/feest-betekenis-bronnen.md).
 
 Op de feestpagina als **Betekenis**, ná het verhaal. Eerst de twaalf
 grootfeesten en Pascha (feest der feesten). Geen `betekenis` op

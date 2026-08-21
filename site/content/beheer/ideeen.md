@@ -28,13 +28,14 @@ Drie lagen, niet door elkaar:
 
 1. **Gebeurtenis** — bestaande `verhaal` (kort, bron)
 2. **Plaats in het jaar** — de kalender doet dit al
-3. **Betekenis** — nieuw veld `betekenis` (1–3 alinea’s; orthodox, weinig
-   jargon; geen preek). Zelfde `bronlaag` als de rest van de pagina.
+3. **Betekenis** — veld `betekenis` (1–3 alinea’s: geheim plus leiding
+   van de Kerk; orthodox, weinig jargon; geen preek). Kerkvaders en
+   dienstboek primair. Zelfde `bronlaag` als de rest van de pagina.
 
-Eerst alleen de twaalf grootfeesten **en Pascha** (feest der feesten,
-niet één van de twaalf). Die hebben nu `betekenis`. Voorfeest, nafeest,
-synaxis, Heilige Week-dagen en Triodion-zondagen: nog niet; die
-herhalen het grootfeest of vragen een eigen, latere ronde.
+De twaalf grootfeesten **en Pascha** hebben nu `betekenis`. Voorfeest,
+nafeest, synaxis, Heilige Week-dagen en Triodion-zondagen: nog niet;
+die herhalen het grootfeest of vragen een eigen, latere ronde. Bronnen:
+[`docs/onderzoek/feest-betekenis-bronnen.md`](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
 ## Parochiepatronen
 

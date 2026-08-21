@@ -34,10 +34,14 @@ daarop volgende 4 jaren. Bij vaste dag: **Feestdag:** in de body mag
 
 ## Betekenis
 
-**Wel:** 1–3 alinea’s ná het verhaal: wat dit feest zegt over de weg
-naar God. Orthodox, weinig jargon, geen preek. Alleen als YAML
-`betekenis` heeft. Nu: de twaalf grootfeesten en Pascha (feest der
-feesten). Zelfde bronlaag als de rest van de pagina. De kop
+**Wel:** 1–3 alinea’s ná het verhaal: het geheim van het feest én
+kernachtig wat de Kerk die dag van de gelovige vraagt (houding,
+wijding, waarom van het vasten — geen tweede vastentabel). Orthodox,
+weinig jargon, geen preek. Alleen als YAML `betekenis` heeft. Nu: de
+twaalf grootfeesten en Pascha (feest der feesten). Bronnen: kerkvaders
+en dienstboek eerst; Hopko als brug; Johannes van Shanghai of Sophrony
+alleen als naspraak, niet als enige bron. Zelfde bronlaag als de rest
+van de pagina. De kop
 **Betekenis** heeft een popover: ontbreekt `goedkeuring`, dan dat de
 tekst is ontleend aan de genoemde bron(nen) en dat we nog iemand
 zoeken die van huis uit orthodox is om haar te toetsen; anders wie

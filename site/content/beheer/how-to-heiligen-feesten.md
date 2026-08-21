@@ -2,7 +2,7 @@
 title: "Heilige of feest toevoegen of wijzigen"
 description: "YAML onder data/, namen in het entry-bestand; nooit de gegenereerde markdown"
 weight: 20
-git_date: 2026-08-20
+git_date: 2026-08-21
 ---
 
 Heiligen en feesten bestaan als **bron** in YAML. De pagina’s die u op de
@@ -223,10 +223,18 @@ Feesten: `nagekeken` blijft nagekeken tekst met traceerbare bronnen.
 
 ## Feesten: betekenis
 
-Optioneel veld `betekenis` (1–3 alinea’s): wat dit feest zegt over de
-weg naar God. Niet het verhaal (gebeurtenis) en niet de feestdatum.
-Weinig jargon; geen preek. Zelfde bronlaag als de rest van de pagina.
-Kop op de pagina: **Betekenis**, ná het verhaal.
+Optioneel veld `betekenis` (1–3 alinea’s): het geheim van het feest
+(weg naar God) plus wat de Kerk die dag vraagt. Niet het verhaal
+(gebeurtenis) en niet de feestdatum. Geen tweede vastentabel
+(`vastenniveau` in de infobox). Weinig jargon; geen preek. Zelfde
+bronlaag als de rest van de pagina. Kop op de pagina: **Betekenis**,
+ná het verhaal.
+
+Schrijf vanuit ontvangen **kerkvaders** en het **dienstboek**. Hopko
+(*The Orthodox Faith*) is brug. Johannes van Shanghai of Sophrony
+alleen als zij dezelfde vader naspreken — niet als enige bron, en niet
+om hun band met de Lage Landen in deze tekst te noemen. Locators en
+volgorde: [bronnennota](https://github.com/orthodox-ronl/kalender/blob/main/docs/onderzoek/feest-betekenis-bronnen.md).
 
 Voorbeeld: Theofanie. De twaalf grootfeesten en Pascha hebben het veld.
 Voorfeest, nafeest, synaxis en weken niet. Contract:
@@ -234,7 +242,7 @@ Voorfeest, nafeest, synaxis en weken niet. Contract:
 
 ```yaml
 betekenis: |
-  Wat dit feest zegt over de weg naar God (1–3 alinea’s).
+  Geheim van het feest, daarna de leiding van de Kerk (1–3 alinea’s).
 goedkeuring:
   - naam: "A. N."
     organisatie: "parochie X"
