@@ -1984,16 +1984,22 @@
       rows > 0
         ? html
         : `<p class="muted">Geen lezingengegevens beschikbaar.</p>`;
-    wireRoosterScrollSync();
     if (rows > 0) {
       const first = !roosterDidInitialScroll;
       roosterDidInitialScroll = true;
+      roosterSyncingFromScroll = true;
       requestAnimationFrame(() => {
         setRoosterMonth(viewYear, parseInt(roosterMonth, 10), {
           scroll: true,
           updateUrl: true,
-          behavior: first ? "auto" : "auto",
+          behavior: "auto",
         });
+        window.setTimeout(() => {
+          roosterSyncingFromScroll = false;
+          wireRoosterScrollSync();
+          // Herbevestig label/knoppen na initiële scroll.
+          renderRoosterToolbarOnly(style);
+        }, first ? 120 : 80);
       });
     }
   }
@@ -2056,14 +2062,15 @@
     const params = new URLSearchParams(window.location.search);
     const m = params.get("maand");
     const y = params.get("jaar");
+    const now = new Date();
     if (y && /^\d{4}$/.test(y)) {
       viewYear = clampYear(parseInt(y, 10));
+    } else {
+      viewYear = clampYear(now.getFullYear());
     }
     if (m && /^\d{2}$/.test(m) && Number(m) >= 1 && Number(m) <= 12) {
       roosterMonth = m;
     } else {
-      const now = new Date();
-      viewYear = clampYear(now.getFullYear());
       roosterMonth = String(now.getMonth() + 1).padStart(2, "0");
     }
     renderRooster(style);
@@ -2257,8 +2264,13 @@
     const el = document.getElementById(monthId);
     if (!el) return;
     kalenderScrolledToToday = true;
+    const go = () => el.scrollIntoView({ block: "center", behavior: "auto" });
     requestAnimationFrame(() => {
-      el.scrollIntoView({ block: "center", behavior: "auto" });
+      requestAnimationFrame(() => {
+        go();
+        // Tweede poging nadat sticky header/layout is gestabiliseerd.
+        window.setTimeout(go, 100);
+      });
     });
   }
 

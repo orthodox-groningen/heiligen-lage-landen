@@ -1211,12 +1211,14 @@ button.button {
   border: 1px solid var(--line);
   border-radius: 0.35rem;
   padding: 0.85rem;
-  scroll-margin-top: 10rem;
+  scroll-margin-top: 7rem;
+  scroll-margin-bottom: 7rem;
 }
 
 @media (max-width: 719px) {
   .month-card {
     scroll-margin-top: 8rem;
+    scroll-margin-bottom: 4rem;
   }
 }
 
