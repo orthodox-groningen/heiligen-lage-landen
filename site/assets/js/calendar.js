@@ -1317,6 +1317,17 @@
       }
       return;
     }
+    if (kind === "vierdatum-oud") {
+      title.textContent = "Nieuwe en oude kalender";
+      body.innerHTML =
+        `<p>De eerste datum is wanneer <strong>nieuwe-kalenderparochies</strong> ` +
+        `vieren of vasten. Tussen haakjes staat de burgerlijke datum voor ` +
+        `<strong>oude-kalenderparochies</strong>.</p>` +
+        `<p>Pascha en wat daarvan afhangt vallen in beide op dezelfde ` +
+        `burgerlijke dag.</p>`;
+      fillNieuwOudMeer(meer);
+      return;
+    }
     if (kind === "nieuw-oud") {
       // Knop «?» naast Nieuw/Oud: situatief, geankerd op vandaag.
       const style = getStyle();

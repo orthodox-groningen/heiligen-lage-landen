@@ -58,7 +58,10 @@ datum:
 Orthodox Pascha volgt de Alexandrijnse/Juliaanse computus (Meeus); alle Orthodoxe
 kerken delen die datum. ICS en `entries.json` gebruiken **huidig jaar −2 … +5**.
 De tabel «Komende jaren» op een feest- of vastenpagina is korter: het
-lopende jaar en de vier daarop.
+lopende jaar en de vier daarop. Kolom **Datum** (of Van/Tot) is burgerlijk.
+Haakjes = vierdatum van oude-kalenderparochies, alleen als die verschilt
+(niet de Juliaanse dagnaam van dezelfde dag). Paascyclus zonder vast einde:
+geen haakjes.
 
 ## Namen
 

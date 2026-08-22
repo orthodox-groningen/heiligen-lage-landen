@@ -18,8 +18,9 @@ vastenregels en op de datumpagina.
 ## Infobox
 
 **Wel:** Soort: Vasten. Periode, wekelijks (elke woensdag/vrijdag), of
-paascyclus-bereik. Seizoensniveau als dat op de entry staat. Zo nodig
-«Wo/vr: niet in deze periode».
+paascyclus-bereik. Bij een vaste periode: burgerlijk van–tot, tussen
+haakjes de periode op de oude kalender. Seizoensniveau als dat op de
+entry staat. Zo nodig «Wo/vr: niet in deze periode».
 
 **Niet:** twee niveaus tegelijk als de mengregel er één van maakt; de
 clerus-uitleg van alle regels (die hoort op
@@ -27,11 +28,13 @@ clerus-uitleg van alle regels (die hoort op
 
 ## Komende jaren (body, indien paascyclus)
 
-**Wel:** wereldlijke datums in een **tabel** (Jaar, Van, Tot) als de
+**Wel:** burgerlijke datums in een **tabel** (Jaar, Van, Tot) als de
 periode meeschuift met Pascha. Vijf rijen: het lopende jaar en de vier
-daarop.
+daarop. Bijschrift: alle Orthodoxe parochies dezelfde burgerlijke dagen,
+tenzij het einde een vaste feestdatum is (Apostelvasten: haakjes bij Tot).
 
-**Niet:** Juliaanse computus-uitleg op de entry; voorbeelden die de
+**Niet:** Juliaanse dagnaam van dezelfde burgerlijke dag als extra kolom;
+computus-uitleg op de entry; voorbeelden die de
 uitleg-vastenpagina al draagt; het ICS-venster (huidig −2 … +5) als
 lijst van acht jaren.
 

@@ -1,0 +1,16 @@
+{{/*
+  Burgerlijke vierdatum voor oude-kalenderparochies, tussen haakjes.
+  Popover: data-info-tip="vierdatum-oud".
+  Gebruik:
+    {{ partial "vierdatum-oud.html" (dict "datum" $p.vierdatum_oud) }}
+    {{ partial "vierdatum-oud.html" (dict "van" $p.van_oud "tot" $p.tot_oud) }}
+*/}}
+{{- $inner := "" -}}
+{{- if .datum -}}
+  {{- $inner = partial "feestdatum-kort.html" .datum -}}
+{{- else if and .van .tot -}}
+  {{- $inner = printf "%s – %s" (partial "feestdatum-kort.html" .van) (partial "feestdatum-kort.html" .tot) -}}
+{{- end -}}
+{{- if $inner -}}
+<span class="vierdatum-oud" tabindex="0" data-info-tip="vierdatum-oud" title="Uitleg nieuwe en oude kalender">({{ $inner }} oude kalender)</span>
+{{- end -}}

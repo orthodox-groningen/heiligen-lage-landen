@@ -15,7 +15,8 @@ git_date: 2026-08-21
 
 ## Infobox
 
-**Wel:** icoon alleen met lokale licentie. Soort: Feest. Datum: feestdag,
+**Wel:** icoon alleen met lokale licentie. Soort: Feest. Datum: feestdag
+(met haakjes voor de burgerlijke vierdatum op de oude kalender),
 periode, paascyclus-offset of «zondag vóór/na …» — wat bij dit feest
 hoort. Vastenlabel van díe entry als dat in YAML staat.
 
@@ -26,15 +27,21 @@ body.
 ## Datumtoelichting in de body
 
 **Wel:** bij paascyclus of weekdag-relatief: een **tabel** «Komende
-jaren» (wereldlijk), zodat de infobox niet overloopt. Vijf rijen: het
+jaren» (burgerlijk), zodat de infobox niet overloopt. Vijf rijen: het
 **lopende burgerlijke jaar** en de vier daarop. Kolommen bij één dag:
-Jaar, Wereldlijk, Juliaans. Bij een periode (vasten of feestdagenreeks):
-Jaar, Van, Tot. Geen opsomming met copypaste-jaren van het ICS-venster.
+Jaar, Datum. Bij een periode: Jaar, Van, Tot. Haakjes bij de datum als
+oude-kalenderparochies op een andere burgerlijke dag vieren (weekdag-
+relatief; Apostelvasten-einde). Paascyclus zonder vast einde: bijschrift
+dat alle Orthodoxe parochies dezelfde burgerlijke dag houden. Geen
+opsomming met copypaste-jaren van het ICS-venster.
 
-**Niet:** een tweede, afwijkende canonieke datum; meer of minder dan
-die vijf jaren; het ICS-bereik (huidig −2 … +5) op deze pagina.
+**Niet:** een Juliaanse dagnaam van dezelfde burgerlijke dag als tweede
+kolom; een tweede, afwijkende canonieke feestdatum; meer of minder dan
+die vijf jaren; het ICS-bereik (huidig −2 … +5) op deze pagina; een
+tweede knop Nieuw/Oud op deze pagina.
 
-Bij vaste dag: **Feestdag:** in de body mag (zelfde dag als de infobox;
+Bij vaste dag: **Feestdag:** in de body mag (zelfde dag als de infobox,
+inclusief haakjes met de burgerlijke vierdatum op de oude kalender;
 zie [Heilige]({{% ref "/beheer/pagina-opbouw/heilige" %}})).
 
 ## Betekenis
