@@ -1891,6 +1891,11 @@
     const styleSlot = document.getElementById("rooster-style-slot");
     if (!root || !actionBar) return;
 
+    if (roosterScrollObserver) {
+      roosterScrollObserver.disconnect();
+      roosterScrollObserver = null;
+    }
+
     wireWeergavePanel("rooster");
 
     if (styleSlot) {
