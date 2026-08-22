@@ -38,7 +38,7 @@
           {{ end }}
         {{ end }}
         {{ with .Params.feestdatum }}
-          <span class="meta">{{ partial "feestdatum-kort.html" . }}</span>
+          <span class="meta"><a href="{{ printf "/datum/?dag=%s" . | relURL }}">{{ partial "feestdatum-kort.html" . }}</a></span>
         {{ end }}
       </li>
     {{ end }}
