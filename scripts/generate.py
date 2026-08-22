@@ -101,13 +101,19 @@ def julian_dag_label(d: date) -> str:
 
 
 def komende_jaren_tabel_html(
-    headers: list[str], rows: list[list[str]]
+    headers: list[str], rows: list[list[str]], *, escape_cells: bool = True
 ) -> list[str]:
-    """HTML-tabel voor de body; kolommen blijven onderling uitgelijnd."""
+    """HTML-tabel voor de body; kolommen blijven onderling uitgelijnd.
+
+    Zet escape_cells=False als cellen al veilige HTML (bijv. datumlinks) bevatten.
+    """
     head = "".join(f"<th>{html_escape(h)}</th>" for h in headers)
     body_rows = []
     for row in rows:
-        cells = "".join(f"<td>{html_escape(c)}</td>" for c in row)
+        if escape_cells:
+            cells = "".join(f"<td>{html_escape(c)}</td>" for c in row)
+        else:
+            cells = "".join(f"<td>{c}</td>" for c in row)
         body_rows.append(f"<tr>{cells}</tr>")
     return [
         '<div class="table-wrap">',
@@ -120,6 +126,21 @@ def komende_jaren_tabel_html(
         "</div>",
         "",
     ]
+
+
+def datum_pagina_cell(
+    label: str,
+    civil: date,
+    *,
+    stijl: str | None = None,
+) -> str:
+    """HTML-cel: link naar datumpagina met optionele Nieuw/Oud-stijl."""
+    q = f"/datum/?datum={civil.isoformat()}"
+    if stijl == "juliaans":
+        q += "&stijl=juliaans"
+    elif stijl == "gregoriaans":
+        q += "&stijl=gregoriaans"
+    return f'<a href="{html_escape(q)}">{html_escape(label)}</a>'
 
 
 def _append_occ(bucket: dict[str, list[str]], d: date) -> None:
@@ -451,11 +472,23 @@ def write_entry_page(entry: dict[str, Any]) -> None:
                 rows.append(
                     [
                         str(y),
-                        mmdd_label(mmdd_from_date(start)),
-                        mmdd_label(mmdd_from_date(end)),
+                        datum_pagina_cell(
+                            mmdd_label(mmdd_from_date(start)),
+                            start,
+                            stijl="gregoriaans",
+                        ),
+                        datum_pagina_cell(
+                            mmdd_label(mmdd_from_date(end)),
+                            end,
+                            stijl="gregoriaans",
+                        ),
                     ]
                 )
-        body.extend(komende_jaren_tabel_html(["Jaar", "Van", "Tot"], rows))
+        body.extend(
+            komende_jaren_tabel_html(
+                ["Jaar", "Van", "Tot"], rows, escape_cells=False
+            )
+        )
     elif entry.get("cyclus") == "paascyclus":
         offset = dn["paascyclus_offset"]
         body.append("**Komende jaren (wereldlijk / Gregoriaans):**")
@@ -466,12 +499,22 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             rows.append(
                 [
                     str(y),
-                    mmdd_label(mmdd_from_date(d)),
-                    julian_dag_label(d),
+                    datum_pagina_cell(
+                        mmdd_label(mmdd_from_date(d)),
+                        d,
+                        stijl="gregoriaans",
+                    ),
+                    datum_pagina_cell(
+                        julian_dag_label(d),
+                        d,
+                        stijl="juliaans",
+                    ),
                 ]
             )
         body.extend(
-            komende_jaren_tabel_html(["Jaar", "Wereldlijk", "Juliaans"], rows)
+            komende_jaren_tabel_html(
+                ["Jaar", "Wereldlijk", "Juliaans"], rows, escape_cells=False
+            )
         )
     elif vorm == "weekdag_relatief":
         body.append(
@@ -493,9 +536,17 @@ def write_entry_page(entry: dict[str, Any]) -> None:
             wereldlijk = mmdd_label(mmdd_from_date(d))
             if d.year != y:
                 wereldlijk = f"{wereldlijk} {d.year}"
-            rows.append([str(y), wereldlijk, julian_dag_label(d)])
+            rows.append(
+                [
+                    str(y),
+                    datum_pagina_cell(wereldlijk, d, stijl="gregoriaans"),
+                    datum_pagina_cell(julian_dag_label(d), d, stijl="juliaans"),
+                ]
+            )
         body.extend(
-            komende_jaren_tabel_html(["Jaar", "Wereldlijk", "Juliaans"], rows)
+            komende_jaren_tabel_html(
+                ["Jaar", "Wereldlijk", "Juliaans"], rows, escape_cells=False
+            )
         )
     elif vorm == "dag" and feestdatum:
         body.append(

@@ -550,8 +550,100 @@ h2 {
   font-size: 0.9rem;
 }
 
+.rooster-page-title {
+  font-size: 1.35rem;
+  margin: 0 0 0.65rem;
+}
+
+.rooster-sticky-head {
+  position: sticky;
+  top: 3.25rem;
+  z-index: 5;
+  margin: 0 0 0.35rem;
+  padding: 0.25rem 0 0;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 719px) {
+  .rooster-sticky-head {
+    top: 5.25rem;
+  }
+}
+
+.rooster-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.2rem 0 0.45rem;
+}
+
+.rooster-toolbar .page-action-bar {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.rooster-toolbar-style {
+  flex: 0 0 auto;
+}
+
+.rooster-toolbar .weergave-trigger {
+  flex: 0 0 auto;
+}
+
+.rooster-col-head,
+.rooster-row {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.35rem 0.65rem;
+  align-items: start;
+}
+
+.rooster-col-head {
+  padding: 0.45rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: none;
+  border-top: 1px solid var(--line);
+}
+
 .rooster-tables {
-  margin-top: 1.25rem;
+  margin-top: 0;
+}
+
+.rooster-row {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  font-size: 0.92rem;
+  scroll-margin-top: 9rem;
+}
+
+@media (max-width: 719px) {
+  .rooster-row {
+    scroll-margin-top: 11rem;
+  }
+}
+
+.rooster-cell-dag {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.rooster-cell-dag a {
+  text-decoration: none;
+}
+
+.rooster-cell-dag a:hover {
+  text-decoration: underline;
+}
+
+.rooster-month-break {
+  height: 0;
+  margin: 0.55rem 0 0.35rem;
+  border-top: 2px solid color-mix(in srgb, var(--gold) 40%, var(--line));
 }
 
 .rooster-month {
@@ -918,15 +1010,25 @@ h2 {
 }
 
 .agenda-voorbeeld-week li {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 0.75rem;
-  padding: 0.35rem 0;
+  padding: 0;
   border-top: 1px solid var(--line);
 }
 
 .agenda-voorbeeld-week li:first-child {
   border-top: 0;
+}
+
+.agenda-voorbeeld-link {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.agenda-voorbeeld-link:hover .agenda-voorbeeld-titel {
+  text-decoration: underline;
 }
 
 .agenda-voorbeeld-dag {
@@ -1021,32 +1123,64 @@ button.button {
   grid-template-columns: 1fr;
 }
 
+.year-break {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.35rem 0 0.15rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.year-break::before,
+.year-break::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 0;
+  border-top: 2px solid color-mix(in srgb, var(--gold) 45%, var(--line));
+}
+
+.year-break-label {
+  flex: 0 0 auto;
+}
+
+.kalender-page-title {
+  font-size: 1.35rem;
+  margin: 0 0 0.65rem;
+}
+
 .kalender-sticky-head {
   position: sticky;
   top: 3.25rem;
   z-index: 4;
-  margin: 0 0 0.5rem;
-  padding: 0 0 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 0 0 0.75rem;
+  padding: 0.35rem 0 0.65rem;
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
-.kalender-sticky-head .page-title-row {
-  margin-bottom: 0.35rem;
+.kalender-sticky-head .legend {
+  margin: 0;
+  flex: 1 1 auto;
 }
 
-.kalender-sticky-head .legend {
-  margin-bottom: 0;
+.kalender-sticky-style {
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 @media (max-width: 719px) {
   .kalender-sticky-head {
     top: 5.25rem;
-  }
-
-  .kalender-page .kalender-title-word {
-    display: none;
   }
 
   .kalender-page .legend.compact {
@@ -1063,6 +1197,12 @@ button.button {
 @media (min-width: 1100px) {
   .year-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  .year-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

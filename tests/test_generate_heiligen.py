@@ -565,6 +565,10 @@ def test_paascyclus_feest_komende_jaren_tabel(
     assert "<td>2031</td>" not in body
     assert "- 2026:" not in body
     assert "31 mei" in body
+    assert 'href="/datum/?datum=2026-05-31&amp;stijl=gregoriaans"' in body or (
+        'href="/datum/?datum=2026-05-31&stijl=gregoriaans"' in body
+    )
+    assert "stijl=juliaans" in body
     assert body.count("<tr>") == 6  # kop + 5 jaren
 
 
