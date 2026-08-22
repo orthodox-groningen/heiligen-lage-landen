@@ -18,7 +18,7 @@ vastenniveau: streng
 onderdrukt_wekelijks_vasten: true
 ---
 
-**Komende jaren (wereldlijk / Gregoriaans):**
+**Komende jaren (burgerlijk):**
 
 <div class="table-wrap">
 <table class="komende-jaren">
@@ -32,6 +32,7 @@ onderdrukt_wekelijks_vasten: true
 </tbody>
 </table>
 </div>
+<p class="komende-jaren-note">Alle Orthodoxe parochies houden deze periode op dezelfde burgerlijke dagen.</p>
 
 Grote Maandag tot en met Grote Zaterdag: met Christus naar Jeruzalem.
 
